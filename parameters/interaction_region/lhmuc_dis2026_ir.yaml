@@ -1,0 +1,372 @@
+# Interaction-region (and machine-detector-interface) statements extracted from SRC_ARXIV_2610_35154
+# (arXiv:2610.35154v1, DIS2026 proceedings): Table 1 beam sizes (p.4), §3 Interaction Region (p.4-5) and §4 detector/MDI (p.5).
+# Qualitative design statements are recorded as string-valued categorical parameters (unit "string").
+# Records with subsystem "detector" are placed here because no detector file was assigned for this document.
+parameters:
+  - parameter_id: IR_SIGMA_X_IP_MUON_DIS2026
+    name: RMS horizontal muon beam size at the IP
+    symbol: sigma_x
+    subsystem: interaction_region
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4.8
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "RMS beam size at IP, σ_x,y [μm] 4.8 4.8"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "μ+ column; the table gives a single number for σ_x,y, i.e. round beams. beta* and emittance are not given, so this cannot be decomposed."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the luminosity reproduction (tests/scientific/test_analytical_checks.py::test_dis2026_table1_luminosity_reproduced_with_h_equal_one)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_SIGMA_Y_IP_MUON_DIS2026
+    name: RMS vertical muon beam size at the IP
+    symbol: sigma_y
+    subsystem: interaction_region
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4.8
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "RMS beam size at IP, σ_x,y [μm] 4.8 4.8"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "μ+ column; single value for σ_x,y (round beams)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the luminosity reproduction (tests/scientific/test_analytical_checks.py::test_dis2026_table1_luminosity_reproduced_with_h_equal_one)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_SIGMA_X_IP_PROTON_DIS2026
+    name: RMS horizontal proton beam size at the IP
+    symbol: sigma_x
+    subsystem: interaction_region
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4.8
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "RMS beam size at IP, σ_x,y [μm] 4.8 4.8"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "p column; matched to the muon beam size. Proton beta* and emittance not given here (the μLHC paper's 7 cm / 2 um would give 4.3 um, not 4.8 um; the two documents differ)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "sigma = sqrt(beta* eps_n / gamma): with HL-LHC eps_n = 2.5 um and 7 TeV, 4.8 um corresponds to beta* = 6.9 cm (audit arithmetic via lhmuc.analytical.sigma_from_emittance; not a source value)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_SIGMA_Y_IP_PROTON_DIS2026
+    name: RMS vertical proton beam size at the IP
+    symbol: sigma_y
+    subsystem: interaction_region
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4.8
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "RMS beam size at IP, σ_x,y [μm] 4.8 4.8"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "p column; single value for σ_x,y (round beams)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_MUON_FOCUSING_OPTIONS_DIS2026
+    name: Options considered for the final focusing of the muon beam (categorical)
+    symbol: null
+    subsystem: interaction_region
+    scenario: null
+    value: "inside_LHC_minibeta_quadrupoles_LHeC_style_or_outside_linear_collider_style"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "3. Interaction Region", table_figure_or_equation: null, quotation: "In general, there are two options to consider for the focusing of muon beam: either one makes focusing of muons close to the IP, \"in between\" the mini-beta quadrupoles of the LHC, as is proposed for electrons at the LHeC; or focusing of muons is \"outside\" mini-beta quadrupoles of the LHC, in a \"linear collider type style\"."}
+      derivation: null
+      applicability: {category: unresolved, scenario: null, explanation: "Neither option is selected in this source; no L*, gradients or apertures are given."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_CROSSING_ANGLE_REQUIREMENT_DIS2026
+    name: Crossing-angle requirement (categorical)
+    symbol: null
+    subsystem: interaction_region
+    scenario: null
+    value: "very_small_crossing_angle_needed_large_muon_bunch_separation"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "3. Interaction Region", table_figure_or_equation: null, quotation: "The time separation of muon bunches is large at LHμC, therefore, a very small crossing angle is needed to avoid parasitic collisions of muon and proton bunches."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Qualitative: because muon bunches are 250 ns apart (10 LHC bunch spacings), parasitic encounters are far from the IP, so only a very small (unquantified) crossing angle is required."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement; numeric value in IR_CROSSING_ANGLE_DIS2026 (unknown)."}
+    dependencies: [MACHINE_MU_BUNCH_SPACING_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_CROSSING_ANGLE_DIS2026
+    name: Muon-proton crossing angle at the IP
+    symbol: theta_c
+    subsystem: interaction_region
+    scenario: LHMUC-DIS2026-1TEV
+    value: null
+    unit: mrad
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: unknown
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "3. Interaction Region", table_figure_or_equation: null, quotation: "a very small crossing angle is needed to avoid parasitic collisions of muon and proton bunches"}
+      derivation: null
+      applicability: {category: unresolved, scenario: LHMUC-DIS2026-1TEV, explanation: "The source says only 'very small'; no number. value is null = unknown, not zero (a head-on scheme is not claimed)."}
+      confidence: none
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: "Kept as an explicit unknown so the scenario's unknown_roles entry has a record to point to."
+
+  - parameter_id: IR_BEAM_SEPARATION_SCHEME_DIS2026
+    name: Preferred scheme for physical separation of the muon and proton beams (categorical)
+    symbol: null
+    subsystem: interaction_region
+    scenario: null
+    value: "separator_dipole_preferred"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "3. Interaction Region", table_figure_or_equation: null, quotation: "To achieve a \"physical\" separation of the muon and proton beams, the most preferred scheme is by introducing a new separator dipole, and one should note in that context that the problem of making high energy μ+p collisions is in general very similar to the pp case at the LHC."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Stated preference; field, length and position of the separator dipole are not given. Quotation spans pages 4-5."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: IR_DECAY_BACKGROUND_SHIELDING_STATUS_DIS2026
+    name: Status of beam-line shielding against beam-muon decay background (categorical)
+    symbol: null
+    subsystem: interaction_region
+    scenario: null
+    value: "to_be_studied_building_on_muon_collider_studies"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "3. Interaction Region", table_figure_or_equation: null, quotation: "Last but not least, the appropriate shielding of the beam-lines against the background due to the beam-muon decays has to be studied and properly designed, but one can profit here from the corresponding in-depth studies performed for the Muon Collider project."}
+      derivation: null
+      applicability: {category: unresolved, scenario: null, explanation: "Open design item; no shielding geometry or radiation levels given."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/interaction_region
+    notes: null
+
+  - parameter_id: DET_NOZZLE_PRESENCE_DIS2026
+    name: Decay-background shielding nozzle inside the detector (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "nozzle_inside_detector_in_direction_of_incoming_muons_size_to_be_optimised"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "It requires an optimal design of dedicated shielding: the so-called nozzle should be located inside the LHμC detector in the direction of incoming muons [27], its size has to be carefully optimised to balance the loss of instrumentation in the volume it occupies and the efficiency of the background suppression."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Single-sided nozzle (incoming-muon side only). Opening angle, length and material are not given in this source (ref. [27], A. Kilic et al., workshop contribution 7263330)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement; no numeric nozzle parameter is recorded from this document."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: "Record placed in the IR file by the DIS2026 extraction task; subsystem detector."
+
+  - parameter_id: DET_BASELINE_DESIGN_DIS2026
+    name: Baseline general-purpose detector concept (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "LHeC_main_detector_with_relatively_minor_modifications"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "Thus, most segments of the baseline LHeC detector can be expected to remain directly applicable after only relatively minor modifications [26]."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Detector geometry itself is in the LHeC references [6, 25] and workshop talk [26]; not restated here. Backgrounds differ: 'in place of the electron beam-induced backgrounds at the LHeC due to strong synchrotron radiation, at LHμC one has to deal with very different backgrounds due to the beam-muon decays' (p.5)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null
+
+  - parameter_id: DET_MUON_SYSTEM_OPTION_DIS2026
+    name: Muon detector concept for high-pT final-state muons (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "CMS_like_muon_detector_might_be_optimal"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "In most of the interactions at LHμC one expects a TeV-muon to be present in the final state. Very initial considerations indicate that for high p_T muons, a CMS-like muon detector might be the optimal choice in that context [28]. On the other hand, the detection of incident muons scattered at small angles will require special solutions [29]."}
+      derivation: null
+      applicability: {category: unresolved, scenario: null, explanation: "'Very initial considerations' only; small-angle scattered-muon detection needs 'special solutions' (near-beam muon detectors, ref. [29])."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null
+
+  - parameter_id: DET_KINEMATIC_RECONSTRUCTION_METHOD_DIS2026
+    name: Alternative event-kinematics reconstruction without scattered-muon energy (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "recoil_jet_momentum_plus_muon_scattering_angle"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "there are alternative ways to properly reconstruct event kinematics in μp interactions, without a precise measurement of the energy of the scattered muon, but using the measured momentum of \"the recoil\" jet and muon scattering angle [30]."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Method attributed to ref. [30] (Acosta et al., JINST 18 (2023) P09025, muon-ion collider)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null
+
+  - parameter_id: DET_LUMINOSITY_MEASUREMENT_METHOD_DIS2026
+    name: Proposed absolute-luminosity measurement process (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "muon_hadron_bremsstrahlung"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "The first considerations indicate that muon-hadron bremsstrahlung should provide the necessary means [32]."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "By analogy with the HERA electron-proton bremsstrahlung luminosity monitors; ref. [32] in preparation. No cross section or precision given."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null
+
+  - parameter_id: DET_PILEUP_EXPECTATION_DIS2026
+    name: Expected event pile-up level (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "negligible_or_small_depending_on_bunch_populations"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "It should be noted that the event pileup at LHμC will be negligible or small, depending on the actual bunch populations."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "No numeric mean pile-up given. Audit arithmetic: with L_peak = 2.1e34 and f = 4 MHz, mu = L*sigma_tot/f = 5.3e27 cm^2 * sigma_tot, i.e. ~0.5 per crossing for a 100 ub total μp cross section (sigma_tot itself is not stated in the source)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null
+
+  - parameter_id: DET_DAQ_CONCEPT_DIS2026
+    name: Data-acquisition concept (categorical)
+    symbol: null
+    subsystem: detector
+    scenario: null
+    value: "triggerless_data_streaming_possible"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "4. General Purpose Detector", table_figure_or_equation: null, quotation: "Therefore, not only the proper detection and reconstruction of complex final states will be possible but also application of \"triggerless\" data-streaming systems for the data acquisition, as is already planned for the ALICE3 and ePIC experiments, for example."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Consequence of the low pile-up expectation (DET_PILEUP_EXPECTATION_DIS2026)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: [DET_PILEUP_EXPECTATION_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/detector
+    notes: null

@@ -1,0 +1,2335 @@
+# LHC ion-beam parameters (Pb, Xe, O, Ne) as used by SRC_WS1681458_DAGLI_NUCLEUS (deck 'LHμC: Nucleus Options', p.9-10).
+# The deck states the upstream sources: 'Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.' Those upstream
+# documents were NOT consulted here (network blocked); the values are therefore imported_related with the deck as the quoted source.
+# beta* = 10 cm for every species is the authors' explicit assumption (p.10 'One assumption'). Schema: schemas/provenance.schema.json.
+# Transcription convention for quotations: superscripts/subscripts of the slides are written in plain text
+# (10^10, cm^-2 s^-1, beta*_mu, xi_A); table rows are quoted as 'Row label [unit] v_Pb v_Xe v_O v_Ne' in the
+# column order Pb, Xe, O, Ne of the slide; the applicability explanation names the column used.
+parameters:
+- parameter_id: ION_SPECIES_NUCL_PB
+  name: Ion species of the LHMUC-NUCL-MU-PB scenario (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 208Pb82+
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: species header
+      quotation: 208Pb82+
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Fully stripped Pb ions as run in the LHC ('since 2010').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_CHARGE_Z_NUCL_PB
+  name: Pb ion charge number
+  symbol: Z
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 82
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Pb Z = 82, A = 208
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Column header of the p.10 table; physical constant of fully stripped 208Pb82+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_MASS_NUMBER_A_NUCL_PB
+  name: Pb ion mass number
+  symbol: A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 208
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Pb Z = 82, A = 208
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Column header of the p.10 table; physical constant of 208Pb82+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCH_POPULATION_NUCL_PB
+  name: Pb ions per bunch
+  symbol: N_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 180000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Particles per bunch [10^10] 0.018 0.027 0.29 0.20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. p.9: ''Parameters used here: LHeC CDR 2021, with 1200 bunches of 1.8 × 10^8 lead ions.'''
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_NUCL_PB
+  name: Pb beam energy (total per ion)
+  symbol: E_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 574.0
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Beam energy [TeV] 574 350.88 42.88 53.60
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'consistency: A x E/A = 208 x 2.76 = 574.08 TeV; Z x E_p-equivalent = 82 x 7.000 TeV'
+    check_ids: []
+    notes: Equivalent proton energy 7.0 TeV (HL-LHC).
+  dependencies:
+  - ION_MASS_NUMBER_A_NUCL_PB
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_PB
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_PB
+  name: Pb beam energy per nucleon
+  symbol: E_A/A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 2.76
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Energy per nucleon [TeV] 2.76 2.72 2.68 2.68
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 574.0 / 208 = 2.760 TeV'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BETA_STAR_IP_NUCL_PB
+  name: Pb beta function at the IP (authors' assumption)
+  symbol: beta*_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 0.1
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: β function at IP [m] 0.10 0.10 0.10 0.10
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. Deck ''One assumption'' box: ''β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.'' For Xe, O, Ne this is the authors'' assumption, not an operational value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: Authors' assumption, explicitly flagged in the deck; no ion-optics feasibility shown for beta* = 10 cm at a μA IP.
+- parameter_id: ION_NORM_EMITTANCE_NUCL_PB
+  name: Pb normalised transverse emittance
+  symbol: eps_n,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 1.5
+  unit: mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Normalised emittance [mm·mrad] 1.5 0.87 1.3 1.77
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_GEOMETRIC_EMITTANCE_NUCL_PB
+  name: Pb geometric transverse emittance
+  symbol: eps_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 0.51
+  unit: nm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Transverse emittance [nm] 0.51 0.30 0.46 0.62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: eps_n / gamma_A with gamma_A = 574.0 TeV / (208 x 0.9315 GeV) = 2963: 1.5 um / 2963 = 0.506 nm'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_NORM_EMITTANCE_NUCL_PB
+  - ION_BEAM_ENERGY_NUCL_PB
+  - ION_MASS_NUMBER_A_NUCL_PB
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCHES_NUCL_PB
+  name: Pb bunches per LHC ring
+  symbol: n_b,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 1200
+  unit: bunches
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Bunches per ring 1200 16 62 62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. p.9: ''1200 bunches of 1.8 × 10^8 lead ions'' (LHeC CDR 2021).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_REVOLUTION_FREQUENCY_NUCL_PB
+  name: LHC revolution frequency (Pb beam)
+  symbol: f_rev
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 11245
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Revolution frequency [Hz] 11245 11245 11245 11245
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: c / 26.659 km = 11.245 kHz'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_RING_CIRCUMFERENCE_NUCL_PB
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_RING_CIRCUMFERENCE_NUCL_PB
+  name: LHC circumference (Pb beam)
+  symbol: C_LHC
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 26.659
+  unit: km
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Circumference [km] 26.659 26.659 26.659 26.659
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_FIRST_LHC_OPERATION_NUCL_PB
+  name: When Pb beams were first run in the LHC (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: since 2010
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: timeline header
+      quotation: since 2010
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: '''Backbone of the LHC heavy-ion programme (Pb–Pb, p–Pb) and part of the HL-LHC baseline.'' Ref. J. Phys. G 48 (2021) 110501.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_SPECIES_NUCL_XE
+  name: Ion species of the LHMUC-NUCL-MU-XE scenario (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 129Xe54+
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: species header
+      quotation: 129Xe54+
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: Fully stripped Xe ions as run in the LHC ('October 2017').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_CHARGE_Z_NUCL_XE
+  name: Xe ion charge number
+  symbol: Z
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 54
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Xe Z = 54, A = 129
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: Column header of the p.10 table; physical constant of fully stripped 129Xe54+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_MASS_NUMBER_A_NUCL_XE
+  name: Xe ion mass number
+  symbol: A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 129
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Xe Z = 54, A = 129
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: Column header of the p.10 table; physical constant of 129Xe54+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCH_POPULATION_NUCL_XE
+  name: Xe ions per bunch
+  symbol: N_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 270000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Particles per bunch [10^10] 0.018 0.027 0.29 0.20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_NUCL_XE
+  name: Xe beam energy (total per ion)
+  symbol: E_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 350.88
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Beam energy [TeV] 574 350.88 42.88 53.60
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'consistency: A x E/A = 129 x 2.72 = 350.88 TeV; Z x E_p-equivalent = 54 x 6.498 TeV'
+    check_ids: []
+    notes: Equivalent proton energy 6.50 TeV, i.e. the energy of the actual LHC run used (not the 7 TeV HL-LHC value).
+  dependencies:
+  - ION_MASS_NUMBER_A_NUCL_XE
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_XE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_XE
+  name: Xe beam energy per nucleon
+  symbol: E_A/A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 2.72
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Energy per nucleon [TeV] 2.76 2.72 2.68 2.68
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 350.88 / 129 = 2.720 TeV'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BETA_STAR_IP_NUCL_XE
+  name: Xe beta function at the IP (authors' assumption)
+  symbol: beta*_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 0.1
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: β function at IP [m] 0.10 0.10 0.10 0.10
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE. Deck ''One assumption'' box: ''β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.'' For Xe, O, Ne this is the authors'' assumption, not an operational value.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: Authors' assumption, explicitly flagged in the deck; no ion-optics feasibility shown for beta* = 10 cm at a μA IP.
+- parameter_id: ION_NORM_EMITTANCE_NUCL_XE
+  name: Xe normalised transverse emittance
+  symbol: eps_n,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 0.87
+  unit: mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Normalised emittance [mm·mrad] 1.5 0.87 1.3 1.77
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_GEOMETRIC_EMITTANCE_NUCL_XE
+  name: Xe geometric transverse emittance
+  symbol: eps_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 0.3
+  unit: nm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Transverse emittance [nm] 0.51 0.30 0.46 0.62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: eps_n / gamma_A with gamma_A = 350.88 TeV / (129 x 0.9315 GeV) = 2920: 0.87 um / 2920 = 0.298 nm'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_NORM_EMITTANCE_NUCL_XE
+  - ION_BEAM_ENERGY_NUCL_XE
+  - ION_MASS_NUMBER_A_NUCL_XE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCHES_NUCL_XE
+  name: Xe bunches per LHC ring
+  symbol: n_b,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 16
+  unit: bunches
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Bunches per ring 1200 16 62 62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE. p.9: ''Single pilot run: √sAA = 5.44 TeV with 16 bunches per beam.'''
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_REVOLUTION_FREQUENCY_NUCL_XE
+  name: LHC revolution frequency (Xe beam)
+  symbol: f_rev
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 11245
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Revolution frequency [Hz] 11245 11245 11245 11245
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: c / 26.659 km = 11.245 kHz'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_RING_CIRCUMFERENCE_NUCL_XE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_RING_CIRCUMFERENCE_NUCL_XE
+  name: LHC circumference (Xe beam)
+  symbol: C_LHC
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 26.659
+  unit: km
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Circumference [km] 26.659 26.659 26.659 26.659
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_FIRST_LHC_OPERATION_NUCL_XE
+  name: When Xe beams were first run in the LHC (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: October 2017
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: timeline header
+      quotation: October 2017
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: '''Single pilot run'' (M. Schaumann et al., IPAC''18, MOPMF039).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_SPECIES_NUCL_O
+  name: Ion species of the LHMUC-NUCL-MU-O scenario (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 16O8+
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: species header
+      quotation: 16O8+
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: Fully stripped O ions as run in the LHC ('July 2025').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_CHARGE_Z_NUCL_O
+  name: O ion charge number
+  symbol: Z
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 8
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: O Z = 8, A = 16
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: Column header of the p.10 table; physical constant of fully stripped 16O8+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_MASS_NUMBER_A_NUCL_O
+  name: O ion mass number
+  symbol: A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 16
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: O Z = 8, A = 16
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: Column header of the p.10 table; physical constant of 16O8+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCH_POPULATION_NUCL_O
+  name: O ions per bunch
+  symbol: N_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 2900000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Particles per bunch [10^10] 0.018 0.027 0.29 0.20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_NUCL_O
+  name: O beam energy (total per ion)
+  symbol: E_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 42.88
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Beam energy [TeV] 574 350.88 42.88 53.60
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'consistency: A x E/A = 16 x 2.68 = 42.88 TeV; Z x E_p-equivalent = 8 x 5.360 TeV'
+    check_ids: []
+    notes: Equivalent proton energy 5.36 TeV, i.e. the energy of the actual LHC run used (not the 7 TeV HL-LHC value).
+  dependencies:
+  - ION_MASS_NUMBER_A_NUCL_O
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_O
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_O
+  name: O beam energy per nucleon
+  symbol: E_A/A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 2.68
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Energy per nucleon [TeV] 2.76 2.72 2.68 2.68
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 42.88 / 16 = 2.680 TeV'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BETA_STAR_IP_NUCL_O
+  name: O beta function at the IP (authors' assumption)
+  symbol: beta*_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 0.1
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: β function at IP [m] 0.10 0.10 0.10 0.10
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O. Deck ''One assumption'' box: ''β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.'' For Xe, O, Ne this is the authors'' assumption, not an operational value.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: Authors' assumption, explicitly flagged in the deck; no ion-optics feasibility shown for beta* = 10 cm at a μA IP.
+- parameter_id: ION_NORM_EMITTANCE_NUCL_O
+  name: O normalised transverse emittance
+  symbol: eps_n,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 1.3
+  unit: mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Normalised emittance [mm·mrad] 1.5 0.87 1.3 1.77
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_GEOMETRIC_EMITTANCE_NUCL_O
+  name: O geometric transverse emittance
+  symbol: eps_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 0.46
+  unit: nm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Transverse emittance [nm] 0.51 0.30 0.46 0.62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: eps_n / gamma_A with gamma_A = 42.88 TeV / (16 x 0.9315 GeV) = 2877: 1.3 um / 2877 = 0.452 nm'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_NORM_EMITTANCE_NUCL_O
+  - ION_BEAM_ENERGY_NUCL_O
+  - ION_MASS_NUMBER_A_NUCL_O
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCHES_NUCL_O
+  name: O bunches per LHC ring
+  symbol: n_b,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 62
+  unit: bunches
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Bunches per ring 1200 16 62 62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O. p.9: ''First light-ion run: p–O, O–O and Ne–Ne at √sAA = 5.36 TeV with 62 bunches per beam.'''
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_REVOLUTION_FREQUENCY_NUCL_O
+  name: LHC revolution frequency (O beam)
+  symbol: f_rev
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 11245
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Revolution frequency [Hz] 11245 11245 11245 11245
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: c / 26.659 km = 11.245 kHz'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_RING_CIRCUMFERENCE_NUCL_O
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_RING_CIRCUMFERENCE_NUCL_O
+  name: LHC circumference (O beam)
+  symbol: C_LHC
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: 26.659
+  unit: km
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Circumference [km] 26.659 26.659 26.659 26.659
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_FIRST_LHC_OPERATION_NUCL_O
+  name: When O beams were first run in the LHC (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-O
+  value: July 2025
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: timeline header
+      quotation: July 2025
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-O
+      explanation: '''First light-ion run'' (R. Bruce et al., IPAC''26, MOP1054).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_SPECIES_NUCL_NE
+  name: Ion species of the LHMUC-NUCL-MU-NE scenario (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 20Ne10+
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: species header
+      quotation: 20Ne10+
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: Fully stripped Ne ions as run in the LHC ('July 2025').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_CHARGE_Z_NUCL_NE
+  name: Ne ion charge number
+  symbol: Z
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 10
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Ne Z = 10, A = 20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: Column header of the p.10 table; physical constant of fully stripped 20Ne10+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_MASS_NUMBER_A_NUCL_NE
+  name: Ne ion mass number
+  symbol: A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 20
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Ne Z = 10, A = 20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: Column header of the p.10 table; physical constant of 20Ne10+.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCH_POPULATION_NUCL_NE
+  name: Ne ions per bunch
+  symbol: N_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 2000000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Particles per bunch [10^10] 0.018 0.027 0.29 0.20
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_NUCL_NE
+  name: Ne beam energy (total per ion)
+  symbol: E_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 53.6
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Beam energy [TeV] 574 350.88 42.88 53.60
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'consistency: A x E/A = 20 x 2.68 = 53.60 TeV; Z x E_p-equivalent = 10 x 5.360 TeV'
+    check_ids: []
+    notes: Equivalent proton energy 5.36 TeV, i.e. the energy of the actual LHC run used (not the 7 TeV HL-LHC value).
+  dependencies:
+  - ION_MASS_NUMBER_A_NUCL_NE
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_NE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_NE
+  name: Ne beam energy per nucleon
+  symbol: E_A/A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 2.68
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Energy per nucleon [TeV] 2.76 2.72 2.68 2.68
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 53.6 / 20 = 2.680 TeV'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BETA_STAR_IP_NUCL_NE
+  name: Ne beta function at the IP (authors' assumption)
+  symbol: beta*_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 0.1
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: β function at IP [m] 0.10 0.10 0.10 0.10
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE. Deck ''One assumption'' box: ''β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.'' For Xe, O, Ne this is the authors'' assumption, not an operational value.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: Authors' assumption, explicitly flagged in the deck; no ion-optics feasibility shown for beta* = 10 cm at a μA IP.
+- parameter_id: ION_NORM_EMITTANCE_NUCL_NE
+  name: Ne normalised transverse emittance
+  symbol: eps_n,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 1.77
+  unit: mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Normalised emittance [mm·mrad] 1.5 0.87 1.3 1.77
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_GEOMETRIC_EMITTANCE_NUCL_NE
+  name: Ne geometric transverse emittance
+  symbol: eps_A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 0.62
+  unit: nm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Transverse emittance [nm] 0.51 0.30 0.46 0.62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: eps_n / gamma_A with gamma_A = 53.6 TeV / (20 x 0.9315 GeV) = 2877: 1.77 um / 2877 = 0.615 nm'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_NORM_EMITTANCE_NUCL_NE
+  - ION_BEAM_ENERGY_NUCL_NE
+  - ION_MASS_NUMBER_A_NUCL_NE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BUNCHES_NUCL_NE
+  name: Ne bunches per LHC ring
+  symbol: n_b,A
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 62
+  unit: bunches
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Bunches per ring 1200 16 62 62
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE. p.9: ''... Ne–Ne at √sAA = 5.36 TeV with 62 bunches per beam.'''
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_REVOLUTION_FREQUENCY_NUCL_NE
+  name: LHC revolution frequency (Ne beam)
+  symbol: f_rev
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 11245
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Revolution frequency [Hz] 11245 11245 11245 11245
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: c / 26.659 km = 11.245 kHz'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_RING_CIRCUMFERENCE_NUCL_NE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_RING_CIRCUMFERENCE_NUCL_NE
+  name: LHC circumference (Ne beam)
+  symbol: C_LHC
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: 26.659
+  unit: km
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: Nucleus beam parameters table, p.10
+      quotation: Circumference [km] 26.659 26.659 26.659 26.659
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_FIRST_LHC_OPERATION_NUCL_NE
+  name: When Ne beams were first run in the LHC (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-NE
+  value: July 2025
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: timeline header
+      quotation: July 2025
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-NE
+      explanation: '''First light-ion run'' (R. Bruce et al., IPAC''26, MOP1054).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_XE_PILOT_RUN_SQRT_SNN_NUCL
+  name: Xe–Xe nucleon–nucleon centre-of-mass energy of the 2017 LHC pilot run
+  symbol: sqrt(s_NN)
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-XE
+  value: 5.44
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: 129Xe54+ column
+      quotation: 'Single pilot run: √sAA = 5.44 TeV with 16 bunches per beam.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-XE
+      explanation: LHC operational fact (M. Schaumann et al., IPAC'18) restated by the deck; consistent with 2 x 2.72 TeV/u.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 2 x 2.72 TeV = 5.44 TeV'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_XE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_O_NE_RUN_SQRT_SNN_NUCL
+  name: O–O / Ne–Ne nucleon–nucleon centre-of-mass energy of the July 2025 LHC run
+  symbol: sqrt(s_NN)
+  subsystem: ion_beam
+  scenario: null
+  value: 5.36
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: 16O8+ and 20Ne10+ column
+      quotation: 'First light-ion run: p–O, O–O and Ne–Ne at √sAA = 5.36 TeV with 62 bunches per beam.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHC operational fact (R. Bruce et al., IPAC'26) restated by the deck; applies to LHMUC-NUCL-MU-O and LHMUC-NUCL-MU-NE; consistent with 2 x 2.68 TeV/u.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 2 x 2.68 TeV = 5.36 TeV'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_O
+  - ION_BEAM_ENERGY_PER_NUCLEON_NUCL_NE
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_PB_BUNCH_POPULATION_LHEC_CDR_NUCL
+  name: Pb ions per bunch as quoted from the LHeC CDR 2021 on p.9
+  symbol: N_Pb
+  subsystem: ion_beam
+  scenario: LHMUC-NUCL-MU-PB
+  value: 180000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 9
+      section: Nucleus beams of the LHC — Four nuclear species have already collided in the LHC
+      table_figure_or_equation: 208Pb82+ column
+      quotation: 'Parameters used here: LHeC CDR 2021, with 1200 bunches of 1.8 × 10^8 lead ions.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Same quantity as ION_BUNCH_POPULATION_NUCL_PB (0.018 x 10^10 = 1.8e8); kept as a separate record because it names the upstream source (LHeC CDR 2021, J. Phys. G 48 (2021) 110501).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'consistency: 0.018e10 = 1.8e8'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - ION_BUNCH_POPULATION_NUCL_PB
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_BETA_STAR_ASSUMPTION_NUCL
+  name: Ion β* assumption used for all species (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: null
+  value: beta* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: '''One assumption'' box'
+      quotation: One assumption β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Design-defining assumption of the study, applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE); feasibility for the LHC ion optics at a new μA IP is not addressed in the deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null
+- parameter_id: ION_PARAMETER_BASELINE_POLICY_NUCL
+  name: Ion-parameter baseline policy (categorical)
+  symbol: null
+  subsystem: ion_beam
+  scenario: null
+  value: 'conservative baseline: LHC values used experimentally; bunch number, intensity, emittance and energy could be optimised for a dedicated muon-nucleus collider'
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 10
+      section: Nucleus beams of the LHC — Nucleus beam parameters
+      table_figure_or_equation: '''Conservative baseline'' box'
+      quotation: 'Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/ion_beam
+  notes: null

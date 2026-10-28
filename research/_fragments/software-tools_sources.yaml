@@ -1,0 +1,1623 @@
+# Research fragment — reconnaissance family 'software-tools' (WebSearch + WebFetch on 2026-10-28).
+# Reachable hosts in that session: pypi.org, registry.npmjs.org, launchpad.net, github.com/raw.githubusercontent.com;
+# blocked: arxiv.org, geant4.org, www.pp.rhul.ac.uk, docs.desy.de, fluka-forum.web.cern.ch, *.hepforge.org,
+# feynrules.irmp.ucl.ac.be, dev.opencascade.org, root.cern, hepdata.net (fetch attempted -> access 'blocked').
+# Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by tools/merge_research_fragments.py.
+# These are SOFTWARE-TOOL sources (versions, licences, install routes) for docs/software_inventory.md; none of the
+# 'snippet-quoted' lines in notes are collider parameter records. No source outside the journal was added.
+# Category/type kept as the scout classified them (no lead correction applied to this family); candidates for
+# lead review are listed in software-tools_unresolved.md (PEER_REVIEWED labels on arXiv-only records, OFFICIAL_CERN for Geant4).
+sources:
+- source_id: SRC_URL_GITHUB_MADX
+  title: MAD-X repository (GitHub) and License.txt
+  authors_or_org: CERN BE-ABP (mad@cern.ch)
+  source_type: software_repository
+  category: OFFICIAL_CERN
+  publication_date: null
+  version: 5.09.00 (per LCG Info; GitHub releases section empty)
+  url: https://github.com/MethodicalAcceleratorDesign/MAD-X
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Reference optics/lattice code for LHC-era accelerator design; the LHμC twin's lattice baseline. Not on PyPI itself
+    (binary wheels via cpymad).
+  parameters_extracted: []
+  unresolved_questions:
+  - 'MAD-X licence is contradictory across sources: repository License.txt is a custom CERN licence restricting use to collaborating
+    organisations, while LCG Info labels 5.09.00 ''MIT License'' and a 2011 CERN gitlab mirror says ''EPICS Open License''.
+    Needs confirmation at the 5.09.00 tag (GitHub releases section empty).'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: 'Custom CERN licence (License.txt). Conflicting secondary claims: LCG Info says ''MIT License''; CERN gitlab mirror
+    (2011) says EPICS Open License.'
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - MAD-X CERN methodical accelerator design official site version license
+  - github MethodicalAcceleratorDesign MAD-X LICENSE release 5.09
+  notes: 'snippet-quoted: licence header = MAD-X License: CERN EUROPEAN ORGANISATION FOR NUCLEAR RESEARCH ... Program name:
+    MAD --- Methodical Accelerator Design; CERN program library entry: T5001 :: MAD-X License: CERN EUROPEAN ORGANISATION
+    FOR NUCLEAR RESEARCH Program name: MAD --- Methodical Accelerator Design CERN program library entry: T5001
+
+    snippet-quoted: latest version (LCG Info) = 5.09.00 :: LCG Info: Package madx 5.09.00
+
+    snippet-quoted: licence (LCG Info, conflicting) = MIT License :: The LCG Info package page lists the MIT License for version
+    5.06.01
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub repository page and License.txt header (raw file). NOT read: a 5.09.00 release tag (GitHub releases section
+    empty); LCG Info and CERN gitlab mirror licence labels are search-snippet claims only.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_CERN; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_CPYMAD
+  title: cpymad — Cython binding to MAD-X (PyPI)
+  authors_or_org: Yngve Inntjore Levinsen, Kajetan Fuchsberger (hibtc)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 1.20.0
+  url: https://pypi.org/project/cpymad/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: pip-installable Python driver for MAD-X; on PyPI (yes), requires Python >=3.10.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'MAD-X licence is contradictory across sources: repository License.txt is a custom CERN licence restricting use to collaborating
+    organisations, while LCG Info labels 5.09.00 ''MIT License'' and a 2011 CERN gitlab mirror says ''EPICS Open License''.
+    Needs confirmation at the 5.09.00 tag (GitHub releases section empty).'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL-3.0-or-later AND Apache-2.0 AND LicenseRef-CERN-MADX-Proprietary (binary wheels non-free due to MAD-X)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - cpymad PyPI Cython binding MAD-X license version
+  notes: 'snippet-quoted: version = 1.20.0 :: info.version: 1.20.0
+
+    snippet-quoted: license_expression = GPL-3.0-or-later AND Apache-2.0 AND LicenseRef-CERN-MADX-Proprietary :: info.license_expression:
+    "GPL-3.0-or-later AND Apache-2.0 AND LicenseRef-CERN-MADX-Proprietary"
+
+    snippet-quoted: requires_python = >=3.10 :: info.requires_python: ">=3.10"
+
+    snippet-quoted: binary licence note = Source: CC0, Apache | Binary: Non-Free :: The 1.10.0 listing gives the split as
+    Source: CC0, Apache | Binary: Non-Free
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_XTRACK
+  title: xtrack — Tracking library for particle accelerators (PyPI) and LICENSE
+  authors_or_org: G. Iadarola et al. (CERN, xsuite)
+  source_type: software_documentation
+  category: OFFICIAL_CERN
+  publication_date: '2026-10-28'
+  version: 0.118.5
+  url: https://pypi.org/project/xtrack/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Core Xsuite tracking module; on PyPI (yes). Python <3.15,>=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - Xsuite umbrella package ('xsuite' on PyPI) version not captured; only xtrack/xpart/xfields individually.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0 (LICENSE file in github.com/xsuite/xtrack is Apache License Version 2.0)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - github xsuite xtrack LICENSE Apache-2.0 "xtrack" PyPI latest version
+  notes: 'snippet-quoted: version = 0.118.5 (released Oct 28, 2026) :: Latest version: 0.118.5 (released Oct 28, 2026)
+
+    snippet-quoted: license = Apache-2.0 :: License: Apache-2.0
+
+    snippet-quoted: requires_python = <3.15, >=3.11 :: "Python <3.15, >=3.11"
+
+    snippet-quoted: LICENSE file = Apache License Version 2.0, January 2004 :: "Apache License" "Version 2.0, January 2004"
+    "http://www.apache.org/licenses/"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_CERN; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_XPART
+  title: xpart — Generation of Particle Ensembles (PyPI JSON)
+  authors_or_org: G. Iadarola et al.
+  source_type: software_documentation
+  category: OFFICIAL_CERN
+  publication_date: null
+  version: 0.23.23
+  url: https://pypi.org/pypi/xpart/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Xsuite particle-distribution module; on PyPI (yes).
+  parameters_extracted: []
+  unresolved_questions:
+  - Xsuite umbrella package ('xsuite' on PyPI) version not captured; only xtrack/xpart/xfields individually.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache 2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - github xsuite xtrack LICENSE Apache-2.0 "xtrack" PyPI latest version
+  notes: 'snippet-quoted: version = 0.23.23 :: info.version: "0.23.23"
+
+    snippet-quoted: license = Apache 2.0 :: info.license: "Apache 2.0"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_CERN; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_XFIELDS
+  title: xfields — Field Maps and Particle In Cell (PyPI JSON)
+  authors_or_org: G. Iadarola et al.
+  source_type: software_documentation
+  category: OFFICIAL_CERN
+  publication_date: null
+  version: 0.27.6
+  url: https://pypi.org/pypi/xfields/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Xsuite collective-effects/beam-beam module; on PyPI (yes); Python >=3.10.
+  parameters_extracted: []
+  unresolved_questions:
+  - Xsuite umbrella package ('xsuite' on PyPI) version not captured; only xtrack/xpart/xfields individually.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - github xsuite xtrack LICENSE Apache-2.0 "xtrack" PyPI latest version
+  notes: 'snippet-quoted: version = 0.27.6 :: info.version: "0.27.6"
+
+    snippet-quoted: license_expression = Apache-2.0 :: info.license_expression: "Apache-2.0"
+
+    snippet-quoted: requires_python = >=3.10 :: info.requires_python: ">=3.10"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_CERN; fetch_blocked=false.'
+- source_id: SRC_ARXIV_2310_00317
+  title: 'Xsuite: an integrated beam physics simulation framework'
+  authors_or_org: G. Iadarola et al. (CERN)
+  source_type: arxiv_preprint
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2023-10
+  version: arXiv:2310.00317; JACoW-HB2023-TUA2I1; IPAC'24 WEPR56
+  url: https://arxiv.org/abs/2310.00317
+  doi: null
+  arxiv_id: '2310.00317'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Reference paper describing Xsuite modules (Xobjects, Xpart, Xtrack, Xcoll, Xfields, Xdeps) and BDSIM/Geant4 interface
+    for collimation.
+  parameters_extracted: []
+  unresolved_questions:
+  - Xsuite umbrella package ('xsuite' on PyPI) version not captured; only xtrack/xpart/xfields individually.
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: CC-BY-4.0 (HB2023 proceedings)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org Xsuite integrated beam physics simulation framework Iadarola
+  notes: 'snippet-quoted: modules = Xobjects, Xpart, Xtrack, Xcoll, Xfields and Xdeps :: The modules are Xobjects, Xpart,
+    Xtrack, Xcoll, Xfields and Xdeps.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org blocked; HB2023 proceedings (JACoW) and IPAC''24 WEPR56 identifiers from snippets; CC-BY-4.0 is the
+    JACoW proceedings default seen in snippets, not read from the paper.
+
+    Journal classification: source_type ''arXiv preprint'', category CONFERENCE_PROCEEDING; fetch_blocked=true.'
+- source_id: SRC_URL_PYPI_PYTAO
+  title: PyTao — Python interface for Bmad's Tao (PyPI JSON)
+  authors_or_org: David Sagan, Christopher Mayes, Hugo Slepicka (Cornell CLASSE / bmad-sim)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 1.3.3
+  url: https://pypi.org/pypi/pytao/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Python driver for Bmad/Tao; on PyPI (yes) and conda-forge (preferred). Requires Bmad built with shared libs.
+  parameters_extracted: []
+  unresolved_questions:
+  - Bmad core library licence not confirmed from the repository (raw LICENSE 404 on both main and master); only third-party
+    aggregator claim GPL-3.0-or-later. conda-forge 'bmad' version not captured.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL v3 (full GPLv3 text in license field)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bmad PyTao github license charged particle simulation Cornell pip install pytao
+  notes: 'snippet-quoted: version = 1.3.3 :: info.version: "1.3.3"
+
+    snippet-quoted: license = GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 :: beginning "GNU GENERAL PUBLIC LICENSE
+    Version 3, 29 June 2007."
+
+    snippet-quoted: requires_python = >=3.10 :: info.requires_python: ">=3.10"
+
+    snippet-quoted: conda install = conda install -c conda-forge pytao :: the preferred installation method is using conda,
+    with the command conda install -c conda-forge pytao
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_GITHUB_BMAD_ECOSYSTEM
+  title: bmad-sim/bmad-ecosystem (GitHub)
+  authors_or_org: Cornell University CLASSE / bmad-sim
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: null
+  url: https://github.com/bmad-sim/bmad-ecosystem
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Bmad core library; distributed via conda-forge ('bmad'), not PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - Bmad core library licence not confirmed from the repository (raw LICENSE 404 on both main and master); only third-party
+    aggregator claim GPL-3.0-or-later. conda-forge 'bmad' version not captured.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Not confirmed from repo (LICENSE raw fetch 404 on main/master). Third-party aggregator (depscope) lists conda package
+    as GPL-3.0-or-later.
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bmad github bmad-sim license open source Cornell "bmad" conda-forge
+  notes: 'snippet-quoted: description = Bmad simulation ecosystem for simulating high energy storage rings. :: "Bmad simulation
+    ecosystem for simulating high energy storage rings."
+
+    snippet-quoted: licence (secondary, unconfirmed) = GPL-3.0-or-later :: Depscope lists the conda package as GPL-3.0-or-later.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: repository landing page (description). NOT read: LICENSE (raw fetch returned 404 on both ''main'' and ''master'');
+    GPL-3.0-or-later comes from a third-party aggregator (depscope) and is unconfirmed.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_CHEETAH_ACCELERATOR
+  title: cheetah-accelerator (PyPI JSON) / desy-ml/cheetah
+  authors_or_org: Jan Kaiser, Chenran Xu, Christian Hespe (DESY-ML)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.8.4
+  url: https://pypi.org/pypi/cheetah-accelerator/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Differentiable PyTorch beam-dynamics code for ML/optimisation surrogates; on PyPI (yes); Python >=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - Cheetah PyPI metadata has empty license fields; GPLv3 only from README badge.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL v3 (README badge; metadata license field empty)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Cheetah differentiable beam dynamics PyTorch PyPI cheetah-accelerator license
+  notes: 'snippet-quoted: version = 0.8.4 :: info.version: "0.8.4"
+
+    snippet-quoted: summary = Fast and differentiable particle accelerator optics simulation for reinforcement learning and
+    optimisation applications. :: info.summary: "Fast and differentiable particle accelerator optics simulation for reinforcement
+    learning and optimisation applications."
+
+    snippet-quoted: license badge = License: GPL v3 :: The README includes a badge reading "License: GPL v3,"
+
+    snippet-quoted: requires_python = >=3.11 :: info.requires_python: ">=3.11"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: PyPI JSON (licence metadata fields empty). GPL v3 comes from the README badge text only.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_ARXIV_2401_05815
+  title: 'Cheetah: Bridging the Gap Between Machine Learning and Particle Accelerator Physics with High-Speed, Differentiable
+    Simulations'
+  authors_or_org: Kaiser et al.
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: '2024'
+  version: arXiv:2401.05815
+  url: https://arxiv.org/abs/2401.05815
+  doi: null
+  arxiv_id: '2401.05815'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Reference paper for Cheetah.
+  parameters_extracted: []
+  unresolved_questions:
+  - Cheetah PyPI metadata has empty license fields; GPLv3 only from README badge.
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: CC BY 4.0 (arXiv HTML)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Cheetah differentiable beam dynamics PyTorch PyPI cheetah-accelerator license
+  notes: '
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org blocked; ''CC BY 4.0 (arXiv HTML)'' and 2024 date from snippets. Journal publication (if any) not seen;
+    PEER_REVIEWED label is the scout''s classification and is unverified.
+
+    Journal classification: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_URL_GEANT4_LICENSE
+  title: The Geant4 Software License / Geant4 releases (GitHub mirror)
+  authors_or_org: Geant4 Collaboration
+  source_type: software_documentation
+  category: OFFICIAL_CERN
+  publication_date: 2006-06-28 (licence v1.0); 11.4 release 2025-12-05
+  version: 11.4.3 (GitHub tag v11.4.3, released 01 Oct); 11.4.0 released 2025-12-05
+  url: https://geant4.org/download/license
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Detector/shielding transport toolkit; C++ library, not on PyPI (geant4_pybind exists but not checked). Source
+    on CERN GitLab/GitHub.
+  parameters_extracted: []
+  unresolved_questions:
+  - Geant4 official download/licence pages (geant4.org) not fetchable; latest version taken from GitHub mirror tag v11.4.3
+    (year not shown on page). Python bindings (geant4_pybind on PyPI) not checked.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Geant4 Software License, Version 1.0 (custom permissive)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Geant4 software license download latest release 11.3 geant4.web.cern.ch
+  - Geant4 11.4 release December 2025 announcement geant4.org news
+  notes: 'snippet-quoted: licence = Geant4 Software License Version 1.0, 28 June 2006 :: "Geant4 Software License" "Version
+    1.0, 28 June 2006"
+
+    snippet-quoted: latest GitHub release = v11.4.3 :: The most recent release shown is Geant4 11.4.3, tagged v11.4.3 and
+    marked "Latest."
+
+    snippet-quoted: 11.4 release date = December 5, 2025 :: Geant4 11.4 was released on December 5, 2025.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Primary URL (geant4.org) fetch blocked. Version 11.4.3 and ''Latest'' label come from the GitHub mirror releases page
+    (year not shown); 11.4 release date 2025-12-05 from a geant4.org news snippet; licence title/version from snippets of
+    the licence page.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_CERN; fetch_blocked=true.'
+- source_id: SRC_URL_RHUL_BDSIM_MANUAL_LICENCE
+  title: BDSIM manual — Licence & Disclaimer
+  authors_or_org: Royal Holloway, University of London (L. Nevay et al.)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 2001-2024 copyright
+  version: 1.7.7 (manual sidebar, per snippet)
+  url: https://www.pp.rhul.ac.uk/bdsim/manual/licence.html
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Geant4-based accelerator tracking with radiation/background; source at bitbucket.org/jairhul/bdsim; CMake build;
+    not on PyPI (pybdsim helper is).
+  parameters_extracted: []
+  unresolved_questions:
+  - BDSIM current release number only from a search snippet (manual sidebar '1.7.7'); www.pp.rhul.ac.uk and bitbucket not
+    fetched. Required Geant4 version not captured.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GNU GPL version 3
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - BDSIM Beam Delivery Simulation Geant4 Royal Holloway github license version
+  - BDSIM bitbucket jairhul bdsim release version 1.7 download Nevay
+  notes: 'snippet-quoted: licence = GNU General Public License version 3 :: BDSIM is free software: you can redistribute it
+    and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation version
+    3 of the License.
+
+    snippet-quoted: version = 1.7.7 :: The official BDSIM manual''s sidebar shows 1.7.7
+
+    snippet-quoted: source = git clone --recursive https://bitbucket.org/jairhul/bdsim :: git clone --recursive https://bitbucket.org/jairhul/bdsim
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of www.pp.rhul.ac.uk blocked; licence sentence and ''1.7.7'' sidebar value from search snippets; bitbucket.org/jairhul/bdsim
+    not fetched.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.'
+- source_id: SRC_ARXIV_1808_10745
+  title: 'BDSIM: An accelerator tracking code with particle-matter interactions'
+  authors_or_org: L.J. Nevay et al.
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2018 (CPC 2020)
+  version: arXiv:1808.10745
+  url: https://arxiv.org/abs/1808.10745
+  doi: null
+  arxiv_id: '1808.10745'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Citation paper for BDSIM.
+  parameters_extracted: []
+  unresolved_questions:
+  - BDSIM current release number only from a search snippet (manual sidebar '1.7.7'); www.pp.rhul.ac.uk and bitbucket not
+    fetched. Required Geant4 version not captured.
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - BDSIM Beam Delivery Simulation Geant4 Royal Holloway github license version
+  notes: '
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org blocked; ''CPC 2020'' journal reference from snippets only.
+
+    Journal classification: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_URL_DESY_MAXWELL_G4BEAMLINE
+  title: G4beamline (DESY Maxwell application page; Muons, Inc. site)
+  authors_or_org: Muons, Inc. (T. Roberts)
+  source_type: software_documentation
+  category: SECONDARY_SOURCE
+  publication_date: null
+  version: 3.08 / 3.08b (Mu2e wiki); official site not fetched
+  url: https://docs.desy.de/maxwell/applications/g4beamline/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Geant4-based single-particle beamline tracking used widely for muon beamlines; binary download, not PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'G4beamline: official site g4beamline.muonsinc.com not reachable; licence ''GPL'' only via DESY secondary listing; version
+    3.08/3.08b from Mu2e wiki (secondary).'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL (per DESY listing); official site g4beamline.muonsinc.com
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - G4beamline Muons Inc download license Geant4 beamline simulation
+  - G4beamline 3.08 release Muons Inc g4beamline.muonsinc.com Geant4 11 version
+  notes: 'snippet-quoted: licence (DESY listing) = GPL :: Source: https://www.muonsinc.com/Website1/tiki-index.php?page=G4beamline
+    License: GPL
+
+    snippet-quoted: version (Mu2e wiki) = 3.08b compatible with Geant4 11.3.2 :: The same page includes a "3.08b" section
+    labeled as compatible with Geant4 11.3.2
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    DESY Maxwell page fetch blocked; official site g4beamline.muonsinc.com not reachable; version 3.08/3.08b from a Mu2e wiki
+    snippet (secondary); licence ''GPL'' from the DESY listing snippet (secondary).
+
+    Journal classification: source_type ''software docs'', category SECONDARY_SOURCE; fetch_blocked=true.'
+- source_id: SRC_URL_FLUKA_FORUM_REGISTRATION_FAQ
+  title: 'FLUKA forum — IMPORTANT: Registration and package download FAQ'
+  authors_or_org: CERN FLUKA team
+  source_type: web_page
+  category: OFFICIAL_CERN
+  publication_date: null
+  version: null
+  url: https://fluka-forum.web.cern.ch/t/important-registration-and-package-download-faq/3857
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Access conditions for FLUKA (CERN) relevant to shielding/activation studies; not open-source, not PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'FLUKA: fluka.cern and fluka.org blocked; licence conditions come from CERN forum FAQ snippet and 2009-2013 course slides;
+    current Single User Licence text not verified.'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Registration + approval required; FLUKA Single User Licence Agreement; source on signed licence for academic institutions;
+    free for scientific/academic use, ad-hoc for commercial, no weapons applications (older course material)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - FLUKA CERN licence access conditions registration fluka.cern download
+  notes: 'snippet-quoted: registration = two-step registration, subject to approval :: Registration as a FLUKA user is subject
+    to approval.
+
+    snippet-quoted: use conditions (old course slides) = free for scientific and academic purposes; ad-hoc agreement for commercial;
+    not for weapons :: FLUKA can be used freely for scientific and academic purposes, ad-hoc agreement for commercial purposes,
+    and it may not be used for weapons applications.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    fluka-forum.web.cern.ch (CERN host) blocked; registration statement from the forum FAQ snippet; use-condition sentence
+    from 2009-2013 FLUKA course slides (older, possibly superseded by the current Single User Licence Agreement).
+
+    Journal classification: source_type ''web page'', category OFFICIAL_CERN; fetch_blocked=true.'
+- source_id: SRC_URL_GITHUB_ROOT_RELEASES
+  title: ROOT releases (GitHub root-project/root) and conda-forge root
+  authors_or_org: ROOT team, CERN
+  source_type: software_repository
+  category: OFFICIAL_CERN
+  publication_date: 2026-08-27 (v6-40-04)
+  version: v6-40-04
+  url: https://github.com/root-project/root/releases
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: HEP data analysis framework; conda-forge 'root' (yes); PyPI 'root' alpha for Linux per 6.38.00 announcement.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'ROOT: root.cern not fetched; PyPI ''root'' wheel status (alpha, Linux-only per 6.38.00 announcement) not verified for
+    6.40.'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: LGPL-2.1-or-later (plus bundled BSD/NCSA components per Arch packaging)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - ROOT CERN data analysis framework LGPL license latest release conda-forge root pip
+  - ROOT conda-forge "root" package install conda ROOT 6.36 6.38 PyPI
+  notes: 'snippet-quoted: latest release = v6-40-04, 27 Aug 2026 :: The most recent release tag shown is v6-40-04, marked
+    "Latest." ... asset timestamps show 2026-08-27
+
+    snippet-quoted: conda install = conda install -c conda-forge root :: The install command is `conda install -c conda-forge
+    root`
+
+    snippet-quoted: pip (alpha) = pip install root :: in alpha mode, you can install 6.38 releases with pip on Linux: pip
+    install root
+
+    snippet-quoted: licence (Arch packaging) = LGPL-2.1-or-later BSD-2-Clause BSD-3-Clause-LBNL NCSA :: An Arch Linux package
+    for 6.40.00 lists LGPL-2.1-or-later BSD-2-Clause BSD-3-Clause-LBNL NCSA
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub releases page (v6-40-04 ''Latest'', asset timestamps 2026-08-27). root.cern not fetched; licence breakdown
+    from Arch Linux packaging snippet; ''pip install root'' alpha note from the 6.38.00 announcement snippet.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_CERN; fetch_blocked=false.'
+- source_id: SRC_URL_LAUNCHPAD_MG5AMCNLO
+  title: MadGraph5_aMC@NLO on Launchpad
+  authors_or_org: MadGraph5_aMC@NLO team (UCLouvain CP3 et al.)
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: '2026-09-14'
+  version: 3.8.x (MG5_aMC_v3.8.1.tar.gz)
+  url: https://launchpad.net/mg5amcnlo
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Matrix-element generator for μp signal/background; tar.gz download or git from github.com/mg5amcnlo/mg5amcnlo
+    branch 3.x; not on PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: UoI-NCSA open source license ('Other/Open Source')
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - MadGraph5_aMC@NLO launchpad download latest version license
+  notes: 'snippet-quoted: latest version = 3.8.x released 2026-09-14 :: "Latest version is 3.8.x" ... "released on 2026-09-14"
+
+    snippet-quoted: licence = UoI-NCSA :: "Other/Open Source", with the UoI-NCSA open source license linked.
+
+    snippet-quoted: git install = git clone https://github.com/mg5amcnlo/mg5amcnlo.git -b 3.x :: git clone https://github.com/mg5amcnlo/mg5amcnlo.git
+    -b 3.x
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: Launchpad project page (3.8.x, 2026-09-14, licence link). Official MG5_aMC site/launchpad download listing of individual
+    tarballs not inspected beyond the page.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_ARXIV_1405_0301
+  title: The automated computation of tree-level and next-to-leading order differential cross sections, and their matching
+    to parton shower simulations
+  authors_or_org: J. Alwall et al.
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2014'
+  version: arXiv:1405.0301; JHEP07(2014)079
+  url: https://arxiv.org/abs/1405.0301
+  doi: null
+  arxiv_id: '1405.0301'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Reference paper for MG5_aMC.
+  parameters_extracted: []
+  unresolved_questions:
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:inspirehep.net MadGraph5_aMC@NLO automated computation tree-level next-to-leading order Alwall 1405.0301
+  notes: '
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org blocked; INSPIRE record not returned (site: operator not honoured); JHEP07(2014)079 reference from
+    snippets.
+
+    Journal classification: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_URL_PYPI_PYTHIA8MC
+  title: pythia8mc — General purpose particle physics Monte Carlo generator (PyPI JSON)
+  authors_or_org: Pythia 8 Team
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 8.318.0 (Pythia 8.318)
+  url: https://pypi.org/pypi/pythia8mc/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: pip-installable Pythia 8 Python bindings (import pythia8mc); homepage pythia.org; source gitlab.com/Pythia8/releases.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GNU GPL v2 or later
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"pythia8mc" PyPI pip install Pythia 8 Python bindings'
+  notes: 'snippet-quoted: version = 8.318.0 :: info.version: "8.318.0"
+
+    snippet-quoted: license = GNU GPL v2 or later :: info.license: "GNU GPL v2 or later"
+
+    snippet-quoted: source repo = https://gitlab.com/Pythia8/releases :: Source Repository: "https://gitlab.com/Pythia8/releases"
+
+    snippet-quoted: pip = pip install pythia8mc :: The command is `pip install pythia8mc`.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_ARXIV_2312_05175
+  title: Herwig 7.3 Release Note
+  authors_or_org: Herwig collaboration (Bewick et al.)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2023-12-08 (v2 2024-07)
+  version: Herwig 7.3.0 (LCG lists 7.3.0p1)
+  url: https://arxiv.org/abs/2312.05175
+  doi: null
+  arxiv_id: '2312.05175'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Alternative parton-shower/hadronisation generator; download from herwig.hepforge.org via bootstrap script; not
+    on PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Herwig: hepforge blocked; only 7.3.0 (and LCG 7.3.0p1) confirmed, no evidence of 7.3.x point releases.'
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GNU GPL version 3 with MCnet guidelines
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Herwig 7 event generator herwig.hepforge.org GPL license latest release
+  - Herwig 7.3.0 7.3.1 release download herwig.hepforge.org arXiv:2312.05175
+  notes: 'snippet-quoted: licence = GPL version 3 :: Herwig is released under the GNU General Public License (GPL) version
+    3
+
+    snippet-quoted: download = herwig.hepforge.org :: can be downloaded from the website https://herwig.hepforge.org/
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org and herwig.hepforge.org blocked; 7.3.0 and LCG ''7.3.0p1'' from snippets; no evidence of later 7.3.x
+    point releases.
+
+    Journal classification: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_URL_GITHUB_DELPHES_RELEASES
+  title: Delphes releases (GitHub) and LICENSE
+  authors_or_org: Delphes team, UCLouvain CP3
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 3.5.1 released 04 Feb (year not shown)
+  version: 3.5.1 (Latest); 3.5.2pre02 pre-release
+  url: https://github.com/delphes/delphes/releases
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Fast detector simulation for LHμC detector-response studies; C++ with ROOT; not on PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - Delphes release year for 3.5.1 not shown on GitHub page.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL v3 or later; docs CC BY-SA 4.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Delphes fast detector simulation github delphes license GPL version
+  - Delphes 3.5.0 release cp3.irmp.ucl.ac.be delphes download latest version
+  notes: 'snippet-quoted: latest release = 3.5.1 :: The "Latest" label is on the earlier 3.5.1 release, which the page dates
+    to "released this 04 Feb 14:37."
+
+    snippet-quoted: pre-release = Delphes-3.5.2pre02 :: The most recent release shown is "Delphes-3.5.2pre02", which GitHub
+    marks as a "Pre-release."
+
+    snippet-quoted: licence = GNU GPL version 3 or later :: distributed under the GNU General Public License, either version
+    3 of the License, or (at your option) any later version
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub releases page (3.5.1 ''Latest'' dated ''04 Feb'', year not shown; 3.5.2pre02 pre-release) and LICENSE text.
+    cp3.irmp.ucl.ac.be not fetched.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_ARXIV_1310_1921
+  title: FeynRules 2.0 - A complete toolbox for tree-level phenomenology
+  authors_or_org: Alloul, Christensen, Degrande, Duhr, Fuks
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2014'
+  version: FeynRules 2.0 (wiki snapshot links feynrules-current.tar.gz labelled 2.3)
+  url: https://arxiv.org/abs/1310.1921
+  doi: null
+  arxiv_id: '1310.1921'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Mathematica package for BSM model Lagrangian -> UFO export to MG5; requires Mathematica (7.0+ per 2.0 paper);
+    not on PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'FeynRules: official site blocked; current version unknown (wiki snapshot labels a ''current'' tarball as 2.3); licence
+    stated only as ''Licensing provisions: None'' in the 2.0 CPC summary.'
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: '''Licensing provisions: None'' (CPC program summary); official site feynrules.irmp.ucl.ac.be not fetched'
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - FeynRules Mathematica package feynrules.irmp.ucl.ac.be license version
+  - FeynRules 2.3 download feynrules.irmp.ucl.ac.be current version Mathematica
+  notes: 'snippet-quoted: licence = None :: Licensing provisions: None.
+
+    snippet-quoted: Mathematica requirement = Mathematica 7.0 or higher :: The 2.0 paper says it requires Mathematica version
+    7.0 or higher.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org and feynrules.irmp.ucl.ac.be blocked; ''Licensing provisions: None'' from the CPC program-summary snippet;
+    2.3 ''current'' tarball label from a wiki snapshot snippet.
+
+    Journal classification: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_ARXIV_1309_7223
+  title: 'SARAH 4: A tool for (not only SUSY) model builders'
+  authors_or_org: Florian Staub
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2013'
+  version: SARAH 4 (current version not confirmed)
+  url: https://arxiv.org/abs/1309.7223
+  doi: null
+  arxiv_id: '1309.7223'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Mathematica model-builder generating UFO/SPheno output; not on PyPI.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'SARAH: hepforge blocked; current version unknown; licence only from older manuals (''GNU library public license'').'
+  - Searches with site:inspirehep.net and site:indico.cern.ch operators returned no INSPIRE/Indico records (operator not honoured
+    by the search backend); arXiv pages are fetch-blocked so arXiv details are from snippets only.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: '''GNU library public license'' per manual; download sarah.hepforge.org (not fetched)'
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - SARAH Mathematica package Florian Staub hepforge license version
+  notes: 'snippet-quoted: licence = GNU library public license :: SARAH is published under the GNU library public license
+
+    snippet-quoted: download = http://sarah.hepforge.org/ :: the current version of the package can be download from http://sarah.hepforge.org/
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch to the primary host failed (host not in the session network allow-list).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Fetch of arxiv.org and sarah.hepforge.org blocked; ''GNU library public license'' sentence from older manual snippets;
+    journal reference and current version not confirmed.
+
+    Journal classification: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.'
+- source_id: SRC_URL_GITHUB_CONDA_FORGE_LHAPDF_FEEDSTOCK
+  title: conda-forge lhapdf-feedstock / LHAPDF (PyPI record)
+  authors_or_org: LHAPDF (hepcedar, lhapdf.hepforge.org); conda-forge
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 6.5.5 (Fedora/Gentoo packaging); PyPI 'LHAPDF' record 6.2.1.post10 (stale, empty metadata)
+  url: https://github.com/conda-forge/lhapdf-feedstock
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: PDF interpolation library for MG5/Pythia; install via conda-forge (yes); PyPI record exists but outdated/uninformative.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'LHAPDF: hepforge blocked; latest upstream version inferred from distro packaging (6.5.5); PyPI ''LHAPDF'' record (6.2.1.post10)
+    is stale with empty metadata — pip is not a supported route per results; conda-forge is.'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL-3.0-only (conda-forge, Fedora); Gentoo lists GPL-2
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHAPDF 6 parton distribution library hepforge GPL version pip install lhapdf
+  notes: 'snippet-quoted: licence = GPL-3.0-only :: The conda-forge package license is GPL-3.0-only
+
+    snippet-quoted: packaged version = 6.5.5 :: 6.5.5 (Fedora 41 package)
+
+    snippet-quoted: PyPI record = 6.2.1.post10 :: "version":"6.2.1.post10"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: conda-forge feedstock page (GPL-3.0-only) and PyPI JSON for ''LHAPDF'' (6.2.1.post10, empty metadata). 6.5.5 is
+    distro packaging (Fedora 41 / Gentoo), not lhapdf.hepforge.org (blocked).
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_PYLHE
+  title: pylhe (PyPI JSON) — scikit-hep
+  authors_or_org: Lukas Heinrich, Matthew Feickert, Eduardo Rodrigues, Alexander Puck Neuwirth (Scikit-HEP)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 2.1.0
+  url: https://pypi.org/pypi/pylhe/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Reads LHE files from MG5 etc. into Python; on PyPI (yes); Python >=3.10.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - pylhe PyPI Scikit-HEP Les Houches Event file parser license version
+  notes: 'snippet-quoted: version = 2.1.0 :: info.version: "2.1.0"
+
+    snippet-quoted: license_expression = Apache-2.0 :: info.license_expression: "Apache-2.0"
+
+    snippet-quoted: requires_python = >=3.10 :: info.requires_python: ">=3.10"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_PYHF
+  title: pyhf (PyPI JSON) — scikit-hep
+  authors_or_org: scikit-hep (Heinrich, Feickert, Stark)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.7.6
+  url: https://pypi.org/pypi/pyhf/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Pure-Python HistFactory statistical models for sensitivity studies; on PyPI (yes); Python >=3.7.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - pyhf HistFactory pure-python PyPI Apache license latest version scikit-hep
+  notes: 'snippet-quoted: version = 0.7.6 :: info.version: "0.7.6"
+
+    snippet-quoted: license = Apache-2.0 :: info.license: "Apache-2.0"
+
+    snippet-quoted: summary = pure-Python HistFactory implementation with tensors and autodiff :: info.summary: "pure-Python
+    HistFactory implementation with tensors and autodiff"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_GITHUB_HEPDATA_LIB
+  title: hepdata_lib — Library for getting your data into HEPData (PyPI JSON / GitHub)
+  authors_or_org: Andreas Albert, Clemens Lange (HEPData/CMS)
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.21.0
+  url: https://github.com/HEPData/hepdata_lib
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Tooling to publish digitised results to hepdata.net; on PyPI (yes); Python >=3.6. hepdata.net itself not fetched.
+  parameters_extracted: []
+  unresolved_questions:
+  - HEPData (hepdata.net) itself not fetched; only hepdata_lib (MIT, 0.21.0) and platform GPL statement from docs.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: MIT (GitHub and PyPI classifier); HEPData platform itself GPL; default data licence CC0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - HEPData hepdata.net repository hepdata_lib PyPI license submission
+  - hepdata_lib github HEPData LICENSE MIT pyg4ometry g4edge github license
+  notes: 'snippet-quoted: version = 0.21.0 :: info.version: "0.21.0"
+
+    snippet-quoted: licence = MIT license :: License: "MIT license" (shown in the Resources section and the file list as `LICENSE`).
+
+    snippet-quoted: data licence = CC0 :: the default license applied to all data uploaded to HEPData is CC0
+
+    snippet-quoted: HEPData platform licence = GNU General Public License :: HEPData is free software; you can redistribute
+    it and/or modify it under the terms of the GNU General Public License
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub repository page and PyPI JSON (0.21.0, MIT). hepdata.net itself not fetched; platform GPL statement and CC0
+    default data licence from HEPData docs snippets.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_GITHUB_OCCT_RELEASES
+  title: Open CASCADE Technology (OCCT) — GitHub Open-Cascade-SAS/OCCT and releases
+  authors_or_org: Open Cascade SAS
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: '2026-07-30'
+  version: V8_0_1 (8.0.1)
+  url: https://github.com/Open-Cascade-SAS/OCCT/releases
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: CAD kernel underlying CadQuery/OCP/build123d/FreeCAD/opencascade.js for the twin's geometry pipeline.
+  parameters_extracted: []
+  unresolved_questions:
+  - OCCT official dev.opencascade.org blocked; release data from GitHub (V8_0_1, 2026-07-30).
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: LGPL 2.1 with Open CASCADE exception
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - CadQuery OCP build123d PyPI Open CASCADE Technology LGPL Apache license version
+  notes: 'snippet-quoted: latest release = V8_0_1, 30 Jul 2026 :: The most recent release is tagged V8_0_1 (linked as V8.0.1),
+    marked "Latest." ... release assets are dated 2026-07-30.
+
+    snippet-quoted: licence = GNU Lesser General Public License version 2.1 with special exception :: OCCT is under the "GNU
+    Lesser General Public License version 2.1 as published by the Free Software Foundation," with a special exception.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub releases page (V8_0_1, assets dated 2026-07-30) and licence statement. dev.opencascade.org blocked.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_CADQUERY_OCP
+  title: cadquery-ocp — Python wrapper for Open CASCADE Technology (PyPI JSON)
+  authors_or_org: Bernhard Walter (CadQuery/OCP)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 8.0.1.1.0
+  url: https://pypi.org/pypi/cadquery-ocp/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: pip-installable OCP bindings (yes on PyPI); Python <3.15,>=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - OCCT official dev.opencascade.org blocked; release data from GitHub (V8_0_1, 2026-07-30).
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0 (wrapper); underlying OCCT LGPL-2.1 with exception
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - CadQuery OCP build123d PyPI Open CASCADE Technology LGPL Apache license version
+  notes: 'snippet-quoted: version = 8.0.1.1.0 :: version: "8.0.1.1.0"
+
+    snippet-quoted: license = Apache-2.0 :: license: "Apache-2.0"
+
+    snippet-quoted: summary = Python wrapper for Open CASCADE Technology 3D geometry library based on the official CadQuery/OCP
+    sources :: summary: "Python wrapper for Open CASCADE Technology 3D geometry library based on the official CadQuery/OCP
+    sources"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_CADQUERY
+  title: CadQuery (PyPI JSON)
+  authors_or_org: David Cowden / CadQuery project
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 2.8.0
+  url: https://pypi.org/pypi/cadquery/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Parametric CAD scripting in Python; on PyPI (yes) and conda; Python >=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache Public License 2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - CadQuery OCP build123d PyPI Open CASCADE Technology LGPL Apache license version
+  notes: 'snippet-quoted: version = 2.8.0 :: info.version: "2.8.0"
+
+    snippet-quoted: license = Apache Public License 2.0 :: info.license: "Apache Public License 2.0"
+
+    snippet-quoted: requires_python = >=3.11 :: info.requires_python: ">=3.11"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_BUILD123D
+  title: build123d — A python CAD programming library (PyPI JSON)
+  authors_or_org: Roger Maitland (gumyr)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.13.0
+  url: https://pypi.org/pypi/build123d/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Pythonic CAD on OCP; on PyPI (yes); Python <3.15,>=3.11; Zenodo DOI 10.5281/zenodo.14872323.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - CadQuery OCP build123d PyPI Open CASCADE Technology LGPL Apache license version
+  notes: 'snippet-quoted: version = 0.13.0 :: info.version: "0.13.0"
+
+    snippet-quoted: license = Apache-2.0 :: info.license: "Apache-2.0"
+
+    snippet-quoted: requires_python = <3.15,>=3.11 :: info.requires_python: "<3.15,>=3.11"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_GITHUB_OPENCASCADE_JS
+  title: opencascade.js (npm registry / GitHub donalffons/opencascade.js)
+  authors_or_org: Sebastian Alff (donalffons)
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: npm 1.1.1 (latest tag); README badge OCCT 7.6.2
+  url: https://github.com/donalffons/opencascade.js
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Browser/WASM CAD kernel for the web viewer; on npm (yes). Repo activity possibly stale (last push Aug 2023 per
+    tracker).
+  parameters_extracted: []
+  unresolved_questions:
+  - 'opencascade.js: repository appears inactive (tracker: last push Aug 2023) and bundles OCCT 7.6.2; npm 1.1.1 — maintenance
+    status should be checked before adoption.'
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: LGPL-2.1-only
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - opencascade.js npm WebAssembly port Open CASCADE license version
+  notes: 'snippet-quoted: npm version = 1.1.1 :: version: "1.1.1"
+
+    snippet-quoted: license = LGPL-2.1-only :: license: "LGPL-2.1-only"
+
+    snippet-quoted: OCCT version = 7.6.2 :: OCCT version in README: 7.6.2, from the badge "OpenCascade Version-7.6.2-green"
+
+    snippet-quoted: description = A port of the OpenCascade CAD library to JavaScript and WebAssembly via Emscripten. :: description:
+    "A port of the OpenCascade CAD library to JavaScript and WebAssembly via Emscripten."
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: npm registry metadata (1.1.1, LGPL-2.1-only) and GitHub README badge (OCCT 7.6.2). Repository activity (last push
+    Aug 2023) is a tracker snippet.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_GITHUB_FREECAD_RELEASES
+  title: FreeCAD API (wiki) and FreeCAD releases (GitHub)
+  authors_or_org: FreeCAD project
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 1.1.4 released 28 Sep (year not shown; 2026 implied)
+  version: 1.1.4 (Latest stable); weekly-2026.10.28 dev build
+  url: https://github.com/FreeCAD/FreeCAD/releases
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Scriptable desktop CAD (Python API, GDML workbench) for geometry authoring; not on PyPI (conda-forge 'freecad'
+    exists but not verified here).
+  parameters_extracted: []
+  unresolved_questions:
+  - FreeCAD GitHub page did not display a licence badge; LGPL-2+ taken from source header snippet; conda-forge availability
+    not checked.
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: LGPL v2 or later (source headers)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - FreeCAD Python scripting API documentation LGPL version 1.0 release
+  notes: 'snippet-quoted: latest stable = FreeCAD 1.1.4 :: The page marks FreeCAD 1.1.4 as the "Latest" stable release, but
+    it was released on 28 Sep.
+
+    snippet-quoted: licence (source header) = LGPL version 2 or later :: GNU Library General Public License (LGPL) as published
+    by the Free Software Foundation; either version 2 of the License, or (at your option) any later version
+
+    snippet-quoted: API docs = wiki FreeCAD_API marked outdated; autogenerated API docs :: It says for the latest API, see
+    the autogenerated API documentation.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: GitHub releases page (1.1.4 ''Latest'' released ''28 Sep'', year not shown; weekly-2026.10.28 dev build). No licence
+    badge displayed; LGPL-2+ from a source-header snippet; wiki FreeCAD_API page marked outdated.
+
+    Journal classification: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_PYG4OMETRY
+  title: pyg4ometry — Geometry package for high energy physics (Geant4, Fluka) (PyPI JSON / GitHub g4edge)
+  authors_or_org: Stewart T. Boogert et al., Royal Holloway University of London (g4edge)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 1.4.6
+  url: https://pypi.org/pypi/pyg4ometry/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: GDML read/write, CAD (STEP) import, FLUKA conversion — bridge from CAD twin to Geant4/BDSIM/FLUKA; on PyPI (yes);
+    Python >=3.6.8.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: GPL-3.0 (full GPLv3 text in license field; GitHub shows GPL-3.0 license)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - pyg4ometry PyPI GDML Geant4 geometry Python Royal Holloway license version
+  notes: 'snippet-quoted: version = 1.4.6 :: info.version: "1.4.6"
+
+    snippet-quoted: license = GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 :: The field holds the full GNU GPL text,
+    beginning "GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007."
+
+    snippet-quoted: GitHub description = Python code for rapid creation and conversion of radiation transport Monte Carlo
+    (Geant4 and Fluka) geometries :: "Python code for rapid creation and conversion of radiation transport Monte Carlo (Geant4
+    and Fluka) geometries"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: PyPI JSON (1.4.6, full GPLv3 text in license field) and GitHub g4edge description.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_NPM_THREE
+  title: three — JavaScript 3D library (npm registry)
+  authors_or_org: mrdoob / three.js contributors
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.186.1 (r186)
+  url: https://registry.npmjs.org/three/latest
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: WebGL/WebGPU 3D rendering for the virtual-lab viewer; on npm (yes).
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: MIT
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - three.js npm MIT license latest release r180 threejs.org
+  notes: 'snippet-quoted: version = 0.186.1 :: version: "0.186.1"
+
+    snippet-quoted: license = MIT :: license: "MIT"
+
+    snippet-quoted: homepage = https://threejs.org/ :: homepage: "https://threejs.org/"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: npm registry ''latest'' document (0.186.1, MIT). threejs.org not fetched.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_PYMOO
+  title: pymoo — Multi-Objective Optimization in Python (PyPI JSON)
+  authors_or_org: Julian Blank (anyoptimization), K. Deb
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.6.2
+  url: https://pypi.org/pypi/pymoo/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Evolutionary multi-objective optimisation (NSGA-II etc.) for lattice/IR parameter trade-offs; on PyPI (yes);
+    Python >=3.10; paper IEEE Access 8 (2020).
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: Apache-2.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - pymoo multi-objective optimization Python PyPI Apache license version
+  notes: 'snippet-quoted: version = 0.6.2 :: info.version: "0.6.2"
+
+    snippet-quoted: license_expression = Apache-2.0 :: info.license_expression: "Apache-2.0"
+
+    snippet-quoted: requires_python = >=3.10 :: info.requires_python: ">=3.10"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_BOTORCH
+  title: botorch — Bayesian Optimization in PyTorch (PyPI JSON)
+  authors_or_org: Meta Platforms, Inc.
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 0.18.1
+  url: https://pypi.org/pypi/botorch/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Bayesian optimisation backbone (used by Ax) for expensive simulator tuning; on PyPI (yes) and conda; Python >=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: MIT
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - BoTorch Bayesian optimization PyTorch PyPI MIT license latest version Meta
+  notes: 'snippet-quoted: version = 0.18.1 :: info.version: "0.18.1"
+
+    snippet-quoted: license_expression = MIT :: info.license_expression: "MIT"
+
+    snippet-quoted: repository = https://github.com/meta-pytorch/botorch :: Repository: "https://github.com/meta-pytorch/botorch"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_AX_PLATFORM
+  title: ax-platform — Adaptive Experimentation (PyPI JSON)
+  authors_or_org: Meta Platforms, Inc.
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 2026-06-09 (per CERN mirror snippet)
+  version: 1.3.1
+  url: https://pypi.org/pypi/ax-platform/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: High-level adaptive experimentation / BO orchestration; on PyPI (yes); Python >=3.11.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: MIT
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Ax adaptive experimentation platform ax-platform PyPI MIT license version 1.0
+  notes: 'snippet-quoted: version = 1.3.1 :: info.version: "1.3.1"
+
+    snippet-quoted: license_expression = MIT :: info.license_expression: "MIT"
+
+    snippet-quoted: requires_python = >=3.11 :: info.requires_python: ">=3.11"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: PyPI JSON (1.3.1, MIT). Release date 2026-06-09 from a CERN mirror snippet, not from PyPI JSON.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_SCIKIT_OPTIMIZE
+  title: scikit-optimize — Sequential model-based optimization toolbox (PyPI JSON)
+  authors_or_org: The scikit-optimize contributors (maintained fork by holgern)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 2024-06 (0.10.2)
+  version: 0.10.2
+  url: https://pypi.org/pypi/scikit-optimize/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Lightweight BO/GP optimisation; on PyPI (yes); original repo read-only, continued by a separate maintainer (github.com/holgern/scikit-optimize).
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: BSD 3-clause
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - scikit-optimize PyPI BSD license maintained status latest version 0.10
+  notes: 'snippet-quoted: version = 0.10.2 :: info.version: "0.10.2"
+
+    snippet-quoted: license = BSD 3-clause :: info.license: "BSD 3-clause"
+
+    snippet-quoted: maintenance = original repository read-only; separate maintainer publishes releases :: The 0.10.2 README
+    says the original repository is read-only, and a separate maintainer decided to continue development on their own and
+    to publish new releases to PyPI.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: PyPI JSON (0.10.2, BSD 3-clause) and 0.10.2 README maintenance note; release date 2024-06 from snippet.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'
+- source_id: SRC_URL_PYPI_OPTUNA
+  title: optuna — A hyperparameter optimization framework (PyPI JSON)
+  authors_or_org: Takuya Akiba / Preferred Networks (optuna)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 5.0.0
+  url: https://pypi.org/pypi/optuna/json
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: fetched
+  relevance: Define-by-run hyperparameter/black-box optimisation with pruning and storage backends; on PyPI (yes) and conda-forge;
+    Python >=3.9.
+  parameters_extracted: []
+  unresolved_questions:
+  - Software metadata (version, licence) was captured on 2026-10-28 and will drift; re-check before pinning in docs/software_inventory.md.
+  licence: MIT (classifier and README)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Optuna hyperparameter optimization framework PyPI MIT license latest version 4
+  notes: 'snippet-quoted: version = 5.0.0 :: info.version: "5.0.0"
+
+    snippet-quoted: license = MIT License :: The classifier "License :: OSI Approved :: MIT License" and the README''s "MIT
+    License (see LICENSE)" indicate MIT.
+
+    snippet-quoted: requires_python = >=3.9 :: info.requires_python: ">=3.9"
+
+
+    Reconnaissance on 2026-10-28 with WebSearch; WebFetch read the page/registry JSON named above (no file archived; archived_file
+    null).
+
+    All ''snippet-quoted'' lines are software-metadata leads to verify when hosts are allowed, NOT parameter records (CLAUDE.md
+    §1.5: snippet-only evidence never backs reported_lhmuc and is capped at confidence medium). Software versions/licences
+    are never collider parameters; they feed docs/software_inventory.md.
+
+    Read: PyPI JSON (5.0.0). Search snippets had shown 4.9.0 - the PyPI JSON value supersedes the snippet.
+
+    Journal classification: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.'

@@ -1,0 +1,941 @@
+# Research fragment — reconnaissance family 'lhec-erl' (WebSearch on 2026-10-28; WebFetch attempts to blocked hosts failed:
+# arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org, epjc.epj.org — DNS not resolved).
+# Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by tools/merge_research_fragments.py
+# (the uploaded entry SRC_ARXIV_2506_15445 keeps its registry text; only discovered_by_queries are merged).
+# Lead category corrections applied: arXiv:2503.17727 -> RELATED_MACHINE; arXiv:2506.15445 -> RELATED_MACHINE (existing id);
+# Indico slide decks -> CONFERENCE_PROCEEDING / workshop_talk. 'snippet-quoted' lines in notes are leads to verify, NOT parameter records.
+sources:
+- source_id: SRC_ARXIV_1206_2913
+  title: 'A Large Hadron Electron Collider at CERN: Report on the Physics and Design Concepts for Machine and Detector (LHeC CDR)'
+  authors_or_org: LHeC Study Group (J. L. Abelleira Fernandez et al.)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2012'
+  version: arXiv:1206.2913; J. Phys. G 39 (2012) 075001; DOI 10.1088/0954-3899/39/7/075001
+  url: https://arxiv.org/abs/1206.2913
+  doi: 10.1088/0954-3899/39/7/075001
+  arxiv_id: '1206.2913'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Original LHeC CDR: defines the 60 GeV ERL (two 10 GeV SC linacs, racetrack, triple return arcs), ring-ring vs linac-ring options, IR concept with beta* 0.1 m and separator dipoles; baseline the LHμC proposes to inherit.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - Separator dipole field for the 50 GeV / L* = 15 m IR (2020 design) not found in snippets; only the 2012 CDR value (0.3 T over 9 m) and the 2025 head-on scheme are quoted.
+  licence: arXiv open access; IOP Publishing (license not confirmed from snippets)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:1206.2913 LHeC Conceptual Design Report J. Phys. G 39 075001 Energy Recovery Linac
+  - LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture L*
+  - '"J. Phys. G" 39 (2012) 075001 LHeC Study Group Abelleira Fernandez Conceptual Design Report doi 10.1088/0954-3899/39/7/075001'
+  notes: 'snippet-quoted: default electron beam energy = 60 GeV :: The report sets the default electron beam energy at 60 GeV
+
+
+    snippet-quoted: linac option layout = two 10 GeV superconducting linacs in a racetrack configuration :: Alternatively, one can build a "linac", actually two 10 GeV superconducting linacs in a racetrack configuration. By employing energy recovery techniques, this configuration could provide the equivalent of about 1 GW available power and reach 10^33 cm⁻²s⁻¹ luminosity.
+
+
+    snippet-quoted: IR beta* = 0.1 m :: The merits of the IR are a very low β* of 0.1m with proton triplets as close as possible to the IP to minimise chromaticity.
+
+
+    snippet-quoted: separator dipole field and separation at Q1 = 0.3 T over 9 m, 0.07 m separation at Q1 entry :: The required field of these dipoles is determined by the L* and the minimum separation of the electron and the focused beam at the first quadrupole (Q1). A 0.3 T field extending over 9 m allows for a beams separation of 0.07 m at the entry of Q1.
+
+
+    snippet-quoted: synchrotron radiation in IR dipoles = about 48 kW :: the electron beam radiates about 48 kW in the IR dipoles
+
+
+    snippet-quoted: HL-LHC bunch intensity (background) = 2.2×10^11 protons per bunch :: the 2012 report notes that the HL-LHC bunch-intensity target is 2.2×10^11 protons per bunch
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal reference J. Phys. G 39 (2012) 075001 and DOI confirmed by query 16 snippets; IOP licence not confirmed.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2007_14491
+  title: The Large Hadron-Electron Collider at the HL-LHC
+  authors_or_org: P. Agostini et al. (LHeC Collaboration and FCC-he Study Group; 337 authors)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: 2020-07 (v1); 2021-04 (v2); published Nov 2021
+  version: arXiv:2007.14491v2; J. Phys. G 48 (2021) 110501; DOI 10.1088/1361-6471/abf3ba
+  url: https://arxiv.org/abs/2007.14491
+  doi: 10.1088/1361-6471/abf3ba
+  arxiv_id: '2007.14491'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Updated CDR: 50 GeV ERL design, luminosity cases with HL-LHC proton parameters, beta* 10 cm base / 7 cm high case, revised IR with Q1A/Q1B parameters, PERLE as development facility; core parameter source for LHμC proton-side and ERL reuse.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - 'The LHeC-at-HL-LHC proton beam parameter table was not retrieved verbatim: ''2760 bunches'' did not appear in any snippet (the only ''2760'' hit was the Pb energy per nucleon of 2760 GeV); normalised emittance 2.5 um was not found (snippets give 3.75 um baseline and 2 um upgrade); 2.2e11 protons per bunch and beta* 7 cm were confirmed only via secondary snippets.'
+  - Separator dipole field for the 50 GeV / L* = 15 m IR (2020 design) not found in snippets; only the 2012 CDR value (0.3 T over 9 m) and the 2025 head-on scheme are quoted.
+  licence: CC BY 4.0 (per repository record); arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2007.14491 LHeC at the HL-LHC J. Phys. G 48 110501 proton beam parameters
+  - LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture L*
+  - '"110501" "J. Phys. G" 48 2021 "Large Hadron-Electron Collider at the HL-LHC" Agostini'
+  notes: 'snippet-quoted: base luminosity case = 15 mA, beta* 10 cm, HL-LHC proton parameters, 0.5e34 cm^-2 s^-1 :: Its base case assumes 15 mA of electron beam current, a β* of 10 cm and HL-LHC proton beam parameters, reaching a peak luminosity of 0.5·10^34 cm⁻²s⁻¹.
+
+
+    snippet-quoted: high luminosity case = beta* 7 cm, up to 25 mA :: A higher case uses a β* reduced to 7 cm, an electron beam current of up to 25 mA and still nominal HL-LHC proton beam parameters.
+
+
+    snippet-quoted: Q1A (2020 IR design) = 252 T/m gradient, 3.5 m, 20 mm free aperture radius :: Q1A | 252 | 3.5 | 20 | Q1B | 164 | 3.0 | 32
+
+
+    snippet-quoted: Q1B (2020 IR design) = 164 T/m gradient, 3.0 m, 32 mm free aperture radius :: Q1A | 252 | 3.5 | 20 | Q1B | 164 | 3.0 | 32
+
+
+    snippet-quoted: old half-quadrupole Q1 dipole component = 4.45 T :: The first quadrupole Q1 was a half quadrupole design effectively acting as a combined function magnet with a dipole component of 4.45 T. The sextupole field component was also prohibitively high.
+
+
+    snippet-quoted: ERL update = detailed updated ERL design :: Building on the 2012 CDR, the report represents a detailed updated design of the energy recovery electron linac (ERL) including new lattice, magnet, superconducting radio frequency technology and further components.
+
+
+    snippet-quoted: PERLE role = 3-turn racetrack using LHeC configuration parameters :: A lower energy, high current ERL facility, PERLE at Orsay, is described which uses the basic LHeC configuration parameters, a 3-turn racetrack, the source, and cryo-module designs, enabling it to serve as a development facility assisting the design
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal reference J. Phys. G 48(11) 110501 (Nov 2021), DOI and CC BY 4.0 confirmed by query 9 snippets (repository record, not the article page).
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2503_20475
+  title: An electron-hadron collider at the high-luminosity LHC
+  authors_or_org: K. D. J. André, B. Holzer, L. Forthomme, K. Piotrzkowski
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: 2025-03-26 (v1); revised 2025-10-24; NJP published 2025-12-31
+  version: arXiv:2503.20475v2; New Journal of Physics (volume 28 / article 013001 and publisher DOI NOT confirmed from search results)
+  url: https://arxiv.org/abs/2503.20475
+  doi: null
+  arxiv_id: '2503.20475'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Phase-one LHeC concept: 20 GeV single-pass ERL at 60 mA concurrent with HL-LHC pp, Run5 option, head-on IR with ~20 T/m electron quads and only proton Q1 replaced; the staged scenario LHμC-VirtualLab must model.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - New J. Phys. volume 28, article 013001 for André et al. (arXiv:2503.20475) was NOT confirmed; snippets confirm only 'New Journal of Physics', received 31 Mar 2025, revised 24 Oct 2025, published 31 Dec 2025. Publisher DOI unknown.
+  - 'Exact 2020 IR crossing-angle value vs the 2025 head-on scheme: sources give 6 mrad (2011), 6.8 mrad (2014), 7 mrad (2020/2022) and head-on (2025); needs full-text reconciliation.'
+  licence: arXiv open access; NJP is an open-access journal (license not confirmed from snippets)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2503.20475 André Forthomme Holzer Piotrzkowski electron-hadron collider high-luminosity LHC New J. Phys.
+  - '"New J. Phys." 28 013001 "electron-hadron collider at the high-luminosity LHC" André Holzer'
+  - LHeC ERL "20 GeV" single pass "phase one" OR "first phase" OR "staged" electron beam energy run 5 André Holzer
+  - site:indico.cern.ch LHeC ERL workshop 2025 Holzer interaction region Q1 gradient "T/m" crossing angle mrad
+  - iopscience "An electron-hadron collider at the high-luminosity LHC" New Journal of Physics 2026 doi 10.1088/1367-2630
+  notes: 'snippet-quoted: phase-one ERL = 20 GeV single-pass, 60 mA, circumference one-third of LHC :: This new proposal suggests a 20 GeV, single-pass ERL with a higher beam current of 60 mA and a circumference one-third that of the LHC.
+
+
+    snippet-quoted: omitted components in phase one = arcs 3-6, bypass, spreaders/recombiners not installed :: Arcs from 3 to 6 will not be installed, nor will the so-called bypass, and beam spreaders and re-combiner modules will also not be present.
+
+
+    snippet-quoted: electron mini-beta quadrupoles = ~20 T/m, 1.8 m :: a gradient of approximately 20 T/m and a length of 1.8 m are sufficient to meet the optics requirements of the electron quadrupoles
+
+
+    snippet-quoted: proton lattice modification = only Q1 replaced :: only the first quadrupole of the proton lattice, "Q1," will have to be replaced
+
+
+    snippet-quoted: collision geometry = head-on :: Its separation scheme uses head-on collisions between the proton and electron beam, so no crossing angle.
+
+
+    snippet-quoted: abstract scope = 20 GeV electron ERL; Run5 ep :: assuming a 20 GeV electron Energy Recovery Linac ... the possibility of delivering electron-hadron collisions during the planned Run5 of the LHC
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Category PEER_REVIEWED rests on snippets stating ''published in New Journal of Physics'' (31 Dec 2025); volume/article number and publisher DOI are NOT confirmed.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2503_17727
+  title: The Large Hadron electron Collider as a bridge project for CERN
+  authors_or_org: F. Ahmadova et al. (42 authors)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2025-03-22 (v1); 2025-03-31 (v2); 2025-10-24 (v3)
+  version: arXiv:2503.17727v3; also DESY PUBDB-2025-05804; PoS 485/583 (conference version)
+  url: https://arxiv.org/abs/2503.17727
+  doi: null
+  arxiv_id: '2503.17727'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'ESPP-2026 input positioning LHeC (50 GeV ERL) between HL-LHC end (~2041) and next collider; ERL reuse as FCC-ee injector; 1 ab^-1 in 6 years. Context for LHμC reuse argument. (Category: closest available; it is LHeC-primary, not LHμC-specific.)'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - PoS 485/583 'The LHeC collider as a bridge between major colliders at CERN' appeared as a conference version of arXiv:2503.17727 but its author list/date were not confirmed.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2503.17727 Ahmadova "LHeC as a bridge project for CERN"
+  notes: 'snippet-quoted: integrated luminosity = 1 ab^-1 in 6 years :: With 6 years of LHeC running, a total integrated luminosity of 1 ab-1 can be collected in epep collision mode.
+
+
+    snippet-quoted: electron beam energy (talk abstract context) = 50 GeV :: a 50 GeV electron beam from an Energy Recovery Linac
+
+
+    snippet-quoted: timing = after HL-LHC end (currently 2041) :: the project fits in the years between the end of the regular HL-LHC program (currently 2041) and the start of a new major collider at CERN
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Category corrected by the lead from the journal''s PRIMARY_LHMUC to RELATED_MACHINE: this is an LHeC (electron-hadron) strategy input, not an LHμC document.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PRIMARY_LHMUC; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2201_02436
+  title: An experiment for electron-hadron scattering at the LHC
+  authors_or_org: K. D. J. André et al.
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2022-01-15'
+  version: arXiv:2201.02436; Eur. Phys. J. C 82, 40 (2022); DOI 10.1140/epjc/s10052-021-09967-z
+  url: https://arxiv.org/abs/2201.02436
+  doi: 10.1140/epjc/s10052-021-09967-z
+  arxiv_id: '2201.02436'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: LHeC detector update (enlarged tracker radius, forward-backward symmetrised option) and common eh/hh interaction region concept; defines the detector/IR envelope LHμC would adapt.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: CC BY 4.0 (open access)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2201.02436 "An experiment for electron-hadron scattering at the LHC" Eur. Phys. J. C 82 detector
+  notes: 'snippet-quoted: detector update = enlarged tracker radius; forward-backward symmetrised option :: The updated layout includes an enlarged tracker radius, and the authors sketch a forward-backward symmetrised option.
+
+
+    snippet-quoted: interaction region concept = common IR for eh and hh :: a common interaction region could be built to serve electron-hadron and hadron-hadron collisions, with other experiments staying on hadron-hadron
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    EPJC 82, 40 (2022), DOI and CC BY 4.0 confirmed by query 5 snippets.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2206_07678
+  title: An Energy Recovery Linac for the LHeC
+  authors_or_org: LHeC/ERL authors (author list not confirmed from snippets; cites Pellegrini, Latina, Schulte, Bogacz PRSTAB 2015)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2022-06
+  version: arXiv:2206.07678
+  url: https://arxiv.org/abs/2206.07678
+  doi: null
+  arxiv_id: '2206.07678'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Dedicated ERL chapter: 100 MW wall-plug cap, ~50 GeV in 3-turn racetrack, 8.1 GV per linac, total ERL length ~5.332 km, 6x linac current; primary reference for ERL dimensioning in the digital twin.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - Author list of arXiv:2206.07678 (An Energy Recovery Linac for the LHeC) not confirmed from snippets.
+  - No INSPIRE-HEP records were returned by site:inspirehep.net queries; INSPIRE metadata (citation counts, record ids) remain unverified.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC ERL two 1 km linacs 10 GeV per pass three arcs 20 GeV single pass 100 MW wall-plug power limit
+  - site:inspirehep.net LHeC "An Energy Recovery Linac for the LHeC" arXiv:2206.07678 Bogacz
+  - LHeC ERL 2206.07678 "wall plug" "100 MW" electron beam power 50 GeV 20 mA cryogenic RF power budget table
+  notes: 'snippet-quoted: wall-plug power cap and energy = 100 MW -> ~50 GeV :: the wall-plug power is capped at 100 MW, which leads to a final beam energy of about 50 GeV in a 3-turn racetrack ERL
+
+
+    snippet-quoted: new default electron energy = Ee ≈ 50 GeV (was 60 GeV) :: A cost-physics-energy evaluation is presented here which points to choosing Ee≃50 GeV as a new default value, which was 60 GeV before.
+
+
+    snippet-quoted: energy per linac / total = ~8.1 GV per linac, ~49.2 GeV after three turns :: each linac provides about 8.1 GV, so the three-turn total is about 49.2 GeV
+
+
+    snippet-quoted: total ERL length = ~5.332 km :: Its parameter table gives a total ERL length of about 5.332 km.
+
+
+    snippet-quoted: linac current multiplication = 6x collision current :: Three accelerating and three decelerating passes make the circulating linac current six times the collision current
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Category PEER_REVIEWED is the journal''s classification and is NOT confirmed: the snippets show only an arXiv preprint (the ERL chapter of the LHeC report); no journal reference was seen. Lead decision pending (see unresolved file).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_1211_5102
+  title: On the Relation of the LHeC and the LHC
+  authors_or_org: LHeC authors (not confirmed from snippets)
+  source_type: arxiv_preprint
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2012-11
+  version: arXiv:1211.5102
+  url: https://arxiv.org/abs/1211.5102
+  doi: null
+  arxiv_id: '1211.5102'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: States the 100 MW wall-plug cap for the lepton branch (about half CERN site power) and that the power budget is dominated by RF and cryogenics for the two linacs.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - (see family queries)
+  notes: 'snippet-quoted: wall-plug power cap = 100 MW, about half of CERN max site power :: the total electrical power for the lepton branch was capped at that level, about half of CERN''s maximum site power
+
+
+    snippet-quoted: power budget composition = RF and cryogenic power of two linacs dominate :: The power budget is dominated by RF and cryogenic power for the two linacs
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classifies it as a conference contribution (2012); venue not confirmed from snippets.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Not attributable to a single query: no per-query note in the journal names this source.'
+- source_id: SRC_DOI_10_1103_PHYSREVACCELBEAMS_27_031603
+  title: Beam dynamics driven design of powerful energy recovery linac for experiments (PERLE)
+  authors_or_org: S. A. Bogacz, K. D. J. André, O. Brüning, B. J. Holzer (CERN, Jefferson Lab)
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: '2024-03-26'
+  version: Phys. Rev. Accel. Beams 27, 031603 (2024); DOI 10.1103/PhysRevAccelBeams.27.031603; also HAL hal-04523882v1
+  url: https://atrium.in2p3.fr/nuxeo/nxfile/default/ea0a643f-523c-4951-b203-1716b48749bd/blobholder:0/PhysRevAccelBeams.27_2024_031603.pdf
+  doi: 10.1103/PhysRevAccelBeams.27.031603
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'PERLE at IJCLab Orsay: the LHeC ERL technology demonstrator (3-pass racetrack, 802 MHz SRF, 20 mA) whose parameters validate ERL assumptions used by LHeC/LHμC.'
+  parameters_extracted: []
+  unresolved_questions:
+  - 'PERLE PRAB 27 031603 (2024): no arXiv identifier confirmed.'
+  licence: PRAB is open access (CC BY, license not confirmed from snippets); IN2P3 repository copy
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PERLE energy recovery linac facility Orsay 500 MeV three-pass arXiv
+  - PERLE Bogacz André Brüning Holzer "Physical Review Accelerators and Beams" 27 031603 2024 arXiv energy recovery linac 500 MeV 20 mA
+  notes: 'snippet-quoted: final energy / passes = 500 MeV, 3 passes, 7 MeV injection :: The 500 MeV target comes from a 7 MeV injector and three recirculation passes, with two four-cavity cryomodules each adding 82.2 MeV per turn.
+
+
+    snippet-quoted: energy per linac = 82.2 MeV :: Energy per linac MeV 82.2
+
+
+    snippet-quoted: beam current / cavity load / bunch charge / RF = 20 mA, 120 mA, 500 pC, 801.58 MHz :: The table lists an average beam current of 20 mA, a cavity load of 120 mA, 500 pC bunches, and an 801.58 MHz RF frequency.
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    PERLE is the LHeC ERL technology demonstrator (ANALOGOUS/RELATED machine, not LHμC). atrium.in2p3.fr and HAL (hal-04523882v1) are not on the journal''s blocked-host list, but no fetch was recorded.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category RELATED_MACHINE; fetch_blocked=false.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_HAL_02283606
+  title: 'PERLE: A high power energy recovery facility'
+  authors_or_org: PERLE Collaboration (authors not confirmed from snippets)
+  source_type: conference_proceeding
+  category: RELATED_MACHINE
+  publication_date: '2019'
+  version: HAL hal-02283606; related IPAC2019 TUPGW008
+  url: https://hal.archives-ouvertes.fr/hal-02283606
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Conference description of PERLE multi-turn SRF ERL at 500 MeV / 20 mA / 801.6 MHz.
+  parameters_extracted: []
+  unresolved_questions: []
+  licence: HAL open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PERLE energy recovery linac facility Orsay 500 MeV three-pass arXiv
+  notes: 'snippet-quoted: design summary = 500 MeV, 20 mA, three passes, 801.6 MHz :: Conference papers describe a 500 MeV electron beam at 20 mA, reached over three passes through 801.6 MHz cavities.
+
+
+    snippet-quoted: concept = multi-turn SRF ERL :: PERLE is a proposed high power Energy Recovery Linac, designed on multi-turn configuration, based on SRF technology
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Related JACoW paper IPAC2019 TUPGW008 per snippets; author list not confirmed.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category RELATED_MACHINE; fetch_blocked=false.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2207_02095
+  title: The Development of Energy-Recovery Linacs
+  authors_or_org: ERL review authors (not confirmed from snippets)
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 2022-07
+  version: arXiv:2207.02095
+  url: https://arxiv.org/abs/2207.02095
+  doi: null
+  arxiv_id: '2207.02095'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: ERL roadmap review; contains LHeC IR description with L* = 15 m and electron mini-beta combined-function magnets at 106 mm from proton orbit; PERLE first beam mid-2020s.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture L*
+  notes: 'snippet-quoted: L* = 15 m :: A quasi-constant separation field from the IP up to the location of the first superconducting proton quadrupole QA1 at a position of L* = 15 m.
+
+
+    snippet-quoted: electron aperture distance from proton orbit = 106 mm :: Located at a distance of 106 mm from the proton design orbit - it has to be low enough not to distort the electron beam.
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    ERL roadmap review (secondary for LHeC IR numbers; the primary is arXiv:2007.14491).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2021_WEPAB001
+  title: Accelerator Challenges of the LHeC Project (IPAC'21 WEPAB001)
+  authors_or_org: B. J. Holzer, K. D. J. André, S. A. Bogacz, O. S. Brüning, M. Klein
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2021'
+  version: IPAC2021 WEPAB001, pp. 2570-2573; DOI 10.18429/JACoW-IPAC2021-WEPAB001
+  url: https://jacow.org/ipac2021/papers/WEPAB001.pdf
+  doi: 10.18429/JACoW-IPAC2021-WEPAB001
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Compact accelerator summary of the 50 GeV LHeC ERL and IR challenges by the core design team.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - No parameter values were quoted from this source in the journal; content known only from title/abstract-level snippets.
+  licence: JACoW CC BY 3.0 (license not confirmed from snippets)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - André Holzer "interaction region" LHeC 50 GeV HL-LHC optics IPAC 2021 WEPAB001 "L*" "15 m" separator dipole field
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No parameter values were quoted from this paper in the journal.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_1072533_4787015
+  title: DIS2022 - LHeC (talk slides, K. D. J. André)
+  authors_or_org: K. D. J. André (CERN)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022'
+  version: indico.cern.ch event 1072533, contribution 4787015
+  url: https://indico.cern.ch/event/1072533/contributions/4787015/attachments/2437656/4175192/DIS2022%20-%20LHeC%20.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Gives LHeC IR headline numbers (L* 15 m, beta* 10 cm, 7 mrad crossing angle for both proton beams) vs FCC-eh.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - 'Exact 2020 IR crossing-angle value vs the 2025 head-on scheme: sources give 6 mrad (2011), 6.8 mrad (2014), 7 mrad (2020/2022) and head-on (2025); needs full-text reconciliation.'
+  licence: public indico attachment
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:indico.cern.ch LHeC ERL workshop 2025 Holzer interaction region Q1 gradient "T/m" crossing angle mrad
+  - André Holzer "interaction region" LHeC 50 GeV HL-LHC optics IPAC 2021 WEPAB001 "L*" "15 m" separator dipole field
+  notes: 'snippet-quoted: L* and beta* (LHeC vs FCC-eh) = L* = 15 m, beta* = 10 cm (LHeC); L* = 23 m, beta* = 30 cm (FCC-eh) :: L* = 15 m & β* = 10 cm, compared with FCC-eh''s L* = 23 m and β* = 30 cm
+
+
+    snippet-quoted: crossing angle = 7 mrad for both proton beams :: a large crossing angle of 7 mrad for both proton beams
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Indico slide deck -> CONFERENCE_PROCEEDING / workshop_talk per the lead''s rule.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2011_THPZ016
+  title: LHeC Interaction Region Design (IPAC2011 THPZ016 / WEPZ013)
+  authors_or_org: LHeC IR/magnet design team (authors not confirmed from snippets)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2011'
+  version: IPAC2011 THPZ016; companion WEPZ013
+  url: https://accelconf.web.cern.ch/IPAC2011/papers/thpz016.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Early linac-ring IR: 6 mrad crossing angle between proton beams, Nb3Sn Q1 half-quadrupole with field-free region, 175 T/m gradient and 25 T/m electron fringe gradient.'
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Exact 2020 IR crossing-angle value vs the 2025 head-on scheme: sources give 6 mrad (2011), 6.8 mrad (2014), 7 mrad (2020/2022) and head-on (2025); needs full-text reconciliation.'
+  licence: JACoW open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture L*
+  - site:indico.cern.ch LHeC ERL workshop 2025 Holzer interaction region Q1 gradient "T/m" crossing angle mrad
+  notes: 'snippet-quoted: crossing angle = 6 mrad :: A crossing angle of 6 mrad between the non-colliding proton beams allows enough separation to place the proton triplets.
+
+
+    snippet-quoted: Q1 gradient / electron fringe gradient = 175 T/m; 25 T/m :: An IPAC 2011 table lists a proton-beam Q1 field gradient of 175 T/m, with an electron-beam fringe gradient of 25 T/m.
+
+
+    snippet-quoted: Q1 design = half quadrupole with field-free region :: Right: Half quadrupole with field-free region; design selected for Q1.
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    accelconf.web.cern.ch is a CERN host (blocked in this session per the task statement); the journal recorded fetch_blocked=false because no fetch was attempted. Companion paper WEPZ013 mentioned in snippets.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING; fetch_blocked=false.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2014_TUPRO070
+  title: LHeC IR optics with reversed D1/D2 polarity (IPAC2014 TUPRO070)
+  authors_or_org: not confirmed from snippets
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2014'
+  version: IPAC2014 TUPRO070
+  url: https://jacow.org/IPAC2014/papers/TUPRO070.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Gives 6.8 mrad proton-proton crossing angle and D1/D2 strength scaling for LHeC IR.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - 'Exact 2020 IR crossing-angle value vs the 2025 head-on scheme: sources give 6 mrad (2011), 6.8 mrad (2014), 7 mrad (2020/2022) and head-on (2025); needs full-text reconciliation.'
+  licence: JACoW open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture L*
+  notes: 'snippet-quoted: crossing angle and D1/D2 strengths = 6.8 mrad; D2 x1.21, D1 x3.43 :: The strength of D2 should be 1.21 stronger and the one of D1 3.43 stronger, giving a crossing angle of θ = 6.8 mrad between the proton beams.
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2011_TUPC054
+  title: The LHeC ERL (IPAC2011 TUPC054)
+  authors_or_org: not confirmed from snippets
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2011'
+  version: IPAC2011 TUPC054
+  url: https://accelconf.web.cern.ch/IPAC2011/papers/tupc054.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Early ERL layout: two 1 km linacs, 10 GeV per pass, 1 km radius arcs.'
+  parameters_extracted: []
+  unresolved_questions: []
+  licence: JACoW open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - (see family queries)
+  notes: 'snippet-quoted: ERL layout = 1 km linacs, 10 GeV per pass, arcs of 1 km radius :: A 2011 IPAC paper describes the same kind of 1 km, 10 GeV-per-pass linacs, with arcs of 1 km radius
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    accelconf.web.cern.ch is a CERN host (blocked in this session per the task statement); the journal recorded fetch_blocked=false because no fetch was attempted.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING; fetch_blocked=false.
+
+
+    Not attributable to a single query: no per-query note in the journal names this source.'
+- source_id: SRC_JACOW_IPAC2022_WEOXGD2
+  title: FFA arcs for the LHeC ERL (IPAC2022 WEOXGD2)
+  authors_or_org: S. A. Bogacz et al. (per snippet attribution)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022'
+  version: IPAC2022 WEOXGD2
+  url: https://jacow.org/IPAC2022/papers/WEOXGD2.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Alternative single FFA arc replacing three arcs; quantifies synchrotron-radiation power at 20 mA against the 100 MW budget.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: JACoW open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC ERL 2206.07678 "wall plug" "100 MW" electron beam power 50 GeV 20 mA cryogenic RF power budget table
+  notes: 'snippet-quoted: SR loss reduction at 20 mA = 45 MW -> 27 MW :: For the new LHeC limit of 20 mA with the maximum power lost due to synchrotron radiation loss of 45 MW is reduced by this FFA proposal to 27 MW!
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2506_15445
+  title: 'μLHC: Antimuon Ring and HL-LHC based μ+p Collider'
+  authors_or_org: not confirmed from snippets
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: 2025-06
+  version: arXiv:2506.15445
+  url: https://arxiv.org/abs/2506.15445
+  doi: 10.1093/ptep/ptag031
+  arxiv_id: '2506.15445'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: A muon-proton collider concept at HL-LHC that restates the LHeC ERL layout (two ~1 km linacs, 10 GeV per pass, three arcs, 100 MW cap driving 60->50 GeV); directly analogous to LHμC and a candidate cross-check.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - (see family queries)
+  notes: 'snippet-quoted: LHeC ERL layout restated = two ~1 km linacs, three recirculation arcs, 10 GeV per pass, three recirculations :: a race-track layout with two main linacs of about 1 km each, joined by three recirculation arcs, with each linac giving 10 GeV per pass and electrons typically recirculated three times
+
+
+    snippet-quoted: power-limit effect = 60 GeV -> ~50 GeV :: the power limit drove the default energy down from 60 GeV to about 50 GeV
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    NOTE: this id already exists in research/source_registry.yaml as an uploaded, fully read PDF (v2, PTEP 2026 033C04); this fragment entry only records the lhec-erl web-reconnaissance view (the snippet restating the LHeC ERL layout) and must NOT create a duplicate — the merge keeps the registry text.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; fetch_blocked=true.
+
+
+    Not attributable to a single query: no per-query note in the journal names this source.'
+- source_id: SRC_ARXIV_1802_04317
+  title: Future Deep Inelastic Scattering with the LHeC
+  authors_or_org: not confirmed from snippets
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 2018-02
+  version: arXiv:1802.04317
+  url: https://arxiv.org/abs/1802.04317
+  doi: null
+  arxiv_id: '1802.04317'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Review stating proton beta* at the ep IP may be as small as 7 cm.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - 'The LHeC-at-HL-LHC proton beam parameter table was not retrieved verbatim: ''2760 bunches'' did not appear in any snippet (the only ''2760'' hit was the Pb energy per nucleon of 2760 GeV); normalised emittance 2.5 um was not found (snippets give 3.75 um baseline and 2 um upgrade); 2.2e11 protons per bunch and beta* 7 cm were confirmed only via secondary snippets.'
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC proton beam parameters table "2760" bunches "2.2" 10^11 protons per bunch normalised emittance "2.5" µm beta* 7 cm luminosity ep
+  notes: 'snippet-quoted: proton beta* = 7 cm :: the proton beta-function in the electron-proton collision point may be as small as β_p = 7 cm
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_353906_2278712
+  title: LHeC machine parameters (D. Pellegrini talk, indico.cern.ch event 353906)
+  authors_or_org: D. Pellegrini (CERN/EPFL)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: null
+  version: indico.cern.ch event 353906 contribution 2278712
+  url: https://indico.cern.ch/event/353906/contributions/2278712/attachments/1331132/2000523/6_Pellegrini_LHeC.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Proton beam parameter slide: 2.2e11 protons per bunch, 25 ns spacing, emittance 3.75 -> 2 um, beta* 0.1 -> 0.05 m upgrade path.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  - 'The LHeC-at-HL-LHC proton beam parameter table was not retrieved verbatim: ''2760 bunches'' did not appear in any snippet (the only ''2760'' hit was the Pb energy per nucleon of 2760 GeV); normalised emittance 2.5 um was not found (snippets give 3.75 um baseline and 2 um upgrade); 2.2e11 protons per bunch and beta* 7 cm were confirmed only via secondary snippets.'
+  licence: public indico attachment
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC proton beam parameters table "2760" bunches "2.2" 10^11 protons per bunch normalised emittance "2.5" µm beta* 7 cm luminosity ep
+  notes: 'snippet-quoted: bunch population / spacing = 2.2 × 10^11 protons, 25 ns :: a bunch population of 2.2 × 10^11 protons for the baseline, with 25 ns bunch spacing
+
+
+    snippet-quoted: normalised emittance upgrade = 3.75 -> 2 µm :: normalised emittance of 3.75 → 2 µm
+
+
+    snippet-quoted: beta* upgrade path = 0.1 -> 0.05 m :: β* of 0.1 → 0.05 m for the proton upgrade path
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Indico slide deck -> CONFERENCE_PROCEEDING / workshop_talk per the lead''s rule. Talk date not visible in snippets (journal: null).
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_EPFL_INFOSCIENCE_216397
+  title: Beam-dynamics driven design of the LHeC energy-recovery linac
+  authors_or_org: D. Pellegrini, A. Latina, D. Schulte, S. A. Bogacz
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2015'
+  version: Phys. Rev. ST Accel. Beams (2015); EPFL Infoscience 216397
+  url: https://infoscience.epfl.ch/record/216397?ln=en
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Beam-dynamics design of the 60 GeV LHeC ERL (beam-beam, multi-turn stability); cited by the 2022 ERL report.
+  parameters_extracted: []
+  unresolved_questions:
+  - No parameter values were quoted from this source in the journal; content known only from title/abstract-level snippets.
+  licence: APS PRSTAB open access (license not confirmed)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:inspirehep.net LHeC "An Energy Recovery Linac for the LHeC" arXiv:2206.07678 Bogacz
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Phys. Rev. ST Accel. Beams (2015) per snippets; volume/article number and DOI not confirmed. No parameter values quoted in the journal.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=false.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2511_03883
+  title: 'Physics Briefing Book: Input for the 2026 update of the European Strategy for Particle Physics'
+  authors_or_org: ESPP 2026 Physics Preparatory Group
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: 2025-11
+  version: arXiv:2511.03883
+  url: https://arxiv.org/abs/2511.03883
+  doi: null
+  arxiv_id: '2511.03883'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Official strategy document acknowledging the phased LHeC approach starting with a 20 GeV single-pass ERL without spreader/recombiner modules.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: arXiv open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC ERL "20 GeV" single pass "phase one" OR "first phase" OR "staged" electron beam energy run 5 André Holzer
+  notes: 'snippet-quoted: phase-one ERL = 20 GeV single-pass, no spreader/recombiner :: phase one starting with an initial 20 GeV single-pass ERL phase which will not need the spreader/recombiner modules
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    ESPP-2026 Physics Briefing Book (Physics Preparatory Group); OFFICIAL_CERN per the journal — the document is a CERN Council strategy input, not an LHμC source.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_1439855_6461558
+  title: LHeC phase-one / Run5 contribution (indico.cern.ch event 1439855, contribution 6461558)
+  authors_or_org: not confirmed from snippets
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2024/2025
+  version: indico.cern.ch event 1439855 contribution 6461558
+  url: https://indico.cern.ch/event/1439855/contributions/6461558
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Describes commissioning a 20 GeV ERL at Point 2 after LS4 for ep studies during Run5.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch is blocked for arxiv.org, ar5iv.labs.arxiv.org, indico.cern.ch, iopscience.iop.org, jacow.org and epjc.epj.org in this session (DNS not resolved); all parameter values above come from search snippets only and were not verified against full text.
+  licence: public indico page
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC ERL "20 GeV" single pass "phase one" OR "first phase" OR "staged" electron beam energy run 5 André Holzer
+  notes: 'snippet-quoted: Run5 commissioning = 20 GeV ERL at P2 after LS4 :: commissioning the 20 GeV ERL at P2 after Long Shutdown 4, allowing for unique studies of the electron-hadron interactions already during Run5
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (DNS not resolved; host not in the session network allow-list). All ''snippet-quoted'' lines are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Indico contribution page -> CONFERENCE_PROCEEDING / workshop_talk per the lead''s rule; speaker, event name and date (2024/2025) not confirmed.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; fetch_blocked=true.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_INDICO_FIS_AGH_302
+  title: LHeC talk, K. Piotrzkowski, 22 Nov 2024 (AGH HEP seminar)
+  authors_or_org: K. Piotrzkowski
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2024-11-22'
+  version: null
+  url: https://indico.fis.agh.edu.pl/event/302/attachments/431/768/22112024-KrzysztofPiotrzkowski-LHeC.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Proponent timeline: 20 GeV beam at IP2 by 2036, concurrent ep/eA at 0.75 TeV.'
+  parameters_extracted: []
+  unresolved_questions: []
+  licence: public indico attachment
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHeC ERL "20 GeV" single pass "phase one" OR "first phase" OR "staged" electron beam energy run 5 André Holzer
+  notes: 'snippet-quoted: target date and cm energy = 2036; 0.75 TeV :: a 2036 target for a 20 GeV beam at IP2, with concurrent ep (or eA) collisions at 0.75 TeV
+
+
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only; the journal marks fetch_blocked=false for this URL but records no page read, so no fetch was attempted and only snippets were seen. All ''snippet-quoted'' lines are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Category corrected from the journal''s SECONDARY_SOURCE to CONFERENCE_PROCEEDING / workshop_talk per the lead''s rule for Indico slide decks (AGH Indico). The sibling family ''lhmuc-primary'' reports that fetches to indico.fis.agh.edu.pl failed; this family did not attempt one.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category SECONDARY_SOURCE; fetch_blocked=false.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map); queries listed in discovered_by_queries name this source''s identifier or a value unique to it.'

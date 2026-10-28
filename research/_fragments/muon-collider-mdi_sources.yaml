@@ -1,0 +1,842 @@
+# Research fragment - reconnaissance family 'muon-collider-mdi' (WebSearch on 2026-10-28; WebFetch attempted only on pos.sissa.it,
+# zenodo.org and inspirehep.net, all refused by network policy; arxiv.org and indico hosts were not attempted).
+# Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by tools/merge_research_fragments.py
+# (SRC_ARXIV_2506_15445 already exists as an uploaded entry and keeps its registry text; only discovered_by_queries merge).
+# Category corrections are the lead's decisions of 2026-10-28 and are recorded per entry in 'notes'.
+# 'snippet-quoted' lines in notes are leads to verify once hosts are reachable, NOT parameter records.
+sources:
+- source_id: SRC_ARXIV_2510_27437
+  title: 'MuCol Milestone Report No. 7: Consolidated Parameters'
+  authors_or_org: MuCol design study / International Muon Collider Collaboration (CERN lead beneficiary)
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: '2025-10-30'
+  version: arXiv:2510.27437; DOI 10.48550/arxiv.2510.27437; Zenodo record 17476875; MuCol Milestone Report v1.0 Final
+  url: https://arxiv.org/abs/2510.27437
+  doi: 10.48550/arxiv.2510.27437
+  arxiv_id: '2510.27437'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Authoritative consolidated baseline parameters for the 10 TeV muon collider complex incl. MDI/nozzle; stated
+    predecessor of LHmuC-relevant IMCC parameter set. Snippet says nozzle built mainly from INERMET180 tungsten alloy and
+    that all studies so far used slightly modified MAP nozzle geometry.
+  parameters_extracted: []
+  unresolved_questions:
+  - Fetch attempted and refused by network policy; every quoted value is snippet-level only.
+  - Licence statement 'CC BY (per Zenodo/avesis record snippet); not peer reviewed' is inferred from publisher norms or a
+    mirror record, not verified for this item.
+  - Licence CC BY comes from the Zenodo/avesis mirror snippet; not verified against the arXiv page.
+  licence: CC BY (per Zenodo/avesis record snippet); not peer reviewed
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv 2510.27437 MuCol Milestone Report consolidated parameters muon collider
+  - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
+  notes: 'Category OFFICIAL_CERN rests on the snippet statement ''CERN lead beneficiary'' of the EU MuCol design study; it
+    is a project milestone report, not a CERN Yellow Report. Access ''blocked'' because the Zenodo record (17476875) fetch
+    was attempted and refused by network policy; arxiv.org was not attempted.
+
+    Journal reconnaissance tags: source_type ''official report'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: nozzle material = INERMET180 (tungsten alloy) :: The MuCol reports say the nozzle is built mainly from
+    INERMET180, a tungsten alloy, rather than pure tungsten. This is needed for manufacturability but slightly reduces shielding
+    because of lower density.
+
+    snippet-quoted: nozzle geometry baseline = slightly modified MAP nozzle :: all studies carried out so far were based on
+    the slightly modified nozzle geometry than the one developed within the Muon Accelerator Program (MAP)'
+- source_id: SRC_ARXIV_2411_02966
+  title: 'MuCol Milestone Report No. 5: Preliminary Parameters'
+  authors_or_org: MuCol design study / International Muon Collider Collaboration
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: 2024-11
+  version: arXiv:2411.02966; INSPIRE literature 2845756
+  url: https://arxiv.org/abs/2411.02966
+  doi: null
+  arxiv_id: '2411.02966'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Predecessor to Report No. 7; contains nozzle section (Table 9.1 coordinates) describing INERMET180 + borated
+    polyethylene layers, nozzle tip position and outer 10 degree inclination.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - Exact 10 TeV nozzle inner aperture angles (three angles, Table 9.1) and total nozzle length were not present in any snippet;
+    only outer inclination 10 degrees, tip at 6 cm and bottleneck at 100 cm are quotable.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv 2510.27437 MuCol Milestone Report consolidated parameters muon collider
+  - MuCol Milestone Report No. 5 preliminary parameters nozzle INERMET180 borated polyethylene "nozzle" opening angle degrees
+    L* 6 m 10 TeV
+  notes: 'Category OFFICIAL_CERN by analogy with Report No. 7 (MuCol design study, CERN lead beneficiary); not a CERN Yellow
+    Report. arxiv.org not attempted (blocked host); inspirehep.net (record 2845756) fetch failed.
+
+    Journal reconnaissance tags: source_type ''official report'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: nozzle layers = INERMET180 inner; borated polyethylene outer :: The blue layer is made of INERMET180 (registered
+    trademark), a heavy tungsten alloy, while the green one is composed of borated polyethylene.
+
+    snippet-quoted: nozzle tip distance from IP = 6 cm :: The nozzle tip is located at a distance of 6 cm from the IP.
+
+    snippet-quoted: aperture bottleneck position = 100 cm from IP :: the aperture features three different angles, with an
+    aperture bottleneck at 100 cm from the IP
+
+    snippet-quoted: outer surface inclination near IP = 10 degrees :: near the interaction point, the inclination amounts
+    to 10 degrees, which determines the angular acceptance of the detector
+
+    snippet-quoted: geometry origin = modified MAP nozzle (1.5 TeV optimized) :: Although the MAP nozzle was optimized for
+    a center-of-mass energy of 1.5 TeV, it has been used as a starting point for the first 10 TeV studies.'
+- source_id: SRC_ARXIV_2303_08533
+  title: Towards a muon collider
+  authors_or_org: C. Accettura et al. (International Muon Collider Collaboration)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2023-09-26'
+  version: Eur. Phys. J. C 83 (2023) 864; DOI 10.1140/epjc/s10052-023-11889-x; arXiv:2303.08533; INSPIRE 2642414; erratum
+    Eur. Phys. J. C 84 (2024) 36
+  url: https://arxiv.org/abs/2303.08533
+  doi: 10.1140/epjc/s10052-023-11889-x
+  arxiv_id: '2303.08533'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC review of design, physics and detector status incl. MDI and nozzle; 118 pages, 357 references per INSPIRE
+    snippet.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  licence: Open access (EPJC); PDF mirrored at strathprints.strath.ac.uk/88720
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"Towards a muon collider" Eur. Phys. J. C 83 (2023) 864 arXiv:2303.08533'
+  notes: 'Journal publication confirmed in snippets (Eur. Phys. J. C 83 (2023) 864 plus erratum EPJC 84 (2024) 36).
+
+    Journal reconnaissance tags: source_type ''journal article'', category ''PEER_REVIEWED'', fetch_blocked=True.'
+- source_id: SRC_ARXIV_2407_12450
+  title: Interim report for the International Muon Collider Collaboration (IMCC)
+  authors_or_org: International Muon Collider Collaboration; corresponding author Christian Carli
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: 2024-09
+  version: 'CERN Yellow Reports: Monographs CERN-2024-002; DOI 10.23731/CYRM-2024-002; arXiv:2407.12450 (v2 revised 28 Jan
+    2025); e-publishing.cern.ch CYRM issue 171'
+  url: https://arxiv.org/abs/2407.12450
+  doi: 10.23731/CYRM-2024-002
+  arxiv_id: '2407.12450'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC interim report on progress and expected achievements by 2026 incl. accelerator and detector studies; staged
+    approach to 10 TeV.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  licence: CC-BY-4.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2504.21417 "The Muon Collider" International Muon Collider Collaboration
+  - '"Interim report for the International Muon Collider Collaboration" CERN Yellow Report CERN-2024-002 arXiv:2407.12450'
+  notes: 'CERN Yellow Reports: Monographs CERN-2024-002 (confirmed in snippets).
+
+    Journal reconnaissance tags: source_type ''official report'', category ''OFFICIAL_CERN'', fetch_blocked=True.'
+- source_id: SRC_ARXIV_2504_21417
+  title: The Muon Collider
+  authors_or_org: International Muon Collider Collaboration (attribution not confirmed in snippets)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: null
+  version: arXiv:2504.21417
+  url: https://arxiv.org/abs/2504.21417
+  doi: null
+  arxiv_id: '2504.21417'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 2025 IMCC overview document (ESPPU input); snippet shows it cites Interim Report, Towards a muon collider, Forum
+    report; mentions tracker with vertex, inner and outer tracker. Authorship/abstract not confirmed from snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''International Muon Collider Collaboration (attribution not confirmed in snippets)''.'
+  - Publication date not visible in snippets.
+  - Authorship and abstract not confirmed from snippets (only the reference list surfaced).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arXiv:2504.21417 "The Muon Collider" International Muon Collider Collaboration
+  notes: 'lead decision 2026-10-28: journal tagged PRIMARY_LHMUC; corrected to RELATED_MACHINE (IMCC muon collider, not an
+    LHμC document). Authorship and abstract unconfirmed from snippets.
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PRIMARY_LHMUC'', fetch_blocked=True.'
+- source_id: SRC_ARXIV_2209_01318
+  title: Muon Collider Forum report
+  authors_or_org: K.M. Black et al. (Snowmass 2021 Muon Collider Forum)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2024'
+  version: JINST 19 (2024) T02015; arXiv:2209.01318; DOI 10.1088/1748-0221/19/02/T02015
+  url: https://doi.org/10.1088/1748-0221/19/02/T02015
+  doi: 10.1088/1748-0221/19/02/T02015
+  arxiv_id: '2209.01318'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: US Snowmass community report; snippet states nozzle restricts detector acceptance to polar angles above 10 degrees
+    and FLUKA/MARS15 comparison up to 5 TeV beam energy.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  licence: CC BY 4.0 (open access); copy at par.nsf.gov/servlets/purl/10509840
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Muon Collider Forum report JINST 19 T02015 2024
+  - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
+  notes: 'JINST 19 (2024) T02015 confirmed in snippets (Snowmass 2021 Muon Collider Forum report). doi.org not attempted (blocked
+    host).
+
+    Journal reconnaissance tags: source_type ''journal article'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: detector angular acceptance = polar angles above 10 degrees :: the nozzle restricts detector acceptance
+    to polar angles above 10°
+
+    snippet-quoted: FLUKA/MARS15 comparison range = up to 5 TeV beam energy (10 TeV COM) :: FLUKA studies at higher energies
+    were still in development, with only a preliminary FLUKA/MARS15 comparison up to 5 TeV beam energy (10 TeV COM)'
+- source_id: SRC_ARXIV_2502_00181
+  title: 'MAIA: A new detector concept for a 10 TeV muon collider'
+  authors_or_org: Charles Bell et al. (27 authors)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: '2025-01-31'
+  version: arXiv:2502.00181 (v1 31 Jan 2025; revised 7 Jul 2026 per snippet)
+  url: https://arxiv.org/abs/2502.00181
+  doi: null
+  arxiv_id: '2502.00181'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC/US 10 TeV detector concept (Muon Accelerator Instrumented Apparatus); all-silicon tracker in 5 T solenoid;
+    nozzle adapted from 1.5 TeV MAP design with tungsten heavy-alloy inner layer and borated polyethylene cladding; BIB simulated
+    with FLUKA.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
+  - MAIA MUSIC detector concept muon collider 10 TeV arXiv
+  notes: 'Journal tagged PEER_REVIEWED, but snippets show only an arXiv record (v1 31 Jan 2025, revised 7 Jul 2026) and no
+    journal reference; following the lead''s rule that PEER_REVIEWED requires confirmation, recorded as RELATED_MACHINE (IMCC
+    detector concept) until the abstract page is read.
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: nozzle composition = tungsten heavy-alloy inner layer, borated polyethylene outer cladding :: The 1.5
+    TeV MAP nozzle has a tungsten heavy-alloy inner layer for shower mitigation and a borated polyethylene outer cladding
+    for neutrons. The 10 TeV version in the MAIA detector study is adapted from it.
+
+    snippet-quoted: solenoid field = 5 T :: The detector has an all-silicon tracker inside a 5 T solenoid, and an air-gap
+    muon spectrometer at the outside
+
+    snippet-quoted: reconstruction efficiency = above 95% :: reconstruction efficiencies above 95% for energetic tracks, photons
+    and neutrons in the central region, even with beam-induced background simulated in FLUKA'
+- source_id: SRC_ARXIV_2601_13189
+  title: 'MUSIC: a detector concept for 10 TeV mu+mu- collisions'
+  authors_or_org: IMCC / INFN detector group (authors not in snippet)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2026-01-19'
+  version: arXiv:2601.13189; PoS 485/515 (Lepton Photon 2025); related arXiv:2511.23273
+  url: https://arxiv.org/abs/2601.13189
+  doi: null
+  arxiv_id: '2601.13189'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC MUSIC (MUon System for Interesting Collisions) 10 TeV detector concept; cylindrical ~11.4 m long; all-silicon
+    tracker, PbF2 crystal ECAL, iron-scintillator HCAL, 5 T solenoid; designed around machine-induced background.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''IMCC / INFN detector group (authors not in snippet)''.'
+  - Author list of arXiv:2601.13189 (and of the related arXiv:2511.23273) not in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - MUSIC "MUon System for Interesting Collisions" detector concept muon collider 10 TeV
+  notes: 'PoS 485/515 (Lepton Photon 2025) per snippets.
+
+    Journal reconnaissance tags: source_type ''conference proceeding'', category ''CONFERENCE_PROCEEDING'', fetch_blocked=True.
+
+    snippet-quoted: detector length = about 11.4 m :: with a cylindrical, multipurpose layout about 11.4 m long
+
+    snippet-quoted: solenoid field = 5 T :: an electromagnetic calorimeter with lead-fluoride crystals, an iron-scintillator
+    hadronic calorimeter, and a 5 T superconducting solenoid'
+- source_id: SRC_URL_POS_ICHEP2024_819
+  title: Machine Detector Interface and Beam-Induced Background Studies for a 10 TeV Muon Collider (ICHEP 2024)
+  authors_or_org: D. Calzolari, C. Carli, A. Lechner, D. Lucchesi et al.
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2024'
+  version: PoS(ICHEP2024)819
+  url: https://pos.sissa.it/476/819/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: First adjustment of the nozzle for 10 TeV; FLUKA-based high-statistics assessment of decay-induced background.
+  parameters_extracted: []
+  unresolved_questions:
+  - Fetch attempted and refused by network policy; every quoted value is snippet-level only.
+  - Licence statement 'PoS open access (CC BY-NC-ND typical; not confirmed)' is inferred from publisher norms or a mirror
+    record, not verified for this item.
+  licence: PoS open access (CC BY-NC-ND typical; not confirmed)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
+  - site:inspirehep.net muon collider nozzle optimization beam-induced background 10 TeV Calzolari Lechner
+  notes: 'pos.sissa.it fetch attempted and refused by network policy.
+
+    Journal reconnaissance tags: source_type ''conference proceeding'', category ''CONFERENCE_PROCEEDING'', fetch_blocked=True.
+
+    snippet-quoted: nozzle optimization status = first adjustment for 10 TeV :: Previous optimizations focused on maximizing
+    the nozzle''s performance for collision energies up to 1.5 TeV. First BIB studies for a 10 TeV collider, which still considered
+    the same MAP nozzle design, were presented in our previous papers. In this contribution, we will discuss a first adjustment
+    of the nozzle for 10 TeV'
+- source_id: SRC_URL_POS_ICHEP2022_063
+  title: Machine-detector interface studies for a multi-TeV muon collider (ICHEP 2022)
+  authors_or_org: Daniele Calzolari, Kyriacos Skoufaris
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022'
+  version: PoS(ICHEP2022)063
+  url: https://pos.sissa.it/414/063/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Table 1: decay-induced background particles entering the detector per bunch crossing (one beam) at 1.5, 3 and
+    10 TeV assuming MAP-like nozzle; FLUKA.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Fetch attempted and refused by network policy; every quoted value is snippet-level only.
+  - Licence not visible in snippets.
+  - 3 TeV per-species BIB numbers from Table 1 were cut off in snippets; only the 10 TeV photon (1.1e8) and neutron (1.0e8)
+    values appeared.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:inspirehep.net muon collider nozzle optimization beam-induced background 10 TeV Calzolari Lechner
+  - Calzolari Skoufaris ICHEP 2022 "decay-induced background" muon collider 3 TeV 10 TeV photons neutrons per bunch crossing
+    pos.sissa.it 414
+  notes: 'pos.sissa.it fetch attempted and refused by network policy.
+
+    Journal reconnaissance tags: source_type ''conference proceeding'', category ''CONFERENCE_PROCEEDING'', fetch_blocked=True.
+
+    snippet-quoted: BIB photons per bunch crossing at 10 TeV (one beam, MAP-like nozzle) = 1.1e8 :: Its table lists 1.1 ×
+    10^8 photons and 1.0 × 10^8 neutrons entering the detector at 10 TeV, with the note that studies assume a MAP-like nozzle.
+
+    snippet-quoted: BIB neutrons per bunch crossing at 10 TeV (one beam, MAP-like nozzle) = 1.0e8 :: Its table lists 1.1 ×
+    10^8 photons and 1.0 × 10^8 neutrons entering the detector at 10 TeV, with the note that studies assume a MAP-like nozzle.'
+- source_id: SRC_URL_MDPI_PARTICLES_2025_8_1_25
+  title: Machine Learning Approach to Shield Optimization at Muon Collider
+  authors_or_org: Luca Castelli (Sapienza / INFN)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2025-03-03'
+  version: Particles 2025, 8(1), 25
+  url: https://www.mdpi.com/2571-712X/8/1/25
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: ML + FLUKA optimization of tungsten nozzle geometry for 3 TeV (and 10 TeV adaptation); gives decay rate, BIB
+    order of magnitude, composition and timing window.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence statement 'MDPI open access (CC BY typical; not confirmed)' is inferred from publisher norms or a mirror record,
+    not verified for this item.
+  - Readout-window wording in the snippet ('from 1 ns to + 15 ns') is ambiguous about the sign of the lower bound (-1 ns expected
+    from the query note); verify on fetch.
+  licence: MDPI open access (CC BY typical; not confirmed)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider beam-induced background particles per bunch crossing photons neutrons timing nozzle FLUKA Geant4 3 TeV
+  - Castelli Particles 2025 machine learning nozzle shielding optimization muon collider 3 TeV 10 TeV mdpi
+  notes: 'Particles 2025, 8(1), 25 (MDPI, published 3 Mar 2025) confirmed in snippets; mdpi.com not attempted.
+
+    Journal reconnaissance tags: source_type ''journal article'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: muon decay rate at 3 TeV = 2.34e5 decays per meter per beam per bunch crossing (2.2e12 muons/beam) ::
+    the muon decay rate at 3 TeV is about 2.34 × 10^5 decays per meter per beam per bunch crossing, given 2.2 × 10^12 particles
+    per beam
+
+    snippet-quoted: BIB particles reaching detector per bunch crossing (3 TeV) = order 1e8 :: a substantial flux of secondary
+    particles reaches the detector, estimated to be on the order of 10^8 particles per bunch crossing
+
+    snippet-quoted: BIB composition = photons, neutrons, electrons, positrons :: the particles are primarily photons, neutrons,
+    electrons, and positrons, and are widely distributed in time relative to the bunch crossing
+
+    snippet-quoted: readout time window = -1 ns to +15 ns around bunch crossing :: a time-based rejection strategy using a
+    readout window from 1 ns to + 15 ns around the bunch crossing to cut off-time background'
+- source_id: SRC_ARXIV_2311_03280
+  title: Experimentation at a muon collider
+  authors_or_org: M. Casarsa, D. Lucchesi, L. Sestini
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: 2024-09
+  version: Annual Review of Nuclear and Particle Science Vol. 74:233-261 (2024); arXiv:2311.03280v3
+  url: https://arxiv.org/abs/2311.03280
+  doi: null
+  arxiv_id: '2311.03280'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Review of BIB sources and mitigation for 3 TeV detector; explains nozzle role and IR/nozzle optimization for
+    tracker occupancy.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider nozzle length 6 m tungsten cone 10 degrees opening angle "nozzle" MDI design 10 TeV MuCol
+  - site:arxiv.org "Experimentation at a muon collider" 2311.03280 nozzle beam-induced background
+  notes: 'Annual Review of Nuclear and Particle Science 74:233-261 (2024) confirmed in snippets.
+
+    Journal reconnaissance tags: source_type ''journal article'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: nozzle function = absorbs decay e+/e-; source of fluxes entering detector :: The nozzles inserted around
+    the IP absorb the high-energy electrons and positrons generated by the muon decays, but are responsible for the fluxes
+    of particles that eventually enter the detector.'
+- source_id: SRC_ARXIV_2203_08033
+  title: A Muon Collider Facility for Physics Discovery
+  authors_or_org: Snowmass 2021 contribution (authors not in snippet)
+  source_type: white_paper
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022'
+  version: arXiv:2203.08033
+  url: https://arxiv.org/abs/2203.08033
+  doi: null
+  arxiv_id: '2203.08033'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Describes MAP-era nozzle: two tungsten cone-shaped shields with borated polyethylene coating, 10 degree opening
+    angle.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''Snowmass 2021 contribution (authors not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider nozzle length 6 m tungsten cone 10 degrees opening angle "nozzle" MDI design 10 TeV MuCol
+  notes: 'lead decision 2026-10-28: Snowmass 2021 white paper on arXiv -> CONFERENCE_PROCEEDING (journal had SECONDARY_SOURCE).
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''SECONDARY_SOURCE'', fetch_blocked=True.
+
+    snippet-quoted: nozzle opening angle = 10 degrees :: two tungsten cone-shaped shields around the beampipe, with a borated
+    polyethylene coating, having an opening angle of 10°, referred to as "nozzles"'
+- source_id: SRC_ARXIV_2105_09116
+  title: Advanced assessment of Beam Induced Background at a Muon Collider
+  authors_or_org: F. Collamati et al. (authors not in snippet)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: '2021'
+  version: arXiv:2105.09116
+  url: https://arxiv.org/abs/2105.09116
+  doi: null
+  arxiv_id: '2105.09116'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: FLUKA + LineBuilder BIB simulation for 1.5 TeV configuration benchmarked against MARS15; defines BIB composition.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''F. Collamati et al. (authors not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org "Experimentation at a muon collider" 2311.03280 nozzle beam-induced background
+  notes: 'Journal tagged PEER_REVIEWED but no journal reference appeared in snippets; recorded as RELATED_MACHINE (IMCC BIB
+    study) until the abstract page is read.
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: BIB composition and origin = photons, neutrons, e+-, charged hadrons, Bethe-Heitler muons from decays
+    within tens of m of IP :: the BIB primarily consists of photons, neutrons, e±, charged hadrons, and Bethe-Heitler μ±,
+    which are produced by muons decaying in a range of tens of meters around the IP'
+- source_id: SRC_INDICO_DESY_45968_187027
+  title: MDI annual meeting 2025 (IMCC/MuCol annual meeting, DESY, 12-16 May 2025) - nozzle/MDI slides
+  authors_or_org: IMCC MDI working group (speaker not in snippet)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2025-05
+  version: indico.desy.de event 45968 contribution 187027
+  url: https://indico.desy.de/event/45968/contributions/187027/attachments/97249/133765/MDI_annual_meeting25.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Current 10 TeV nozzle described as tapered INERMET180 tungsten-alloy structure with borated polyethylene; L*
+    6 m vs 10 m study.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''IMCC MDI working group (speaker not in snippet)''.'
+  - The L* 6 m -> 10 m result is cut off in the snippet; speaker not named.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
+  - muon collider nozzle length 6 m tungsten cone 10 degrees opening angle "nozzle" MDI design 10 TeV MuCol
+  notes: 'lead decision 2026-10-28: Indico slide deck -> CONFERENCE_PROCEEDING / workshop_talk (journal had OFFICIAL_CERN).
+    indico.desy.de not attempted.
+
+    Journal reconnaissance tags: source_type ''workshop talk'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: nozzle description = tapered tungsten-alloy (INERMET180) with borated polyethylene :: describes the nozzle
+    as a tapered tungsten-alloy (INERMET180) structure with borated polyethylene core
+
+    snippet-quoted: L* variation studied = 6 m to 10 m :: increasing L* from 6 m to 10 m yields a result the snippet cuts
+    off before stating'
+- source_id: SRC_INDICO_1293507_5594289
+  title: MDI poster, IMCC early-career / MDI session (CERN indico event 1293507, 27 Sep 2023)
+  authors_or_org: IMCC MDI group (authors not in snippet)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2023-09-27'
+  version: indico.cern.ch event 1293507 contribution 5594289
+  url: https://indico.cern.ch/event/1293507/contributions/5594289/attachments/2722540/4730396/poster_mdi.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'FLUKA BIB figure for unoptimized MDI at 10 TeV: ~6.4e9 particles per bunch crossing, ~1.18e7 decays per bunch
+    crossing.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''IMCC MDI group (authors not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider beam-induced background particles per bunch crossing photons neutrons timing nozzle FLUKA Geant4 3 TeV
+  notes: 'lead decision 2026-10-28: Indico poster -> CONFERENCE_PROCEEDING / workshop_talk (journal had OFFICIAL_CERN). indico.cern.ch
+    not attempted (blocked host).
+
+    Journal reconnaissance tags: source_type ''workshop talk'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: BIB particles per bunch crossing (unoptimized MDI) = ~6.4e9 :: ~6.4 ∙ 10^9 particles per bunch crossing
+    in the detector, with about 1.18 × 10^7 decays per bunch crossing'
+- source_id: SRC_INDICO_FNAL_64493_294885
+  title: 'IMCC MDI slides: nozzle optimization and L* layout for 10 TeV (USMCC first collaboration meeting, Fermilab, 2024)'
+  authors_or_org: IMCC/CERN MDI group (speaker not in snippet)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2024'
+  version: indico.fnal.gov event 64493 contribution 294885
+  url: https://indico.fnal.gov/event/64493/contributions/294885/attachments/180657/247612/USMCC_first_collaboration_MDI.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 10 TeV layout with L* = 6 m; plan to start from 10 degree MAP nozzle for 1.5 TeV and optimize shape, material
+    and aperture for 3 and 10 TeV.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''IMCC/CERN MDI group (speaker not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider nozzle length 6 m tungsten cone 10 degrees opening angle "nozzle" MDI design 10 TeV MuCol
+  notes: 'lead decision 2026-10-28: FNAL Indico slide deck -> CONFERENCE_PROCEEDING / workshop_talk (journal had RELATED_MACHINE).
+    indico.fnal.gov not attempted.
+
+    Journal reconnaissance tags: source_type ''workshop talk'', category ''RELATED_MACHINE'', fetch_blocked=True.
+
+    snippet-quoted: L* (10 TeV layout) = 6 m :: A 2024 IMCC/CERN MDI slide deck shows a 10 TeV layout with L* = 6 m.
+
+    snippet-quoted: optimization plan = start from 10 degree MAP nozzle :: the plan starts from 10° nozzle US MAP design for
+    √s=1.5 TeV, and optimizing the shape, material & aperture for 3 & 10 TeV'
+- source_id: SRC_ARXIV_2608_02714
+  title: Neutrino Fluxes at a Muon Collider
+  authors_or_org: Francis M. Burk, Tao Han, Wolfgang Kilian, Felix Kling, Joachim Kopp, Zahra Tabrizi
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2026-08
+  version: arXiv:2608.02714; companion arXiv:2608.02718
+  url: https://arxiv.org/abs/2608.02714
+  doi: null
+  arxiv_id: '2608.02714'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Re-evaluation of muon-decay neutrino fluxes for latest 10 TeV design; forward flux ~1e12 nu/s, ~factor 120 above
+    earlier estimates; relevant to neutrino radiation and forward detector.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider neutrino radiation hazard muon decay neutrino flux collider ring mover arc 10 TeV
+  - '"Neutrino Fluxes at a Muon Collider" arXiv 2608.02714'
+  notes: 'Journal tagged PEER_REVIEWED but only an arXiv record (Aug 2026) appeared in snippets; recorded as RELATED_MACHINE
+    (muon collider neutrino flux) until the abstract page is read.
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PEER_REVIEWED'', fetch_blocked=True.
+
+    snippet-quoted: forward neutrino flux at 10 TeV = ~1e12 neutrinos/s (~1e19/year) :: about $10^{12}$ neutrinos per second
+    or $10^{19}$ neutrinos per year in the forward direction. This is roughly a factor of 120 larger than the previous estimate'
+- source_id: SRC_ARXIV_PHYSICS_9908017
+  title: Potential hazards from neutrino radiation at muon colliders
+  authors_or_org: B.J. King (author inferred from historical context; not in snippet)
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: '1999'
+  version: arXiv:physics/9908017
+  url: https://arxiv.org/abs/physics/9908017
+  doi: null
+  arxiv_id: physics/9908017
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Classic neutrino radiation disk hazard analysis; dose exceeds legal limit for 10 TeV and 100 TeV straw-man scenarios;
+    isolated siting recommendation.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''B.J. King (author inferred from historical context; not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider neutrino radiation hazard muon decay neutrino flux collider ring mover arc 10 TeV
+  notes: 'Historical (1999) neutrino-radiation hazard note; author B.J. King inferred by the reconnaissance agent from context,
+    not read in a snippet.
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''SECONDARY_SOURCE'', fetch_blocked=True.
+
+    snippet-quoted: siting conclusion = isolated sites beyond a few TeV :: muon colliders at CoM energies of beyond a few
+    TeV will probably have to be constructed at isolated sites'
+- source_id: SRC_ARXIV_2511_03883
+  title: 'Physics Briefing Book: Input for the 2026 update of the European Strategy for Particle Physics'
+  authors_or_org: ESPPU 2026 Physics Preparatory Group
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: 2025-11
+  version: arXiv:2511.03883
+  url: https://arxiv.org/abs/2511.03883
+  doi: null
+  arxiv_id: '2511.03883'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Describes IMCC hybrid RCS acceleration baseline (fixed-field SC dipoles + pulsed NC dipoles) with ~2 cm orbit
+    excursion.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid rapid cycling synchrotron vFFA vertical excursion FFA acceleration IMCC
+  notes: 'ESPPU 2026 Physics Briefing Book (Physics Preparatory Group); category OFFICIAL_CERN kept from journal because the
+    Briefing Book is a CERN Council strategy document, but the CERN report number was not seen in snippets.
+
+    Journal reconnaissance tags: source_type ''official report'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: hybrid RCS orbit excursion = roughly 2 cm :: The pulsed magnets widen the energy swing, but they also
+    push the muon orbits out by roughly 2 cm'
+- source_id: SRC_INDICO_DESY_45968_185344
+  title: vFFA lattices as an alternative to RCS for muon acceleration (IMCC/MuCol annual meeting, DESY, 12-16 May 2025)
+  authors_or_org: Max Topp-Mugglestone (RAL/ISIS, IMCC)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2025-05
+  version: indico.desy.de event 45968 contribution 185344
+  url: https://indico.desy.de/event/45968/contributions/185344
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'vFFA alternative to RCS: time-independent SC magnets, constant tunes, zero path-length difference, quasi-isochronous;
+    footprints comparable to RCS1 and RCS4; coupled transverse optics complication.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - No standalone arXiv preprint on vFFA for muon acceleration (Topp-Mugglestone 2025) was found; only Indico talks and the
+    IPAC2021 proceedings.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid rapid cycling synchrotron vFFA vertical excursion FFA acceleration IMCC
+  - muon collider "vFFA" OR "vertical FFA" Topp-Mugglestone muon acceleration arXiv 2025
+  notes: 'lead decision 2026-10-28: DESY Indico contribution -> CONFERENCE_PROCEEDING / workshop_talk (journal had OFFICIAL_CERN).
+    Only the abstract was seen in snippets; no slides confirmed.
+
+    Journal reconnaissance tags: source_type ''workshop talk'', category ''OFFICIAL_CERN'', fetch_blocked=True.'
+- source_id: SRC_INDICO_1553599_6692118
+  title: FFA application to the muon collider complex (CERN talk, 17 Sep 2025)
+  authors_or_org: Max Topp-Mugglestone
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2025-09-17'
+  version: indico.cern.ch event 1553599 contribution 6692118
+  url: https://indico.cern.ch/event/1553599/contributions/6692118/attachments/3137263/5567034/20250917-muon-ffa.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'vFFA parameter studies, decoupled insertions, FFA collider ring; open issues: high normalized gradients, extraction
+    with coupled optics, 6D simulation needed.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - No standalone arXiv preprint on vFFA for muon acceleration (Topp-Mugglestone 2025) was found; only Indico talks and the
+    IPAC2021 proceedings.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid rapid cycling synchrotron vFFA vertical excursion FFA acceleration IMCC
+  - muon collider "vFFA" OR "vertical FFA" Topp-Mugglestone muon acceleration arXiv 2025
+  notes: 'lead decision 2026-10-28: CERN Indico slide deck -> CONFERENCE_PROCEEDING / workshop_talk (journal had OFFICIAL_CERN).
+    indico.cern.ch not attempted (blocked host).
+
+    Journal reconnaissance tags: source_type ''workshop talk'', category ''OFFICIAL_CERN'', fetch_blocked=True.
+
+    snippet-quoted: muon lifetime at rest = 2.2 us :: The slides list a 2.2 µs muon lifetime at rest as the core timing constraint.'
+- source_id: SRC_JACOW_IPAC2021_THPAB124
+  title: Application of FFA optics to a muon collider complex (IPAC 2021)
+  authors_or_org: S. Machida, J.-B. Lagrange, M. Topp-Mugglestone
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2021'
+  version: IPAC2021 THPAB124
+  url: https://jacow.org/ipac2021/papers/THPAB124.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Earliest vFFA-for-muon-collider work; collider arc built from skew quadrupoles with vertical displacement.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence statement 'JACoW CC BY 3.0 (typical; not confirmed)' is inferred from publisher norms or a mirror record, not
+    verified for this item.
+  licence: JACoW CC BY 3.0 (typical; not confirmed)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider "vFFA" OR "vertical FFA" Topp-Mugglestone muon acceleration arXiv 2025
+  notes: 'JACoW IPAC2021 THPAB124; jacow.org not attempted.
+
+    Journal reconnaissance tags: source_type ''conference proceeding'', category ''CONFERENCE_PROCEEDING'', fetch_blocked=True.'
+- source_id: SRC_ARXIV_2506_15445
+  title: 'muLHC: Antimuon Ring and HL-LHC based mu+p Collider'
+  authors_or_org: not in snippet
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: 2025-06
+  version: arXiv:2506.15445
+  url: https://arxiv.org/abs/2506.15445
+  doi: 10.1093/ptep/ptag031
+  arxiv_id: '2506.15445'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Directly relevant to LHmuC: antimuon ring colliding with HL-LHC protons; discusses hybrid RCS baseline and cascaded
+    vFFA arc layout.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''not in snippet''.'
+  - Journal snippet attributes a 'cascaded vFFA arc layout' discussion to this paper; to be checked against the uploaded v2
+    text.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid rapid cycling synchrotron vFFA vertical excursion FFA acceleration IMCC
+  notes: 'lead decision 2026-10-28: journal tagged PRIMARY_LHMUC; corrected to RELATED_MACHINE. This id already exists in
+    research/source_registry.yaml as an uploaded, fully read PDF (v2); this fragment entry only records the web-reconnaissance
+    view of this family and the queries that surfaced it (merge keeps the registry text).
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PRIMARY_LHMUC'', fetch_blocked=True.'
+- source_id: SRC_ARXIV_2203_07964
+  title: Simulated Detector Performance at the Muon Collider
+  authors_or_org: Snowmass 2021 contribution (authors not in snippet)
+  source_type: white_paper
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022'
+  version: arXiv:2203.07964
+  url: https://arxiv.org/abs/2203.07964
+  doi: null
+  arxiv_id: '2203.07964'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 3 TeV detector performance with BIB; notes nozzle re-optimisation as future work for 3 and 10 TeV MDI.
+  parameters_extracted: []
+  unresolved_questions:
+  - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
+    Title, authorship, date and every quoted value must be verified on fetch.
+  - Licence not visible in snippets.
+  - 'Authorship uncertain: journal records ''Snowmass 2021 contribution (authors not in snippet)''.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - (see family queries) - no journal query note names this source
+  notes: 'lead decision 2026-10-28: Snowmass 2021 white paper on arXiv -> CONFERENCE_PROCEEDING (journal had SECONDARY_SOURCE).
+
+    Journal reconnaissance tags: source_type ''arXiv preprint'', category ''SECONDARY_SOURCE'', fetch_blocked=True.'

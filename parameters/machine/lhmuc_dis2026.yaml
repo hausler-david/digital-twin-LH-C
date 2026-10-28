@@ -1,0 +1,763 @@
+# Machine-level parameters extracted from SRC_ARXIV_2610_35154 (K. Piotrzkowski, LHμC DIS2026 proceedings, arXiv:2610.35154v1).
+# Every record carries page, table/figure and a verbatim quotation. Table 1 is explicitly labelled
+# "Example of the LHμC parameters" (not a final specification). Scenario ids: LHMUC-DIS2026-1TEV, LHMUC-DIS2026-2TEV.
+# Quotation transcription note: superscripts/subscripts of the PDF are written in plain text (10^34, cm^-2 s^-1, sigma_x,y).
+parameters:
+  - parameter_id: MACHINE_MU_BEAM_ENERGY_DIS2026
+    name: Muon (mu+) beam energy, 1 TeV option
+    symbol: E_mu
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 1.0
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: null, quotation: "The collisions of 1 TeV muons with 7 TeV protons at LHμC, corresponding to √s_μp = 5.3 TeV"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Baseline muon beam energy of the LHμC concept; also stated in the abstract (p.1: 'a 1 or 2 TeV μ+ beam collides with a 7 TeV proton beam') and in Fig. 2 caption ('the 1 TeV muon storage ring')."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 5.29 TeV (tests/scientific/test_analytical_checks.py::test_sqrt_s)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Beam is positive muons only (mu+): the ultra-cold muon source 'is only applicable for the μ+ production' (p.3)."
+
+  - parameter_id: MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026
+    name: Muon (mu+) beam energy, 2 TeV option
+    symbol: E_mu
+    subsystem: machine
+    scenario: LHMUC-DIS2026-2TEV
+    value: 2.0
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: null, quotation: "Moreover, an option of the 2 TeV muon beam is also considered, resulting in a yet higher √s_μp = 7.5 TeV."}
+      derivation: null
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-2TEV, explanation: "Explicitly an 'option'; the paper gives no luminosity table for it. Fig. 2 caption: 'The dash-dotted circle represents the 2 TeV muon ring.'"}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 7.48 TeV (tests/scientific/test_analytical_checks.py::test_sqrt_s)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: PROTON_BEAM_ENERGY_DIS2026
+    name: Proton beam energy (LHC/HL-LHC beam)
+    symbol: E_p
+    subsystem: proton_beam
+    scenario: null
+    value: 7.0
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 1, section: "Abstract", table_figure_or_equation: null, quotation: "at the LHμC, a 1 or 2 TeV μ+ beam collides with a 7 TeV proton beam, resulting in the μ+p centre-of-mass energy of 5.3 or 7.5 TeV, respectively"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Applies to both DIS2026 scenarios (1 TeV and 2 TeV muon options); the proton beam is the (HL-)LHC beam ('muon-hadron collisions at the HL-LHC', p.2)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the sqrt(s) reproduction (tests/scientific/test_analytical_checks.py::test_sqrt_s)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/proton_beam
+    notes: "Record placed in parameters/machine/lhmuc_dis2026.yaml by the DIS2026 extraction task; subsystem is proton_beam."
+
+  - parameter_id: MACHINE_SQRT_S_DIS2026
+    name: Muon-proton centre-of-mass energy (DIS2026 example set, 1 TeV option)
+    symbol: sqrt(s)
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 5.3
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Center-of-mass energy, √s [TeV] 5.3"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Example parameter set, explicitly labelled 'Example of the LHμC parameters'; not a final specification."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "reproduced by 2*sqrt(E_mu*E_p) = 5.29 TeV from MACHINE_MU_BEAM_ENERGY_DIS2026 and PROTON_BEAM_ENERGY_DIS2026 (tests/scientific/test_analytical_checks.py::test_sqrt_s)"], check_ids: [], notes: "Rounded 5.3 vs computed 5.29 TeV (0.2% rounding)."}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_DIS2026, PROTON_BEAM_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Also in text p.2: 'corresponding to √s_μp = 5.3 TeV'."
+
+  - parameter_id: MACHINE_SQRT_S_2TEV_DIS2026
+    name: Muon-proton centre-of-mass energy, 2 TeV muon option
+    symbol: sqrt(s)
+    subsystem: machine
+    scenario: LHMUC-DIS2026-2TEV
+    value: 7.5
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: null, quotation: "Moreover, an option of the 2 TeV muon beam is also considered, resulting in a yet higher √s_μp = 7.5 TeV."}
+      derivation: null
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-2TEV, explanation: "2 TeV option; no luminosity or beam table given for it in this source."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "reproduced by 2*sqrt(E_mu*E_p) = 7.48 TeV from MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026 and PROTON_BEAM_ENERGY_DIS2026 (tests/scientific/test_analytical_checks.py::test_sqrt_s)"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026, PROTON_BEAM_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_PEAK_LUMINOSITY_DIS2026
+    name: Peak luminosity (DIS2026 example set)
+    symbol: L_peak
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 2.1e+34
+    unit: "cm^-2 s^-1"
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Peak luminosity, L [10^34 cm^-2 s^-1] 2.1"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Example parameter set; relies on the stated assumptions: μ+ yields at 5% of μTRISTAN, a 4 MW proton driver and increased LHC proton bunch population (p.4)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "reproduced by L = f N_mu N_p / (4 pi sigma_x sigma_y) with f = 4 MHz, N_mu = 0.07e11, N_p = 22e11, sigma = 4.8 um -> 2.13e34 cm^-2 s^-1, H = 1 (tests/scientific/test_analytical_checks.py::test_dis2026_table1_luminosity_reproduced_with_h_equal_one)"], check_ids: [], notes: "The naive formula with hourglass/decay factor H = 1 reproduces the table value to 1.3%; no decay or hourglass correction is visible in the published number."}
+    dependencies: [MACHINE_COLLISION_RATE_DIS2026, MACHINE_MU_BUNCH_POPULATION_DIS2026, PROTON_BUNCH_POPULATION_DIS2026, IR_SIGMA_X_IP_MUON_DIS2026, IR_SIGMA_Y_IP_MUON_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "The 'peak' value refers to the 4 MHz in-train collision rate; the abstract separately quotes an average luminosity 'close to 10^34' (MACHINE_AVERAGE_LUMINOSITY_DIS2026)."
+
+  - parameter_id: MACHINE_AVERAGE_LUMINOSITY_DIS2026
+    name: Average luminosity (abstract statement, both energy options)
+    symbol: L_avg
+    subsystem: machine
+    scenario: null
+    value: 1.0e+34
+    unit: "cm^-2 s^-1"
+    uncertainty: {type: not_stated, note: "source says 'close to 10^34 cm^-2 s^-1' (an approximate statement, not an order-of-magnitude uncertainty); no numerical precision is given. The recorded value 1e34 is the stated reference figure, not a measured central value."}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 1, section: "Abstract", table_figure_or_equation: null, quotation: "resulting in the μ+p centre-of-mass energy of 5.3 or 7.5 TeV, respectively, at an average luminosity close to 10^34 cm^-2 s^-1"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "The abstract attributes the average luminosity to both the 1 TeV and 2 TeV options ('5.3 or 7.5 TeV, respectively, at an average luminosity close to 10^34'). The relation between this average and the Table 1 peak value (2.1e34) is not explained in the source."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "Not reproducible from the source alone: the averaging procedure (muon decay over the 80 ms repetition period, fill pattern) is not stated. With tau_lab(1 TeV) = 20.8 ms and T_rep = 80 ms, the decay-averaged fraction of the peak would be ~0.25, i.e. ~5e33; this is an audit observation, not a reported value."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Confidence medium because the source gives only 'close to 10^34'."
+
+  - parameter_id: MACHINE_PEAK_LUMINOSITY_LOWER_BOUND_DIS2026
+    name: Peak luminosity lower bound stated in the introduction ('might exceed 10^34')
+    symbol: L_peak
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 1.0e+34
+    unit: "cm^-2 s^-1"
+    uncertainty: {type: not_stated, note: "the statement is a bound ('might exceed'), not a central value"}
+    allowed_range: {min: 1.0e+34, max: null, unit: "cm^-2 s^-1", basis: "source text: 'the peak LHμC luminosity which might exceed 10^34 cm^-2 s^-1'"}
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: null, quotation: "and the peak LHμC luminosity which might exceed 10^34 cm^-2 s^-1, are effectively making it a powerful Higgs-Electroweak-Top (HET) factory"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Qualitative bound consistent with the Table 1 value 2.1e34 (MACHINE_PEAK_LUMINOSITY_DIS2026); recorded separately so the two statements are not merged."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_COLLISION_RATE_DIS2026
+    name: Bunch collision rate (within the muon train)
+    symbol: f_coll
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4.0
+    unit: MHz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Collision(Repet.) rate [MHz(Hz)] 4(12.5)"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Table 1 cell '4(12.5)' read as collision rate 4 MHz and repetition rate 12.5 Hz."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "reproduced as 1 / (250 ns bunch separation) = 4.0 MHz from MACHINE_MU_BUNCH_SPACING_DIS2026"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MU_BUNCH_SPACING_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "This is the rate while the 80-bunch train collides, not the time-averaged crossing rate (see MACHINE_MU_TRAIN_DURATION_DIS2026 and MACHINE_AVERAGE_LUMINOSITY_DIS2026)."
+
+  - parameter_id: MACHINE_REPETITION_RATE_DIS2026
+    name: Muon train repetition (injection) rate
+    symbol: f_rep
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 12.5
+    unit: Hz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Collision(Repet.) rate [MHz(Hz)] 4(12.5)"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Also in text p.4: 'and the repetition rate is 12.5 Hz'."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "cross-checked against the text statement on p.4 ('the repetition rate is 12.5 Hz'); 1/12.5 Hz = 80 ms between trains, ~3.8 lab lifetimes at 1 TeV (MACHINE_MU_LIFETIME_LAB_DIS2026)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MU_BUNCH_POPULATION_DIS2026
+    name: Muon bunch population
+    symbol: N_mu
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 7.0e+9
+    unit: particles
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Bunch population [10^11] 0.07 22"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "μ+ column of Table 1: 0.07 x 10^11 = 7.0e9 per bunch. Follows from the 'rather conservatively' assumed μ+ yield of 5% of the μTRISTAN proposal (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the luminosity reproduction (tests/scientific/test_analytical_checks.py::test_dis2026_table1_luminosity_reproduced_with_h_equal_one)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Value is 0.07 in units of 10^11, i.e. 7.0e9 muons per bunch."
+
+  - parameter_id: PROTON_BUNCH_POPULATION_DIS2026
+    name: Proton bunch population (increased population of fewer LHC bunches)
+    symbol: N_p
+    subsystem: proton_beam
+    scenario: LHMUC-DIS2026-1TEV
+    value: 2.2e+12
+    unit: particles
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_table_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Table 1", quotation: "Bunch population [10^11] 0.07 22"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "p column of Table 1: 22 x 10^11 = 2.2e12 protons per bunch. The text (p.4) justifies it by 'the possibility of an increased population of LHC proton bunches due to their smaller number (hence, lower collision rate) [24]'. Ten times the 22 x 10^10 protons per bunch that the μLHC paper (SRC_ARXIV_2506_15445, Table 2, p.12) quotes for the HL-LHC proton beam; the number of proton bunches is not given here."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "input to the luminosity reproduction; the factor 10 vs the HL-LHC 2.2e11 is consistent with the published 2.1e34 (tests/scientific/test_analytical_checks.py::test_dis2026_proton_bunch_population_is_ten_times_hl_lhc)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/proton_beam
+    notes: "Feasibility of 2.2e12 per bunch in the LHC is attributed to ref. [24] (F. Zimmermann, 'Potential possibilities of modifying SPS/LHC', LHμC workshop), which was not available to this audit. Record placed in parameters/machine/lhmuc_dis2026.yaml; subsystem proton_beam."
+
+  - parameter_id: MACHINE_MU_BUNCHES_DIS2026
+    name: Number of muon bunches in the stored train
+    symbol: n_b_mu
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 80
+    unit: bunches
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The μ+ train stored in the main ring in this case contains 80 bunches separated by 250 ns, and the repetition rate is 12.5 Hz."}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Text accompanying Table 1 ('in this case' = the example parameter set)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "80 bunches x 250 ns = 20 us train duration (MACHINE_MU_TRAIN_DURATION_DIS2026), which exceeds the ~10 us revolution period of a ~3 km ring; see notes."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Audit observation (not resolved here): 80 bunches at 250 ns span 20 us, whereas a 'main ring of about 3 km' has a revolution period of ~10 us (MACHINE_MAIN_RING_REVOLUTION_PERIOD_DIS2026). Either the bunches are not all in the ring simultaneously, the spacing/circumference are approximate, or the statement refers to a different fill pattern. The source does not explain; candidate entry for research/source_conflicts.yaml."
+
+  - parameter_id: MACHINE_MU_BUNCH_SPACING_DIS2026
+    name: Muon bunch separation in the train
+    symbol: t_b
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 250
+    unit: ns
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The μ+ train stored in the main ring in this case contains 80 bunches separated by 250 ns, and the repetition rate is 12.5 Hz."}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Text accompanying Table 1. Ten times the 25 ns LHC bunch spacing, consistent with 'the time separation of muon bunches is large at LHμC' (p.4, §3)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "1/250 ns = 4.0 MHz reproduces the Table 1 collision rate (MACHINE_COLLISION_RATE_DIS2026)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MU_TRAIN_DURATION_DIS2026
+    name: Duration of the 80-bunch muon train (derived)
+    symbol: T_train
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 20.0
+    unit: us
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: derived_lhmuc
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "contains 80 bunches separated by 250 ns"}
+      derivation: "T_train = MACHINE_MU_BUNCHES_DIS2026 * MACHINE_MU_BUNCH_SPACING_DIS2026 = 80 * 250 ns = 20.0 us (bunch-centre to bunch-centre span; 79 gaps would give 19.75 us)."
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Derived to compare the train length with the main-ring revolution period."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "arithmetic 80 x 250 ns"], check_ids: [], notes: "Equals the revolution period of a ~6 km ring, not of the ~3 km ring stated for the 1 TeV option (see MACHINE_MU_BUNCHES_DIS2026 notes)."}
+    dependencies: [MACHINE_MU_BUNCHES_DIS2026, MACHINE_MU_BUNCH_SPACING_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026
+    name: Main muon ring circumference, 1 TeV option
+    symbol: C_ring
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 3.0
+    unit: km
+    uncertainty: {type: not_stated, note: "source says 'about 3(6) km'; no precision given (approximate value, not an order-of-magnitude uncertainty)"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The 1(2) TeV anti-muon beams emerging from the booster of about 9 km circumference will be transferred to the circular main ring of about 3(6) km positioned tangentially to the LHC (see Fig. 2)."}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "The '3' of '3(6) km' belongs to the 1 TeV option; Fig. 2 caption: 'the 1 TeV muon storage ring is shown in light blue'."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "revolution period C/c = 10.0 us (MACHINE_MAIN_RING_REVOLUTION_PERIOD_DIS2026); uniform-dipole field for 1 TeV on rho = C/2pi would be 7.0 T (tests/scientific/test_analytical_checks.py::test_brho_and_bending_field)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Confidence medium because the value is given only as 'about'."
+
+  - parameter_id: MACHINE_MAIN_RING_CIRCUMFERENCE_2TEV_DIS2026
+    name: Main muon ring circumference, 2 TeV option
+    symbol: C_ring
+    subsystem: machine
+    scenario: LHMUC-DIS2026-2TEV
+    value: 6.0
+    unit: km
+    uncertainty: {type: not_stated, note: "source says 'about 3(6) km'; no precision given (approximate value, not an order-of-magnitude uncertainty)"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The 1(2) TeV anti-muon beams emerging from the booster of about 9 km circumference will be transferred to the circular main ring of about 3(6) km positioned tangentially to the LHC (see Fig. 2)."}
+      derivation: null
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-2TEV, explanation: "The '(6)' of '3(6) km' belongs to the 2 TeV option; Fig. 2 caption: 'The dash-dotted circle represents the 2 TeV muon ring.'"}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "revolution period C/c = 20.0 us; same bending field as the 3 km / 1 TeV ring (rigidity and radius both doubled)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_REVOLUTION_PERIOD_DIS2026
+    name: Main ring revolution period, 1 TeV option (derived)
+    symbol: T_rev
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 10.007
+    unit: us
+    uncertainty: {type: not_stated, note: "inherits the unquantified 'about 3 km' circumference approximation; value is the exact 3000 m / c result, not rounded"}
+    allowed_range: null
+    provenance:
+      status: derived_lhmuc
+      extraction_method: computed_from_registry
+      source: null
+      derivation: "T_rev = MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026 / c = 3000 m / 299792458 m/s = 10.007 us (ultra-relativistic muons, beta = 1)."
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Derived for the train-length consistency check and for turn counting."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "arithmetic C/c; ~2080 turns per lab lifetime at 1 TeV (tests/scientific/test_analytical_checks.py::test_mulhc_main_ring_turns_and_average_population uses the same 3 km / 10 us relation)"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MU_LIFETIME_LAB_DIS2026
+    name: Laboratory-frame muon lifetime at 1 TeV (analytical)
+    symbol: tau_lab
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 20.79
+    unit: ms
+    uncertainty: {type: relative_fraction, value: 1.0e-6, note: "limited only by PDG constant precision; beam energy taken as exactly 1 TeV"}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: null
+      derivation: "tau_lab = gamma * tau_mu with gamma = MACHINE_MU_BEAM_ENERGY_DIS2026 / (m_mu c^2) = 1000 GeV / 0.1056583755 GeV = 9464.5 and tau_mu = 2.1969811e-6 s (PDG 2024 constants as recorded in lhmuc/analytical.py) -> 20.79 ms. Function lhmuc.analytical.tau_lab_s."
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Not stated in the DIS2026 paper; pure kinematics from the reported beam energy."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "tests/scientific/test_analytical_checks.py::test_gamma_and_lifetime_1tev"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "1/12.5 Hz = 80 ms between injections corresponds to ~3.85 lab lifetimes."
+
+  - parameter_id: MACHINE_MU_LIFETIME_LAB_2TEV_DIS2026
+    name: Laboratory-frame muon lifetime at 2 TeV (analytical)
+    symbol: tau_lab
+    subsystem: machine
+    scenario: LHMUC-DIS2026-2TEV
+    value: 41.59
+    unit: ms
+    uncertainty: {type: relative_fraction, value: 1.0e-6, note: "limited only by PDG constant precision; beam energy taken as exactly 2 TeV"}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: null
+      derivation: "tau_lab = gamma * tau_mu with gamma = MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026 / (m_mu c^2) = 2000 GeV / 0.1056583755 GeV = 18929 and tau_mu = 2.1969811e-6 s (PDG 2024 constants as recorded in lhmuc/analytical.py) -> 41.59 ms. Function lhmuc.analytical.tau_lab_s."
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-2TEV, explanation: "Not stated in the DIS2026 paper; pure kinematics from the reported beam energy."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "same function as tests/scientific/test_analytical_checks.py::test_gamma_and_lifetime_1tev, scaled by 2"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_POSITION_DIS2026
+    name: Main ring placement relative to the LHC (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: "circular_main_ring_tangential_to_LHC"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Fig. 2", quotation: "will be transferred to the circular main ring of about 3(6) km positioned tangentially to the LHC (see Fig. 2)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Applies to both energy options; Fig. 2 shows the muon ring touching the 'LHC beam' line at the 'IP'."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement; no numeric check."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_LHEC_INFRASTRUCTURE_REUSE_DIS2026
+    name: Infrastructure basis of the LHμC (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: "major_reuse_of_LHeC_ERL_infrastructure_at_HL_LHC"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 1, section: "Abstract", table_figure_or_equation: null, quotation: "The latest developments regarding the feasibility of muon-hadron collisions, achieved through the major reuse of LHeC infrastructure, are presented"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Also p.2: 'using the energy recovery linac infrastructure of the electron-hadron collider LHeC [4-6]'. Fig. 2 caption: 'The ERL components for the lepton beam acceleration are depicted in black'."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_NEUTRINO_BEAM_ENERGY_MIN_DIS2026
+    name: Lower edge of the decay-muon energy band feeding the neutrino beams
+    symbol: E_mu_min
+    subsystem: machine
+    scenario: null
+    value: 1.0
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The energies of the decaying anti-muons are distributed in complementary bands, from 1 GeV to the top energy."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "The band is that of the decaying muons (parents), not of the neutrinos themselves; 1 GeV is the booster injection energy (ACCEL_INJECTION_ENERGY_DIS2026)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Neutrino beams are nu_e and anti-nu_mu (from mu+ decay), 'very intense and highly collimated in three different directions' (MACHINE_NEUTRINO_BEAM_DIRECTIONS_DIS2026)."
+
+  - parameter_id: MACHINE_NEUTRINO_BEAM_ENERGY_MAX_DIS2026
+    name: Upper edge of the decay-muon energy band feeding the neutrino beams, 1 TeV option (derived)
+    symbol: E_mu_max
+    subsystem: machine
+    scenario: LHMUC-DIS2026-1TEV
+    value: 1.0
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: derived_lhmuc
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The energies of the decaying anti-muons are distributed in complementary bands, from 1 GeV to the top energy."}
+      derivation: "'the top energy' = MACHINE_MU_BEAM_ENERGY_DIS2026 = 1 TeV for the 1 TeV option (2 TeV for MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026)."
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Identification of 'top energy' with the collision energy of the muon beam."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_NEUTRINO_BEAM_DIRECTIONS_DIS2026
+    name: Number of distinct neutrino beam directions produced by the complex
+    symbol: n_nu_beams
+    subsystem: machine
+    scenario: null
+    value: 3
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "the LHμC complex will produce, as a \"side effect\", ν_e and ν̄_μ beams – very intense and highly collimated in three different directions – along two booster linacs as well as the straight section of the main ring."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Two booster linacs plus the main-ring straight section. No flux numbers are given in this source."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Count of directions; consistent with the two linacs drawn in Fig. 2 ('linac 1', 'linac 2')."}
+    dependencies: [ACCEL_BOOSTER_LINAC_COUNT_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: "Neutrino flavours stated: nu_e and anti-nu_mu (mu+ decay)."
+
+  - parameter_id: MACHINE_LONG_TERM_SQRT_S_FCCHH_DIS2026
+    name: Long-term muon-proton collision energy with FCC-hh (outlook)
+    symbol: sqrt(s)
+    subsystem: machine
+    scenario: null
+    value: 30
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "5. Outlook", table_figure_or_equation: null, quotation: "the LHμC project potentially opens amazing opportunities to greatly extend the scientific scope of the proposed FCC-hh (or HE-LHC) facility by adding, at a fractional cost, a very powerful muon-hadron collider, capable of colliding muons and protons at 30 (15) TeV"}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Outlook statement only; the '30' of '30 (15) TeV' is read as the FCC-hh case. Whether 30 TeV denotes sqrt(s) is not stated explicitly, and the FCC-hh/HE-LHC proton beam energies and the muon beam energy assumed for this outlook are not given in this source, so no decomposition into beam energies is attempted (audit note)."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "Interpretation as centre-of-mass energy is the audit's reading; see applicability."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: MACHINE_LONG_TERM_SQRT_S_HELHC_DIS2026
+    name: Long-term muon-proton collision energy with HE-LHC (outlook)
+    symbol: sqrt(s)
+    subsystem: machine
+    scenario: null
+    value: 15
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 5, section: "5. Outlook", table_figure_or_equation: null, quotation: "capable of colliding muons and protons at 30 (15) TeV, and in addition, of producing very high flux neutrino beams"}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Outlook statement only; the '(15)' is read as the HE-LHC case, by the same parenthetical convention the paper uses for '1(2) TeV' and '3(6) km'."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/machine
+    notes: null
+
+  - parameter_id: PHYS_DIS_INELASTICITY_MIN_DIS2026
+    name: Lower inelasticity cut assumed for the LHμC kinematic reach in Fig. 1
+    symbol: y_min
+    subsystem: physics_programme
+    scenario: null
+    value: 4.0e-3
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1 (legend)", quotation: "LHμC (1 TeV × 7 TeV, 4 × 10^-3 < y < 1)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Same cut for both LHμC entries of the legend: 'LHμC (2 TeV × 7 TeV, 4 × 10^-3 < y < 1)' and 'LHμC (1 TeV × 7 TeV, 4 × 10^-3 < y < 1)'. The origin of the 4e-3 cut (detector acceptance or analysis choice) is not stated."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: "Record placed in parameters/machine/lhmuc_dis2026.yaml by the DIS2026 extraction task; subsystem physics_programme."
+
+  - parameter_id: PHYS_DIS_INELASTICITY_MAX_DIS2026
+    name: Upper inelasticity cut assumed for the LHμC kinematic reach in Fig. 1
+    symbol: y_max
+    subsystem: physics_programme
+    scenario: null
+    value: 1.0
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1 (legend)", quotation: "LHμC (1 TeV × 7 TeV, 4 × 10^-3 < y < 1)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Kinematic limit y = 1; same for both LHμC legend entries."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: null
+
+  - parameter_id: PHYS_FIG1_XBJ_AXIS_MIN_DIS2026
+    name: Lower edge of the x_Bj axis of the kinematic-reach plot (Fig. 1)
+    symbol: x_Bj
+    subsystem: physics_programme
+    scenario: null
+    value: 1.0e-7
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1 (axis tick labels)", quotation: "10^-7 10^-6 10^-5 10^-4 10^-3 10^-2 10^-1 1 / x_Bj"}
+      derivation: null
+      applicability: {category: screening_only, scenario: null, explanation: "Axis range only (the LHμC bands reach the left edge of the plot); the plot's own x_min cannot be read more precisely than the axis. Q^2 axis spans 10^-1 to above 10^6 GeV^2."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "x_min = Q^2/(s y_max) at Q^2 = 10 GeV^2 and sqrt(s) = 5.3 TeV is 3.6e-7 (lhmuc.analytical.bjorken_x_min; tests/scientific/test_analytical_checks.py::test_bjorken_x_reach), inside the plotted range"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: null
+
+  - parameter_id: PHYS_KINEMATIC_REACH_GAIN_VS_LHEC_DIS2026
+    name: Kinematic-plane expansion of LHμC relative to LHeC (lower bound, orders of magnitude)
+    symbol: null
+    subsystem: physics_programme
+    scenario: null
+    value: 1
+    unit: dimensionless
+    uncertainty: {type: not_stated, note: "the source gives a bound ('more than one order of magnitude'), in decades"}
+    allowed_range: {min: 1, max: null, unit: dimensionless, basis: "source text: 'by more than one order of magnitude with respect to the LHeC'"}
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1", quotation: "Already an initial running of LHμC at very low luminosity will allow for a huge kinematical expansion in the (x_Bj, Q^2) plane for studying QCD: by more than one order of magnitude with respect to the LHeC and by more than two orders wrt. HERA (see Fig. 1)."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Value in decades (log10 of the expansion factor); which axis or area measure is meant is not stated."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Qualitative bound; s ratio LHμC(1 TeV)/LHeC(50 GeV) = 20 (1.3 decades) is an audit observation consistent with 'more than one order of magnitude'."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: null
+
+  - parameter_id: PHYS_KINEMATIC_REACH_GAIN_VS_HERA_DIS2026
+    name: Kinematic-plane expansion of LHμC relative to HERA (lower bound, orders of magnitude)
+    symbol: null
+    subsystem: physics_programme
+    scenario: null
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated, note: "the source gives a bound ('more than two orders'), in decades"}
+    allowed_range: {min: 2, max: null, unit: dimensionless, basis: "source text: 'by more than two orders wrt. HERA'"}
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1", quotation: "by more than one order of magnitude with respect to the LHeC and by more than two orders wrt. HERA (see Fig. 1)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Value in decades; HERA is represented in Fig. 1 by the 'H1 & ZEUS' dataset region."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Qualitative bound."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: null
+
+  - parameter_id: PHYS_LHEC_ELECTRON_ENERGY_FIG1_DIS2026
+    name: LHeC electron beam energy used for the comparison band in Fig. 1
+    symbol: E_e
+    subsystem: physics_programme
+    scenario: null
+    value: 50
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 2, section: "1. Introduction", table_figure_or_equation: "Figure 1 (legend)", quotation: "LHeC (50 GeV × 7 TeV, |θ| < 179°)"}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: "LHeC (related machine) value as quoted in the LHμC paper's figure legend for comparison; not an LHμC parameter. Second LHeC legend entry: 'LHeC (20 GeV × 7 TeV, ALICE3 accept.)'. EIC entry: 'EIC (10 GeV × 275 GeV)'."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/physics_programme
+    notes: "Recorded only because it defines the LHeC reference against which the 'more than one order of magnitude' expansion is claimed."

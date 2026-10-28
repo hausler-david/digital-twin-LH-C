@@ -1,0 +1,1445 @@
+# Research fragment - reconnaissance family 'lhc-hl-lhc-protons' (WebSearch on 2026-10-28; WebFetch attempts failed on
+# e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org per the journal; arXiv/Indico hosts are
+# on the session block-list). Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by
+# tools/merge_research_fragments.py (the uploaded ids SRC_ARXIV_2610_35154 and SRC_ARXIV_2506_15445 keep their registry
+# text; only discovered_by_queries are merged). NOTE: this fragment sorts before lhec-erl/lhmuc-primary/mulhc-mutristan, so
+# for ids shared with them (SRC_ARXIV_2206_00037, SRC_ARXIV_2203_06258, SRC_ARXIV_2101_10476) this text is the one kept.
+# Lead category corrections applied: arXiv:2506.15445 -> RELATED_MACHINE (existing id); Evian paper -> CONFERENCE_PROCEEDING /
+# workshop_talk; LHC Machine Outreach page -> OFFICIAL_CERN (outreach-level); Snowmass contribution arXiv:2203.06258 ->
+# CONFERENCE_PROCEEDING. 'snippet-quoted' lines in notes are leads to verify, NOT parameter records.
+sources:
+- source_id: SRC_URL_CERN_2020_010_HLLHC_TDR
+  title: 'High-Luminosity Large Hadron Collider (HL-LHC): Technical design report (CERN Yellow Reports: Monographs Vol. 10,
+    CERN-2020-010)'
+  authors_or_org: I. Béjar Alonso, O. Brüning, P. Fessia, M. Lamont, L. Rossi, L. Tavian, M. Zerlauth (eds.), CERN
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: '2020-12-17'
+  version: 'CERN-2020-010; CERN Yellow Reports: Monographs Vol. 10 (2020). Appendix A ''List of machine and beam parameters''
+    PDF: https://e-publishing.cern.ch/index.php/CYRM/article/download/1154/959; Chapter 2 ''Machine layout and performance'':
+    https://e-publishing.cern.ch/index.php/CYRM/article/download/1153/967. The label ''v1.0'' used in the task was NOT confirmed
+    in snippets.'
+  url: https://e-publishing.cern.ch/index.php/CYRM/issue/view/127
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Primary authoritative source for HL-LHC nominal proton beam parameters (Table A-3 etc.). Snippets confirm 2.2e11
+    p/b for standard and BCMS, 2760 (standard) / 2744 (BCMS) bunches vs 2808 nominal; 2.5 µm collision emittance assumed for
+    25 ns; nominal LHC glossary values. Full table (β*=15 cm, 7 TeV, revolution frequency, circumference) must be verified
+    in the PDF.
+  parameters_extracted: []
+  unresolved_questions:
+  - HL-LHC TDR 2020 Appendix A Table A-3 values for beam energy (7 TeV), beta* (15 cm), revolution frequency (11245 Hz), circumference
+    (26659 m) and bunch spacing (25 ns) were not visible verbatim in snippets; only Nb = 2.2e11, nb = 2760/2744/2808 and 2.5
+    um were. The PDF must be read directly (e-publishing.cern.ch blocked).
+  - The 'v1.0' label for the 2020 TDR was not confirmed.
+  - Bunch-count discrepancy across sources (2760 TDR 2020 standard; 2748 TDR 2017 / arXiv:2505.03535; 2808 nominal LHC / IPAC'12
+    MOPPC005; 2744 vs 2604 for BCMS) needs reconciliation against the TDR 2020 table — preserve as separate values, do not
+    average (CLAUDE.md section 1.6).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - HL-LHC Technical Design Report CERN Yellow Report 2020 v1.0 nominal beam parameters 2.2e11 protons per bunch 2.5 µm emittance
+  - pdg "rpp2024-rev-hep-collider-params" OR "rpp2025-rev-hep-collider-params" LHC HL-LHC particles per bunch bunches β*
+  notes: 'snippet-quoted: HL-LHC particles per bunch = 2.2 × 10^11 (standard and BCMS) :: The TDR gives 2.2 × 10^11 particles
+    per bunch for both the standard and BCMS schemes.
+
+
+    snippet-quoted: HL-LHC number of bunches = 2760 standard; 2744 BCMS; 2808 nominal LHC :: Its bunch counts are 2760 for
+    standard and 2744 for BCMS, while the nominal design has 2808 bunches.
+
+
+    snippet-quoted: HL-LHC collision normalised emittance (25 ns) = 2.5 µm :: the BCMS mode is a backup scenario, and the
+    2.5 µm collision emittance is assumed for 25 ns operation
+
+
+    snippet-quoted: Nominal LHC (glossary) = εn = 3.75 µm; Nb = 1.15 × 10^11; nb = 2808; β* = 0.55 m :: The TDR glossary defines
+    the nominal beam as normalized emittance εn = 3.75 µm; Nb = 1.15 × 10¹¹; nb = 2808, at β* = 0.55 m.
+
+
+    snippet-quoted: Crab cavity luminosity reduction factor at minimum β* = 0.369 without / 0.715 with crab cavities :: the
+    reduction factor at minimum β* is 0.369 without crab cavities and 0.715 with them
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''Open access (CERN e-publishing)''; no licence statement seen.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    This is the authoritative HL-LHC proton-beam baseline the LHmuC proposal inherits (arXiv:2610.35154 assumes 7 TeV HL-LHC
+    protons); every HL-LHC proton parameter in parameters/proton_beam/ should eventually cite this report with page and table.'
+- source_id: SRC_URL_CERN_2017_007_M_HLLHC_TDR_V0_1
+  title: 'High-Luminosity Large Hadron Collider (HL-LHC): Technical Design Report V. 0.1 (CERN Yellow Reports: Monographs
+    Vol. 4/2017, CERN-2017-007-M)'
+  authors_or_org: G. Apollinari, I. Béjar Alonso, O. Brüning, P. Fessia, M. Lamont, L. Rossi, L. Tavian (eds.), CERN
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: '2017'
+  version: 'HL-LHC TDR V. 0.1; CERN Yellow Reports: Monographs Vol. 4/2017, CERN-2017-007-M. arXiv mirrors of chapters per
+    snippets: arXiv:1705.08830 (Chapter 1) and arXiv:1705.09447 (Chapter 2 ''Machine Layout and Performance'').'
+  url: https://e-publishing.cern.ch/index.php/CYRM/issue/download/40/11
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 2017 version of the HL-LHC TDR; parameter table gives 2.2e11 p/b with 2748 bunches (standard 25 ns) and 2604
+    (BCMS) — note the bunch count differs from the 2020 TDR (2760). Version label 'v1.0' for the 2020 report was NOT confirmed
+    in snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - 2017 TDR bunch counts (2748 standard / 2604 BCMS) differ from the 2020 TDR (2760 / 2744); which table the LHmuC proposal
+    relies on is not stated anywhere seen.
+  licence: 'CC-BY-4.0 (per journal: ''Open access (CC-BY-4.0, CERN e-publishing / arXiv)''; not verified on the host)'
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - HL-LHC Technical Design Report CERN Yellow Report 2020 v1.0 nominal beam parameters 2.2e11 protons per bunch 2.5 µm emittance
+  - HL-LHC "2.2e11" OR "2.2 × 10^11" "2760" bunches "2.5" µm "15 cm" β* 25 ns "7 TeV" parameters table
+  notes: 'snippet-quoted: HL-LHC particles per bunch / bunches (2017 TDR) = 2.2 × 10^11; 2748 bunches standard, 2604 BCMS
+    :: The HL-LHC design summary lists 2.2×10^11 protons per bunch with 2748 bunches for the standard 25 ns case, and 2604
+    for BCMS. (arXiv:1705.08830 and arXiv:1705.09447)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Superseded by the 2020 TDR (CERN-2020-010); kept because its bunch counts are the ones repeated by arXiv:2505.03535.'
+- source_id: SRC_DOI_10_5170_CERN_2004_003_V_1
+  title: 'LHC Design Report, Volume 1: The LHC Main Ring (CERN-2004-003-V-1)'
+  authors_or_org: O. Brüning, P. Collier, P. Lebrun, S. Myers, R. Ostojic, J. Poole, P. Proudlock (eds.), CERN
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: '2004'
+  version: CERN-2004-003-V-1; CDS record 782076
+  url: https://dx.doi.org/10.5170/CERN-2004-003-V-1
+  doi: 10.5170/CERN-2004-003-V-1
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Primary source for nominal LHC design parameters (7 TeV, 1.15e11, 2808 bunches, 3.75 µm, 11245 Hz, 26659 m, β*=0.55
+    m). Snippets confirmed only the bibliographic details ('snapshot of the detailed design as it stands ... early 2004')
+    and 7 TeV design energy; the parameter table values were not shown and must be verified in the PDF.
+  parameters_extracted: []
+  unresolved_questions:
+  - Nominal LHC parameter table values (1.15e11, 2808, 3.75 um, 11245 Hz, 26659 m, beta* = 0.55 m) were not quoted from the
+    report itself in snippets; only secondary pages (lhc-closer.es, LHC Machine Outreach) and the HL-LHC TDR glossary gave
+    them.
+  - 'INSPIRE record for the Design Report was not retrieved (planned query not executed: WebSearch budget exhausted).'
+  licence: CC-BY-3.0 (per DOI record, as stated in the journal)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHC Design Report Volume 1 CERN-2004-003 beam parameters 7 TeV 1.15e11 protons per bunch 2808 bunches 11245 Hz 26659 m
+  notes: 'snippet-quoted: Design beam energy = 7 TeV per beam :: the dipoles allow it to reach a design energy of 7 TeV per
+    beam
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category OFFICIAL_CERN; fetch_blocked=true.'
+- source_id: SRC_URL_JINST_2008_3_S08001_LHC_MACHINE
+  title: LHC Machine (2008 JINST 3 S08001)
+  authors_or_org: L. Evans, P. Bryant (eds.), CERN
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2008'
+  version: JINST 3 (2008) S08001; INSPIRE record 796247 (per snippet)
+  url: https://jinst.sissa.it/LHC/LHCmachine/2008_JINST_3_S08001.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Peer-reviewed abridged LHC design description; cites the 26.7 km tunnel. Chapter 2 contains the nominal parameter
+    table (values not in snippet).
+  parameters_extracted: []
+  unresolved_questions:
+  - Chapter 2 nominal parameter table values were not in the snippet; only '26.7 km tunnel'. The DOI of the JINST article
+    was not surfaced.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHC Design Report Volume 1 CERN-2004-003 beam parameters 7 TeV 1.15e11 protons per bunch 2808 bunches 11245 Hz 26659 m
+  notes: 'snippet-quoted: Tunnel circumference (approx.) = 26.7 km :: places the machine in the existing 26.7 km tunnel
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''Open access (JINST / IOP)''; licence not stated.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=false.
+
+
+    Host sissa.it is on the session block-list, so although the journal marks fetch_blocked=false, a fetch is expected to
+    fail.'
+- source_id: SRC_ARXIV_2610_35154
+  title: 'LHμC: A high energy, high luminosity muon-hadron collider at CERN'
+  authors_or_org: S. Moretti, F. Zimmermann et al. (per snippet)
+  source_type: conference_proceeding
+  category: PRIMARY_LHMUC
+  publication_date: '2026-10-26'
+  version: arXiv:2610.35154 v1 (DIS2026 proceedings); HTML rendering surfaced by search
+  url: https://arxiv.org/html/2610.35154
+  doi: null
+  arxiv_id: '2610.35154'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Primary LHμC proposal paper: 1 or 2 TeV μ+ on 7 TeV protons, 5.3 or 7.5 TeV c.m., ~1e34 luminosity; states that
+    fewer LHC proton bunches (lower collision rate) allow higher bunch population — the ''modify SPS/LHC'' idea. Example table:
+    4 MHz collision rate, 12.5 Hz repetition, 22×10^11 protons per bunch. 200 MHz RF / 8b4e / 50 ns details were NOT confirmed
+    in snippets.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Snippet attributed the paper to 'S. Moretti, F. Zimmermann et al.'; the uploaded PDF (p.1) gives 'K. Piotrzkowski on behalf
+    of the HELP4CERN Study Group'. The snippet attribution is therefore wrong or refers to the study-group author footnote;
+    the registry entry (uploaded) is authoritative.
+  - 200 MHz RF / 8b4e / 50 ns proton-scheme details were NOT confirmed in snippets; the paper only states that a smaller number
+    of LHC proton bunches (lower collision rate) could allow a higher population per bunch, citing its ref. [24].
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Zimmermann LHC proton beam for muon-proton collider "200 MHz" RF "8b4e" OR "50 ns" fewer bunches higher intensity μp LHμC
+    workshop 2025 OR 2026
+  notes: 'snippet-quoted: Proton bunch population (LHμC example) = 22 × 10^11 :: Its example table lists a collision rate
+    of 4 MHz (12.5 Hz repetition) and a proton bunch population of 22×10¹¹.
+
+
+    snippet-quoted: Proton / muon beam energy and c.m. energy = 7 TeV protons; 1 or 2 TeV μ+; 5.3 or 7.5 TeV c.m. :: The proposal
+    pairs a 1 or 2 TeV μ⁺ beam with a 7 TeV proton beam, giving 5.3 or 7.5 TeV centre-of-mass energy at an average luminosity
+    near 10³⁴ cm⁻²s⁻¹.
+
+
+    snippet-quoted: Fewer-bunch rationale = smaller number of LHC proton bunches allows higher population per bunch :: The
+    paper notes that the smaller number of LHC proton bunches, and hence the lower collision rate, could allow a higher population
+    per bunch.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch to arxiv.org blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PRIMARY_LHMUC; fetch_blocked=true.
+
+
+    NOTE: this id already exists in research/source_registry.yaml as an uploaded, fully read PDF; this fragment entry only
+    records the web-reconnaissance view (snippet, blocked fetch) and the query that surfaced it. Cross-check against the uploaded
+    PDF p.4 Table 1: ''Collision(Repet.) rate [MHz(Hz)] 4(12.5)'' and ''Bunch population [10^11] 0.07 22'' — the snippet values
+    4 MHz, 12.5 Hz and 22e11 protons per bunch agree with the uploaded text.'
+- source_id: SRC_ARXIV_2506_15445
+  title: 'μLHC: Antimuon Ring and HL-LHC based μ+p Collider'
+  authors_or_org: Akturk, Sultansoy, Zimmermann et al. (per snippet)
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: 2025-06
+  version: arXiv:2506.15445 (v2 uploaded); PTEP 2026 033C04 plus Erratum
+  url: https://arxiv.org/abs/2506.15445
+  doi: 10.1093/ptep/ptag031
+  arxiv_id: '2506.15445'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Precursor HL-LHC-based μ+p design using μTRISTAN technology; 1 TeV muons on 7 TeV protons, 5.3 TeV c.m.; muon
+    bunches spaced 250 ns synchronised with one in ten of the 25 ns proton bunches.
+  parameters_extracted: []
+  unresolved_questions:
+  - Journal classified this as PRIMARY_LHMUC; corrected by the lead to RELATED_MACHINE (muLHC precursor, not an LHmuC document).
+    The muon-bunch spacing statement (250 ns, one in ten 25 ns proton bunches) must be re-read in the uploaded v2 with page
+    number before use.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  notes: 'snippet-quoted: c.m. energy = 5.3 TeV (1 TeV μ × 7 TeV p) :: It gives a center-of-mass energy of 5.3 TeV from 1
+    TeV muons colliding with 7 TeV protons.
+
+
+    snippet-quoted: Muon bunch spacing vs proton bunches = 250 ns, one in ten 25 ns proton bunches :: suggests muon bunches
+    spaced 250 ns, synchronised with one in ten of the 25 ns proton bunches
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PRIMARY_LHMUC; fetch_blocked=true.
+
+
+    NOTE: this id already exists in research/source_registry.yaml as an uploaded, fully read PDF and is RELATED_MACHINE by
+    the lead''s decision; this fragment entry only records the web-reconnaissance view and the query that surfaced it.'
+- source_id: SRC_ARXIV_2206_00037
+  title: 'Review of Muon-Proton Collider Proposals: Main Parameters'
+  authors_or_org: not confirmed in snippet (Ankara/Sultansoy group, per related results)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2022-05
+  version: arXiv:2206.00037
+  url: https://arxiv.org/pdf/2206.00037
+  doi: null
+  arxiv_id: '2206.00037'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Tabulates HL-LHC proton parameters as used in μp collider proposals (Table 15): 7 TeV, 2.2e11, 2760 bunches,
+    25 ns; one table uses 2.0 µm and β*=0.07 m (e-p), a companion table uses 2.5 µm and β*=0.15 m. Also lists μp c.m. energies
+    4.58/6.48/9.16 TeV for 0.75/1.5/3 TeV muons.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Author list not confirmed in snippet ('Ankara/Sultansoy group, per related results').
+  - Two HL-LHC proton parameter tables appear in the review (one with 2.0 um and beta* = 0.07 m, labelled e-p; a companion
+    with 2.5 um and beta* = 0.15 m); which one applies to a mu-p IR is a design choice, not a fact — keep both as separate
+    leads.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PDG "High-energy collider parameters" review LHC HL-LHC table pdg.lbl.gov
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  - PDG 2024 review "High-Energy Collider Parameters" HL-LHC 2.2 "2760" bunches "25 ns" β* 15 cm
+  - HL-LHC "2.2e11" OR "2.2 × 10^11" "2760" bunches "2.5" µm "15 cm" β* 25 ns "7 TeV" parameters table
+  notes: 'snippet-quoted: HL-LHC proton beam (review table) = 2.2 × 10^11 p/b; 2760 bunches; 25 ns; 7 TeV :: Bunch intensity
+    [10^11] 2.2, normalized emittance 2.0 µm, bunch spacing 25 ns, number of bunches per ring 2760.
+
+
+    snippet-quoted: Companion table emittance / β* = 2.5 µm; β* = 0.15 m; 2760 bunches :: A companion table in the same review
+    uses β* = 0.15 m with 2.5 µm emittance and 2760 bunches
+
+
+    snippet-quoted: μp c.m. energies = 4.58, 6.48, 9.16 TeV :: Its tables list 7 TeV protons and muon energies of 0.75, 1.5
+    and 3 TeV, giving center-of-mass energies of 4.58, 6.48 and 9.16 TeV.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Journal classified it SECONDARY_SOURCE; recorded here as RELATED_MACHINE to match the lhmuc-primary and mulhc-mutristan
+    fragments (same source id; the merge keeps one text). It is a review of mu-p collider proposals including HL-LHC-based
+    ones, so the proton parameters it tabulates are themselves imported from the HL-LHC TDR — cite the TDR, not this review,
+    once fetched.'
+- source_id: SRC_ARXIV_2505_03535
+  title: LHC operation and the High-Luminosity LHC upgrade project
+  authors_or_org: CERN (authors not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: OFFICIAL_CERN
+  publication_date: 2025-05
+  version: arXiv:2505.03535
+  url: https://arxiv.org/pdf/2505.03535
+  doi: null
+  arxiv_id: '2505.03535'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 2025 overview with table comparing nominal LHC, LHC achieved, HL-LHC and HL-LHC ultimate; gives 1.15e11/2808
+    nominal vs 2.2e11/2748/5e34 for HL-LHC.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Authors not confirmed in snippet; the journal''s OFFICIAL_CERN category rests on the title/affiliation only and should
+    be reviewed by the lead once the abstract page is read (candidate: PEER_REVIEWED or SECONDARY_SOURCE).'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - pdg "rpp2024-rev-hep-collider-params" OR "rpp2025-rev-hep-collider-params" LHC HL-LHC particles per bunch bunches β*
+  notes: 'snippet-quoted: Nominal LHC vs HL-LHC bunch population and count = 1.15e11 & 2808 (nominal); 2.2e11 & 2748, 5.0e34
+    cm^-2 s^-1 (HL-LHC) :: A 2025 arXiv overview lists the nominal LHC at 1.15 × 10^11 protons per bunch and 2808 bunches.
+    Its HL-LHC column gives 2.2 × 10^11 per bunch and 2748 bunches, with a 5.0 × 10^34 cm^-2 s^-1 luminosity target.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Gives 2748 HL-LHC bunches (not 2760) — a conflict with the 2020 TDR that must be preserved.'
+- source_id: SRC_ARXIV_2505_00947
+  title: Summary Report of the Physics Beyond Colliders Study at CERN
+  authors_or_org: Physics Beyond Colliders study group, CERN
+  source_type: arxiv_preprint
+  category: OFFICIAL_CERN
+  publication_date: 2025-05
+  version: arXiv:2505.00947
+  url: https://arxiv.org/pdf/2505.00947
+  doi: null
+  arxiv_id: '2505.00947'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Quotes HL-LHC 2.2e11 vs nominal 1.15e11 p/b citing the TDR; also reports Run 3 injector intensity of 2.8e11 p/b
+    at 50 ns vs LIU target 2.0e11, relevant to higher-population/fewer-bunch LHμC schemes.
+  parameters_extracted: []
+  unresolved_questions:
+  - The 2.8e11 p/b at 50 ns Run 3 injector figure is a snippet; the exact table, whether it refers to SPS extraction or LHC
+    injection, and the LIU target definition must be verified in the report.
+  - Category OFFICIAL_CERN (PBC study summary report, CERN) is the journal's classification; the arXiv version's status as
+    a CERN report (Yellow Report number?) was not confirmed.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - HL-LHC Technical Design Report CERN Yellow Report 2020 v1.0 nominal beam parameters 2.2e11 protons per bunch 2.5 µm emittance
+  - Zimmermann potential possibilities of modifying SPS LHC muon proton collider 8b4e 50 ns 200 MHz RF upgrade higher bunch
+    population
+  notes: 'snippet-quoted: HL-LHC vs nominal particles per bunch = 2.2 × 10^11 vs 1.15 × 10^11 :: lists HL-LHC particles per
+    bunch at 2.2 × 10¹¹, against 1.15 × 10¹¹ for the nominal design
+
+
+    snippet-quoted: Run 3 injector intensity at 50 ns = ~2.8 × 10^11 p/b (LIU target 2.0 × 10^11) :: In Run 3, the injector
+    chain reached about 2.8 × 10^11 protons per bunch at 50 ns spacing, against a target of 2.0 × 10^11 (LIU target 2.0 ...
+    Achieved 2.8).
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Relevant to the LHmuC ''fewer, more populated proton bunches'' idea: documents what the injector chain already delivers
+    at 50 ns.'
+- source_id: SRC_ARXIV_1412_7857
+  title: Operational beams for the LHC
+  authors_or_org: CERN (Y. Papaphilippou et al., per typical attribution; not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: OFFICIAL_CERN
+  publication_date: 2014-12
+  version: arXiv:1412.7857
+  url: https://arxiv.org/pdf/1412.7857
+  doi: null
+  arxiv_id: '1412.7857'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Describes LHC injector beam variants including 8b+4e: about 2.3e11 p/b with 1900 bunches, between 50 ns and
+    25 ns performance. Relevant to the fewer-bunch/higher-population proton option.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Authors 'Y. Papaphilippou et al.' are the journal's typical attribution, NOT confirmed in snippet.
+  - Category OFFICIAL_CERN is the journal's classification (CERN workshop/Yellow Report contribution presumed); venue not
+    confirmed — lead to review.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Zimmermann potential possibilities of modifying SPS LHC muon proton collider 8b4e 50 ns 200 MHz RF upgrade higher bunch
+    population
+  notes: 'snippet-quoted: 8b+4e scheme = ~2.3 × 10^11 p/b, 1900 bunches :: The 8b+4e scheme can provide about 2.3 × 10^11
+    p/b with 1900 bunches
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Only source seen that quantifies an 8b+4e-type scheme (~2.3e11 p/b, 1900 bunches); the LHmuC-specific 8b4e/50 ns/200 MHz
+    linkage attributed to Zimmermann was not found.'
+- source_id: SRC_ARXIV_1409_5821
+  title: Progress with the Upgrade of the SPS for the HL-LHC Era
+  authors_or_org: CERN SPS/LIU team (authors not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: OFFICIAL_CERN
+  publication_date: 2014-09
+  version: arXiv:1409.5821
+  url: https://arxiv.org/pdf/1409.5821
+  doi: null
+  arxiv_id: '1409.5821'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: SPS 200 MHz RF upgrade (LIU) background; appeared in results for the HL-LHC parameter query. Content not quoted
+    in snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - Authors not confirmed in snippet; no content quoted. The journal says only that it 'appeared in results for the HL-LHC
+    parameter query' without saying which of the three HL-LHC parameter queries — left unattributed.
+  - Category OFFICIAL_CERN is the journal's classification (likely an IPAC/LIU paper, i.e. CONFERENCE_PROCEEDING) — lead to
+    review.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries: []
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    SPS 200 MHz RF upgrade (LIU) background only.'
+- source_id: SRC_JACOW_IPAC2018_THPAF053
+  title: IPAC'18 THPAF053 (SPS/LHC RF and intensity limitations; 200 MHz slip-stacking, compact 200 MHz LHC RF)
+  authors_or_org: not confirmed in snippet
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2018'
+  version: IPAC2018-THPAF053 (KEK e-paper mirror)
+  url: https://epaper.kek.jp/ipac2018/papers/thpaf053.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Snippets describe the upgraded SPS 200 MHz RF enabling momentum slip-stacking (halving bunch spacing from 100
+    to 50 ns for ions), flat-bottom losses at high intensity, a possible 80 MHz capture RF, and that a compact 200 MHz system
+    in the LHC could allow higher injected intensity. Attribution of each statement to this specific paper vs. other results
+    is not certain.
+  parameters_extracted: []
+  unresolved_questions:
+  - Authors and exact title not confirmed in snippet; the journal itself warns that attribution of each statement (200 MHz
+    slip-stacking, 80 MHz capture RF, compact 200 MHz LHC RF) to this specific paper versus other results is not certain.
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Zimmermann potential possibilities of modifying SPS LHC muon proton collider 8b4e 50 ns 200 MHz RF upgrade higher bunch
+    population
+  notes: 'snippet-quoted: Compact 200 MHz LHC RF = could allow higher injected intensity from SPS (further studies needed)
+    :: A compact 200 MHz system in the LHC could potentially allow a higher injected intensity from the SPS, though further
+    studies are needed (further studies are needed to confirm what could be achieved).
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=false.
+
+
+    epaper.kek.jp is not on the session block-list; journal marks fetch_blocked=false but no page was read.'
+- source_id: SRC_JACOW_IPAC2018_MOPMF039
+  title: First Xenon-Xenon Collisions in the LHC (IPAC'18 MOPMF039)
+  authors_or_org: M. Schaumann et al., CERN
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2018'
+  version: IPAC2018-MOPMF039, p. 180; also at https://accelconf.web.cern.ch/ipac2018/papers/mopmf039.pdf
+  url: https://epaper.kek.jp/ipac2018/papers/mopmf039.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Primary source for the 2017 Xe-Xe LHC run parameters (Fill 6295).
+  parameters_extracted: []
+  unresolved_questions:
+  - The task described MOPMF039 as 'LHC heavy-ion beam parameters Pb Xe'; the resolved title is 'First Xenon-Xenon Collisions
+    in the LHC' (Xe only). Per-bunch Xe intensity, emittance and bunch length were not in the snippet.
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"MOPMF039" IPAC2018 Schaumann Jowett "Heavy Ions in 2018" jacow'
+  - LHC xenon run 2017 Xe-Xe 5.44 TeV beam parameters Schaumann IPAC bunches intensity
+  notes: 'snippet-quoted: Xe-Xe collision energy and date = 5.44 TeV per colliding nucleon pair, 12 Oct 2017 :: On 12 October,
+    collisions of fully stripped xenon nuclei were recorded for the first time in the LHC at a centre-of-mass energy per colliding
+    nucleon pair of 5.44 TeV.
+
+
+    snippet-quoted: Number of bunches = 20 low-intensity bunches per beam (4 non-colliding) :: the machine was then filled
+    with 20 low-intensity bunches per beam. Four of these were non-colliding and used for loss maps.
+
+
+    snippet-quoted: Total beam intensity limit = ~3 × 10^11 charges :: Total beam intensity was limited to about 3×10^11 charges,
+    to respect machine protection constraints (on total intensity).
+
+
+    snippet-quoted: Beam energy / colliding bunches / β* (Fill 6295) = 6.5 Z TeV; (8, 16, 8) bunches; β* (0.3, 10, 3) m at
+    ATLAS/CMS, ALICE, LHCb :: The table for Fill 6295 lists 6.5 Z TeV beam energy and collisions at the interaction points
+    as (8, 16, 8) bunches with β* of (0.3, 10, 3) m for ATLAS/CMS, ALICE and LHCb respectively.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=false.
+
+
+    Relevant to the ion-beam branch of the LHmuC study (mu-A options in SRC_WS1681458_DAGLI_NUCLEUS list Xe among the ion
+    beams).'
+- source_id: SRC_JACOW_IPAC2021_MOPAB005
+  title: Studies for an LHC Pilot Run with Oxygen Beams (IPAC'21 MOPAB005)
+  authors_or_org: R. Bruce, R. Alemany-Fernández, H. Bartosik, M. A. Jebramcik, J. M. Jowett, M. Schaumann (CERN)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2021-05
+  version: 'IPAC2021-MOPAB005, Proc. IPAC''21, Campinas, Brazil, pp. 53-56; PDF: https://jacow.org/ipac2021/papers/MOPAB005.pdf'
+  url: https://refs.jacow.org/reference/show/106501
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Oxygen pilot-run study (p-O, O-O) — the IPAC'21 MOPAB005 reference in the task. Parameter values not shown in
+    snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - The task's description of MOPAB005 as a Pb parameter source appears incorrect — it is an oxygen pilot-run study (p-O,
+    O-O). Parameter values not obtained (accelconf fetch blocked).
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bruce IPAC'21 MOPAB005 LHC Run 3 heavy-ion operation Pb beam parameters
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=true.
+
+
+    Relevant to the light-ion (O) options listed in SRC_WS1681458_DAGLI_NUCLEUS.'
+- source_id: SRC_ARXIV_2107_09560
+  title: Performance and luminosity models for heavy-ion operation at the CERN Large Hadron Collider
+  authors_or_org: R. Bruce et al., CERN
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2021-07
+  version: arXiv:2107.09560 (ar5iv HTML rendering); 'published Eur. Phys. J. Plus' per journal — journal reference NOT confirmed
+    in snippet
+  url: https://ar5iv.labs.arxiv.org/html/2107.09560
+  doi: null
+  arxiv_id: '2107.09560'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Table 1 compares Pb design, 2018 achieved, and Run 3/HL-LHC parameters. Snippet (noted as partly garbled) gives
+    HL-LHC Pb: 1240 bunches, 50 ns, 18e7 Pb ions/bunch, 20.5 MJ stored energy.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Category PEER_REVIEWED rests on the journal's unconfirmed statement 'published Eur. Phys. J. Plus'; downgrade to UNVERIFIED/SECONDARY
+    if the journal reference cannot be confirmed.
+  - The journal flags the Table 1 snippet as 'partly garbled'; the HL-LHC Pb column (1240 bunches, 50 ns, 18e7 Pb/bunch, 20.5
+    MJ) must be re-read with column alignment checked.
+  - ar5iv.labs.arxiv.org was unresolvable in the lhec-erl family's session; the journal here marks fetch_blocked=false but
+    no page was read.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bruce IPAC'21 MOPAB005 LHC Run 3 heavy-ion operation Pb beam parameters
+  notes: 'snippet-quoted: HL-LHC Pb beam (Table 1, column alignment to be verified) = 1240 bunches; 50 ns; 18 × 10^7 Pb/bunch;
+    20.5 MJ :: The HL-LHC design column lists 1240 bunches, 50 ns bunch spacing, and 18 × 10^7 Pb ions per bunch, with 20.5
+    MJ stored beam energy.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=false.
+
+
+    Primary candidate for HL-LHC Pb beam parameters (ion_beam subsystem).'
+- source_id: SRC_ARXIV_2304_03628
+  title: Power deposition studies for standard and crystal-assisted heavy ion collimation in the CERN Large Hadron Collider
+  authors_or_org: CERN collimation team (authors not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2023-04
+  version: arXiv:2304.03628
+  url: https://arxiv.org/pdf/2304.03628
+  doi: null
+  arxiv_id: '2304.03628'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Tabulates Pb beam parameters for past runs and Run 3; gives Run 3 ion energy 6.8 Z TeV (7 Z TeV possible in Run
+    4) and target intensity 2.2e11 Pb82+ ions per beam.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Authors not confirmed; the journal''s PEER_REVIEWED category is not backed by a journal reference in the snippets — lead
+    to review (candidate: UNVERIFIED).'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Schaumann IPAC'18 MOPMF039 LHC heavy-ion beam parameters Pb Xe
+  notes: 'snippet-quoted: Run 3 / Run 4 Pb beam energy = 6.8 Z TeV (Run 3); 7 Z TeV (Run 4, 2029-2032) :: The ion energy in
+    Run 3 will be 6.8 ZTeV, and might further increase to the nominal value of 7 ZTeV in Run 4 (2029-2032).
+
+
+    snippet-quoted: Pb total intensity target = 2.2 × 10^11 208Pb82+ ions/beam :: The target intensity is 2.2 × 10^11 ²⁰⁸Pb⁸²⁺
+    ions/beam
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Gives Run 3 Pb energy 6.8 Z TeV and the Run 4 nominal 7 Z TeV, plus the 2.2e11 Pb82+ ions/beam total-intensity target.'
+- source_id: SRC_ARXIV_2508_19653
+  title: Charting the Luminosity Capabilities of the CERN Large Hadron Collider with Various Nuclear Species
+  authors_or_org: CERN (authors not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2025-08
+  version: arXiv:2508.19653v3
+  url: https://arxiv.org/html/2508.19653v3
+  doi: null
+  arxiv_id: '2508.19653'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Recent survey of LHC luminosity with various ion species; cites MOPMF039 (Xe-Xe). Useful cross-reference for
+    Pb/Xe/O/Ne parameters.
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Authors not confirmed; no numerical values quoted; the journal''s PEER_REVIEWED category is not backed by a journal reference
+    in the snippets — lead to review (candidate: UNVERIFIED).'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bruce IPAC'21 MOPAB005 LHC Run 3 heavy-ion operation Pb beam parameters
+  - '"MOPMF039" IPAC2018 Schaumann Jowett "Heavy Ions in 2018" jacow'
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Survey of LHC luminosity with various nuclear species; the natural cross-reference for Pb/Xe/O/Ne ion-beam parameters
+    in parameters/ion_beam/.'
+- source_id: SRC_JACOW_IPAC2026_MOP1054
+  title: LHC operation with oxygen and neon ions (IPAC'26 MOP1054)
+  authors_or_org: R. Bruce et al., CERN
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2026-05-18'
+  version: IPAC2026-MOP1054, Deauville, France; refs.jacow.org/reference/show/208647; contribution https://indico.jacow.org/event/95/contributions/13011/;
+    companion paper THP4085 (R. Alemany-Fernandez et al., injectors)
+  url: https://indico.jacow.org/event/95/papers/13011/files/6586-MOP1054.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Report on the summer 2025 LHC O and Ne run (p-O, O-O, Ne-Ne; eight days; transmutation effects; crystal channeling).
+    Beam parameter Table 2 not in snippet.
+  parameters_extracted: []
+  unresolved_questions:
+  - Table 2 (p-O, O-O, Ne-Ne beam energies, intensities, bunch numbers) not obtained; indico.jacow.org fetch blocked.
+  - Companion paper THP4085 (injectors) was seen only as a reference; not registered as a separate source.
+  licence: JACoW CC-BY (per journal; version not stated; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bruce IPAC'26 MOP1054 LHC ion run oxygen neon 2025 beam parameters
+  notes: 'snippet-quoted: Run configurations = p-O, O-O, Ne-Ne; eight days allocated :: The run covered three configurations,
+    p-O, O-O, and Ne-Ne, with different beam energies and optics. They had to be commissioned and exploited for physics operation
+    during the eight days allocated.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=true.
+
+
+    Most recent primary report on light-ion LHC operation (summer 2025 O/Ne run); relevant to the O and Ne options in SRC_WS1681458_DAGLI_NUCLEUS.'
+- source_id: SRC_INDICO_663598_2782520
+  title: Heavy Ions in 2018 (LHC Performance Workshop / Evian 2017 paper)
+  authors_or_org: M. Schaumann, J. M. Jowett (CERN)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2017'
+  version: Evian 2017 LHC Performance Workshop, contribution 2782520 (paper PDF)
+  url: https://indico.cern.ch/event/663598/contributions/2782520/attachments/1561185/2669656/Paper-HeavyIonRun2018.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Optics, bunch parameters and luminosity estimates for the 2018 Pb-Pb run.
+  parameters_extracted: []
+  unresolved_questions:
+  - Content not quoted in snippets; optics, bunch parameters and luminosity estimates for the 2018 Pb-Pb run must be read
+    from the PDF.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Schaumann IPAC'18 MOPMF039 LHC heavy-ion beam parameters Pb Xe
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''CERN Indico; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category OFFICIAL_CERN; fetch_blocked=true.
+
+
+    Journal classified it OFFICIAL_CERN / workshop talk; recorded as CONFERENCE_PROCEEDING with source_type workshop_talk
+    per the lead''s rule for Evian papers.'
+- source_id: SRC_JACOW_IPAC2019_WEYYPLM2
+  title: The 2018 Heavy-Ion Run of the LHC (IPAC'19 WEYYPLM2)
+  authors_or_org: J. M. Jowett et al., CERN
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2019-05
+  version: IPAC2019-WEYYPLM2, pp. 2258-2261 (KEK e-paper mirror)
+  url: https://epaper.kek.jp/ipac2019/papers/weyyplm2.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: States that most HL-LHC Pb-Pb upgrade beam parameters were attained in the 2018 run.
+  parameters_extracted: []
+  unresolved_questions:
+  - Which HL-LHC Pb-Pb parameters were 'attained' in 2018 (bunch intensity? bunch count? emittance?) is not specified in the
+    snippet.
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"MOPMF039" IPAC2018 Schaumann Jowett "Heavy Ions in 2018" jacow'
+  notes: 'snippet-quoted: 2018 Pb run outcome = most HL-LHC Pb-Pb parameters attained :: most of the beam parameters of the
+    HL-LHC Pb-Pb upgrade were attained during this run
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=false.'
+- source_id: SRC_JACOW_IPAC2018_TUXGBD2
+  title: Colliding Heavy Ions in the LHC (IPAC'18 TUXGBD2)
+  authors_or_org: J. M. Jowett, CERN
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2018'
+  version: IPAC2018-TUXGBD2, pp. 584-589
+  url: https://proceedings.jacow.org/ipac2018/export/TUXGBD2-bib.htm
+  doi: 10.18429/JACoW-IPAC2018-TUXGBD2
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Overview of LHC heavy-ion operation through 2018 (Pb, Xe).
+  parameters_extracted: []
+  unresolved_questions:
+  - Only the BibTeX export page was surfaced; no content quoted.
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"MOPMF039" IPAC2018 Schaumann Jowett "Heavy Ions in 2018" jacow'
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=false.'
+- source_id: SRC_URL_PDG_2020_REV_HEP_COLLIDER_PARAMS
+  title: High-Energy Collider Parameters (PDG Review of Particle Physics, 2020 edition)
+  authors_or_org: Particle Data Group (updated March 2020 with input from E. Pianori, LBNL)
+  source_type: official_report
+  category: SECONDARY_SOURCE
+  publication_date: 2020-03
+  version: 'rpp2020-rev-hep-collider-params (updated March 2020 with input from E. Pianori, LBNL); 2018 edition: https://pdg.lbl.gov/2018/reviews/rpp2018-rev-hep-collider-params.pdf;
+    2017 edition: https://ccwww.kek.jp/pdg/2017/reviews/rpp2017-rev-hep-collider-params.pdf'
+  url: https://pdg.web.cern.ch/2020/reviews/rpp2020-rev-hep-collider-params.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: PDG tables of achieved and planned pp collider parameters including LHC and HL-LHC columns (HL-LHC physics start
+    2026 listed). 2024/2025 edition not surfaced by search; parameter values not in snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - PDG 2024/2025 editions of 'High-Energy Collider Parameters' were not surfaced; only 2017/2018/2020 PDFs, and their LHC/HL-LHC
+    numeric entries were not in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PDG "High-energy collider parameters" review LHC HL-LHC table pdg.lbl.gov
+  notes: 'snippet-quoted: HL-LHC physics start date (PDG table) = 2026 :: Physics start date 1992 1987 2001 2009 2015 2026
+    (HL-LHC)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''PDG open access; pdg.lbl.gov fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    PDG tables are compilations (secondary); use only as a cross-check of TDR values.'
+- source_id: SRC_JACOW_IPAC2012_MOPPC005
+  title: HL-LHC luminosity parameter space (IPAC'12 MOPPC005)
+  authors_or_org: CERN (O. Brüning / F. Zimmermann et al., not confirmed in snippet)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2012'
+  version: 'IPAC2012-MOPPC005 (mirror: https://epaper.kek.jp/IPAC2012/papers/moppc005.pdf)'
+  url: https://accelconf.web.cern.ch/IPAC2012/papers/moppc005.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Early HL-LHC parameter study with 25 ns case Nb 2.2e11, nb 2808, β* 0.15 m, γε 2.5 µm.
+  parameters_extracted: []
+  unresolved_questions:
+  - Authors ('O. Brüning / F. Zimmermann et al.') not confirmed in snippet.
+  - Its 2808-bunch, 2.5 um, beta* 0.15 m case is a 2012 study value, superseded by the TDRs (2760/2748 bunches); keep as a
+    historical lead only.
+  licence: JACoW CC-BY-3.0 (per journal; not verified on the host)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PDG 2024 review "High-Energy Collider Parameters" HL-LHC 2.2 "2760" bunches "25 ns" β* 15 cm
+  - HL-LHC "2.2e11" OR "2.2 × 10^11" "2760" bunches "2.5" µm "15 cm" β* 25 ns "7 TeV" parameters table
+  notes: 'snippet-quoted: HL-LHC 25 ns case = Nb 2.2e11; nb 2808; β* 0.15 m; γε 2.5 µm :: The IPAC 2012 HL-LHC parameter study
+    gives the 25 ns case as Nb 2.2, nb 2808, β* 0.15 m, γε 2.5 µm.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    fetch_blocked=true.'
+- source_id: SRC_ARXIV_2005_04520
+  title: Fast Failures in the LHC and the future High Luminosity LHC
+  authors_or_org: CERN machine protection group (authors not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2020-05
+  version: arXiv:2005.04520
+  url: https://arxiv.org/pdf/2005.04520
+  doi: null
+  arxiv_id: '2005.04520'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Confirms HL-LHC β* goal of 15 cm in IP1/IP5 (from 25 cm in 2018).
+  parameters_extracted: []
+  unresolved_questions:
+  - 'Authors not confirmed; the journal''s PEER_REVIEWED category is not backed by a journal reference in the snippets — lead
+    to review (candidate: UNVERIFIED).'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - PDG 2024 review "High-Energy Collider Parameters" HL-LHC 2.2 "2760" bunches "25 ns" β* 15 cm
+  notes: 'snippet-quoted: HL-LHC β* in IP1/IP5 = 15 cm (from 25 cm in 2018) :: the goal is to squeeze β* in IPs 1 and 5 from
+    the 2018 LHC value of 25 cm down to 15 cm
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Used only to corroborate the HL-LHC beta* = 15 cm goal in IP1/IP5 (from 25 cm in 2018).'
+- source_id: SRC_URL_LHC_MACHINE_OUTREACH_VITAL_STATISTICS
+  title: LHC Vital Statistics (LHC Machine Outreach)
+  authors_or_org: CERN LHC Machine Outreach
+  source_type: web_page
+  category: OFFICIAL_CERN
+  publication_date: null
+  version: null
+  url: https://LHC-MACHINE-OUTREACH.web.cern.ch/lhc-vital-statistics.htm
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Secondary CERN outreach source confirming circumference 26,659 m and revolution frequency 11.2455 kHz.
+  parameters_extracted: []
+  unresolved_questions:
+  - Undated outreach page; whether its 26,659 m / 11.2455 kHz match the Design Report values must be checked against CERN-2004-003-V-1.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHC "11245" Hz revolution frequency "26659" m circumference "2808" bunches design report 1.15e11
+  notes: 'snippet-quoted: Circumference / revolution frequency = 26,659 m; 11.2455 kHz :: A CERN outreach page lists the circumference
+    as 26,659 m with a revolution frequency of 11.2455 kHz.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''public web page''.
+
+
+    Journal classification before lead corrections: source_type ''web page'', category SECONDARY_SOURCE; fetch_blocked=false.
+
+
+    Category OFFICIAL_CERN per the lead''s decision, but outreach-level: a CERN-hosted public page, not a technical report;
+    use only as a cross-check, never as the citation for a parameter record. Journal classified it SECONDARY_SOURCE.'
+- source_id: SRC_URL_LHC_CLOSER_ES_LHC_PARAMETERS
+  title: Taking a closer look at LHC — LHC Parameters
+  authors_or_org: Xabier Cid Vidal, Ramon Cid (lhc-closer.es)
+  source_type: web_page
+  category: SECONDARY_SOURCE
+  publication_date: null
+  version: null
+  url: https://lhc-closer.es/taking_a_closer_look_at_lhc/1.lhc_parameters
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Secondary source listing nominal LHC 2808 bunches and 1.15e11 protons per bunch; design-era note gives 26658.87
+    m, 11.24551 kHz, 400.8 MHz RF, h=35640 (and 2835 bunches in an older design text).
+  parameters_extracted: []
+  unresolved_questions:
+  - The '2835 bunches' and '26658.87 m / 11.24551 kHz / 400.8 MHz / h = 35640' figures are quoted from an unnamed 'design-era
+    document' reproduced on this page; the underlying CERN document must be identified.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - LHC "11245" Hz revolution frequency "26659" m circumference "2808" bunches design report 1.15e11
+  notes: 'snippet-quoted: Bunches / protons per bunch (nominal) = 2808 bunches; 1.15·10^11 p/b :: An LHC parameters page lists
+    2808 bunches per proton beam and 1.15·10^11 protons per bunch (at start).
+
+
+    snippet-quoted: Ring parameters (design-era document) = 26658.87 m; 11.24551 kHz; 400.8 MHz; h = 35640 :: gives the circumference
+    as 26658.87 m and the revolution frequency as 11.24551 kHz, with an RF frequency of 400.8 MHz and harmonic number 35640
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''public web page''.
+
+
+    Journal classification before lead corrections: source_type ''web page'', category SECONDARY_SOURCE; fetch_blocked=false.
+
+
+    Educational site (X. Cid Vidal, R. Cid); secondary — cross-check only.'
+- source_id: SRC_ARXIV_1905_05564
+  title: Luminosity and Physics Considerations on HL-LHC and HE-LHC based μp Colliders
+  authors_or_org: U. Kaya et al. (Ankara)
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 2019-05
+  version: arXiv:1905.05564
+  url: https://arxiv.org/pdf/1905.05564
+  doi: null
+  arxiv_id: '1905.05564'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: HL-LHC/HE-LHC-based μp designs with c.m. 4.58-12.7 TeV; uses HL-LHC proton parameters.
+  parameters_extracted: []
+  unresolved_questions:
+  - Journal classified it SECONDARY_SOURCE; as an HL-LHC/HE-LHC-based mu-p design paper (Kaya et al.) RELATED_MACHINE may
+    fit better — lead to decide.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  notes: 'snippet-quoted: c.m. energy range = ~4.58 to 12.7 TeV :: with center-of-mass energies from about 4.58 to 12.7 TeV
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Earlier Ankara-group mu-p design using HL-LHC proton parameters; c.m. range 4.58-12.7 TeV.'
+- source_id: SRC_ARXIV_1807_09867
+  title: The LHC based μp colliders
+  authors_or_org: U. Kaya et al. (Ankara)
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 2018-07
+  version: arXiv:1807.09867
+  url: https://arxiv.org/pdf/1807.09867
+  doi: null
+  arxiv_id: '1807.09867'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Earlier LHC-based μp collider study (dedicated muon collider or muon ring tangential to LHC).
+  parameters_extracted: []
+  unresolved_questions:
+  - No values quoted; journal classified it SECONDARY_SOURCE — as an LHC-based mu-p collider study RELATED_MACHINE may fit
+    better — lead to decide.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  notes: '(no numerical values quoted in snippets for this source)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.'
+- source_id: SRC_ARXIV_2203_06258
+  title: The Potential of a TeV-Scale Muon-Ion Collider
+  authors_or_org: not confirmed in snippet (Acosta et al.)
+  source_type: arxiv_preprint
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2022-03
+  version: arXiv:2203.06258 (Snowmass 2021 contribution per the mulhc-mutristan fragment; 'submitted to JINST' not confirmed)
+  url: https://arxiv.org/pdf/2203.06258
+  doi: null
+  arxiv_id: '2203.06258'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Proposes a 'Large Hadron-Muon Collider' at CERN using one 7 TeV LHC proton ring; 1.5 TeV muons give ~6.5 TeV
+    c.m.
+  parameters_extracted: []
+  unresolved_questions:
+  - Authors not confirmed in this family's snippet ('Acosta et al.'). Journal classified it SECONDARY_SOURCE; recorded as
+    CONFERENCE_PROCEEDING per the lead's Snowmass rule, relying on the mulhc-mutristan fragment's identification of it as
+    a Snowmass 2021 contribution — lead to confirm (the lhmuc-primary fragment uses RELATED_MACHINE).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  notes: 'snippet-quoted: c.m. energy = ~6.5 TeV (1.5 TeV μ × 7 TeV p) :: It notes that a 1.5 TeV muon beam could yield about
+    6.5 TeV in the center of mass.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Muon-ion collider proposal using one 7 TeV LHC proton ring; its ''~6.5 TeV c.m. with 1.5 TeV muons'' is an alternative
+    LHC-based mu-p design point.'
+- source_id: SRC_ARXIV_2101_10476
+  title: Physics potential of a muon-proton collider
+  authors_or_org: K. Cheung, Z. S. Wang
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2021-01
+  version: arXiv:2101.10476; published as Phys. Rev. D 103, 116009 per the mulhc-mutristan fragment (SRC_DOI_10_1103_PHYSREVD_103_116009)
+  url: https://arxiv.org/pdf/2101.10476
+  doi: 10.1103/PhysRevD.103.116009
+  arxiv_id: '2101.10476'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Phenomenology benchmark of 1 TeV μ × 7 TeV p at 0.1 ab^-1.
+  parameters_extracted: []
+  unresolved_questions:
+  - Journal classified it SECONDARY_SOURCE; recorded as PEER_REVIEWED (and the DOI added) only because the mulhc-mutristan
+    fragment reports snippet confirmation of the PRD publication — this family's snippets did not show the journal reference.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
+  notes: 'snippet-quoted: Benchmark = 7 TeV p, 1 TeV μ, 0.1 ab^-1 :: Its first benchmark pairs 7 TeV protons with 1 TeV muons,
+    at an integrated luminosity of 0.1 ab⁻¹.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
+    to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium
+    (CLAUDE.md section 1.5).
+
+
+    The journal''s closing note names only e-publishing.cern.ch, accelconf.web.cern.ch, pdg.lbl.gov and indico.jacow.org as
+    hosts whose WebFetch failed (''not resolvable in this session''); for every other entry marked fetch_blocked=true the
+    journal states ''fetch blocked'' in its access field, which is taken at face value here (access: blocked). Entries marked
+    fetch_blocked=false were never fetched either (no page read), so they are recorded as snippet_only.
+
+
+    Journal access note: ''arXiv open access; fetch blocked''.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.
+
+
+    Phenomenology benchmark (1 TeV mu x 7 TeV p, 0.1 ab^-1) — physics_programme context, not an accelerator source.'

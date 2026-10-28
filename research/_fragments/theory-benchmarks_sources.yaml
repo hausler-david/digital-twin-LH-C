@@ -1,0 +1,695 @@
+# Research fragment — reconnaissance family 'theory-benchmarks' (WebSearch on 2026-10-28; WebFetch attempts refused by network
+# policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za).
+# Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by tools/merge_research_fragments.py.
+# Lead category decisions applied: arXiv:2610.28252 and arXiv:2610.17801 stay UNVERIFIED until their abstract pages are read;
+# SAIP di-Higgs talk -> PRIMARY_LHMUC (id SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS shared with the lhmuc-primary fragment, not duplicated).
+# 'snippet-quoted' lines in notes are leads to verify, NOT parameter records. No source outside the journal was added.
+sources:
+- source_id: SRC_ARXIV_2610_28252
+  title: Probing a heavy neutral lepton in a radiative neutrino model at a muon collider
+  authors_or_org: Isaac Bamwidhi, Mohamed Belfkir, Mohamed Amin Loualidi, Salah Nasri
+  source_type: arxiv_preprint
+  category: UNVERIFIED
+  publication_date: '2026-10-20'
+  version: arXiv:2610.28252v1 [hep-ph]
+  url: https://arxiv.org/abs/2610.28252
+  doi: null
+  arxiv_id: '2610.28252'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'TARGET PAPER 1 (HNL). Confirmed via arXiv listing snippets: title; authors Isaac Bamwidhi, Mohamed Belfkir, Mohamed Amin Loualidi, Salah Nasri; hep-ph; ''arXiv:2610.28252v1 [hep-ph] 20 Oct
+    2026''. Model is a radiative neutrino-mass model with a DIRAC heavy neutral lepton (NOT Type-I seesaw as the task hypothesized). Original collider: mu+mu- muon collider at sqrt(s)=3 TeV, 1 ab^-1, unpolarized
+    beams; direct and Higgs-mediated HNL production, same final state; six benchmark points; MadGraph5_aMC@NLO with built-in lepton ISR and equivalent-photon approximation for photon-initiated processes;
+    detector-level analysis with a classifier. Public UFO/FeynRules model: NOT confirmed (no snippet mentions one). Full text not fetched (arxiv.org blocked). Category UNVERIFIED used because it is an unrefereed
+    preprint whose full text could not be read; its existence and metadata ARE confirmed by search snippets. The search tool paraphrase said the six benchmark HNL masses are about 103-119 GeV (above m_Z)
+    but this was not shown verbatim, so it is left out of parameters_quoted.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - 'arXiv:2610.28252: the six benchmark HNL masses (search tool paraphrased ''about 103-119 GeV'') were not shown verbatim; exact benchmark table, mixing values per point, and the radiative model''s scalar
+    content are unconfirmed. Whether a UFO/FeynRules model is public is unconfirmed (no mention found). The model is a Dirac HNL in a radiative neutrino-mass model, NOT Type-I seesaw as hypothesized in
+    the task.'
+  - No INSPIRE records for either arXiv id were returned by search (likely indexing lag); INSPIRE API fetch blocked.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - arxiv.org/abs/2610.28252 OR arxiv.org/html/2610.28252 OR ar5iv 2610.28252
+  - Bamwidhi Belfkir Loualidi Nasri "heavy neutral lepton" radiative neutrino model muon collider 3 TeV Dirac benchmark UFO MadGraph
+  - '"2610.28252" heavy neutral lepton muon collider'
+  notes: 'snippet-quoted: center-of-mass energy / collider = 3 TeV muon collider :: direct and Higgs-mediated production of a Dirac heavy neutral lepton at a future 3 TeV muon collider, within a radiative
+    neutrino-mass model
+
+
+    snippet-quoted: integrated luminosity / beam polarization = 1 ab^-1, unpolarized beams :: They run a detector-level analysis at 1 ab⁻¹ with unpolarized beams.
+
+
+    snippet-quoted: expected 95% CL limit on visible cross section = ~0.027 - 0.113 fb :: The median expected 95% CL limits on the visible cross section fall roughly between 0.027 and 0.113 fb
+
+
+    snippet-quoted: expected limit on |U_muN|^2 = ~6.7e-6 to 8.3e-5 across six benchmarks :: which maps to limits on |U_μN|² of about 6.7×10⁻⁶ to 8.3×10⁻⁵ across six benchmarks
+
+
+    snippet-quoted: Higgs-channel contribution = 15-72% of signal; 0.18-1.19% limit improvement :: It contributes about 15–72% of the signal after event selection but improves the expected limits by only
+    about 0.18–1.19%.
+
+
+    snippet-quoted: event generator = MadGraph5_aMC@NLO, lepton ISR, EPA :: The signal samples were generated with MadGraph5_aMC@NLO, with initial-state radiation handled by MadGraph''s built-in lepton-ISR
+    treatment and photon-initiated processes handled with the equivalent photon approximation.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Lead decision: keep UNVERIFIED (not PEER_REVIEWED) until the arXiv abstract page has been read; the fetch is still pending and must be re-attempted once arxiv.org is allowed. access recorded as ''blocked''
+    because the journal documents an attempted WebFetch refused by network policy on arxiv.org. The task hypothesis ''Type-I seesaw'' is contradicted by the snippet (Dirac HNL in a radiative neutrino-mass
+    model). The search tool''s paraphrase ''six benchmark HNL masses about 103-119 GeV'' was NOT shown verbatim and is deliberately not recorded as a snippet-quoted value.'
+- source_id: SRC_ARXIV_2610_17801
+  title: One-loop contributing for A -> Z Z gamma in the Two-Higgs-Doublet Model with Vector-Like Quarks
+  authors_or_org: Dzung Tri Tran, Vo Quoc Phong, Khiem Hong Phan
+  source_type: arxiv_preprint
+  category: UNVERIFIED
+  publication_date: '2026-10-13'
+  version: arXiv:2610.17801v1
+  url: https://arxiv.org/abs/2610.17801
+  doi: null
+  arxiv_id: '2610.17801'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'TARGET PAPER 2 (2HDM+VLQ, A -> ZZgamma). Confirmed via arXiv listing snippets: title; authors Dzung Tri Tran (HCMUS and DTU), Vo Quoc Phong (HCMUS), Khiem Hong Phan (EIU); v1 dated 13 October
+    2026 per search summary. Model: Two-Higgs-Doublet Model and its extension with Vector-Like Quarks; first one-loop computation of A -> Z Z gamma; partial widths and BRs for unpolarized and polarized
+    final-state Z bosons; ''several benchmark points within the viable parameter space''. Original collider: none simulated; authors only remark that effects ''may be experimentally accessible'' at future
+    multi-TeV muon colliders. 2HDM type (I/II), VLQ representations, explicit benchmark masses and tan(beta) values: NOT confirmed from snippets. Public UFO/FeynRules model: NOT confirmed (no mention in
+    snippets). Full text not fetched (arxiv.org blocked). Category UNVERIFIED because unrefereed and unread; existence/metadata confirmed.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - 'arXiv:2610.17801: 2HDM type (I/II/X/Y), VLQ representations (singlet/doublet), explicit benchmark points (m_A, tan beta, VLQ masses), and whether a UFO exists are unconfirmed. The paper is a decay-width
+    calculation with no collider simulation; its only collider remark is ''future multi-TeV muon colliders''. The v1 date 13 Oct 2026 and author affiliations (HCMUS, DTU, EIU) come from the search summary,
+    not a verbatim snippet.'
+  - No INSPIRE records for either arXiv id were returned by search (likely indexing lag); INSPIRE API fetch blocked.
+  - No public 2HDM+VLQ combined UFO was found; only separate 2HDM (2HDM_NLO, 2HDM_FR, Pseudoscalar_2HDMI) and generic VLQ (VLQ_UFO) models. A 2HDM+VLQ recast would require building or obtaining a combined
+    model.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - CP-odd Higgs "A \to ZZ\gamma" OR "A → ZZγ" OR "A -> Z Z gamma" vector-like quarks 2HDM 2026
+  - '"One-loop contributing for" "Two-Higgs-Doublet Model with Vector-Like Quarks" authors'
+  - Tran Phong Phan "A → ZZγ" OR "A \to ZZ\gamma" 2HDM vector-like quarks one-loop benchmark points type-II type-I polarized Z
+  notes: 'snippet-quoted: branching ratio A -> ZZgamma = 10^-5 - 10^-4 :: branching ratios can reach 10^{-5}-10^{-4} for several benchmark points within the viable parameter space of the considered models
+
+
+    snippet-quoted: VLQ loop effect on rate = ~5% :: The contributions from Vector-Like Quarks can modify the total rates by approximately 5%.
+
+
+    snippet-quoted: collider context = future multi-TeV muon colliders :: With the high luminosities expected at future multi-TeV muon colliders, these effects may be experimentally accessible.
+
+
+    snippet-quoted: scope = first one-loop A->ZZgamma in 2HDM and 2HDM+VLQ :: In this paper, we present the first results for the one-loop decay A→ZZγ in the Two-Higgs-Doublet Model and its extension with
+    Vector-Like Quarks.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Lead decision: keep UNVERIFIED (not PEER_REVIEWED) until the arXiv abstract page has been read; fetch pending re-attempt. access recorded as ''blocked'' because the journal documents an attempted WebFetch
+    refused on arxiv.org. The v1 date (13 Oct 2026) and author affiliations (HCMUS, DTU, EIU) come from the search tool''s summary, not a verbatim snippet. No collider simulation in this paper; the only
+    collider remark is ''future multi-TeV muon colliders''.'
+- source_id: SRC_URL_FEYNRULES_HEAVYN
+  title: 'HeavyN: The Standard Model + Heavy Neutrinos at NLO in QCD (FeynRules wiki)'
+  authors_or_org: Richard Ruiz (contact); D. Alva, T. Han, R. Ruiz; C. Degrande, O. Mattelaer, R. Ruiz, J. Turner; S. Pascoli, C. Weiland
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: wiki version 58 (latest seen in results)
+  url: https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/HeavyN
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Public HNL UFO family (Alva, Han, Ruiz; later Degrande, Mattelaer, Ruiz, Turner; Pascoli, Ruiz, Weiland). Majorana and Dirac variants at LO/NLO. Candidate stand-in for recasting arXiv:2610.28252
+    (note: that paper uses a Dirac HNL in a radiative model, so SM_HeavyN_Dirac_* is the closer match, but the Higgs-mediated channel of the radiative model may not be reproduced by HeavyN). Wiki latest
+    revision ~version 58 (''modified by 7 months ago''). Fetch blocked; details from snippets.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Whether HeavyN (Dirac variant) can reproduce the Higgs-mediated HNL channel of the radiative model of arXiv:2610.28252 is unknown; the paper's own UFO is unconfirmed.
+  - Journal status of arXiv:1602.06957 (HeavyN usage reference) not confirmed from snippets.
+  licence: public download via https://feynrules.irmp.ucl.ac.be/raw-attachment/wiki/HeavyN/<filename> (per snippet; licence text not seen)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - HeavyN UFO model Alva Han Ruiz SM_HeavyN_NLO FeynRules
+  - feynrules HeavyN wiki "SM_HeavyN_NLO" "SM_HeavyN_Dirac" "SM_HeavyN_AllMasses" UFO tgz Ruiz Degrande Mattelaer Turner 1602.06957
+  notes: 'snippet-quoted: SM_HeavyN_NLO_UFO.tgz assumptions = massless b and tau, diagonal CKM :: SM_HeavyN_NLO_UFO.tgz: Standalone UFO folder. Assumes massless bottom quark and tau lepton, diagonal CKM.
+
+
+    snippet-quoted: SM_HeavyN_Gen3Mass_NLO.tgz = massive b and tau, diagonal CKM :: Standalone UFO folder. Assumes massive bottom quark and tau lepton, diagonal CKM.
+
+
+    snippet-quoted: SM_HeavyN_CKM_AllMasses_LO.tgz = LO, CKM, all masses :: UFO for HeavyN Majorana model, at LO in QCD, with CKM element, and all particle masses
+
+
+    snippet-quoted: SM_HeavyN_Dirac_CKM_Masses_LO_UFO.tgz = Dirac, non-diagonal CKM, 6 quark + 3 lepton masses :: Standalone LO UFO libraries, assuming non-diagonal CKM matrix, six quark masses, and three
+    charged lepton masses
+
+
+    snippet-quoted: default heavy neutrino masses = 300 GeV, 500 GeV, 1 TeV (15 free parameters) :: The model has 15 free parameters, including three heavy neutrino masses with defaults of 300 GeV, 500
+    GeV, and 1 TeV.
+
+
+    snippet-quoted: usage reference = arXiv:1602.06957; arXiv:1812.08750 :: For instructions on using the HeavyN UFO libraries, see C. Degrande, et al, arXiv:1602.06957 [hep-ph]
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.
+
+
+    Candidate public stand-in for a Dirac-HNL recast of arXiv:2610.28252 (SM_HeavyN_Dirac_* variants); the Higgs-mediated channel of the radiative model may not be reproducible with HeavyN. Wiki revision
+    ~58 seen in results.'
+- source_id: SRC_URL_FEYNRULES_VLQ
+  title: Vector-Like Quarks (VLQ) FeynRules model (VLQ_UFO)
+  authors_or_org: FeynRules model database (CP3, UCLouvain)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: wiki versions 5-21 seen
+  url: https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/VLQ
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Public generic VLQ UFO (X, T, B, Y states, minimal effective Lagrangian; default singlet T mixing with 3rd generation; chromomagnetic extension; separate singlet-T, (T,B), (X,T), singlet-B
+    pages). Contains NO second Higgs doublet, so it cannot by itself reproduce the 2HDM+VLQ loop decay of arXiv:2610.17801. Snippet warns widths default to 1 GeV and must be set manually. Fetch blocked.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - No public 2HDM+VLQ combined UFO was found; only separate 2HDM (2HDM_NLO, 2HDM_FR, Pseudoscalar_2HDMI) and generic VLQ (VLQ_UFO) models. A 2HDM+VLQ recast would require building or obtaining a combined
+    model.
+  licence: public download (per snippet; licence text not seen)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - vector-like quark UFO model FeynRules VLQ MadGraph public
+  - Benbrik Moretti 2HDM type-II vector-like quarks UFO model public FeynRules "2HDM" "VLQ" MadGraph implementation download
+  notes: 'snippet-quoted: particle content = X(5/3), T(2/3), B(-1/3), Y(-4/3) :: The four Vector-Like states X (Q=5/3), T (2/3), B (-1/3) and Y (-4/3) are introduced as new spin 1/2 class members.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.
+
+
+    Generic VLQ UFO (X, T, B, Y); contains no second Higgs doublet, so it cannot by itself reproduce the 2HDM+VLQ loop decay of arXiv:2610.17801. Snippet warns that widths default to 1 GeV and must be set
+    manually.'
+- source_id: SRC_URL_FEYNRULES_NLOMODELS_2HDM
+  title: 'FeynRules NLO models page: Two-Higgs-Doublet Model (2HDM_NLO)'
+  authors_or_org: FeynRules / MadGraph5_aMC@NLO teams (ref. arXiv:1406.3030)
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: 2HDM_NLO; wiki version 57 seen
+  url: https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/NLOModels
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Official public 2HDM UFO at NLO in QCD (reference arXiv:1406.3030). Candidate base for a 2HDM recast; does not include VLQs. Snippet: ''we provide the FeynRules model files as well as the
+    UFO library to be used with MadGraph5_aMC@NLO''. Fetch blocked.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - No public 2HDM+VLQ combined UFO was found; only separate 2HDM (2HDM_NLO, 2HDM_FR, Pseudoscalar_2HDMI) and generic VLQ (VLQ_UFO) models. A 2HDM+VLQ recast would require building or obtaining a combined
+    model.
+  - '2HDMC (Eriksson, Rathsman, Stal) UFO/MadGraph interface: not found in results.'
+  licence: public download (per snippet; licence text not seen)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - 2HDM UFO model FeynRules "2HDM_UFO" OR "2HDMC" MadGraph
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.
+
+
+    Official 2HDM_NLO UFO (reference arXiv:1406.3030 per snippet); no VLQs. Snippet: ''we provide the FeynRules model files as well as the UFO library to be used with MadGraph5_aMC@NLO''. Wiki version 57
+    seen.'
+- source_id: SRC_ARXIV_1412_6955
+  title: Automated Two Higgs Doublet Model at NLO
+  authors_or_org: not confirmed from search snippet
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: null
+  version: arXiv:1412.6955
+  url: https://arxiv.org/pdf/1412.6955
+  doi: null
+  arxiv_id: '1412.6955'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Describes the 2HDM UFO generated by FeynRules+NLOCT for MadGraph5_aMC@NLO. Journal status not confirmed from snippet (category assigned on the basis of being a widely cited 2HDM NLO model paper;
+    treat journal status as unconfirmed).
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Journal status of arXiv:1412.6955 not confirmed from snippets; authors and date not confirmed.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - 2HDM UFO model FeynRules "2HDM_UFO" OR "2HDMC" MadGraph
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Category PEER_REVIEWED is the journal''s classification ''on the basis of being a widely cited 2HDM NLO model paper''; journal status, authors and date were NOT confirmed from snippets. Candidate for
+    downgrade to UNVERIFIED by the lead.'
+- source_id: SRC_URL_GITHUB_YCWU1030_2HDM_FR
+  title: The FeynRule 2HDM Files (ycwu1030/2HDM_FR)
+  authors_or_org: ycwu1030 (GitHub)
+  source_type: software_repository
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: v0.5.1 (Zenodo 10.5281/zenodo.8207058) per snippet
+  url: https://github.com/ycwu1030/2HDM_FR
+  doi: 10.5281/zenodo.8207058
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Community CP-conserving 2HDM FeynRules/UFO with alternative parameter convention; snippet points to Zenodo-archived UFO 'version 0.5.1, DOI 10.5281/zenodo.8207058'. Not fetched (not attempted);
+    details from snippet only.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Page not fetched although the host is reachable; licence, model conventions and whether the UFO is CP-conserving only are snippet-level.
+  licence: public GitHub/Zenodo (per snippet; licence file not read)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - 2HDM UFO model FeynRules "2HDM_UFO" OR "2HDMC" MadGraph
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software repo'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=false.
+
+
+    Journal marks fetch_blocked=false but the page was not fetched (not attempted); details are snippet-only. raw.githubusercontent.com is reachable in this session, so the README/licence could be fetched
+    now. Zenodo DOI 10.5281/zenodo.8207058 (v0.5.1) is from the snippet. Category OFFICIAL_SOFTWARE_DOCUMENTATION is the journal''s classification of a community repository; the lead may prefer SECONDARY_SOURCE.'
+- source_id: SRC_ARXIV_2404_05704
+  title: Novel collider signatures in the type-I 2HDM+a model
+  authors_or_org: not confirmed from search snippet
+  source_type: arxiv_preprint
+  category: UNVERIFIED
+  publication_date: null
+  version: arXiv:2404.05704
+  url: https://arxiv.org/pdf/2404.05704
+  doi: null
+  arxiv_id: '2404.05704'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Example of a public pseudoscalar-extended 2HDM UFO ('Pseudoscalar_2HDMI', loaded with 'import model Pseudoscalar_2HDMI', with restriction cards). Adjacent, not the 2HDM+VLQ model of 2610.17801.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Authors and date not confirmed from snippet; adjacency to the 2HDM+VLQ target model is nominal only.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - 2HDM UFO model FeynRules "2HDM_UFO" OR "2HDMC" MadGraph
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Adjacent model only (pseudoscalar-extended type-I 2HDM+a, UFO ''Pseudoscalar_2HDMI'' with restriction cards); not the 2HDM+VLQ model.'
+- source_id: SRC_URL_FEYNRULES_HEL
+  title: Higgs effective Lagrangian (HEL) FeynRules model
+  authors_or_org: A. Alloul, B. Fuks, V. Sanz
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: HEL.fr / HEL_UFO; wiki versions 2-13 seen
+  url: https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/HEL
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'The dimension-six Higgs Effective Lagrangian UFO (Alloul, Fuks, Sanz, arXiv:1310.5150). Closest documented ancestor of the ''HELv2 / effdihiggs'' naming used by Kumar et al.; no page named
+    ''HELv2'' or ''effdihiggs'' was found on the FeynRules wiki. Snippet: ''The UFO model file generated by FeynRules has all the new parameters set to 0.1.'' Fetch blocked.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - '''effdihiggs'' / ''HELv2'' UFO: no public hosting location found (not on FeynRules wiki, GitHub, or Zenodo in results). Only the SAIP slide deck names ''effdihiggs-v2 UFO model'' / ''HELv2 effective
+    Lagrangian''; presenter, date and exact wording unverified because fetch was blocked.'
+  licence: public download (per snippet; licence text not seen)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - effdihiggs HELv2 UFO Kumar Higgs effective Lagrangian
+  notes: 'snippet-quoted: default new-physics couplings in UFO = 0.1 :: The UFO model file generated by FeynRules has all the new parameters set to 0.1.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.
+
+
+    Closest documented ancestor of the ''HELv2 / effdihiggs-v2'' naming used by Kumar et al. (SRC_WS_LEBOHO_KUMAR_DIHIGGS). No page named ''HELv2'' or ''effdihiggs'' exists on the FeynRules wiki as far
+    as search results show.'
+- source_id: SRC_ARXIV_1310_5150
+  title: Phenomenology of the Higgs Effective Lagrangian via FeynRules
+  authors_or_org: Adam Alloul, Benjamin Fuks, Veronica Sanz
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2014'
+  version: arXiv:1310.5150; JHEP 04 (2014) 110
+  url: https://arxiv.org/pdf/1310.5150
+  doi: null
+  arxiv_id: '1310.5150'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: HEL reference paper (JHEP04(2014)110 per Sussex figshare result). Basis for HELv2-type effective di-Higgs couplings.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - DOI not seen; journal reference JHEP 04 (2014) 110 comes from a figshare search result.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - effdihiggs HELv2 UFO Kumar Higgs effective Lagrangian
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Journal reference JHEP 04 (2014) 110 comes from a Sussex figshare search result; DOI not seen in snippets.'
+- source_id: SRC_URL_FEYNRULES_HEFT_DH
+  title: 'HEFT_DH: effective field theory for single Higgs and double Higgs production beyond leading order (FeynRules wiki)'
+  authors_or_org: Chen, Li, Shao, Wang
+  source_type: software_documentation
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: null
+  version: HEFT_DH_UFO; wiki versions 13-17 seen
+  url: https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/HEFT_DH
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Alternative public NLO UFO for single/double Higgs production in the infinite-top-mass limit (Chen, Li, Shao, Wang). Surfaced when searching ''effdihiggs''; adjacent, not the Kumar model.
+    Snippet: requires ''version 3.0.1+ of MadGraph5_aMC@NLO'' for mixed-order scenarios.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - '''effdihiggs'' / ''HELv2'' UFO: no public hosting location found (not on FeynRules wiki, GitHub, or Zenodo in results). Only the SAIP slide deck names ''effdihiggs-v2 UFO model'' / ''HELv2 effective
+    Lagrangian''; presenter, date and exact wording unverified because fetch was blocked.'
+  licence: public download (per snippet; licence text not seen)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"effdihiggs" UFO di-Higgs effective model MadGraph'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''software docs'', category OFFICIAL_SOFTWARE_DOCUMENTATION; fetch_blocked=true.
+
+
+    Adjacent alternative (NLO single/double Higgs EFT in the infinite-top-mass limit), not the Kumar model. Snippet: requires ''version 3.0.1+ of MadGraph5_aMC@NLO'' for mixed-order scenarios.'
+- source_id: SRC_ARXIV_1509_04016
+  title: Probing anomalous couplings using di-Higgs production in electron-proton collisions
+  authors_or_org: Mukesh Kumar, Xifeng Ruan, Rashidul Islam, Alan S. Cornell, Max Klein, Uta Klein, Bruce Mellado
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: '2017'
+  version: arXiv:1509.04016; PLB 764 (2017) 247
+  url: https://arxiv.org/pdf/1509.04016
+  doi: 10.1016/j.physletb.2016.11.039
+  arxiv_id: '1509.04016'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Kumar et al. predecessor study (FCC-he di-Higgs, anomalous hhh and hhWW couplings) that the SAIP slide deck cites alongside the 'effdihiggs-v2' UFO / 'HELv2 effective Lagrangian'. Published
+    Phys. Lett. B 764 (2017) 247-253, DOI 10.1016/j.physletb.2016.11.039, CC BY. Confirms the Kumar et al. authorship behind the HELv2/effdihiggs lineage, but the UFO itself is not confirmed to be publicly
+    hosted.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - '''effdihiggs'' / ''HELv2'' UFO: no public hosting location found (not on FeynRules wiki, GitHub, or Zenodo in results). Only the SAIP slide deck names ''effdihiggs-v2 UFO model'' / ''HELv2 effective
+    Lagrangian''; presenter, date and exact wording unverified because fetch was blocked.'
+  licence: CC BY (per snippet)
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Kumar muon-proton collider LHmuC OR "LHμC" OR "muon-proton" di-Higgs HELv2 effective Lagrangian
+  - '"Probing anomalous couplings using di-Higgs production in electron-proton collisions" Kumar authors arXiv 1509.04016'
+  notes: 'snippet-quoted: Higgs self-coupling precision = g_hhh(1) = 1.00 (-0.17/+0.24) at sqrt(s)=3.5 (5.0) TeV, 10 ab^-1 :: the self-coupling could be measured at ghhh(1)=1.00 (−0.17/+0.24) of its expected
+    Standard Model value at √s = 3.5 (5.0) TeV for an ultimate 10 ab⁻¹ of integrated luminosity
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; fetch_blocked=true.
+
+
+    Predecessor FCC-he di-Higgs study by the Wits/Liverpool group behind the LHμC di-Higgs benchmark; its quoted precision refers to ep collisions at FCC-he, NOT to the LHμC. The ''effdihiggs-v2'' UFO is
+    not confirmed to be publicly hosted anywhere.'
+- source_id: SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS
+  title: Di Higgs at the LHC (SAIP talk slides)
+  authors_or_org: not confirmed (SAIP contribution; presenter not shown in snippet)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: null
+  version: null
+  url: https://events2.saip.org.za/event/2/contributions/653/attachments/224/507/Di_Higgs_at_the_LHC%20(9).pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Only source found that names 'effdihiggs-v2 UFO model' and 'HELv2 effective Lagrangian' and connects them to Kumar et al. and to a muon beam (up to 1 TeV) on a 7 TeV proton beam, i.e. the LHμC-like
+    configuration. Presenter, date and exact text could not be verified (fetch blocked; details are the search tool's paraphrase). Treat as a lead, not a citation.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - '''effdihiggs'' / ''HELv2'' UFO: no public hosting location found (not on FeynRules wiki, GitHub, or Zenodo in results). Only the SAIP slide deck names ''effdihiggs-v2 UFO model'' / ''HELv2 effective
+    Lagrangian''; presenter, date and exact wording unverified because fetch was blocked.'
+  - Presenter, date and exact slide text unverified (fetch to events2.saip.org.za blocked); relation to the uploaded Kraków deck SRC_WS_LEBOHO_KUMAR_DIHIGGS inferred, not verified.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Kumar muon-proton collider LHmuC OR "LHμC" OR "muon-proton" di-Higgs HELv2 effective Lagrangian
+  notes: 'snippet-quoted: model naming = HELv2 effective Lagrangian / effdihiggs-v2 UFO :: Kumar et al. "Probing anomalous couplings using di-Higgs production in electron–proton"; Effective couplings; HELv2
+    effective Lagrangian / effdihiggs-v2 UFO model.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Lead decision: SAIP di-Higgs talk -> PRIMARY_LHMUC. source_id reused from the sibling fragment lhmuc-primary_sources.yaml (same SAIP contribution 653; that fragment registers the contribution page URL,
+    this family surfaced the slides PDF URL) so the merge tool unions the two records instead of duplicating the source. Only source found that names ''effdihiggs-v2 UFO model'' / ''HELv2 effective Lagrangian''
+    together with a muon beam (up to 1 TeV) on a 7 TeV proton beam. Presenter, date and exact wording are the search tool''s paraphrase; until the PDF is fetched no value from it may be recorded as reported_lhmuc.
+    Relation to the uploaded Kraków deck SRC_WS_LEBOHO_KUMAR_DIHIGGS (same Wits group, same process, same UFO name) is inferred, not verified.'
+- source_id: SRC_ARXIV_2510_18390
+  title: Heavy Neutral Lepton at Same-Sign Muon Collider
+  authors_or_org: not confirmed from search snippet (report number YITP-25-166)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2025-10
+  version: arXiv:2510.18390; YITP-25-166
+  url: https://arxiv.org/abs/2510.18390
+  doi: 10.1103/prx6-wnwr
+  arxiv_id: '2510.18390'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Oct 2025 HNL study at μTRISTAN (same-sign mu+mu+), report number YITP-25-166; channels mu+mu+ -> W+ tau+ nubar_mu (LFV) and mu+mu+ -> W+W+ (LNV); published in Phys. Rev. (APS listing 10.1103/prx6-wnwr).
+    Useful comparison for muon-beam HNL sensitivity, not the target paper.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Authors, journal volume and the APS DOI 10.1103/prx6-wnwr are snippet-level only.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"heavy neutral lepton" OR "heavy neutral leptons" muon collider arXiv 2610 October 2025 same-sign OR "μ+μ+" OR "muon-muon" OR TeV sensitivity Majorana'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; fetch_blocked=true.
+
+
+    DOI 10.1103/prx6-wnwr and ''published in Phys. Rev.'' come from an APS listing snippet; journal, volume and authors NOT confirmed. μTRISTAN same-sign μ+μ+ HNL study (report YITP-25-166); comparison
+    point for muon-beam HNL sensitivity, not an LHμC source.'
+- source_id: SRC_ARXIV_2301_07117
+  title: Heavy Neutral Leptons at Muon Colliders
+  authors_or_org: Li, Liu, Lyu
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: '2023'
+  version: arXiv:2301.07117
+  url: https://arxiv.org/pdf/2301.07117
+  doi: null
+  arxiv_id: '2301.07117'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Li, Liu, Lyu (U. Minnesota) study of HNLs at mu+mu- colliders for masses above ~100 GeV (prompt decays). Closest earlier muon-collider HNL benchmark for cross-checking 2610.28252.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Journal status not confirmed; HNL mass range and benchmark details not seen.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"2610.28252" heavy neutral lepton muon collider'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; fetch_blocked=true.
+
+
+    Li, Liu, Lyu (U. Minnesota) HNLs at μ+μ- colliders above ~100 GeV (prompt decays); closest earlier muon-collider HNL benchmark for cross-checking arXiv:2610.28252.'
+- source_id: SRC_ARXIV_2306_17368
+  title: Searching for heavy neutral lepton and lepton number violation through VBS at high-energy muon colliders
+  authors_or_org: Li, Yao, Yuan
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: '2023'
+  version: arXiv:2306.17368; JHEP 09 (2023) 131
+  url: https://arxiv.org/abs/2306.17368
+  doi: null
+  arxiv_id: '2306.17368'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Li, Yao, Yuan, JHEP09(2023)131; HNL via vector boson scattering with same-sign muon beams. Background for muon-beam HNL recasts.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - DOI not seen; JHEP reference from snippet.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - '"heavy neutral lepton" OR "heavy neutral leptons" muon collider arXiv 2610 October 2025 same-sign OR "μ+μ+" OR "muon-muon" OR TeV sensitivity Majorana'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category RELATED_MACHINE; fetch_blocked=true.
+
+
+    Li, Yao, Yuan, JHEP 09 (2023) 131 per snippet; DOI not seen. HNL via vector boson scattering with same-sign muon beams.'
+- source_id: SRC_ARXIV_2609_08808
+  title: Neutrino mass, scalar dark matter, and collider signatures in a radiative doublet-triplet model
+  authors_or_org: Bamwidhi, Belfkir, Loualidi, Nasri (per search summary)
+  source_type: arxiv_preprint
+  category: UNVERIFIED
+  publication_date: 2026-09
+  version: arXiv:2609.08808
+  url: https://arxiv.org/abs/2609.08808
+  doi: null
+  arxiv_id: '2609.08808'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Companion paper by the same four authors (Bamwidhi, Belfkir, Loualidi, Nasri) per search summary; likely defines the radiative neutrino model used in 2610.28252. Not fetched; content unconfirmed.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - Whether this paper defines the model used in arXiv:2610.28252 is inferred from author overlap in the search summary.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Bamwidhi Belfkir Loualidi Nasri "heavy neutral lepton" radiative neutrino model muon collider 3 TeV Dirac benchmark UFO MadGraph
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Companion paper by the same four authors per the search summary; likely defines the radiative doublet-triplet neutrino model used in arXiv:2610.28252. Content unconfirmed.'
+- source_id: SRC_ARXIV_2403_13021
+  title: Anatomy of Vector-Like Bottom-Quark Models in the Alignment Limit of the 2-Higgs Doublet Model Type-II
+  authors_or_org: Benbrik, Moretti et al.
+  source_type: arxiv_preprint
+  category: UNVERIFIED
+  publication_date: '2024'
+  version: arXiv:2403.13021 (v3 Oct 2024 per snippet)
+  url: https://arxiv.org/abs/2403.13021v2
+  doi: null
+  arxiv_id: '2403.13021'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: Benbrik, Moretti et al. 2HDM-II+VLQ series (also 2401.16219 vector-like top, 2409.20104, 2211.07259). Possible source of 2HDM+VLQ benchmark conventions; no public UFO release confirmed from
+    snippets.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch was attempted and refused by network policy on arxiv.org, export.arxiv.org, www.alphaxiv.org, api.semanticscholar.org, inspirehep.net, cp3.irmp.ucl.ac.be, events2.saip.org.za in this session;
+    every detail comes from WebSearch snippets/summaries, not from the documents themselves.
+  - No public 2HDM+VLQ UFO release confirmed; benchmark conventions unknown until fetched.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Benbrik Moretti 2HDM type-II vector-like quarks UFO model public FeynRules "2HDM" "VLQ" MadGraph implementation download
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or search-tool paraphrases and are leads to verify, NOT parameter records; snippet-only
+    evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category UNVERIFIED; fetch_blocked=true.
+
+
+    Benbrik, Moretti et al. 2HDM-II+VLQ series (sibling ids named in the snippet: 2401.16219, 2409.20104, 2211.07259 — not registered, not surfaced as sources). Possible source of 2HDM+VLQ benchmark conventions;
+    no public UFO release confirmed. Journal note: v3 Oct 2024 per snippet.'

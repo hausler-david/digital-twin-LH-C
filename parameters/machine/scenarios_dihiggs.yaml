@@ -1,0 +1,101 @@
+# Scenarios defined by the collider configuration of the di-Higgs study, SRC_WS_LEBOHO_KUMAR_DIHIGGS p.6. Schema: schemas/machine.schema.json.
+# No numbers here: every role references a parameter record (machine-level records live in parameters/physics_programme/lhmuc_dihiggs_benchmark.yaml);
+# unknown_roles lists what the source does not give.
+scenarios:
+- scenario_id: LHMUC-DIHIGGS-500GEV
+  label: 'Di-Higgs benchmark configuration: 500 GeV mu+ on 7 TeV p, sqrt(s) = 3.74 TeV, L = 1 ab^-1 (configuration of the cut-flow and limits)'
+  description: Collider configuration from p.6 of the Leboho/Kumar di-Higgs slides ('Eµ = 500 GeV and 1 TeV on Ep = 7 TeV', '√s = 3.74 and 5.29 TeV', 'Integrated luminosity L = 1 ab−1'). The slides give
+    only E_mu, E_p, sqrt(s) and an assumed integrated luminosity; no beam, optics, IR or machine parameter. This is the configuration of the p.8 process table, the p.12/p.23/p.24 cut-flows, the p.22 b-tagging
+    scan and the p.15 limits ('Signal at Eµ = 500 GeV (√s = 3.74 TeV), the configuration of the cut-flow', p.8). The 10 ab^-1 limit column is a projection within this configuration.
+  machine: LHMUC
+  design_version: Di-Higgs phenomenology study configuration (SRC_WS_LEBOHO_KUMAR_DIHIGGS p.6, workshop 'Ultra-cold muons for the LHC', AGH Krakow, 24-26 Sep 2026); not a machine design iteration
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS_LEBOHO_KUMAR_DIHIGGS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_DIHIGGS_500GEV
+    proton_beam_energy: PROTON_BEAM_ENERGY_DIHIGGS
+    sqrt_s: MACHINE_SQRT_S_DIHIGGS_500GEV
+    integrated_luminosity: MACHINE_INT_LUMINOSITY_DIHIGGS
+  unknown_roles:
+  - integrated_luminosity_per_year
+  - peak_luminosity
+  - average_luminosity
+  - collision_rate
+  - repetition_rate
+  - muon_bunch_population
+  - proton_bunch_population
+  - muon_bunches
+  - proton_bunches
+  - bunch_spacing
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - beta_star_proton
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - muon_bunch_length
+  - proton_bunch_length
+  - main_ring_circumference
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - muon_lifetime_lab
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - proton_driver_power
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1 only because sqrt(s) is reproduced by 2*sqrt(E_mu*E_p) = 3.742 TeV. Role ''integrated_luminosity'' (not ''..._per_year'') because the slide writes ''L = 1 ab−1'' without an integration period.
+    Same beam energies as LHMUC-WP-OPT1-500GEV (Khanpour p.4, which quotes L_int = 250 fb^-1 for that option): the di-Higgs study assumes 1 ab^-1 instead, so the two are kept as separate scenarios rather
+    than merged. Beam/IR parameters of LHMUC-DIS2026-1TEV are NOT imported: the slides do not state that this configuration uses them.'
+- scenario_id: LHMUC-DIHIGGS-1TEV
+  label: 'Di-Higgs benchmark configuration: 1 TeV mu+ on 7 TeV p, sqrt(s) = 5.29 TeV, L = 1 ab^-1 (coupling-scan cross sections only)'
+  description: Second collider configuration from p.6 of the Leboho/Kumar di-Higgs slides (E_mu = 1 TeV, E_p = 7 TeV, sqrt(s) = 5.29 TeV, L = 1 ab^-1). Used only for the g_hhh^(1) coupling-scan cross sections
+    on p.7 (SM point σ ≈ 0.33 fb); no process table, cut-flow or limit is given at this energy. The slides give only E_mu, E_p, sqrt(s) and the assumed integrated luminosity; no beam, optics, IR or machine
+    parameter.
+  machine: LHMUC
+  design_version: Di-Higgs phenomenology study configuration (SRC_WS_LEBOHO_KUMAR_DIHIGGS p.6, workshop 'Ultra-cold muons for the LHC', AGH Krakow, 24-26 Sep 2026); not a machine design iteration
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS_LEBOHO_KUMAR_DIHIGGS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_DIHIGGS_1TEV
+    proton_beam_energy: PROTON_BEAM_ENERGY_DIHIGGS
+    sqrt_s: MACHINE_SQRT_S_DIHIGGS_1TEV
+    integrated_luminosity: MACHINE_INT_LUMINOSITY_DIHIGGS
+  unknown_roles:
+  - integrated_luminosity_per_year
+  - peak_luminosity
+  - average_luminosity
+  - collision_rate
+  - repetition_rate
+  - muon_bunch_population
+  - proton_bunch_population
+  - muon_bunches
+  - proton_bunches
+  - bunch_spacing
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - beta_star_proton
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - muon_bunch_length
+  - proton_bunch_length
+  - main_ring_circumference
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - muon_lifetime_lab
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - proton_driver_power
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 only because sqrt(s) is reproduced by 2*sqrt(E_mu*E_p) = 5.292 TeV. Role 'integrated_luminosity' (not '..._per_year') because the slide writes 'L = 1 ab−1' without an integration period. Same
+    beam energies and sqrt(s) as LHMUC-DIS2026-1TEV and LHMUC-WP-BASELINE-1TEV; beam/IR parameters of those scenarios are NOT imported because the slides do not state that this configuration uses them.

@@ -1,0 +1,232 @@
+# Muon booster / acceleration parameters extracted from SRC_ARXIV_2610_35154 (arXiv:2610.35154v1, DIS2026 proceedings), §2 p.4.
+# The acceleration chain is described as an example ("For example, if one assumes ..."), not a fixed design.
+parameters:
+  - parameter_id: ACCEL_INJECTION_ENERGY_DIS2026
+    name: Muon energy at the start of rapid acceleration (booster injection)
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: 1
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The rapid acceleration of anti-muons from an energy of 1 GeV to the collision energy of 1 or 2 TeV is one of the most critical challenges of the LHμC design."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Applies to both energy options; consistent with the 'GeV energy' pre-acceleration target (SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "gamma(1 GeV) = 9.46, tau_lab = 20.8 us (lhmuc.analytical.tau_lab_s): sets the scale of the decay losses at injection"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: "Differs from the μLHC paper (SRC_ARXIV_2506_15445), which injects at 212 MeV; record both, do not average."
+
+  - parameter_id: ACCEL_SCHEME_DIS2026
+    name: Proposed rapid-acceleration scheme (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: "LHeC_ERL_passes_plus_vertical_FFAG_beamlines"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "To circumvent the fundamental limitations of fast-ramping magnetic fields inherent in RCS designs, a novel acceleration scheme based on the vertical Fixed-Field Alternating Gradient (vFFAG) principle [21] is proposed."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Design-defining statement: no RCS for the muons; vFFAG beamlines added to the LHeC ERL racetrack. Details in refs [21, 22] (M. Topp-Mugglestone), not available to this audit."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_LHEC_ERL_PASSES_EXAMPLE_DIS2026
+    name: Number of ERL passes in the 'three-pass to 70 GeV' example (inherited from the nominal LHeC design)
+    symbol: n_pass
+    subsystem: acceleration
+    scenario: null
+    value: 3
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "For example, if one assumes a three-pass acceleration to 70 GeV, inherited from the nominal LHeC design, adding one vFFAG beamline might allow for further acceleration up to 500 GeV [22]."}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Reported as an LHμC design example in a PRIMARY_LHMUC source, but the three-pass/70 GeV configuration is explicitly 'inherited from the nominal LHeC design'; the LHeC ERL lattice itself (linac energies, injection energy) is not restated in this source and must be taken from refs [4-6, 23] if needed."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_ERL_THREE_PASS_ENERGY_DIS2026
+    name: Muon energy after three ERL passes (example)
+    symbol: E_3pass
+    subsystem: acceleration
+    scenario: null
+    value: 70
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "For example, if one assumes a three-pass acceleration to 70 GeV, inherited from the nominal LHeC design, adding one vFFAG beamline might allow for further acceleration up to 500 GeV [22]."}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Example configuration ('if one assumes'); inherited from the nominal LHeC ERL."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "Energy gain per pass is not stated here; (70 - 1) GeV / 3 passes = 23 GeV per pass would be the implied figure (audit arithmetic)."}
+    dependencies: [ACCEL_LHEC_ERL_PASSES_EXAMPLE_DIS2026, ACCEL_INJECTION_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_VFFAG_ONE_BEAMLINE_TOP_ENERGY_DIS2026
+    name: Muon energy reachable with one additional vFFAG beamline (example)
+    symbol: E_vFFAG1
+    subsystem: acceleration
+    scenario: null
+    value: 500
+    unit: GeV
+    uncertainty: {type: not_stated, note: "stated as 'might allow for further acceleration up to 500 GeV'"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "adding one vFFAG beamline might allow for further acceleration up to 500 GeV [22]"}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Attributed to ref. [22] (M. Topp-Mugglestone, 'vFFA and LHμC', workshop contribution 7263315), not available to this audit. Implies a vFFAG momentum range of roughly 70 to 500 GeV/c (factor ~7)."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: [ACCEL_ERL_THREE_PASS_ENERGY_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_LHEC_PASSES_1TEV_EXAMPLE_DIS2026
+    name: Number of LHeC ERL passes in the 1 TeV example configuration ('one-pass LHeC')
+    symbol: n_pass
+    subsystem: acceleration
+    scenario: LHMUC-DIS2026-1TEV
+    value: 1
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Therefore, one can expect to reach a 1 TeV energy and beyond using a one-pass LHeC [23] and two vFFAG beamlines, for example."}
+      derivation: null
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-1TEV, explanation: "'one-pass LHeC' refers to ref. [23] (André, Forthomme, Holzer, Piotrzkowski, New J. Phys. 28 (2026) 013001, 'An electron–hadron collider at the high-luminosity LHC'); given 'for example'."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_VFFAG_BEAMLINE_COUNT_1TEV_EXAMPLE_DIS2026
+    name: Number of vFFAG beamlines in the 1 TeV example configuration
+    symbol: n_vFFAG
+    subsystem: acceleration
+    scenario: LHMUC-DIS2026-1TEV
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Therefore, one can expect to reach a 1 TeV energy and beyond using a one-pass LHeC [23] and two vFFAG beamlines, for example."}
+      derivation: null
+      applicability: {category: design_variant, scenario: LHMUC-DIS2026-1TEV, explanation: "Example configuration for 1 TeV 'and beyond'; the energy ranges of the two vFFAG beamlines are not given."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
+    name: Muon booster (ERL racetrack) circumference
+    symbol: C_booster
+    subsystem: acceleration
+    scenario: null
+    value: 9.0
+    unit: km
+    uncertainty: {type: not_stated, note: "source says 'about 9 km'; no precision given (approximate value, not an order-of-magnitude uncertainty)"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The 1(2) TeV anti-muon beams emerging from the booster of about 9 km circumference will be transferred to the circular main ring of about 3(6) km positioned tangentially to the LHC (see Fig. 2)."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Same booster for both energy options (the sentence covers '1(2) TeV'). The paper states the booster re-uses the LHeC ERL infrastructure (abstract, p.2, Fig. 2 caption) but does not say whether the 9 km figure is the LHeC racetrack circumference; the origin of the number is not given in this source."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P1, methods: ["dimensional check", "revolution period C/c = 30.0 us; 50 turns (μLHC ERL-booster assumption) would take 1.5 ms, comparable to the ~20 ms lab lifetime at 1 TeV but ~70 lifetimes at 1 GeV: decay during early turns dominates (audit note)"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: "Confidence medium because the value is given only as 'about'."
+
+  - parameter_id: ACCEL_BOOSTER_LINAC_COUNT_DIS2026
+    name: Number of booster linacs
+    symbol: n_linac
+    subsystem: acceleration
+    scenario: null
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "Figure 2 (labels 'linac 1', 'linac 2')", quotation: "very intense and highly collimated in three different directions – along two booster linacs as well as the straight section of the main ring"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Two linacs on opposite straights of the racetrack, as in the LHeC ERL; Fig. 2 labels 'linac 1' and 'linac 2'. Linac lengths and gradients are not given."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACCEL_MU_TOP_ENERGY_OPTIONS_DIS2026
+    name: Collision (top) energies the booster chain must reach (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: "1_TeV_baseline_or_2_TeV_option"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "The rapid acceleration of anti-muons from an energy of 1 GeV to the collision energy of 1 or 2 TeV is one of the most critical challenges of the LHμC design."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Numeric values are MACHINE_MU_BEAM_ENERGY_DIS2026 and MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026; this record captures the source's own ranking of acceleration as 'one of the most critical challenges'."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: [MACHINE_MU_BEAM_ENERGY_DIS2026, MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026]
+    date_added: "2026-10-28"
+    responsible_module: parameters/acceleration
+    notes: null

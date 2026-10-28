@@ -1,0 +1,199 @@
+# μLHC scenarios (Akturk et al., PTEP 2026 / arXiv:2506.15445v2). Numbers live in the referenced parameter records.
+# Verified 2026-10-28 (research/_fragments/verify_MULHC.md).
+scenarios:
+- scenario_id: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+  label: μLHC, μTRISTAN-type booster (PTEP 2026, as printed in arXiv v2; erratum status unresolved)
+  description: 'HL-LHC based μ+p collider of Akturk et al.: 1 TeV μ+ from a μTRISTAN-type race-track booster (two 3 km linacs, 1 km-radius arcs,
+    16 turns, 82% survival) stored in a 3 km main ring tangential to the LHC, colliding with 7 TeV protons (LHeC ERL60-upgraded proton set). Luminosity
+    8.8e33 cm^-2 s^-1 from AloHEP with ''beam size matched'' to 4.3 um.'
+  machine: MULHC
+  design_version: PTEP 2026 033C04 (erratum status of the uploaded v2 unresolved); arXiv:2506.15445v2 Tables 1-3 (μTRISTAN-based column)
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_2506_15445
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MULHC
+    proton_beam_energy: PROTON_BEAM_ENERGY_MULHC
+    sqrt_s: MACHINE_SQRT_S_MULHC
+    collision_rate: MACHINE_COLLISION_FREQUENCY_MULHC
+    repetition_rate: SOURCE_MU_TRAIN_REPETITION_RATE_MULHC
+    muon_bunch_population_at_source: SOURCE_MU_BUNCH_POPULATION_MULHC
+    muon_bunch_charge_at_source: SOURCE_MU_BUNCH_CHARGE_MULHC
+    proton_bunch_population: PROTON_BUNCH_POPULATION_MULHC
+    muon_bunches: MACHINE_MU_BUNCHES_PER_RING_MULHC
+    proton_bunches: PROTON_BUNCHES_PER_RING_MULHC
+    bunch_spacing: MACHINE_BUNCH_SPACING_TIME_MULHC
+    bunch_spacing_distance: MACHINE_BUNCH_SPACING_DISTANCE_MULHC
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_LHC_MULHC
+    beta_x_star_muon: MACHINE_MU_BETA_X_STAR_MULHC
+    beta_y_star_muon: MACHINE_MU_BETA_Y_STAR_MULHC
+    beta_star_proton: PROTON_BETA_STAR_MULHC
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_X_MULHC
+    muon_norm_emittance_y: MACHINE_MU_NORM_EMITTANCE_Y_MULHC
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_MULHC
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MULHC
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_MULHC
+    proton_ring_circumference: PROTON_RING_CIRCUMFERENCE_MULHC
+    proton_revolution_frequency: PROTON_REVOLUTION_FREQUENCY_MULHC
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_MULHC
+    main_ring_revolution_time: MACHINE_MAIN_RING_REVOLUTION_TIME_MULHC
+    main_ring_turns_per_lifetime: MACHINE_MAIN_RING_TURNS_PER_LIFETIME_MULHC
+    muon_average_population_fraction: MACHINE_MU_AVERAGE_POPULATION_FRACTION_MULHC
+    booster_injection_energy: ACC_BOOSTER_INJECTION_ENERGY_MULHC
+    booster_lattice_type: ACC_BOOSTER_LATTICE_TYPE_MULHC
+    luminosity_code: MACHINE_LUMINOSITY_CODE_MULHC
+    working_year_duration: MACHINE_WORKING_YEAR_DURATION_MULHC
+    nozzle_length: DET_NOZZLE_LENGTH_MULHC
+    nozzle_material: DET_NOZZLE_MATERIAL_MULHC
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_MUTRISTAN_MULHC
+    integrated_luminosity_per_year: MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_MUTRISTAN_MULHC
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MUTRISTAN_MULHC
+    muon_average_bunch_population: MACHINE_MU_AVERAGE_BUNCH_POPULATION_MUTRISTAN_MULHC
+    sigma_x_ip: MACHINE_IP_BEAM_SIZE_MU_MUTRISTAN_MULHC
+    sigma_y_ip: MACHINE_IP_BEAM_SIZE_MU_MUTRISTAN_MULHC
+    sigma_x_ip_proton: PROTON_IP_BEAM_SIZE_MUTRISTAN_MULHC
+    sigma_y_ip_proton: PROTON_IP_BEAM_SIZE_MUTRISTAN_MULHC
+    muon_tune_shift: MACHINE_MU_TUNE_SHIFT_MUTRISTAN_MULHC
+    proton_tune_shift: PROTON_TUNE_SHIFT_MUTRISTAN_MULHC
+    booster_circumference: ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN_MULHC
+    booster_linac_length: ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC
+    booster_arc_radius: ACC_BOOSTER_ARC_RADIUS_MUTRISTAN_MULHC
+    booster_max_field: ACC_BOOSTER_MAX_FIELD_MUTRISTAN_MULHC
+    booster_turns: ACC_BOOSTER_TURNS_MUTRISTAN_MULHC
+    booster_survival: ACC_BOOSTER_SURVIVAL_MUTRISTAN_MULHC
+    booster_extraction_energy: ACC_BOOSTER_EXTRACTION_ENERGY_MUTRISTAN_MULHC
+    booster_linac_energy_gain_required: ACC_BOOSTER_LINAC_GAIN_REQUIRED_1TEV_MULHC
+    booster_acceleration_time: ACC_BOOSTER_ACCELERATION_TIME_MUTRISTAN_MULHC
+    higgs_wfusion_per_year: PHYS_HIGGS_WFUSION_PER_YEAR_MUTRISTAN_MULHC
+    higgs_zfusion_per_year: PHYS_HIGGS_ZFUSION_PER_YEAR_MUTRISTAN_MULHC
+    beta_star_muon_matched_implied: MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_total
+  - crossing_angle
+  - number_of_ips
+  - proton_bunch_length
+  - muon_energy_spread
+  - muon_polarization
+  - muon_beam_power_at_ip
+  - main_ring_dipole_field
+  - main_ring_lattice
+  - ir_quadrupole_gradients
+  - l_star
+  - detector_solenoid_field
+  - nozzle_opening_angle
+  - bib_rate
+  - wall_plug_power
+  - cost
+  - proton_beam_lifetime_with_collisions
+  - muon_injection_scheme_into_main_ring
+  - sigma_x_ip_from_optics
+  - sigma_y_ip_from_optics
+  - booster_rf_frequency
+  - booster_gradient
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: sigma_x_ip/sigma_y_ip point to the single 'matched' 4.3 um of Table 3 (the paper prints one value for x and y), which does not follow
+    from the Table 1 beta*/emittance (3.6 um / 1.7 um); the verifier showed it corresponds to beta*_mu = 4.37 cm in both planes (MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC),
+    which also reproduces xi_mu = 600e-4. Booster extraction energy printed as 960 GeV with 30 GeV linacs while Table 1 uses 1000 GeV (requires
+    31.25 GeV linacs). booster_circumference is an analytical estimate (two semicircular arcs assumed), not a printed value. Booster survival
+    82% reproduced by a turn-by-turn decay integral (P1). Luminosity 8.8e33 reproduced to 1% by f N_mu N_p/(4 pi sigma^2) x 0.632 (P1); not an
+    independent AloHEP run.
+- scenario_id: MULHC-PTEP2026-ERL-BOOSTER
+  label: μLHC, LHeC-ERL-tunnel booster (PTEP 2026, as printed in arXiv v2; erratum status unresolved)
+  description: Same μ+p collider with the μ+ booster installed in the LHeC ERL tunnel (two ~1 km linacs, 10 GeV per pass, 50 turns, 67% survival,
+    vFFA cascaded arcs proposed). 3.0e10 μ+ per bunch at 1 TeV; luminosity 7.2e33 cm^-2 s^-1 from AloHEP.
+  machine: MULHC
+  design_version: PTEP 2026 033C04 (erratum status of the uploaded v2 unresolved); arXiv:2506.15445v2 Tables 1-3 (ERL-based column)
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_2506_15445
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MULHC
+    proton_beam_energy: PROTON_BEAM_ENERGY_MULHC
+    sqrt_s: MACHINE_SQRT_S_MULHC
+    collision_rate: MACHINE_COLLISION_FREQUENCY_MULHC
+    repetition_rate: SOURCE_MU_TRAIN_REPETITION_RATE_MULHC
+    muon_bunch_population_at_source: SOURCE_MU_BUNCH_POPULATION_MULHC
+    muon_bunch_charge_at_source: SOURCE_MU_BUNCH_CHARGE_MULHC
+    proton_bunch_population: PROTON_BUNCH_POPULATION_MULHC
+    muon_bunches: MACHINE_MU_BUNCHES_PER_RING_MULHC
+    proton_bunches: PROTON_BUNCHES_PER_RING_MULHC
+    bunch_spacing: MACHINE_BUNCH_SPACING_TIME_MULHC
+    bunch_spacing_distance: MACHINE_BUNCH_SPACING_DISTANCE_MULHC
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_LHC_MULHC
+    beta_x_star_muon: MACHINE_MU_BETA_X_STAR_MULHC
+    beta_y_star_muon: MACHINE_MU_BETA_Y_STAR_MULHC
+    beta_star_proton: PROTON_BETA_STAR_MULHC
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_X_MULHC
+    muon_norm_emittance_y: MACHINE_MU_NORM_EMITTANCE_Y_MULHC
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_MULHC
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MULHC
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_MULHC
+    proton_ring_circumference: PROTON_RING_CIRCUMFERENCE_MULHC
+    proton_revolution_frequency: PROTON_REVOLUTION_FREQUENCY_MULHC
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_MULHC
+    main_ring_revolution_time: MACHINE_MAIN_RING_REVOLUTION_TIME_MULHC
+    main_ring_turns_per_lifetime: MACHINE_MAIN_RING_TURNS_PER_LIFETIME_MULHC
+    muon_average_population_fraction: MACHINE_MU_AVERAGE_POPULATION_FRACTION_MULHC
+    booster_injection_energy: ACC_BOOSTER_INJECTION_ENERGY_MULHC
+    booster_lattice_type: ACC_BOOSTER_LATTICE_TYPE_MULHC
+    luminosity_code: MACHINE_LUMINOSITY_CODE_MULHC
+    working_year_duration: MACHINE_WORKING_YEAR_DURATION_MULHC
+    nozzle_length: DET_NOZZLE_LENGTH_MULHC
+    nozzle_material: DET_NOZZLE_MATERIAL_MULHC
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_ERL_MULHC
+    integrated_luminosity_per_year: MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_ERL_MULHC
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_ERL_MULHC
+    muon_average_bunch_population: MACHINE_MU_AVERAGE_BUNCH_POPULATION_ERL_MULHC
+    sigma_x_ip: MACHINE_IP_BEAM_SIZE_MU_ERL_MULHC
+    sigma_y_ip: MACHINE_IP_BEAM_SIZE_MU_ERL_MULHC
+    sigma_x_ip_proton: PROTON_IP_BEAM_SIZE_ERL_MULHC
+    sigma_y_ip_proton: PROTON_IP_BEAM_SIZE_ERL_MULHC
+    muon_tune_shift: MACHINE_MU_TUNE_SHIFT_ERL_MULHC
+    proton_tune_shift: PROTON_TUNE_SHIFT_ERL_MULHC
+    booster_linac_length: ACC_ERL_LINAC_LENGTH_MULHC
+    booster_linac_count: ACC_ERL_LINAC_COUNT_MULHC
+    booster_arc_count: ACC_ERL_ARC_COUNT_MULHC
+    booster_energy_gain_per_pass: ACC_ERL_ENERGY_GAIN_PER_PASS_MULHC
+    booster_turns: ACC_ERL_BOOSTER_TURNS_MULHC
+    booster_survival: ACC_BOOSTER_SURVIVAL_ERL_MULHC
+    booster_extraction_energy: ACC_ERL_BOOSTER_EXTRACTION_ENERGY_MULHC
+    booster_arc_scheme: ACC_ERL_BOOSTER_ARC_SCHEME_MULHC
+    higgs_wfusion_per_year: PHYS_HIGGS_WFUSION_PER_YEAR_ERL_MULHC
+    higgs_zfusion_per_year: PHYS_HIGGS_ZFUSION_PER_YEAR_ERL_MULHC
+    beta_star_muon_matched_implied: MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_total
+  - crossing_angle
+  - number_of_ips
+  - proton_bunch_length
+  - muon_energy_spread
+  - muon_polarization
+  - muon_beam_power_at_ip
+  - main_ring_dipole_field
+  - main_ring_lattice
+  - ir_quadrupole_gradients
+  - l_star
+  - detector_solenoid_field
+  - nozzle_opening_angle
+  - bib_rate
+  - wall_plug_power
+  - cost
+  - proton_beam_lifetime_with_collisions
+  - muon_injection_scheme_into_main_ring
+  - sigma_x_ip_from_optics
+  - sigma_y_ip_from_optics
+  - booster_circumference
+  - booster_arc_radius
+  - booster_max_field
+  - booster_acceleration_time
+  - booster_rf_frequency
+  - booster_gradient
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: The ERL booster circumference and arc geometry for muons are not given (LHeC arcs 'unsuitable'; cascaded vFFA arcs only proposed); the
+    67% survival is reproduced by the verifier's decay integral only under an assumed circumference of ~8.4 km (65.6% for 1/3 of the LHC circumference),
+    so it stays P0. Same sigma_x,y matching explanation as the μTRISTAN scenario (beta*_mu = 4.37 cm implied). Luminosity 7.2e33 reproduced to
+    1% by f N_mu N_p/(4 pi sigma^2) x 0.632 (P1); not an independent AloHEP run.

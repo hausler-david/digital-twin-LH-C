@@ -1,0 +1,279 @@
+# Ultra-cold mu+ source and proton-driver parameters extracted from SRC_ARXIV_2610_35154 (arXiv:2610.35154v1, DIS2026 proceedings).
+# Fig. 2 labels (p.3) were read from the rendered PDF page: "proton linac (500 MeV)", "RCS (3 GeV)", "RF", "target", "laser",
+# "linac 1", "linac 2", "muon ring", "beam dump", "IP", "LHC beam".
+parameters:
+  - parameter_id: SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
+    name: Assumed mu+ yield relative to the muTRISTAN proposal
+    symbol: Y_mu / Y_muTRISTAN
+    subsystem: source
+    scenario: LHMUC-DIS2026-1TEV
+    value: 0.05
+    unit: dimensionless
+    uncertainty: {type: not_stated, note: "described by the source as a 'rather conservative' assumption"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "text beside Table 1", quotation: "Assuming rather conservatively the μ+ yields at a level of 5% of the ones in the μTRISTAN proposal, a 4 MW proton driver, and the possibility of an increased population of LHC proton bunches due to their smaller number (hence, lower collision rate) [24], the performance of LHμC is very compelling, as shown alongside."}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Design assumption underlying Table 1 (muon bunch population 0.07e11). The absolute μTRISTAN yield it refers to is not restated in this source; see the μLHC paper (SRC_ARXIV_2506_15445) for the μTRISTAN chain numbers."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "Cannot be cross-checked without the μTRISTAN yield and the proton-driver duty assumptions, which this source does not give."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: "The factor 0.05 is a ratio of yields, not of bunch populations; the mapping to 7.0e9 muons/bunch is not shown in the source."
+
+  - parameter_id: SOURCE_PROTON_DRIVER_POWER_DIS2026
+    name: Proton driver beam power assumed for the example parameter set
+    symbol: P_driver
+    subsystem: source
+    scenario: LHMUC-DIS2026-1TEV
+    value: 4
+    unit: MW
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: "text beside Table 1", quotation: "Assuming rather conservatively the μ+ yields at a level of 5% of the ones in the μTRISTAN proposal, a 4 MW proton driver, and the possibility of an increased population of LHC proton bunches"}
+      derivation: null
+      applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Assumption underlying Table 1. Whether 4 MW is the RCS beam power on target or the linac power is not stated."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: "At 3 GeV (SOURCE_RCS_ENERGY_DIS2026) 4 MW corresponds to 1.33 mA average current, i.e. 8.3e15 protons/s (audit arithmetic, not a source value)."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_PROTON_LINAC_ENERGY_DIS2026
+    name: Proton linac energy (Fig. 2 label)
+    symbol: E_linac_p
+    subsystem: source
+    scenario: null
+    value: 500
+    unit: MeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 3, section: "2. LHμC Concept", table_figure_or_equation: "Figure 2 (label)", quotation: "proton linac (500 MeV)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Figure label only; the layout is 'based on the μTRISTAN proposal [2]' (Fig. 2 caption), so this number may be inherited from μTRISTAN rather than an LHμC design choice. The text does not discuss the linac energy."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: "Confidence medium: figure label, not table or text."
+
+  - parameter_id: SOURCE_RCS_ENERGY_DIS2026
+    name: Proton-driver Rapid Cycling Synchrotron energy (Fig. 2 label)
+    symbol: E_RCS
+    subsystem: source
+    scenario: null
+    value: 3
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 3, section: "2. LHμC Concept", table_figure_or_equation: "Figure 2 (label)", quotation: "RCS (3 GeV)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Figure label only; layout 'based on the μTRISTAN proposal [2]' (J-PARC RCS is 3 GeV), so possibly inherited. Text p.3: 'this method also begins with a proton driver – Rapid Cycling Synchrotron (RCS) – and a pion production target (see Fig. 2)'."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: "Confidence medium: figure label, not table or text."
+
+  - parameter_id: SOURCE_RCS_COUNT_DIS2026
+    name: Number of proton-driver RCS rings needed for proton-beam re-use
+    symbol: n_RCS
+    subsystem: source
+    scenario: null
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "To achieve high yield of ultra-cold anti-muons, two major modifications were proposed: re-use of the proton beam for multiple target hits (hence the need for the second RCS) and a different aerogel configuration [2, 17]."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "'the second RCS' implies two RCS rings; the modification is attributed to refs [2, 17] (μTRISTAN proposal and C. Zhang's workshop talk). Fig. 2 draws two loops at the 'RCS (3 GeV)' label."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Count inferred from the wording 'the second RCS'."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_PROTON_BEAM_REUSE_DIS2026
+    name: Proton-beam re-use scheme at the pion production target (categorical)
+    symbol: null
+    subsystem: source
+    scenario: null
+    value: "proton_beam_reused_for_multiple_target_hits"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "re-use of the proton beam for multiple target hits (hence the need for the second RCS)"}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Yield-enhancing modification proposed in [2, 17]; number of target hits not given."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_MUON_CHARGE_SIGN_DIS2026
+    name: Muon charge sign produced by the ultra-cold source (categorical)
+    symbol: null
+    subsystem: source
+    scenario: null
+    value: "mu_plus_only"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 3, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Clearly, this technique is only applicable for the μ+ production."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Consequence of the muonium-based cooling (muonium = mu+ e-); the collider is a μ+p machine throughout the paper."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_COOLING_METHOD_DIS2026
+    name: Muon cooling method (categorical)
+    symbol: null
+    subsystem: source
+    scenario: null
+    value: "ultra_cold_muons_via_thermal_muonium_laser_ionisation"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 3, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "the LHμC concept primarily relies on the source of ultra-cold anti-muons recently developed at J-PARC and KEK [16], rather than using the conventional ionisation cooling approach. Although this method also begins with a proton driver – Rapid Cycling Synchrotron (RCS) – and a pion production target (see Fig. 2), the muon cooling goes via stopping muons from the pion decays in aerogel where \"thermal\" muonia are formed and then, after diffusing out, are ionised by a laser."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Design-defining choice: not ionisation cooling (Muon Collider approach) but the J-PARC/KEK ultra-cold muon technique [16]."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_MUONIUM_TARGET_OPTIONS_DIS2026
+    name: Muonium production target options under study (categorical)
+    symbol: null
+    subsystem: source
+    scenario: null
+    value: "aerogel_slabs_or_hot_tungsten_wires_or_hybrid"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Very recently, in new studies hot tungsten wires were considered in place of aerogel slabs, and the cooling process was proposed to be carried out in two steps [18]. Moreover, two-step cooling is an essential part of a new hybrid approach to an ultra-cold μ+-source [19]."}
+      derivation: null
+      applicability: {category: unresolved, scenario: null, explanation: "No option is selected in this source; aerogel (baseline, [2, 17]), hot tungsten wires [18] and a hybrid approach [19] are all listed as under study."}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_COOLING_STEPS_DIS2026
+    name: Number of cooling steps in the proposed two-step cooling
+    symbol: n_cool_steps
+    subsystem: source
+    scenario: null
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "the cooling process was proposed to be carried out in two steps [18]. Moreover, two-step cooling is an essential part of a new hybrid approach to an ultra-cold μ+-source [19]."}
+      derivation: null
+      applicability: {category: design_variant, scenario: null, explanation: "Proposed in refs [18] (Sakaki et al., arXiv:2605.25580) and [19] (C. Rogers, workshop); not stated as the LHμC baseline."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null
+
+  - parameter_id: SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026
+    name: Target energy of the ultra-cold mu+ pre-acceleration ('a GeV energy')
+    symbol: E_preacc
+    subsystem: source
+    scenario: null
+    value: 1
+    unit: GeV
+    uncertainty: {type: order_of_magnitude, note: "source says 'to a GeV energy'; the booster paragraph then starts 'from an energy of 1 GeV'"}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Last but not least, the method of pre-acceleration of ultra-cold anti-muons to a GeV energy is also actively pursued [16, 20]."}
+      derivation: null
+      applicability: {category: direct, scenario: null, explanation: "Hand-over energy between the source/pre-accelerator and the booster; equals ACCEL_INJECTION_ENERGY_DIS2026 (1 GeV) by the next paragraph."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: "Refs [16] (Aritome et al., PRL 134 (2025) 245001, RF acceleration of positive muons) and [20] (M. Otani, workshop) not available to this audit."
+
+  - parameter_id: SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026
+    name: Muon beam polarisation prospect (categorical)
+    symbol: null
+    subsystem: source
+    scenario: null
+    value: "high_polarisation_might_be_feasible"
+    unit: string
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: reported_lhmuc
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2610_35154, title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN", author_or_org: "K. Piotrzkowski (HELP4CERN Study Group)", url: "https://arxiv.org/abs/2610.35154", date: "2026-10-26", version: "v1", page: 4, section: "2. LHμC Concept", table_figure_or_equation: null, quotation: "Finally, it should be noted that high polarisation of the μ+ beam might also be feasible [2]."}
+      derivation: null
+      applicability: {category: unresolved, scenario: null, explanation: "No polarisation value is given; attributed to the μTRISTAN proposal [2]."}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: "Categorical statement; the polarisation degree is unknown (value would be null)."}
+    dependencies: []
+    date_added: "2026-10-28"
+    responsible_module: parameters/source
+    notes: null

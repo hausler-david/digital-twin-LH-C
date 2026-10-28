@@ -1,0 +1,265 @@
+# Theory proposal record — Benchmark C (charged-current di-Higgs, anomalous Higgs couplings at mu+ p), Phase 0 evidence audit.
+# Schema: schemas/proposal.schema.json. Written 2026-10-28 by Claude (Phase 0 audit); not human-reviewed.
+#
+# EVIDENCE STATUS: the source is the UPLOADED 24-page slide deck SRC_WS_LEBOHO_KUMAR_DIHIGGS (category PRIMARY_LHMUC,
+# research/source_registry.yaml), read in full (per-page text + PDF pages 7, 8 and 15 inspected as images). Every number
+# below is quoted verbatim from the deck with its page number ("p.N"). The deck cites two documents that were NOT read in
+# this session (arxiv.org and the FeynRules wiki are blocked): Kumar et al., PLB 764 (2017) (the FCC-he e-p predecessor study)
+# and the FeynRules HEL model. Every statement about those two that goes beyond what the slides themselves print comes from
+# the research agents' search-snippet fragments (research/_fragments/theory-benchmarks_sources.yaml) and is marked
+# "(search snippet, unverified)"; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+# Parameter records with full provenance for this deck live in parameters/physics_programme/lhmuc_dihiggs_benchmark.yaml,
+# parameters/detector/lhmuc_dihiggs_analysis_assumptions.yaml and parameters/machine/scenarios_dihiggs.yaml (owned by the
+# parameter agents); this record cross-references them and does not duplicate their provenance blocks.
+proposal_id: PROP_C_DIHIGGS_MU_P
+title: "Probing anomalous Higgs couplings at the future μ+p collider"
+arxiv_id: null
+doi: null
+authors: "Thapelo Leboho, Mukesh Kumar, Edward Nkadimeng, Pramod Sharma (Institute for Collider Particle Physics, Wits University); Bruce Mellado (Institute of High Energy Physics, CAS, and Wits) — p.1"
+source_id: SRC_WS_LEBOHO_KUMAR_DIHIGGS
+access: uploaded
+review_state: extracted
+
+model:
+  name: "HELv2 effective Lagrangian, UFO model 'effdihiggs-v2' (p.6: 'HELv2 UFO model (effdihiggs-v2)')"
+  framework: >-
+    Effective Lagrangian of anomalous Higgs three- and four-point interactions added to the SM:
+    'Total: L = LSM + Lhhh + LhWW + LhhWW' (p.21). No new particles; the SM Higgs (m_h = 125 GeV) and W bosons carry
+    anomalous CP-even (g^(i)) and CP-odd (g~) couplings. Called 'HELv2' by the authors; the relation to the public
+    FeynRules HEL model of Alloul, Fuks and Sanz (arXiv:1310.5150, JHEP 04 (2014) 110 — search snippet, unverified) is
+    inferred from the name only and is not stated on the slides.
+  lagrangian_reference: >-
+    SRC_WS_LEBOHO_KUMAR_DIHIGGS p.21 'Backup: effective Lagrangian', verbatim (text layer, symbols reconstructed from the slide):
+    L_hhh = (m_h^2 / 2v) (1 - g^(1)_hhh) h^3 + (1 / 2v) g^(2)_hhh h d_mu h d^mu h ;
+    L_hWW = g^(1)_hWW W^+_mu W^-mu h + g^(2)_hWW W^+_{mu nu} W^-{mu nu} h + g~_hWW W^+_{mu nu} W~^-{mu nu} h ;
+    L_hhWW = g^(1)_hhWW W^+_mu W^-mu h^2 + g^(2)_hhWW W^+_{mu nu} W^-{mu nu} h^2 + g~_hhWW W^+_{mu nu} W~^-{mu nu} h^2 ;
+    'g (i) : CP-even coefficients; g~: CP-odd (with the dual W~_{mu nu} = 1/2 eps_{mu nu rho sigma} W^{rho sigma})' ;
+    'SM limit: g^(1)_hhh = 1, all other anomalous couplings = 0'. The p.3 potential reads
+    'V(Phi) -> 1/2 m_h^2 h^2 + g^(1)_hhh lambda_SM v h^3 + lambda_4 h^4', 'Gamma_hhh = -6 lambda_SM v g^(1)_hhh',
+    'lambda_SM = m_h^2 / (2 v^2) ≈ 0.13'. Lineage per p.3-4: '(Kumar et al., PLB 764 (2017), e− p)' — that paper is
+    arXiv:1509.04016, DOI 10.1016/j.physletb.2016.11.039, CC BY (search snippet, unverified; fragment SRC_ARXIV_1509_04016).
+  new_particles: []
+  couplings_and_parameters:
+    - name: "Trilinear Higgs self-coupling modifier (CP-even, SM-like operator)"
+      symbol: "g^(1)_hhh"
+      value_or_range: "SM value 1; scanned from -2.5 to +2.5 (13 points) at both beam energies; expected 95% CL allowed interval [-0.26, 1.40] at 1 ab^-1 and [-0.04, 1.19] at 10 ab^-1"
+      unit: dimensionless
+      provenance_quote: "p.3: 'SM: g(1)hhh = 1; hWW and hhWW held at SM values.' p.7: 'Thirteen-point scan of g(1)hhh from −2.5 to +2.5 at both beam energies.' p.15 table: 'g(1)hhh [−0.26, 1.40] [−0.04, 1.19]'. p.16: 'κλ (= g(1)hhh)'. p.5: 'g(1)hhh varied directly in the parameter card.'"
+    - name: "Trilinear Higgs self-coupling, derivative operator (CP-even)"
+      symbol: "g^(2)_hhh"
+      value_or_range: "0 in the SM limit; not varied in the presented results ('Ongoing')"
+      unit: dimensionless
+      provenance_quote: "p.21: 'Lhhh = m_h^2/(2v) (1 − g(1)hhh) h^3 + 1/(2v) g(2)hhh h ∂µh ∂µh'; 'SM limit: g(1)hhh = 1, all other anomalous couplings = 0'. p.17: 'Ongoing: ... the complete set of anomalous couplings, g(1,2)hhh'."
+    - name: "hWW coupling modifier (CP-even, SM-like operator)"
+      symbol: "g^(1)_hWW"
+      value_or_range: "0 in the SM limit; expected 95% CL allowed interval [-0.16, 0.34] at 1 ab^-1 and [-0.08, 0.26] at 10 ab^-1 (one coupling varied at a time)"
+      unit: dimensionless
+      provenance_quote: "p.21: 'LhWW = g(1)hWW W+µ W−µ h + ...'. p.15 table: 'g(1)hWW [−0.16, 0.34] [−0.08, 0.26]'. p.17: '−0.16 < g(1)hWW < 0.34'."
+    - name: "hWW coupling, field-strength operator (CP-even)"
+      symbol: "g^(2)_hWW"
+      value_or_range: "0 in the SM limit; not constrained in the presented results ('Ongoing')"
+      unit: dimensionless
+      provenance_quote: "p.21: '+ g(2)hWW W+µν W−µν h'. p.17: 'the CP-even and CP-odd ghWW, g̃hWW'."
+    - name: "hWW coupling, CP-odd operator"
+      symbol: "g~_hWW"
+      value_or_range: "0 in the SM limit; not constrained in the presented results ('Ongoing')"
+      unit: dimensionless
+      provenance_quote: "p.21: '+ g̃hWW W+µν W̃−µν h'; 'g̃: CP-odd (with the dual W̃µν = 1/2 ϵµνρσ Wρσ)'."
+    - name: "hhWW coupling modifier (CP-even, SM-like operator)"
+      symbol: "g^(1)_hhWW"
+      value_or_range: "0 in the SM limit; expected 95% CL allowed interval [-0.052, 0.031] at 1 ab^-1 and [-0.037, 0.016] at 10 ab^-1 (one coupling varied at a time)"
+      unit: dimensionless
+      provenance_quote: "p.21: 'LhhWW = g(1)hhWW W+µ W−µ h^2 + ...'. p.15 table: 'g(1)hhWW [−0.052, 0.031] [−0.037, 0.016]'. p.17: '−0.052 < g(1)hhWW < 0.031'."
+    - name: "hhWW coupling, field-strength operator (CP-even)"
+      symbol: "g^(2)_hhWW"
+      value_or_range: "0 in the SM limit; not constrained in the presented results ('essentially unconstrained', 'Ongoing')"
+      unit: dimensionless
+      provenance_quote: "p.21: '+ g(2)hhWW W+µν W−µν h^2'. p.17: 'the essentially unconstrained quartic g(1,2)hhWW, g̃hhWW'."
+    - name: "hhWW coupling, CP-odd operator"
+      symbol: "g~_hhWW"
+      value_or_range: "0 in the SM limit; not constrained in the presented results ('Ongoing')"
+      unit: dimensionless
+      provenance_quote: "p.21: '+ g̃hhWW W+µν W̃−µν h^2'. p.17: 'g̃hhWW'."
+    - name: "SM Higgs quartic coupling (numerical reference)"
+      symbol: "lambda_SM"
+      value_or_range: "≈ 0.13"
+      unit: dimensionless
+      provenance_quote: "p.3: 'λSM = m_h^2/(2v^2) ≈ 0.13'."
+    - name: "Higgs boson mass used for candidate pairing and windows"
+      symbol: "m_h"
+      value_or_range: 125
+      unit: GeV
+      provenance_quote: "p.9: 'Higgs candidates from the b pairing minimising the distance to mh = 125 GeV'. p.6: 'parton-level Higgs candidates reconstruct to 125 GeV exactly'."
+  decay_channels:
+    - "h -> b bbar, taken in the matrix element (p.5: 'h → bb̄ taken in the matrix element.'; p.6: 'h → bb̄ in the matrix element ⇒ parton-level Higgs candidates reconstruct to 125 GeV exactly')"
+
+original_study:
+  collider: "μ+p collider ('the LHµC', p.5): μ+ beam of E_μ = 500 GeV or 1 TeV on E_p = 7 TeV protons (p.6). Scenario records: LHMUC-DIHIGGS-500GEV (cut-flow and limits) and LHMUC-DIHIGGS-1TEV (coupling-scan cross sections only), parameters/machine/scenarios_dihiggs.yaml."
+  beam_species: ["mu+", "p"]
+  sqrt_s: {value: 3.74, unit: TeV}
+  integrated_luminosity: {value: 1, unit: "ab^-1"}
+  processes:
+    - "Signal: μ+ p → h h j ν̄μ, h → b b̄ (charged-current W-boson-fusion di-Higgs; final state 4b + forward jet + E_T^miss). p.5: 'µ+ p → h h j ν̄µ, h → bb̄.' 'CC W-boson-fusion production mode.' 'Final state: 4b + forward jet + ETmiss.'"
+    - "Both resonant (hhh vertex) and non-resonant (hWW, hhWW vertices) amplitudes contribute and interfere. p.20: 'Both resonant and non-resonant amplitudes contribute and interfere; a deviation in the di-Higgs rate cannot be assigned to ghhh alone.'"
+    - "Seven charged-current backgrounds (listed under 'backgrounds'). p.6: '2.9 million events: signal plus seven CC backgrounds'."
+  benchmark_points:
+    - label: "Configuration A — E_mu = 500 GeV on E_p = 7 TeV, sqrt(s) = 3.74 TeV, L = 1 ab^-1 (configuration of the process table, cut-flows, b-tag scan and limits)"
+      scenario_id: LHMUC-DIHIGGS-500GEV
+      E_mu_GeV: 500
+      E_p_TeV: 7
+      sqrt_s_TeV: 3.74
+      L_int_ab_inv: 1
+      sigma_SM_fb: 0.167
+      provenance_quote: "p.6: 'Eµ = 500 GeV and 1 TeV on Ep = 7 TeV', '√s = 3.74 and 5.29 TeV', 'Integrated luminosity L = 1 ab−1'. p.7: 'SM point: σ ≈ 0.17 fb at √s = 3.74 TeV'. p.8 table: 'Signal: µ+p → hh j ν̄µ, h → bb̄ | 1.67 × 10−1 | 167 | 300 k'; 'Signal at Eµ = 500 GeV (√s = 3.74 TeV), the configuration of the cut-flow'. p.12: 'Signal: 166.7 events before tagging (σ = 0.167 fb)'."
+      parameter_ids: [MACHINE_MU_BEAM_ENERGY_DIHIGGS_500GEV, PROTON_BEAM_ENERGY_DIHIGGS, MACHINE_SQRT_S_DIHIGGS_500GEV, MACHINE_INT_LUMINOSITY_DIHIGGS, PHYS_DIHIGGS_XSEC_SM_500GEV_DIHIGGS, PHYS_DIHIGGS_XSEC_SIGNAL_500GEV_DIHIGGS]
+    - label: "Configuration B — E_mu = 1 TeV on E_p = 7 TeV, sqrt(s) = 5.29 TeV, L = 1 ab^-1 (coupling-scan cross sections only; no cut-flow or limit shown)"
+      scenario_id: LHMUC-DIHIGGS-1TEV
+      E_mu_GeV: 1000
+      E_p_TeV: 7
+      sqrt_s_TeV: 5.29
+      L_int_ab_inv: 1
+      sigma_SM_fb: 0.33
+      provenance_quote: "p.6 (as above). p.7: 'SM point: σ ≈ 0.17 fb at √s = 3.74 TeV and ≈ 0.33 fb at 5.29 TeV (h → bb̄ included).' 'Doubling Eµ roughly doubles the rate across the scan.' p.3: 'Muon beam, Eµ up to 1 TeV on 7 TeV p: √s = 5.29 TeV'."
+      parameter_ids: [MACHINE_MU_BEAM_ENERGY_DIHIGGS_1TEV, PROTON_BEAM_ENERGY_DIHIGGS, MACHINE_SQRT_S_DIHIGGS_1TEV, MACHINE_INT_LUMINOSITY_DIHIGGS, PHYS_DIHIGGS_XSEC_SM_1TEV_DIHIGGS]
+    - label: "Coupling scan of g^(1)_hhh (both configurations)"
+      scan_variable: "g^(1)_hhh"
+      scan_range: "-2.5 to +2.5"
+      scan_points: 13
+      cross_section_minimum_near: "+0.5"
+      error_model: "Poisson statistical, delta_sigma = sqrt(sigma / L) at L = 1 ab^-1; MadGraph integration errors not used"
+      provenance_quote: "p.7: 'Thirteen-point scan of g(1)hhh from −2.5 to +2.5 at both beam energies.' 'The minimum near +0.5 reflects destructive interference between resonant and non-resonant amplitudes.' 'Error bars are Poisson statistical, δσ = sqrt(σ/L) at L = 1 ab−1; MadGraph integration errors are not used as physics uncertainties.'"
+      parameter_ids: [PHYS_DIHIGGS_GHHH1_SCAN_DIHIGGS, PHYS_DIHIGGS_SCAN_N_POINTS_DIHIGGS, PHYS_DIHIGGS_XSEC_MINIMUM_GHHH1_DIHIGGS, PHYS_DIHIGGS_SCAN_ERROR_MODEL_DIHIGGS]
+    - label: "Luminosity projection — 10 ab^-1 within Configuration A (limits table second column)"
+      scenario_id: LHMUC-DIHIGGS-500GEV
+      L_int_ab_inv: 10
+      provenance_quote: "p.15 table header: 'Coupling | 1 ab−1 | 10 ab−1'. p.16: 'This work, µ+ p (rate only) | 3.74 TeV, 1 / 10 ab−1 | [−0.26, 1.40] / [−0.04, 1.19] | 95%'."
+      parameter_ids: [MACHINE_INT_LUMINOSITY_DIHIGGS_10AB]
+  observables:
+    - "Inclusive signal cross section as a function of g^(1)_hhh (p.7 scan plot, both beam energies)"
+    - "Fiducial cross section after the full cut-flow, one coupling varied at a time — the observable of the 95% CL limits (p.15: 'Observable: fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time.')"
+    - "Discriminating distributions (p.10-11, normalised per bin): b-jet multiplicity ('signal at 4, mistag bkg at 2'), forward-jet η(j1) ('signal backward, 2b central'), E_T^miss ('CC neutrino, harder than QCD'), M4b ('signal peaks near 275 GeV'), leading m(bb̄) ('signal at 125, Z bkg at 91'), subleading m(bb̄) ('second Higgs candidate')"
+    - "Planned, not shown: Δφ(E_T^miss, J) shape for the full coupling set (p.17: 'using the ∆ϕ(ETmiss, J) shape to constrain each at 95% CL'); neural-network classifier 'now under development' (p.11)"
+  event_selection:
+    - "Analysis level: 'Parton level with 12% jet-energy smearing.' (p.9). MadGraph5_aMC parton level (p.6). No detector simulation, no parton shower or hadronisation stated."
+    - "Objects (p.9): 'b quarks, pT > 20 GeV, |η| < 5.0'; 'Light jets, pT > 20 GeV, |η| < 3.5'; 'ETmiss from the final-state ν̄µ'; 'Higgs candidates from the b pairing minimising the distance to mh = 125 GeV'. NOTE: p.17 instead states 'Truth-based b-pairing (each b to its parent Higgs, no mass bias)'; the two descriptions of the pairing are kept side by side here (conflict preserved, not resolved)."
+    - "C1 (p.9): 'at least 4 b quarks and 1 light jet' (cut-flow row 'N(b) ≥ 4', p.12)"
+    - "C2 (p.9): 'forward light jet, η(j1) < −1.5' (cut-flow row 'η(j1) < −1.5')"
+    - "C3 (p.9): 'ETmiss > 10 GeV'"
+    - "C4 (p.9): 'di-Higgs system mass m(4b) > 200 GeV'"
+    - "C5 (p.9): 'both Higgs candidates in 105 < m(bb̄) < 145 GeV' (cut-flow row 'Higgs win. [105, 145]')"
+    - "b-tagging applied as event weights (p.9): 'ϵb = 70% per real b-jet (ϵ4b for four-b final states), ϵmis = 1% per mistagged light jet.' Alternative working points on p.22: no tagging (ϵb = 1), 60%/1%, 70%/2%, 90%/1%."
+    - "Mistag treatment for backgrounds without four real b-jets (p.13): 'require two real b-jets and two light jets, treat the two light jets as mis-tagged b's, weight each event by the mis-identification probability'; 'w = (ϵmis)^2 · (ϵb)^2 = (0.01)^2 (0.7)^2 = 4.9 × 10−5' (60%: 3.6 × 10−5, p.23; 90%: 8.1 × 10−5, p.24)."
+  backgrounds:
+    - "bb̄bb̄j (4b): σ_CC = 3.20 × 10^1 fb, 32 000 events/ab^-1, 300 k MC events (p.8 table)"
+    - "bb̄jjj (2b): σ_CC = 7.96 × 10^2 fb, 796 000 events/ab^-1, 800 k MC events (p.8); 'The 2b continuum exceeds the signal by three orders of magnitude and is controlled through the mistag treatment.'"
+    - "t t̄j (hadronic): σ_CC = 1.24 × 10^0 fb, 1 240 events/ab^-1, 300 k MC events (p.8); enters the cut-flow only through the mistag column"
+    - "t t̄j (semi-leptonic): σ_CC = 4.15 × 10^-1 fb, 415 events/ab^-1, 200 k MC events (p.8); mistag column"
+    - "hbb̄j, h → bb̄: σ_CC = 1.38 × 10^0 fb, 1 380 events/ab^-1, 200 k MC events (p.8)"
+    - "hZj, Z → bb̄, h → bb̄: σ_CC = 5.36 × 10^-1 fb, 536 events/ab^-1, 300 k MC events (p.8 image; text layer prints 'hZj, Z , h → bb̄')"
+    - "ZZj, Z → bb̄: σ_CC = 5.82 × 10^-1 fb, 582 events/ab^-1, 500 k MC events (p.8)"
+    - "All seven are charged-current processes ('seven CC backgrounds', p.6) 'before b-tagging' (p.8). Total MC sample 2.9 million events incl. signal (p.6). Parameter records: PHYS_DIHIGGS_XSEC_BKG_*_500GEV_DIHIGGS, PHYS_DIHIGGS_EVENTS_BKG_*_500GEV_DIHIGGS, PHYS_DIHIGGS_MCGEN_BKG_*_DIHIGGS."
+  statistical_method: >-
+    Two measures. (1) Cut-flow significance S/sqrt(S+B) on event yields at L = 1 ab^-1 with b-tag weights (p.12, p.22-24).
+    (2) Expected 95% CL exclusion on each anomalous coupling, one at a time, from the fiducial cross section after the full
+    cut-flow (p.15, verbatim): 's = Lε[σ(g) − σSM], b = L[εσSM + B], 5% syst.; excluded if ZA ≥ 1.96 (excess over SM only).'
+    'ε = 22.27/166.7 = 0.134, B = 5.2 events at 1 ab−1.' Z_A is not defined on the slides (presumably the Asimov
+    significance with a 5% background systematic — inference, not stated). 'Rate only' (p.16): no shape information used in
+    the presented limits.
+  reported_results:
+    - "SM signal cross sections: 'σ ≈ 0.17 fb at √s = 3.74 TeV and ≈ 0.33 fb at 5.29 TeV (h → bb̄ included)' (p.7); σ_CC = 1.67 × 10^-1 fb, 167 events/ab^-1 at 500 GeV (p.8)."
+    - "Cut-flow at 1 ab^-1, E_mu = 500 GeV, 70% b-tag / 1% mistag (p.12 table; columns Sig | 4b | hZj | hbb̄j | ZZj | Mistag† | Tot. Bkg | S/√(S+B)): Initial 40.02 | 130.50 | 128.67 | 96.88 | 139.57 | 39.02 | 534.6 | 1.67; N(b) ≥ 4: 31.27 | 23.07 | 90.02 | 28.99 | 86.46 | 7.62 | 236.2 | 1.91; η(j1) < −1.5: 25.95 | 2.99 | 75.34 | 14.24 | 59.50 | 0.45 | 152.5 | 1.94; ETmiss > 10 GeV: 25.19 | 2.98 | 73.67 | 13.84 | 59.18 | 0.44 | 150.1 | 1.90; m(4b) > 200 GeV: 25.19 | 1.71 | 73.49 | 13.59 | 55.89 | 0.40 | 145.1 | 1.93; Higgs win. [105, 145]: 22.27 | 0.00 | 4.26 | 0.60 | 0.30 | 0.033 | 5.19 | 4.25. 'Signal: 166.7 events before tagging (σ = 0.167 fb) × 0.7^4 = 40.02.' Parameter records PHYS_DIHIGGS_CUTFLOW70_*_DIHIGGS."
+    - "Headline (p.14): 'S ≈ 22.3, B ≈ 5.2 ⟹ S/√(S+B) ≈ 4.25. (3.1 at 60%, 7.0 at 90% b-tagging; the mistag rate has negligible impact.)'; 'reduces the total background from ∼ 535 tagged events to ∼ 5.2 after the full cut-flow, while retaining ∼ 22 signal events'."
+    - "b-tagging working-point scan, final yields after all cuts at 1 ab^-1, E_mu = 500 GeV (p.22 table; S | B | S/√(S+B)): No tagging (ideal, ϵb = 1) 92.8 | 21.5 | 8.68; 60% b-tag, 1% mistag 12.0 | 2.80 | 3.12; 70% b-tag, 1% mistag (results) 22.3 | 5.18 | 4.25; 70% b-tag, 2% mistag 22.3 | 5.28 | 4.24; 90% b-tag, 1% mistag 60.9 | 14.1 | 7.03. Full 60% and 90% cut-flows on p.23 and p.24 (PHYS_DIHIGGS_CUTFLOW60_*, CUTFLOW90_*)."
+    - "Expected 95% CL allowed intervals (p.15 table; 1 ab^-1 | 10 ab^-1): g^(1)_hhh [−0.26, 1.40] | [−0.04, 1.19]; g^(1)_hWW [−0.16, 0.34] | [−0.08, 0.26]; g^(1)_hhWW [−0.052, 0.031] | [−0.037, 0.016]. p.17: '−0.26 < g(1)hhh < 1.40, −0.16 < g(1)hWW < 0.34, −0.052 < g(1)hhWW < 0.031' at 1 ab^-1."
+    - "Comparison table p.16 (comparators quoted on the slide, imported_related / screening_only): ATLAS HH combination Run 2 '−1.2 < κλ < 7.2' 95%; ATLAS H+HH '−0.4 < κλ < 6.3' 95%; CMS HH '−1.35 < κλ < 6.37' 95%; HL-LHC ATLAS+CMS '1+0.29−0.26 (HH > 7σ)' 68%; FCC-ee + HL-LHC '±33%' 68%; FCC-hh 100 TeV 30 ab^-1 '±(3.4–7.8)%' 68%; FCC-he e−p (Kumar et al.) 3.5 TeV 10 ab^-1 '1.00+0.24−0.17' 68%; 'This work, µ+ p (rate only) 3.74 TeV, 1 / 10 ab−1 [−0.26, 1.40] / [−0.04, 1.19] 95%'."
+    - "Authors' qualitative claims: 'Lepton–proton collisions reach the same tens-of-percent regime as the HL-LHC in a clean, pile-up-free CC channel, independent of the gg → hh systematics.' (p.16); FCC-he e−p predecessor 'reaches 7.5σ at 10 ab−1' (p.4, attributed to 'Kumar et al., PLB 764 (2017), Table 2')."
+  generator_setup:
+    generator: "MadGraph5_aMC v3.6.7, parton level (p.6: 'MadGraph5_aMC v3.6.7, parton level')"
+    ufo_model: "HELv2 UFO model (effdihiggs-v2) (p.6)"
+    pdf_set: "CTEQ6L1 (p.6: 'CTEQ6L1 parton distribution functions')"
+    higgs_decay: "h → bb̄ in the matrix element (p.5, p.6)"
+    coupling_variation: "g^(1)_hhh varied directly in the parameter card (p.5)"
+    sample_size: "2.9 million events, signal plus seven CC backgrounds (p.6); per-process MC counts in the p.8 table"
+    hosting: "Generated and hosted on CERN LXPLUS/EOS (p.6)"
+    smearing: "12% jet-energy smearing applied at parton level (p.9)"
+    parton_shower_hadronisation: null
+    detector_simulation: null
+    run_card_cuts_scales: null
+    beam_polarisation: null
+    provenance_note: "null fields: not stated anywhere in the 24 slides."
+    parameter_ids: [PHYS_DIHIGGS_GENERATOR_DIHIGGS, PHYS_DIHIGGS_UFO_MODEL_DIHIGGS, PHYS_DIHIGGS_PDF_SET_DIHIGGS, PHYS_DIHIGGS_MC_HOSTING_DIHIGGS, PHYS_DIHIGGS_HBB_IN_MATRIX_ELEMENT_DIHIGGS, PHYS_DIHIGGS_MC_TOTAL_EVENTS_DIHIGGS, DET_DIHIGGS_JET_ENERGY_SMEARING_DIHIGGS]
+
+model_implementation:
+  available: yes_private
+  type: "UFO (MadGraph5_aMC model 'effdihiggs-v2', named on p.6); no FeynRules source or process cards shown"
+  url: null
+  licence: null
+  notes: >-
+    The UFO 'effdihiggs-v2' is named on the slides but no download location, licence or version hash is given, and the
+    research agents' searches found no public hosting (research/_fragments/theory-benchmarks_sources.yaml: ''effdihiggs' /
+    'HELv2' UFO: no public hosting location found (not on FeynRules wiki, GitHub, or Zenodo in results)' — search snippet,
+    unverified). It must be requested from the authors (M. Kumar / Wits). PARTIAL PUBLIC STAND-IN: the FeynRules HEL model
+    (Alloul, Fuks, Sanz; https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/HEL; fragment SRC_URL_FEYNRULES_HEL,
+    access blocked; 'The UFO model file generated by FeynRules has all the new parameters set to 0.1.' — search snippet,
+    unverified) implements a dimension-six Higgs effective Lagrangian whose operator basis is NOT the p.21 basis
+    (g^(1,2)_hhh, g^(1,2)_hWW, g~_hWW, g^(1,2)_hhWW, g~_hhWW); any mapping between the two parametrisations would have to
+    be derived and documented before HEL could reproduce the slides. The adjacent FeynRules HEFT_DH model (fragment
+    SRC_URL_FEYNRULES_HEFT_DH, snippet-level) is a second candidate stand-in, also unmapped. Process cards, run cards
+    (generation cuts, scales), the CTEQ6L1 LHAPDF identifier and the parameter-card values of the scan are not provided.
+
+lhmuc_recasting:
+  original_initial_state_transfers_directly: true
+  candidate_mu_p_channels:
+    - process: "μ+ p → h h j ν̄μ, h → b b̄ (CC W-fusion di-Higgs) at the original Configuration A, E_mu = 500 GeV on 7 TeV p, sqrt(s) = 3.74 TeV — scenario LHMUC-DIHIGGS-500GEV"
+      status: proposed_unverified
+      notes: "This is the original study's own channel and configuration; the slides report σ_SM = 0.167 fb and the full cut-flow. Status is proposed_unverified from the project's point of view because nothing has been reproduced here (no UFO, no generator run). Reproduction target: σ_SM ≈ 0.17 fb, 40.02 → 22.27 signal events through the cut-flow, S/√(S+B) = 4.25. Same beam energies as LHMUC-WP-OPT1-500GEV (Khanpour p.4) but with 1 ab^-1 assumed instead of that option's 250 fb^-1 (see scenarios_dihiggs.yaml notes)."
+    - process: "μ+ p → h h j ν̄μ, h → b b̄ at the DIS2026 baseline, E_mu = 1 TeV on 7 TeV p, sqrt(s) = 5.3 TeV — scenario LHMUC-DIS2026-1TEV (same energies as LHMUC-DIHIGGS-1TEV)"
+      status: proposed_unverified
+      notes: "The slides give only the inclusive scan and σ_SM ≈ 0.33 fb at 5.29 TeV (p.7); no cut-flow, background yields or limits at this energy. The DIS2026 example set (SRC_ARXIV_2610_35154 Table 1 p.4: 'Center-of-mass energy, √s [TeV] 5.3') supplies the machine luminosity, so an integrated-luminosity assumption consistent with that set (rather than the slides' flat 1 ab^-1) must be documented before projecting. The cut-flow efficiencies at 500 GeV cannot be assumed to hold at 1 TeV (harder forward-jet spectrum, p.4: 'more phase space and a harder spectrum'); they must be recomputed."
+    - process: "μ+ p → h h j ν̄μ, h → b b̄ at the 2 TeV muon option, E_mu = 2 TeV on 7 TeV p, sqrt(s) = 7.5 TeV — scenario LHMUC-DIS2026-2TEV"
+      status: proposed_unverified
+      notes: "Not studied on the slides at all. √s = 7.5 TeV from SRC_ARXIV_2610_35154 p.2 ('an option of the 2 TeV muon beam is also considered, resulting in a yet higher √s_μp = 7.5 TeV'; MACHINE_SQRT_S_2TEV_DIS2026). The p.7 remark 'Doubling Eµ roughly doubles the rate across the scan' refers to 500 GeV → 1 TeV and must not be extrapolated to 2 TeV without a generator run. No luminosity table exists for the 2 TeV option in the DIS2026 paper."
+    - process: "μ+ p → μ+ h h j (neutral-current Z-fusion di-Higgs), h → b b̄ — LLM-proposed complement, NOT in the original study"
+      status: proposed_unverified
+      notes: "Listed only because the p.21 Lagrangian modifies hWW/hhWW but not hZZ/hhZZ, so the NC channel would probe g^(1,2)_hhh alone with a tagged μ+ instead of E_T^miss. Expected to be smaller than the CC channel (by analogy with e p studies; not computed). Requires checking whether 'effdihiggs-v2' contains any anomalous Z couplings. Charge: μ+(+1) + q → μ+(+1) + q' + h h: balanced; colour: quark line unchanged."
+  missing_for_implementation:
+    - "The UFO model 'effdihiggs-v2' itself (not public; request from the authors), with its version, checksum and licence."
+    - "Operator-basis mapping if the public FeynRules HEL (or HEFT_DH) is used as a stand-in; neither is the p.21 basis."
+    - "MadGraph process definitions, run card (generation-level cuts, renormalisation/factorisation scales, PDF identifier for CTEQ6L1) and the parameter cards of the 13-point g^(1)_hhh scan and of the g^(1)_hWW / g^(1)_hhWW variations used for the p.15 limits."
+    - "Detector simulation beyond parton level: no parton shower, hadronisation, jet clustering, b-tagging model beyond flat 70%/1% weights, or detector response (only 12% jet-energy smearing). The LHμC detector concept (nozzle, acceptance at |η| < 5 for b quarks) is not connected to the analysis."
+    - "Definition of Z_A and of the 5% systematic in the limit setting (p.15); whether the systematic is on background only or on signal too."
+    - "Resolution of the b-pairing description: 'minimising the distance to mh = 125 GeV' (p.9) versus 'Truth-based b-pairing (each b to its parent Higgs, no mass bias)' (p.17)."
+    - "Cut-flow, background yields and limits at the 1 TeV configuration (only σ_SM ≈ 0.33 fb is given) and anything at 2 TeV."
+    - "The Δφ(E_T^miss, J) shape analysis and the neural-network classifier announced as ongoing (p.11, p.17); results for g^(2)_hhh, g^(2)_hWW, g~_hWW, g^(2)_hhWW, g~_hhWW."
+    - "The predecessor paper Kumar et al. PLB 764 (2017) 247 (arXiv:1509.04016; search snippet, unverified) for the e−p cut-flow 'Table 2' cited on p.4 — fetch blocked in this session."
+    - "An integrated-luminosity assumption for each LHμC scenario consistent with the machine records (the slides assume a flat 1 ab^-1 and project 10 ab^-1 without stating a running time)."
+  notes: >-
+    The schema description of original_initial_state_transfers_directly says 'Always false for μ+μ- or pp originals';
+    this benchmark is the exception the field allows for: the original study is itself a μ+ p study with the LHμC beam
+    energies (E_mu = 500 GeV / 1 TeV on E_p = 7 TeV), so the signal and background processes transfer without re-deriving
+    the initial state, and the value is set to true. What does NOT transfer automatically: the integrated luminosity
+    (assumed, not taken from a machine design), the detector model (parton level only) and the cut-flow efficiencies at
+    other beam energies. All four candidate channels carry proposed_unverified because no diagram check or generator run
+    has been performed in this project.
+
+extraction:
+  method: "LLM-assisted extraction from uploaded slides"
+  extracted_by: "Claude (Phase 0 audit)"
+  date: "2026-10-28"
+  reviewed_by: null
+  review_date: null
+
+notes: >-
+  Source read in full: 24 slides (p.18 'Thank you', p.19 'Backup' divider carry no content). All numbers in this record are
+  verbatim from SRC_WS_LEBOHO_KUMAR_DIHIGGS with page numbers; the p.8 and p.15 tables and the p.7 plot were checked
+  against the PDF images. Internal consistency checks (arithmetic only, no physics): 2*sqrt(0.5*7000) = 3.742 TeV and
+  2*sqrt(1000*7000) = 5.292 TeV reproduce the quoted √s; 166.7 × 0.7^4 = 40.02 reproduces the 'Initial' signal yield;
+  22.27/sqrt(22.27+5.19) = 4.25 reproduces the final significance; (0.01)^2 (0.7)^2 = 4.9e-5 reproduces the mistag weight.
+  Minor presentational discrepancies preserved: 167 events (p.8) vs 166.7 (p.12); B = 5.19 (p.12) vs 5.18 (p.22) vs
+  '≈ 5.2' (p.14-15); S = 22.27 (p.12) vs 22.3 (p.14, p.22). The deck is dated 24 September 2026 (p.1) and is believed to be
+  the material of the Kraków workshop contribution 'Status of Di-Higgs at LHμC' (ref. [15] of arXiv:2610.35154) — relation
+  inferred by the source registry, not verified. Non-uploaded documents mentioned: Kumar et al. PLB 764 (2017) 247
+  (arXiv:1509.04016, CC BY — search snippet, unverified) and the FeynRules HEL model (search snippet, unverified); the
+  SAIP 2026 deck SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS also names 'effdihiggs-v2' (search snippet, unverified). No
+  parameter value in this record is new: the authoritative provenance blocks are the PHYS_DIHIGGS_*, DET_DIHIGGS_* and
+  MACHINE_*_DIHIGGS* records written by the parameter agents.

@@ -1,0 +1,1618 @@
+# Research fragment — reconnaissance family 'vffa-acceleration' (WebSearch on 2026-10-28, 17 queries, 34 sources;
+# WebFetch attempts failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io — hosts not resolvable under
+# network policy). Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by
+# tools/merge_research_fragments.py. No source in this file duplicates an uploaded-document id
+# (SRC_ARXIV_2610_35154, SRC_ARXIV_2506_15445, SRC_WS1681458_*, SRC_WS_LEBOHO_KUMAR_DIHIGGS).
+# Lead category corrections applied: arXiv:2504.21417 -> RELATED_MACHINE; Topp-Mugglestone ORA thesis -> SECONDARY_SOURCE/thesis;
+# Indico/DESY/STFC/BNL slide decks -> CONFERENCE_PROCEEDING/workshop_talk; Snowmass arXiv report 2203.07919 -> CONFERENCE_PROCEEDING.
+# Unidentified inspirehep file 7bcd989a... recorded as UNVERIFIED (journal: 'UNVERIFIED-adjacent until fetched').
+# 'snippet-quoted' lines in notes are leads to verify, NOT parameter records; parameters_extracted is empty everywhere.
+sources:
+- source_id: SRC_URL_ORA_OXFORD_TOPP_MUGGLESTONE_THESIS
+  title: 'Scaling Fixed Field Accelerators: Theory and Modelling of Horizontal- and Vertical-Excursion Accelerators (DPhil
+    thesis)'
+  authors_or_org: Max Emil Topp-Mugglestone; supervisor Suzie Sheehy (University of Oxford, JAI)
+  source_type: thesis
+  category: SECONDARY_SOURCE
+  publication_date: Hilary Term 2024 (ORA deposit date 2025-03-25 per snippet)
+  version: ORA uuid:f15ec97f-3d72-440f-82df-5d158d3e8358; PDF at /files/d5999n419f
+  url: https://ora.ox.ac.uk/objects/uuid:f15ec97f-3d72-440f-82df-5d158d3e8358
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Core thesis for this family: first analytic model of the vFFA (previously only numerical integration), scaling-FFA
+    theory, and a vFFA as a muon-accelerator stage for a muon collider, with an optimisation ''not previously possible''.
+    Full text not retrieved (ora.ox.ac.uk blocked); description from snippets only. No numerical parameters quoted.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - 'Topp-Mugglestone thesis: license/access status, DOI, and any field/energy numbers for the muon-collider vFFA stage not
+    confirmed; full abstract not retrieved.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Topp-Mugglestone thesis "Scaling fixed field accelerators" horizontal- and vertical-excursion Oxford
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    WebFetch to this source was attempted and failed (host not resolvable under network policy).
+
+
+    Journal classification before lead corrections: source_type ''thesis'', category RELATED_MACHINE; journal date field:
+    ''Hilary Term 2024 (ORA deposit date 2025-03-25 per snippet)''; journal identifier field: ''ORA uuid:f15ec97f-3d72-440f-82df-5d158d3e8358;
+    PDF at /files/d5999n419f''; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: theses (ora.ox.ac.uk Topp-Mugglestone) -> SECONDARY_SOURCE / thesis.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2011_10783
+  title: Optics Design of Vertical Excursion Fixed-Field Alternating Gradient Accelerators
+  authors_or_org: S. Machida, D. J. Kelliher, J.-B. Lagrange, C. T. Rogers (STFC/RAL)
+  source_type: arxiv_preprint
+  category: PEER_REVIEWED
+  publication_date: 2020 (arXiv submission; journal publication date not confirmed)
+  version: arXiv:2011.10783
+  url: https://arxiv.org/abs/2011.10783
+  doi: null
+  arxiv_id: '2011.10783'
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Foundational vFFA optics paper: vertically exponential field gives constant tunes with momentum, zero momentum
+    compaction / momentum-independent path length, no ramped field or RF frequency needed; notes skew-quadrupole confinement,
+    fully coupled transverse motion, and that longitudinal end fields drive the maximum field requirement. Explicitly motivated
+    by muon collider / neutrino factory acceleration. Journal status (PRAB?) not confirmed from snippets.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Journal publication status of arXiv:2011.10783 (PRAB?) not confirmed.
+  - Category PEER_REVIEWED is the journal's classification, but the snippets show only an arXiv preprint and the journal reference
+    (PRAB?) was not confirmed; candidate for downgrade to UNVERIFIED or CONFERENCE_PROCEEDING pending a read of the abstract
+    page (lead decision).
+  licence: open access preprint
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "vertical excursion" FFA vFFA arXiv
+  - site:arxiv.org vertical FFA muon acceleration fixed field magnet
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    WebFetch to this source was attempted and failed (host not resolvable under network policy).
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category PEER_REVIEWED; journal date field:
+    ''2020 (arXiv submission; journal publication date not confirmed)''; journal identifier field: ''arXiv:2011.10783''; journal
+    licence/access field: ''open access preprint''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_DOI_10_1103_PHYSREVSTAB_16_084001
+  title: Vertical orbit excursion fixed field alternating gradient accelerators
+  authors_or_org: Stephen Brooks (RAL, Chilton, UK)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: Published 6 August 2013 (received 30 April 2013)
+  version: Phys. Rev. ST Accel. Beams 16, 084001; DOI 10.1103/PhysRevSTAB.16.084001
+  url: https://epubs.stfc.ac.uk/manifestation/9731/PhysRevSTAB.16.084001.pdf
+  doi: 10.1103/PhysRevSTAB.16.084001
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Brooks''s main peer-reviewed vFFA paper: skew-quadrupole focusing from vertical field increasing with height,
+    scaling-type VFFAGs with fixed tunes and no intrinsic momentum-range limit, first multiparticle tracking, 12 GeV ISIS-upgrade
+    ring; also discusses energy-recovery electron accelerators. Not fetched; values from snippet.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: PRSTAB is open access (CC-BY); STFC ePubs copy
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "Vertical orbit excursion fixed field alternating gradient accelerators" Phys. Rev. ST Accel. Beams 16 084001 2013
+  notes: 'snippet-quoted: vFFA ring top energy = 12 GeV :: The 12 GeV ring produces an output power of at least 2.18 MW.
+
+
+    snippet-quoted: beam power = >= 2.18 MW :: This paper presents the first multiparticle tracking of such machines. The
+    12 GeV ring produces an output power of at least 2.18 MW.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; journal date
+    field: ''Published 6 August 2013 (received 30 April 2013)''; journal identifier field: ''Phys. Rev. ST Accel. Beams 16,
+    084001; DOI 10.1103/PhysRevSTAB.16.084001''; journal licence/access field: ''PRSTAB is open access (CC-BY); STFC ePubs
+    copy''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2012_MOPPD019
+  title: Vertical Orbit Excursion FFAG Accelerators with Edge Focussing (IPAC'12 MOPPD019)
+  authors_or_org: S. Brooks (RAL)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2012'
+  version: IPAC2012 MOPPD019; paper URL jacow.org/IPAC2012/papers/MOPPD019.pdf
+  url: https://refs.jacow.org/reference/show/3920
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Brooks's first vFFA proposal with edge focusing to shorten circumference; rings to boost the ISIS beam. Snippet-only.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Query 7 used the wrong paper code MOPPD016; the JACoW reference record gives MOPPD019. Paper PDF (jacow.org/IPAC2012/papers/MOPPD019.pdf)
+    not fetched.
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "vertical excursion" FFA vFFA arXiv
+  - Stephen Brooks "vertical" FFAG permanent magnet ISIS upgrade 12 GeV IPAC2012 MOPPD016
+  notes: 'snippet-quoted: ring energies = 3, 5 and 12 GeV :: Its rings were designed to boost the ISIS beam to 3, 5, and 12
+    GeV.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2012''; journal identifier field: ''IPAC2012 MOPPD019; paper URL jacow.org/IPAC2012/papers/MOPPD019.pdf'';
+    journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_HB2012_MOP255
+  title: Acceleration in Vertical Orbit Excursion FFAGs with Edge Focussing (HB2012 MOP255)
+  authors_or_org: S. Brooks (RAL)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2012'
+  version: HB2012 MOP255
+  url: https://epaper.kek.jp/HB2012/papers/mop255.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Brooks vFFA with fixed-field superconducting magnets as alternative to ramped rings; ISIS 800 MeV injection.
+    Snippet-only.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "vertical excursion" FFA vFFA arXiv
+  - Stephen Brooks "vertical" FFAG permanent magnet ISIS upgrade 12 GeV IPAC2012 MOPPD016
+  notes: 'snippet-quoted: injection energy = 800 MeV :: Rings to accelerate the 800MeV beam from the ISIS proton synchrotron
+    are investigated.
+
+
+    snippet-quoted: field profile = vertical field increasing with height :: They have a vertical magnetic field component
+    that increases with height in the vertical aperture
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2012''; journal identifier field: ''HB2012 MOP255''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_PSI_7313_19980
+  title: Permanent Magnet VFFA for 18GeV Electron Acceleration (FFA'19 workshop talk, PSI)
+  authors_or_org: S. Brooks (BNL)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2019'
+  version: indico.psi.ch event 7313 contribution 19980
+  url: https://indico.psi.ch/event/7313/contributions/19980/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Brooks''s later vFFA work: prototype magnet measurements and a lattice to accelerate electrons in the RHIC tunnel.
+    Snippet-only.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "vertical excursion" FFA vFFA arXiv
+  notes: 'snippet-quoted: electron top energy = 18 GeV :: a lattice that could accelerate electrons to 18 GeV in the RHIC
+    tunnel
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; journal
+    date field: ''2019''; journal identifier field: ''indico.psi.ch event 7313 contribution 19980''; journal licence/access
+    field: None.
+
+
+    Category correction applied: lead rule: workshop slide decks -> CONFERENCE_PROCEEDING / workshop_talk.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2014_TUYB01
+  title: Vertical Orbit-excursion Fixed Field Alternating Gradient Accelerators (V-FFAGs) and 3D Cyclotrons (IPAC'14 TUYB01)
+  authors_or_org: S. Brooks
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2014'
+  version: IPAC2014 TUYB01
+  url: https://refs.jacow.org/author/show/539400
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Invited IPAC'14 overview of V-FFAG concept by Brooks; title confirmed from JACoW author index only.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Title confirmed from the JACoW author index only; paper PDF and abstract not seen.
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Stephen Brooks "vertical" FFAG permanent magnet ISIS upgrade 12 GeV IPAC2012 MOPPD016
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2014''; journal identifier field: ''IPAC2014 TUYB01''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2021_THPAB236
+  title: First Order Analytic Approaches to Modelling the Vertical Excursion Fixed Field Alternating Gradient Accelerator
+    (IPAC'21 THPAB236)
+  authors_or_org: M. Topp-Mugglestone, J.-B. Lagrange, S. Machida, S. Sheehy (JAI Oxford; STFC/RAL/ISIS)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2021'
+  version: IPAC2021 THPAB236, pp. 4262-4265; DOI 10.18429/JACoW-IPAC2021-THPAB236
+  url: https://epaper.kek.jp/ipac2021/papers/thpab236.pdf
+  doi: 10.18429/JACoW-IPAC2021-THPAB236
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Precursor to the thesis: linearised-Hamiltonian analytic model of vFFA for rapid design/optimisation of VFFA
+    lattices. Snippet-only.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Query 1 also mentioned an IPAC'23 companion paper by Topp-Mugglestone that the journal did not characterise (no code,
+    title or URL recorded).
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Topp-Mugglestone thesis "Scaling fixed field accelerators" horizontal- and vertical-excursion Oxford
+  - '"First Order Analytic Approaches to Modelling the Vertical Excursion Fixed Field Alternating Gradient Accelerator" IPAC
+    2021'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2021''; journal identifier field: ''IPAC2021 THPAB236, pp. 4262-4265; DOI 10.18429/JACoW-IPAC2021-THPAB236'';
+    journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2021_THPAB124
+  title: Fixed Field Accelerators for Muon Collider Complex (IPAC'21 THPAB124) [title as inferred from snippets]
+  authors_or_org: S. Machida, J.-B. Lagrange, M. Topp-Mugglestone
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2021'
+  version: IPAC2021 THPAB124
+  url: https://jacow.org/ipac2021/papers/THPAB124.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: 'Applies FFA/vFFA concept to the muon collider complex: vFFA gives isochronous acceleration of ultra-relativistic
+    muons after pre-acceleration; proposes collider arc of skew quadrupoles with vertical displacement; fixed field and fixed
+    RF frequency; control of momentum compaction. Exact title not confirmed (fetch blocked).'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Exact title of IPAC'21 THPAB124 (Machida, Lagrange, Topp-Mugglestone) not confirmed.
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org vertical FFA muon acceleration fixed field magnet
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    WebFetch to this source was attempted and failed (host not resolvable under network policy).
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2021''; journal identifier field: ''IPAC2021 THPAB124''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_DESY_45968_185344
+  title: Vertical-excursion fixed-field accelerators for rapid muon acceleration (poster, DESY, 12-16 May 2025)
+  authors_or_org: M. Topp-Mugglestone (CERN), A. Chance, C. Rogers, J. S. Berg, J.-B. Lagrange, S. Machida
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2025-05
+  version: indico.desy.de event 45968 contribution 185344 (likely IPAC'25; not confirmed)
+  url: https://indico.desy.de/event/45968/contributions/185344
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Most recent vFFA-for-muon-collider proposal: argues RCS designs are limited by magnet ramp rates, power efficiency/power
+    supply and path-length/time-of-flight differences; vFFA lattices with footprints comparable to RCS1 and RCS4 using only
+    time-independent superconducting magnets; transverse optics and longitudinal stability simulations still pending. Whether
+    this is the IPAC''25 contribution is unconfirmed.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Whether the DESY 12-16 May 2025 vFFA poster (contribution 185344) is the IPAC'25 contribution, and whether a JACoW IPAC'25
+    paper exists with lattice numbers (energy range, field, circumference), is unresolved.
+  - No source found giving a vFFA muon ring's explicit energy range in GeV/TeV; only 'footprints comparable to RCS1 and RCS4'
+    and the 63 GeV to 5 TeV RCS range.
+  - No power-efficiency figures for vFFA vs RCS found in snippets.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  - IPAC 2025 vertical excursion FFA muon collider poster "vFFA" ramp rates power efficiency time of flight
+  - site:indico.cern.ch muon collider FFA acceleration 2025 Topp-Mugglestone vertical FFA ring energy GeV TeV
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; journal
+    date field: ''2025-05''; journal identifier field: "indico.desy.de event 45968 contribution 185344 (likely IPAC''25; not
+    confirmed)"; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: DESY slide decks/posters -> CONFERENCE_PROCEEDING / workshop_talk.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_1553599_6692118
+  title: Muon FFA slides, CERN Indico event 1553599 (20250917-muon-ffa.pdf)
+  authors_or_org: M. Topp-Mugglestone (CERN) [attribution per snippet]
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2025-09-17'
+  version: indico.cern.ch contribution 6692118
+  url: https://indico.cern.ch/event/1553599/contributions/6692118/attachments/3137263/5567034/20250917-muon-ffa.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: CERN talk on FFAs for muon acceleration and FFA collider ring; states ramping requires normal-conducting magnets
+    and ramp rate can limit muon survival; baseline high-energy chain is (hybrid) RCS to 3 (10) TeV. indico.cern.ch not fetchable
+    here.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - No source found giving a vFFA muon ring's explicit energy range in GeV/TeV; only 'footprints comparable to RCS1 and RCS4'
+    and the 63 GeV to 5 TeV RCS range.
+  - Speaker attribution (M. Topp-Mugglestone) is per snippet only; event title and contribution title not recorded. indico.cern.ch
+    is blocked in this session (no attempt was logged).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid RCS normal-conducting superconducting dipole 1.8 T 10 T magnet ramp rate IMCC
+  - IPAC 2025 vertical excursion FFA muon collider poster "vFFA" ramp rates power efficiency time of flight
+  - site:indico.cern.ch muon collider FFA acceleration 2025 Topp-Mugglestone vertical FFA ring energy GeV TeV
+  notes: 'snippet-quoted: RCS1 ramp rate = 4.2 kT/s :: A presentation on fixed-field accelerators cites a 4.2 kT/s ramp rate
+    in RCS1.
+
+
+    snippet-quoted: acceleration range / cycle time = 63 GeV to 5 TeV; millisecond-order cycle time :: 50% survival over a
+    63 GeV to 5 TeV acceleration would require millisecond-order cycle time
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category OFFICIAL_CERN; journal date field:
+    ''2025-09-17''; journal identifier field: ''indico.cern.ch contribution 6692118''; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: Indico slide decks -> CONFERENCE_PROCEEDING / workshop_talk (journal had OFFICIAL_CERN).
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_STFC_927_5619
+  title: Muons meeting 11-24 slides (RCS vs vFFA comparison table)
+  authors_or_org: S. Jolly, M. Topp-Mugglestone (per snippet)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2023 (per snippet; not verified)
+  version: indico.stfc.ac.uk event 927 contribution 5619
+  url: https://indico.stfc.ac.uk/event/927/contributions/5619/attachments/1909/3359/Muons_meeting_11-24.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Comparison table hybrid RCS vs vFFA: ramp rate and orbit excursion. Snippet-only.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Date '2023' and speakers (S. Jolly, M. Topp-Mugglestone) per snippet, not verified; which hybrid RCS stage the 565 T/s
+    figure refers to (RCS4 per the IMCC parameter-table snippet) is not stated.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - IPAC 2025 vertical excursion FFA muon collider poster "vFFA" ramp rates power efficiency time of flight
+  notes: 'snippet-quoted: ramp rate hybrid RCS vs vFFA = 565 T/s vs 0 :: lists a ramp rate of 565 T/s for a hybrid RCS design
+    and zero for the vFFA, because its magnets are fixed
+
+
+    snippet-quoted: orbit excursion vFFA vs RCS = 10 cm vs 1.3 cm :: The same table gives the vFFA an excursion of 10 cm versus
+    1.3 cm for the RCS.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category CONFERENCE_PROCEEDING; journal
+    date field: ''2023 (per snippet; not verified)''; journal identifier field: ''indico.stfc.ac.uk event 927 contribution
+    5619''; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: STFC slide decks -> CONFERENCE_PROCEEDING / workshop_talk.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2504_21417
+  title: The Muon Collider
+  authors_or_org: International Muon Collider Collaboration (IMCC)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2025-04
+  version: arXiv:2504.21417
+  url: https://arxiv.org/abs/2504.21417
+  doi: null
+  arxiv_id: '2504.21417'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC comprehensive design report; FFA/vFFA section gives field limits for fixed-field arcs and orbit excursion
+    for the muon vFFA option, and states vFFA optics is fully coupled in two transverse planes. Key source for 'magnet field
+    limits for fixed-field arcs'.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Section/page of the vFFA passage (excursion < 120 mm; < 8 T / < 16 T) not recorded; must be located in the full text before
+    any imported_related record is written.
+  licence: open access preprint
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  - site:arxiv.org vertical FFA muon acceleration fixed field magnet
+  - IPAC 2025 vertical excursion FFA muon collider poster "vFFA" ramp rates power efficiency time of flight
+  - arXiv 2203.07919 Snowmass'21 high-power cyclotrons and FFAs report vFFA prototype FETS-FFA 3 to 12 MeV
+  notes: 'snippet-quoted: vFFA orbit excursion = < 120 mm per stage :: the movement of the orbit from injection to extraction
+    (the excursion) is now less than 120 mm in each case
+
+
+    snippet-quoted: peak on-orbit dipole field, early-stage vFFA = < 8 T :: the peak dipole fields on orbit are maintained
+    below 8 T in the early-stage vFFA and below 16 T in the final-stage vFFA
+
+
+    snippet-quoted: peak on-orbit dipole field, final-stage vFFA = < 16 T :: the peak dipole fields on orbit are maintained
+    below 8 T in the early-stage vFFA and below 16 T in the final-stage vFFA
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; journal date
+    field: ''2025-04''; journal identifier field: ''arXiv:2504.21417''; journal licence/access field: ''open access preprint''.
+
+
+    Category correction applied: lead rule: arXiv:2504.21417 ''The Muon Collider'' -> RELATED_MACHINE (journal already had
+    RELATED_MACHINE).
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2303_08533
+  title: Towards a Muon Collider
+  authors_or_org: International Muon Collider Collaboration (Accettura et al.)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2023-03
+  version: arXiv:2303.08533 (published Eur. Phys. J. C 2023; journal ref not confirmed from snippet)
+  url: https://arxiv.org/abs/2303.08533
+  doi: null
+  arxiv_id: '2303.08533'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Baseline muon acceleration chain (linac + 4 RCS, hybrid bending for RCS2-4) and statement that FFAs are an interesting
+    alternative to RCS; notes vFFA zero momentum compaction / isochronous for ultra-relativistic muons but not yet applied
+    to muon acceleration at that time.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Journal reference (Eur. Phys. J. C 2023) not confirmed from snippets; RCS circumference figures were given as a paraphrased
+    list and need the table reference.
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  - site:arxiv.org vertical FFA muon acceleration fixed field magnet
+  notes: 'snippet-quoted: pre-acceleration linac energy = 63 GeV :: The greenfield study puts a 63 GeV pre-acceleration linac
+    ahead of a cascade of four rapid-cycling synchrotrons (RCS)
+
+
+    snippet-quoted: RCS stage energies = 0.31 TeV, 0.75 TeV, 1.5 TeV, 5 TeV :: The intermediate stages are 0.31 TeV, 0.75
+    TeV and 1.5 TeV to finally reach 5 TeV.
+
+
+    snippet-quoted: RCS circumferences = 5990, 5990, 10700, 35000 m :: The ring circumferences are listed as 5990 5990 10700
+    35000 metres for RCS1 to RCS4.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; journal date
+    field: ''2023-03''; journal identifier field: ''arXiv:2303.08533 (published Eur. Phys. J. C 2023; journal ref not confirmed
+    from snippet)''; journal licence/access field: ''open access''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2407_12450
+  title: Interim report for the International Muon Collider Collaboration (IMCC)
+  authors_or_org: International Muon Collider Collaboration
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2024-07
+  version: arXiv:2407.12450
+  url: https://arxiv.org/abs/2407.12450
+  doi: null
+  arxiv_id: '2407.12450'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: IMCC interim report; normal-conducting dipole swing and ramp time for the first hybrid RCS, used as benchmark
+    against fixed-field options.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - '''~4 kT/s'' is the search tool''s arithmetic on the 0.36-1.8 T / 0.35 ms snippet, not a quoted value.'
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid RCS normal-conducting superconducting dipole 1.8 T 10 T magnet ramp rate IMCC
+  notes: 'snippet-quoted: RCS1 NC dipole field swing and ramp time = 0.36 T to 1.8 T in 0.35 ms (~4 kT/s) :: The initial RCS''s
+    normal-conducting dipoles are specified to sweep from 0.36 T to 1.8 T in 0.35 ms, which works out to about 4 kT/s.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; journal date
+    field: ''2024-07''; journal identifier field: ''arXiv:2407.12450''; journal licence/access field: ''open access''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_INSPIRE_FILE_7BCD989A_IMCC_ACCEL_CHAIN
+  title: IMCC acceleration-chain parameter document (inspirehep file)
+  authors_or_org: IMCC-affiliated authors (not identified in snippet)
+  source_type: official_report
+  category: UNVERIFIED
+  publication_date: null
+  version: null
+  url: https://inspirehep.net/files/7bcd989a5066031ea54b234875d49d90
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Parameter table for hybrid RCS chain: NC ramp rates per stage, NC field swing, and collider-ring SC dipole field.
+    Title/authors unknown; treat as UNVERIFIED-adjacent until fetched.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - 'inspirehep file 7bcd989a5066031ea54b234875d49d90 (IMCC parameter table) and 12757f301a5c0c862f7d1fb682c39776 (ISIS-II
+    FFA options): titles, authors and dates unknown.'
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid RCS normal-conducting superconducting dipole 1.8 T 10 T magnet ramp rate IMCC
+  notes: 'snippet-quoted: NC magnet ramp rates RCS1-RCS4 = 4200, 3282, 1519, 565 T/s :: A table of the acceleration chain
+    lists normal-conducting ramp rates of 4200, 3282, 1519 and 565 T/s for successive stages
+
+
+    snippet-quoted: NC dipole swing = -1.8 T to +1.8 T :: describes the normal-conducting magnets swinging from −1.8 T to
+    +1.8 T to allow a larger energy swing
+
+
+    snippet-quoted: collider ring SC dipole field (10 TeV) = 16 T :: The 10 TeV collider ring is noted as needing 16 T superconducting
+    dipoles.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category RELATED_MACHINE; journal date
+    field: None; journal identifier field: None; journal licence/access field: None.
+
+
+    Category correction applied: journal had RELATED_MACHINE but itself said ''treat as UNVERIFIED-adjacent until fetched''
+    (title, authors, date unknown) -> recorded as UNVERIFIED until the file is read.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_INDICO_JACOW_95_MOP1094
+  title: Hybrid RCS design paper, IPAC MOP1094 (indico.jacow.org event 95)
+  authors_or_org: not identified in snippet
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: null
+  version: MOP1094 (conference year not confirmed; likely IPAC'25)
+  url: https://indico.jacow.org/event/95/papers/13703/files/6332-MOP1094.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Describes hybrid RCS as fixed-field superconducting dipoles interleaved with normal-conducting dipoles pulsing
+    from negative to positive saturation. Title/authors/year unconfirmed.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - 'IPAC MOP1094 hybrid RCS paper: title, authors and conference year unknown.'
+  licence: JACoW CC-BY
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid RCS normal-conducting superconducting dipole 1.8 T 10 T magnet ramp rate IMCC
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: None; journal identifier field: "MOP1094 (conference year not confirmed; likely IPAC''25)"; journal
+    licence/access field: ''JACoW CC-BY''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_PAC2009_WE6PFP097
+  title: Hybrid RCS for a muon collider (PAC 2009 WE6PFP097)
+  authors_or_org: not identified in snippet (MAP-era US study)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2009'
+  version: PAC2009 WE6PFP097
+  url: https://accelconf.web.cern.ch/PAC2009/papers/we6pfp097.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Older hybrid RCS baseline with NC dipole swing and ramp rate; historical comparison for ramp limits.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Authors not identified in snippet.
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider hybrid RCS normal-conducting superconducting dipole 1.8 T 10 T magnet ramp rate IMCC
+  notes: 'snippet-quoted: NC dipole swing and ramp = -1.8 T to 1.8 T in 1 ms, 3700 T/s :: An earlier study assumed a swing
+    from −1.8 T to 1.8 T in 1 ms, a rate of 3700 T/s.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2009''; journal identifier field: ''PAC2009 WE6PFP097''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_1811_10694
+  title: On The Feasibility of a Pulsed 14 TeV c.m.e. Muon Collider in the LHC Tunnel
+  authors_or_org: Neuffer, Shiltsev (per common knowledge; not confirmed in snippet)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2018-11
+  version: arXiv:1811.10694
+  url: https://arxiv.org/abs/1811.10694
+  doi: null
+  arxiv_id: '1811.10694'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Proposes RLAs with multi-pass non-scaling FFAG arcs for high-energy muon acceleration in the LHC tunnel; relevant
+    precedent for an LHC-tunnel muon machine.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Author attribution (Neuffer, Shiltsev) is the search agent's recollection, not confirmed in a snippet.
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  notes: 'snippet-quoted: FFAG arc passes = 5-20 turns :: proposed RLAs whose arcs would use multi-pass (5-20 turns) non-scaling
+    FFAG lines
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; journal date
+    field: ''2018-11''; journal identifier field: ''arXiv:1811.10694''; journal licence/access field: ''open access''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2412_00463
+  title: Beam-cavity interactions in the rapid cycling synchrotron chain of the future muon collider
+  authors_or_org: not identified in snippet (IMCC RF/beam dynamics group)
+  source_type: arxiv_preprint
+  category: RELATED_MACHINE
+  publication_date: 2024-12
+  version: arXiv:2412.00463 (v2)
+  url: https://arxiv.org/abs/2412.00463
+  doi: null
+  arxiv_id: '2412.00463'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: RF constraints in muon RCS chain (very high synchrotron tune forces distributed RF), a longitudinal-dynamics
+    point the vFFA alternative also has to address.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Authors not identified in snippet.
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  notes: 'snippet-quoted: synchrotron tune = Q_s up to ~0.5 :: the very high synchrotron tune, Q_s of up to ≈0.5 due to the
+    huge RF voltage per turn requires splitting the RF system into multiple stations around the ring
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category RELATED_MACHINE; journal date
+    field: ''2024-12''; journal identifier field: ''arXiv:2412.00463 (v2)''; journal licence/access field: ''open access''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_NAPAC2025_BERG_RCS_CHAIN
+  title: Preliminary RCS chain for a 10 TeV pCM muon collider at Fermilab (NAPAC 2025)
+  authors_or_org: J. S. Berg (BNL) et al.
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2025'
+  version: NAPAC2025 (paper code not confirmed)
+  url: https://epaper.kek.jp/napac2025/institute/jsberg-bnl-gov-j-berg/index.html
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Site-specific RCS variant; alternative benchmark for rapid muon acceleration.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Paper code not confirmed; URL is the JACoW author-index page, not the paper.
+  licence: JACoW CC-BY
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - muon collider rapid acceleration RCS hybrid RCS FFA RLA acceleration chain arXiv
+  notes: 'snippet-quoted: RCS circumferences and injection energy = 6.28 km to 15.5 km; 63 GeV :: rings from 6.28 km (that
+    of the Tevatron) to 15.5 km in circumference and an injection energy of 63 GeV for the first ring
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2025''; journal identifier field: ''NAPAC2025 (paper code not confirmed)''; journal licence/access
+    field: ''JACoW CC-BY''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_DOI_10_1038_NPHYS2179
+  title: Acceleration in the linear non-scaling fixed-field alternating-gradient accelerator EMMA
+  authors_or_org: S. Machida et al. (STFC/RAL, Daresbury, Huddersfield, BNL, etc.)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: Published online 10 January 2012; Nature Physics 8, 243-247 (March 2012)
+  version: DOI 10.1038/nphys2179
+  url: https://link.springer.com/article/10.1038/nphys2179
+  doi: 10.1038/nphys2179
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: blocked
+  relevance: First experimental demonstration of non-scaling FFAG acceleration (EMMA, Daresbury); serpentine acceleration
+    crossing resonances; explicitly motivated by muon accelerators. Zgoubi-hosted PDF fetch failed.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - EMMA machine parameters reported in the search summary (circumference ~16.57 m, 42 cells, 19 RF cavities ~1.3 GHz, 40
+    pC bunch) could not be attributed to a specific URL and were therefore not recorded as quoted parameters.
+  licence: Nature Physics (subscription); copies at epubs.stfc.ac.uk/work/61642 and zgoubi.sourceforge.io
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - EMMA non-scaling FFAG Daresbury Nature Physics 10-20 MeV electron
+  - Machida "Acceleration in the linear non-scaling fixed-field alternating-gradient accelerator EMMA" Nature Physics 8 243
+    2012 doi 10.1038/nphys2179
+  notes: 'snippet-quoted: EMMA energy range = 10-20 MeV :: a 10–20MeV linear non-scaling FFAG constructed at the Daresbury
+    Laboratory in the UK.
+
+
+    snippet-quoted: orbit compaction / momentum range = within 10 mm radius over 12-18 MeV/c :: We report on the first non-scaling
+    FFAG, in which orbits are compacted to within 10 mm in radius over an electron momentum range of 12–18 MeV/c.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    WebFetch to this source was attempted and failed (host not resolvable under network policy).
+
+
+    Journal classification before lead corrections: source_type ''journal article'', category PEER_REVIEWED; journal date
+    field: ''Published online 10 January 2012; Nature Physics 8, 243-247 (March 2012)''; journal identifier field: ''DOI 10.1038/nphys2179'';
+    journal licence/access field: ''Nature Physics (subscription); copies at epubs.stfc.ac.uk/work/61642 and zgoubi.sourceforge.io''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_EPAC2008_THPP004
+  title: EMMA technical description / status papers (EPAC'08 THPP004, PAC'07 THOBAB01; STFC ASTeC page)
+  authors_or_org: EMMA/CONFORM collaboration (Daresbury, etc.)
+  source_type: conference_proceeding
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: 2007-2010
+  version: EPAC2008 THPP004; PAC2007 THOBAB01; https://www.astec.stfc.ac.uk/Pages/Accelerator-Physics-EMMA.aspx
+  url: https://jacow.org/e08/papers/THPP004.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Design/commissioning history of EMMA (CONFORM project, PAMELA medical motivation, ring installation complete
+    August 2010). Search summary also reported ~16.57 m circumference, 42 doublet cells, 19 RF cavities at ~1.3 GHz and 40
+    pC ALICE injection, but did not attribute these to a specific URL, so they are not recorded as quoted parameters here.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - EMMA machine parameters reported in the search summary (circumference ~16.57 m, 42 cells, 19 RF cavities ~1.3 GHz, 40
+    pC bunch) could not be attributed to a specific URL and were therefore not recorded as quoted parameters.
+  - Entry bundles EPAC'08 THPP004, PAC'07 THOBAB01 and the STFC ASTeC EMMA page; only the EPAC'08 URL is recorded. Split into
+    separate registry entries once fetched.
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - EMMA non-scaling FFAG Daresbury Nature Physics 10-20 MeV electron
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category ANALOGOUS_TECHNOLOGY;
+    journal date field: ''2007-2010''; journal identifier field: ''EPAC2008 THPP004; PAC2007 THOBAB01; https://www.astec.stfc.ac.uk/Pages/Accelerator-Physics-EMMA.aspx'';
+    journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_INSPIRE_FILE_12757F30_ISIS2_FFA_OPTIONS
+  title: 'ISIS-II FFA options study (inspirehep file: horizontal DF-spiral vs vertical FFA)'
+  authors_or_org: ISIS-II / RAL FFA group (Machida, Lagrange, Kelliher, Rogers et al.; not confirmed)
+  source_type: conference_proceeding
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: c. 2020
+  version: null
+  url: https://inspirehep.net/files/12757f301a5c0c862f7d1fb682c39776
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: ISIS-II proton-driver FFA options; vFFA called the more challenging option since never built. Snippet gives vFFA
+    ring cell structure and prototype size (attribution to this file is probable, not certain).
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - 'inspirehep file 7bcd989a5066031ea54b234875d49d90 (IMCC parameter table) and 12757f301a5c0c862f7d1fb682c39776 (ISIS-II
+    FFA options): titles, authors and dates unknown.'
+  - Attribution of the '25 cells x 6 m' and '25 m / 10 cells' snippets to this file is probable, not certain (journal note).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - ISIS-II FFA ring design Rutherford Appleton Laboratory proton driver vFFA
+  notes: 'snippet-quoted: vFFA proton driver lattice = 25 cells x 6 m :: A 2020 RAL paper suggested a total of 25 cells, each
+    of 6m length for a vFFA proton driver
+
+
+    snippet-quoted: FETS-FFA prototype = 25 m circumference, 10 cells :: with a prototype of 25m circumference with 10 focusing
+    cells planned as a scaled-down test ring
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category ANALOGOUS_TECHNOLOGY;
+    journal date field: ''c. 2020''; journal identifier field: None; journal licence/access field: None.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2021_TUPAB208
+  title: FETS-FFA charge-exchange injection with phase-space painting (IPAC'21 TUPAB208)
+  authors_or_org: ISIS/RAL FFA group
+  source_type: conference_proceeding
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: '2021'
+  version: IPAC2021 TUPAB208
+  url: https://epaper.kek.jp/ipac2021/papers/tupab208.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Injection design for the ISIS-II FFA prototype ring.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - ISIS-II FFA ring design Rutherford Appleton Laboratory proton driver vFFA
+  notes: 'snippet-quoted: injection cells = 5 of 10 cells :: 5 cells are required for the injection, out of the 10 cells of
+    the ring
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category ANALOGOUS_TECHNOLOGY;
+    journal date field: ''2021''; journal identifier field: ''IPAC2021 TUPAB208''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_INDICO_STFC_487_3908
+  title: ISIS-II FFA status talk (Machida, STFC Indico, 29 Sep 2022)
+  authors_or_org: S. Machida (STFC/RAL)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2022-09-29'
+  version: v3.2
+  url: https://indico.stfc.ac.uk/event/487/contributions/3908/attachments/1340/2416/machida20220929_v3.2.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Reports ISIS-II baseline moved from vFFA to DF-spiral horizontal FFA, citing superconducting magnet development
+    as a bottleneck and timeline (~2030); prototype to be hFFA. Important caveat for vFFA readiness.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - ISIS-II FFA ring design Rutherford Appleton Laboratory proton driver vFFA
+  notes: 'snippet-quoted: FETS-FFA prototype radius = ~4 m :: the prototype with radius of ~ 4 m, will be a hFFA
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category ANALOGOUS_TECHNOLOGY; journal
+    date field: ''2022-09-29''; journal identifier field: ''v3.2''; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: STFC slide decks -> CONFERENCE_PROCEEDING / workshop_talk (journal had ANALOGOUS_TECHNOLOGY).
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_PASJ2023_WEOB3
+  title: ISIS-II update (PASJ 2023 WEOB3)
+  authors_or_org: ISIS-II project (RAL)
+  source_type: conference_proceeding
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: '2023'
+  version: PASJ2023 WEOB3
+  url: https://ibic12.kek.jp/mirror/www.pasj.jp/web_publish/pasj2023/proceedings/PDF/WEOB/WEOB3.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: '2023 status: RCS/accumulator vs FFA options; FETS-FFA under development as testbed for low-loss injection/extraction.'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - URL is a KEK mirror of the PASJ proceedings; original PASJ URL not recorded.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - ISIS-II FFA ring design Rutherford Appleton Laboratory proton driver vFFA
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category ANALOGOUS_TECHNOLOGY;
+    journal date field: ''2023''; journal identifier field: ''PASJ2023 WEOB3''; journal licence/access field: None.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2203_07919
+  title: Report of the Snowmass'21 Workshop on High-Power Cyclotrons and FFAs
+  authors_or_org: Snowmass'21 Accelerator Frontier workshop participants (Winklehner, Conrad, et al.; not confirmed)
+  source_type: arxiv_preprint
+  category: CONFERENCE_PROCEEDING
+  publication_date: 2022-03
+  version: arXiv:2203.07919; companion CYCLOTRONS2022 MOBI01
+  url: https://arxiv.org/abs/2203.07919
+  doi: null
+  arxiv_id: '2203.07919'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Community survey listing vertical-excursion FFAs among key innovations; describes planned RAL vFFA prototype;
+    notes FFAs lack a viable high-power solution yet.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Prototype numbers (3 to 12 MeV, 0.53 m excursion) were only in an earlier snippet and were not re-confirmed by query 16;
+    companion CYCLOTRONS2022 MOBI01 not characterised.
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Brooks "vertical excursion" FFA vFFA arXiv
+  - arXiv 2203.07919 Snowmass'21 high-power cyclotrons and FFAs report vFFA prototype FETS-FFA 3 to 12 MeV
+  notes: 'snippet-quoted: vFFA prototype energy range and excursion = 3 to 12 MeV; 0.53 m :: a planned prototype at Rutherford
+    Lab that would accelerate protons from 3 to 12 MeV, using the ISIS FETS as injector, with an orbit excursion of 0.53 m
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category ANALOGOUS_TECHNOLOGY; journal
+    date field: ''2022-03''; journal identifier field: ''arXiv:2203.07919; companion CYCLOTRONS2022 MOBI01''; journal licence/access
+    field: ''open access''.
+
+
+    Category correction applied: lead rule: Snowmass white papers on arXiv -> CONFERENCE_PROCEEDING (journal had ANALOGOUS_TECHNOLOGY).
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_OSTI_984419
+  title: Muon acceleration with RLA and non-scaling FFAG arcs (OSTI 984419)
+  authors_or_org: J. S. Berg et al. (BNL) [per search summary]
+  source_type: official_report
+  category: RELATED_MACHINE
+  publication_date: c. 2010-2011
+  version: OSTI 984419
+  url: https://www.osti.gov/biblio/984419
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 'Rationale for FFAG at higher energy: RLA limited to few passes; linear non-scaling FFAG chosen to reduce aperture
+    and time-of-flight variation (IDS-NF).'
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Title and author list per search summary only; OSTI record not read.
+  licence: OSTI open
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Berg "fixed field" FFAG muon acceleration RLA neutrino factory non-scaling 10-20 GeV muons
+  notes: 'snippet-quoted: RLA turn count = ~4 :: the number of turns one can achieve in an RLA is approximately 4, which is
+    the motivation for using an FFAG at higher energies where they can achieve more turns
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''official report'', category RELATED_MACHINE; journal date
+    field: ''c. 2010-2011''; journal identifier field: ''OSTI 984419''; journal licence/access field: ''OSTI open''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_BNL_MUTAC_2009_BERG_IDSNF_ACCELERATION
+  title: IDS-NF muon acceleration overview talk (Berg, MUTAC April 2009)
+  authors_or_org: J. S. Berg (BNL)
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2009-04-06'
+  version: null
+  url: https://www.cap.bnl.gov/mumu/conf/MUTAC-090406/talks/JSBerg1-090406.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Energy bands of the neutrino-factory acceleration chain (linac, two RLAs, FFAG).
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Energy-band quote is a search-tool paraphrase of the slide content.
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Berg "fixed field" FFAG muon acceleration RLA neutrino factory non-scaling 10-20 GeV muons
+  notes: 'snippet-quoted: acceleration chain energy bands = linac to 0.9 GeV; RLA 0.9-3.6 GeV; RLA 3.6-12.6 GeV; FFAG 12.6-25
+    GeV :: Berg lists the energy bands as a linac to 0.9 GeV, an RLA from 0.9 to 3.6 GeV, a second RLA from 3.6 to 12.6 GeV,
+    and an FFAG from 12.6 to 25 GeV.
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''workshop talk'', category RELATED_MACHINE; journal date
+    field: ''2009-04-06''; journal identifier field: None; journal licence/access field: None.
+
+
+    Category correction applied: lead rule: lab slide decks (BNL/FNAL) -> CONFERENCE_PROCEEDING / workshop_talk (journal had
+    RELATED_MACHINE).
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_IPAC2011_MOPZ007
+  title: IDS-NF non-scaling FFAG final stage (IPAC'11 MOPZ007)
+  authors_or_org: J. S. Berg, D. J. Kelliher, S. Machida
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2011'
+  version: IPAC2011 MOPZ007
+  url: https://accelconf.web.cern.ch/IPAC2011/papers/mopz007.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Linear non-scaling FFAG as final IDS-NF acceleration stage for efficiency/cost.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: JACoW CC-BY-3.0
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Berg "fixed field" FFAG muon acceleration RLA neutrino factory non-scaling 10-20 GeV muons
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2011''; journal identifier field: ''IPAC2011 MOPZ007''; journal licence/access field: ''JACoW CC-BY-3.0''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_URL_NUFACT10_PASTERNAK_NSFFAG
+  title: Non-scaling FFAG for the Neutrino Factory (Nufact10, Pasternak)
+  authors_or_org: J. Pasternak et al. (Imperial/RAL)
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2010'
+  version: Nufact10 (corrected version)
+  url: https://indico.ino.tifr.res.in/event/68/contributions/3181/attachments/1496/1846/Nufact10_FFAG_JPasternak_paper_corrected.pdf
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: NS-FFAG turn count and single-turn injection/extraction requirement vs RLA.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  licence: null
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - Berg "fixed field" FFAG muon acceleration RLA neutrino factory non-scaling 10-20 GeV muons
+  notes: 'snippet-quoted: NS-FFAG acceleration turns = ~12 turns :: the NS-FFAG would accelerate muons in about 12 turns,
+    which offers more efficient use of RF than the re-circulating linac (RLAs)
+
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2010''; journal identifier field: ''Nufact10 (corrected version)''; journal licence/access field:
+    None.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_JACOW_PAC2003_FPAB062
+  title: FFAG designs for muon acceleration review (PAC 2003 FPAB062)
+  authors_or_org: not identified in snippet
+  source_type: conference_proceeding
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2003'
+  version: PAC2003 FPAB062
+  url: https://accelconf.web.cern.ch/p03/PAPERS/FPAB062.PDF
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: Early review of FFAG options for muon acceleration (historical).
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - Authors not identified in snippet.
+  licence: JACoW
+  archived_file: null
+  sha256: null
+  discovered_by_queries:
+  - site:arxiv.org vertical FFA muon acceleration fixed field magnet
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''conference proceeding'', category CONFERENCE_PROCEEDING;
+    journal date field: ''2003''; journal identifier field: ''PAC2003 FPAB062''; journal licence/access field: ''JACoW''.
+
+
+    Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
+    the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
+- source_id: SRC_ARXIV_2607_16904
+  title: 'The muon collider: expected physics, technological solutions, and the prospect of a 21 km ring at the UNK site'
+  authors_or_org: not identified in snippet
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 2026-07
+  version: arXiv:2607.16904
+  url: https://arxiv.org/abs/2607.16904
+  doi: null
+  arxiv_id: '2607.16904'
+  access_date: '2026-10-28'
+  access: snippet_only
+  relevance: 2026 review noting required collider/accelerator fields sit at the edge of demonstrated technology and all-HTS
+    magnet designs still in development; context for fixed-field magnet limits.
+  parameters_extracted: []
+  unresolved_questions:
+  - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
+    under network policy); every quoted value for this family comes from WebSearch summary text, not from the primary document,
+    and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
+    reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
+  - No per-query note names this source; attribution to a query is unknown. Authors not identified.
+  licence: open access
+  archived_file: null
+  sha256: null
+  discovered_by_queries: []
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
+    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
+    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+
+
+    No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
+    therefore recorded as snippet_only.
+
+
+    Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; journal date
+    field: ''2026-07''; journal identifier field: ''arXiv:2607.16904''; journal licence/access field: ''open access''.
+
+
+    No per-query note names this source; discovered_by_queries is empty and the search log row carries query ''(see family
+    queries)''.'

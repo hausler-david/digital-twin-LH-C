@@ -1,0 +1,760 @@
+# Physics-programme statements of SRC_WS1681458_DAGLI_NUCLEUS (deck 'LHμC: Nucleus Options', p.3, p.4, p.7, p.15).
+# Comparison values for LHeC (imported_related) and EIC / fixed target (analogous) are recorded as the deck states them. Schema: schemas/provenance.schema.json.
+# Transcription convention for quotations: superscripts/subscripts of the slides are written in plain text
+# (10^10, cm^-2 s^-1, beta*_mu, xi_A); table rows are quoted as 'Row label [unit] v_Pb v_Xe v_O v_Ne' in the
+# column order Pb, Xe, O, Ne of the slide; the applicability explanation names the column used.
+parameters:
+- parameter_id: PHYS_HIGGS_PER_YEAR_WW_FUSION_MUP_NUCL
+  name: Higgs bosons per year via WW fusion in μ+p (starting-point headline)
+  symbol: N_H/year
+  subsystem: physics_programme
+  scenario: null
+  value: 28000.0
+  unit: events/year
+  uncertainty:
+    type: not_stated
+    note: 'source marks the value as approximate (''≈ 2.8 × 10^4''); no numerical uncertainty is given and the approximation is not an order-of-magnitude uncertainty'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 4
+      section: 'The LHμC concept — Starting point: the LHμC antimuon–proton collider'
+      table_figure_or_equation: headline box 3
+      quotation: ≈ 2.8 × 10^4 Higgs bosons per year via WW fusion.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Restatement, in a PRIMARY_LHMUC workshop deck, of the μ+p LHμC starting point taken from D. Akturk et al., PTEP (2026) doi:10.1093/ptep/ptag031 'and Erratum' (deck p.4 and ref. [1]); the μLHC paper records (tag MULHC) are the upstream evidence. Not species-specific; applies to the μ+p starting point of all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE). Corresponds to 72 fb^-1 per year; the implied cross section (≈ 390 fb) is not given in the deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_MUP_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_PROGRAMME_TOPICS_MUP_NUCL
+  name: Physics programme topics of the μ+p starting point (categorical)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: small-x QCD, Higgs, excited and colour-octet muons, leptoquarks, contact interactions
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 4
+      section: 'The LHμC concept — Starting point: the LHμC antimuon–proton collider'
+      table_figure_or_equation: Key ideas
+      quotation: 'Physics: small-x QCD, Higgs, excited and colour-octet muons, leptoquarks, contact interactions, …'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Restatement, in a PRIMARY_LHMUC workshop deck, of the μ+p LHμC starting point taken from D. Akturk et al., PTEP (2026) doi:10.1093/ptep/ptag031 'and Erratum' (deck p.4 and ref. [1]); the μLHC paper records (tag MULHC) are the upstream evidence. Not species-specific; applies to the μ+p starting point of all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_NUCLEUS_PROGRAMME_TOPICS_NUCL
+  name: Physics case of the μA options (categorical)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: nuclear parton densities at small x; gluon saturation; initial state for heavy-ion (QGP) physics; A-dependence with Pb, Xe, Ne, O at the same energy per nucleon in one detector; oxygen link to cosmic-ray air showers; first lepton-nucleus collider at this energy
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 3
+      section: Physics case — Why antimuon–nucleus collisions?
+      table_figure_or_equation: four panels
+      quotation: 'Nuclear parton densities ... Gluon saturation ... Input for heavy-ion physics ... Four nuclei, one experiment Pb, Xe, Ne, O; same energy per nucleon, same detector: how nuclear effects grow with nuclear size is measured directly, and oxygen links to cosmic-ray air showers.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Qualitative programme statement for all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_FIXED_TARGET_X_LOWER_BOUND_NUCL
+  name: Lower edge of x covered by existing fixed-target muon–nucleus DIS data (as stated)
+  symbol: x_min,FT
+  subsystem: physics_programme
+  scenario: null
+  value: 0.001
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: 'source marks the value as approximate (''x ≳ 10^-3''); no numerical uncertainty is given and the approximation is not an order-of-magnitude uncertainty'
+  allowed_range:
+    min: 0.001
+    max: null
+    unit: dimensionless
+    basis: source text 'x ≳ 10^-3'
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 3
+      section: Physics case — Why antimuon–nucleus collisions?
+      table_figure_or_equation: panel 'Nuclear parton densities'
+      quotation: Muon–nucleus deep inelastic scattering (DIS) data come only from fixed-target experiments (x ≳ 10^-3), so the small-x region of nuclei is essentially unexplored.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Context statement about existing data ('x ≳ 10^-3'); approximate lower bound.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_MU_NUCLEON_MUPB_NUCL
+  name: μ–nucleon centre-of-mass energy, LHμC μ–Pb (bar-chart value)
+  symbol: sqrt(s_muN)
+  subsystem: physics_programme
+  scenario: LHMUC-NUCL-MU-PB
+  value: 3320
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: bar chart 'Lepton–nucleon centre-of-mass energy √s [GeV]'
+      quotation: LHµC µ–Pb 3,320
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Bar label; caption 'Eµ = 1 TeV on 2.76 TeV/u Pb'. Same quantity as MACHINE_SQRT_S_PER_NUCLEON_NUCL_PB (3.32 TeV).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 2*sqrt(1000 x 2760) GeV = 3322 GeV'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_SQRT_S_PER_NUCLEON_NUCL_PB
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_LHEC_EPB_NUCL
+  name: Electron–nucleon centre-of-mass energy of the LHeC e–Pb option (comparison)
+  symbol: sqrt(s_eN)
+  subsystem: physics_programme
+  scenario: null
+  value: 743
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: bar chart 'Lepton–nucleon centre-of-mass energy √s [GeV]'
+      quotation: LHeC e–Pb 743
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHeC comparison value restated by the deck; caption ''LHeC: 50 GeV e on 2.76 TeV/u Pb''. Side box: ''(√seA 0.74 TeV)''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 2*sqrt(50 x 2760) GeV = 743 GeV'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_LHEC_ELECTRON_ENERGY_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_EIC_EAU_NUCL
+  name: Electron–nucleon centre-of-mass energy of the EIC e–Au option (comparison)
+  symbol: sqrt(s_eN)
+  subsystem: physics_programme
+  scenario: null
+  value: 140
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: bar chart 'Lepton–nucleon centre-of-mass energy √s [GeV]'
+      quotation: EIC e–Au 140
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'EIC comparison value restated by the deck; caption ''EIC: 18 GeV e on 275 GeV/u Au''; p.3 ''hadrons up to 275 GeV and electrons up to 18 GeV then √seA will be up to 140 GeV''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 2*sqrt(18 x 275) GeV = 141 GeV'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_EIC_ELECTRON_ENERGY_NUCL
+  - PHYS_EIC_HADRON_ENERGY_PER_NUCLEON_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_LHEC_ELECTRON_ENERGY_NUCL
+  name: LHeC electron beam energy used in the comparison
+  symbol: E_e,LHeC
+  subsystem: physics_programme
+  scenario: null
+  value: 50
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: chart caption
+      quotation: 'LHeC: 50 GeV e on 2.76 TeV/u Pb'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHeC comparison input restated by the deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_EIC_ELECTRON_ENERGY_NUCL
+  name: EIC electron beam energy used in the comparison
+  symbol: E_e,EIC
+  subsystem: physics_programme
+  scenario: null
+  value: 18
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: chart caption
+      quotation: 'EIC: 18 GeV e on 275 GeV/u Au'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'EIC comparison input restated by the deck (p.3: ''electrons up to 18 GeV'').'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_EIC_HADRON_ENERGY_PER_NUCLEON_NUCL
+  name: EIC hadron beam energy per nucleon used in the comparison
+  symbol: E_A/A,EIC
+  subsystem: physics_programme
+  scenario: null
+  value: 275
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: chart caption
+      quotation: 'EIC: 18 GeV e on 275 GeV/u Au'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'EIC comparison input restated by the deck (p.3: ''hadrons up to 275 GeV'').'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_FIXED_TARGET_MU_ENERGY_NUCL
+  name: Muon energy of the fixed-target reference
+  symbol: E_mu,FT
+  subsystem: physics_programme
+  scenario: null
+  value: 470
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: chart caption
+      quotation: 'fixed target: Eµ = 470 GeV'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Fixed-target comparison point named in the caption (experiment not identified in the deck); no bar is drawn for it.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_RATIO_TO_EIC_NUCL
+  name: 'Ratio of the LHμC μ–nucleon energy to the EIC (as stated: ''Over ×20'')'
+  symbol: sqrt(s)_LHmuC/sqrt(s)_EIC
+  subsystem: physics_programme
+  scenario: null
+  value: 20
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range:
+    min: 20
+    max: null
+    unit: dimensionless
+    basis: source text 'Over ×20'
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 1
+      quotation: Over ×20 the EIC energy per nucleon
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Stated as a lower bound ('Over ×20'); 3320/140 = 23.7. Also p.15 'over 20× the EIC'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 3320 / 140 = 23.7'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_SQRT_S_MU_NUCLEON_MUPB_NUCL
+  - PHYS_SQRT_S_EIC_EAU_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_RATIO_TO_LHEC_EPB_NUCL
+  name: Ratio of the LHμC μ–nucleon energy to the LHeC e–Pb option (as stated)
+  symbol: sqrt(s)_LHmuC/sqrt(s)_LHeC
+  subsystem: physics_programme
+  scenario: null
+  value: 4.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 1
+      quotation: '×4.5 the LHeC e–Pb option: same LHC ion beam, 1 TeV µ+ instead of 50 GeV e−.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 3320/743 = 4.47. p.15 says 'over 4× LHeC e–Pb'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 3320 / 743 = 4.47'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_SQRT_S_MU_NUCLEON_MUPB_NUCL
+  - PHYS_SQRT_S_LHEC_EPB_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_Q2_REFERENCE_NUCL
+  name: Reference Q^2 at which the minimum x values are quoted
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 2
+      quotation: x ≈ 9 × 10^-7 reached at Q^2 = 10 GeV^2
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Convention for the x-reach comparison.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_X_MIN_MUPB_NUCL
+  name: Minimum Bjorken x reached at Q^2 = 10 GeV^2, LHμC μ–Pb
+  symbol: x_min
+  subsystem: physics_programme
+  scenario: LHMUC-NUCL-MU-PB
+  value: 9.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: 'source marks the value as approximate (''x ≈ 9 × 10^-7''); no numerical uncertainty is given and the approximation is not an order-of-magnitude uncertainty'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 2
+      quotation: x ≈ 9 × 10^-7 reached at Q^2 = 10 GeV^2
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-NUCL-MU-PB
+      explanation: Kinematic reach; acceptance not discussed.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: x = Q^2 / (s y) with s = (3322 GeV)^2 = 1.104e7 GeV^2 and y = 1 gives 9.06e-7'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_Q2_REFERENCE_NUCL
+  - PHYS_SQRT_S_MU_NUCLEON_MUPB_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_X_MIN_LHEC_EPB_NUCL
+  name: Minimum Bjorken x reached at Q^2 = 10 GeV^2, LHeC e–Pb (comparison)
+  symbol: x_min
+  subsystem: physics_programme
+  scenario: null
+  value: 1.8e-05
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 2
+      quotation: 'LHeC e–Pb: 1.8 × 10^-5; EIC e–Au: 1.3 × 10^-3.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHeC comparison value restated by the deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 10 GeV^2 / (743 GeV)^2 = 1.81e-5'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_Q2_REFERENCE_NUCL
+  - PHYS_SQRT_S_LHEC_EPB_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_X_MIN_EIC_EAU_NUCL
+  name: Minimum Bjorken x reached at Q^2 = 10 GeV^2, EIC e–Au (comparison)
+  symbol: x_min
+  subsystem: physics_programme
+  scenario: null
+  value: 0.0013
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 7
+      section: Physics case — A new energy frontier for lepton–nucleus scattering
+      table_figure_or_equation: side box 2
+      quotation: 'LHeC e–Pb: 1.8 × 10^-5; EIC e–Au: 1.3 × 10^-3.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: EIC comparison value restated by the deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'reproduced by hand: 10 GeV^2 / (140 GeV)^2 = 5.1e-4; the stated 1.3e-3 is 2.5x larger, i.e. not at y = 1 (the deck does not say which y or acceptance it assumes)'
+    check_ids: []
+    notes: Hand check does not reproduce the stated value at y = 1; recorded as stated, discrepancy noted.
+  dependencies:
+  - PHYS_Q2_REFERENCE_NUCL
+  - PHYS_SQRT_S_EIC_EAU_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_NEXT_STEPS_NUCL
+  name: Stated next steps of the nucleus-option study (categorical)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: beam-beam simulations and parameter optimisation with AloHEP after finalising the beam parameters; contact NuPECC to clarify the physics potential
+  unit: string
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_DAGLI_NUCLEUS
+      title: 'LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider'
+      author_or_org: A. C. Canbay, B. Dagli, Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann (Ankara University, TOBB ETU, Institute of Physics of the Ministry of Science and Education of Azerbaijan, CERN)
+      url: https://indico.cern.ch/event/1681458/contributions/7263320/
+      date: 2026-09
+      version: workshop slides, 16 pages (uploaded PDF LHuC_Nucleus_Options.pdf)
+      page: 15
+      section: Summary — Conclusions
+      table_figure_or_equation: conclusion bullets 5-6
+      quotation: 'Next: Beam-beam simulations and parameter optimization using the AloHEP software after finalizing the beam parameters. Next: Contact should be established with The Nuclear Physics European Collaboration Committee (NuPECC) to clarify the physics potential.'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'Status statement: the beam parameters are explicitly not finalised.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null

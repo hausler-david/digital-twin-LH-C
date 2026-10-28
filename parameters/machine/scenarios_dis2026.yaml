@@ -1,0 +1,114 @@
+# Scenarios defined by SRC_ARXIV_2610_35154 (arXiv:2610.35154v1, LHμC DIS2026 proceedings). Schema: schemas/machine.schema.json.
+# No numbers here: every role references a parameter record; unknown_roles lists what the source does not give.
+scenarios:
+  - scenario_id: LHMUC-DIS2026-1TEV
+    label: "LHμC DIS2026 example set, 1 TeV mu+ on 7 TeV p (Table 1)"
+    description: "The 'Example of the LHμC parameters' of Table 1 (p.4) of the DIS2026 proceedings: sqrt(s) = 5.3 TeV, peak luminosity 2.1e34 cm^-2 s^-1, collision rate 4 MHz within an 80-bunch, 250 ns-spaced mu+ train injected at 12.5 Hz, round 4.8 um beams, 0.07e11 mu+ and 22e11 p per bunch. Built on the stated assumptions of mu+ yields at 5% of muTRISTAN, a 4 MW proton driver and increased-population LHC proton bunches. Not a final specification."
+    machine: LHMUC
+    design_version: "DIS2026 proceedings (arXiv:2610.35154v1, 26 Oct 2026), Table 1 and §2 text"
+    status: partially_reported
+    primary_source_ids: [SRC_ARXIV_2610_35154]
+    parameters:
+      muon_beam_energy: MACHINE_MU_BEAM_ENERGY_DIS2026
+      proton_beam_energy: PROTON_BEAM_ENERGY_DIS2026
+      sqrt_s: MACHINE_SQRT_S_DIS2026
+      peak_luminosity: MACHINE_PEAK_LUMINOSITY_DIS2026
+      peak_luminosity_lower_bound: MACHINE_PEAK_LUMINOSITY_LOWER_BOUND_DIS2026
+      average_luminosity: MACHINE_AVERAGE_LUMINOSITY_DIS2026
+      collision_rate: MACHINE_COLLISION_RATE_DIS2026
+      repetition_rate: MACHINE_REPETITION_RATE_DIS2026
+      muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_DIS2026
+      proton_bunch_population: PROTON_BUNCH_POPULATION_DIS2026
+      muon_bunches: MACHINE_MU_BUNCHES_DIS2026
+      bunch_spacing: MACHINE_MU_BUNCH_SPACING_DIS2026
+      muon_train_duration: MACHINE_MU_TRAIN_DURATION_DIS2026
+      sigma_x_ip: IR_SIGMA_X_IP_MUON_DIS2026
+      sigma_y_ip: IR_SIGMA_Y_IP_MUON_DIS2026
+      sigma_x_ip_proton: IR_SIGMA_X_IP_PROTON_DIS2026
+      sigma_y_ip_proton: IR_SIGMA_Y_IP_PROTON_DIS2026
+      main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026
+      main_ring_revolution_period: MACHINE_MAIN_RING_REVOLUTION_PERIOD_DIS2026
+      booster_circumference: ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
+      booster_injection_energy: ACCEL_INJECTION_ENERGY_DIS2026
+      booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_DIS2026
+      muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_DIS2026
+      proton_driver_power: SOURCE_PROTON_DRIVER_POWER_DIS2026
+      muon_yield_fraction_of_mutristan: SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
+      neutrino_band_energy_min: MACHINE_NEUTRINO_BEAM_ENERGY_MIN_DIS2026
+      neutrino_band_energy_max: MACHINE_NEUTRINO_BEAM_ENERGY_MAX_DIS2026
+      crossing_angle: IR_CROSSING_ANGLE_DIS2026
+    unknown_roles:
+      - integrated_luminosity_per_year
+      - proton_bunches
+      - proton_bunch_spacing
+      - beta_x_star_muon
+      - beta_y_star_muon
+      - beta_star_proton
+      - muon_norm_emittance
+      - proton_norm_emittance
+      - muon_bunch_length
+      - proton_bunch_length
+      - muon_energy_spread
+      - booster_turns
+      - booster_survival
+      - booster_energy_gain_per_pass
+      - main_ring_dipole_field
+      - crossing_angle
+      - muon_polarisation
+      - muon_lifetime_turns_stored
+      - beam_beam_tune_shift
+      - nozzle_opening_angle
+    geometry_fidelity: G0
+    validation_level: P1
+    notes: "P1 because sqrt(s), the collision rate and the peak luminosity are reproduced analytically from the other Table 1 entries (tests/scientific/test_analytical_checks.py). Open audit item: 80 bunches x 250 ns = 20 us exceeds the ~10 us revolution period of the 'about 3 km' main ring (see MACHINE_MU_BUNCHES_DIS2026 notes); not resolved by the source. crossing_angle is listed both as a role (pointing to an explicit unknown record, value null) and in unknown_roles."
+
+  - scenario_id: LHMUC-DIS2026-2TEV
+    label: "LHμC DIS2026 2 TeV mu+ option on 7 TeV p"
+    description: "The '2 TeV muon beam' option mentioned in the DIS2026 proceedings (p.2): sqrt(s) = 7.5 TeV, main ring 'about 6 km' (p.4), dash-dotted ring in Fig. 2. The abstract attributes an average luminosity 'close to 10^34 cm^-2 s^-1' to both energy options; no Table 1-type parameter set is given for 2 TeV, so all beam and IR parameters are unknown."
+    machine: LHMUC
+    design_version: "DIS2026 proceedings (arXiv:2610.35154v1, 26 Oct 2026), §1-2 text and Fig. 2"
+    status: partially_reported
+    primary_source_ids: [SRC_ARXIV_2610_35154]
+    parameters:
+      muon_beam_energy: MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026
+      proton_beam_energy: PROTON_BEAM_ENERGY_DIS2026
+      sqrt_s: MACHINE_SQRT_S_2TEV_DIS2026
+      average_luminosity: MACHINE_AVERAGE_LUMINOSITY_DIS2026
+      main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_2TEV_DIS2026
+      booster_circumference: ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
+      booster_injection_energy: ACCEL_INJECTION_ENERGY_DIS2026
+      booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_DIS2026
+      muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_2TEV_DIS2026
+      neutrino_band_energy_min: MACHINE_NEUTRINO_BEAM_ENERGY_MIN_DIS2026
+    unknown_roles:
+      - peak_luminosity
+      - integrated_luminosity_per_year
+      - collision_rate
+      - repetition_rate
+      - muon_bunch_population
+      - proton_bunch_population
+      - muon_bunches
+      - proton_bunches
+      - bunch_spacing
+      - sigma_x_ip
+      - sigma_y_ip
+      - sigma_x_ip_proton
+      - sigma_y_ip_proton
+      - beta_x_star_muon
+      - beta_y_star_muon
+      - beta_star_proton
+      - muon_norm_emittance
+      - proton_norm_emittance
+      - muon_bunch_length
+      - proton_bunch_length
+      - booster_turns
+      - booster_survival
+      - main_ring_dipole_field
+      - crossing_angle
+      - muon_polarisation
+      - proton_driver_power
+      - muon_yield_fraction_of_mutristan
+      - nozzle_opening_angle
+    geometry_fidelity: G0
+    validation_level: P1
+    notes: "P1 only for sqrt(s) = 2*sqrt(2 TeV x 7 TeV) = 7.48 TeV reproduced against the stated 7.5 TeV. The average_luminosity role is filled because the abstract's sentence covers both energy options ('5.3 or 7.5 TeV, respectively, at an average luminosity close to 10^34'); its order-of-magnitude uncertainty is recorded on the parameter. Everything else about the 2 TeV option is not given in the source."

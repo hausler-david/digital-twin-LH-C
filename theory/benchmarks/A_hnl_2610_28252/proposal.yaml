@@ -1,0 +1,129 @@
+# Theory proposal record — Benchmark A (heavy neutral lepton), Phase 0 evidence audit.
+# Schema: schemas/proposal.schema.json. Written 2026-10-28 by Claude (Phase 0 audit); not human-reviewed.
+#
+# EVIDENCE STATUS: the paper arXiv:2610.28252 was NOT uploaded and arxiv.org / inspirehep.net were blocked in this
+# session. Nothing below was read from the paper itself. Every factual statement about the paper comes from
+# search-engine snippets or search-tool paraphrases recorded in research/_fragments/theory-benchmarks_sources.yaml
+# (entry SRC_ARXIV_2610_28252) and is marked "(search snippet, unverified)". Snippet-only evidence may not back
+# reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5). The source entry SRC_ARXIV_2610_28252 is
+# created by the research agents, not here.
+proposal_id: PROP_A_HNL_2610_28252
+title: Probing a heavy neutral lepton in a radiative neutrino model at a muon collider
+arxiv_id: "2610.28252"
+doi: null
+authors: "Isaac Bamwidhi, Mohamed Belfkir, Mohamed Amin Loualidi, Salah Nasri (search snippet, unverified)"
+source_id: SRC_ARXIV_2610_28252
+access: pending_fetch
+review_state: pending_fetch
+
+model:
+  name: null
+  framework: "Radiative neutrino-mass model containing a Dirac heavy neutral lepton N (search snippet, unverified: 'direct and Higgs-mediated production of a Dirac heavy neutral lepton at a future 3 TeV muon collider, within a radiative neutrino-mass model'). NOT a Type-I seesaw, contrary to the initial task hypothesis. The model's gauge group, scalar content and loop topology are unknown; a companion paper by the same four authors, arXiv:2609.08808 'Neutrino mass, scalar dark matter, and collider signatures in a radiative doublet-triplet model' (search snippet, unverified), may define it but was not read."
+  lagrangian_reference: null
+  new_particles:
+    - name: "N (Dirac heavy neutral lepton)"
+      spin: "1/2"
+      charge: 0
+      colour: "singlet"
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "Dirac nature per search snippet (unverified). Six benchmark masses are NOT known: a search-tool paraphrase said 'about 103-119 GeV' but this was never shown verbatim and is recorded here only as an unconfirmed lead, not as a value (hence value: null). Width, decay channels and branching ratios unknown."
+    - name: "Additional scalars of the radiative neutrino-mass model (field content unknown)"
+      spin: "0"
+      charge: null
+      colour: null
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "A radiative neutrino-mass model necessarily carries extra scalar (and possibly fermion) fields running in the loop; none are named in any snippet. If the companion paper arXiv:2609.08808 is the model definition, the title suggests an SU(2) doublet plus triplet scalar sector and a scalar dark-matter candidate (title-level inference, unverified). Nothing further can be stated without the paper."
+  couplings_and_parameters:
+    - name: "Active-heavy mixing (muon flavour)"
+      symbol: "|U_muN|^2"
+      value_or_range: null
+      unit: dimensionless
+      provenance_quote: "Only the EXPECTED LIMITS are known, not the benchmark input values: 'which maps to limits on |U_μN|² of about 6.7×10⁻⁶ to 8.3×10⁻⁵ across six benchmarks' (search snippet, unverified). Benchmark-point mixing inputs: unknown."
+    - name: "Higgs-N-nu effective coupling (Higgs-mediated production)"
+      symbol: null
+      value_or_range: null
+      unit: null
+      provenance_quote: "Existence of a Higgs-mediated channel per snippet: 'direct and Higgs-mediated production of a Dirac heavy neutral lepton' and 'It contributes about 15–72% of the signal after event selection but improves the expected limits by only about 0.18–1.19%.' (search snippet, unverified). The coupling structure (SM Higgs vs. extra scalar, dependence on |U_muN|) is unknown."
+  decay_channels: []
+
+original_study:
+  collider: "mu+ mu- muon collider (search snippet, unverified)"
+  beam_species: ["mu+", "mu-"]
+  sqrt_s: {value: 3, unit: TeV}
+  integrated_luminosity: {value: 1, unit: "ab^-1"}
+  processes:
+    - "Direct HNL production via active-heavy mixing at mu+ mu- (exact process notation not seen; search snippet: 'direct and Higgs-mediated production of a Dirac heavy neutral lepton at a future 3 TeV muon collider'; unverified)"
+    - "Higgs-mediated HNL production leading to the same final state as the direct channel (search snippet paraphrase: 'same final state'; unverified)"
+    - "Photon-initiated contributions treated with the equivalent photon approximation (search snippet: 'photon-initiated processes handled with the equivalent photon approximation'; unverified)"
+  benchmark_points:
+    - label: "BP1-BP6 (six benchmark points; individual labels unknown)"
+      count: 6
+      count_provenance_quote: "across six benchmarks (search snippet, unverified)"
+      hnl_mass_GeV: null
+      hnl_mass_note: "Search-tool paraphrase 'about 103-119 GeV' was NOT shown verbatim; unconfirmed, deliberately not recorded as a value."
+      mixing_U_muN_sq: null
+      status: "unconfirmed — benchmark table must be read from the paper"
+  observables:
+    - "Visible cross section of the selected HNL final state (search snippet: 'median expected 95% CL limits on the visible cross section'; unverified)"
+    - "|U_muN|^2 (limit derived from the visible-cross-section limit; search snippet, unverified)"
+  event_selection:
+    - "Detector-level analysis with a classifier (search-tool paraphrase, unverified); cuts, objects and the classifier type are unknown."
+  backgrounds: []
+  statistical_method: "Median expected 95% CL limits (search snippet: 'The median expected 95% CL limits on the visible cross section'; unverified). Test statistic, systematics treatment and tool (e.g. CLs) unknown."
+  reported_results:
+    - "(search snippet, unverified) 'The median expected 95% CL limits on the visible cross section fall roughly between 0.027 and 0.113 fb'"
+    - "(search snippet, unverified) 'which maps to limits on |U_μN|² of about 6.7×10⁻⁶ to 8.3×10⁻⁵ across six benchmarks'"
+    - "(search snippet, unverified) Higgs-mediated channel: 'It contributes about 15–72% of the signal after event selection but improves the expected limits by only about 0.18–1.19%.'"
+    - "(search snippet, unverified) Set-up: 'They run a detector-level analysis at 1 ab⁻¹ with unpolarized beams.'"
+  generator_setup:
+    generator: "MadGraph5_aMC@NLO (search snippet, unverified)"
+    initial_state_radiation: "MadGraph built-in lepton-ISR treatment (search snippet, unverified)"
+    photon_initiated: "equivalent photon approximation (search snippet, unverified)"
+    beam_polarisation: "unpolarized beams (search snippet, unverified)"
+    provenance_quote: "The signal samples were generated with MadGraph5_aMC@NLO, with initial-state radiation handled by MadGraph's built-in lepton-ISR treatment and photon-initiated processes handled with the equivalent photon approximation. (search snippet, unverified)"
+    parton_shower_detector_simulation: null
+    ufo_model_used: null
+
+model_implementation:
+  available: unknown
+  type: null
+  url: null
+  licence: null
+  notes: "No snippet mentions a UFO or FeynRules implementation for the paper's radiative model; whether one exists (public or private) is unknown. PARTIAL public stand-in: the FeynRules HeavyN family (SRC_URL_FEYNRULES_HEAVYN, https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/HeavyN; fetch blocked, snippet-level), in particular 'SM_HeavyN_Dirac_CKM_Masses_LO_UFO.tgz' ('Standalone LO UFO libraries, assuming non-diagonal CKM matrix, six quark masses, and three charged lepton masses' — search snippet) and SM_HeavyN_NLO ('Assumes massless bottom quark and tau lepton, diagonal CKM' — search snippet; Majorana). HeavyN implements SM + heavy neutrinos with active-heavy mixing only: it can reproduce the mixing-driven (direct, W/Z-mediated) HNL production and decays, but it has NO radiative-model scalar sector, so the paper's Higgs-mediated channel (15-72% of the selected signal per snippet) and any extra-scalar effects on N decays cannot be reproduced with it. HeavyN default masses (300 GeV, 500 GeV, 1 TeV per snippet) would have to be reset to the paper's benchmark values once known. Licence text of HeavyN not seen."
+
+lhmuc_recasting:
+  original_initial_state_transfers_directly: false
+  candidate_mu_p_channels:
+    - process: "mu+ q -> N(bar) q' (charged-current t-channel W exchange; e.g. mu+ d -> N(bar) u, mu+ u(bar) -> N(bar) d(bar))"
+      status: proposed_unverified
+      notes: "N produced on the mu+ line through the W-mu-N vertex, rate proportional to |U_muN|^2. For a DIRAC N the state produced from a mu+ is the anti-HNL (lepton number conserved), so the lepton-number assignment and the N vs. N-bar decay pattern must be checked against the paper's Lagrangian. Charge: mu+(+1) + d(-1/3) -> N(0) + u(+2/3): balanced. Colour: quark line unchanged. Dominant mixing-driven channel at an ep/mu-p machine by analogy with e p -> N X studies; not yet diagram-verified or computed here."
+    - process: "mu+ q -> mu+ q Z* -> mu+ q N nu(bar)_mu (neutral-current Z radiation with Z -> N nu via mixing)"
+      status: proposed_unverified
+      notes: "A single N cannot be produced from the charged mu+ line by neutral-current exchange alone (the mu+ stays a mu+); it can only appear through a Z*/H* decaying to N + light neutrino, which again requires |U_muN| (Z-N-nu vertex). Electroweak 2->4 topology, expected to be subdominant to the charged-current channel; to be checked: lepton-number and mixing structure of the Z-N-nu coupling in the radiative model, and whether the extra scalars open additional neutral channels."
+    - process: "mu+ q -> nu(bar)_mu H q' , H -> N nu (W-boson fusion Higgs production followed by Higgs-mediated HNL production)"
+      status: proposed_unverified
+      notes: "Analogue of the paper's Higgs-mediated channel. Requires (a) that the mediator is the 125 GeV Higgs rather than an extra scalar of the radiative model, (b) that H -> N nu is kinematically open (needs m_N < m_H; the unconfirmed paraphrased mass range 103-119 GeV would allow it only marginally, with small phase space), (c) the H-N-nu coupling of the radiative model, which is unknown. If the mediator is a heavier new scalar, its mu+ p production mode must be derived separately. Also candidate: Z-fusion mu+ q -> mu+ H q with the same decay."
+    - process: "mu+ gamma -> N(bar) W+ with gamma from the proton (equivalent photon approximation / photoproduction)"
+      status: proposed_unverified
+      notes: "Photon-initiated analogue of the e gamma -> N W channel known from ep collider HNL studies; relevant because the original study itself used the equivalent photon approximation for photon-initiated processes. Rate proportional to |U_muN|^2. Charge: mu+(+1)+gamma(0) -> N(0)+W+(+1): balanced. Elastic vs. inelastic photon flux from the proton must be treated by the generator, not assumed."
+  missing_for_implementation:
+    - "The paper itself (arXiv:2610.28252 full text; abstract page not even read): fetch pending, arxiv.org blocked."
+    - "The Lagrangian / field content of the radiative neutrino-mass model (possibly in companion paper arXiv:2609.08808, unread)."
+    - "The benchmark table: six HNL masses, |U_muN|^2 per point, widths, and the Higgs/scalar-sector parameters."
+    - "N decay channels and branching ratios (needed to define the mu+ p final states)."
+    - "A UFO model for the radiative model (none confirmed); HeavyN Dirac variant is only a partial stand-in without the scalar sector."
+    - "The original cut-flow, backgrounds and classifier definition (for any apples-to-apples recast)."
+    - "An LHμC machine scenario to recast onto (e.g. LHMUC-DIS2026-1TEV from parameters/machine/scenarios.yaml once written by the parameter agents; the DIS2026 example set quotes 'Center-of-mass energy, √s [TeV] 5.3' in SRC_ARXIV_2610_35154 Table 1 p.4), plus proton PDF choice and photon-flux treatment for the mu+ p initial state."
+    - "Verification of charge, colour and lepton-number conservation of every candidate channel at diagram level, then generator-level cross sections (tools, not the LLM)."
+  notes: "The original mu+ mu- initial state does not transfer to mu+ p. In mu+ p the muon is a single beam lepton of fixed charge (+1): s-channel annihilation is absent and all N production proceeds via t-channel W/Z/H exchange or photoproduction against a quark or photon from the proton. All four candidate channels are LLM-proposed and carry status proposed_unverified; none has been checked with a diagram tool or generator. Kinematically the LHμC example set exceeds the original 3 TeV (√s = 5.3 TeV quoted above), but the partonic √s for mu+ q is a fraction of this, so reach cannot be inferred by scaling and must be computed."
+
+extraction:
+  method: "search snippets only"
+  extracted_by: "Claude (Phase 0 audit)"
+  date: "2026-10-28"
+  reviewed_by: null
+  review_date: null
+
+notes: "Access mode: this record uses access: pending_fetch per the lead's instruction for this file; the research fragment for SRC_ARXIV_2610_28252 records access: blocked because a WebFetch of arxiv.org was attempted and refused by network policy in that session. Both mean the same for this record: no text of the paper has been read; re-attempt the fetch once arxiv.org / inspirehep.net are allowed. Numerical content in this file (3 TeV, 1 ab^-1, six benchmarks, 0.027-0.113 fb, 6.7e-6 to 8.3e-5, 15-72%, 0.18-1.19%) is quoted verbatim from search snippets in reported_results / provenance_quote fields and is snippet-only evidence (confidence capped at medium; never reported_lhmuc). The only verified-from-document number is the LHμC √s quotation from the uploaded DIS2026 paper (SRC_ARXIV_2610_35154, p.4, Table 1). Related muon-collider HNL literature surfaced by the search (comparison only, all unread): arXiv:2301.07117, 2306.17368, 2510.18390."

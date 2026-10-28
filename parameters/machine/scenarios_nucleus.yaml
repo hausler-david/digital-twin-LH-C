@@ -1,0 +1,316 @@
+# μA scenarios defined by SRC_WS1681458_DAGLI_NUCLEUS (deck 'LHμC: Nucleus Options'). Schema: schemas/machine.schema.json.
+# No numbers here: every role references a parameter record in parameters/machine/lhmuc_nucleus_options.yaml,
+# parameters/ion_beam/lhc_ion_beams_nucleus_options.yaml or parameters/physics_programme/lhmuc_nucleus_options_physics.yaml.
+scenarios:
+- scenario_id: LHMUC-NUCL-MU-PB
+  label: 'LHμC nucleus option: 1 TeV μ+ on the LHC Pb beam (208Pb82+)'
+  description: 'μ–Pb collisions evaluated with AloHEP in the Kraków workshop deck ''LHμC: Nucleus Options'' (p.12): 1 TeV μ+ (3.0e10 per bunch, 40 bunches, 3 km ring) on the conservative LHC Pb beam of p.10 (1.80e+08 ions per bunch, 1200 bunches, 574.0 TeV, β* = 10 cm assumed). sqrt(s) = 47.9 TeV, 3.32 TeV per nucleon, f_c = 4.0 MHz, L = 2.16e+30 cm^-2 s^-1 (4.49e+32 per nucleon), xi_A = 0.0789 > 0.01. After reducing N_mu by 8 for xi_A <= 0.01 the luminosity per nucleon is 5.69e+31 cm^-2 s^-1 (p.14). Beam parameters are explicitly not finalised (p.15).'
+  machine: LHMUC
+  design_version: 'Kraków workshop deck ''LHμC: Nucleus Options'' (SRC_WS1681458_DAGLI_NUCLEUS, 2026-09), p.8 μ+ table (Table 1 of the draft), p.10 ion table, p.12 AloHEP table (Table 3 of the draft), p.13-14 tune-shift-limited recalculation; μTRISTAN/LHeC-ERL based μ+ complex, post-erratum'
+  status: reported
+  primary_source_ids:
+  - SRC_WS1681458_DAGLI_NUCLEUS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_NUCL
+    ion_species: ION_SPECIES_NUCL_PB
+    ion_charge_number: ION_CHARGE_Z_NUCL_PB
+    ion_mass_number: ION_MASS_NUMBER_A_NUCL_PB
+    ion_beam_energy: ION_BEAM_ENERGY_NUCL_PB
+    ion_beam_energy_per_nucleon: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_PB
+    sqrt_s: MACHINE_SQRT_S_NUCL_PB
+    sqrt_s_per_nucleon: MACHINE_SQRT_S_PER_NUCLEON_NUCL_PB
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_NUCL_PB
+    peak_luminosity_per_nucleon: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_NUCL_PB
+    peak_luminosity_per_nucleon_tune_shift_limited: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_LIMITED_NUCL_PB
+    collision_rate: MACHINE_COLLISION_RATE_NUCL_PB
+    repetition_rate: MACHINE_REPETITION_RATE_NUCL
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_NUCL
+    muon_bunch_population_tune_shift_limited: MACHINE_MU_BUNCH_POPULATION_REDUCED_NUCL_PB
+    muon_population_reduction_factor: MACHINE_MU_POPULATION_REDUCTION_FACTOR_NUCL_PB
+    muon_time_averaged_population_fraction: MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL
+    ion_bunch_population: ION_BUNCH_POPULATION_NUCL_PB
+    muon_bunches: MACHINE_MU_BUNCHES_NUCL
+    ion_bunches: ION_BUNCHES_NUCL_PB
+    sigma_x_ip: IR_SIGMA_XY_IP_NUCL_PB
+    sigma_y_ip: IR_SIGMA_XY_IP_NUCL_PB
+    beta_x_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_PB
+    beta_y_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_PB
+    beta_star_muon_relaxed_min: MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
+    beta_star_muon_relaxed_max: MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
+    beta_star_ion: ION_BETA_STAR_IP_NUCL_PB
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_NUCL
+    muon_geometric_emittance: MACHINE_MU_GEOMETRIC_EMITTANCE_NUCL
+    ion_norm_emittance: ION_NORM_EMITTANCE_NUCL_PB
+    ion_geometric_emittance: ION_GEOMETRIC_EMITTANCE_NUCL_PB
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_NUCL
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL
+    ion_ring_circumference: ION_RING_CIRCUMFERENCE_NUCL_PB
+    ion_revolution_frequency: ION_REVOLUTION_FREQUENCY_NUCL_PB
+    booster_turns: ACCEL_BOOSTER_TURNS_NUCL
+    booster_survival: ACCEL_BOOSTER_SURVIVAL_NUCL
+    booster_injection_energy: ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+    booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_NUCL
+    booster_energy_gain_per_pass: ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_NUCL
+    muon_lifetime_turns_stored: MACHINE_MU_LIFETIME_TURNS_NUCL
+    beam_beam_tune_shift_muon: MACHINE_MU_TUNE_SHIFT_NUCL_PB
+    beam_beam_tune_shift_ion: MACHINE_ION_TUNE_SHIFT_NUCL_PB
+    beam_beam_tune_shift_limit_ion: MACHINE_ION_TUNE_SHIFT_LIMIT_NUCL
+    proton_driver_power: SOURCE_PROTON_DRIVER_POWER_NUCL
+    number_of_ips: MACHINE_NUMBER_OF_IPS_NUCL
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  - ion_bunch_spacing
+  - ion_bunch_length
+  - muon_energy_spread
+  - main_ring_dipole_field
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - beta_x_star_muon_reported
+  - beta_y_star_muon_reported
+  - hourglass_factor
+  - muon_bunch_population_after_reduction_reported
+  - peak_luminosity_tune_shift_limited_total
+  - ion_beam_lifetime
+  - ion_emittance_growth
+  - detector_acceptance
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
+- scenario_id: LHMUC-NUCL-MU-XE
+  label: 'LHμC nucleus option: 1 TeV μ+ on the LHC Xe beam (129Xe54+)'
+  description: 'μ–Xe collisions evaluated with AloHEP in the Kraków workshop deck ''LHμC: Nucleus Options'' (p.12): 1 TeV μ+ (3.0e10 per bunch, 40 bunches, 3 km ring) on the conservative LHC Xe beam of p.10 (2.70e+08 ions per bunch, 16 bunches, 350.88 TeV, β* = 10 cm assumed). sqrt(s) = 37.5 TeV, 3.3 TeV per nucleon, f_c = 0.18 MHz, L = 2.48e+29 cm^-2 s^-1 (3.2e+31 per nucleon), xi_A = 0.0952 > 0.01. After reducing N_mu by 10 for xi_A <= 0.01 the luminosity per nucleon is 3.36e+30 cm^-2 s^-1 (p.14). Beam parameters are explicitly not finalised (p.15).'
+  machine: LHMUC
+  design_version: 'Kraków workshop deck ''LHμC: Nucleus Options'' (SRC_WS1681458_DAGLI_NUCLEUS, 2026-09), p.8 μ+ table (Table 1 of the draft), p.10 ion table, p.12 AloHEP table (Table 3 of the draft), p.13-14 tune-shift-limited recalculation; μTRISTAN/LHeC-ERL based μ+ complex, post-erratum'
+  status: reported
+  primary_source_ids:
+  - SRC_WS1681458_DAGLI_NUCLEUS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_NUCL
+    ion_species: ION_SPECIES_NUCL_XE
+    ion_charge_number: ION_CHARGE_Z_NUCL_XE
+    ion_mass_number: ION_MASS_NUMBER_A_NUCL_XE
+    ion_beam_energy: ION_BEAM_ENERGY_NUCL_XE
+    ion_beam_energy_per_nucleon: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_XE
+    sqrt_s: MACHINE_SQRT_S_NUCL_XE
+    sqrt_s_per_nucleon: MACHINE_SQRT_S_PER_NUCLEON_NUCL_XE
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_NUCL_XE
+    peak_luminosity_per_nucleon: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_NUCL_XE
+    peak_luminosity_per_nucleon_tune_shift_limited: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_LIMITED_NUCL_XE
+    collision_rate: MACHINE_COLLISION_RATE_NUCL_XE
+    repetition_rate: MACHINE_REPETITION_RATE_NUCL
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_NUCL
+    muon_bunch_population_tune_shift_limited: MACHINE_MU_BUNCH_POPULATION_REDUCED_NUCL_XE
+    muon_population_reduction_factor: MACHINE_MU_POPULATION_REDUCTION_FACTOR_NUCL_XE
+    muon_time_averaged_population_fraction: MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL
+    ion_bunch_population: ION_BUNCH_POPULATION_NUCL_XE
+    muon_bunches: MACHINE_MU_BUNCHES_NUCL
+    ion_bunches: ION_BUNCHES_NUCL_XE
+    sigma_x_ip: IR_SIGMA_XY_IP_NUCL_XE
+    sigma_y_ip: IR_SIGMA_XY_IP_NUCL_XE
+    beta_x_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_XE
+    beta_y_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_XE
+    beta_star_muon_relaxed_min: MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
+    beta_star_muon_relaxed_max: MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
+    beta_star_ion: ION_BETA_STAR_IP_NUCL_XE
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_NUCL
+    muon_geometric_emittance: MACHINE_MU_GEOMETRIC_EMITTANCE_NUCL
+    ion_norm_emittance: ION_NORM_EMITTANCE_NUCL_XE
+    ion_geometric_emittance: ION_GEOMETRIC_EMITTANCE_NUCL_XE
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_NUCL
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL
+    ion_ring_circumference: ION_RING_CIRCUMFERENCE_NUCL_XE
+    ion_revolution_frequency: ION_REVOLUTION_FREQUENCY_NUCL_XE
+    booster_turns: ACCEL_BOOSTER_TURNS_NUCL
+    booster_survival: ACCEL_BOOSTER_SURVIVAL_NUCL
+    booster_injection_energy: ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+    booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_NUCL
+    booster_energy_gain_per_pass: ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_NUCL
+    muon_lifetime_turns_stored: MACHINE_MU_LIFETIME_TURNS_NUCL
+    beam_beam_tune_shift_muon: MACHINE_MU_TUNE_SHIFT_NUCL_XE
+    beam_beam_tune_shift_ion: MACHINE_ION_TUNE_SHIFT_NUCL_XE
+    beam_beam_tune_shift_limit_ion: MACHINE_ION_TUNE_SHIFT_LIMIT_NUCL
+    proton_driver_power: SOURCE_PROTON_DRIVER_POWER_NUCL
+    number_of_ips: MACHINE_NUMBER_OF_IPS_NUCL
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  - ion_bunch_spacing
+  - ion_bunch_length
+  - muon_energy_spread
+  - main_ring_dipole_field
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - beta_x_star_muon_reported
+  - beta_y_star_muon_reported
+  - hourglass_factor
+  - muon_bunch_population_after_reduction_reported
+  - peak_luminosity_tune_shift_limited_total
+  - ion_beam_lifetime
+  - ion_emittance_growth
+  - detector_acceptance
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
+- scenario_id: LHMUC-NUCL-MU-O
+  label: 'LHμC nucleus option: 1 TeV μ+ on the LHC O beam (16O8+)'
+  description: 'μ–O collisions evaluated with AloHEP in the Kraków workshop deck ''LHμC: Nucleus Options'' (p.12): 1 TeV μ+ (3.0e10 per bunch, 40 bunches, 3 km ring) on the conservative LHC O beam of p.10 (2.90e+09 ions per bunch, 62 bunches, 42.88 TeV, β* = 10 cm assumed). sqrt(s) = 13.1 TeV, 3.27 TeV per nucleon, f_c = 0.7 MHz, L = 6.73e+30 cm^-2 s^-1 (1.08e+32 per nucleon), xi_A = 0.0112 > 0.01. After reducing N_mu by 1.12 for xi_A <= 0.01 the luminosity per nucleon is 9.61e+31 cm^-2 s^-1 (p.14). Beam parameters are explicitly not finalised (p.15).'
+  machine: LHMUC
+  design_version: 'Kraków workshop deck ''LHμC: Nucleus Options'' (SRC_WS1681458_DAGLI_NUCLEUS, 2026-09), p.8 μ+ table (Table 1 of the draft), p.10 ion table, p.12 AloHEP table (Table 3 of the draft), p.13-14 tune-shift-limited recalculation; μTRISTAN/LHeC-ERL based μ+ complex, post-erratum'
+  status: reported
+  primary_source_ids:
+  - SRC_WS1681458_DAGLI_NUCLEUS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_NUCL
+    ion_species: ION_SPECIES_NUCL_O
+    ion_charge_number: ION_CHARGE_Z_NUCL_O
+    ion_mass_number: ION_MASS_NUMBER_A_NUCL_O
+    ion_beam_energy: ION_BEAM_ENERGY_NUCL_O
+    ion_beam_energy_per_nucleon: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_O
+    sqrt_s: MACHINE_SQRT_S_NUCL_O
+    sqrt_s_per_nucleon: MACHINE_SQRT_S_PER_NUCLEON_NUCL_O
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_NUCL_O
+    peak_luminosity_per_nucleon: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_NUCL_O
+    peak_luminosity_per_nucleon_tune_shift_limited: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_LIMITED_NUCL_O
+    collision_rate: MACHINE_COLLISION_RATE_NUCL_O
+    repetition_rate: MACHINE_REPETITION_RATE_NUCL
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_NUCL
+    muon_bunch_population_tune_shift_limited: MACHINE_MU_BUNCH_POPULATION_REDUCED_NUCL_O
+    muon_population_reduction_factor: MACHINE_MU_POPULATION_REDUCTION_FACTOR_NUCL_O
+    muon_time_averaged_population_fraction: MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL
+    ion_bunch_population: ION_BUNCH_POPULATION_NUCL_O
+    muon_bunches: MACHINE_MU_BUNCHES_NUCL
+    ion_bunches: ION_BUNCHES_NUCL_O
+    sigma_x_ip: IR_SIGMA_XY_IP_NUCL_O
+    sigma_y_ip: IR_SIGMA_XY_IP_NUCL_O
+    beta_x_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_O
+    beta_y_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_O
+    beta_star_muon_relaxed_min: MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
+    beta_star_muon_relaxed_max: MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
+    beta_star_ion: ION_BETA_STAR_IP_NUCL_O
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_NUCL
+    muon_geometric_emittance: MACHINE_MU_GEOMETRIC_EMITTANCE_NUCL
+    ion_norm_emittance: ION_NORM_EMITTANCE_NUCL_O
+    ion_geometric_emittance: ION_GEOMETRIC_EMITTANCE_NUCL_O
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_NUCL
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL
+    ion_ring_circumference: ION_RING_CIRCUMFERENCE_NUCL_O
+    ion_revolution_frequency: ION_REVOLUTION_FREQUENCY_NUCL_O
+    booster_turns: ACCEL_BOOSTER_TURNS_NUCL
+    booster_survival: ACCEL_BOOSTER_SURVIVAL_NUCL
+    booster_injection_energy: ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+    booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_NUCL
+    booster_energy_gain_per_pass: ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_NUCL
+    muon_lifetime_turns_stored: MACHINE_MU_LIFETIME_TURNS_NUCL
+    beam_beam_tune_shift_muon: MACHINE_MU_TUNE_SHIFT_NUCL_O
+    beam_beam_tune_shift_ion: MACHINE_ION_TUNE_SHIFT_NUCL_O
+    beam_beam_tune_shift_limit_ion: MACHINE_ION_TUNE_SHIFT_LIMIT_NUCL
+    proton_driver_power: SOURCE_PROTON_DRIVER_POWER_NUCL
+    number_of_ips: MACHINE_NUMBER_OF_IPS_NUCL
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  - ion_bunch_spacing
+  - ion_bunch_length
+  - muon_energy_spread
+  - main_ring_dipole_field
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - beta_x_star_muon_reported
+  - beta_y_star_muon_reported
+  - hourglass_factor
+  - muon_bunch_population_after_reduction_reported
+  - peak_luminosity_tune_shift_limited_total
+  - ion_beam_lifetime
+  - ion_emittance_growth
+  - detector_acceptance
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
+- scenario_id: LHMUC-NUCL-MU-NE
+  label: 'LHμC nucleus option: 1 TeV μ+ on the LHC Ne beam (20Ne10+)'
+  description: 'μ–Ne collisions evaluated with AloHEP in the Kraków workshop deck ''LHμC: Nucleus Options'' (p.12): 1 TeV μ+ (3.0e10 per bunch, 40 bunches, 3 km ring) on the conservative LHC Ne beam of p.10 (2.00e+09 ions per bunch, 62 bunches, 53.6 TeV, β* = 10 cm assumed). sqrt(s) = 14.6 TeV, 3.27 TeV per nucleon, f_c = 0.7 MHz, L = 3.44e+30 cm^-2 s^-1 (6.9e+31 per nucleon), xi_A = 0.0103 > 0.01. After reducing N_mu by 1.03 for xi_A <= 0.01 the luminosity per nucleon is 6.68e+31 cm^-2 s^-1 (p.14). Beam parameters are explicitly not finalised (p.15).'
+  machine: LHMUC
+  design_version: 'Kraków workshop deck ''LHμC: Nucleus Options'' (SRC_WS1681458_DAGLI_NUCLEUS, 2026-09), p.8 μ+ table (Table 1 of the draft), p.10 ion table, p.12 AloHEP table (Table 3 of the draft), p.13-14 tune-shift-limited recalculation; μTRISTAN/LHeC-ERL based μ+ complex, post-erratum'
+  status: reported
+  primary_source_ids:
+  - SRC_WS1681458_DAGLI_NUCLEUS
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_NUCL
+    ion_species: ION_SPECIES_NUCL_NE
+    ion_charge_number: ION_CHARGE_Z_NUCL_NE
+    ion_mass_number: ION_MASS_NUMBER_A_NUCL_NE
+    ion_beam_energy: ION_BEAM_ENERGY_NUCL_NE
+    ion_beam_energy_per_nucleon: ION_BEAM_ENERGY_PER_NUCLEON_NUCL_NE
+    sqrt_s: MACHINE_SQRT_S_NUCL_NE
+    sqrt_s_per_nucleon: MACHINE_SQRT_S_PER_NUCLEON_NUCL_NE
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_NUCL_NE
+    peak_luminosity_per_nucleon: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_NUCL_NE
+    peak_luminosity_per_nucleon_tune_shift_limited: MACHINE_PEAK_LUMINOSITY_PER_NUCLEON_LIMITED_NUCL_NE
+    collision_rate: MACHINE_COLLISION_RATE_NUCL_NE
+    repetition_rate: MACHINE_REPETITION_RATE_NUCL
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_NUCL
+    muon_bunch_population_tune_shift_limited: MACHINE_MU_BUNCH_POPULATION_REDUCED_NUCL_NE
+    muon_population_reduction_factor: MACHINE_MU_POPULATION_REDUCTION_FACTOR_NUCL_NE
+    muon_time_averaged_population_fraction: MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL
+    ion_bunch_population: ION_BUNCH_POPULATION_NUCL_NE
+    muon_bunches: MACHINE_MU_BUNCHES_NUCL
+    ion_bunches: ION_BUNCHES_NUCL_NE
+    sigma_x_ip: IR_SIGMA_XY_IP_NUCL_NE
+    sigma_y_ip: IR_SIGMA_XY_IP_NUCL_NE
+    beta_x_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_NE
+    beta_y_star_muon: MACHINE_MU_BETA_STAR_MATCHED_NUCL_NE
+    beta_star_muon_relaxed_min: MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
+    beta_star_muon_relaxed_max: MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
+    beta_star_ion: ION_BETA_STAR_IP_NUCL_NE
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_NUCL
+    muon_geometric_emittance: MACHINE_MU_GEOMETRIC_EMITTANCE_NUCL
+    ion_norm_emittance: ION_NORM_EMITTANCE_NUCL_NE
+    ion_geometric_emittance: ION_GEOMETRIC_EMITTANCE_NUCL_NE
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_NUCL
+    main_ring_circumference: MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL
+    ion_ring_circumference: ION_RING_CIRCUMFERENCE_NUCL_NE
+    ion_revolution_frequency: ION_REVOLUTION_FREQUENCY_NUCL_NE
+    booster_turns: ACCEL_BOOSTER_TURNS_NUCL
+    booster_survival: ACCEL_BOOSTER_SURVIVAL_NUCL
+    booster_injection_energy: ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+    booster_linacs: ACCEL_BOOSTER_LINAC_COUNT_NUCL
+    booster_energy_gain_per_pass: ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
+    muon_lifetime_lab: MACHINE_MU_LIFETIME_LAB_NUCL
+    muon_lifetime_turns_stored: MACHINE_MU_LIFETIME_TURNS_NUCL
+    beam_beam_tune_shift_muon: MACHINE_MU_TUNE_SHIFT_NUCL_NE
+    beam_beam_tune_shift_ion: MACHINE_ION_TUNE_SHIFT_NUCL_NE
+    beam_beam_tune_shift_limit_ion: MACHINE_ION_TUNE_SHIFT_LIMIT_NUCL
+    proton_driver_power: SOURCE_PROTON_DRIVER_POWER_NUCL
+    number_of_ips: MACHINE_NUMBER_OF_IPS_NUCL
+  unknown_roles:
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  - ion_bunch_spacing
+  - ion_bunch_length
+  - muon_energy_spread
+  - main_ring_dipole_field
+  - crossing_angle
+  - muon_polarisation
+  - nozzle_opening_angle
+  - beta_x_star_muon_reported
+  - beta_y_star_muon_reported
+  - hourglass_factor
+  - muon_bunch_population_after_reduction_reported
+  - peak_luminosity_tune_shift_limited_total
+  - ion_beam_lifetime
+  - ion_emittance_growth
+  - detector_acceptance
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.

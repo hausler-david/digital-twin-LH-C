@@ -1,0 +1,165 @@
+# Theory proposal record — Benchmark B (schemas/proposal.schema.json)
+# Phase 0 evidence audit, 2026-10-28. The paper has NOT been read: arxiv.org is blocked in this session and the
+# document was not uploaded. Every content statement below comes from search-engine snippets recorded in
+# research/_fragments/theory-benchmarks_sources.yaml (source_id SRC_ARXIV_2610_17801) and is marked
+# "(search snippet, unverified)". Snippet-only evidence may not back reported_lhmuc and is capped at
+# confidence medium (CLAUDE.md §1.5). null means unknown, never zero.
+proposal_id: PROP_B_2HDM_VLQ_2610_17801
+title: "One-loop contributing for A -> Z Z gamma in the Two-Higgs-Doublet Model with Vector-Like Quarks (title as recorded from arXiv listing snippets; the audit brief renders it 'One-loop contributions for ...' — exact wording to be confirmed on fetch) (search snippet, unverified)"
+arxiv_id: "2610.17801"
+doi: null
+authors: "Dzung Tri Tran, Vo Quoc Phong, Khiem Hong Phan (affiliations HCMUS/DTU/EIU and v1 date 2026-10-13 come from the search tool's summary, not a verbatim snippet) (search snippet, unverified)"
+source_id: SRC_ARXIV_2610_17801
+access: pending_fetch
+review_state: pending_fetch
+
+model:
+  name: "Two-Higgs-Doublet Model with Vector-Like Quarks (2HDM+VLQ), compared with the plain 2HDM (search snippet, unverified)"
+  framework: "2HDM (Yukawa type I/II/X/Y NOT confirmed) extended with vector-like quarks (representations — singlet/doublet/triplet — NOT confirmed) (search snippet, unverified)"
+  lagrangian_reference: null
+  new_particles:
+    - name: "A (CP-odd neutral Higgs boson of the 2HDM)"
+      spin: "0 (CP-odd)"
+      charge: 0
+      colour: "singlet"
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "Decaying particle of the studied process A -> Z Z gamma. Benchmark masses not available from snippets; snippet only says 'several benchmark points within the viable parameter space'. (search snippet, unverified)"
+    - name: "Vector-like quarks (species, electric charges and SU(2) representation unknown)"
+      spin: "1/2"
+      charge: null
+      colour: "triplet (assumed from the name 'vector-like quark'; not stated in snippets)"
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "Enter the A -> Z Z gamma amplitude through fermion loops; snippet: 'The contributions from Vector-Like Quarks can modify the total rates by approximately 5%.' Which VLQ multiplets (T, B, X, Y; singlet or doublet) are used is not stated. (search snippet, unverified)"
+    - name: "H (CP-even heavy neutral Higgs) and H+/H- (charged Higgs)"
+      spin: "0"
+      charge: null
+      colour: "singlet"
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "Implied by any two-Higgs-doublet model (the loop A -> Z Z gamma in a 2HDM generically receives scalar-loop contributions), but NOT mentioned in the snippets seen; listed only so that the parameter inventory is complete when the paper is read."
+  couplings_and_parameters:
+    - name: "tan(beta) (ratio of doublet vacuum expectation values)"
+      symbol: "tan β"
+      value_or_range: null
+      unit: dimensionless
+      provenance_quote: null
+    - name: "CP-odd Higgs mass"
+      symbol: "m_A"
+      value_or_range: null
+      unit: GeV
+      provenance_quote: null
+    - name: "Heavy CP-even and charged Higgs masses"
+      symbol: "m_H, m_H±"
+      value_or_range: null
+      unit: GeV
+      provenance_quote: null
+    - name: "Scalar mixing angle (alignment parameter)"
+      symbol: "cos(β−α) or sin(β−α)"
+      value_or_range: null
+      unit: dimensionless
+      provenance_quote: null
+    - name: "Vector-like quark masses"
+      symbol: "m_VLQ"
+      value_or_range: null
+      unit: GeV
+      provenance_quote: null
+    - name: "VLQ–SM quark mixing angles / Yukawa couplings"
+      symbol: null
+      value_or_range: null
+      unit: dimensionless
+      provenance_quote: null
+    - name: "Branching ratio A -> Z Z gamma at the benchmark points (observable, not an input; recorded here because it is the only number the snippets give)"
+      symbol: "BR(A → ZZγ)"
+      value_or_range: "1e-5 to 1e-4 (search snippet, unverified)"
+      unit: dimensionless
+      provenance_quote: "branching ratios can reach 10^{-5}-10^{-4} for several benchmark points within the viable parameter space of the considered models"
+    - name: "Relative effect of the VLQ loops on the total A -> Z Z gamma rate (observable, not an input)"
+      symbol: "ΔΓ/Γ (VLQ)"
+      value_or_range: "approximately 5 percent (search snippet, unverified)"
+      unit: percent
+      provenance_quote: "The contributions from Vector-Like Quarks can modify the total rates by approximately 5%."
+  decay_channels:
+    - "A -> Z Z gamma (one-loop induced; unpolarized and polarized final-state Z bosons) (search snippet, unverified)"
+
+original_study:
+  collider: "none — the paper is a one-loop decay-width calculation with no collider simulation; its only collider remark concerns 'future multi-TeV muon colliders' (search snippet, unverified)"
+  beam_species: []
+  sqrt_s: null
+  integrated_luminosity: null
+  processes:
+    - "A -> Z Z gamma, one-loop partial width in the 2HDM (search snippet, unverified)"
+    - "A -> Z Z gamma, one-loop partial width in the 2HDM + vector-like quarks (search snippet, unverified)"
+  benchmark_points:
+    - label: "several benchmark points within the viable parameter space (number, m_A, tan β, VLQ masses and mixings NOT available from snippets)"
+      m_A_GeV: null
+      tan_beta: null
+      m_VLQ_GeV: null
+      two_hdm_type: null
+      vlq_representation: null
+      BR_A_to_ZZgamma: "1e-5 to 1e-4 (search snippet, unverified)"
+      provenance_quote: "branching ratios can reach 10^{-5}-10^{-4} for several benchmark points within the viable parameter space of the considered models"
+  observables:
+    - "Partial width Γ(A -> Z Z gamma) (search snippet, unverified)"
+    - "Branching ratio BR(A -> Z Z gamma) for unpolarized final-state Z bosons (search snippet, unverified)"
+    - "Branching ratio BR(A -> Z Z gamma) for polarized final-state Z bosons (search snippet, unverified)"
+    - "Relative change of the total rate due to VLQ loops (search snippet, unverified)"
+  event_selection: []
+  backgrounds: []
+  statistical_method: null
+  reported_results:
+    - "Scope (verbatim snippet): 'In this paper, we present the first results for the one-loop decay A→ZZγ in the Two-Higgs-Doublet Model and its extension with Vector-Like Quarks.' (search snippet, unverified)"
+    - "Branching ratio (verbatim snippet): 'branching ratios can reach 10^{-5}-10^{-4} for several benchmark points within the viable parameter space of the considered models' (search snippet, unverified)"
+    - "VLQ effect (verbatim snippet): 'The contributions from Vector-Like Quarks can modify the total rates by approximately 5%.' (search snippet, unverified)"
+    - "Collider context (verbatim snippet): 'With the high luminosities expected at future multi-TeV muon colliders, these effects may be experimentally accessible.' (search snippet, unverified)"
+  generator_setup: null
+
+model_implementation:
+  available: partial
+  type: "Building blocks only: FeynRules/UFO 2HDM models (2HDM_NLO on the FeynRules NLO-models page; ycwu1030/2HDM_FR; Pseudoscalar_2HDMI as an adjacent example) and the generic FeynRules VLQ_UFO (X, T, B, Y states). No combined 2HDM+VLQ model and no implementation of the loop-induced A Z Z gamma vertex were found."
+  url: "https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/NLOModels (2HDM_NLO); https://cp3.irmp.ucl.ac.be/projects/feynrules/wiki/VLQ (VLQ_UFO); https://github.com/ycwu1030/2HDM_FR — all seen as search snippets only; fetches blocked"
+  licence: null
+  notes: "'partial' means: public tree-level components exist separately, but (1) no combined 2HDM+VLQ UFO was found in the 2026-10-28 reconnaissance (research/_fragments/theory-benchmarks_sources.yaml), (2) the process of interest is loop-induced, so even a combined tree-level UFO cannot produce A -> Z Z gamma; it needs MadGraph5_aMC@NLO loop-induced mode with a loop-capable (NLO-style, with R2/UV counterterms) UFO, or an effective A Z Z gamma vertex derived from the paper's one-loop form factors, or an independent one-loop calculation (e.g. FeynArts/FormCalc/LoopTools), (3) the paper itself was not read, so whether its authors release model files or form factors is unknown. The VLQ_UFO snippet warns that particle widths default to 1 GeV and must be set by hand. Licences of all model files unseen (fetch blocked)."
+
+lhmuc_recasting:
+  original_initial_state_transfers_directly: false
+  candidate_mu_p_channels:
+    - process: "mu+ p -> mu+ A q X  (neutral-current associated production: mu+ q -> mu+ q A with A radiated off the quark line via its Yukawa coupling; t-channel gamma*/Z exchange)"
+      status: proposed_unverified
+      notes: "Tree-level in a 2HDM once A couples to light/heavy quarks; the rate is Yukawa-suppressed and depends strongly on the 2HDM type and tan β (down-type enhancement in type II at large tan β would favour b and s initial states, whose PDFs are small). Charge: mu+ q -> mu+ q A conserves charge and colour trivially. Cross section not computed; needs the model UFO, the 2HDM type and the LHμC beam energies as scenario inputs."
+    - process: "mu+ p -> nu_mu-bar A q' X  (charged-current associated production: mu+ q -> nu_mu-bar q' A, e.g. mu+ b -> nu_mu-bar t A with A radiated off the top or bottom line)"
+      status: proposed_unverified
+      notes: "Charge check for mu+ b -> nu_mu-bar t A: (+1) + (-1/3) = +2/3 on the left; 0 + (+2/3) + 0 = +2/3 on the right — consistent; colour flows along the quark line. Requires a b quark from the proton sea (small PDF) for the top-Yukawa-enhanced variant; the light-quark variant mu+ d -> nu_mu-bar u A is Yukawa-suppressed. Diagram set and cross section unverified."
+    - process: "Z Z -> A and Z gamma* -> A fusion (vector-boson-fusion-like, mu+ q -> mu+ q A through two neutral bosons meeting at an A vertex)"
+      status: proposed_unverified
+      notes: "A CP-odd scalar has no tree-level A V V coupling in a CP-conserving 2HDM, so this fusion channel vanishes at tree level and is at best loop-induced (the same kind of loop that generates A -> Z Z gamma). It must be checked explicitly against the model's Feynman rules before being kept; expected to be negligible relative to the Yukawa-mediated channels."
+    - process: "gamma gamma -> A  (two-photon production: quasi-real photon from the muon and from the proton, elastic or inelastic; loop-induced A gamma gamma vertex)"
+      status: proposed_unverified
+      notes: "Loop-induced (fermion and charged-Higgs loops). The LHμC two-photon framework presented in the Khanpour workshop deck (SRC_WS1681458_KHANPOUR_GAMMAGAMMA, equivalent-photon approximation on p.9-11) would supply the photon fluxes; no number is taken from it here. Needs the effective A gamma gamma coupling of the actual benchmark points, which the snippets do not give."
+    - process: "b b-bar -> A  (b-bbar fusion, the dominant A production mode at hadron colliders for large tan β)"
+      status: rejected
+      notes: "Not available in mu+ p collisions: the muon beam carries no (anti)quark, so there is no s-channel b b-bar annihilation initial state. Recorded so the omission is documented."
+    - process: "g g -> A  (gluon fusion through quark loops)"
+      status: rejected
+      notes: "Requires two gluons; only one beam is a hadron. Not available in mu+ p collisions."
+  missing_for_implementation:
+    - "Full text of arXiv:2610.17801 (fetch pending; arxiv.org blocked in this session): 2HDM Yukawa type, VLQ representations and charges, Lagrangian and parameter definitions, benchmark-point values (m_A, m_H, m_H±, tan β, alignment angle, m_VLQ, mixings), partial widths and BRs per benchmark for unpolarized and polarized Z, and any statement on released code or form factors."
+    - "A combined 2HDM+VLQ model implementation (FeynRules/UFO) — none found publicly; only separate 2HDM (2HDM_NLO, 2HDM_FR, Pseudoscalar_2HDMI) and generic VLQ (VLQ_UFO) models exist (search snippets only, fetch blocked, licences unseen)."
+    - "A loop-capable implementation of the A -> Z Z gamma amplitude: MadGraph5_aMC@NLO loop-induced mode with an NLO-ready UFO (R2 and UV counterterms), or an effective A Z Z gamma vertex fitted to the paper's one-loop form factors, or an independent one-loop computation (FeynArts/FormCalc/LoopTools) to reproduce the published widths before any use."
+    - "A production mechanism for A in mu+ p collisions: the paper supplies none. The candidate channels above are proposed_unverified; charge/colour checks, diagram verification and cross-section computation with the actual model at LHμC beam energies are all outstanding."
+    - "Parameter ids of the LHμC machine scenario to use (muon and proton beam energies, sqrt_s, integrated luminosity per year) — to be referenced from parameters/machine once the recast is set up; no number is written here."
+    - "Final-state reconstruction requirements for A -> Z Z gamma in the LHμC detector concept: isolated photon identification and energy resolution, two Z candidates (Z -> l+ l- for a clean four-lepton + photon signature, or Z -> q q-bar for rate), Z-mass windows, A invariant-mass reconstruction from (Z Z gamma), and acceptance for the boosted, forward-going hadronic final state of an asymmetric mu+ p collider. The LHμC detector concept (SRC_ARXIV_2610_35154 §4 p.5) has not been consulted for this record."
+    - "Signal-rate feasibility arithmetic: expected yield = σ(mu+ p -> A X) × L_int × BR(A -> Z Z gamma) × BR(Z decays) × acceptance. With BR(A -> Z Z gamma) at the snippet level 1e-5 to 1e-4, a measurable yield requires an A production cross section and integrated luminosity that are both unknown; the yield cannot be estimated until σ(A) is computed."
+    - "Standard-Model backgrounds for a Z Z gamma (+ jet, + muon) final state in mu+ p collisions (continuum Z Z gamma production, Z gamma + jets with a fake Z, Z Z + jets with a fake or radiated photon): none evaluated."
+    - "Validation reference: no collider result exists in the original study to reproduce; the only closure test available is reproducing the published partial widths at the benchmark points (requires the full text)."
+  notes: "The original study is a decay-width calculation; it contains no production cross section, no event selection and no collider parameters, so nothing transfers directly to the LHμC. Its own collider remark ('future multi-TeV muon colliders', search snippet, unverified) refers to mu+ mu- machines, where A could be produced in s-channel or associated production; in mu+ p the production must be derived from scratch. The two 'rejected' entries document hadron-collider modes that are structurally absent in mu+ p. Until a production channel reaches at least 'cross_section_computed', this benchmark cannot be ranked against the others and no P-level above P0 may be attached to any recast (docs/validation_plan.md)."
+
+extraction:
+  method: "search snippets only"
+  extracted_by: "Claude (Phase 0 audit)"
+  date: "2026-10-28"
+  reviewed_by: null
+  review_date: null
+
+notes: "Source status: research/_fragments/theory-benchmarks_sources.yaml records SRC_ARXIV_2610_17801 with category UNVERIFIED and access 'blocked' (an attempted WebFetch refused on arxiv.org, export.arxiv.org, alphaxiv, Semantic Scholar and INSPIRE); the audit brief for this record prescribes access 'pending_fetch' (re-attempt pending), which is used here — the two readings should be reconciled by the lead in the source registry. No INSPIRE record was returned by search. All quoted sentences are search-engine snippets of the arXiv abstract, recorded verbatim in the source fragment; the title wording ('contributing' vs 'contributions') and the author affiliations/v1 date are unconfirmed. No parameter records are derived from this proposal (parameters_extracted: [] in the source fragment). Next action: fetch https://arxiv.org/abs/2610.17801 and the PDF, then re-extract this record from the full text and move review_state to 'extracted'."

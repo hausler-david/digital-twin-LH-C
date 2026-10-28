@@ -1,0 +1,212 @@
+# Theory proposal record — Benchmark D (two-photon physics at the LHμC), Phase 0 evidence audit.
+# Schema: schemas/proposal.schema.json. Written 2026-10-28 by Claude (Phase 0 audit); not human-reviewed.
+#
+# EVIDENCE STATUS: the source is the UPLOADED workshop deck SRC_WS1681458_KHANPOUR_GAMMAGAMMA
+# (Hamzeh Khanpour, "Two-Photon Physics at the LHμC", Ultra-cold muons for the LHC, AGH Kraków,
+# 24-26 September 2026; 26 slides, read in full; category PRIMARY_LHMUC). Every number below is quoted
+# verbatim from the slides with its page number ("p.N" = slide N of 26). Slides are unrefereed; the
+# quantitative curves are attributed on the slides to "Laurent Forthomme, Hamzeh Khanpour, Krzysztof
+# Piotrzkowski, Yuji Yamazaki, High energy γγ interactions at the LHeC (in preparation)" (p.9, p.11),
+# which is NOT available. The two experimental-limit papers cited on p.18 (arXiv:2406.03975,
+# arXiv:2503.19836) were NOT fetched (arxiv.org blocked in this session); only what the deck says about
+# them is recorded, and any statement about them beyond the deck is marked "(search snippet, unverified)"
+# or "(prior knowledge, unverified)". null means unknown, never zero. No parameter here is synthetic.
+proposal_id: PROP_D_TWO_PHOTON_MU_P
+title: "Two-Photon Physics at the LHμC: High-energy γγ interactions in μp collisions (workshop talk)"
+arxiv_id: null
+doi: null
+authors: "Hamzeh Khanpour (AGH University of Krakow); quantitative inputs credited on p.9 and p.11 to L. Forthomme, H. Khanpour, K. Piotrzkowski, Y. Yamazaki, 'High energy γγ interactions at the LHeC (in preparation)'"
+source_id: SRC_WS1681458_KHANPOUR_GAMMAGAMMA
+access: uploaded
+review_state: extracted
+
+model:
+  name: "Standard Model γγ physics in μ+p collisions, with two SMEFT deformations: anomalous τ electromagnetic dipole moments (a_τ, d_τ) and anomalous quartic gauge couplings (aQGC) in γγ → W+W-"
+  framework: "SM + SMEFT. (i) Dimension-6 τ dipole operators: p.16 'Gauge-invariant dipole operators can be written as  L̄τ σ^{μν} τ_R H ( C_τB/Λ² B_μν + C_τW/Λ² W_μν ) + h.c.'; p.16 'After electroweak symmetry breaking, suitable real and imaginary combinations of C_τB and C_τW generate respectively magnetic and electric dipole deformations.' (ii) Dimension-8 aQGC operators: p.20 'L_eff = L_SM + Σ_i f_i/Λ⁴ O_i' with 'A convenient decomposition is L_aQGC = Σ_j f_S,j/Λ⁴ O_S,j + Σ_j f_M,j/Λ⁴ O_M,j + Σ_j f_T,j/Λ⁴ O_T,j.' The explicit operator definitions (O_S,j, O_M,j, O_T,j; normalisation conventions) are NOT given on the slides."
+  lagrangian_reference: "Slides p.16 (τ dipole operators, general γττ vertex Γ^μ(q²) = γ^μ F1(q²) + (iσ^{μν} q_ν / 2m_τ) F2(q²) + σ^{μν} q_ν γ5 F3(q²), with F2(0) = a_τ, F3(0) = −(2m_τ/e) d_τ) and p.20 (aQGC decomposition). No paper reference for the operator basis is given on the slides; the 'Eboli-style' f_S/f_M/f_T naming is the usual dimension-8 aQGC basis (prior knowledge, unverified against the speaker's convention)."
+  new_particles:
+    - name: "None required for the SM/SMEFT benchmarks. Charged higgsino pairs (H̃+ H̃−) are shown only as an illustrative BSM final state of γγ fusion"
+      spin: "1/2 (higgsino, illustrative only)"
+      charge: 1
+      colour: "singlet"
+      mass: {value: null, unit: GeV}
+      width: null
+      notes: "p.22: 'Elastic production of charged higgsino pairs through photon–photon fusion. The production threshold is set by W_γγ ≳ 2 m_H̃.' The slide shows a cross-section-vs-W0 figure for LHeC, LHμC and FCC-μH but states NO higgsino mass, model or cross-section value in the text layer; the figure axis values were not read as numbers (figure-only, not transcribed). The underlying SUSY model and parameter point are unknown."
+  couplings_and_parameters:
+    - name: "τ anomalous magnetic dipole moment (CP-even), benchmark deformation used in the Mττ sensitivity figure"
+      symbol: "δa_τ"
+      value_or_range: 0.005
+      unit: dimensionless
+      provenance_quote: "p.18: 'For the benchmark deformation δa_τ = 0.005, the deviation from the SM remains small at low M_ττ, but grows in the high-M_ττ tail; this is the main source of sensitivity.'"
+    - name: "τ electric dipole moment (CP-odd)"
+      symbol: "d_τ"
+      value_or_range: null
+      unit: "e cm"
+      provenance_quote: "p.16: 'd_τ: CP-odd electric dipole moment. In the SM, both are very small; any sizable deviation would signal new physics.' p.17: 'The electric dipole moment d_τ is CP-odd; in unpolarised inclusive rates it typically enters quadratically, while dedicated CP-odd observables can provide linear sensitivity.' No benchmark value of d_τ is given on the slides."
+    - name: "SMEFT τ dipole Wilson coefficients over the cutoff scale"
+      symbol: "C_τB/Λ², C_τW/Λ²"
+      value_or_range: null
+      unit: "TeV^-2"
+      provenance_quote: "p.16 (operator form only, see model.framework). No numerical values or scale Λ are given on the slides; the mapping to δa_τ = 0.005 is not written out."
+    - name: "aQGC benchmark deformation, mixed operator O_M2 coefficient over Λ⁴"
+      symbol: "f_M2/Λ⁴"
+      value_or_range: 1
+      unit: "TeV^-4"
+      provenance_quote: "p.21: 'For the benchmark shown here, f_M2/Λ⁴ = 1 TeV⁻⁴, the separation becomes most visible at large M_WW.' and p.20: 'In our benchmark study, the representative deformation f_M2/Λ⁴ is used to illustrate the sensitivity of γγ → W+W− to anomalous quartic interactions.'"
+    - name: "Other aQGC coefficients (scalar f_S,j, remaining mixed f_M,j, tensor f_T,j)"
+      symbol: "f_S,j/Λ⁴, f_M,j/Λ⁴, f_T,j/Λ⁴"
+      value_or_range: null
+      unit: "TeV^-4"
+      provenance_quote: "p.20 lists the decomposition only; no values other than f_M2/Λ⁴ are given. Whether other coefficients are set to zero in the benchmark is not stated (assumed zero by the usual one-operator-at-a-time convention — prior knowledge, unverified)."
+    - name: "Current LHC limit on a_τ, CMS exclusive photon-induced τ+τ− (as quoted on the slide)"
+      symbol: "a_τ (CMS)"
+      value_or_range: "[-0.0022, 0.0041]"
+      unit: dimensionless
+      provenance_quote: "p.18: 'CMS exclusive pp photon-induced τ+τ− production gives a_τ ∈ [−0.0022, 0.0041] [2406.03975 [hep-ex]]'. The CMS paper arXiv:2406.03975 itself was NOT fetched (arxiv.org blocked); the interval and the confidence level are as transcribed from the slide only (the slide attaches '(95% CL)' explicitly to the ATLAS number; whether it also applies to the CMS interval is not stated on the slide)."
+    - name: "Current LHC limit on a_τ, ATLAS high-mass τ+τ− (as quoted on the slide)"
+      symbol: "a_τ (ATLAS)"
+      value_or_range: "[-0.0024, 0.0047]"
+      unit: dimensionless
+      provenance_quote: "p.18: 'while the ATLAS high-mass τ+τ− analysis gives a_τ ∈ [−0.0024, 0.0047] (95% CL) [2503.19836 [hep-ex]].' The ATLAS paper arXiv:2503.19836 itself was NOT fetched (arxiv.org blocked); recorded as transcribed from the slide only."
+  decay_channels:
+    - "W+W− final state: p.20 'Multiple decay channels can be explored: fully leptonic, semileptonic and fully hadronic.' (no branching-fraction values given; p.19 WW yields are 'before branching fractions, detector acceptance and reconstruction efficiencies')"
+    - "τ+τ− final state: τ decay modes not specified on the slides; p.26 requires 'robust τ reconstruction'."
+
+original_study:
+  collider: "LHμC (μ+ p collider at CERN, LHC proton beam), compared throughout with the LHeC (e p) and on three figures with an 'FCC-μH' configuration; working points attributed to 'From HELP4CERN White Paper (in preparation)' (p.4)"
+  beam_species: ["mu+", "p"]
+  sqrt_s: {value: 5.3, unit: TeV}
+  integrated_luminosity: {value: 1000, unit: "fb^-1"}
+  processes:
+    - "μ+ p → μ+ X p(*) via γγ → X (EPA factorisation): p.9 'σ_ℓp = ∫ dy_ℓ dy_p Φ_ℓ(y_μ) Φ_p(y_p) σ_γγ(W) = ∫ dW S_γγ(W) σ_γγ(W)'; p.14 'σ(μp → μ X p(*)) = S_γγ ⊗ σ(γγ → X)'"
+    - "γγ → τ+τ− (benchmark 1: anomalous τ dipole moments) — p.14 'Two benchmark studies will be discussed in detail: γγ → τ+τ−, probing anomalous τ electromagnetic moments, and γγ → W+W−, probing anomalous quartic gauge couplings.'"
+    - "γγ → W+W− (benchmark 2: SM rates and aQGC) — p.19, p.20, p.21"
+    - "γγ → ZZ — p.13 'Rare neutral-gauge channel: loop-induced γγ → ZZ, with sensitivity to neutral quartic gauge interactions' (no numbers)"
+    - "γγ → t t̄ — p.22 figure 'Elastic γγ → t t̄ production above the minimum two-photon invariant mass W0' (no numbers in text layer)"
+    - "γγ → H (loop-induced) — p.14 landscape box 'H loop-induced' and p.23 (no numbers)"
+    - "γγ → H̃+ H̃− (charged higgsino pairs) — p.22 figure (no numbers in text layer)"
+    - "γγ → μ+μ−, ℓ+ℓ− (calibration) — p.13, p.14 'ℓ+ℓ− calibration' (no numbers)"
+    - "γγ → γγ (light-by-light) — p.13 'BSM opportunities: light-by-light scattering' (no numbers)"
+    - "Photon-emission topologies: elastic p → p + γ* (dipole form factors F_E, F_M of the proton, p.8, p.10) and proton-dissociative p → X_p + γ* with M_N > m_p described by F2(x,Q²) (p.8, p.10, p.11); lepton side point-like with 'F_E = F_M = 1 and M = m_ℓ' (p.10)"
+  benchmark_points:
+    - label: "LHμC option 1 (first option)"
+      scenario_id_hint: "LHMUC-WP-OPT1-500GEV (parameters/machine/scenarios_wp.yaml, written by the parameter agents)"
+      E_mu_GeV: 500
+      E_p_TeV: 7
+      sqrt_s_TeV: 3.7
+      L_int_fb_inv: 250
+      provenance_quote: "p.4: 'The first option: E_μ = 500 GeV, E_p = 7 TeV, √s ≃ 3.7 TeV, with a L_int = 250 fb⁻¹.'"
+      used_for: "τ+τ− cross section 58.5 pb (p.15); W+W− cross section 0.166 pb and N_WW ≃ 4.2 × 10⁴ at 250 fb⁻¹ (p.19); the LHμC curves labelled 'E_μ = 500 GeV' on p.15, p.19, p.22 figures"
+    - label: "LHμC nominal baseline"
+      scenario_id_hint: "LHMUC-WP-BASELINE-1TEV"
+      E_mu_GeV: 1000
+      E_p_TeV: 7
+      sqrt_s_TeV: 5.3
+      L_int_fb_inv: 1000
+      provenance_quote: "p.4: 'The nominal baseline: E_μ = 1 TeV, E_p = 7 TeV, √s ≃ 5.3 TeV, with a L_int = 1000 fb⁻¹.'"
+      used_for: "τ+τ− cross section 70.3 pb (p.15); 'nominal LHμC setup' in the δa_τ M_ττ sensitivity discussion (p.18); inclusive-rate enhancements vs the 50 GeV LHeC (p.5)"
+    - label: "LHμC option 2 (second option)"
+      scenario_id_hint: "LHMUC-WP-OPT2-2TEV"
+      E_mu_GeV: 2000
+      E_p_TeV: 7
+      sqrt_s_TeV: 7.5
+      L_int_fb_inv: 1000
+      provenance_quote: "p.4: 'The second option: E_μ = 2 TeV, E_p = 7 TeV, √s ≃ 7.5 TeV, with a L_int = 1000 fb⁻¹.'"
+      used_for: "No γγ cross section or figure curve for this working point appears on the slides."
+    - label: "LHeC comparison benchmark"
+      scenario_id_hint: null
+      E_e_GeV: "20, 50"
+      E_p_TeV: 7
+      sqrt_s_TeV: 1.2
+      L_int_fb_inv: null
+      provenance_quote: "p.4 table: 'LHeC  E_e = 20, 50 GeV'; p.15 table: 'LHeC 1.2 TeV 50.4'; figure legends on p.15/p.19/p.22 label the LHeC curve 'E_e = 50 GeV, E_p = 7 TeV'. The 1.2 TeV value is consistent with E_e = 50 GeV (2√(50 GeV · 7000 GeV) ≈ 1.18 TeV, arithmetic check only)."
+      used_for: "Comparison column in every cross-section table and figure"
+  observables:
+    - "τ+τ−: M_ττ, Y_ττ, p_T^τ — p.17 'Focus on observables such as M_ττ, Y_ττ, p_T^τ, with the high-M_ττ tail providing the leading lever arm.'"
+    - "τ+τ−: invariant-mass spectrum as the key discriminant — p.15 'Anomalous contributions harden the high-M_ττ tail, making the invariant-mass spectrum the key discriminating observable.'"
+    - "W+W−: M_WW and p_T^WW — p.20 'The observables most sensitive to aQGCs are M_WW and p_T^WW.'; p.21 'the important information comes from the shape of the high-M_WW tail'"
+    - "Integrated elastic cross section above a threshold W0, σ(W_γγ > W0), as a function of W0 (figures p.15, p.19, p.22)"
+    - "Two-photon luminosity spectrum S_γγ(W) (figures p.12, p.13)"
+  event_selection:
+    - "No event-selection cuts are given on the slides. Only the threshold definition for the τ+τ− rate is stated: p.15 'Elastic γγ → τ+τ− rates for W0 = 10 GeV.'"
+    - "Elastic photon-virtuality conditions appear in the figure legends on p.15, p.19, p.22 as 'Elastic (Q_ℓ² < ... GeV², Q_p² < ... GeV²)' but the numerical cut values are not legible at the available image resolution and are not in the text layer: unknown."
+    - "Qualitative handles only: p.8 'Low pile-up preserves clean final states and makes rapidity-gap / exclusivity requirements particularly effective.'; p.26 'Exclusivity and acoplanarity observables with sensitivity to low extra activity.'"
+  backgrounds:
+    - "No background processes or background rates are given on the slides (qualitative statement only, p.15: 'a low-background exclusive topology')."
+  statistical_method: "None applied. p.18: 'These distributions therefore indicate good expected sensitivity at LHμC, but a quantitative projected limit still requires a dedicated detector-level statistical analysis.' p.17: 'The next step is therefore to turn these distortions into projected constraints and limits.'"
+  reported_results:
+    - "p.15 table, elastic γγ → τ+τ− cross section for W0 = 10 GeV: 'LHeC 1.2 TeV 50.4', 'LHμC 3.7 TeV 58.5', 'LHμC 5.3 TeV 70.3' [pb] ('Collider √s_ℓp σ^el_γγ→τ+τ− [pb]'). Parameter records: PHYS_XSEC_EL_GG_TAUTAU_LHEC_WP, PHYS_XSEC_EL_GG_TAUTAU_LHMUC500_WP, PHYS_XSEC_EL_GG_TAUTAU_LHMUC1TEV_WP (owned by the parameter agents)."
+    - "p.15: 'Even with a 500 GeV muon beam, the LHμC already provides a larger elastic τ+τ− sample than the LHeC.'"
+    - "p.19 table, elastic γγ → W+W− cross section: 'LHeC 1.2 TeV 0.037', 'LHμC 3.7 TeV 0.166' [pb]. Parameter records: PHYS_XSEC_EL_GG_WW_LHEC_WP, PHYS_XSEC_EL_GG_WW_LHMUC500_WP."
+    - "p.19: 'Production turns on at W_γγ ≥ 2m_W ≃ 160 GeV.'; 'σ_γγ→WW(W) → approximately constant, unlike the stronger high-energy suppression for fermion and scalar pairs.'"
+    - "p.19: 'For an illustrative integrated luminosity of 250 fb⁻¹, the elastic SM rates correspond to approximately N_WW^LHeC ≃ 9.3 × 10³ and N_WW^LHμC ≃ 4.2 × 10⁴ produced W+W− pairs, before branching fractions, detector acceptance and reconstruction efficiencies.' (Arithmetic check: 0.037 pb × 250 fb⁻¹ = 9.25 × 10³; 0.166 pb × 250 fb⁻¹ = 4.15 × 10⁴ — consistent with the quoted rounded numbers.) Parameter records: PHYS_NWW_EL_LHEC_250IFB_WP, PHYS_NWW_EL_LHMUC500_250IFB_WP."
+    - "p.18: 'For the benchmark deformation δa_τ = 0.005, the deviation from the SM remains small at low M_ττ, but grows in the high-M_ττ tail; this is the main source of sensitivity.' No projected limit on a_τ or d_τ is given."
+    - "p.21 (aQGC, f_M2/Λ⁴ = 1 TeV⁻⁴, EFT/SM ratio figures for LHeC, LHC, LHμC): 'At low and intermediate M_WW, the EFT prediction remains very close to the SM for all three collider configurations.'; 'At the LHμC, the harder photon spectrum produces a much better populated high-mass region. The EFT/SM ratio rises progressively above unity in the tail, providing a substantially stronger shape handle on the aQGC interaction.' No projected limit on f_M2/Λ⁴ is given. (The 'LHC' configuration in this comparison is not specified on the slide.)"
+    - "p.5 table (inclusive, NOT two-photon, context for the energy lever arm), 'Benchmark inclusive cross sections', columns '20 GeV LHeC / 50 GeV LHeC / 500 GeV LHμC / 1 TeV LHμC': 'σ(ℓp → ν_ℓ H + jet + X) [fb] 52 164 438 731'; 'σ(ℓp → ℓH + jet + X) [fb] 5.6 19 135 221'; 'σ(ℓp → ℓ t t̄ + X) [pb] 0.0015 0.0323 1.03 2.23'; 'σ(ℓp → ν_ℓ t + X) [pb] 0.55 2.89 21.26 36.77'. Parameter records PHYS_XSEC_CC_HIGGS_JET_*_WP, PHYS_XSEC_NC_HIGGS_JET_*_WP, PHYS_XSEC_LEPTON_TTBAR_*_WP, PHYS_XSEC_SINGLE_TOP_*_WP."
+    - "p.5: 'Relative to the 50 GeV LHeC benchmark, the nominal 1 TeV LHμC baseline enhances the benchmark inclusive rates by approximately: ∼ 4.5 for charged-current Higgs production, ∼ 12 for neutral-current Higgs production, ∼ 13 for single-top production, and ∼ 69 for t t̄ production.'"
+    - "p.11 (EPA validation statement, no numbers): 'Elastic EPA agrees at percent level with matrix-element generators once the proper W definition is used; inelastic modelling is more sensitive to the dissociative phase space.'"
+    - "p.12: 'Increasing the lepton-beam energy shifts the usable γγ luminosity to larger W: the LHμC spectra fall more slowly than the LHeC spectrum in the high-mass region.' (S_γγ(W) curves shown on p.12 and p.13; no tabulated values.)"
+  generator_setup:
+    generator: null
+    generator_note: "No event generator, EPA code or PDF/form-factor set is named on the slides. p.11 mentions agreement of 'elastic EPA' with 'matrix-element generators' without naming them. The numerical inputs are credited to Forthomme, Khanpour, Piotrzkowski, Yamazaki (in preparation), p.9 and p.11."
+    photon_flux_lepton: "Generic EPA flux p.10: 'Φ_γ(y) = (α/πy) ∫ (dQ²/Q²) [ (1−y)(1 − Q²_min/Q²) F_E(Q²) + (y²/2) F_M(Q²) ], Q²_min = M² y²/(1−y)'; 'Point-like lepton: F_E = F_M = 1 and M = m_ℓ.'; 'The muon mass raises Q²_min relative to an electron at the same photon energy fraction y.'"
+    photon_flux_proton_elastic: "p.10: 'F_M = G_M², F_E = (4m_p² G_E² + Q² G_M²)/(4m_p² + Q²).'; 'The dipole form factors suppress large Q_p².'"
+    photon_flux_proton_dissociative: "p.10: 'F_E(Q²) = ∫ (dx/x) F2(x,Q²), F_M(Q²) = ∫ (dx/x³) F2(x,Q²)' with 'M_N² = m_p² + Q²(1/x − 1)'. Which F2 parametrisation is used: not stated."
+    kinematics: "p.9 high-energy EPA relation 'W² ≃ y_ℓ y_p s'; p.11 exact elastic 'W² = −Q_ℓ² + y_ℓ y_p s' and proton-dissociative 'W² = −Q_ℓ² − Q_p² + y_ℓ y_p s + (Q_ℓ² (Q_p² + M_N² − m_p²))/s' (transcribed from the slide text layer; the last term's exact placement should be checked against the PDF image)."
+    two_photon_luminosity: "p.9: 'S_γγ(W) = (2/W) ∫_{W²/s}^{1} dy_ℓ Φ_ℓ(y_ℓ) y_p Φ_p(y_p) = (2W/s) ∫_{W²/s}^{1} (dy_ℓ/y_ℓ) Φ_ℓ(y_ℓ) Φ_p(W²/(s y_ℓ))' with 'y_p = W²/(s y_ℓ)'."
+    parton_shower_detector_simulation: null
+    ufo_model_used: null
+
+model_implementation:
+  available: partial
+  type: "Not stated on the slides. Expected building blocks: an EPA/photon-flux code or generator photon-flux option for the μ+ and proton sides, a SMEFT dipole-operator UFO (C_τB, C_τW), and a dimension-8 aQGC UFO (f_S,j, f_M,j, f_T,j)."
+  url: null
+  licence: null
+  notes: "Nothing was verified in this session (no network access to model repositories). The deck names no code. From prior knowledge (unverified): (a) SM EPA tools exist — MadGraph5_aMC@NLO offers lepton-beam photon-flux / 'EPA' beam options and proton elastic photon fluxes; dedicated γγ/EPA codes (e.g. gamma-UPC, CepGen — the latter associated with L. Forthomme, a co-author credited on p.9) exist; none of these is known to implement a μ+ beam flux with the muon-mass Q²_min out of the box, which must be checked. (b) SMEFT dipole operators: public SMEFT UFOs (SMEFTsim, SMEFT@NLO, dim6top-like sets) contain the τ dipole operators in some flavour assumptions; whether the speaker used one of them is unknown. (c) aQGC: public dimension-8 'WWgg'/Eboli-basis UFO models (the 'Quartic'/'aQGC' FeynRules models used by CMS/ATLAS vector-boson-scattering analyses) implement O_M,j including O_M2; convention and normalisation must be matched to the slide's f_M2/Λ⁴ = 1 TeV⁻⁴ before any comparison. Hence 'partial': public components likely exist, but the speaker's actual implementation, versions, licences and URLs are unknown, and nothing has been downloaded or inspected (uploads/external code are untrusted input per CLAUDE.md §5)."
+
+lhmuc_recasting:
+  original_initial_state_transfers_directly: true
+  candidate_mu_p_channels:
+    - process: "μ+ p → μ+ τ+τ− p(*) via elastic (and proton-dissociative) γγ → τ+τ−; SM rate plus SMEFT τ dipole (a_τ, d_τ) deformation"
+      status: proposed_unverified
+      notes: "Primary benchmark of the deck (p.14-p.18). Already evaluated by the original study at the LHμC working points (58.5 pb at 3.7 TeV, 70.3 pb at 5.3 TeV for W0 = 10 GeV, p.15), so no initial-state recast is needed; what is missing is an independent reproduction (tools, not the LLM) and the detector-level analysis the deck itself says is still required (p.18)."
+    - process: "μ+ p → μ+ W+W− p(*) via γγ → W+W−; SM rate plus dimension-8 aQGC (benchmark f_M2/Λ⁴ = 1 TeV⁻⁴)"
+      status: proposed_unverified
+      notes: "Second benchmark of the deck (p.19-p.21). Cross section given only for option 1 (0.166 pb at 3.7 TeV, p.19); baseline (5.3 TeV) and option-2 values are not stated. Elastic and proton-dissociative contributions both mentioned (p.20). Decay channels fully leptonic / semileptonic / fully hadronic (p.20)."
+    - process: "μ+ p → μ+ ZZ p(*) via loop-induced γγ → ZZ (neutral quartic gauge couplings)"
+      status: proposed_unverified
+      notes: "p.13 and p.6 only; no numbers. Loop-induced in the SM, so a loop-capable γγ → ZZ amplitude (or an effective γγZZ vertex) is required."
+    - process: "μ+ p → μ+ t t̄ p(*) via γγ → t t̄"
+      status: proposed_unverified
+      notes: "p.22 figure only (σ(W_γγ > W0) curves for LHeC, LHμC 500 GeV, FCC-μH); no numerical value in the text layer; threshold 'W_γγ^thr ≃ 2m_t' (p.22)."
+    - process: "μ+ p → μ+ H p(*) via loop-induced γγ → H"
+      status: proposed_unverified
+      notes: "Mentioned on p.14 and p.23 only; no numbers."
+    - process: "μ+ p → μ+ H̃+ H̃− p(*) via γγ → charged higgsino pairs (illustrative BSM)"
+      status: proposed_unverified
+      notes: "p.22 figure only; higgsino mass/model not stated. Threshold 'W_γγ ≳ 2 m_H̃' (p.22). p.26 requires 'Missing-momentum performance for neutrinos and compressed BSM signatures.'"
+    - process: "μ+ p → μ+ ℓ+ℓ− p(*) via γγ → μ+μ−, e+e− (calibration of the photon fluxes)"
+      status: proposed_unverified
+      notes: "p.13 'Precision QED and lepton physics: γγ → μ+μ−, τ+τ−'; p.14 'ℓ+ℓ− calibration'. No numbers. Note the scattered beam μ+ and a γγ → μ+μ− pair give a three-muon final state; charge assignment of the beam muon must be tracked."
+    - process: "μ+ p → μ+ γγ p(*) via light-by-light scattering γγ → γγ"
+      status: proposed_unverified
+      notes: "p.13 'BSM opportunities: light-by-light scattering'. No numbers."
+  missing_for_implementation:
+    - "The underlying paper (Forthomme, Khanpour, Piotrzkowski, Yamazaki, 'High energy γγ interactions at the LHeC', in preparation) and the HELP4CERN White Paper (in preparation) from which the working points are taken (p.4): neither is available."
+    - "Exact EPA implementation: code/generator used, the F2(x,Q²) parametrisation for proton dissociation, the elastic Q_ℓ² and Q_p² upper cuts (present in the figure legends but not legible), the M_N range, and the lepton-side treatment of the muon mass in Q²_min (p.10)."
+    - "Operator conventions: the explicit O_S,j / O_M,j / O_T,j definitions and the normalisation behind f_M2/Λ⁴ = 1 TeV⁻⁴ (p.20-21); the mapping between (C_τB, C_τW, Λ) and δa_τ = 0.005 (p.16, p.18)."
+    - "The SM γγ → W+W− cross section at the baseline (5.3 TeV) and option-2 (7.5 TeV) working points, and any γγ → ZZ, t t̄, H, higgsino, ℓ+ℓ−, γγ cross-section numbers (figures only or absent)."
+    - "A detector-level analysis: object definitions, selection cuts, τ/W/Z/t reconstruction efficiencies, exclusivity/acoplanarity criteria, backgrounds and a statistical method — the deck explicitly states none exists yet (p.18)."
+    - "Detector-concept inputs required by the deck (p.26): 'Wide central tracking and lepton acceptance, including robust τ reconstruction'; 'Efficient W/Z/t reconstruction for heavy γγ final states'; 'Exclusivity and acoplanarity observables with sensitivity to low extra activity'; 'Missing-momentum performance for neutrinos and compressed BSM signatures'; 'Scattered-muon measurement to constrain the lepton-side photon kinematics'; 'Forward proton tagging where feasible, together with control of proton dissociation'. None of these is quantified; the LHμC detector concept (DIS2026 paper §4, and the μLHC nozzle concept) must be checked against them (parameter records DET_GG_*_WP, owned by the parameter agents)."
+    - "A public, inspected and checksummed model implementation (EPA + SMEFT dipole UFO + aQGC UFO) with licence recorded in docs/software_inventory.md; nothing has been downloaded."
+    - "Independent reproduction of the three τ+τ− and two W+W− elastic cross sections (p.15, p.19) with a documented tool run before any P-level above P0 is attached."
+  notes: "The original study is itself a μ+ p (LHμC) study at the HELP4CERN White Paper working points, so the initial state transfers directly and no charge/colour re-derivation is needed; the beam lepton is a μ+ (deck p.10 'leptons (e or μ+)'). The three working points map onto the scenario records LHMUC-WP-OPT1-500GEV, LHMUC-WP-BASELINE-1TEV and LHMUC-WP-OPT2-2TEV (parameters/machine/scenarios_wp.yaml, written by the parameter agents); the baseline coincides numerically with the DIS2026 example set (√s = 5.3 TeV, SRC_ARXIV_2610_35154 Table 1 p.4). The √s values quoted on p.4 are consistent with 2√(E_μ E_p) for E_p = 7 TeV (3.74, 5.29, 7.48 TeV — arithmetic check only, not a derived parameter record). The figure legends on p.15, p.19 and p.22 label the muon-beam curves 'μLHC (μ-p)' while the text and tables say 'LHμC'; this is a naming inconsistency inside the deck, not a numerical conflict. All candidate channels carry status proposed_unverified because no diagram-level check or generator run has been performed in this repository."
+
+extraction:
+  method: "LLM-assisted extraction from uploaded slides"
+  extracted_by: "Claude (Phase 0 audit)"
+  date: "2026-10-28"
+  reviewed_by: null
+  review_date: null
+
+notes: "Source: uploaded 26-slide deck SRC_WS1681458_KHANPOUR_GAMMAGAMMA (SHA-256 recorded in research/source_registry.yaml), category PRIMARY_LHMUC, read in full; slide images of p.4, p.15, p.19 and p.22 were inspected to confirm the tables. Slide 24 is blank apart from the footer. Numbers quoted here that are also parameter records (cross sections, yields, working points, a_τ limits, δa_τ, f_M2/Λ⁴, W0 = 10 GeV, 2m_W ≃ 160 GeV) are owned by the parameter files under parameters/physics_programme and parameters/machine with the _WP tag; this record does not create parameter records. Items NOT determinable from the deck: any projected LHμC limit on a_τ, d_τ or f_M2/Λ⁴; WW cross sections at 5.3 and 7.5 TeV; all ZZ / t t̄ / H / higgsino / ℓ+ℓ− / γγ cross sections; the elastic Q² cuts; the EPA code; backgrounds, selection, efficiencies; the higgsino model point; the unspecified 'LHC' configuration on p.21 and the 'FCC-μH' configuration on p.19/p.22 beyond its figure-legend label (E_μ = 500 GeV, E_p = 50 TeV as read from the small legend text — low-resolution figure read, confidence low; see parameter records MACHINE_FCCMUH_*_WP owned by the parameter agents). The two experimental papers cited on p.18 (arXiv:2406.03975 CMS, arXiv:2503.19836 ATLAS) were not fetched; nothing beyond the deck's own sentence is asserted about them."
