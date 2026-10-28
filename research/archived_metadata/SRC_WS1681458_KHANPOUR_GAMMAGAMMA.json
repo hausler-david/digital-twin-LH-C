@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_KHANPOUR_GAMMAGAMMA",
+  "local_file": "references/_local/Khanpour_Two-photon_physics_LHmuC.pdf",
+  "committed_copy": null,
+  "title": "Two-Photon Physics at the LHμC: High-energy γγ interactions in μp collisions",
+  "authors": "Hamzeh Khanpour (AGH Kraków)",
+  "venue": "Workshop on ultra-cold muons for the LHC, AGH Kraków, 24-26 Sept 2026, CERN Indico event 1681458, contribution 7263325",
+  "identifier": "slides, 26 pages",
+  "pages": 26,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "5775d14d-Hamzeh_Khanpour_Ultra-cold-muons-for-the-LHC.pdf",
+  "sha256": "2c59d750151ec27e9f213358af16268346ef331a380c30cf45beaba958c656d5",
+  "size_bytes": 4253147,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified",
+  "read_status": "read in full (all pages) during Phase 0 audit"
+}

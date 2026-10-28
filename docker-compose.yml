@@ -1,0 +1,12 @@
+# Phase 0 placeholder. Services are defined but intentionally not built yet; nothing here
+# claims that a backend or frontend exists. See docs/architecture.md and docs/roadmap.md.
+services:
+  validate:
+    image: python:3.13-slim
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: ["sh", "-c", "pip install -q uv && uv sync --frozen && uv run python -m lhmuc validate && uv run pytest -q"]
+  # api:        # Milestone 2 – FastAPI service exposing the parameter model and run records
+  # worker:     # Milestone 2+ – simulation job workers (isolated, resource-limited)
+  # frontend:   # Milestone 2 – Collider Explorer (three.js)

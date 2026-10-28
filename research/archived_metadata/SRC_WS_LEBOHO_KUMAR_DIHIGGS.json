@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS_LEBOHO_KUMAR_DIHIGGS",
+  "local_file": "references/_local/Leboho_Kumar_Anomalous_Higgs_couplings_mu+p.pdf",
+  "committed_copy": null,
+  "title": "Probing anomalous Higgs couplings at the future μ+p collider",
+  "authors": "T. Leboho, M. Kumar, E. Nkadimeng, P. Sharma, B. Mellado (Wits / IHEP CAS)",
+  "venue": "Presentation dated 24 September 2026, University of the Witwatersrand (file name 'Krakow_Updated_Presentation'; same date as the Kraków workshop, contribution 7263322 'Status of Di-Higgs at LHμC' by M. Kumar et al. — relation inferred, not verified)",
+  "identifier": "slides, 24 pages",
+  "pages": 24,
+  "licence": "not stated (slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "34a244ec-Krakow_Updated_Presentation.pdf",
+  "sha256": "0d2a10e5701593da507e2b61737590426db45ed79ef522c1e21c9f7a74bdf40f",
+  "size_bytes": 1404211,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified",
+  "read_status": "read in full (all pages) during Phase 0 audit"
+}

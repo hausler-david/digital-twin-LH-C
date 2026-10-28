@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/provenance.schema.json",
+  "title": "LHμC-VirtualLab provenance vocabulary and parameter record",
+  "description": "Shared definitions: provenance status, fidelity/validation labels, source categories, access modes, source reference, uncertainty, and the full parameter record used in parameters/**/*.yaml. null means 'unknown'; 0 is a physical value. Never use them interchangeably.",
+  "$defs": {
+    "provenance_status": {
+      "type": "string",
+      "enum": ["reported_lhmuc", "derived_lhmuc", "imported_related", "analogous", "analytical_estimate", "synthetic", "scan_variable", "unknown"],
+      "description": "reported_lhmuc: directly reported for LHμC by a PRIMARY_LHMUC source; derived_lhmuc: computed from reported LHμC values; imported_related: taken from a related proposal (μLHC, μTRISTAN, LHeC, HL-LHC); analogous: from an analogous system (IMCC, J-PARC); analytical_estimate: estimated by a documented formula; synthetic: assumed, must have an assumption record with a range; scan_variable: varied in a scan, no single value; unknown: no value, value must be null."
+    },
+    "geometry_fidelity": {"type": "string", "enum": ["G0", "G1", "G2", "G3", "G4", "G5"], "description": "G0 visual placeholder; G1 parameterised conceptual; G2 physics-simulation geometry; G3 preliminary engineering CAD; G4 validated engineering; G5 as-built."},
+    "validation_level": {"type": "string", "enum": ["P0", "P1", "P2", "P3", "P4", "P5"], "description": "P0 unverified; P1 dimensional/analytical checks; P2 published benchmark reproduced; P3 cross-checked with another code; P4 calibrated on prototype/beam data; P5 calibrated on LHμC operations."},
+    "source_category": {"type": "string", "enum": ["PRIMARY_LHMUC", "OFFICIAL_CERN", "PEER_REVIEWED", "CONFERENCE_PROCEEDING", "OFFICIAL_SOFTWARE_DOCUMENTATION", "RELATED_MACHINE", "ANALOGOUS_TECHNOLOGY", "SECONDARY_SOURCE", "UNVERIFIED"]},
+    "access_mode": {"type": "string", "enum": ["uploaded", "fetched", "snippet_only", "blocked", "pending_fetch"], "description": "uploaded: file supplied by the project owner and read in full; fetched: downloaded and read in full; snippet_only: only search-engine snippets seen; blocked: fetch attempted and refused by network policy; pending_fetch: identified but not yet attempted."},
+    "confidence": {"type": "string", "enum": ["high", "medium", "low", "none"]},
+    "review_state": {"type": "string", "enum": ["extracted", "reviewed", "implementation_pending", "simulation_ready", "validated", "superseded", "pending_fetch"]},
+    "applicability_category": {"type": "string", "enum": ["direct", "design_variant", "analogous", "screening_only", "superseded", "unresolved"]},
+    "fidelity_tier": {"type": "string", "enum": ["A_analytical", "B_fast_simulation", "C_surrogate", "D_high_fidelity", "E_independent_validation"]},
+    "quantity": {
+      "type": "object", "additionalProperties": false,
+      "properties": {"value": {"type": ["number", "null"]}, "unit": {"type": "string"}},
+      "required": ["value", "unit"]
+    },
+    "uncertainty": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "properties": {
+        "type": {"type": "string", "enum": ["gaussian_sigma", "interval", "relative_fraction", "order_of_magnitude", "not_stated"]},
+        "value": {"type": ["number", "null"]},
+        "lower": {"type": ["number", "null"]},
+        "upper": {"type": ["number", "null"]},
+        "unit": {"type": ["string", "null"]},
+        "note": {"type": "string"}
+      },
+      "required": ["type"]
+    },
+    "allowed_range": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "properties": {"min": {"type": ["number", "null"]}, "max": {"type": ["number", "null"]}, "unit": {"type": "string"}, "basis": {"type": "string"}},
+      "required": ["min", "max", "unit"]
+    },
+    "source_ref": {
+      "type": "object", "additionalProperties": false,
+      "description": "Where exactly a value was read. source_id must exist in research/source_registry.yaml.",
+      "properties": {
+        "source_id": {"type": ["string", "null"], "pattern": "^SRC_[A-Z0-9_]+$"},
+        "title": {"type": ["string", "null"]},
+        "author_or_org": {"type": ["string", "null"]},
+        "url": {"type": ["string", "null"]},
+        "date": {"type": ["string", "null"]},
+        "version": {"type": ["string", "null"]},
+        "page": {"type": ["integer", "string", "null"]},
+        "section": {"type": ["string", "null"]},
+        "table_figure_or_equation": {"type": ["string", "null"]},
+        "quotation": {"type": ["string", "null"], "description": "Verbatim text or an exact table-cell transcription supporting the value."}
+      },
+      "required": ["source_id", "title", "page", "quotation"]
+    },
+    "provenance": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "status": {"$ref": "#/$defs/provenance_status"},
+        "extraction_method": {"type": "string", "enum": ["manual_table_read", "manual_text_read", "manual_figure_read", "computed_from_registry", "web_snippet_quote", "assumption_record", "not_applicable"]},
+        "source": {"anyOf": [{"$ref": "#/$defs/source_ref"}, {"type": "null"}]},
+        "derivation": {"type": ["string", "null"], "description": "Formula or procedure for derived/analytical values, naming input parameter_ids."},
+        "applicability": {
+          "type": "object", "additionalProperties": false,
+          "properties": {"category": {"$ref": "#/$defs/applicability_category"}, "scenario": {"type": ["string", "null"]}, "explanation": {"type": "string"}},
+          "required": ["category", "explanation"]
+        },
+        "confidence": {"$ref": "#/$defs/confidence"},
+        "assumption_id": {"type": ["string", "null"], "description": "Required when status is synthetic; must exist in parameters/assumptions/."}
+      },
+      "required": ["status", "extraction_method", "source", "applicability", "confidence"]
+    },
+    "validation": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "level": {"$ref": "#/$defs/validation_level"},
+        "methods": {"type": "array", "items": {"type": "string"}},
+        "check_ids": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": "string"}
+      },
+      "required": ["level", "methods"]
+    },
+    "parameter": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "parameter_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)+$"},
+        "name": {"type": "string"},
+        "symbol": {"type": ["string", "null"]},
+        "subsystem": {"type": "string", "enum": ["machine", "source", "acceleration", "interaction_region", "detector", "materials", "physics_programme", "infrastructure", "proton_beam", "ion_beam"]},
+        "scenario": {"type": ["string", "null"], "description": "Scenario id from parameters/machine/scenarios.yaml when the value is scenario-specific."},
+        "value": {"type": ["number", "string", "boolean", "null"], "description": "null = unknown. Strings only for categorical parameters (e.g. material name)."},
+        "unit": {"type": "string", "description": "pint-parseable unit string; 'dimensionless' for pure numbers."},
+        "uncertainty": {"$ref": "#/$defs/uncertainty"},
+        "allowed_range": {"$ref": "#/$defs/allowed_range"},
+        "provenance": {"$ref": "#/$defs/provenance"},
+        "validation": {"$ref": "#/$defs/validation"},
+        "dependencies": {"type": "array", "items": {"type": "string"}},
+        "date_added": {"type": "string", "format": "date"},
+        "responsible_module": {"type": "string"},
+        "notes": {"type": ["string", "null"]}
+      },
+      "required": ["parameter_id", "name", "symbol", "subsystem", "value", "unit", "uncertainty", "allowed_range", "provenance", "validation", "dependencies", "date_added", "responsible_module"],
+      "allOf": [
+        {"if": {"properties": {"provenance": {"properties": {"status": {"const": "unknown"}}}}}, "then": {"properties": {"value": {"type": "null"}}}},
+        {"if": {"properties": {"provenance": {"properties": {"status": {"const": "synthetic"}}}}}, "then": {"properties": {"provenance": {"required": ["assumption_id"], "properties": {"assumption_id": {"type": "string"}}}}}},
+        {"if": {"properties": {"provenance": {"properties": {"status": {"enum": ["reported_lhmuc", "imported_related", "analogous"]}}}}}, "then": {"properties": {"provenance": {"properties": {"source": {"$ref": "#/$defs/source_ref"}}}}}}
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}}
+  },
+  "required": ["parameters"]
+}

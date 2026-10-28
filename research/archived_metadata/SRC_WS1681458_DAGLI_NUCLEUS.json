@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_DAGLI_NUCLEUS",
+  "local_file": "references/_local/LHuC_Nucleus_Options.pdf",
+  "committed_copy": null,
+  "title": "LHμC: Nucleus Options (HL-LHC based antimuon-nucleus collider)",
+  "authors": "A. C. Canbay, B. Dagli (presenter), Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann",
+  "venue": "Workshop on ultra-cold muons for the LHC, AGH Kraków, 24-26 Sept 2026, CERN Indico event 1681458, contribution 7263320",
+  "identifier": "slides, 16 pages",
+  "pages": 16,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "51af7527-LHuC_Nucleus_Options.pdf",
+  "sha256": "53415e08b5bdfd1b699d4e78a9c155e15b6eb50e704d9b0256391e39f55e9502",
+  "size_bytes": 941460,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified",
+  "read_status": "read in full (all pages) during Phase 0 audit"
+}

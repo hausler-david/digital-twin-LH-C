@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/material.schema.json",
+  "title": "Material record (parameters/materials/*.yaml)",
+  "type": "object",
+  "properties": {
+    "materials": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "material_id": {"type": "string", "pattern": "^MAT_[A-Z0-9_]+$"},
+          "name": {"type": "string"},
+          "composition": {"type": "array", "items": {"type": "object", "additionalProperties": false, "properties": {"element_or_compound": {"type": "string"}, "mass_fraction": {"type": "number"}}, "required": ["element_or_compound", "mass_fraction"]}},
+          "density": {"$ref": "provenance.schema.json#/$defs/quantity"},
+          "geant4_material_name": {"type": ["string", "null"]},
+          "properties": {"type": "object", "additionalProperties": {"$ref": "provenance.schema.json#/$defs/quantity"}},
+          "provenance": {"$ref": "provenance.schema.json#/$defs/provenance"},
+          "used_by_components": {"type": "array", "items": {"type": "string"}},
+          "notes": {"type": ["string", "null"]}
+        },
+        "required": ["material_id", "name", "composition", "density", "geant4_material_name", "provenance"]
+      }
+    }
+  },
+  "required": ["materials"]
+}

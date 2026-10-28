@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/experiment.schema.json",
+  "title": "Experiment requirement record (experiment_requirements.yaml)",
+  "description": "Translation of a proposal into explicit experimental requirements. Numerical claims proposed by an LLM carry verification_status 'proposed' until verified by simulation.",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "experiment_id": {"type": "string", "pattern": "^EXP_[A-Z0-9_]+$"},
+    "proposal_id": {"type": "string"},
+    "target_parameter_space": {"type": "string"},
+    "expected_final_states": {"type": "array", "items": {"type": "string"}},
+    "signature_type": {"type": "string", "enum": ["prompt", "displaced", "both", "unknown"]},
+    "requirements": {
+      "type": "array",
+      "items": {"type": "object", "additionalProperties": false,
+        "properties": {"name": {"type": "string"}, "quantity": {"anyOf": [{"$ref": "provenance.schema.json#/$defs/quantity"}, {"type": "null"}]}, "direction": {"type": "string", "enum": ["min", "max", "target", "qualitative"]}, "rationale": {"type": "string"}, "verification_status": {"type": "string", "enum": ["proposed", "verified_by_simulation", "verified_by_analytics", "rejected"]}, "linked_parameter_ids": {"type": "array", "items": {"type": "string"}}},
+        "required": ["name", "direction", "rationale", "verification_status"]}
+    },
+    "important_machine_parameters": {"type": "array", "items": {"type": "string"}},
+    "important_detector_parameters": {"type": "array", "items": {"type": "string"}},
+    "critical_systematics": {"type": "array", "items": {"type": "string"}},
+    "likely_engineering_conflicts": {"type": "array", "items": {"type": "string"}},
+    "compatible_experiments": {"type": "array", "items": {"type": "string"}},
+    "incompatible_experiments": {"type": "array", "items": {"type": "string"}},
+    "status": {"$ref": "provenance.schema.json#/$defs/review_state"},
+    "date_added": {"type": "string", "format": "date"}
+  },
+  "required": ["experiment_id", "proposal_id", "target_parameter_space", "expected_final_states", "signature_type", "requirements", "status", "date_added"]
+}

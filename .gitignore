@@ -218,3 +218,13 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ---- LHμC-VirtualLab ----
+references/_local/
+.env
+results/*
+!results/.gitkeep
+!results/README.md
+.venv/
+uv.lock.bak
+*.step.bak

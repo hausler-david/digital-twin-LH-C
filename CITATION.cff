@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use LHμC-VirtualLab, please cite it as below and cite the primary LHμC sources it is built on."
+title: "LHμC-VirtualLab: an engineering-aware digital twin, theory-recasting and collider co-design platform for the proposed LHμC muon-proton collider"
+type: software
+version: 0.0.1-phase0
+date-released: "2026-10-28"
+license: Apache-2.0
+repository-code: "https://github.com/hausler-david/digital-twin-LH-C"
+authors:
+  - family-names: Hausler
+    given-names: David
+    affiliation: "Independent Researcher, Czech Republic"
+keywords:
+  - LHμC
+  - muon-proton collider
+  - digital twin
+  - accelerator physics
+  - provenance
+references:
+  - type: conference-paper
+    title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN"
+    authors:
+      - family-names: Piotrzkowski
+        given-names: Krzysztof
+    collection-title: "Proceedings of DIS2026 (PoS)"
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2610.35154"
+  - type: article
+    title: "μLHC: Antimuon Ring and HL-LHC based μ+p Collider"
+    authors:
+      - family-names: Akturk
+        given-names: D.
+      - name: "et al."
+    journal: "Progress of Theoretical and Experimental Physics"
+    year: 2026
+    volume: "2026"
+    issue: "3"
+    start: "033C04"
+    doi: "10.1093/ptep/ptag031"
+    identifiers:
+      - type: other
+        value: "arXiv:2506.15445"

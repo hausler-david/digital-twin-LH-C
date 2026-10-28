@@ -1,0 +1,19 @@
+Data, documentation, parameter records, registries and reports in this repository
+(everything under docs/, research/, parameters/, registries/, schemas/ and theory/benchmarks/)
+are licensed under the Creative Commons Attribution 4.0 International licence (CC BY 4.0),
+https://creativecommons.org/licenses/by/4.0/legalcode
+
+Copyright (c) 2026 David Hausler.
+
+Attribution: "LHμC-VirtualLab parameter and evidence database, David Hausler,
+https://github.com/hausler-david/digital-twin-LH-C".
+
+Exceptions:
+- Source code (lhmuc/, tools/, tests/, cad/, lattice/, physics/, detector/, theory/ (code),
+  event_generation/, analysis/, optimization/, uncertainty/, commissioning/, backend/,
+  frontend/) is licensed under Apache-2.0, see LICENSE.
+- Third-party documents archived under references/ keep their own licences, recorded in
+  research/archived_metadata/*.json. The PoS DIS2026 paper arXiv:2610.35154 is distributed
+  under CC BY-NC-ND 4.0 by its authors and is included unmodified.
+- Values quoted from third-party publications remain the intellectual property of their
+  authors; this repository records them with citation for research purposes.

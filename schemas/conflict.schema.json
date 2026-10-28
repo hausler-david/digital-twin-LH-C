@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/conflict.schema.json",
+  "title": "Source conflict registry (research/source_conflicts.yaml)",
+  "type": "object",
+  "properties": {
+    "conflicts": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "conflict_id": {"type": "string", "pattern": "^CONF_[A-Z0-9_]+$"},
+          "affected_parameters": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "competing_values": {
+            "type": "array", "minItems": 2,
+            "items": {"type": "object", "additionalProperties": false,
+              "properties": {"value": {"type": ["number", "string", "null"]}, "unit": {"type": "string"}, "source_id": {"type": "string"}, "scenario": {"type": ["string", "null"]}, "context": {"type": "string"}},
+              "required": ["value", "unit", "source_id", "context"]}
+          },
+          "possible_cause": {"type": "string"},
+          "selected_treatment": {"type": "string"},
+          "effect_on_simulations": {"type": "string"},
+          "required_future_evidence": {"type": "string"},
+          "status": {"type": "string", "enum": ["open", "resolved_as_scenarios", "resolved_superseded", "propagated_as_uncertainty"]},
+          "date_added": {"type": "string", "format": "date"}
+        },
+        "required": ["conflict_id", "affected_parameters", "competing_values", "possible_cause", "selected_treatment", "effect_on_simulations", "required_future_evidence", "status", "date_added"]
+      }
+    }
+  },
+  "required": ["conflicts"]
+}

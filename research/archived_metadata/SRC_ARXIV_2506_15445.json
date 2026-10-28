@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2506_15445",
+  "local_file": "references/_local/arXiv-2506.15445v2.pdf",
+  "committed_copy": null,
+  "title": "μLHC: Antimuon Ring and HL-LHC based μ+p Collider",
+  "authors": "D. Akturk, A. C. Canbay, H. Dagistanli, B. Dagli, U. Kaya, B. Ketenoglu, A. Kilic, F. Kocak, A. Ozturk, S. Sultansoy, I. Tapan, F. Zimmermann",
+  "venue": "Prog. Theor. Exp. Phys. 2026 033C04, doi:10.1093/ptep/ptag031 (plus Erratum)",
+  "identifier": "arXiv:2506.15445v2",
+  "pages": 24,
+  "licence": "not stated in the uploaded PDF; arXiv licence unverified (arxiv.org blocked at audit time)",
+  "redistribution": "not committed until licence confirmed",
+  "category": "RELATED_MACHINE",
+  "upload_name": "db465500-2506.15445v2.pdf",
+  "sha256": "f6f8f02dd05e2bdf3ddde2a48ba00f8a899e197be344e61e6a55b0cb27059966",
+  "size_bytes": 1744061,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified",
+  "read_status": "read in full (all pages) during Phase 0 audit"
+}

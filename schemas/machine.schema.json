@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/machine.schema.json",
+  "title": "Machine scenario (parameters/machine/scenarios.yaml)",
+  "description": "A named, versioned LHμC (or related-machine) configuration. It does not hold numbers itself: every slot references a parameter_id in parameters/**, so the single source of truth is the parameter record.",
+  "type": "object",
+  "properties": {
+    "scenarios": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "scenario_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"},
+          "label": {"type": "string"},
+          "description": {"type": "string"},
+          "machine": {"type": "string", "enum": ["LHMUC", "MULHC", "MUTRISTAN", "LHEC", "HL_LHC", "OTHER"]},
+          "design_version": {"type": "string", "description": "Which published design iteration this represents (e.g. DIS2026 proceedings Table 1, PTEP 2026 post-erratum)."},
+          "status": {"type": "string", "enum": ["reported", "partially_reported", "derived", "superseded", "synthetic_scan"]},
+          "primary_source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "parameters": {
+            "type": "object",
+            "description": "role -> parameter_id. Roles are free-form but should use the canonical names listed in docs/architecture.md (muon_beam_energy, proton_beam_energy, sqrt_s, peak_luminosity, collision_rate, repetition_rate, muon_bunch_population, proton_bunch_population, muon_bunches, sigma_x_ip, sigma_y_ip, beta_x_star_muon, beta_y_star_muon, ...).",
+            "additionalProperties": {"type": "string"}
+          },
+          "unknown_roles": {"type": "array", "items": {"type": "string"}, "description": "Roles for which no value is available in this scenario."},
+          "geometry_fidelity": {"$ref": "provenance.schema.json#/$defs/geometry_fidelity"},
+          "validation_level": {"$ref": "provenance.schema.json#/$defs/validation_level"},
+          "notes": {"type": ["string", "null"]}
+        },
+        "required": ["scenario_id", "label", "description", "machine", "design_version", "status", "primary_source_ids", "parameters", "unknown_roles", "geometry_fidelity", "validation_level"]
+      }
+    }
+  },
+  "required": ["scenarios"]
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/component.schema.json",
+  "title": "Geometry / engineering component record",
+  "description": "One physical component of the collider (magnet, beam pipe, nozzle, detector layer, tunnel section). Dimensions reference parameter_ids; fidelity and validation labels are independent.",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "component_id": {"type": "string", "pattern": "^CMP_[A-Z0-9_]+$"},
+    "name": {"type": "string"},
+    "subsystem": {"type": "string"},
+    "component_type": {"type": "string", "enum": ["beam_pipe", "dipole", "quadrupole", "separator_dipole", "final_focus_quadrupole", "solenoid", "rf_cavity", "cryostat", "target", "transport_line", "linac", "ffa_arc", "ring_arc", "nozzle", "shielding", "vertex_detector", "tracker", "ecal", "hcal", "muon_system", "forward_detector", "service_volume", "tunnel", "placeholder"]},
+    "geometry_version": {"type": "string"},
+    "geometry_fidelity": {"$ref": "provenance.schema.json#/$defs/geometry_fidelity"},
+    "physics_validation": {"$ref": "provenance.schema.json#/$defs/validation_level"},
+    "dimensions": {"type": "object", "additionalProperties": {"type": "object", "additionalProperties": false, "properties": {"parameter_id": {"type": "string"}, "value": {"type": ["number", "null"]}, "unit": {"type": "string"}}, "required": ["parameter_id"]}},
+    "material_id": {"type": ["string", "null"]},
+    "placement": {"type": ["object", "null"], "additionalProperties": false, "properties": {"frame": {"type": "string"}, "position_m": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3}, "rotation_deg": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3}, "placement_provenance": {"$ref": "provenance.schema.json#/$defs/provenance_status"}}},
+    "parent_component_id": {"type": ["string", "null"]},
+    "source_ids": {"type": "array", "items": {"type": "string"}},
+    "assumption_ids": {"type": "array", "items": {"type": "string"}},
+    "linked_simulation_runs": {"type": "array", "items": {"type": "string"}},
+    "affected_experiments": {"type": "array", "items": {"type": "string"}},
+    "manufacturing_readiness": {"type": "string", "enum": ["none_conceptual_only", "requires_prototype", "requires_material_test", "demonstrated_analogous", "demonstrated"], "default": "none_conceptual_only"},
+    "notes": {"type": ["string", "null"]}
+  },
+  "required": ["component_id", "name", "subsystem", "component_type", "geometry_version", "geometry_fidelity", "physics_validation", "dimensions", "material_id", "source_ids", "assumption_ids", "manufacturing_readiness"]
+}

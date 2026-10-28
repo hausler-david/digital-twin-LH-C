@@ -1,0 +1,37 @@
+[project]
+name = "lhmuc-virtuallab"
+version = "0.0.1"
+description = "LHμC-VirtualLab: evidence-traceable digital twin, theory-recasting and co-design platform for the proposed LHμC muon-proton collider (Phase 0: evidence audit)"
+readme = "README.md"
+license = "Apache-2.0"
+requires-python = ">=3.11"
+authors = [{ name = "David Hausler" }]
+dependencies = [
+  "pyyaml>=6.0",
+  "jsonschema>=4.20",
+  "referencing>=0.30",
+  "pint>=0.24",
+  "numpy>=1.26",
+  "scipy>=1.12",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.5"]
+
+[project.scripts]
+lhmuc = "lhmuc.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["lhmuc"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

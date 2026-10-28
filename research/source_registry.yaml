@@ -1,0 +1,110 @@
+# Source registry — single list of every source consulted. Schema: schemas/source.schema.json.
+# access: uploaded | fetched | snippet_only | blocked | pending_fetch. See research/source_quality_policy.md.
+sources:
+  - source_id: SRC_ARXIV_2610_35154
+    title: "LHμC: A high energy, high luminosity muon-hadron collider at CERN"
+    authors_or_org: "K. Piotrzkowski on behalf of the HELP4CERN Study Group (AGH University of Kraków)"
+    source_type: conference_proceeding
+    category: PRIMARY_LHMUC
+    publication_date: "2026-10-26"
+    version: "arXiv v1; PoS DIS2026 proceedings contribution"
+    url: "https://arxiv.org/abs/2610.35154"
+    doi: null
+    arxiv_id: "2610.35154"
+    access_date: "2026-10-28"
+    access: uploaded
+    relevance: "Primary conceptual baseline of LHμC: beam energies, example parameter set (Table 1), layout (Fig. 2), source/booster/main-ring concept, IR and detector considerations, reference list to the Kraków workshop contributions."
+    parameters_extracted: []
+    unresolved_questions:
+      - "Full author list is the HELP4CERN study group (given on p.1); the arXiv record could not be fetched (network policy) so licence metadata on arXiv is unverified; the PDF itself states CC BY-NC-ND 4.0."
+      - "Table 1 is labelled 'Example of the LHμC parameters'; beta*, bunch length, emittance and crossing angle are not given."
+    licence: "CC BY-NC-ND 4.0 (stated in the PDF footer, page 1)"
+    archived_file: "references/primary/arXiv-2610.35154v1_Piotrzkowski_LHmuC_DIS2026.pdf"
+    sha256: "a7da5e9a9b35d626fbacd9d2cf1bd5f73e2d9bab71264369fdc7a72cb715198e"
+    discovered_by_queries: ["user upload"]
+    notes: "Read in full (7 pages). Per-page text extracted with pdftotext for quotation checks."
+  - source_id: SRC_ARXIV_2506_15445
+    title: "μLHC: Antimuon Ring and HL-LHC based μ+p Collider"
+    authors_or_org: "D. Akturk, A. C. Canbay, H. Dagistanli, B. Dagli, U. Kaya, B. Ketenoglu, A. Kilic, F. Kocak, A. Ozturk, S. Sultansoy, I. Tapan, F. Zimmermann"
+    source_type: journal_article
+    category: RELATED_MACHINE
+    publication_date: "2026"
+    version: "arXiv v2 (uploaded); PTEP 2026 033C04 plus Erratum (luminosity values increased ~x2 / ~x4 per the paper's acknowledgements; erratum text itself not obtained)"
+    url: "https://arxiv.org/abs/2506.15445"
+    doi: "10.1093/ptep/ptag031"
+    arxiv_id: "2506.15445"
+    access_date: "2026-10-28"
+    access: uploaded
+    relevance: "Direct precursor concept (same ultra-cold μ+ source, 1 TeV μ+ on 7 TeV LHC protons, 3 km main ring); the only document giving beta*, emittance, bunch length, bunch numbers and an AloHEP luminosity for a μ+p collider at CERN; detector sketch with tungsten nozzle; booster survival calculations."
+    parameters_extracted: []
+    unresolved_questions:
+      - "Whether the uploaded v2 already contains all erratum corrections (the acknowledgements mention the corrected survival rates; the Nucleus Options slides call 7.2e33 / 8.8e33 'values after the erratum')."
+      - "Licence of the arXiv version not verified (host blocked)."
+    licence: null
+    archived_file: "references/_local/arXiv-2506.15445v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2506_15445.json)"
+    sha256: "f6f8f02dd05e2bdf3ddde2a48ba00f8a899e197be344e61e6a55b0cb27059966"
+    discovered_by_queries: ["user upload"]
+    notes: "Read in full (24 pages)."
+  - source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    title: "LHμC: Nucleus Options — HL-LHC based antimuon–nucleus collider"
+    authors_or_org: "A. C. Canbay, B. Dagli (presenter), Y. Karaca, U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann"
+    source_type: workshop_talk
+    category: PRIMARY_LHMUC
+    publication_date: "2026-09"
+    version: "slides, 16 pages; CERN Indico event 1681458 contribution 7263320 (per ref. [9] of arXiv:2610.35154)"
+    url: "https://indico.cern.ch/event/1681458/contributions/7263320/"
+    doi: null
+    arxiv_id: null
+    access_date: "2026-10-28"
+    access: uploaded
+    relevance: "Workshop material of the HELP4CERN study: restates the μLHC-based LHμC μ+ beam table (post-erratum), gives LHC ion beam parameters (Pb, Xe, O, Ne) and AloHEP μA luminosities and tune shifts; documents the 'optics relaxed to match' assumption."
+    parameters_extracted: []
+    unresolved_questions:
+      - "Unrefereed slides; the 'draft' they cite (Table 1 of the draft) is not available."
+    licence: null
+    archived_file: "references/_local/LHuC_Nucleus_Options.pdf (git-ignored)"
+    sha256: "53415e08b5bdfd1b699d4e78a9c155e15b6eb50e704d9b0256391e39f55e9502"
+    discovered_by_queries: ["user upload"]
+    notes: "Read in full (16 pages)."
+  - source_id: SRC_WS1681458_KHANPOUR_GAMMAGAMMA
+    title: "Two-Photon Physics at the LHμC: High-energy γγ interactions in μp collisions"
+    authors_or_org: "Hamzeh Khanpour (AGH University of Kraków)"
+    source_type: workshop_talk
+    category: PRIMARY_LHMUC
+    publication_date: "2026-09-24"
+    version: "slides, 26 pages; CERN Indico event 1681458 contribution 7263325 (per ref. [12] of arXiv:2610.35154)"
+    url: "https://indico.cern.ch/event/1681458/contributions/7263325/"
+    doi: null
+    arxiv_id: null
+    access_date: "2026-10-28"
+    access: uploaded
+    relevance: "States the HELP4CERN White Paper benchmark working points (500 GeV / 1 TeV / 2 TeV muon beams with their sqrt(s) and integrated luminosities), EPA formalism, γγ benchmark cross sections and detector requirements for two-photon physics."
+    parameters_extracted: []
+    unresolved_questions:
+      - "The working points are attributed to the 'HELP4CERN White Paper (in preparation)', which is not public."
+    licence: null
+    archived_file: "references/_local/Khanpour_Two-photon_physics_LHmuC.pdf (git-ignored)"
+    sha256: "2c59d750151ec27e9f213358af16268346ef331a380c30cf45beaba958c656d5"
+    discovered_by_queries: ["user upload"]
+    notes: "Read in full (26 pages)."
+  - source_id: SRC_WS_LEBOHO_KUMAR_DIHIGGS
+    title: "Probing anomalous Higgs couplings at the future μ+p collider"
+    authors_or_org: "T. Leboho, M. Kumar, E. Nkadimeng, P. Sharma (Wits), B. Mellado (IHEP CAS / Wits)"
+    source_type: workshop_talk
+    category: PRIMARY_LHMUC
+    publication_date: "2026-09-24"
+    version: "slides, 24 pages, file 'Krakow_Updated_Presentation'; likely the material of Indico contribution 7263322 'Status of Di-Higgs at LHμC' (M. Kumar et al., ref. [15] of arXiv:2610.35154) — relation inferred, not verified"
+    url: "https://indico.cern.ch/event/1681458/contributions/7263322/"
+    doi: null
+    arxiv_id: null
+    access_date: "2026-10-28"
+    access: uploaded
+    relevance: "Complete Fidelity-B phenomenology benchmark for LHμC: process μ+p -> hhjν̄, generator set-up (MG5_aMC v3.6.7, HELv2 'effdihiggs-v2' UFO, CTEQ6L1), cuts, cut-flow, b-tagging working points, expected 95% CL limits on g_hhh, g_hWW, g_hhWW."
+    parameters_extracted: []
+    unresolved_questions:
+      - "The UFO model 'effdihiggs-v2' is not public; reproduction requires obtaining it from the authors."
+    licence: null
+    archived_file: "references/_local/Leboho_Kumar_Anomalous_Higgs_couplings_mu+p.pdf (git-ignored)"
+    sha256: "0d2a10e5701593da507e2b61737590426db45ed79ef522c1e21c9f7a74bdf40f"
+    discovered_by_queries: ["user upload"]
+    notes: "Read in full (24 pages)."

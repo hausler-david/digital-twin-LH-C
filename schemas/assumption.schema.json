@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/assumption.schema.json",
+  "title": "Synthetic / analogous assumption record (parameters/assumptions/*.yaml)",
+  "type": "object",
+  "properties": {
+    "assumptions": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "assumption_id": {"type": "string", "pattern": "^ASM_[A-Z0-9_]+$"},
+          "parameter_id": {"type": "string"},
+          "status": {"type": "string", "enum": ["synthetic_assumption", "analogous_value", "proposed_not_adopted"]},
+          "reason_required": {"type": "string"},
+          "search_summary": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "sources_inspected": {"type": "array", "items": {"type": "string"}},
+          "reason_authoritative_value_missing": {"type": "string"},
+          "synthetic_model": {
+            "type": "object", "additionalProperties": false,
+            "properties": {
+              "distribution": {"type": "string", "enum": ["uniform", "log_uniform", "triangular", "gaussian", "discrete_set", "range_only"]},
+              "minimum": {"type": ["number", "null"]},
+              "maximum": {"type": ["number", "null"]},
+              "mode": {"type": ["number", "null"]},
+              "mean": {"type": ["number", "null"]},
+              "sigma": {"type": ["number", "null"]},
+              "values": {"type": "array", "items": {"type": ["number", "string"]}},
+              "unit": {"type": "string"}
+            },
+            "required": ["distribution", "unit"]
+          },
+          "physical_basis": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "analogous_systems": {"type": "array", "items": {"type": "string"}},
+          "applicability": {"type": "string"},
+          "affected_outputs": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+          "replacement_evidence": {"type": "string"},
+          "sensitivity_analysis": {"type": "string", "enum": ["not_started", "planned", "done"]},
+          "date_added": {"type": "string", "format": "date"},
+          "notes": {"type": ["string", "null"]}
+        },
+        "required": ["assumption_id", "parameter_id", "status", "reason_required", "search_summary", "reason_authoritative_value_missing", "synthetic_model", "physical_basis", "applicability", "affected_outputs", "replacement_evidence", "sensitivity_analysis", "date_added"]
+      }
+    }
+  },
+  "required": ["assumptions"]
+}

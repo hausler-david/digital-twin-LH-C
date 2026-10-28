@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2610_35154",
+  "local_file": "references/_local/arXiv-2610.35154v1.pdf",
+  "committed_copy": "references/primary/arXiv-2610.35154v1_Piotrzkowski_LHmuC_DIS2026.pdf",
+  "title": "LHμC: A high energy, high luminosity muon-hadron collider at CERN",
+  "authors": "K. Piotrzkowski on behalf of the HELP4CERN Study Group",
+  "venue": "Proceedings of Science, 33rd International Workshop on Deep Inelastic Scattering and Related Subjects (DIS2026), Bologna, 4-8 May 2026",
+  "identifier": "arXiv:2610.35154v1 [hep-ex], 26 Oct 2026",
+  "pages": 7,
+  "licence": "CC BY-NC-ND 4.0 (stated on page 1)",
+  "redistribution": "permitted unmodified, non-commercial, with attribution -> committed copy",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "1404df79-2610.35154v1.pdf",
+  "sha256": "a7da5e9a9b35d626fbacd9d2cf1bd5f73e2d9bab71264369fdc7a72cb715198e",
+  "size_bytes": 412809,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified",
+  "read_status": "read in full (all pages) during Phase 0 audit"
+}

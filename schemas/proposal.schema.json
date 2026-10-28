@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/proposal.schema.json",
+  "title": "Theory proposal record (theory/benchmarks/*/proposal.yaml)",
+  "description": "Human-reviewable summary of an imported theoretical proposal. LLM-extracted content stays in review_state 'extracted' until a human marks it 'reviewed'.",
+  "type": "object", "additionalProperties": false,
+  "properties": {
+    "proposal_id": {"type": "string", "pattern": "^PROP_[A-Z0-9_]+$"},
+    "title": {"type": "string"},
+    "arxiv_id": {"type": ["string", "null"]},
+    "doi": {"type": ["string", "null"]},
+    "authors": {"type": ["string", "null"]},
+    "source_id": {"type": "string"},
+    "access": {"$ref": "provenance.schema.json#/$defs/access_mode"},
+    "review_state": {"$ref": "provenance.schema.json#/$defs/review_state"},
+    "model": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "name": {"type": ["string", "null"]},
+        "framework": {"type": ["string", "null"], "description": "e.g. Type-I seesaw, 2HDM Type-II + VLQ, SMEFT, HEL effective Lagrangian"},
+        "lagrangian_reference": {"type": ["string", "null"]},
+        "new_particles": {"type": "array", "items": {"type": "object", "additionalProperties": false, "properties": {"name": {"type": "string"}, "spin": {"type": ["string", "null"]}, "charge": {"type": ["number", "null"]}, "colour": {"type": ["string", "null"]}, "mass": {"$ref": "provenance.schema.json#/$defs/quantity"}, "width": {"anyOf": [{"$ref": "provenance.schema.json#/$defs/quantity"}, {"type": "null"}]}, "notes": {"type": ["string", "null"]}}, "required": ["name"]}},
+        "couplings_and_parameters": {"type": "array", "items": {"type": "object", "additionalProperties": false, "properties": {"name": {"type": "string"}, "symbol": {"type": ["string", "null"]}, "value_or_range": {"type": ["string", "number", "null"]}, "unit": {"type": ["string", "null"]}, "provenance_quote": {"type": ["string", "null"]}}, "required": ["name"]}},
+        "decay_channels": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "original_study": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "collider": {"type": ["string", "null"]},
+        "beam_species": {"type": "array", "items": {"type": "string"}},
+        "sqrt_s": {"anyOf": [{"$ref": "provenance.schema.json#/$defs/quantity"}, {"type": "null"}]},
+        "integrated_luminosity": {"anyOf": [{"$ref": "provenance.schema.json#/$defs/quantity"}, {"type": "null"}]},
+        "processes": {"type": "array", "items": {"type": "string"}},
+        "benchmark_points": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+        "observables": {"type": "array", "items": {"type": "string"}},
+        "event_selection": {"type": "array", "items": {"type": "string"}},
+        "backgrounds": {"type": "array", "items": {"type": "string"}},
+        "statistical_method": {"type": ["string", "null"]},
+        "reported_results": {"type": "array", "items": {"type": "string"}},
+        "generator_setup": {"type": ["object", "null"], "additionalProperties": true}
+      }
+    },
+    "model_implementation": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "available": {"type": "string", "enum": ["yes_public", "yes_private", "partial", "no", "unknown"]},
+        "type": {"type": ["string", "null"], "description": "UFO, FeynRules, SARAH, MadGraph process cards"},
+        "url": {"type": ["string", "null"]},
+        "licence": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      },
+      "required": ["available"]
+    },
+    "lhmuc_recasting": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "original_initial_state_transfers_directly": {"type": "boolean", "description": "Always false for μ+μ- or pp originals; μ+p channels must be derived."},
+        "candidate_mu_p_channels": {"type": "array", "items": {"type": "object", "additionalProperties": false, "properties": {"process": {"type": "string"}, "status": {"type": "string", "enum": ["proposed_unverified", "charge_colour_checked", "diagram_verified", "cross_section_computed", "rejected"]}, "notes": {"type": ["string", "null"]}}, "required": ["process", "status"]}},
+        "missing_for_implementation": {"type": "array", "items": {"type": "string"}},
+        "notes": {"type": ["string", "null"]}
+      },
+      "required": ["original_initial_state_transfers_directly", "candidate_mu_p_channels", "missing_for_implementation"]
+    },
+    "extraction": {"type": "object", "additionalProperties": false, "properties": {"method": {"type": "string"}, "extracted_by": {"type": "string"}, "date": {"type": "string", "format": "date"}, "reviewed_by": {"type": ["string", "null"]}, "review_date": {"type": ["string", "null"]}}, "required": ["method", "extracted_by", "date"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "required": ["proposal_id", "title", "arxiv_id", "source_id", "access", "review_state", "model", "original_study", "model_implementation", "lhmuc_recasting", "extraction"]
+}

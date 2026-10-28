@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lhmuc-virtuallab.org/schemas/source.schema.json",
+  "title": "Source registry entry (research/source_registry.yaml)",
+  "type": "object",
+  "properties": {
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "properties": {
+          "source_id": {"type": "string", "pattern": "^SRC_[A-Z0-9_]+$"},
+          "title": {"type": "string"},
+          "authors_or_org": {"type": ["string", "null"]},
+          "source_type": {"type": "string", "enum": ["journal_article", "arxiv_preprint", "conference_proceeding", "workshop_talk", "official_report", "thesis", "software_repository", "software_documentation", "web_page", "dataset", "white_paper"]},
+          "category": {"$ref": "provenance.schema.json#/$defs/source_category"},
+          "publication_date": {"type": ["string", "null"]},
+          "version": {"type": ["string", "null"]},
+          "url": {"type": ["string", "null"]},
+          "doi": {"type": ["string", "null"]},
+          "arxiv_id": {"type": ["string", "null"]},
+          "access_date": {"type": "string"},
+          "access": {"$ref": "provenance.schema.json#/$defs/access_mode"},
+          "relevance": {"type": "string"},
+          "parameters_extracted": {"type": "array", "items": {"type": "string"}},
+          "unresolved_questions": {"type": "array", "items": {"type": "string"}},
+          "licence": {"type": ["string", "null"]},
+          "archived_file": {"type": ["string", "null"]},
+          "sha256": {"type": ["string", "null"]},
+          "discovered_by_queries": {"type": "array", "items": {"type": "string"}},
+          "notes": {"type": ["string", "null"]}
+        },
+        "required": ["source_id", "title", "source_type", "category", "url", "access_date", "access", "relevance"]
+      }
+    }
+  },
+  "required": ["sources"]
+}
