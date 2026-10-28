@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_1306_3810",
+  "local_file": "references/_local/arXiv-1306.3810v1.pdf",
+  "committed_copy": null,
+  "title": "Measurement of muonium emission from silica aerogel",
+  "authors": "P. Bakule, G.A. Beer, D. Contreras, M. Esashi, Y. Fujiwara, Y. Fukao, S. Hirota, H. Iinuma, K. Ishida, M. Iwasaki, T. Kakurai, S. Kanda, H. Kawai, N. Kawamura, G.M. Marshall, H. Masuda, Y. Matsuda, T. Mibe, Y. Miyake, S. Okada, K. Olchanski, A. Olin, H. Onishi, N. Saito, K. Shimomura, P. Strasser, M. Tabata, D. Tomono, K. Ueno, K. Yokoyama, S. Yoshida (KEK, RIKEN, TRIUMF, Victoria, Tokyo, Chiba, Tohoku, RAL)",
+  "venue": "arXiv 1306.3810v1 [physics.atom-ph] 17 Jun 2013; Prog. Theor. Exp. Phys. 2013, 103C01 (journal reference as cited by SRC_ARXIV_2410_11367 ref. [21]; the uploaded arXiv file carries the PTEP template header \"Prog. Theor. Exp. Phys. 2012, 00000\")",
+  "identifier": "arXiv:1306.3810",
+  "pages": 11,
+  "licence": "as printed on p. 1: 'Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by-nc/3.0)'; wording says CC BY while the URL is CC BY-NC 3.0, treated as CC BY-NC 3.0 (more restrictive reading)",
+  "redistribution": "not committed pending clarification of the CC BY vs CC BY-NC wording",
+  "category": "PEER_REVIEWED",
+  "upload_name": "13dbfae2-1306.3810v1.pdf",
+  "sha256": "e847e99e300205aae87658beb8119b5ac62da3f1105c1f3eebd42f0eeea9d86b",
+  "size_bytes": 324939,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 9), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (11 pages) on 2026-10-28 (batch 9); pp. 4-10 (Figs 2-5, Tables 1-2, eq. 1) read as page images"
+}

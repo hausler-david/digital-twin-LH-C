@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_IMCC2026_GIOVE_RF_SYSTEM",
+  "local_file": "references/_local/Giove_RF_System_IMCC_MuCol_Annual_Meeting_2026.pdf",
+  "committed_copy": null,
+  "title": "RF System (INFN thin-window RF cavities for the muon ionisation-cooling channel)",
+  "authors": "Dario Giove (INFN)",
+  "venue": "IMCC and MuCol Annual Meeting 2026, CERN, 22–25 June 2026 (talk slides, 23 pages)",
+  "identifier": null,
+  "pages": 23,
+  "licence": "not stated on the slides (EU funding disclaimer only)",
+  "redistribution": "not committed",
+  "category": "ANALOGOUS_TECHNOLOGY",
+  "upload_name": "e1e2ec40-RF_System.pdf",
+  "sha256": "b2e8796fda230cba7aad0af94b51b0d465f70f73d424dd6a861c09c95762cba3",
+  "size_bytes": 1648449,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 9), copied unmodified; per-page text extracted with pdftotext -layout",
+  "read_status": "read in full (23 slides) on 2026-10-28; slides 5–7 and 15–23 read as page images"
+}

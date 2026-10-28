@@ -77,8 +77,11 @@ def test_aritome2024_measured_ultra_slow_muon_chain():
 
 
 def test_muonium_formation_fraction_two_values_are_incompatible():
-    # Beare et al. arXiv:2006.01947 abstract: (65.5 ± 1.8) %; Zhang p.10/p.20 and the μTRISTAN budget: 0.52 "from TRIUMF measurement"
-    assert abs(0.655 - 0.52) / 0.018 > 7.0   # > 7 sigma: a genuine conflict (CONF_MUONIUM_FORMATION_FRACTION), not rounding
+    # Beare et al. arXiv:2006.01947 abstract: (65.5 ± 1.8) %; Zhang p.10/p.20 and the μTRISTAN budget: 0.52 "from TRIUMF measurement".
+    # Origin of 0.52 identified in batch 9: Bakule et al. arXiv:1306.3810 p. 3, MuSR, 0.52 ± 0.01 for three 2013 aerogel samples.
+    # This assertion uses Beare's uncertainty alone (7.5 sigma); with both uncertainties the separation is 6.6 sigma
+    # (tests/scientific/test_batch9_documents.py::test_bakule2013_formation_fraction_vs_beare2020_combined_significance).
+    assert abs(0.655 - 0.52) / 0.018 > 7.0   # a genuine discrepancy between two measurements (CONF_MUONIUM_FORMATION_FRACTION), not rounding
 
 
 def test_nakazawa_space_charge_scaling():

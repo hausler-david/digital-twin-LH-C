@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2101_10476",
+  "local_file": "references/_local/arXiv-2101.10476v2.pdf",
+  "committed_copy": null,
+  "title": "Physics potential of a muon-proton collider",
+  "authors": "Kingman Cheung (NTHU / Konkuk), Zeren Simon Wang (NTHU)",
+  "venue": "arXiv 2101.10476v2 [hep-ph] 10 May 2021; Phys. Rev. D 103, 116009 (2021) per earlier search snippet (journal version not seen)",
+  "identifier": "arXiv:2101.10476",
+  "pages": 7,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "PEER_REVIEWED",
+  "upload_name": "a3f80bfa-2101.10476v2.pdf",
+  "sha256": "bcb8c811dbbd50cb6e8e0b0753850f89b185718fa846081c8728bfd0f1e13bd2",
+  "size_bytes": 515358,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 9), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (7 pages) on 2026-10-28 (batch 9); Tables I-IV and Figs 1-2 read as page images"
+}

@@ -2414,27 +2414,45 @@ sources:
   authors_or_org: K. Cheung, Z. S. Wang
   source_type: arxiv_preprint
   category: PEER_REVIEWED
-  publication_date: 2021-01
-  version: arXiv:2101.10476; published as Phys. Rev. D 103, 116009 per the mulhc-mutristan fragment (SRC_DOI_10_1103_PHYSREVD_103_116009)
+  publication_date: 10 May 2021
+  version: arXiv 2101.10476v2 [hep-ph] 10 May 2021; Phys. Rev. D 103, 116009 (2021) per search snippet
   url: https://arxiv.org/pdf/2101.10476
   doi: 10.1103/PhysRevD.103.116009
   arxiv_id: '2101.10476'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: Phenomenology benchmark of 1 TeV μ × 7 TeV p at 0.1 ab^-1.
+  access: uploaded
+  relevance: 'Phenomenology benchmark for a μ−p collider (NOTE: negative muons; LHμC collides μ+): ''μp-1'' E_p 7 TeV × E_μ
+    1 TeV, √s 5.3 TeV, L 1e33 cm^-2 s^-1 assumed, 0.1 ab^-1 (1e7 s/yr × 10 yr) — the same beam energies as LHμC-DIS2026 1
+    TeV; ''μp-2'' 50 × 3 TeV, √s 24.5 TeV, 1e34, 1 ab^-1. Table II VBF Higgs cross sections (pb): WW 0.978 / 5.103 (LHeC 0.110,
+    FCC-he 0.577, LHC-14 4.233 total), ZZ 0.216 / 1.263; Table III h→bb cut flow (ε_pr 0.98/0.91, σ(pμ−→jν Z) 4.67/25.1 pb,
+    ε_Zbb 0.99/0.97, ε_sig 0.21/0.17, ε_bgd 0.022/0.018, Δσ/σ 0.97 %/0.15 %, Δg_hbb/g_hbb 0.69 %/0.50 % using FCC-ee 0.4 %
+    and 0.9 % inputs); RPV-SUSY λ''_21k limits down to 0.02 (0.01) for m_dR ~ O(TeV); muon g-2 tensor operator C_T^μc: Table
+    IV σ_bgd 120 / 30 pb, signal 1.29e-2 / 3.15e-1 pb (normalised to (Λ²/100 TeV² C_T)^-2), |Δa_μ| limits 1.13e-8 / 9.10e-10.
+    Tool chain MadGraph5 3.0.2, patched Pythia 6.428, FastJet 3.3.2, Delphes 3.4.2 with an LHeC card including the beam asymmetry,
+    b-tag 75 %, p_T > 5 GeV, |η| < 5.5.'
   parameters_extracted: []
   unresolved_questions:
-  - Journal classified it SECONDARY_SOURCE; recorded as PEER_REVIEWED (and the DOI added) only because the mulhc-mutristan
-    fragment reports snippet confirmation of the PRD publication — this family's snippets did not show the journal reference.
-  - Exact beam-energy combinations assumed (asymmetric multi-TeV) not visible in snippets.
-  licence: null
-  archived_file: null
-  sha256: null
+  - All results are for μ−p; LHμC collides μ+p, which changes the charged-current (W-fusion) parton luminosity — the μ+p Higgs
+    cross sections are not given and must be computed, not scaled by hand.
+  - The 1e33 cm^-2 s^-1 luminosity is an assumption 'at the order of' realistic estimates (p. 2), not a machine design value.
+  - Branching ratios used for h→bb and Z→bb in the cut flow are not printed; the patched Pythia 6.428 for asymmetric lepton-hadron
+    collisions is a private communication [45].
+  - The LHeC Delphes card version is not identified.
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2101.10476v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2101_10476.json)
+  sha256: bcb8c811dbbd50cb6e8e0b0753850f89b185718fa846081c8728bfd0f1e13bd2
   discovered_by_queries:
   - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
   - Cheung Wang "Physics potential of a muon-proton collider" Phys. Rev. D 103 116009
-  notes: 'snippet-quoted: Benchmark = 7 TeV p, 1 TeV μ, 0.1 ab^-1 :: Its first benchmark pairs 7 TeV protons with 1 TeV muons,
-    at an integrated luminosity of 0.1 ab⁻¹.
+  - user upload (batch 9, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 (batch 9) and read in full; earlier snippet-level notes retained below. Earlier snippet
+    claim checked against the full text: ''first benchmark pairs 7 TeV protons with 1 TeV muons at 0.1 ab^-1'' CONFIRMED (Table
+    I, p. 2); ''asymmetric multi-TeV beam energies'' = μp-1 7 × 1 TeV and μp-2 50 × 3 TeV CONFIRMED; the beams are μ− (Table
+    I header ''E_μ−''), which the snippet did not show.
+
+
+    snippet-quoted: Benchmark = 7 TeV p, 1 TeV μ, 0.1 ab^-1 :: Its first benchmark pairs 7 TeV protons with 1 TeV muons, at
+    an integrated luminosity of 0.1 ab⁻¹.
 
 
     Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
@@ -10836,3 +10854,89 @@ sources:
   notes: FULL TEXT UPLOADED 2026-10-28 (batch 8) and read in full. This is the IMCC source of the vFFA1 values restated in
     MuCol MR7 Table F.5 (SRC_ARXIV_2510_27437) and the formalism behind the Kraków vFFA deck (SRC_WS1681458_TOPPMUGGLESTONE_VFFA);
     the thesis it cites as [3] is SRC_URL_ORA_OXFORD_TOPP_MUGGLESTONE_THESIS (still blocked). Lead P1 checks in tests/scientific/test_mucol_m17_vffa.py.
+- source_id: SRC_ARXIV_1306_3810
+  title: Measurement of muonium emission from silica aerogel
+  authors_or_org: P. Bakule, G.A. Beer, D. Contreras, M. Esashi, Y. Fujiwara, Y. Fukao, S. Hirota, H. Iinuma, K. Ishida, M.
+    Iwasaki, T. Kakurai, S. Kanda, H. Kawai, N. Kawamura, G.M. Marshall, H. Masuda, Y. Matsuda, T. Mibe, Y. Miyake, S. Okada,
+    K. Olchanski, A. Olin, H. Onishi, N. Saito, K. Shimomura, P. Strasser, M. Tabata, D. Tomono, K. Ueno, K. Yokoyama, S.
+    Yoshida (KEK, RIKEN, TRIUMF, Victoria, Tokyo, Chiba, Tohoku, RAL)
+  source_type: journal_article
+  category: PEER_REVIEWED
+  publication_date: 17 Jun 2013
+  version: arXiv 1306.3810v1 [physics.atom-ph] 17 Jun 2013; PTEP 2013, 103C01 (as cited by Aritome et al. 2024 ref. [21])
+  url: https://arxiv.org/abs/1306.3810
+  doi: null
+  arxiv_id: '1306.3810'
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'ORIGIN OF THE 0.52 MUONIUM-FORMATION FRACTION used by the J-PARC g-2/EDM design (SRC_ARXIV_1901_03047), μTRISTAN,
+    the Kraków Zhang deck and Aritome et al. 2024 (their ref. [21]): MuSR on hydrophobic Chiba silica aerogels gives a muonium
+    formation fraction of 0.52 ± 0.01 ''in the three aerogel samples'' (p. 3), vs silica powder 0.64 ± 0.03 [Kiefl 1979] and
+    porous silica 0.21 ± 0.01; MuSR relaxation ~0.05 µs^-1 in 0.6 mT. TRIUMF M15 vacuum-emission imaging with four aerogels
+    (29, 47, 97, 178 mg cm^-3; 6.9, 4.8, 2.2, 2.0 mm; 30 × 40 mm^2 targets; 22.9-24.5 MeV/c subsurface muons; ~half stopping):
+    Table 1 vacuum yield in 10 < z < 40 mm per 1000 muon stops 2.74 ± 0.11 +0.10/-0.13, 2.81, 3.13, 1.60 and mean free paths
+    0.226, 0.118, 0.035, 0.0050 µm (small-chemical-potential model, 25 meV); density scaling α ≈ -1.5; Table 2 BET surface
+    areas 550-914 m^2/g and grain radii 2.5-1.5 nm; total vacuum yield 4.8e-3 per incident muon at 23 MeV/c, 2 % RMS, scaled
+    by eq. (1) to 9.6e-4 for J-PARC 28 MeV/c, 5 % RMS; emission probability falls to e^-1 at 30 µm from the surface; ~100
+    µm surface structure proposed to raise the yield (the later laser-ablation work).'
+  parameters_extracted: []
+  unresolved_questions:
+  - Which three of the four aerogel samples enter the MuSR 0.52 ± 0.01 average is not stated (p. 3).
+  - The 0.52 is a MuSR asymmetry-based formation fraction for non-ablated 2013 samples; Beare et al. 2020 (SRC_ARXIV_2006_01947)
+    report 0.655 ± 0.018 for their samples — the samples, preparation and analysis differ, so the discrepancy may be sample
+    dependence rather than contradiction (CONF_MUONIUM_FORMATION_FRACTION).
+  - Journal version (PTEP 2013, 103C01) not seen; only the arXiv v1 was read.
+  licence: 'as printed on p. 1: ''Open Access article distributed under the terms of the Creative Commons Attribution License
+    (http://creativecommons.org/licenses/by-nc/3.0)''; wording says CC BY while the URL is CC BY-NC 3.0, treated as CC BY-NC
+    3.0 (more restrictive reading)'
+  archived_file: references/_local/arXiv-1306.3810v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_1306_3810.json)
+  sha256: e847e99e300205aae87658beb8119b5ac62da3f1105c1f3eebd42f0eeea9d86b
+  discovered_by_queries:
+  - user upload (batch 9, 2026-10-28)
+  - 'research wish list: origin of the 52 % muonium formation value (Aritome et al. 2024 ref. [21])'
+  notes: FULL TEXT UPLOADED 2026-10-28 (batch 9) and read in full. New source (no earlier registry entry); fills the "origin
+    of the 52 % value" item of the research wish list.
+- source_id: SRC_IMCC2026_GIOVE_RF_SYSTEM
+  title: RF System (INFN thin-window RF cavities for the muon ionisation-cooling channel)
+  authors_or_org: Dario Giove (INFN)
+  source_type: workshop_talk
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: 22–25 Jun 2026
+  version: slides, IMCC and MuCol Annual Meeting 2026, CERN
+  url: null
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Engineering status of the high-gradient normal-conducting RF cavities for the IMCC ionisation-cooling channel,
+    relevant to LHμC only through the hybrid-source option (SRC_WS1681458_ROGERS_HYBRID_SOURCE, which reuses IMCC rectilinear
+    cooling stages with RF in solenoid fields); not used by the baseline laser-ionisation chain. Content: SRF excluded by
+    the solenoid fields; 704 MHz at 30 MV/m ''depending on at which cooling stages''; beam diameter up to 12 cm; cavities
+    up to 16 cm diameter with 50–200 µm Be or Al windows; INFN 704 MHz cell geometry (L_acc 187.8 mm, R_v 164.7 mm, W_R 60
+    mm, a 8 mm, b 24 mm, C_R 10 mm); 3-cell structure coupling slots (R_Ain 85 mm, R_Aext 113.5 mm, θ_A 15 mm, fillet 4 mm);
+    window parametric study t_foil 50/100/150/200 µm, R_w 60/80 mm, E0 22.5/40 MV/m with flat, step and curved-step foils;
+    Be vs Al properties (1850 vs 2710 kg/m³, 202.6 vs 237.5 W/m/K, 302.2 vs 70.9 GPa, 525.4 vs 114.8 MPa); LBNL 2001 heritage
+    (127 µm IF-1 Be foils, 160 mm diameter); supply chain — only Materion, ULBA and IBC supply beryllium, Materion minimum
+    order 12000 $, beryllium machining safety limits at INFN, so aluminium alloys 6061-T6 / 6082-T6 proposed for the demonstrator,
+    no commercial 150–250 µm sheets found; mechanical design with COMEB from September 2025; design criterion lowest mechanical
+    resonance ≫ 5 Hz power-pulse frequency, with resonance ''still possible'' and transient analysis or tests needed; 3-cell
+    final mechanical design (OFHC copper, CF160 flanges, six cooling circuits, replaceable foils). No RF power test, achieved
+    gradient or breakdown-in-field measurement is shown.'
+  parameters_extracted: []
+  unresolved_questions:
+  - No measured gradient, breakdown rate or breakdown-in-magnetic-field result is shown; the breakdown data restated by Rogers
+    (Cu 24.4 → 12.9 MV/m at 0 → 3 T; Be 41.1 → >49.8 MV/m) favour beryllium, while this talk proposes aluminium windows for
+    the demonstrator because of beryllium supply and safety constraints — no uploaded source gives aluminium breakdown performance
+    in a magnetic field.
+  - The talk gives 704 MHz as the reference for 'the first RF cells'; Rogers' hybrid-source rectilinear A-stages use 352 MHz.
+    Which LHμC hybrid-source stages would need 704 MHz cavities is not stated anywhere.
+  - Indico event and contribution numbers of the IMCC and MuCol Annual Meeting 2026 (CERN, 22–25 June 2026) are not printed
+    on the slides; URL unknown.
+  - Licence not stated on the slides (EU funding disclaimer only).
+  licence: not stated on the slides (EU funding disclaimer only)
+  archived_file: references/_local/Giove_RF_System_IMCC_MuCol_Annual_Meeting_2026.pdf (git-ignored; see research/archived_metadata/SRC_IMCC2026_GIOVE_RF_SYSTEM.json)
+  sha256: b2e8796fda230cba7aad0af94b51b0d465f70f73d424dd6a861c09c95762cba3
+  discovered_by_queries:
+  - user upload (batch 9, 2026-10-28)
+  notes: FULL TEXT UPLOADED 2026-10-28 (batch 9) and read in full. Analogous technology for the hybrid-source option only;
+    no LHμC-specific content.
