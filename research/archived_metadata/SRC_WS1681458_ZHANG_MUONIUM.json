@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_ZHANG_MUONIUM",
+  "local_file": "references/_local/Zhang_Muonium_diffusion_multilayer_target.pdf",
+  "committed_copy": null,
+  "title": "Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling",
+  "authors": "Ce Zhang (University of Liverpool)",
+  "venue": "slides, 23 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458, contribution 7263313)",
+  "identifier": "https://indico.cern.ch/event/1681458/contributions/7263313/",
+  "pages": 23,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "5d58b00c-260924_LHmuC_workshop.pdf",
+  "sha256": "167d9a78797be2d14b459bf33648f15aa5c182491cf60bf73b1708116abd7302",
+  "size_bytes": 8731686,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

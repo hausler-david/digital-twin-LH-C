@@ -13,7 +13,7 @@
           "scenario_id": {"type": "string", "pattern": "^[A-Z][A-Z0-9]*(-[A-Z0-9]+)+$"},
           "label": {"type": "string"},
           "description": {"type": "string"},
-          "machine": {"type": "string", "enum": ["LHMUC", "MULHC", "MUTRISTAN", "LHEC", "HL_LHC", "OTHER"]},
+          "machine": {"type": "string", "enum": ["LHMUC", "MULHC", "MUTRISTAN", "LHEC", "HL_LHC", "IMCC", "MUIC", "JPARC_MUSE", "OTHER"]},
           "design_version": {"type": "string", "description": "Which published design iteration this represents (e.g. DIS2026 proceedings Table 1, PTEP 2026 post-erratum)."},
           "status": {"type": "string", "enum": ["reported", "partially_reported", "derived", "superseded", "synthetic_scan"]},
           "primary_source_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},

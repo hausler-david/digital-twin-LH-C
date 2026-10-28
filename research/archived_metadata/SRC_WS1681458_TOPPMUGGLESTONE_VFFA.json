@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_TOPPMUGGLESTONE_VFFA",
+  "local_file": "references/_local/ToppMugglestone_vFFA_and_LHmuC.pdf",
+  "committed_copy": null,
+  "title": "vFFA and LHμC",
+  "authors": "Max Topp-Mugglestone (University of Oxford / John Adams Institute)",
+  "venue": "slides, 52 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458, contribution 7263315)",
+  "identifier": "https://indico.cern.ch/event/1681458/contributions/7263315/",
+  "pages": 52,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "eef4cf5d-20260923-LHuC-FFA.pdf",
+  "sha256": "cf43f915773d98b4466c97206faa603fbefb078fdf79b9c451bcf30d478d3f06",
+  "size_bytes": 1751464,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

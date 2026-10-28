@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2510_27437",
+  "local_file": "references/_local/arXiv-2510.27437v1.pdf",
+  "committed_copy": null,
+  "title": "MuCol Milestone Report No. 7: Consolidated Parameters",
+  "authors": "IMCC & MuCol authors; edited by R. Taylor (CERN); reviewed by D. Schulte, C. Rogers, V. Shiltsev",
+  "venue": "arXiv 2510.27437v1 [physics.acc-ph] 31 Oct 2025; MuCol Milestone 7, document v1.0 Final, released 30/10/2025",
+  "identifier": "arXiv:2510.27437",
+  "pages": 93,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "OFFICIAL_CERN",
+  "upload_name": "8e0cc600-2510.27437v1.pdf",
+  "sha256": "7307181c44b3079fa27d13500121300f0fc6a3c5f03eaf7d0520694021690111",
+  "size_bytes": 5947293,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

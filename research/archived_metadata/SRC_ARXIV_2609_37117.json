@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2609_37117",
+  "local_file": "references/_local/arXiv-2609.37117v1.pdf",
+  "committed_copy": null,
+  "title": "Input to the SCAC Facilities Subcommittee from the U.S. Muon Collider Collaboration",
+  "authors": "S. Jindariani, T. Holmes, P. Meade, K. DiPetrillo, K. Kennedy, L. Lee, S. Pagan Griso, D. Stratakis, on behalf of the U.S. Muon Collider Collaboration",
+  "venue": "arXiv 2609.37117v1 [physics.acc-ph] 29 Sep 2026",
+  "identifier": "arXiv:2609.37117",
+  "pages": 5,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "SECONDARY_SOURCE",
+  "upload_name": "5c4a328c-2609.37117v1.pdf",
+  "sha256": "34d171d48b0afb35f4dd5cac7d523e4a34a565056baa939e54d20a082ada68ce",
+  "size_bytes": 168779,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

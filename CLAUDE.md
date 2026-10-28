@@ -66,6 +66,9 @@ contributor and every AI session must follow. Read `docs/architecture.md` next.
   archived; add the query rows to `research/search_log.csv`; record what remains unresolved in
   `research/unresolved_searches.md`.
 - New synthetic value: assumption record first, parameter record second, sensitivity entry third.
+- Reported value arrives for a synthetic parameter: mark the assumption `superseded_by_evidence`
+  with `superseded_by`, re-point every scenario slot to the reported id, keep the `_SYN` record only
+  as a scan variable (see `docs/synthetic_data_policy.md`, supersession section).
 - New result: immutable run record (`schemas/simulation_run.schema.json`); never overwrite; mark
   dependents stale when inputs change.
 

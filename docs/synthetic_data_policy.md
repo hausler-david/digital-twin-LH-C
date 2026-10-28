@@ -345,3 +345,16 @@ item 8).
   — Kraków LHμC workshop slide decks, uploaded; inspected for nozzle numbers, none found.
 - IMCC/MAP nozzle numbers (10°, INERMET180, 6 cm tip distance): search snippets only, no
   `source_id`, not citable as evidence.
+
+
+## Supersession by evidence (addendum, 2026-10-28)
+
+When a reported or authoritative value arrives for a parameter that was carried as a synthetic
+range, the assumption record is **not deleted**. It is marked `status: superseded_by_evidence`
+with `superseded_by` (the evidence-backed parameter ids that now serve as baseline),
+`superseded_on`, `superseding_source_ids` and `range_vs_evidence` (did the reported value fall
+inside the synthetic range?). The synthetic `_SYN` parameter may remain **only as a scan
+variable** (`applicability.category: screening_only`); no scenario slot may point to it once a
+reported value exists. Both rules are enforced by `lhmuc/registry.py`. A reported value that
+falls outside the synthetic range is a calibration lesson and must be stated in the assumption
+notes and in the milestone report.

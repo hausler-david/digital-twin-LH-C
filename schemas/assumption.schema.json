@@ -11,7 +11,11 @@
         "properties": {
           "assumption_id": {"type": "string", "pattern": "^ASM_[A-Z0-9_]+$"},
           "parameter_id": {"type": "string"},
-          "status": {"type": "string", "enum": ["synthetic_assumption", "analogous_value", "proposed_not_adopted"]},
+          "status": {"type": "string", "enum": ["synthetic_assumption", "analogous_value", "proposed_not_adopted", "superseded_by_evidence"], "description": "superseded_by_evidence: a reported or authoritative value now exists; the record is kept for traceability, the _SYN parameter may survive only as a scan variable, and no scenario slot may point to it."},
+          "superseded_by": {"type": "array", "items": {"type": "string"}, "description": "parameter_ids of the evidence-backed records that replace this assumption as baseline."},
+          "superseded_on": {"type": ["string", "null"], "format": "date"},
+          "superseding_source_ids": {"type": "array", "items": {"type": "string"}},
+          "range_vs_evidence": {"type": ["string", "null"], "description": "Whether the reported value fell inside the synthetic range; a calibration note for future ranges."},
           "reason_required": {"type": "string"},
           "search_summary": {"type": "array", "items": {"type": "string"}, "minItems": 1},
           "sources_inspected": {"type": "array", "items": {"type": "string"}},
@@ -39,6 +43,7 @@
           "date_added": {"type": "string", "format": "date"},
           "notes": {"type": ["string", "null"]}
         },
+        "allOf": [{"if": {"properties": {"status": {"const": "superseded_by_evidence"}}}, "then": {"required": ["superseded_by", "superseded_on"], "properties": {"superseded_by": {"minItems": 1}}}}],
         "required": ["assumption_id", "parameter_id", "status", "reason_required", "search_summary", "reason_authoritative_value_missing", "synthetic_model", "physical_basis", "applicability", "affected_outputs", "replacement_evidence", "sensitivity_analysis", "date_added"]
       }
     }

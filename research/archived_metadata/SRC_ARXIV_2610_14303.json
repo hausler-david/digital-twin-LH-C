@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2610_14303",
+  "local_file": "references/_local/arXiv-2610.14303v1.pdf",
+  "committed_copy": null,
+  "title": "AI Acceleration of Muon Collider R&D: A Report from the AI4MuC Workshop",
+  "authors": "J. S. Berg, D. Bizzozero, T. Bose, L. Cooley, J. Dervan, A. Edelen, P. Elmer, C. Fanelli, T. Holmes, W. Hopkins, S. Jindariani, M. Kagan, M. Khan, Y.-K. Kim, M. LeBlanc, L. Lee, M. Liepe, R. Mastandrea, P. Meade, F. Meloni, C. Mitchell, L. Nguyen, I. Ojalvo, R. Roberts, N. Smith, J.-L. Vay, G. Watts, D. Winder, C. Xu, K. Yonehara",
+  "venue": "arXiv 2610.14303v1 [physics.acc-ph] 9 Oct 2026",
+  "identifier": "arXiv:2610.14303",
+  "pages": 17,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "SECONDARY_SOURCE",
+  "upload_name": "48bb6d8c-2610.14303v1.pdf",
+  "sha256": "0da5f52aab122c49ff97f972b342ffebeebf4b57543b580636225e5650f7c385",
+  "size_bytes": 407022,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

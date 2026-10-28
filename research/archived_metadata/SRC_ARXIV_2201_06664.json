@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2201_06664",
+  "local_file": "references/_local/arXiv-2201.06664v2.pdf",
+  "committed_copy": null,
+  "title": "μTRISTAN",
+  "authors": "Yu Hamada, Ryuichiro Kitano, Ryan Matsudo, Hiromasa Takaura, Mitsuhiro Yoshida",
+  "venue": "arXiv 2201.06664v2 [hep-ph] 21 Apr 2022; PTEP 2022, 053B02",
+  "identifier": "arXiv:2201.06664",
+  "pages": 24,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "RELATED_MACHINE",
+  "upload_name": "45ccef0e-2201.06664v2.pdf",
+  "sha256": "eaa1628f1e8958a58e74bf4b0c9df94c12457b04ef22eddcf20be9a380fb1229",
+  "size_bytes": 1393448,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

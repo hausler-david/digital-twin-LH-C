@@ -21,7 +21,7 @@ PARAM_COLS = ["parameter_id", "name", "subsystem", "scenario", "symbol", "value"
               "allowed_range", "provenance_status", "confidence", "applicability", "source_id", "source_title",
               "page", "table_figure_or_equation", "extraction_method", "validation_level", "dependencies",
               "assumption_id", "date_added", "responsible_module", "file"]
-ASM_COLS = ["assumption_id", "parameter_id", "status", "distribution", "minimum", "maximum", "unit",
+ASM_COLS = ["assumption_id", "parameter_id", "status", "superseded_by", "superseded_on", "distribution", "minimum", "maximum", "unit",
             "reason_required", "reason_authoritative_value_missing", "affected_outputs", "replacement_evidence",
             "sensitivity_analysis", "date_added"]
 
@@ -73,6 +73,7 @@ def render(ev) -> dict[str, str]:
         sm = a["synthetic_model"]
         w.writerow({
             "assumption_id": aid, "parameter_id": a["parameter_id"], "status": a["status"],
+            "superseded_by": ";".join(a.get("superseded_by") or []), "superseded_on": a.get("superseded_on") or "",
             "distribution": sm["distribution"], "minimum": sm.get("minimum", ""), "maximum": sm.get("maximum", ""),
             "unit": sm["unit"], "reason_required": a["reason_required"],
             "reason_authoritative_value_missing": a["reason_authoritative_value_missing"],

@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_HEQCD_SMALLX",
+  "local_file": "references/_local/AGH_High_energy_QCD_at_LHmuC.pdf",
+  "committed_copy": null,
+  "title": "High energy QCD at LHμC",
+  "authors": "AGH University, Kraków (speaker not named on the slides; P. Kotko (AGH) is the author of the DIS2026 companion proceedings on this topic — attribution unverified)",
+  "venue": "slides, 28 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458; contribution id not identified)",
+  "identifier": "https://indico.cern.ch/event/1681458/",
+  "pages": 28,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "7a6723b4-Cold-muon_workshop_2026.pdf",
+  "sha256": "ac0a49e4c35d4e5f198c4d5a1c4da25fbdd530a864bb25f6ba5e77156fb6f65b",
+  "size_bytes": 4358464,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

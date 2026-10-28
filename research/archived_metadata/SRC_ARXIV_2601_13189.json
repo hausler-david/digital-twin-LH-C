@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2601_13189",
+  "local_file": "references/_local/arXiv-2601.13189v1.pdf",
+  "committed_copy": null,
+  "title": "MUSIC: a detector concept for 10 TeV μ+μ− collisions",
+  "authors": "P. Andreetto, M. Casarsa, A. Gianelle, D. Lucchesi, L. Palombini, L. Sestini, D. Zuliani (INFN Padova/Trieste/Firenze), on behalf of IMCC",
+  "venue": "arXiv 2601.13189v1 [hep-ex] 19 Jan 2026",
+  "identifier": "arXiv:2601.13189",
+  "pages": 5,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "ANALOGOUS_TECHNOLOGY",
+  "upload_name": "a419231e-2601.13189v1.pdf",
+  "sha256": "a3bc91de485291e501d784f7ad1e5213150bb82351ca44c12111c362aa2bc3fd",
+  "size_bytes": 567832,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

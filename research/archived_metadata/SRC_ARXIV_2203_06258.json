@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2203_06258",
+  "local_file": "references/_local/arXiv-2203.06258v3.pdf",
+  "committed_copy": null,
+  "title": "The Potential of a TeV-Scale Muon-Ion Collider",
+  "authors": "D. Acosta et al. (author list on PDF page 1; Rice, Northeastern, Fermilab)",
+  "venue": "arXiv 2203.06258v3 [hep-ex] 19 Sep 2023; JINST 18 (2023) P09025 per search snippet (journal version not verified)",
+  "identifier": "arXiv:2203.06258",
+  "pages": 49,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "RELATED_MACHINE",
+  "upload_name": "09c5cb22-2203.06258v3.pdf",
+  "sha256": "abbf755c551b019bfa1598cb8426eec4b28008dfe14f9ecf6e25759dd68f4e6b",
+  "size_bytes": 4684904,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_KILIC_NOZZLE",
+  "local_file": "references/_local/Kilic_Nozzle_design_mu_p_detector.pdf",
+  "committed_copy": null,
+  "title": "Nozzle design studies for mu+p collider detector",
+  "authors": "Adnan Kilic, Fatma Kocak, Ali Cici, Ilhan Tapan (Bursa Uludağ University; Bursa Technical University)",
+  "venue": "slides, 25 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458, contribution 7263330)",
+  "identifier": "https://indico.cern.ch/event/1681458/contributions/7263330/",
+  "pages": 25,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "cd4b02fa-Presentation_Krakow_AKilic.pdf",
+  "sha256": "592443cb96e0933f551c05ac5fc005223e340817b8e80762aa2ad268de0ec672",
+  "size_bytes": 6154975,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

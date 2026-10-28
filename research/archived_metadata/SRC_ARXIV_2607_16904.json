@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2607_16904",
+  "local_file": "references/_local/arXiv-2607.16904v2.pdf",
+  "committed_copy": "references/accelerator/arXiv-2607.16904v2_Dudko_muon_collider_UNK_tunnel_CC-BY-NC.pdf",
+  "title": "The muon collider: expected physics, technological challenges, and the prospects for reusing the 21 km UNK tunnel",
+  "authors": "L. V. Dudko (SINP, Lomonosov Moscow State University)",
+  "venue": "arXiv 2607.16904v2 [hep-ph] 20 Oct 2026; Natural Science Review (JINR), accepted 2026 (volume/pages not yet assigned)",
+  "identifier": "arXiv:2607.16904",
+  "pages": 40,
+  "licence": "CC BY-NC 4.0 (stated on page 1, Natural Science Review, JINR)",
+  "redistribution": "permitted non-commercial with attribution → copy committed to references/accelerator/",
+  "category": "SECONDARY_SOURCE",
+  "upload_name": "afadbdd1-2607.16904v2.pdf",
+  "sha256": "10cfc227bd31b1228bcc79e9aea98abe36e457b585af304ea1713a87a8465b52",
+  "size_bytes": 839258,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

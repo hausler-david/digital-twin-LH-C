@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2502_00181",
+  "local_file": "references/_local/arXiv-2502.00181v2.pdf",
+  "committed_copy": null,
+  "title": "MAIA: A new detector concept for a 10 TeV muon collider",
+  "authors": "C. Bell, D. Calzolari, C. Carli, J. Dervan, K. F. Di Petrillo, M. Hillman, T. R. Holmes, S. Jindariani, K. E. Kennedy, C. Kianian, K. H. M. Kwok, M. Larson, A. Lechner, L. Lee, T. Madlener, F. Meloni, A. Mohammadi, I. Ojalvo, P. Pani, G. D. Penn, R. Powers, B. Rosser, L. Rozanov, K. Skoufaris, E. Sledge, A. Tuna, J. Zhang",
+  "venue": "arXiv 2502.00181v2 [physics.ins-det] 7 Jul 2026",
+  "identifier": "arXiv:2502.00181",
+  "pages": 44,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "ANALOGOUS_TECHNOLOGY",
+  "upload_name": "1513d325-2502.00181v2.pdf",
+  "sha256": "91271da1064ebdb2639db3374cf8a1e9a78e6dbe28ba5f259adb6ee3dc90ab93",
+  "size_bytes": 26732259,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

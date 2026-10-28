@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_NAKAZAWA_LOW_VELOCITY",
+  "local_file": "references/_local/Nakazawa_Low_velocity_acceleration.pdf",
+  "committed_copy": null,
+  "title": "Acceleration in the Low-velocity Region",
+  "authors": "Yuga Nakazawa (KEK)",
+  "venue": "slides, 19 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458; contribution id not identified)",
+  "identifier": "https://indico.cern.ch/event/1681458/",
+  "pages": 19,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "ac8d5783-260924_nakazawa.pdf",
+  "sha256": "dee072e14dcd403969b7ce10fe6e898afb6d80044a8acf086f1a774244e51227",
+  "size_bytes": 10275514,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

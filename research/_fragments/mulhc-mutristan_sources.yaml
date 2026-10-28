@@ -1,8 +1,3 @@
-# Research fragment - reconnaissance family 'mulhc-mutristan' (WebSearch on 2026-10-28; WebFetch succeeded only on
-# github.com / raw.githubusercontent.com; every other attempted host was blocked). Schema: schemas/source.schema.json.
-# Merged into research/source_registry.yaml by tools/merge_research_fragments.py (uploaded ids SRC_ARXIV_2610_35154 and
-# SRC_ARXIV_2506_15445 keep their registry text; ids shared with the lhmuc-primary fragment are unioned, first text kept).
-# 'snippet-quoted' lines in notes are leads to verify, NOT parameter records. Categories follow the lead's decisions.
 sources:
 - source_id: SRC_ARXIV_2506_15445
   title: 'μLHC: Antimuon Ring and HL-LHC based μ+p Collider (arXiv:2506.15445)'
@@ -69,80 +64,6 @@ sources:
 
     WebFetch to arxiv.org failed in this session (host not in the network allow-list; journal lists it among blocked hosts),
     so access is recorded as ''blocked''. Journal licence/access note: ''arXiv open access (license not confirmed)''.'
-- source_id: SRC_DOI_10_1093_PTEP_PTAG031
-  title: 'μLHC: Antimuon Ring and High Luminosity-LHC-Based μ+p Collider — PTEP 2026, 033C04'
-  authors_or_org: D Akturk, A C Canbay, H Dagistanli, B Dagli, U Kaya, B Ketenoglu, A Kilic, F Kocak, A Ozturk, S Sultansoy,
-    I Tapan, F Zimmermann
-  source_type: journal_article
-  category: RELATED_MACHINE
-  publication_date: '2026-03-02'
-  version: Prog. Theor. Exp. Phys. 2026 033C04 (20 pages); 'Corrected and typeset' 28 March 2026 (per snippet)
-  url: https://academic.oup.com/ptep/article/2026/3/033C04/8503486
-  doi: 10.1093/ptep/ptag031
-  arxiv_id: '2506.15445'
-  access_date: '2026-10-28'
-  access: blocked
-  relevance: 'Published version of the μLHC proposal. Snippet: ''Prog. Theor. Exp. Phys. 2026 033C04 (20 pages) DOI: 10.1093/ptep/ptag031''.
-    No separate erratum DOI surfaced in search; the article page shows a ''Corrected and typeset'' date of 28 March 2026.
-    Journal record of SRC_ARXIV_2506_15445 (same work, registered separately because it carries the erratum/correction status
-    that the arXiv record does not). Category follows the lead''s RELATED_MACHINE decision for muLHC; it is nevertheless a
-    peer-reviewed publication.'
-  parameters_extracted: []
-  unresolved_questions:
-  - No separate erratum DOI/article number surfaced; only the 'Corrected and typeset 28 March 2026' date on the article page.
-  - Open-access status/licence of the PTEP article not confirmed (academic.oup.com blocked).
-  licence: null
-  archived_file: null
-  sha256: null
-  discovered_by_queries:
-  - '"μLHC" OR "muLHC" PTEP 2026 033C04 erratum ptag031 muon proton collider'
-  - '"Erratum" "μLHC" OR "muLHC" antimuon ring HL-LHC Progress of Theoretical and Experimental Physics 2026 Akturk Sultansoy
-    correction'
-  - '"Erratum" OR "Correction to" "Antimuon Ring and High Luminosity-LHC-Based" PTEP ptag Akturk 2026'
-  notes: 'snippet-quoted: center-of-mass energy = 5.3 TeV :: It targets a 5.3-TeV center-of-mass energy
-
-
-    snippet-quoted: luminosity = > 10^33 cm^-2 s^-1 :: its predicted luminosities are predicted to exceed 10^33 cm^-2 s^-1
-
-
-    Reconnaissance on 2026-10-28 with WebSearch only. ''snippet-quoted'' lines are search-engine snippets and are leads to
-    verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md
-    section 1.5).
-
-
-    WebFetch to academic.oup.com failed in this session (host not in the network allow-list; journal lists it among blocked
-    hosts), so access is recorded as ''blocked''. Journal licence/access note: ''PTEP (OUP) - open access status not confirmed''.'
-- source_id: SRC_URL_INSPIRE_LITERATURE_2936564
-  title: 'μLHC: Antimuon Ring and High Luminosity-LHC-Based μ+p Collider — INSPIRE record'
-  authors_or_org: INSPIRE-HEP
-  source_type: web_page
-  category: SECONDARY_SOURCE
-  publication_date: null
-  version: INSPIRE literature 2936564
-  url: https://inspirehep.net/literature/2936564
-  doi: null
-  arxiv_id: '2506.15445'
-  access_date: '2026-10-28'
-  access: blocked
-  relevance: Bibliographic record for the μLHC paper; would list any erratum record (not retrievable here).
-  parameters_extracted: []
-  unresolved_questions:
-  - Would list any erratum record and the citing literature for muLHC; not retrievable here.
-  licence: null
-  archived_file: null
-  sha256: null
-  discovered_by_queries:
-  - '(see family queries) - journal: ''INSPIRE record 2936564 found via another query'' - which query is not recorded'
-  notes: '(no numerical values quoted in snippets for this source)
-
-
-    Reconnaissance on 2026-10-28 with WebSearch only. ''snippet-quoted'' lines are search-engine snippets and are leads to
-    verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md
-    section 1.5).
-
-
-    WebFetch to inspirehep.net failed in this session (host not in the network allow-list; journal lists it among blocked
-    hosts), so access is recorded as ''blocked''.'
 - source_id: SRC_URL_RESEARCHGATE_ZIMMERMANN_PROFILE
   title: 'Erratum μLHC: Antimuon Ring and High Luminosity-LHC-Based μ+p Collider (listing on Frank Zimmermann ResearchGate
     profile)'
@@ -222,38 +143,6 @@ sources:
 
     WebFetch to arxiv.org failed in this session (host not in the network allow-list; journal lists it among blocked hosts),
     so access is recorded as ''blocked''. Journal licence/access note: ''arXiv open access''.'
-- source_id: SRC_URL_PTEP_2022_053B02
-  title: μTRISTAN — PTEP 2022(5) 053B02 (journal page)
-  authors_or_org: Hamada, Kitano, Matsudo, Takaura, Yoshida
-  source_type: journal_article
-  category: PEER_REVIEWED
-  publication_date: 2022 (issue dated 30 March 2022 per NDL catalogue snippet)
-  version: PTEP 2022, 053B02
-  url: https://academic.oup.com/ptep/article/2022/5/053B02/6556027
-  doi: null
-  arxiv_id: '2201.06664'
-  access_date: '2026-10-28'
-  access: blocked
-  relevance: 'Journal version of μTRISTAN. Snippet: ''of the order of 5 × 10^33 cm^−2 s^−1 per detector''. Journal version
-    of SRC_ARXIV_2201_06664; DOI not visible in snippets (not fabricated here).'
-  parameters_extracted: []
-  unresolved_questions:
-  - DOI of the PTEP article not visible in any snippet.
-  licence: null
-  archived_file: null
-  sha256: null
-  discovered_by_queries:
-  - μTRISTAN Hamada Kitano Matsudo Takaura Yoshida arXiv:2201.06664 PTEP 2022 053B02
-  notes: 'snippet-quoted: luminosity per detector = ~5×10^33 cm^-2 s^-1 :: of the order of 5 × 10^33 cm^−2 s^−1 per detector
-
-
-    Reconnaissance on 2026-10-28 with WebSearch only. ''snippet-quoted'' lines are search-engine snippets and are leads to
-    verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md
-    section 1.5).
-
-
-    WebFetch to academic.oup.com failed in this session (host not in the network allow-list; journal lists it among blocked
-    hosts), so access is recorded as ''blocked''. Journal licence/access note: ''PTEP (OUP); not resolvable in this session''.'
 - source_id: SRC_ARXIV_2403_17034
   title: Muon Ring and FCC-ee / CEPC Based Antimuon-Electron Colliders (arXiv:2403.17034; EPL 2024)
   authors_or_org: Akturk, Dagli, Sultansoy (per search summary)
@@ -445,7 +334,7 @@ sources:
 
     WebFetch to arxiv.org failed in this session (host not in the network allow-list; journal lists it among blocked hosts),
     so access is recorded as ''blocked''. Journal licence/access note: ''arXiv open access''.'
-- source_id: SRC_DOI_10_1209_0295_5075_AC4F98
+- source_id: SRC_ARXIV_1905_05564
   title: Luminosity and Physics Considerations on HL-LHC and HE-LHC based μp Colliders (arXiv:1905.05564; EPL 138 (2022) 24002)
   authors_or_org: U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann
   source_type: arxiv_preprint
@@ -489,39 +378,7 @@ sources:
 
     WebFetch to arxiv.org failed in this session (host not in the network allow-list; journal lists it among blocked hosts),
     so access is recorded as ''blocked''. Journal licence/access note: ''arXiv open access; EPL (IOP/EDP)''.'
-- source_id: SRC_URL_GCRIS_ETU_8699
-  title: Luminosity and physics considerations on HL-LHC- and HE-LHC-based μp colliders — TOBB ETU repository record
-  authors_or_org: TOBB ETU GCRIS
-  source_type: web_page
-  category: SECONDARY_SOURCE
-  publication_date: '2022'
-  version: EPL 138(2), 24002; DOI 10.1209/0295-5075/ac4f98
-  url: https://gcris.etu.edu.tr/handle/20.500.11851/8699?mode=full
-  doi: 10.1209/0295-5075/ac4f98
-  arxiv_id: '1905.05564'
-  access_date: '2026-10-28'
-  access: snippet_only
-  relevance: Confirms EPL volume/issue/article number and DOI for Kaya et al.
-  parameters_extracted: []
-  unresolved_questions: []
-  licence: null
-  archived_file: null
-  sha256: null
-  discovered_by_queries:
-  - Kaya Ketenoglu Sultansoy Zimmermann luminosity HL-LHC HE-LHC muon proton colliders Europhysics Letters 138 (mapping inferred
-    from the query note)
-  notes: '(no numerical values quoted in snippets for this source)
-
-
-    Reconnaissance on 2026-10-28 with WebSearch only. ''snippet-quoted'' lines are search-engine snippets and are leads to
-    verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md
-    section 1.5).
-
-
-    The journal flags fetch_blocked=true but records no failed WebFetch attempt on gcris.etu.edu.tr (not among the hosts listed
-    as blocked), so access is recorded as ''snippet_only'', not ''blocked''. Journal licence/access note: ''institutional
-    repository''.'
-- source_id: SRC_DOI_10_1103_PHYSREVD_103_116009
+- source_id: SRC_ARXIV_2101_10476
   title: Physics potential of a muon-proton collider (arXiv:2101.10476; Phys. Rev. D 103, 116009)
   authors_or_org: Kingman Cheung, Zeren Simon Wang
   source_type: journal_article
@@ -554,38 +411,6 @@ sources:
 
     WebFetch to journals.aps.org failed in this session (host not in the network allow-list; journal lists it among blocked
     hosts), so access is recorded as ''blocked''. Journal licence/access note: ''APS; arXiv open access''.'
-- source_id: SRC_ARXIV_2101_10476
-  title: Physics potential of a muon-proton collider (arXiv abstract/export page)
-  authors_or_org: Cheung, Wang
-  source_type: arxiv_preprint
-  category: PEER_REVIEWED
-  publication_date: 2021-01 (v1)
-  version: arXiv:2101.10476v2
-  url: https://export.arxiv.org/abs/2101.10476
-  doi: 10.1103/PhysRevD.103.116009
-  arxiv_id: '2101.10476'
-  access_date: '2026-10-28'
-  access: snippet_only
-  relevance: Preprint of PRD 103 116009. Category PEER_REVIEWED because the PRD publication (SRC_DOI_10_1103_PHYSREVD_103_116009)
-    is confirmed by snippets; the preprint itself is not the reviewed text.
-  parameters_extracted: []
-  unresolved_questions: []
-  licence: null
-  archived_file: null
-  sha256: null
-  discovered_by_queries:
-  - Cheung Wang "Physics potential of a muon-proton collider" Phys. Rev. D 103 116009
-  notes: '(no numerical values quoted in snippets for this source)
-
-
-    Reconnaissance on 2026-10-28 with WebSearch only. ''snippet-quoted'' lines are search-engine snippets and are leads to
-    verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md
-    section 1.5).
-
-
-    The journal flags fetch_blocked=true but records no failed WebFetch attempt on export.arxiv.org (not among the hosts listed
-    as blocked), so access is recorded as ''snippet_only'', not ''blocked''. The parent host arxiv.org is blocked, so a fetch
-    of this mirror is expected to fail too. Journal licence/access note: ''arXiv open access''.'
 - source_id: SRC_ARXIV_2203_06258
   title: The Potential of a TeV-Scale Muon-Ion Collider (arXiv:2203.06258)
   authors_or_org: Darin Acosta et al. (eight authors)

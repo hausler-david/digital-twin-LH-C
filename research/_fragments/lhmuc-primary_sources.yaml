@@ -1,7 +1,3 @@
-# Research fragment — reconnaissance family 'lhmuc-primary' (WebSearch on 2026-10-28; all WebFetch attempts to blocked hosts failed).
-# Schema: schemas/source.schema.json. Merged into research/source_registry.yaml by tools/merge_research_fragments.py
-# (the uploaded entries SRC_ARXIV_2610_35154 and SRC_ARXIV_2506_15445 keep their registry text; only discovered_by_queries are merged).
-# 'snippet-quoted' lines in notes are leads to verify, NOT parameter records.
 sources:
 - source_id: SRC_ARXIV_2610_35154
   title: 'LHμC: A high energy, high luminosity muon-hadron collider at CERN'
@@ -9,42 +5,61 @@ sources:
   source_type: conference_proceeding
   category: PRIMARY_LHMUC
   publication_date: '2026-10-26'
-  version: arXiv:2610.35154 [hep-ex] (version number not confirmed by snippets; uploaded copy is v1); HTML at https://arxiv.org/html/2610.35154; contribution to DIS 2026 Proceedings
+  version: arXiv:2610.35154 [hep-ex] (version number not confirmed by snippets; uploaded copy is v1); HTML at https://arxiv.org/html/2610.35154;
+    contribution to DIS 2026 Proceedings
   url: https://arxiv.org/abs/2610.35154
   doi: null
   arxiv_id: '2610.35154'
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'The primary public write-up of the LHμC concept (ultra-cold anti-muon source -> muon booster -> main muon ring, physics motivation incl. neutrino science, MDI and general-purpose detector considerations). Reuses LHeC ERL infrastructure. Its reference list cites the HELP4CERN White Paper as ''in preparation'' and Forthomme''s ''LHeC/LHμC main detector'' talk at the LHμC workshop. arxiv.org fetch failed (ENOTFOUND); all values come from search snippets. NOTE: this id already exists in research/source_registry.yaml as an uploaded, fully read PDF; this fragment entry only records the web-reconnaissance view (snippets, blocked fetch) and the queries that surfaced it.'
+  relevance: 'The primary public write-up of the LHμC concept (ultra-cold anti-muon source -> muon booster -> main muon ring,
+    physics motivation incl. neutrino science, MDI and general-purpose detector considerations). Reuses LHeC ERL infrastructure.
+    Its reference list cites the HELP4CERN White Paper as ''in preparation'' and Forthomme''s ''LHeC/LHμC main detector''
+    talk at the LHμC workshop. arxiv.org fetch failed (ENOTFOUND); all values come from search snippets. NOTE: this id already
+    exists in research/source_registry.yaml as an uploaded, fully read PDF; this fragment entry only records the web-reconnaissance
+    view (snippets, blocked fetch) and the queries that surfaced it.'
   parameters_extracted: []
   unresolved_questions:
-  - 'arXiv record (abstract page): licence metadata, version number and full author list not confirmed because arxiv.org is blocked (the uploaded PDF states CC BY-NC-ND 4.0).'
-  - Snippets give the abstract-level set (1 or 2 TeV mu+ on 7 TeV p; sqrt(s) 5.3 or 7.5 TeV; average luminosity near 1e34 cm^-2 s^-1); bunch numbers and repetition rate were not visible in any snippet.
-  - DIS2026 proceedings volume / Indico event for this contribution not found; only the arXiv comment "contribution to DIS 2026 Proceedings".
+  - 'arXiv record (abstract page): licence metadata, version number and full author list not confirmed because arxiv.org is
+    blocked (the uploaded PDF states CC BY-NC-ND 4.0).'
+  - Snippets give the abstract-level set (1 or 2 TeV mu+ on 7 TeV p; sqrt(s) 5.3 or 7.5 TeV; average luminosity near 1e34
+    cm^-2 s^-1); bunch numbers and repetition rate were not visible in any snippet.
+  - DIS2026 proceedings volume / Indico event for this contribution not found; only the arXiv comment "contribution to DIS
+    2026 Proceedings".
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - '"Help4CERN" OR "HELP4CERN" lepton-hadron collider CERN white paper arXiv 2026 (extended)'
-  - '"LHμC" OR "LHmuC" OR "LHuC" muon-hadron collider CERN ultra-cold muon source bunches repetition rate Hz luminosity 2026 (extended)'
+  - '"LHμC" OR "LHmuC" OR "LHuC" muon-hadron collider CERN ultra-cold muon source bunches repetition rate Hz luminosity 2026
+    (extended)'
   - arxiv.org/abs/2610.35154 LHμC abstract "1 or 2 TeV" muon booster main muon ring luminosity HELP4CERN (extended)
-  - '"Ultra-cold muons for the LHC" timetable contributions Forthomme "main detector" OR "nozzle" OR "vFFA" OR "muonium" OR "di-Higgs" OR "two-photon" (extended)'
-  notes: 'snippet-quoted: muon beam energy = 1 or 2 TeV μ+ :: The abstract describes a muon beam of 1 or 2 TeV μ+ beam collides with a 7 TeV proton beam.
+  - '"Ultra-cold muons for the LHC" timetable contributions Forthomme "main detector" OR "nozzle" OR "vFFA" OR "muonium" OR
+    "di-Higgs" OR "two-photon" (extended)'
+  notes: 'snippet-quoted: muon beam energy = 1 or 2 TeV μ+ :: The abstract describes a muon beam of 1 or 2 TeV μ+ beam collides
+    with a 7 TeV proton beam.
 
     snippet-quoted: proton beam energy = 7 TeV :: a 1 or 2 TeV μ+ beam colliding with a 7 TeV proton beam
 
-    snippet-quoted: centre-of-mass energy = 5.3 or 7.5 TeV :: That gives μ+p centre-of-mass energies of 5.3 or 7.5 TeV, with average luminosity near 10^34 cm⁻²s⁻¹.
+    snippet-quoted: centre-of-mass energy = 5.3 or 7.5 TeV :: That gives μ+p centre-of-mass energies of 5.3 or 7.5 TeV, with
+    average luminosity near 10^34 cm⁻²s⁻¹.
 
-    snippet-quoted: average luminosity = near 10^34 cm^-2 s^-1 :: at an average luminosity near 10³⁴ cm⁻² s⁻¹ (the abstract states this.)
+    snippet-quoted: average luminosity = near 10^34 cm^-2 s^-1 :: at an average luminosity near 10³⁴ cm⁻² s⁻¹ (the abstract
+    states this.)
 
-    snippet-quoted: submission date = 26 Oct 2026 :: by Krzysztof Piotrzkowski, submitted 26 Oct 2026. Its comments say it is on behalf of HELP4CERN Study Group, contribution to DIS 2026 Proceedings.
+    snippet-quoted: submission date = 26 Oct 2026 :: by Krzysztof Piotrzkowski, submitted 26 Oct 2026. Its comments say it
+    is on behalf of HELP4CERN Study Group, contribution to DIS 2026 Proceedings.
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
-    Snippet also states the reference list cites the HELP4CERN White Paper as "in preparation" and Forthomme''s "LHeC/LHμC main detector" talk at the LHμC workshop.'
+    Snippet also states the reference list cites the HELP4CERN White Paper as "in preparation" and Forthomme''s "LHeC/LHμC
+    main detector" talk at the LHμC workshop.'
 - source_id: SRC_INDICO_1681458_OVERVIEW
   title: Ultra-cold muons for the LHC (24-26 September 2026) — workshop overview page, CERN Indico event 1681458
-  authors_or_org: HELP4CERN Study Group / AGH University of Kraków; organisers incl. Krzysztof Piotrzkowski (AGH), Laurent Forthomme (AGH) among chairs
+  authors_or_org: HELP4CERN Study Group / AGH University of Kraków; organisers incl. Krzysztof Piotrzkowski (AGH), Laurent
+    Forthomme (AGH) among chairs
   source_type: web_page
   category: CONFERENCE_PROCEEDING
   publication_date: '2026-09-24'
@@ -54,10 +69,21 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'The Kraków workshop named in the task. Snippets confirm: ''dedicated to the challenges and potential development of an intense source of ultra-cold anti-muons for the proposed high energy, high luminosity muon-hadron collider at CERN'', venue ''AGH University of Kraków, D-10 D-czarna (3rd floor)'', ''organised in the context of the High Energy Lepton-Proton collisions for CERN HELP4CERN Study Group'', proceedings ''planned for Acta Physica Polonica B supplement''. Speakers seen in snippets: Ce Zhang (Univ. of Liverpool), Daniel Schulte (CERN), Masashi Otani (KEK), Yuji Yamazaki (Kobe Univ.), Saleh Sultansoy (TOBB ETU), Laurent Forthomme (AGH), Krzysztof Piotrzkowski (AGH). Contribution titles (nozzle/Kilic, vFFA/Topp-Mugglestone, SPS-LHC/Zimmermann, Acosta, Rogers, Khanpour, Dagli, Kumar) were NOT visible in any snippet; the timetable could not be fetched (indico.cern.ch ENOTFOUND). Registration start date conflicting in snippets (May 25 vs July 31, 2026).'
+  relevance: 'The Kraków workshop named in the task. Snippets confirm: ''dedicated to the challenges and potential development
+    of an intense source of ultra-cold anti-muons for the proposed high energy, high luminosity muon-hadron collider at CERN'',
+    venue ''AGH University of Kraków, D-10 D-czarna (3rd floor)'', ''organised in the context of the High Energy Lepton-Proton
+    collisions for CERN HELP4CERN Study Group'', proceedings ''planned for Acta Physica Polonica B supplement''. Speakers
+    seen in snippets: Ce Zhang (Univ. of Liverpool), Daniel Schulte (CERN), Masashi Otani (KEK), Yuji Yamazaki (Kobe Univ.),
+    Saleh Sultansoy (TOBB ETU), Laurent Forthomme (AGH), Krzysztof Piotrzkowski (AGH). Contribution titles (nozzle/Kilic,
+    vFFA/Topp-Mugglestone, SPS-LHC/Zimmermann, Acosta, Rogers, Khanpour, Dagli, Kumar) were NOT visible in any snippet; the
+    timetable could not be fetched (indico.cern.ch ENOTFOUND). Registration start date conflicting in snippets (May 25 vs
+    July 31, 2026).'
   parameters_extracted: []
   unresolved_questions:
-  - 'Contribution list / timetable not visible in any snippet: titles and abstracts for Kilic (nozzle), Topp-Mugglestone (vFFA), Zimmermann (SPS/LHC modifications), Acosta (near-beam detectors), Yamazaki (TeV-muon detectors), Otani (pre-acceleration), Rogers (hybrid source), Zhang (muonium diffusion), Kumar (di-Higgs), Khanpour (two-photon), Dagli (nucleus options) remain unconfirmed.'
+  - 'Contribution list / timetable not visible in any snippet: titles and abstracts for Kilic (nozzle), Topp-Mugglestone (vFFA),
+    Zimmermann (SPS/LHC modifications), Acosta (near-beam detectors), Yamazaki (TeV-muon detectors), Otani (pre-acceleration),
+    Rogers (hybrid source), Zhang (muonium diffusion), Kumar (di-Higgs), Khanpour (two-photon), Dagli (nucleus options) remain
+    unconfirmed.'
   - Registration start date conflicts between snippets (25 May 2026 vs 31 July 2026); conflict preserved, not resolved.
   - Proceedings "planned for Acta Physica Polonica B supplement" — no volume, date or DOI yet.
   licence: Participation by invitation; Indico page publicly indexed
@@ -67,36 +93,50 @@ sources:
   - HELP4CERN white paper ultra-cold muons LHC muon-hadron collider
   - site:indico.cern.ch "Ultra-cold muons for the LHC" Kraków workshop 2026
   - indico.cern.ch 1681458 contributions nozzle Kilic ultra-cold muon Topp-Mugglestone vFFA Zimmermann SPS LHC modifications
-  - '"LHμC" OR "LHmuC" OR "LHuC" muon-hadron collider CERN ultra-cold muon source bunches repetition rate Hz luminosity 2026 (extended)'
-  - '"Ultra-cold muons for the LHC" timetable contributions Forthomme "main detector" OR "nozzle" OR "vFFA" OR "muonium" OR "di-Higgs" OR "two-photon" (extended)'
-  notes: 'Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+  - '"LHμC" OR "LHmuC" OR "LHuC" muon-hadron collider CERN ultra-cold muon source bunches repetition rate Hz luminosity 2026
+    (extended)'
+  - '"Ultra-cold muons for the LHC" timetable contributions Forthomme "main detector" OR "nozzle" OR "vFFA" OR "muonium" OR
+    "di-Higgs" OR "two-photon" (extended)'
+  notes: 'Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not
+    in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter
+    records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
-    Category: event web page of the Kraków HELP4CERN workshop. Only the three uploaded workshop decks (SRC_WS1681458_*) carry PRIMARY_LHMUC per the lead; the event page itself is recorded as CONFERENCE_PROCEEDING / web_page (lead decision: Indico pages -> CONFERENCE_PROCEEDING). It carries no numerical parameters.'
+    Category: event web page of the Kraków HELP4CERN workshop. Only the three uploaded workshop decks (SRC_WS1681458_*) carry
+    PRIMARY_LHMUC per the lead; the event page itself is recorded as CONFERENCE_PROCEEDING / web_page (lead decision: Indico
+    pages -> CONFERENCE_PROCEEDING). It carries no numerical parameters.'
 - source_id: SRC_INDICO_1522800_6986580
   title: 'LHμC: A high energy, high luminosity muon-hadron collider at CERN (ICHEP 2026, Natal, contribution 6986580)'
   authors_or_org: Krzysztof Piotrzkowski (AGH Kraków), Help4CERN
   source_type: workshop_talk
   category: CONFERENCE_PROCEEDING
   publication_date: '2026-07-30'
-  version: ICHEP 2026 (43rd International Conference on High Energy Physics), Natal, Brazil, 30 July - 5 Aug 2026; Indico event 1522800
+  version: ICHEP 2026 (43rd International Conference on High Energy Physics), Natal, Brazil, 30 July - 5 Aug 2026; Indico
+    event 1522800
   url: https://indico.cern.ch/event/1522800/contributions/6986580
   doi: null
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'The ''Natal 2026'' talk with the 500 GeV / 3.74 TeV parameters named in the task. NOTE: search snippets list Piotrzkowski, not Forthomme, as speaker; Forthomme''s involvement in this specific contribution could not be confirmed. Abstract covers ultra-cold μ+ source, muon booster, main muon ring, physics programme, MDI and general-purpose detector; notes synergies with LHeC, Muon Collider and FCC; cites a white paper ''in preparation''. Listing said ''no materials yet'' at index time.'
+  relevance: 'The ''Natal 2026'' talk with the 500 GeV / 3.74 TeV parameters named in the task. NOTE: search snippets list
+    Piotrzkowski, not Forthomme, as speaker; Forthomme''s involvement in this specific contribution could not be confirmed.
+    Abstract covers ultra-cold μ+ source, muon booster, main muon ring, physics programme, MDI and general-purpose detector;
+    notes synergies with LHeC, Muon Collider and FCC; cites a white paper ''in preparation''. Listing said ''no materials
+    yet'' at index time.'
   parameters_extracted: []
   unresolved_questions:
-  - 'Speaker attribution: snippets list K. Piotrzkowski, not L. Forthomme, as speaker; the "Forthomme talk at Natal 2026" named in the task could not be confirmed.'
+  - 'Speaker attribution: snippets list K. Piotrzkowski, not L. Forthomme, as speaker; the "Forthomme talk at Natal 2026"
+    named in the task could not be confirmed.'
   - Listing said "no materials yet" at index time; slides/recording availability unknown.
-  - Snippets give the 500 GeV / 3.74 TeV / >1e33 set, which differs from the AGH seminar (1 TeV / 5.3 TeV) and arXiv:2610.35154 (1 or 2 TeV; ~1e34 average); which set is current is not stated.
+  - Snippets give the 500 GeV / 3.74 TeV / >1e33 set, which differs from the AGH seminar (1 TeV / 5.3 TeV) and arXiv:2610.35154
+    (1 or 2 TeV; ~1e34 average); which set is current is not stated.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - arXiv 2610.35154 Piotrzkowski LHμC muon-proton collider DIS2026
   - Forthomme LHeC LHμC detector Natal 2026 500 GeV muon 3.74 TeV
-  notes: 'snippet-quoted: muon beam energy = 500 GeV μ+ :: The Natal listing describes a 500 GeV μ+ beam colliding with a 7 TeV proton beam, resulting in √s = 3.74 TeV.
+  notes: 'snippet-quoted: muon beam energy = 500 GeV μ+ :: The Natal listing describes a 500 GeV μ+ beam colliding with a
+    7 TeV proton beam, resulting in √s = 3.74 TeV.
 
     snippet-quoted: proton beam energy = 7 TeV :: a 500 GeV μ+ beam colliding with a 7 TeV proton beam
 
@@ -104,9 +144,12 @@ sources:
 
     snippet-quoted: luminosity = above 10^33 cm^-2 s^-1 :: Both list luminosity above 10^33 cm⁻²s⁻¹.
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
-    Lead decision: Indico contribution pages -> CONFERENCE_PROCEEDING / workshop_talk (not PRIMARY_LHMUC, although the speaker is the LHμC proponent).'
+    Lead decision: Indico contribution pages -> CONFERENCE_PROCEEDING / workshop_talk (not PRIMARY_LHMUC, although the speaker
+    is the LHμC proponent).'
 - source_id: SRC_INDICO_1522800_6983210
   title: Help4CERN LHμC physics-benchmarks talk (ICHEP 2026, Natal, contribution 6983210; exact title not visible in snippet)
   authors_or_org: Help4CERN (speaker listed as Krzysztof Piotrzkowski)
@@ -119,18 +162,25 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'Second Help4CERN ICHEP contribution. Snippet: ''lists benchmark studies including constraints on the muon g-2 anomaly using Effective Field Theory, searches for R-parity-violating Supersymmetry via lepton-quark fusion, and the resonant single production of color-octet muons''; cites arXiv:2506.15445 and ''a forthcoming White Paper on lepton-hadron colliders at CERN''. Exact title not visible in snippet.'
+  relevance: 'Second Help4CERN ICHEP contribution. Snippet: ''lists benchmark studies including constraints on the muon g-2
+    anomaly using Effective Field Theory, searches for R-parity-violating Supersymmetry via lepton-quark fusion, and the resonant
+    single production of color-octet muons''; cites arXiv:2506.15445 and ''a forthcoming White Paper on lepton-hadron colliders
+    at CERN''. Exact title not visible in snippet.'
   parameters_extracted: []
   unresolved_questions:
-  - Exact title and speaker not visible in snippet; only the benchmark topics (muon g-2 via EFT, RPV SUSY via lepton-quark fusion, resonant colour-octet muons) and the citation of arXiv:2506.15445 and a forthcoming White Paper.
+  - Exact title and speaker not visible in snippet; only the benchmark topics (muon g-2 via EFT, RPV SUSY via lepton-quark
+    fusion, resonant colour-octet muons) and the citation of arXiv:2506.15445 and a forthcoming White Paper.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - site:arxiv.org Piotrzkowski "LHμC" OR "LHmuC" muon-hadron collider CERN 2026
-  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in
+    the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 - source_id: SRC_INDICO_1522800_6980628
-  title: Help4CERN LHμC Higgs-Electroweak-Top potential talk (ICHEP 2026, Natal, contribution 6980628; exact title not visible in snippet)
+  title: Help4CERN LHμC Higgs-Electroweak-Top potential talk (ICHEP 2026, Natal, contribution 6980628; exact title not visible
+    in snippet)
   authors_or_org: Help4CERN (Krzysztof Piotrzkowski listed)
   source_type: workshop_talk
   category: CONFERENCE_PROCEEDING
@@ -141,18 +191,24 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'Third Help4CERN ICHEP contribution. Snippet: ''described as an anti-muon-hadron collider at CERN, with a Higgs-Electroweak-Top physics potential''; refers to ''conceptual design and performance evaluation of the HL-LHC-based antimuon-proton collider μLHC, which is arXiv:2506.15445''. Exact title not visible.'
+  relevance: 'Third Help4CERN ICHEP contribution. Snippet: ''described as an anti-muon-hadron collider at CERN, with a Higgs-Electroweak-Top
+    physics potential''; refers to ''conceptual design and performance evaluation of the HL-LHC-based antimuon-proton collider
+    μLHC, which is arXiv:2506.15445''. Exact title not visible.'
   parameters_extracted: []
   unresolved_questions:
-  - Exact title and speaker not visible in snippet; snippet only says "anti-muon-hadron collider at CERN, with a Higgs-Electroweak-Top physics potential" and refers to the μLHC design of arXiv:2506.15445.
+  - Exact title and speaker not visible in snippet; snippet only says "anti-muon-hadron collider at CERN, with a Higgs-Electroweak-Top
+    physics potential" and refers to the μLHC design of arXiv:2506.15445.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - site:arxiv.org Piotrzkowski "LHμC" OR "LHmuC" muon-hadron collider CERN 2026
-  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in
+    the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 - source_id: SRC_INDICO_1664360_6996662
-  title: LHμC presentation at the CERN Accelerator Design Meeting (Indico event 1664360, contribution 6996662; companion contribution 6996661)
+  title: LHμC presentation at the CERN Accelerator Design Meeting (Indico event 1664360, contribution 6996662; companion contribution
+    6996661)
   authors_or_org: Krzysztof Piotrzkowski (AGH UST Krakow); Daniel Schulte (CERN) listed for general news item
   source_type: workshop_talk
   category: CONFERENCE_PROCEEDING
@@ -163,11 +219,15 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: CERN accelerator-side presentation of the LHμC concept 'from the ultra-cold muon source through the muon booster to the main muon ring, with initial thoughts on the machine-detector interface'. Companion contribution 6996661 (https://indico.cern.ch/event/1664360/contributions/6996661/) 'covers recent work on muon-hadron collisions that reuse the ERL infrastructure proposed for the LHeC'. Meeting date not visible in snippets.
+  relevance: CERN accelerator-side presentation of the LHμC concept 'from the ultra-cold muon source through the muon booster
+    to the main muon ring, with initial thoughts on the machine-detector interface'. Companion contribution 6996661 (https://indico.cern.ch/event/1664360/contributions/6996661/)
+    'covers recent work on muon-hadron collisions that reuse the ERL infrastructure proposed for the LHeC'. Meeting date not
+    visible in snippets.
   parameters_extracted: []
   unresolved_questions:
   - Meeting date not visible in any snippet.
-  - Companion contribution 6996661 (https://indico.cern.ch/event/1664360/contributions/6996661/) "covers recent work on muon-hadron collisions that reuse the ERL infrastructure proposed for the LHeC" — speaker and materials unknown.
+  - Companion contribution 6996661 (https://indico.cern.ch/event/1664360/contributions/6996661/) "covers recent work on muon-hadron
+    collisions that reuse the ERL infrastructure proposed for the LHeC" — speaker and materials unknown.
   - Whether slides are attached (and their licence) is unknown.
   licence: null
   archived_file: null
@@ -175,7 +235,8 @@ sources:
   discovered_by_queries:
   - HELP4CERN white paper ultra-cold muons LHC muon-hadron collider
   - indico.cern.ch 1664360 "Accelerator Design Meeting" LHμC muon hadron collider
-  notes: 'snippet-quoted: proton beam energy = 7 TeV :: The abstract describes a 7 TeV proton beam, a centre-of-mass energy of 3.74 TeV, and expected luminosity above 10^33 cm⁻²s⁻¹.
+  notes: 'snippet-quoted: proton beam energy = 7 TeV :: The abstract describes a 7 TeV proton beam, a centre-of-mass energy
+    of 3.74 TeV, and expected luminosity above 10^33 cm⁻²s⁻¹.
 
     snippet-quoted: centre-of-mass energy = 3.74 TeV :: a centre-of-mass energy of 3.74 TeV
 
@@ -183,7 +244,9 @@ sources:
 
     snippet-quoted: muon beam energy = 500 GeV μ+ :: The abstract states a 500 GeV μ⁺ beam would collide at the LHμC.
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
     Daniel Schulte (CERN) is listed for the general-news item of the same meeting, not necessarily for the LHμC contribution.'
 - source_id: SRC_URL_INDICO_FIS_AGH_462
@@ -198,23 +261,29 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: AGH HEP seminar on the LHuC concept 'covering the ultra-cold μ+ source, the muon booster and the main muon ring'. Gives the 1 TeV / 5.3 TeV parameter set (vs 500 GeV / 3.74 TeV in the ICHEP listing); the arXiv paper later uses 1 or 2 TeV. Fetch to indico.fis.agh.edu.pl failed. Exact day in May 2026 not visible.
+  relevance: AGH HEP seminar on the LHuC concept 'covering the ultra-cold μ+ source, the muon booster and the main muon ring'.
+    Gives the 1 TeV / 5.3 TeV parameter set (vs 500 GeV / 3.74 TeV in the ICHEP listing); the arXiv paper later uses 1 or
+    2 TeV. Fetch to indico.fis.agh.edu.pl failed. Exact day in May 2026 not visible.
   parameters_extracted: []
   unresolved_questions:
   - Exact day in May 2026 not visible.
-  - Gives the 1 TeV / 5.3 TeV / >1e33 set — a third distinct parameter set relative to ICHEP (500 GeV / 3.74 TeV) and arXiv:2610.35154 (1 or 2 TeV; ~1e34 average).
+  - Gives the 1 TeV / 5.3 TeV / >1e33 set — a third distinct parameter set relative to ICHEP (500 GeV / 3.74 TeV) and arXiv:2610.35154
+    (1 or 2 TeV; ~1e34 average).
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - arXiv 2610.35154 Piotrzkowski LHμC muon-proton collider DIS2026
-  notes: 'snippet-quoted: muon beam energy = 1 TeV μ+ :: A separate AGH seminar listing gives a 1 TeV μ+ beam colliding with a 7 TeV proton beam, resulting in a centre-of-mass energy of 5.3 TeV.
+  notes: 'snippet-quoted: muon beam energy = 1 TeV μ+ :: A separate AGH seminar listing gives a 1 TeV μ+ beam colliding with
+    a 7 TeV proton beam, resulting in a centre-of-mass energy of 5.3 TeV.
 
     snippet-quoted: centre-of-mass energy = 5.3 TeV :: resulting in a centre-of-mass energy of 5.3 TeV
 
     snippet-quoted: luminosity = above 10^33 cm^-2 s^-1 :: Both list luminosity above 10^33 cm⁻²s⁻¹.
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
 - source_id: SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS
   title: Probing Anomalous Higgs Couplings in μ+p Collisions (SAIP 2026, contribution 653, with slides PDF)
   authors_or_org: Edward Nkadimeng (speaker); slides list Leboho, Nkadimeng, Sharma, Kumar, Mellado (Wits)
@@ -227,10 +296,14 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: blocked
-  relevance: Di-Higgs physics study at the LHμC (charged-current μ+p -> hhjν, SM Higgs self-coupling plus hhh/hWW/hhWW anomalous couplings, azimuthal-angle correlation probe, Delphes detector-level, 95% CL exclusion vs integrated luminosity). Likely the same Wits group (Kumar) behind the 'di-Higgs by Kumar' Kraków workshop contribution, but that link is not confirmed. Paper draft 'still in progress'.
+  relevance: Di-Higgs physics study at the LHμC (charged-current μ+p -> hhjν, SM Higgs self-coupling plus hhh/hWW/hhWW anomalous
+    couplings, azimuthal-angle correlation probe, Delphes detector-level, 95% CL exclusion vs integrated luminosity). Likely
+    the same Wits group (Kumar) behind the 'di-Higgs by Kumar' Kraków workshop contribution, but that link is not confirmed.
+    Paper draft 'still in progress'.
   parameters_extracted: []
   unresolved_questions:
-  - Relation to the uploaded Kraków deck SRC_WS_LEBOHO_KUMAR_DIHIGGS (same Wits group, same process) is inferred from author overlap, not verified; the SAIP slides PDF (…/attachments/224/507/Di_Higgs_at_the_LHC%20(9).pdf) was not fetched.
+  - Relation to the uploaded Kraków deck SRC_WS_LEBOHO_KUMAR_DIHIGGS (same Wits group, same process) is inferred from author
+    overlap, not verified; the SAIP slides PDF (…/attachments/224/507/Di_Higgs_at_the_LHC%20(9).pdf) was not fetched.
   - Paper draft described as "still in progress"; no arXiv id.
   - Slide-level numbers (cross sections, cut-flow, 95% CL limits) not visible in snippets.
   licence: null
@@ -239,31 +312,41 @@ sources:
   discovered_by_queries:
   - LHμC muon-proton collider di-Higgs Kumar two-photon Khanpour nucleus Dagli muonium diffusion Zhang Kraków 2026
   - Nkadimeng "Anomalous Higgs Couplings" μ+p collisions LHμC di-Higgs 500 GeV 1 TeV muons 7 TeV protons
-  notes: 'snippet-quoted: muon beam energy = 500 GeV (1 TeV) :: 500 GeV (1 TeV) muons with 7 TeV protons at center-of-mass energies of √s ≈ 3.74 (5.3) TeV
+  notes: 'snippet-quoted: muon beam energy = 500 GeV (1 TeV) :: 500 GeV (1 TeV) muons with 7 TeV protons at center-of-mass
+    energies of √s ≈ 3.74 (5.3) TeV
 
     snippet-quoted: proton beam energy = 7 TeV :: 500 GeV (1 TeV) muons with 7 TeV protons
 
     snippet-quoted: centre-of-mass energy = ≈3.74 (5.3) TeV :: at center-of-mass energies of √s ≈ 3.74 (5.3) TeV
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
-    Lead decision: SAIP di-Higgs talk -> PRIMARY_LHMUC (HELP4CERN-affiliated physics study of the LHμC). Until the PDF is fetched and read, no value from it may be recorded as reported_lhmuc.'
+    Lead decision: SAIP di-Higgs talk -> PRIMARY_LHMUC (HELP4CERN-affiliated physics study of the LHμC). Until the PDF is
+    fetched and read, no value from it may be recorded as reported_lhmuc.'
 - source_id: SRC_ARXIV_2506_15445
   title: 'μLHC: Antimuon Ring and HL-LHC based μ+p Collider'
   authors_or_org: D. Akturk et al. (TOBB ETU / Uludag; incl. S. Sultansoy, F. Zimmermann)
   source_type: journal_article
   category: RELATED_MACHINE
   publication_date: 2025-06
-  version: arXiv:2506.15445; PTEP 2026(3) 033C04, DOI 10.1093/ptep/ptag031 (https://academic.oup.com/ptep/article/2026/3/033C04/8503486); institutional mirror avesis.uludag.edu.tr
+  version: arXiv:2506.15445; PTEP 2026(3) 033C04, DOI 10.1093/ptep/ptag031 (https://academic.oup.com/ptep/article/2026/3/033C04/8503486);
+    institutional mirror avesis.uludag.edu.tr
   url: https://arxiv.org/pdf/2506.15445
   doi: 10.1093/ptep/ptag031
   arxiv_id: '2506.15445'
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'The μLHC conceptual design (HL-LHC-based antimuon-proton collider using J-PARC μTRISTAN ultra-cold μ+ technology) that the HELP4CERN talks cite as the direct predecessor of LHμC. ''Two booster ring options for μ+ acceleration are considered: a μTRISTAN-based ring and a repurposed LHeC ERL-based system.'' Fetches to arxiv, OUP and avesis all failed. NOTE: this id already exists in research/source_registry.yaml as an uploaded, fully read PDF (v2); this fragment entry only records the web-reconnaissance view and the queries that surfaced it.'
+  relevance: 'The μLHC conceptual design (HL-LHC-based antimuon-proton collider using J-PARC μTRISTAN ultra-cold μ+ technology)
+    that the HELP4CERN talks cite as the direct predecessor of LHμC. ''Two booster ring options for μ+ acceleration are considered:
+    a μTRISTAN-based ring and a repurposed LHeC ERL-based system.'' Fetches to arxiv, OUP and avesis all failed. NOTE: this
+    id already exists in research/source_registry.yaml as an uploaded, fully read PDF (v2); this fragment entry only records
+    the web-reconnaissance view and the queries that surfaced it.'
   parameters_extracted: []
   unresolved_questions:
-  - Snippet booster energies "960 GeV and up to 1 TeV" and the "above 1e33" luminosity must be reconciled with the uploaded v2 and the PTEP erratum (post-erratum values 7.2e33 / 8.8e33 are quoted in the Nucleus Options slides).
+  - Snippet booster energies "960 GeV and up to 1 TeV" and the "above 1e33" luminosity must be reconciled with the uploaded
+    v2 and the PTEP erratum (post-erratum values 7.2e33 / 8.8e33 are quoted in the Nucleus Options slides).
   - arXiv licence not verified (host blocked).
   licence: null
   archived_file: null
@@ -272,15 +355,21 @@ sources:
   - HELP4CERN white paper ultra-cold muons LHC muon-hadron collider
   - arxiv.org/abs/2610.35154 LHμC abstract "1 or 2 TeV" muon booster main muon ring luminosity HELP4CERN (extended)
   - μLHC antimuon ring HL-LHC μ+p collider PTEP 2026 ptag031 Akturk Sultansoy 5.3 TeV luminosity
-  notes: 'snippet-quoted: centre-of-mass energy = 5.3 TeV :: The design reaches about 5.3 TeV center-of-mass energy by colliding 1 TeV antimuons with 7 TeV protons.
+  notes: 'snippet-quoted: centre-of-mass energy = 5.3 TeV :: The design reaches about 5.3 TeV center-of-mass energy by colliding
+    1 TeV antimuons with 7 TeV protons.
 
-    snippet-quoted: luminosity = above 10^33 cm^-2 s^-1 :: The paper''s abstract reports predicted luminosities above 10^33 cm⁻² s⁻¹.
+    snippet-quoted: luminosity = above 10^33 cm^-2 s^-1 :: The paper''s abstract reports predicted luminosities above 10^33
+    cm⁻² s⁻¹.
 
-    snippet-quoted: booster energy = 960 GeV and up to 1 TeV :: Its booster figures are 960 GeV and up to 1 TeV, and it reported achievable luminosities above 10³³ cm⁻² s⁻¹
+    snippet-quoted: booster energy = 960 GeV and up to 1 TeV :: Its booster figures are 960 GeV and up to 1 TeV, and it reported
+    achievable luminosities above 10³³ cm⁻² s⁻¹
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 
-    Values the μLHC paper itself imports from μTRISTAN or LHeC are imported_related with applicability.explanation saying so (project rule).'
+    Values the μLHC paper itself imports from μTRISTAN or LHeC are imported_related with applicability.explanation saying
+    so (project rule).'
 - source_id: SRC_ARXIV_2406_02647
   title: μTRISTAN and LHC/Tevatron/FCC/SppC Based Antimuon-Hadron Colliders
   authors_or_org: Sultansoy group (TOBB ETU) - authors not visible in snippet
@@ -297,18 +386,22 @@ sources:
   parameters_extracted: []
   unresolved_questions:
   - Author list not visible in snippet.
-  - Whether 5.29 TeV / 5.2e33 cm^-2 s^-1 refer to the HL-LHC μ+p option with the μTRISTAN μ+ beam, and which beam parameters they assume, is unknown until the paper is read.
+  - Whether 5.29 TeV / 5.2e33 cm^-2 s^-1 refer to the HL-LHC μ+p option with the μTRISTAN μ+ beam, and which beam parameters
+    they assume, is unknown until the paper is read.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - μLHC antimuon ring HL-LHC μ+p collider PTEP 2026 ptag031 Akturk Sultansoy 5.3 TeV luminosity
-  notes: 'snippet-quoted: centre-of-mass energy = 5.29 TeV :: A 2024 study of HL-LHC-based μ+p colliders (arXiv 2406.02647) lists 5.29 TeV and 5.2 × 10^33 cm⁻² s⁻¹.
+  notes: 'snippet-quoted: centre-of-mass energy = 5.29 TeV :: A 2024 study of HL-LHC-based μ+p colliders (arXiv 2406.02647)
+    lists 5.29 TeV and 5.2 × 10^33 cm⁻² s⁻¹.
 
     snippet-quoted: luminosity = 5.2e33 cm^-2 s^-1 :: lists 5.29 TeV and 5.2 × 10^33 cm⁻² s⁻¹
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
-- source_id: SRC_DOI_10_1209_0295_5075_AC4F98
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
+- source_id: SRC_ARXIV_1905_05564
   title: Luminosity and physics considerations on HL-LHC- and HE-LHC-based μp colliders
   authors_or_org: Kaya, Ketenoglu, Sultansoy, Zimmermann
   source_type: journal_article
@@ -320,18 +413,23 @@ sources:
   arxiv_id: '1905.05564'
   access_date: '2026-10-28'
   access: snippet_only
-  relevance: Earlier LHC-based μp collider luminosity estimates; co-authored by F. Zimmermann (CERN), who is named in the task as the SPS/LHC-modifications speaker at the Kraków workshop.
+  relevance: Earlier LHC-based μp collider luminosity estimates; co-authored by F. Zimmermann (CERN), who is named in the
+    task as the SPS/LHC-modifications speaker at the Kraków workshop.
   parameters_extracted: []
   unresolved_questions:
-  - Volume/article number and the exact machine options (HL-LHC vs HE-LHC, μ beam energies) behind the "order 1e33" luminosity not visible in snippet.
+  - Volume/article number and the exact machine options (HL-LHC vs HE-LHC, μ beam energies) behind the "order 1e33" luminosity
+    not visible in snippet.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - μLHC antimuon ring HL-LHC μ+p collider PTEP 2026 ptag031 Akturk Sultansoy 5.3 TeV luminosity
-  notes: 'snippet-quoted: luminosity = order 10^33 cm^-2 s^-1 :: estimated luminosities of order 10^33 cm⁻² s⁻¹ for HL-LHC and HE-LHC-based μp colliders
+  notes: 'snippet-quoted: luminosity = order 10^33 cm^-2 s^-1 :: estimated luminosities of order 10^33 cm⁻² s⁻¹ for HL-LHC
+    and HE-LHC-based μp colliders
 
-    Reconnaissance on 2026-10-28 with WebSearch only. The journal flags fetch_blocked=true but epljournal.edpsciences.org is not among the hosts for which a failed WebFetch is recorded, so access is recorded as snippet_only (not blocked). Snippet values are leads only, not parameter records.'
+    Reconnaissance on 2026-10-28 with WebSearch only. The journal flags fetch_blocked=true but epljournal.edpsciences.org
+    is not among the hosts for which a failed WebFetch is recorded, so access is recorded as snippet_only (not blocked). Snippet
+    values are leads only, not parameter records.'
 - source_id: SRC_ARXIV_2206_00037
   title: 'Review of Muon-Proton Collider Proposals: Main Parameters'
   authors_or_org: not visible in snippet (Sultansoy group)
@@ -344,17 +442,21 @@ sources:
   arxiv_id: '2206.00037'
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'Survey of μp collider proposals; context for LHμC parameter comparison. Also surfaced: arXiv:1807.09867 ''The LHC based μp colliders'' and arXiv:2207.10565 muon-nucleus collider parameters (relevant to ''nucleus options'').'
+  relevance: 'Survey of μp collider proposals; context for LHμC parameter comparison. Also surfaced: arXiv:1807.09867 ''The
+    LHC based μp colliders'' and arXiv:2207.10565 muon-nucleus collider parameters (relevant to ''nucleus options'').'
   parameters_extracted: []
   unresolved_questions:
   - Author list not visible in snippet.
-  - 'Also surfaced in the same result set but NOT registered as sources (not yet seen beyond a title): arXiv:1807.09867 "The LHC based μp colliders" and arXiv:2207.10565 (muon-nucleus collider parameters).'
+  - 'Also surfaced in the same result set but NOT registered as sources (not yet seen beyond a title): arXiv:1807.09867 "The
+    LHC based μp colliders" and arXiv:2207.10565 (muon-nucleus collider parameters).'
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - μLHC antimuon ring HL-LHC μ+p collider PTEP 2026 ptag031 Akturk Sultansoy 5.3 TeV luminosity
-  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
+  notes: Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in
+    the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.
 - source_id: SRC_ARXIV_2203_06258
   title: The Potential of a TeV-Scale Muon-Ion Collider
   authors_or_org: Acosta, Li et al. (Snowmass 2021 muon-ion collider group)
@@ -367,21 +469,29 @@ sources:
   arxiv_id: '2203.06258'
   access_date: '2026-10-28'
   access: blocked
-  relevance: 'Earlier ''LHmuC'' concept (muon-collider beam on LHC 7 TeV protons). Snowmass slides: ''lists an LHmuC design at CERN with a concept that is re-use LHC ring at CERN and run concurrently with 3 TeV''. D. Acosta (named in the task for near-beam muon detectors) is from this muon-ion collider community; link to the Kraków contribution unconfirmed.'
+  relevance: 'Earlier ''LHmuC'' concept (muon-collider beam on LHC 7 TeV protons). Snowmass slides: ''lists an LHmuC design
+    at CERN with a concept that is re-use LHC ring at CERN and run concurrently with 3 TeV''. D. Acosta (named in the task
+    for near-beam muon detectors) is from this muon-ion collider community; link to the Kraków contribution unconfirmed.'
   parameters_extracted: []
   unresolved_questions:
-  - The "LHmuC" of this muon-ion-collider community (3 TeV muon-collider beam on 7 TeV LHC protons, ~6.5 TeV) is a different concept from the HELP4CERN LHμC (ultra-cold μ+ source); name collision must be kept explicit.
-  - D. Acosta (near-beam detectors at the Kraków workshop per the task) belongs to this community; the link to his Kraków contribution is unconfirmed.
-  - Related Snowmass 2021 slides (indico.fnal.gov/event/52701/contributions/231920/...) seen only in a snippet; lead rule would class them CONFERENCE_PROCEEDING / workshop_talk if registered separately.
+  - The "LHmuC" of this muon-ion-collider community (3 TeV muon-collider beam on 7 TeV LHC protons, ~6.5 TeV) is a different
+    concept from the HELP4CERN LHμC (ultra-cold μ+ source); name collision must be kept explicit.
+  - D. Acosta (near-beam detectors at the Kraków workshop per the task) belongs to this community; the link to his Kraków
+    contribution is unconfirmed.
+  - Related Snowmass 2021 slides (indico.fnal.gov/event/52701/contributions/231920/...) seen only in a snippet; lead rule
+    would class them CONFERENCE_PROCEEDING / workshop_talk if registered separately.
   licence: null
   archived_file: null
   sha256: null
   discovered_by_queries:
   - site:inspirehep.net LHmuC OR "LHμC" muon-hadron collider CERN Piotrzkowski
   - site:arxiv.org Piotrzkowski "LHμC" OR "LHmuC" muon-hadron collider CERN 2026
-  notes: 'snippet-quoted: centre-of-mass energy = about 6.5 TeV :: estimates about 6.5 TeV muon-proton collision energy if a 3 TeV muon collider is built at CERN
+  notes: 'snippet-quoted: centre-of-mass energy = about 6.5 TeV :: estimates about 6.5 TeV muon-proton collision energy if
+    a 3 TeV muon collider is built at CERN
 
-    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records; snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
+    Reconnaissance on 2026-10-28 with WebSearch only; WebFetch to this host failed (getaddrinfo ENOTFOUND, host not in the
+    session network allow-list). All values below are search-engine snippets and are leads to verify, NOT parameter records;
+    snippet-only evidence may not back reported_lhmuc and is capped at confidence medium.'
 - source_id: SRC_URL_INSPIRE_AUTHOR_993289
   title: Krzysztof Piotrzkowski — INSPIRE-HEP author profile 993289
   authors_or_org: INSPIRE-HEP
@@ -394,7 +504,8 @@ sources:
   arxiv_id: null
   access_date: '2026-10-28'
   access: snippet_only
-  relevance: Only INSPIRE hit; confirms affiliation 'AGH University, Krakow' and experiments CERN-LHeC, CMS, ZEUS, VIRGO, ATLAS. No INSPIRE literature record for LHμC/2610.35154 surfaced in search.
+  relevance: Only INSPIRE hit; confirms affiliation 'AGH University, Krakow' and experiments CERN-LHeC, CMS, ZEUS, VIRGO,
+    ATLAS. No INSPIRE literature record for LHμC/2610.35154 surfaced in search.
   parameters_extracted: []
   unresolved_questions:
   - No INSPIRE literature record for LHμC / arXiv:2610.35154 surfaced; to be re-checked once inspirehep.net is reachable.
@@ -403,4 +514,6 @@ sources:
   sha256: null
   discovered_by_queries:
   - site:inspirehep.net LHmuC OR "LHμC" muon-hadron collider CERN Piotrzkowski
-  notes: Journal marks fetch_blocked=false but does not record that the page was actually read; only snippet-level facts (affiliation AGH University Kraków; experiments CERN-LHeC, CMS, ZEUS, VIRGO, ATLAS) are available, so access is recorded as snippet_only. inspirehep.net is blocked in the current session.
+  notes: Journal marks fetch_blocked=false but does not record that the page was actually read; only snippet-level facts (affiliation
+    AGH University Kraków; experiments CERN-LHeC, CMS, ZEUS, VIRGO, ATLAS) are available, so access is recorded as snippet_only.
+    inspirehep.net is blocked in the current session.

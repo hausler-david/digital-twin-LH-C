@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_ROGERS_HYBRID_SOURCE",
+  "local_file": "references/_local/Rogers_Hybrid_source_ultra_cold_muons.pdf",
+  "committed_copy": null,
+  "title": "Hybrid Source of Ultra Cold Muons",
+  "authors": "Chris Rogers (STFC Rutherford Appleton Laboratory / IMCC)",
+  "venue": "slides, 20 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458, contribution 7263314)",
+  "identifier": "https://indico.cern.ch/event/1681458/contributions/7263314/",
+  "pages": 20,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "dc3cc0c1-2026-09-24_hybrid-cooling.pdf",
+  "sha256": "ff8bd59f4f0b73147a74ee7f8143ba1c7aa19c5b3060e4cf00f847b79b7b69c2",
+  "size_bytes": 2095239,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

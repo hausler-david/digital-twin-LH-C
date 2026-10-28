@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_ZIMMERMANN_SPS_LHC",
+  "local_file": "references/_local/Zimmermann_SPS_LHC_modifications.pdf",
+  "committed_copy": null,
+  "title": "Potential possibilities of modifying SPS/LHC",
+  "authors": "Frank Zimmermann (CERN)",
+  "venue": "slides, 14 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458, contribution 7263328)",
+  "identifier": "https://indico.cern.ch/event/1681458/contributions/7263328/",
+  "pages": 14,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "PRIMARY_LHMUC",
+  "upload_name": "97db15e3-LHmuC-Krakow2026.pdf",
+  "sha256": "a0c75f73369de7b25096082b1557443bc1584d003bafed88058a51e6d8848e24",
+  "size_bytes": 1175847,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

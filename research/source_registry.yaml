@@ -1,6 +1,7 @@
 # Source registry — single list of every source consulted. Schema: schemas/source.schema.json.
 # access: uploaded | fetched | snippet_only | blocked | pending_fetch. See research/source_quality_policy.md.
 # Merged from research/_fragments/ by tools/merge_research_fragments.py; duplicate ids for the same work were folded into the arXiv id (see notes).
+# 2026-10-28 addendum: 21 uploaded documents registered or upgraded to access=uploaded (see research/archived_metadata/).
 sources:
 - source_id: SRC_ARXIV_2610_35154
   title: 'LHμC: A high energy, high luminosity muon-hadron collider at CERN'
@@ -2329,18 +2330,20 @@ sources:
     Journal classification before lead corrections: source_type ''arXiv preprint'', category SECONDARY_SOURCE; fetch_blocked=true.'
 - source_id: SRC_ARXIV_2203_06258
   title: The Potential of a TeV-Scale Muon-Ion Collider
-  authors_or_org: not confirmed in snippet (Acosta et al.)
-  source_type: arxiv_preprint
-  category: CONFERENCE_PROCEEDING
-  publication_date: 2022-03
-  version: arXiv:2203.06258 (Snowmass 2021 contribution per the mulhc-mutristan fragment; 'submitted to JINST' not confirmed)
-  url: https://arxiv.org/pdf/2203.06258
+  authors_or_org: D. Acosta et al. (author list on PDF page 1; Rice, Northeastern, Fermilab)
+  source_type: journal_article
+  category: RELATED_MACHINE
+  publication_date: 19 Sep 2023
+  version: arXiv 2203.06258v3 [hep-ex] 19 Sep 2023; JINST 18 (2023) P09025 per search snippet (journal version not verified)
+  url: https://arxiv.org/abs/2203.06258
   doi: null
   arxiv_id: '2203.06258'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: Proposes a 'Large Hadron-Muon Collider' at CERN using one 7 TeV LHC proton ring; 1.5 TeV muons give ~6.5 TeV
-    c.m.
+  access: uploaded
+  relevance: Muon-ion collider proposal with an explicit 'LHmuC' column (1.5 TeV μ on 7 TeV p, √s 6.5 TeV, L 2.8e33, 237 fb⁻¹
+    per 10 years, ε 25 µm, β* 0.5 cm, σ 3 µm, 3300 cycles) and the luminosity formula stated with H = 1; MadGraph cross-section
+    tables for Z, W, top and Higgs at 1.5 × 7 TeV; NC/CC DIS cross sections; Delphes detector card; single-sided nozzle argument;
+    far-backward spectrometer at z = −5 m and −40 m.
   parameters_extracted: []
   unresolved_questions:
   - Authors not confirmed in this family's snippet ('Acosta et al.'). Journal classified it SECONDARY_SOURCE; recorded as
@@ -2354,16 +2357,20 @@ sources:
     would class them CONFERENCE_PROCEEDING / workshop_talk if registered separately.
   - JINST 18 P09025 citation not confirmed by any snippet (arXiv page only says 'submitted to JINST').
   - 'Name collision: this community''s ''LHmuC'' (3 TeV muon-collider beam on 7 TeV protons) is not the HELP4CERN LHmuC.'
-  licence: null
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2203.06258v3.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2203_06258.json)
+  sha256: abbf755c551b019bfa1598cb8426eec4b28008dfe14f9ecf6e25759dd68f4e6b
   discovered_by_queries:
   - site:arxiv.org muon-proton collider LHC muon collider "LHμC" OR "μp collider" 7 TeV protons
   - site:inspirehep.net LHmuC OR "LHμC" muon-hadron collider CERN Piotrzkowski
   - site:arxiv.org Piotrzkowski "LHμC" OR "LHmuC" muon-hadron collider CERN 2026
   - Acosta "TeV-scale muon-ion collider" JINST 18 P09025 arXiv
-  notes: 'snippet-quoted: c.m. energy = ~6.5 TeV (1.5 TeV μ × 7 TeV p) :: It notes that a 1.5 TeV muon beam could yield about
-    6.5 TeV in the center of mass.
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    snippet-quoted: c.m. energy = ~6.5 TeV (1.5 TeV μ × 7 TeV p) :: It notes that a 1.5 TeV muon beam could yield about 6.5
+    TeV in the center of mass.
 
 
     Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets and are leads
@@ -4009,20 +4016,21 @@ sources:
     WebFetch to researchgate.net failed in this session (host not in the network allow-list; journal lists it among blocked
     hosts), so access is recorded as ''blocked''.'
 - source_id: SRC_ARXIV_2201_06664
-  title: μTRISTAN (arXiv:2201.06664)
-  authors_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida
-  source_type: arxiv_preprint
+  title: μTRISTAN
+  authors_or_org: Yu Hamada, Ryuichiro Kitano, Ryan Matsudo, Hiromasa Takaura, Mitsuhiro Yoshida
+  source_type: journal_article
   category: RELATED_MACHINE
-  publication_date: 2022-01
-  version: arXiv:2201.06664 [hep-ph]; published as PTEP 2022(5) 053B02
+  publication_date: 21 Apr 2022
+  version: arXiv 2201.06664v2 [hep-ph] 21 Apr 2022; PTEP 2022, 053B02
   url: https://arxiv.org/abs/2201.06664
   doi: null
   arxiv_id: '2201.06664'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: 'Base concept (ultra-cold μ+ source, 3 km μ+ storage ring, μ+e− and μ+μ+ options) on which μLHC/LHμC build. Snippet:
-    ''storage ring of the same 3 km circumference as TRISTAN''. Base machine concept imported by muLHC (and hence LHmuC) for
-    the ultra-cold mu+ source and the 3 km ring; any value taken from it is imported_related.'
+  access: uploaded
+  relevance: 'Original of the ultra-cold μ+ source and booster/ring chain that μLHC and LHμC import: yield chain (14 % = 0.52
+    × 0.60 × 0.60 × 0.73, second-target 50 %, 6.8 % total, 5.5e-4 μ/proton, 9e13 μ/s, 7.2 nC per bunch), booster (16 turns
+    ≈ 700 µs, 3 T arcs), 3 km main ring with 10 T dipoles for 1 TeV, polarisation P = 0.8 assumed (0.25 worst case), L = 4.6e33
+    (μ+e−) and μ+μ+ options.'
   parameters_extracted: []
   unresolved_questions:
   - muTRISTAN Table 1 per-bunch values were only seen in a secondary reproduction (arXiv:2403.17034), not in this record's
@@ -4030,15 +4038,19 @@ sources:
   - arXiv licence not confirmed (host blocked).
   - Ultra-cold muon source rate assumed by μTRISTAN not visible in snippets; only the collider configuration was seen.
   - DOI of the PTEP article not visible in any snippet.
-  licence: null
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2201.06664v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2201_06664.json)
+  sha256: eaa1628f1e8958a58e74bf4b0c9df94c12457b04ef22eddcf20be9a380fb1229
   discovered_by_queries:
   - μTRISTAN Hamada Kitano Matsudo Takaura Yoshida arXiv:2201.06664 PTEP 2022 053B02
   - μTRISTAN 2201.06664 μ+ beam parameters "per bunch" emittance beta function bunch length luminosity 4.6 × 10^33 μ+e−
   - μTRISTAN arXiv:2201.06664 Hamada Kitano Matsuzaki Yoshida ultra-cold muon antimuon-electron collider
-  notes: 'snippet-quoted: luminosity (μ+e−) = ~5×10^33 cm^-2 s^-1 :: the deliverable luminosity is at the level of 5 × 10^33
-    cm^-2 s^-1
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    snippet-quoted: luminosity (μ+e−) = ~5×10^33 cm^-2 s^-1 :: the deliverable luminosity is at the level of 5 × 10^33 cm^-2
+    s^-1
 
 
     snippet-quoted: normalized emittance of μ+ beam = 4 mm mrad :: a normalized emittance, βγϵ, of the μ^+ beam of 4 mm mrad
@@ -4576,34 +4588,40 @@ sources:
     Indico (not attempted)''.'
 - source_id: SRC_ARXIV_2510_27437
   title: 'MuCol Milestone Report No. 7: Consolidated Parameters'
-  authors_or_org: MuCol design study / International Muon Collider Collaboration (CERN lead beneficiary)
+  authors_or_org: IMCC & MuCol authors; edited by R. Taylor (CERN); reviewed by D. Schulte, C. Rogers, V. Shiltsev
   source_type: official_report
   category: OFFICIAL_CERN
-  publication_date: '2025-10-30'
-  version: arXiv:2510.27437; DOI 10.48550/arxiv.2510.27437; Zenodo record 17476875; MuCol Milestone Report v1.0 Final
+  publication_date: 31 Oct 2025
+  version: arXiv 2510.27437v1 [physics.acc-ph] 31 Oct 2025; MuCol Milestone 7, document v1.0 Final, released 30/10/2025
   url: https://arxiv.org/abs/2510.27437
-  doi: 10.48550/arxiv.2510.27437
+  doi: 10.5281/zenodo.17476875
   arxiv_id: '2510.27437'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: Authoritative consolidated baseline parameters for the 10 TeV muon collider complex incl. MDI/nozzle; stated
-    predecessor of LHmuC-relevant IMCC parameter set. Snippet says nozzle built mainly from INERMET180 tungsten alloy and
-    that all studies so far used slightly modified MAP nozzle geometry.
+  access: uploaded
+  relevance: 'Complete IMCC consolidated parameter set (10 TeV baseline, 3 TeV stage): collider, proton driver, target, rectilinear
+    and final cooling (per-stage emittances, solenoid fields and stresses, RF), pre-accelerator, RLA and RCS chains (greenfield,
+    CERN-site, Fermilab), vFFA alternative (Table F.5), MDI appendix G with full nozzle coordinates (Table G.1) and material
+    composition (Table G.2), BIB thresholds, magnet limits, TESLA/LEP2 cavity data, pulsed-magnet power converters, impedance,
+    CTF3 demonstrator, CERN civil engineering. Analogue values for LHμC.'
   parameters_extracted: []
   unresolved_questions:
   - Fetch attempted and refused by network policy; every quoted value is snippet-level only.
   - Licence statement 'CC BY (per Zenodo/avesis record snippet); not peer reviewed' is inferred from publisher norms or a
     mirror record, not verified for this item.
   - Licence CC BY comes from the Zenodo/avesis mirror snippet; not verified against the arXiv page.
-  licence: CC BY (per Zenodo/avesis record snippet); not peer reviewed
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2510.27437v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2510_27437.json)
+  sha256: 7307181c44b3079fa27d13500121300f0fc6a3c5f03eaf7d0520694021690111
   discovered_by_queries:
   - arXiv 2510.27437 MuCol Milestone Report consolidated parameters muon collider
   - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
-  notes: 'Category OFFICIAL_CERN rests on the snippet statement ''CERN lead beneficiary'' of the EU MuCol design study; it
-    is a project milestone report, not a CERN Yellow Report. Access ''blocked'' because the Zenodo record (17476875) fetch
-    was attempted and refused by network policy; arxiv.org was not attempted.
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    Category OFFICIAL_CERN rests on the snippet statement ''CERN lead beneficiary'' of the EU MuCol design study; it is a
+    project milestone report, not a CERN Yellow Report. Access ''blocked'' because the Zenodo record (17476875) fetch was
+    attempted and refused by network policy; arxiv.org was not attempted.
 
     Journal reconnaissance tags: source_type ''official report'', category ''OFFICIAL_CERN'', fetch_blocked=True.
 
@@ -4886,33 +4904,40 @@ sources:
     were still in development, with only a preliminary FLUKA/MARS15 comparison up to 5 TeV beam energy (10 TeV COM)'
 - source_id: SRC_ARXIV_2502_00181
   title: 'MAIA: A new detector concept for a 10 TeV muon collider'
-  authors_or_org: Charles Bell et al. (27 authors)
+  authors_or_org: C. Bell, D. Calzolari, C. Carli, J. Dervan, K. F. Di Petrillo, M. Hillman, T. R. Holmes, S. Jindariani,
+    K. E. Kennedy, C. Kianian, K. H. M. Kwok, M. Larson, A. Lechner, L. Lee, T. Madlener, F. Meloni, A. Mohammadi, I. Ojalvo,
+    P. Pani, G. D. Penn, R. Powers, B. Rosser, L. Rozanov, K. Skoufaris, E. Sledge, A. Tuna, J. Zhang
   source_type: arxiv_preprint
-  category: RELATED_MACHINE
-  publication_date: '2025-01-31'
-  version: arXiv:2502.00181 (v1 31 Jan 2025; revised 7 Jul 2026 per snippet)
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: 7 Jul 2026
+  version: arXiv 2502.00181v2 [physics.ins-det] 7 Jul 2026
   url: https://arxiv.org/abs/2502.00181
   doi: null
   arxiv_id: '2502.00181'
   access_date: '2026-10-28'
-  access: snippet_only
-  relevance: IMCC/US 10 TeV detector concept (Muon Accelerator Instrumented Apparatus); all-silicon tracker in 5 T solenoid;
-    nozzle adapted from 1.5 TeV MAP design with tungsten heavy-alloy inner layer and borated polyethylene cladding; BIB simulated
-    with FLUKA.
+  access: uploaded
+  relevance: 'IMCC 10 TeV detector concept: subdetector boundaries and materials (Table 1), tracker cell sizes and timing
+    (Table 2), calorimeter parameters (Table 3), 5 T solenoid inside the calorimeters, EU24 lattice with L* = 6 m, MAP-derived
+    nozzle coordinates (Fig. 1, 10°, |η| < 2.44), FLUKA BIB spectra and hit densities (30 000 hits/cm² innermost layer), fluence
+    1e14–15 n_eq/cm², BIB cloning workflow, reconstruction performance with BIB overlay.'
   parameters_extracted: []
   unresolved_questions:
   - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
     Title, authorship, date and every quoted value must be verified on fetch.
   - Licence not visible in snippets.
-  licence: null
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2502.00181v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2502_00181.json)
+  sha256: 91271da1064ebdb2639db3374cf8a1e9a78e6dbe28ba5f259adb6ee3dc90ab93
   discovered_by_queries:
   - muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background FLUKA 10 TeV
   - MAIA MUSIC detector concept muon collider 10 TeV arXiv
-  notes: 'Journal tagged PEER_REVIEWED, but snippets show only an arXiv record (v1 31 Jan 2025, revised 7 Jul 2026) and no
-    journal reference; following the lead''s rule that PEER_REVIEWED requires confirmation, recorded as RELATED_MACHINE (IMCC
-    detector concept) until the abstract page is read.
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    Journal tagged PEER_REVIEWED, but snippets show only an arXiv record (v1 31 Jan 2025, revised 7 Jul 2026) and no journal
+    reference; following the lead''s rule that PEER_REVIEWED requires confirmation, recorded as RELATED_MACHINE (IMCC detector
+    concept) until the abstract page is read.
 
     Journal reconnaissance tags: source_type ''arXiv preprint'', category ''PEER_REVIEWED'', fetch_blocked=True.
 
@@ -4926,19 +4951,22 @@ sources:
     snippet-quoted: reconstruction efficiency = above 95% :: reconstruction efficiencies above 95% for energetic tracks, photons
     and neutrons in the central region, even with beam-induced background simulated in FLUKA'
 - source_id: SRC_ARXIV_2601_13189
-  title: 'MUSIC: a detector concept for 10 TeV mu+mu- collisions'
-  authors_or_org: IMCC / INFN detector group (authors not in snippet)
+  title: 'MUSIC: a detector concept for 10 TeV μ+μ− collisions'
+  authors_or_org: P. Andreetto, M. Casarsa, A. Gianelle, D. Lucchesi, L. Palombini, L. Sestini, D. Zuliani (INFN Padova/Trieste/Firenze),
+    on behalf of IMCC
   source_type: conference_proceeding
-  category: CONFERENCE_PROCEEDING
-  publication_date: '2026-01-19'
-  version: arXiv:2601.13189; PoS 485/515 (Lepton Photon 2025); related arXiv:2511.23273
+  category: ANALOGOUS_TECHNOLOGY
+  publication_date: 19 Jan 2026
+  version: arXiv 2601.13189v1 [hep-ex] 19 Jan 2026
   url: https://arxiv.org/abs/2601.13189
   doi: null
   arxiv_id: '2601.13189'
   access_date: '2026-10-28'
-  access: snippet_only
-  relevance: IMCC MUSIC (MUon System for Interesting Collisions) 10 TeV detector concept; cylindrical ~11.4 m long; all-silicon
-    tracker, PbF2 crystal ECAL, iron-scintillator HCAL, 5 T solenoid; designed around machine-induced background.
+  access: uploaded
+  relevance: 'IMCC 10 TeV detector concept (Lepton Photon 2025): 11.4 m × 12.8 m layout, all-silicon tracker geometry and
+    resolutions, CRILIN PbF2 ECAL, Fe-scintillator HCAL, 5 T solenoid, RPC muon system, final-focus quadrupoles at ±6 m, O(1e8)
+    BIB particles per crossing, performance with BIB and incoherent pair production overlaid (tracking > 95 %, photon resolution
+    10 %/√E barrel, 17 %/√E endcap).'
   parameters_extracted: []
   unresolved_questions:
   - Only search-engine snippets seen; the record itself was not fetched (host blocked in this session, fetch not attempted).
@@ -4946,12 +4974,16 @@ sources:
   - Licence not visible in snippets.
   - 'Authorship uncertain: journal records ''IMCC / INFN detector group (authors not in snippet)''.'
   - Author list of arXiv:2601.13189 (and of the related arXiv:2511.23273) not in snippets.
-  licence: null
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2601.13189v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2601_13189.json)
+  sha256: a3bc91de485291e501d784f7ad1e5213150bb82351ca44c12111c362aa2bc3fd
   discovered_by_queries:
   - MUSIC "MUon System for Interesting Collisions" detector concept muon collider 10 TeV
-  notes: 'PoS 485/515 (Lepton Photon 2025) per snippets.
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    PoS 485/515 (Lepton Photon 2025) per snippets.
 
     Journal reconnaissance tags: source_type ''conference proceeding'', category ''CONFERENCE_PROCEEDING'', fetch_blocked=True.
 
@@ -7902,31 +7934,38 @@ sources:
     Journal note: v3 Oct 2024 per snippet.'
 - source_id: SRC_ARXIV_2410_11367
   title: Acceleration of positive muons by a radio-frequency cavity
-  authors_or_org: S. Aritome et al. (55 authors; KEK/J-PARC/JAEA/Nagoya/U-Tokyo/RIKEN collaboration)
+  authors_or_org: S. Aritome et al. (56 authors; KEK, J-PARC, U. Tokyo, Kyushu, Nagoya, TRIUMF, Peking)
   source_type: journal_article
   category: PEER_REVIEWED
-  publication_date: 2025-06
-  version: arXiv:2410.11367v2; Phys. Rev. Lett. 134, 245001; DOI 10.1103/PhysRevLett.134.245001
-  url: https://arxiv.org/abs/2410.11367v2
-  doi: 10.1103/PhysRevLett.134.245001
+  publication_date: 18 Jun 2025
+  version: arXiv 2410.11367v2 [physics.acc-ph] 18 Jun 2025; Phys. Rev. Lett. 134, 245001 (2025) per search snippet (journal
+    version not verified)
+  url: https://arxiv.org/abs/2410.11367
+  doi: null
   arxiv_id: '2410.11367'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: 'Primary experimental demonstration of the ultra-cold (thermal) muon source + RF re-acceleration chain that the
-    LHmuC ultracold-source model is based on: laser-ablated aerogel muonium, resonant multi-photon ionisation, electrostatic
-    5.7 keV, RFQ to 100 keV, measured emittance.'
+  access: uploaded
+  relevance: 'First RF acceleration of ultra-slow μ+ to 100 keV (J-PARC MUSE S2, March–April 2024): 9.5e4 surface μ+/pulse
+    at 940 kW, aerogel target (78 mm, 8 mm, 23.6 mg/cm³, ablated 250 µm holes at 300 µm), stopping 38 %, Mu conversion 52
+    %, emission 13 %, mesh loss 19 %, 244 nm 1S–2S laser (0.5–1.3 mJ, ionisation efficiency 7e-6–6e-5 simulated), 5.7 keV
+    intensity 4.0e-3/pulse, 100 keV intensity 2e-3/pulse, acceleration efficiency 50 %, measured ε_n 0.85/0.32 π mm mrad vs
+    simulated 0.27/0.154.'
   parameters_extracted: []
   unresolved_questions:
   - Full text not read (arxiv.org blocked); emittance definition (normalised? rms?) and beam rate at 100 keV not in snippets.
   - Licence of the arXiv version and of the PRL version not verified.
-  licence: arXiv open access; APS journal version (selected for PRL Collection of the Year 2025 per KEK)
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2410.11367v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2410_11367.json)
+  sha256: b515a41dc177db4b9a160d839129279300712173ec09ccccc7e2ad53d253c46d
   discovered_by_queries:
   - Aritome "Acceleration of positive muons by a radio-frequency cavity" Phys. Rev. Lett. 134 245001
   - arXiv:2410.11367 muon acceleration radio-frequency cavity J-PARC
-  notes: 'snippet-quoted: RF acceleration final energy = 100 keV :: The team reports taking muons from thermal energy up to
-    100 keV.
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    snippet-quoted: RF acceleration final energy = 100 keV :: The team reports taking muons from thermal energy up to 100
+    keV.
 
 
     snippet-quoted: Electrostatic pre-acceleration energy = 5.7 keV :: The thermal muons were first electrostatically accelerated
@@ -8177,29 +8216,37 @@ sources:
     Journal records ''published in PTEP 2014; journal ref not confirmed from snippet''.'
 - source_id: SRC_ARXIV_2006_01947
   title: Study of muonium emission from laser-ablated silica aerogel
-  authors_or_org: J. Beare et al. (TRIUMF/J-PARC collaboration)
+  authors_or_org: J. Beare, G. Beer, J. H. Brewer, T. Iijima, K. Ishida, M. Iwasaki, S. Kamal, K. Kanamori, N. Kawamura, R.
+    Kitamura, S. Li, G. M. Luke, G. M. Marshall, T. Mibe, Y. Miyake, Y. Oishi, K. Olchanski, A. Olin, M. Otani, M. A. Rehman,
+    N. Saito, Y. Sato, K. Shimomura, K. Suzuki, M. Tabata, H. Yasuda
   source_type: journal_article
   category: PEER_REVIEWED
-  publication_date: null
-  version: arXiv:2006.01947; PTEP 2020 (per snippet)
-  url: https://arxiv.org/pdf/2006.01947
+  publication_date: 1 Sep 2020
+  version: arXiv 2006.01947v2 [physics.ins-det] 1 Sep 2020; PTEP 2020, 123C01 per search snippet (journal version not verified)
+  url: https://arxiv.org/abs/2006.01947
   doi: null
   arxiv_id: '2006.01947'
   access_date: '2026-10-28'
-  access: blocked
-  relevance: Full systematic study of muonium emission from laser-ablated aerogel with TRIUMF and J-PARC beams; gives muonium
-    formation fraction and the projection methodology to J-PARC pulsed-beam conditions.
+  access: uploaded
+  relevance: 'Measured muonium emission into vacuum from laser-ablated silica aerogel (23.2–23.6 mg/cm³, 8.7–8.9 mm) at TRIUMF
+    and J-PARC: emission rates 5–28 ‰ (ablated) vs < 5 ‰ (flat), dependence on opening fraction and depth (optimum < 2 mm),
+    stability over days, muonium formation fraction (65.5 ± 1.8) %, projection TRIUMF → J-PARC (momentum-spread ratio 0.6)
+    and expected thermal-muonium rate for the g-2/EDM experiment.'
   parameters_extracted: []
   unresolved_questions:
   - The snippet confirms a projection to J-PARC pulsed-beam conditions was made but the projected muonium yield per incident
     muon did not appear.
-  licence: arXiv open access; SCOAP3 record
-  archived_file: null
-  sha256: null
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2006.01947v2.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2006_01947.json)
+  sha256: e6836e3da49d93ca8b1865a821f9ca994f986d156bab11b6134d9fd2a7d8fbd3
   discovered_by_queries:
   - Beer laser-ablated silica aerogel muonium emission vacuum yield per incident muon J-PARC TRIUMF
-  notes: 'snippet-quoted: Muonium formation fraction = (65.5 +- 1.8)% :: Its abstract reports a muonium formation fraction
-    of (65.5± 1.8)%
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    snippet-quoted: Muonium formation fraction = (65.5 +- 1.8)% :: Its abstract reports a muonium formation fraction of (65.5±
+    1.8)%
 
 
     snippet-quoted: Beam momentum spread TRIUMF vs J-PARC = ~2% RMS (TRIUMF, continuous) vs ~4% RMS (J-PARC, pulsed) :: The
@@ -10273,19 +10320,21 @@ sources:
     Query attribution is inferred from the journal''s per-query notes (the journal carries no explicit query->source map);
     the queries in discovered_by_queries name this source''s identifier or a value unique to it.'
 - source_id: SRC_ARXIV_2607_16904
-  title: 'The muon collider: expected physics, technological solutions, and the prospect of a 21 km ring at the UNK site'
-  authors_or_org: not identified in snippet
+  title: 'The muon collider: expected physics, technological challenges, and the prospects for reusing the 21 km UNK tunnel'
+  authors_or_org: L. V. Dudko (SINP, Lomonosov Moscow State University)
   source_type: arxiv_preprint
   category: SECONDARY_SOURCE
-  publication_date: 2026-07
-  version: arXiv:2607.16904
+  publication_date: 20 Oct 2026
+  version: arXiv 2607.16904v2 [hep-ph] 20 Oct 2026; Natural Science Review (JINR), accepted 2026 (volume/pages not yet assigned)
   url: https://arxiv.org/abs/2607.16904
   doi: null
   arxiv_id: '2607.16904'
   access_date: '2026-10-28'
-  access: snippet_only
-  relevance: 2026 review noting required collider/accelerator fields sit at the edge of demonstrated technology and all-HTS
-    magnet designs still in development; context for fixed-field magnet limits.
+  access: uploaded
+  relevance: Review of muon-collider physics and technology with IMCC parameters restated (Table 1), the turns-per-lifetime
+    relation n = γcτ/C with cτ = 659 m, luminosity scaling with field and circumference, neutrino-flux siting constraint,
+    three layouts for the 20.772 km UNK tunnel (6 TeV with IMCC magnets; 14–21 TeV collider ring with 11–16 T dipoles), non-collider
+    muon applications. Secondary source; useful as an independent cross-check of formulas.
   parameters_extracted: []
   unresolved_questions:
   - WebFetch attempts in this session failed on ora.ox.ac.uk, arxiv.org, jacow.org and zgoubi.sourceforge.io (hosts not resolvable
@@ -10293,13 +10342,17 @@ sources:
     and several quotes are the search tool's paraphrase rather than guaranteed verbatim page text. Nothing here may back a
     reported_lhmuc status; confidence is capped at medium (CLAUDE.md §1.5).
   - No per-query note names this source; attribution to a query is unknown. Authors not identified.
-  licence: open access
-  archived_file: null
-  sha256: null
-  discovered_by_queries: []
-  notes: 'Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the
-    search tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence
-    may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
+  licence: CC BY-NC 4.0 (stated on page 1, Natural Science Review, JINR)
+  archived_file: references/accelerator/arXiv-2607.16904v2_Dudko_muon_collider_UNK_tunnel_CC-BY-NC.pdf
+  sha256: 10cfc227bd31b1228bcc79e9aea98abe36e457b585af304ea1713a87a8465b52
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 and read in full; earlier snippet-level notes retained below for traceability and
+    must be checked against the full text.
+
+    Reconnaissance on 2026-10-28 with WebSearch only. All ''snippet-quoted'' lines are search-engine snippets or the search
+    tool''s paraphrase and are leads to verify once the host is reachable, NOT parameter records; snippet-only evidence may
+    not back reported_lhmuc and is capped at confidence medium (CLAUDE.md §1.5).
 
 
     No fetch was attempted for this URL in the reconnaissance session (journal fetch_blocked=false, no page read); access
@@ -10312,3 +10365,333 @@ sources:
 
     No per-query note names this source; discovered_by_queries is empty and the search log row carries query ''(see family
     queries)''.'
+- source_id: SRC_WS1681458_FORTHOMME_DETECTOR
+  title: LHeC/LHμC main detector
+  authors_or_org: Laurent Forthomme (AGH University of Kraków)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 19 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263329)
+  url: https://indico.cern.ch/event/1681458/contributions/7263329/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'LHμC detector concept built on the LHeC detector (LHeD): dimensions, subsystem technologies and resolutions,
+    forward/backward instrumentation, Delphes LHeC model, nozzle half-opening angle 40 (100) mrad with η_max ≈ 4 (3), LHeC
+    IR L* 15 vs 23 m with synchrotron-radiation critical energies, a fourth LHμC beam-parameter set (300 ns spacing, σ ≈ 4.3
+    µm, peak L 10^34 for 40 bunches of 10^10 μ+), polarisation assumed 50 %, cost/power/computing remarks.'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Forthomme_LHeC_LHmuC_main_detector.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_FORTHOMME_DETECTOR.json)
+  sha256: d2146e1e6fa65670540fa88bfa5d84062480e59bff3138ca09027a13075cbce5
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_TOPPMUGGLESTONE_VFFA
+  title: vFFA and LHμC
+  authors_or_org: Max Topp-Mugglestone (University of Oxford / John Adams Institute)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 52 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263315)
+  url: https://indico.cern.ch/event/1681458/contributions/7263315/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: Booster requirement 70 → 500 GeV (→ 1 TeV?) in tens of turns with sub-ms cycle; MuCol RCS1–4 comparison table;
+    vFFA scaling law B = B0 exp(mZ); preliminary vFFA design-study parameters (m ≈ 40–60 /m, vertical excursion 3–7 cm, peak
+    dipole field ≈ 8–10 T, < 9 T in a relaxed variant), dispersion suppression and decoupled straights; simulation status
+    and the magnet design as the main unknown.
+  licence: not stated (workshop slides)
+  archived_file: references/_local/ToppMugglestone_vFFA_and_LHmuC.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_TOPPMUGGLESTONE_VFFA.json)
+  sha256: cf43f915773d98b4466c97206faa603fbefb078fdf79b9c451bcf30d478d3f06
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  title: Potential possibilities of modifying SPS/LHC
+  authors_or_org: Frank Zimmermann (CERN)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 14 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263328)
+  url: https://indico.cern.ch/event/1681458/contributions/7263328/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Options to provide ~1 % of today''s LHC bunch number with much higher population: barrier buckets (AGS, SPS),
+    superbunch collider parameters (LHC Project Report 627 Table 1: single superbunch 75 m rms, σ_δ 5.8e-4, 1.0 A, 9e34),
+    Damerau–Garoby long bunches (16 → 1 merge, 1.5 MV 40–80 MHz, 4–5 m flat bunches), CERN-2005-006 Table 3; conclusion σ_δ
+    σ_z ≈ 2 n_b,0 σ_δ,0 σ_z,0 — higher population comes with longer bunches and/or larger energy spread. Bears on the DIS2026
+    22e11 p/bunch assumption and the luminosity/hourglass model.'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Zimmermann_SPS_LHC_modifications.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_ZIMMERMANN_SPS_LHC.json)
+  sha256: a0c75f73369de7b25096082b1557443bc1584d003bafed88058a51e6d8848e24
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_ROGERS_HYBRID_SOURCE
+  title: Hybrid Source of Ultra Cold Muons
+  authors_or_org: Chris Rogers (STFC Rutherford Appleton Laboratory / IMCC)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 20 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263314)
+  url: https://indico.cern.ch/event/1681458/contributions/7263314/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Alternative ultra-cold μ+ source: IMCC-style capture (2–4 MW graphite target) + rectilinear stage-A ionisation
+    cooling + deceleration + low-energy (laser-ionisation) cooling. Reproduces IMCC tables (Zhu et al. rectilinear A1–A4;
+    performance 500e12 p → 45e12 μ front end → 21.2e12 after stage A, 0.04 μ+ per 5 GeV proton), RF breakdown data in solenoid
+    fields, cost scale O(500) MCHF, and the author''s own ~30 % flux-uncertainty guesses (explicitly not official IMCC numbers).'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Rogers_Hybrid_source_ultra_cold_muons.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_ROGERS_HYBRID_SOURCE.json)
+  sha256: ff8bd59f4f0b73147a74ee7f8143ba1c7aa19c5b3060e4cf00f847b79b7b69c2
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: IMCC values restated on these slides are ANALOGOUS_TECHNOLOGY values (cite Zhu et al. PRAB 28 (2025) 041003 and Bowring
+    et al. PRAB 23 072001 as the originals); only the hybrid-source concept statements are LHμC-specific.
+- source_id: SRC_WS1681458_ZHANG_MUONIUM
+  title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+  authors_or_org: Ce Zhang (University of Liverpool)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 23 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263313)
+  url: https://indico.cern.ch/event/1681458/contributions/7263313/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: Muonium diffusion model fitted to TRIUMF data (T = 322 K, D = 870 cm²/s), single-layer vacuum emission ≈ 8 %,
+    J-PARC H-line efficiency chain (1.8e6 μ+/s → stopping 0.467 → Mu formation 0.52 → vacuum yield 0.082 → laser ionisation
+    ~1e-6 with a 244 nm spectroscopy laser; g-2 targets up to 8.24e5/s with 122 nm, 100 µJ), 2022 ionisation test (0.126 Hz
+    vs RAL-1999 0.0027 Hz), multi-layer target design (vacuum yield 8 → 18 %, optimum layer interval ≈ 7 mm), μTRISTAN efficiency
+    budget 14 % = 0.52 × 0.60 × 0.60 × 0.73 and the new hot-tungsten μTRISTAN variant.
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Zhang_Muonium_diffusion_multilayer_target.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_ZHANG_MUONIUM.json)
+  sha256: 167d9a78797be2d14b459bf33648f15aa5c182491cf60bf73b1708116abd7302
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_KILIC_NOZZLE
+  title: Nozzle design studies for mu+p collider detector
+  authors_or_org: Adnan Kilic, Fatma Kocak, Ali Cici, Ilhan Tapan (Bursa Uludağ University; Bursa Technical University)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 25 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263330)
+  url: https://indico.cern.ch/event/1681458/contributions/7263330/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Geant4 11.4 study of a conical tungsten nozzle with borated-polyethylene cladding for the μ+p detector: geometry
+    (487.8 cm long, 100 cm first section, tip 6 cm from IP), MG5_aMC + Pythia 8.312 + HepMC 2.06.11 event set-up (NNPDF23_lo_as_0130_qed,
+    250 000 μ+p → j μ+ events), forward-hadron acceptance for 40/60/80/100 mrad half-angles, muon energy-loss and Q² smearing
+    tables for 40 and 100 mrad cones, open items (decays along the main-ring straight set the nozzle base; secondary leakage
+    unstudied).'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Kilic_Nozzle_design_mu_p_detector.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_KILIC_NOZZLE.json)
+  sha256: 592443cb96e0933f551c05ac5fc005223e340817b8e80762aa2ad268de0ec672
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_YAMAZAKI_TEV_MUON
+  title: Challenges of TeV-muon Detectors
+  authors_or_org: Yuji Yamazaki (affiliation not stated on the title slide; presented online)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 17 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263331)
+  url: https://indico.cern.ch/event/1681458/contributions/7263331/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: Scattered-muon kinematics at LHμC (500 ≲ E' ≲ 5000 GeV, −3 ≲ η ≲ 3), ATLAS/CMS TeV-muon resolution evidence (CMS
+    TuneP ≈ 6–8 % at 1–2 TeV; ATLAS endcap 5/7/12 % at 0.5/1/2 TeV), conclusion that ∫B·dl dominates and 6–7 % at 1 TeV is
+    achievable with an iron return yoke, reconstruction-method comparison (muon, Jacquet–Blondel, double-angle) and the role
+    of forward hadronic flow removed by the nozzle.
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Yamazaki_TeV_muon_detectors.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_YAMAZAKI_TEV_MUON.json)
+  sha256: 6652a09c43e73263f145a59ecf03567c353fe98c637257f88d93761ce2b58e0c
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_ACOSTA_NEAR_BEAM
+  title: Near-Beam Muon Detectors
+  authors_or_org: Darin Acosta, Osvaldo Miguel Colin, Mark Munyi, Kaixin Yang (T.W. Bonner Nuclear Laboratory, Rice University)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 28 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458,
+    contribution 7263332)
+  url: https://indico.cern.ch/event/1681458/contributions/7263332/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: Backward scattered-muon tagging to η = −7 (2 mrad) required by LHμC DIS kinematics; strawman far-forward spectrometer
+    from ATLAS endcap-toroid-like magnets at z ≈ 28 / 140 / 660 m covering 2.4 < |η| < 7.2 (∫B·dl 4–18 T·m); Geant4 resolution
+    ≈ 5–6 % at 1 TeV; 6 m tungsten nozzle gives ≈ 10 % peak energy loss and 0.72 mrad multiple scattering at 1 TeV, dominating
+    the Q² resolution (σ ≈ 33 % at Q² = 20 GeV², η = 6); CSC strawman geometry; Bhabha luminosity rates (μ+μ− case, analogue
+    only).
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Acosta_Near_beam_muon_detectors.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_ACOSTA_NEAR_BEAM.json)
+  sha256: f84027fb6d4b182562a87812a71fe83c33342e6c075303ba9b4e8b88b4372ef4
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+  title: Acceleration in the Low-velocity Region
+  authors_or_org: Yuga Nakazawa (KEK)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 19 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458;
+    contribution id not identified)
+  url: https://indico.cern.ch/event/1681458/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'J-PARC muon front end: RFQ scaled by m_μ/m_p (5.6 → 340 keV, 324 MHz, 3.17 m, 4.2 kW), IH-DTL 0.34 → 4.26 MeV
+    (1.45 m, 35.6 MV/m, 310 kW, field error 1.4 %), first 340 keV acceleration in June 2026 (preliminary) with measured ε_n
+    0.84 / 0.38 π mm mrad and ≈ 200 ps bunch width; space-charge assessment for LHμC-scale bunches (1e10 μ+ in 2 ns ≈ 0.75
+    A at the RFQ entrance, ≈ 220 × the perveance of the 30 mA H⁻ design) — the front end must be re-optimised with 3D space
+    charge.'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Nakazawa_Low_velocity_acceleration.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_NAKAZAWA_LOW_VELOCITY.json)
+  sha256: dee072e14dcd403969b7ce10fe6e898afb6d80044a8acf086f1a774244e51227
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_SCHULTE_IMCC
+  title: Muon Collider (IMCC overview)
+  authors_or_org: Daniel Schulte (CERN), on behalf of the International Muon Collider Collaboration
+  source_type: workshop_talk
+  category: CONFERENCE_PROCEEDING
+  publication_date: '2026-09-24'
+  version: slides, 45 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458;
+    contribution id not identified)
+  url: https://indico.cern.ch/event/1681458/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'IMCC overview given at the workshop: 3 / 10 TeV parameter set (L 1.8 / 17.5e34, N 2.2 / 1.8e12, 5 Hz, C 4.5
+    / 11.4 km, 11 / 14 T), muon-chain transmission table (500e12 p → 1.5e12 μ at 10 TeV), BIB 40 000 decays/m per crossing,
+    RCS ramp table, collider dipole limits (NbTi 4.8 T, Nb3Sn 11 T, HTS 14 T at 16 cm aperture), CERN-site variants (3.2 /
+    7.6 TeV), power 113–188 MW, cost 4–18 BCHF scale, 10-year R&D table. Values are analogues for LHμC, not LHμC statements.'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/Schulte_Muon_Collider_IMCC_overview.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_SCHULTE_IMCC.json)
+  sha256: d7509464b725db22c60c255c0459fb097b8a861f28b6b58407addc18fb428953
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_WS1681458_HEQCD_SMALLX
+  title: High energy QCD at LHμC
+  authors_or_org: AGH University, Kraków (speaker not named on the slides; P. Kotko (AGH) is the author of the DIS2026 companion
+    proceedings on this topic — attribution unverified)
+  source_type: workshop_talk
+  category: PRIMARY_LHMUC
+  publication_date: '2026-09-24'
+  version: slides, 28 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458;
+    contribution id not identified)
+  url: https://indico.cern.ch/event/1681458/
+  doi: null
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Small-x physics case for LHμC: x_Bj ≲ 1e-7 at Q² ≈ 1 GeV² (4e-3 < y < 1), (x, Q²) coverage plot identical to
+    the DIS2026 figure, impact of NNPDF31sx small-x resummation, structure functions in collinear / BFKL / CGC frameworks,
+    jet and hadron correlations as saturation probes, dijet and trijet saturation predictions.'
+  licence: not stated (workshop slides)
+  archived_file: references/_local/AGH_High_energy_QCD_at_LHmuC.pdf (git-ignored; see research/archived_metadata/SRC_WS1681458_HEQCD_SMALLX.json)
+  sha256: ac0a49e4c35d4e5f198c4d5a1c4da25fbdd530a864bb25f6ba5e77156fb6f65b
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_ARXIV_2610_14303
+  title: 'AI Acceleration of Muon Collider R&D: A Report from the AI4MuC Workshop'
+  authors_or_org: J. S. Berg, D. Bizzozero, T. Bose, L. Cooley, J. Dervan, A. Edelen, P. Elmer, C. Fanelli, T. Holmes, W.
+    Hopkins, S. Jindariani, M. Kagan, M. Khan, Y.-K. Kim, M. LeBlanc, L. Lee, M. Liepe, R. Mastandrea, P. Meade, F. Meloni,
+    C. Mitchell, L. Nguyen, I. Ojalvo, R. Roberts, N. Smith, J.-L. Vay, G. Watts, D. Winder, C. Xu, K. Yonehara
+  source_type: arxiv_preprint
+  category: SECONDARY_SOURCE
+  publication_date: 9 Oct 2026
+  version: arXiv 2610.14303v1 [physics.acc-ph] 9 Oct 2026
+  url: https://arxiv.org/abs/2610.14303
+  doi: null
+  arxiv_id: '2610.14303'
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Methodology source for this platform: AI/ML use cases per muon-collider bottleneck (target, cooling, magnets/RF,
+    detector in BIB, BIB generation, reconstruction, software), the ''verifiable AI workflow'' principles, current muon-collider
+    software stack (Key4hep, Gaudi, EDM4hep, ACTS, Spack, CVMFS, MuonColliderSoft), BIB simulation cost (weeks of CPU, tens
+    of GB per event), vertex occupancy 1–10 % and 75 Gbps/cm². No LHμC parameters.'
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2610.14303v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2610_14303.json)
+  sha256: 0da5f52aab122c49ff97f972b342ffebeebf4b57543b580636225e5650f7c385
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null
+- source_id: SRC_ARXIV_2609_37117
+  title: Input to the SCAC Facilities Subcommittee from the U.S. Muon Collider Collaboration
+  authors_or_org: S. Jindariani, T. Holmes, P. Meade, K. DiPetrillo, K. Kennedy, L. Lee, S. Pagan Griso, D. Stratakis, on
+    behalf of the U.S. Muon Collider Collaboration
+  source_type: white_paper
+  category: SECONDARY_SOURCE
+  publication_date: 29 Sep 2026
+  version: arXiv 2609.37117v1 [physics.acc-ph] 29 Sep 2026
+  url: https://arxiv.org/abs/2609.37117
+  doi: null
+  arxiv_id: '2609.37117'
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: Programme-level R&D and demonstrator roadmap for a U.S. muon collider effort (2026–2036); physics motivation
+    summary; no machine parameters. Context only.
+  licence: not stated in the uploaded PDF
+  archived_file: references/_local/arXiv-2609.37117v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2609_37117.json)
+  sha256: 34d171d48b0afb35f4dd5cac7d523e4a34a565056baa939e54d20a082ada68ce
+  parameters_extracted: []
+  unresolved_questions: []
+  discovered_by_queries:
+  - user upload (addendum batch, 2026-10-28)
+  notes: null

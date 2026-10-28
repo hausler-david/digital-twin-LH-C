@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2006_01947",
+  "local_file": "references/_local/arXiv-2006.01947v2.pdf",
+  "committed_copy": null,
+  "title": "Study of muonium emission from laser-ablated silica aerogel",
+  "authors": "J. Beare, G. Beer, J. H. Brewer, T. Iijima, K. Ishida, M. Iwasaki, S. Kamal, K. Kanamori, N. Kawamura, R. Kitamura, S. Li, G. M. Luke, G. M. Marshall, T. Mibe, Y. Miyake, Y. Oishi, K. Olchanski, A. Olin, M. Otani, M. A. Rehman, N. Saito, Y. Sato, K. Shimomura, K. Suzuki, M. Tabata, H. Yasuda",
+  "venue": "arXiv 2006.01947v2 [physics.ins-det] 1 Sep 2020; PTEP 2020, 123C01 per search snippet (journal version not verified)",
+  "identifier": "arXiv:2006.01947",
+  "pages": 34,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "PEER_REVIEWED",
+  "upload_name": "47510cb9-2006.01947v2.pdf",
+  "sha256": "e6836e3da49d93ca8b1865a821f9ca994f986d156bab11b6134d9fd2a7d8fbd3",
+  "size_bytes": 1682491,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

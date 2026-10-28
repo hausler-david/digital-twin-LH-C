@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_WS1681458_SCHULTE_IMCC",
+  "local_file": "references/_local/Schulte_Muon_Collider_IMCC_overview.pdf",
+  "committed_copy": null,
+  "title": "Muon Collider (IMCC overview)",
+  "authors": "Daniel Schulte (CERN), on behalf of the International Muon Collider Collaboration",
+  "venue": "slides, 45 pages; workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026 (CERN Indico event 1681458; contribution id not identified)",
+  "identifier": "https://indico.cern.ch/event/1681458/",
+  "pages": 45,
+  "licence": "not stated (workshop slides)",
+  "redistribution": "not committed",
+  "category": "CONFERENCE_PROCEEDING",
+  "upload_name": "77be9019-Krakow_draft.pdf",
+  "sha256": "d7509464b725db22c60c255c0459fb097b8a861f28b6b58407addc18fb428953",
+  "size_bytes": 6525501,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

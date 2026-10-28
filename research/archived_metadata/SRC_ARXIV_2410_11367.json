@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2410_11367",
+  "local_file": "references/_local/arXiv-2410.11367v2.pdf",
+  "committed_copy": null,
+  "title": "Acceleration of positive muons by a radio-frequency cavity",
+  "authors": "S. Aritome et al. (56 authors; KEK, J-PARC, U. Tokyo, Kyushu, Nagoya, TRIUMF, Peking)",
+  "venue": "arXiv 2410.11367v2 [physics.acc-ph] 18 Jun 2025; Phys. Rev. Lett. 134, 245001 (2025) per search snippet (journal version not verified)",
+  "identifier": "arXiv:2410.11367",
+  "pages": 6,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "PEER_REVIEWED",
+  "upload_name": "933d9695-2410.11367v2.pdf",
+  "sha256": "b515a41dc177db4b9a160d839129279300712173ec09ccccc7e2ad53d253c46d",
+  "size_bytes": 476244,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session, copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (all pages) during the addendum planning session, 2026-10-28"
+}

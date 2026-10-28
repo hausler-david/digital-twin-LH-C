@@ -202,6 +202,17 @@ def cross_check(ev: Evidence) -> None:
     for aid, a in ev.assumptions.items():
         if a.get("parameter_id") not in ev.parameters:
             ev.warn(f"assumption {aid}", f"parameter_id {a.get('parameter_id')} has no parameter record")
+        if a.get("status") == "superseded_by_evidence":
+            sup = a.get("superseded_by") or []
+            if not sup:
+                ev.error(f"assumption {aid}", "status superseded_by_evidence requires a non-empty superseded_by list")
+            for pid in sup:
+                if pid not in ev.parameters:
+                    ev.error(f"assumption {aid}", f"superseded_by references unknown parameter {pid}")
+                elif ev.parameters[pid]["provenance"]["status"] in ("synthetic", "unknown", "scan_variable"):
+                    ev.error(f"assumption {aid}", f"superseded_by {pid} is not an evidence-backed record")
+            if not a.get("superseded_on"):
+                ev.error(f"assumption {aid}", "superseded_by_evidence requires superseded_on")
     for sid, s in ev.scenarios.items():
         for role, pid in s.get("parameters", {}).items():
             if pid not in ev.parameters:
@@ -209,6 +220,12 @@ def cross_check(ev: Evidence) -> None:
         for src in s.get("primary_source_ids", []):
             if src not in ev.sources:
                 ev.error(f"scenario {sid}", f"unknown source {src}")
+        for role, pid in s.get("parameters", {}).items():
+            p = ev.parameters.get(pid)
+            if p and p["provenance"]["status"] == "synthetic":
+                a = ev.assumptions.get(p["provenance"].get("assumption_id"))
+                if a and a.get("status") == "superseded_by_evidence":
+                    ev.error(f"scenario {sid}", f"role {role} points to synthetic {pid} whose assumption is superseded; use {a.get('superseded_by')}")
     for cid, c in ev.conflicts.items():
         for pid in c.get("affected_parameters", []):
             if pid not in ev.parameters:
