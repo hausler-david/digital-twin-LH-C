@@ -1,0 +1,44 @@
+# Batch-8 user upload (2026-10-28): MuCol Milestone 17 report. Merged by tools/merge_research_fragments.py.
+sources:
+- source_id: SRC_DOI_10_5281_ZENODO_15054073
+  title: Tentative design of the FFA (MuCol Milestone Report No. 17, WP5 High Energy Complex)
+  authors_or_org: M. Topp-Mugglestone (CERN) for the MuCol consortium, WP5 High Energy Complex (lead beneficiary CEA)
+  source_type: official_report
+  category: OFFICIAL_CERN
+  publication_date: 27 Mar 2025
+  version: MuCol-M17-report_WP5_v1.pdf, version 1.0 Final, 27/03/2025; DOI 10.5281/zenodo.15054073
+  url: https://doi.org/10.5281/zenodo.15054073
+  doi: 10.5281/zenodo.15054073
+  arxiv_id: null
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'Official MuCol/IMCC analytic vFFA design behind the Kraków vFFA deck and MR7 Table F.5: scaling law B(z) = B0
+    e^{mz}, FODO closed-orbit geometry (Table 2.1, eqs 2.1–2.8) and Hamiltonian (eq. 2.9); Table 2.2 Stage 1 vFFA r0 = 953
+    m, θF = 0.01033 rad, Nc = 790, βF = 0.001564 rad, βD = 0.001180 rad, γF = 0.252 rad, m = 31.94 /m and Stage 4 vFFA r0
+    = 5570 m, θF = 0.00786 rad, Nc = 1000, βF = 0.001790, βD = 0.001166, γF = −0.492 rad, m = 12.13 /m; Table 2.3 vs RCS1/RCS4:
+    5990 / 35000 m, 0.06→0.3 / 1.5→5 TeV, ramp rate 0 vs 4200 / 565 T/s, excursion 0.048 / 0.12 m, on-orbit peak 6.93 / 13.59
+    T (good-field 12.52 / 29.04 T, 25 µm emittance), drift 1.18 / 1.03 m, tunes (0.382, 0.079) / (0.460, 0.057); design limits
+    8.3 T (LHC dipole) and 1 m minimum drift; kicker example 0.2 T × 1 m at 300 GeV → 0.1 mm; decoupled straights need γ =
+    90° and zero net bend; dispersion D_z = 1/m; dispersion suppressor D2 = (D1 + D3)/2 with 180° phase advance; optics notebooks
+    in gitlab.cern.ch/acc-models/acc-models-mc (high_energy_complex/vFFAx/vFFAx.ipynb). Analytic lattices only: the report
+    states they must still be verified by numerical simulation and that high m-values make the field grow rapidly off orbit.'
+  parameters_extracted: []
+  unresolved_questions:
+  - Analytic model only (thin-element, constant-field approximations, p. 10); no tracking, no non-linear study, no RF/longitudinal
+    simulation — the report says so itself (p. 15).
+  - The stage-4 on-orbit field 13.59 T is 3–4 % above Bρ(5 TeV)/ρF from eq. (2.3); the point of the orbit at which the table
+    value is evaluated is not stated (tests/scientific/test_mucol_m17_vffa.py).
+  - 'Excursion definition not stated: ln(p_ext/p_inj)/m gives 50 mm (table 48 mm) and 99 mm (table 120 mm).'
+  - Licence not printed in the PDF (marked PUBLIC, Horizon Europe grant 101094300); the Zenodo record licence was not fetched
+    (host blocked).
+  - The acc-models-mc GitLab notebooks are on a CERN host (blocked here); the LHμC 70→500 GeV booster of the Kraków deck is
+    not in this report.
+  licence: not stated in the uploaded PDF (document marked PUBLIC)
+  archived_file: references/_local/MuCol-M17-report_WP5_v1_ToppMugglestone_FFA.pdf (git-ignored; see research/archived_metadata/SRC_DOI_10_5281_ZENODO_15054073.json)
+  sha256: cd66a37c69ea4d0a1fa3f039d23fcb1bcd7ddee7f79ada0056fefcba32615863
+  discovered_by_queries:
+  - user upload (batch 8, 2026-10-28)
+  - research roadmap item R6 (Topp-Mugglestone vFFA design note, Zenodo 10.5281/zenodo.15054073)
+  notes: FULL TEXT UPLOADED 2026-10-28 (batch 8) and read in full. This is the IMCC source of the vFFA1 values restated in
+    MuCol MR7 Table F.5 (SRC_ARXIV_2510_27437) and the formalism behind the Kraków vFFA deck (SRC_WS1681458_TOPPMUGGLESTONE_VFFA);
+    the thesis it cites as [3] is SRC_URL_ORA_OXFORD_TOPP_MUGGLESTONE_THESIS (still blocked). Lead P1 checks in tests/scientific/test_mucol_m17_vffa.py.

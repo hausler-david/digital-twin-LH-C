@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_DOI_10_5281_ZENODO_15054073",
+  "local_file": "references/_local/MuCol-M17-report_WP5_v1_ToppMugglestone_FFA.pdf",
+  "committed_copy": null,
+  "title": "Tentative design of the FFA (MuCol Milestone Report No. 17, WP5 High Energy Complex)",
+  "authors": "M. Topp-Mugglestone (CERN); reviewed by A. Chance (CEA, WP5 leader) and M. Lancellotti (CERN); approved by the MuCol Management Committee",
+  "venue": "MuCol (Horizon Europe Grant Agreement 101094300) Milestone Report No. 17, document MuCol-M17-report_WP5_v1.pdf, version 1.0 Final, released 27/03/2025, DOI 10.5281/zenodo.15054073, PUBLIC",
+  "identifier": "DOI 10.5281/zenodo.15054073",
+  "pages": 16,
+  "licence": "not stated in the uploaded PDF (document marked PUBLIC)",
+  "redistribution": "not committed (no licence statement in the PDF)",
+  "category": "OFFICIAL_CERN",
+  "upload_name": "7f1dce76-MuCol-M17-report_WP5_v1.pdf",
+  "sha256": "cd66a37c69ea4d0a1fa3f039d23fcb1bcd7ddee7f79ada0056fefcba32615863",
+  "size_bytes": 3076204,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 8), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (16 pages) on 2026-10-28; Tables 2.2 and 2.3 (p. 11) checked against the page image"
+}
