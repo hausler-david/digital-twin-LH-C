@@ -1,0 +1,283 @@
+# Synthetic screening ranges for the LHmuC acceleration chain, ultra-cold source efficiencies and beam polarisation.
+# status: synthetic (CLAUDE.md 1.4). Every record here is a screening RANGE with an assumption record in
+# parameters/assumptions/phase0_assumptions.yaml; 'value' is only the range midpoint (or a representative member of a
+# discrete set) so that software has a number to display. None of these numbers is an LHmuC design value.
+# Date: 2026-10-28. Author role: assumptions and synthetic-range author (Phase 0 evidence audit).
+parameters:
+- parameter_id: ACC_VFFA_PEAK_FIELD_SYN
+  name: Peak on-orbit magnetic field of the vFFA booster arcs (synthetic screening range)
+  symbol: B_peak
+  subsystem: acceleration
+  scenario: null
+  value: 9.5
+  unit: T
+  uncertainty:
+    type: interval
+    lower: 3.0
+    upper: 16.0
+    unit: T
+    note: Synthetic range, not a measured uncertainty; see ASM_ACC_VFFA_PEAK_FIELD.
+  allowed_range:
+    min: 3.0
+    max: 16.0
+    unit: T
+    basis: synthetic screening range, see assumption record ASM_ACC_VFFA_PEAK_FIELD
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC vFFAG booster concept (DIS2026) and the muLHC vFFA booster option (SRC_ARXIV_2506_15445 section
+        2.2.3).
+    confidence: low
+    assumption_id: ASM_ACC_VFFA_PEAK_FIELD
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - ACCEL_SCHEME_DIS2026
+  - ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
+  - ACC_BOOSTER_MAX_FIELD_MUTRISTAN_MULHC
+  - ACC_BOOSTER_LATTICE_TYPE_MULHC
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+- parameter_id: ACC_RF_FREQUENCY_SYN
+  name: RF frequency of the muon accelerating linacs (synthetic discrete set)
+  symbol: f_RF
+  subsystem: acceleration
+  scenario: null
+  value: 802.0
+  unit: MHz
+  uncertainty:
+    type: interval
+    lower: 325.0
+    upper: 1300.0
+    unit: MHz
+    note: Synthetic range, not a measured uncertainty; see ASM_ACC_RF_FREQUENCY.
+  allowed_range:
+    min: 325.0
+    max: 1300.0
+    unit: MHz
+    basis: 'discrete set of candidate values: 325, 352, 400, 802, 1300; see ASM_ACC_RF_FREQUENCY'
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC ERL/linac acceleration chain (DIS2026 and muLHC). Members must pass the bunch-harmonic check
+        before use.
+    confidence: low
+    assumption_id: ASM_ACC_RF_FREQUENCY
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - ACCEL_SCHEME_DIS2026
+  - ACCEL_ERL_THREE_PASS_ENERGY_DIS2026
+  - MACHINE_MU_BUNCH_SPACING_DIS2026
+  - MACHINE_MU_BUNCH_LENGTH_MULHC
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'SYNTHETIC: value is one representative member of the discrete candidate set in the assumption record and exists only so that
+    software, plots and exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and
+    the range (CLAUDE.md 1.4). Discrete set {325, 352, 400, 802, 1300} MHz; allowed_range min/max are the set bounds, not a continuous
+    interval.'
+- parameter_id: ACC_RF_GRADIENT_SYN
+  name: Accelerating gradient of the muon linacs (synthetic screening range)
+  symbol: E_acc
+  subsystem: acceleration
+  scenario: null
+  value: 20.0
+  unit: MV/m
+  uncertainty:
+    type: interval
+    lower: 10.0
+    upper: 30.0
+    unit: MV/m
+    note: Synthetic range, not a measured uncertainty; see ASM_ACC_RF_GRADIENT.
+  allowed_range:
+    min: 10.0
+    max: 30.0
+    unit: MV/m
+    basis: synthetic screening range, see assumption record ASM_ACC_RF_GRADIENT
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC ERL/vFFAG acceleration chain. Distinguish real-estate from cavity gradient in every use.
+    confidence: low
+    assumption_id: ASM_ACC_RF_GRADIENT
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - ACC_ERL_ENERGY_GAIN_PER_PASS_MULHC
+  - ACC_ERL_LINAC_LENGTH_MULHC
+  - ACC_BOOSTER_LINAC_ENERGY_GAIN_MUTRISTAN_MULHC
+  - ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC
+  - ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
+  - ACCEL_BOOSTER_LINAC_LENGTH_NUCL
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+- parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_SYN
+  name: Fraction of stopped mu+ forming muonium in the ultra-cold source target (synthetic screening range)
+  symbol: f_Mu
+  subsystem: source
+  scenario: null
+  value: 0.5
+  unit: dimensionless
+  uncertainty:
+    type: interval
+    lower: 0.3
+    upper: 0.7
+    unit: dimensionless
+    note: Synthetic range, not a measured uncertainty; see ASM_SOURCE_MUONIUM_FORMATION_FRACTION.
+  allowed_range:
+    min: 0.3
+    max: 0.7
+    unit: dimensionless
+    basis: synthetic screening range, see assumption record ASM_SOURCE_MUONIUM_FORMATION_FRACTION
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC ultra-cold mu+ source model (aerogel-type target). Hot-tungsten and hybrid targets need their
+        own records once sourced.
+    confidence: low
+    assumption_id: ASM_SOURCE_MUONIUM_FORMATION_FRACTION
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - SOURCE_MUONIUM_TARGET_OPTIONS_DIS2026
+  - SOURCE_COOLING_METHOD_DIS2026
+  - SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Subsystem
+    source; kept in the acceleration synthetic file (muon production/acceleration chain) because no source synthetic file was assigned.'
+- parameter_id: SOURCE_LASER_IONISATION_EFFICIENCY_SYN
+  name: Laser ionisation efficiency of thermal muonium (synthetic log-uniform screening range)
+  symbol: eps_ion
+  subsystem: source
+  scenario: null
+  value: 0.0316
+  unit: dimensionless
+  uncertainty:
+    type: interval
+    lower: 0.001
+    upper: 1.0
+    unit: dimensionless
+    note: Synthetic range, not a measured uncertainty; see ASM_SOURCE_LASER_IONISATION_EFFICIENCY.
+  allowed_range:
+    min: 0.001
+    max: 1.0
+    unit: dimensionless
+    basis: synthetic screening range, see assumption record ASM_SOURCE_LASER_IONISATION_EFFICIENCY
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC ultra-cold mu+ source model. The value is a prior for sensitivity studies, not a performance
+        claim.
+    confidence: low
+    assumption_id: ASM_SOURCE_LASER_IONISATION_EFFICIENCY
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - SOURCE_COOLING_METHOD_DIS2026
+  - SOURCE_MUONIUM_FORMATION_FRACTION_SYN
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'SYNTHETIC: value is the geometric midpoint of the log-uniform synthetic range and exists only so that software, plots and
+    exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md
+    1.4). Subsystem source; kept in the acceleration synthetic file. The representative value is the geometric midpoint of a log-uniform
+    range.'
+- parameter_id: MACHINE_MUON_POLARISATION_SYN
+  name: Longitudinal polarisation of the mu+ beam at collision (synthetic screening range)
+  symbol: P_mu
+  subsystem: machine
+  scenario: null
+  value: 0.4
+  unit: dimensionless
+  uncertainty:
+    type: interval
+    lower: 0.0
+    upper: 0.8
+    unit: dimensionless
+    note: Synthetic range, not a measured uncertainty; see ASM_MACHINE_MUON_POLARISATION.
+  allowed_range:
+    min: 0.0
+    max: 0.8
+    unit: dimensionless
+    basis: synthetic screening range, see assumption record ASM_MACHINE_MUON_POLARISATION
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; LHmuC mu+ beam. Any physics projection using P > 0 must state this assumption explicitly.
+    confidence: low
+    assumption_id: ASM_MACHINE_MUON_POLARISATION
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026
+  - SOURCE_COOLING_METHOD_DIS2026
+  date_added: '2026-10-28'
+  responsible_module: parameters/machine
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Subsystem
+    machine; kept in the acceleration synthetic file because polarisation is a beam-production/transport property.'

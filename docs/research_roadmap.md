@@ -75,7 +75,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   blocked) or upload.
 - **Next action.** *Literature*; then *analytical* (re-run `lhmuc/analytical.py` checks with the
   erratum's stated option set).
-- **Output.** `CONF_LUMI_MODEL_ASSUMPTIONS` conflict record updated; `SRC_DOI_10_1093_PTEP_PTAG031`
+- **Output.** `CONF_LUMI_MODEL_ASSUMPTIONS` conflict record updated; `SRC_ARXIV_2506_15445`
   promoted from snippet to fetched; parameter `notes` on `MACHINE_*_MULHC` luminosities.
 
 ### R3 — LHeC IR design papers: L*, Q1, separator, crossing angle
@@ -295,7 +295,7 @@ Uploaded (read in full): `SRC_ARXIV_2610_35154` (arXiv:2610.35154v1), `SRC_ARXIV
 `SRC_WS_LEBOHO_KUMAR_DIHIGGS`.
 
 Snippet-level or blocked leads (source ids as registered in `research/_fragments/*_sources.yaml`;
-not read): `SRC_INDICO_1681458_OVERVIEW`, `SRC_DOI_10_1093_PTEP_PTAG031`,
+not read): `SRC_INDICO_1681458_OVERVIEW`, `SRC_ARXIV_2506_15445`,
 `SRC_ARXIV_1206_2913`, `SRC_ARXIV_2007_14491`, `SRC_ARXIV_2206_07678`, `SRC_ARXIV_2503_20475`, `SRC_ARXIV_2411_02966`,
 `SRC_ARXIV_2510_27437`, `SRC_ARXIV_2303_08533`, `SRC_ARXIV_2201_06664`, `SRC_ARXIV_2605_25580`,
 `SRC_DOI_10_1103_PHYSREVLETT_74_4811`, `SRC_JACOW_IPAC2018_FRXGBF1`, `SRC_ARXIV_2410_11367`,

@@ -1,0 +1,1023 @@
+# Source conflict registry — schema schemas/conflict.schema.json. Conflicts are preserved, never averaged.
+conflicts:
+- conflict_id: CONF_PEAK_LUMINOSITY
+  affected_parameters:
+  - MACHINE_PEAK_LUMINOSITY_DIS2026
+  - MACHINE_AVERAGE_LUMINOSITY_DIS2026
+  - MACHINE_PEAK_LUMINOSITY_LOWER_BOUND_DIS2026
+  - MACHINE_PEAK_LUMINOSITY_MUTRISTAN_MULHC
+  - MACHINE_PEAK_LUMINOSITY_ERL_MULHC
+  - MACHINE_LUMINOSITY_LOWER_BOUND_CLAIM_MULHC
+  - MACHINE_LUMINOSITY_ERRATUM_FACTOR_MUTRISTAN_MULHC
+  - MACHINE_LUMINOSITY_ERRATUM_FACTOR_ERL_MULHC
+  - MACHINE_PEAK_LUMINOSITY_MUP_MUTRISTAN_NUCL
+  - MACHINE_PEAK_LUMINOSITY_MUP_ERL_NUCL
+  - MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_MUTRISTAN_MULHC
+  - MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_ERL_MULHC
+  competing_values:
+  - value: 2.1e34
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'Table 1 (p.4) ''Example of the LHμC parameters'': ''Peak luminosity, L [10^34 cm^-2 s^-1] 2.1''. Explicitly
+      a peak value for the 4 MHz in-train collision rate; rests on the stated assumptions (μ+ yield 5% of μTRISTAN, 4 MW proton
+      driver, increased LHC proton bunch population). Parameter MACHINE_PEAK_LUMINOSITY_DIS2026.'
+  - value: 1.0e34
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2610_35154
+    scenario: null
+    context: 'Abstract (p.1): ''at an average luminosity close to 10^34 cm^-2 s^-1'', attributed to both the 5.3 and 7.5 TeV
+      options. An average, not a peak; the relation to the Table 1 peak is not explained in the source. Parameter MACHINE_AVERAGE_LUMINOSITY_DIS2026.'
+  - value: 1.0e34
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.2: ''the peak LHμC luminosity which might exceed 10^34 cm^-2 s^-1''. Lower bound on the peak. Parameter MACHINE_PEAK_LUMINOSITY_LOWER_BOUND_DIS2026.'
+  - value: 8.8e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'μLHC Table 3 (p.12): ''L [10^33 cm^-2 s^-1] | μTRISTAN-based 8.8''. AloHEP result for 3.7e10 μ+ x 2.2e11 p,
+      4 MHz, 4.3 um matched beams; the uploaded v2 is taken to be the post-erratum text. Parameter MACHINE_PEAK_LUMINOSITY_MUTRISTAN_MULHC.'
+  - value: 7.2e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'μLHC Table 3 (p.12): ''L [10^33 cm^-2 s^-1] | ERL-based 7.2''. Parameter MACHINE_PEAK_LUMINOSITY_ERL_MULHC.'
+  - value: 8.8e33
+    unit: cm^-2 s^-1
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: 'Nucleus Options deck p.4: ''7.2 × 10^33 cm^-2s^-1 with the ERL-based booster 8.8 × 10^33 with the µTRISTAN-based
+      booster (values after the erratum).'' Confirms that 8.8e33 / 7.2e33 are the POST-erratum values; the deck does not say
+      whether they are peak or time-averaged. Parameters MACHINE_PEAK_LUMINOSITY_MUP_MUTRISTAN_NUCL / _ERL_NUCL.'
+  - value: 4.4e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'IMPLIED pre-erratum value, not printed anywhere: acknowledgements (p.21) ''the luminosity value increased by
+      approximately 2 times for the μTRISTAN-based option'', i.e. roughly 8.8e33/2. AUDIT INFERENCE; the erratum text itself
+      was not obtained (academic.oup.com blocked). Parameter MACHINE_LUMINOSITY_ERRATUM_FACTOR_MUTRISTAN_MULHC records the
+      factor, not this value.'
+  - value: 1.8e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'IMPLIED pre-erratum value, not printed anywhere: acknowledgements (p.21) ''... and 4 times for the LHeC-based
+      option'', i.e. roughly 7.2e33/4. AUDIT INFERENCE. Parameter MACHINE_LUMINOSITY_ERRATUM_FACTOR_ERL_MULHC records the
+      factor, not this value.'
+  - value: 1.0e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'μLHC abstract (p.1): ''Achievable luminosities are predicted to exceed 10^33 cm−2s−1.'' and conclusion (p.20)
+      ''well-exceeding 10^33'' / ''still above 10^33''. Lower bound retained from the pre-erratum text. Parameter MACHINE_LUMINOSITY_LOWER_BOUND_CLAIM_MULHC.'
+  - value: 1.0e33
+    unit: cm^-2 s^-1
+    source_id: SRC_INDICO_1522800_6986580
+    scenario: null
+    context: 'snippet (access blocked): ICHEP 2026 Natal contribution listing, ''Both list luminosity above 10^33 cm⁻²s⁻¹''
+      together with the 500 GeV / 3.74 TeV parameter set. Snippet-only: lead, not a value; confidence cap medium.'
+  - value: 1.0e33
+    unit: cm^-2 s^-1
+    source_id: SRC_INDICO_1664360_6996662
+    scenario: null
+    context: 'snippet (access blocked): CERN Accelerator Design Meeting listing, ''a centre-of-mass energy of 3.74 TeV, and
+      expected luminosity above 10^33 cm⁻²s⁻¹''. Snippet-only.'
+  - value: 1.0e33
+    unit: cm^-2 s^-1
+    source_id: SRC_URL_INDICO_FIS_AGH_462
+    scenario: null
+    context: 'snippet (access blocked): AGH HEP seminar listing (May 2026) with the 1 TeV / 5.3 TeV set, ''luminosity above
+      10^33''. Snippet-only.'
+  - value: 5.2e33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2406_02647
+    scenario: null
+    context: 'snippet (access blocked): 2024 study of μTRISTAN-based μ+p colliders at the HL-LHC, ''lists 5.29 TeV and 5.2
+      × 10^33 cm⁻² s⁻¹''. Earlier design iteration by overlapping authors; snippet-only.'
+  possible_cause: 'Four different quantities are being compared under one word. (1) The DIS2026 2.1e34 is a peak value for
+    the in-train 4 MHz collision rate and is reproduced by the naive formula L = f N_mu N_p / (4 pi sigma^2) with no hourglass
+    or decay factor (see CONF_LUMI_MODEL_ASSUMPTIONS); it also uses ten times the proton bunch population (22e11 vs 2.2e11)
+    and twice the muon bunches per train (80 vs 40) of the μLHC set, while the μ+ bunch population is 4-5 times smaller (0.07e11
+    vs 3.0-3.7e10). (2) The μLHC 8.8e33 / 7.2e33 are AloHEP outputs that include muon decay over the 2000-turn store (the
+    paper''s own 0.63 average-population factor reproduces them from the naive formula to 1%). (3) The ''>1e33'' statements
+    are lower bounds, and the ICHEP/ADM listings belong to an earlier 500 GeV / 3.74 TeV design iteration (CONF_LHMUC_DESIGN_VERSIONS).
+    (4) The pre-erratum μLHC values were lower by the acknowledged factors 2 and 4 because the booster survival had been underestimated
+    (CONF_MUON_SURVIVAL_RATES_ERRATUM). The DIS2026 ''average close to 1e34'' cannot be reproduced from the Table 1 numbers
+    with the registry author''s simple duty-cycle estimate (AUDIT COMPUTATION: a 20.8 ms lab lifetime and an 80 ms refill
+    period give a decay-averaged factor tau/T (1 - exp(-T/tau)) = 0.25, i.e. 5.4e33 from 2.1e34); the source does not state
+    its averaging prescription, so this remains unexplained.'
+  selected_treatment: 'Separate scenarios, never a merged number: LHMUC-DIS2026-1TEV carries 2.1e34 (peak) and 1e34 (average,
+    confidence medium) as two distinct parameters; MULHC-PTEP2026-MUTRISTAN-BOOSTER carries 8.8e33 and MULHC-PTEP2026-ERL-BOOSTER
+    carries 7.2e33 (post-erratum). The implied pre-erratum values are recorded only here, not as parameters. The ''>1e33''
+    listings are recorded as bounds (MACHINE_LUMINOSITY_LOWER_BOUND_CLAIM_MULHC) and as snippet leads; none of them may be
+    used as a design value. No scenario may quote a luminosity without stating peak vs average and the decay/hourglass treatment
+    used.'
+  effect_on_simulations: Any event-yield or physics-reach calculation differs by a factor 2-3 (2.1e34 vs 7.2e33 peak) and
+    by a further factor up to 4 depending on peak-vs-average interpretation; integrated luminosities per year (88 / 72 fb^-1
+    in the μLHC Table 4 vs the 'close to 1e34 average' of DIS2026, which would correspond to ~100 fb^-1 per 1e7 s) must be
+    propagated per scenario. Luminosity-driven requirements (pile-up, detector rates, beam-beam tune shift) must be evaluated
+    per scenario and labelled with the scenario id.
+  required_future_evidence: (a) The HELP4CERN White Paper parameter table with its luminosity formula and averaging prescription;
+    (b) the PTEP erratum text (DOI not found; academic.oup.com blocked) to confirm that arXiv v2 Tables 1, 3, 4, 6 are the
+    corrected ones; (c) an AloHEP re-run with the Table 1-3 inputs to confirm which effects (decay, hourglass, beam-beam)
+    are included in 8.8e33 / 7.2e33; (d) the ICHEP 2026 / ADM slides to date the 500 GeV / >1e33 set.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_LUMI_MODEL_ASSUMPTIONS
+  affected_parameters:
+  - MACHINE_PEAK_LUMINOSITY_DIS2026
+  - MACHINE_AVERAGE_LUMINOSITY_DIS2026
+  - MACHINE_PEAK_LUMINOSITY_MUTRISTAN_MULHC
+  - MACHINE_PEAK_LUMINOSITY_ERL_MULHC
+  - MACHINE_LUMINOSITY_CODE_MULHC
+  - MACHINE_LUMINOSITY_CODE_NUCL
+  - MACHINE_MU_AVERAGE_POPULATION_FRACTION_MULHC
+  - MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL
+  - MACHINE_MU_BUNCH_LENGTH_MULHC
+  - PROTON_BETA_STAR_MULHC
+  - PROTON_BUNCH_LENGTH_RMS_SYN
+  - MACHINE_PEAK_LUMINOSITY_NUCL_PB
+  - MACHINE_PEAK_LUMINOSITY_NUCL_XE
+  - MACHINE_PEAK_LUMINOSITY_NUCL_O
+  - MACHINE_PEAK_LUMINOSITY_NUCL_NE
+  competing_values:
+  - value: naive formula, geometric factor H = 1, no decay averaging
+    unit: dimensionless
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'Table 1 (p.4) gives 2.1e34 with f = 4 MHz, N_mu = 0.07e11, N_p = 22e11, sigma_x,y = 4.8 um and no beta*, bunch
+      length or emittance. AUDIT COMPUTATION: f N_mu N_p/(4 pi sigma^2) = 2.13e34 cm^-2 s^-1, i.e. the printed value is reproduced
+      with H = 1 and no decay factor (tests/scientific, P1). The source does not state its formula; the model is inferred
+      from the reproduction.'
+  - value: 'AloHEP: pinch effect, particle decay, hourglass effect included'
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'p.11: ''AloHEP [60–62] ... accounts for significant luminosity-altering effects such as the pinch effect, particle
+      decay, hourglass effect etc.'' and p.12 ''luminosity values for two options were calculated within the AloHEP software,
+      with beam size matched accordingly''. Parameter MACHINE_LUMINOSITY_CODE_MULHC.'
+  - value: 0.63
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'p.11: ''the average number of muons present in the ring throughout this 2000-turn circulation period is determined
+      to be approximately 0.63 times the initial injected number of muons'' (1 - 1/e over one lab lifetime). AUDIT COMPUTATION:
+      naive L for the ERL option = 4e6 x 3.0e10 x 2.2e11 / (4 pi (4.3e-4 cm)^2) = 1.14e34; x 0.63 = 7.16e33 = printed 7.2e33
+      to 1%; μTRISTAN option 1.40e34 x 0.63 = 8.83e33 = printed 8.8e33. Parameter MACHINE_MU_AVERAGE_POPULATION_FRACTION_MULHC.'
+  - value: 0.64
+    unit: dimensionless
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: 'p.8 side box: ''≈ 0.64 N0 time-averaged bunch population between 50 Hz refills''. Same decay-averaging idea
+      as the μLHC 0.63, now tied to a 50 Hz refill (20 ms period ≈ one lab lifetime). Parameter MACHINE_MU_TIME_AVERAGED_POPULATION_FRACTION_NUCL.'
+  - value: 'audit decomposition (corrected): naive 1.14e34 (ERL) / 1.40e34 (muTRISTAN); x decay average 0.632 = 7.18e33 /
+      8.86e33, matching the printed 7.2e33 / 8.8e33 to <2%; no residual factor'
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'Audit computation (tests/scientific/test_analytical_checks.py::test_mulhc_table3_luminosity_reproduced_by_naive_formula_times_decay_average).
+      The first version of this entry, handed to the registry author during the build, contained a factor-10 slip (naive 1.14e35
+      from N_p = 2.2e12 instead of the Table 2 value 22e10 = 2.2e11) and a spurious ''residual factor ~5''; the registry author
+      did not reproduce it and the lead corrected the test and this entry on 2026-10-28. What remains open: the hourglass
+      factor computed for the stated optics (beta*_y,mu = 0.7 cm, beta*_p = 7 cm, mu bunch 2 mm, proton bunch length assumed
+      7.5 cm = PROTON_BUNCH_LENGTH_RMS_SYN, not sourced) is ~0.53, yet the published values show no such reduction; either
+      AloHEP used a shorter proton bunch, relaxed/matched muon optics (sigma 4.3 um for both beams implies beta*_mu ~4.4 cm,
+      cf. MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC), or no hourglass term. Not determinable from the sources; requires AloHEP
+      input decks (missing_evidence).'
+  possible_cause: 'The two primary documents use different luminosity models and neither states its formula: the DIS2026 example
+    table is reproduced exactly by the geometric formula with H = 1 and no decay averaging, whereas the μLHC values are reproduced
+    by the same formula times the authors'' 0.63 decay-average factor. If AloHEP also applied a hourglass reduction for a
+    ~7.5 cm proton bunch against beta* = 7 cm (H ~0.7-0.8 by the registry author''s estimate), the printed 8.8e33 / 7.2e33
+    would have to contain a compensating effect (e.g. a different decay treatment, the ''beam size matched'' step, or a pinch
+    enhancement) that is not documented. The lead''s ''residual factor ~5'' is traced to a factor-10 arithmetic slip (1.14e34
+    for 1.14e34), not to the sources.'
+  selected_treatment: 'Open. Every luminosity in the registry carries, in its notes, the model with which it was reproduced
+    (DIS2026: H = 1, no decay; μLHC: naive x 0.63). The project''s own luminosity tool (lhmuc/analytical.py) must expose H,
+    the decay-average factor and the beam-beam treatment as explicit, separately reported factors, default H = 1 flagged as
+    an assumption, and must never silently apply a hourglass factor to a source value. The hourglass factor for the μLHC optics
+    is treated as a scan variable (proton bunch length 7.5-9 cm, an external HL-LHC-type assumption requiring an assumption
+    record) until the AloHEP inputs are known.'
+  effect_on_simulations: A factor 0.6-1.0 (hourglass) times 0.25-1.0 (decay/duty averaging) on every luminosity-driven output.
+    Rate and pile-up estimates for the detector must be done at the in-train peak (H = 1, fresh bunch) and the physics-reach
+    estimates at the average; mixing the two silently is the main risk this conflict guards against.
+  required_future_evidence: AloHEP run cards or JSON inputs for the μLHC Table 3 (github.com/yefetu/alohep 'save' directory,
+    not yet inspected), including the proton bunch length used; the IPAC'21 WEPAB278 description of the hourglass and decay
+    treatment (SRC_JACOW_IPAC2021_WEPAB278, blocked); the White Paper's luminosity formula and its definition of 'average'.
+  status: open
+  date_added: '2026-10-28'
+- conflict_id: CONF_MUON_BUNCHES_PER_TRAIN
+  affected_parameters:
+  - MACHINE_MU_BUNCHES_DIS2026
+  - MACHINE_MU_TRAIN_DURATION_DIS2026
+  - MACHINE_MU_BUNCH_SPACING_DIS2026
+  - MACHINE_MU_BUNCHES_PER_RING_MULHC
+  - SOURCE_MU_BUNCH_TRAIN_LENGTH_MULHC
+  - MACHINE_MU_BUNCHES_NUCL
+  - SOURCE_LINAC_BUNCHES_NUCL
+  - MACHINE_COLLISION_RATE_DIS2026
+  - MACHINE_COLLISION_FREQUENCY_MULHC
+  competing_values:
+  - value: 80
+    unit: bunches
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.4: ''The μ+ train stored in the main ring in this case contains 80 bunches separated by 250 ns, and the repetition
+      rate is 12.5 Hz.'' AUDIT OBSERVATION: 80 x 250 ns = 20 us exceeds the ~10 us revolution period of a 3 km ring, while
+      the Table 1 collision rate of 4 MHz corresponds to 40 bunches per 10 us turn; the source does not reconcile this. Parameter
+      MACHINE_MU_BUNCHES_DIS2026.'
+  - value: 40
+    unit: bunches
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: μLHC Table 1 (p.12) 'Number of bunches per ring | 40'; p.10 'The μTRISTAN production scheme inherently generates
+      a train of 40 bunches [51]'; p.11 bunch spacing 250 ns in the 3 km ring. Inherited from μTRISTAN. Parameters MACHINE_MU_BUNCHES_PER_RING_MULHC,
+      SOURCE_MU_BUNCH_TRAIN_LENGTH_MULHC.
+  - value: 40
+    unit: bunches
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: p.8 Table 1 of the draft 'Bunches per ring 40'; p.5 '40 bunches of 4.5 × 10^10 µ+ (7.2 nC)'; p.15 '40 bunches'.
+      Parameters MACHINE_MU_BUNCHES_NUCL, SOURCE_LINAC_BUNCHES_NUCL.
+  possible_cause: The DIS2026 example doubles the bunch train relative to the μTRISTAN/μLHC chain (80 vs 40) as part of a
+    different source scenario (μ+ yield at 5% of μTRISTAN, 4 MW driver, 12.5 Hz). Either two 40-bunch trains are merged per
+    80 ms cycle, or the 80 bunches are stored in the 6 km (2 TeV) ring, or 'main ring of about 3 km' and '250 ns' are approximate.
+    The source gives no statement that resolves the 20 us train vs 10 us revolution mismatch.
+  selected_treatment: 'Separate scenarios: 80 bunches in LHMUC-DIS2026-1TEV (with MACHINE_MU_TRAIN_DURATION_DIS2026 = 20 us
+    recorded as derived and the inconsistency flagged in its notes), 40 bunches in the MULHC-PTEP2026-* and LHMUC-NUCL-* scenarios.
+    The number of bunches is never averaged; fill-pattern models for the DIS2026 scenario must declare which of the three
+    readings above they implement and label it as an assumption.'
+  effect_on_simulations: Fill pattern, collision rate time structure, detector duty cycle and the peak-to-average luminosity
+    ratio all depend on it; the DIS2026 scenario cannot be simulated at the bunch-train level until the reading is fixed,
+    so any such run must carry the assumption record.
+  required_future_evidence: White Paper main-ring fill pattern (bunches, spacing, circumference, injection scheme) or a statement
+    from the HELP4CERN group; the F. Zimmermann workshop contribution on SPS/LHC modifications (ref. [24] of arXiv:2610.35154).
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_MUON_BUNCH_POPULATION
+  affected_parameters:
+  - MACHINE_MU_BUNCH_POPULATION_DIS2026
+  - MACHINE_MU_BUNCH_POPULATION_MUTRISTAN_MULHC
+  - MACHINE_MU_BUNCH_POPULATION_ERL_MULHC
+  - SOURCE_MU_BUNCH_POPULATION_MULHC
+  - SOURCE_MU_BUNCH_CHARGE_MULHC
+  - MACHINE_MU_AVERAGE_BUNCH_POPULATION_MUTRISTAN_MULHC
+  - MACHINE_MU_AVERAGE_BUNCH_POPULATION_ERL_MULHC
+  - MACHINE_MU_BUNCH_POPULATION_NUCL
+  - SOURCE_LINAC_BUNCH_POPULATION_NUCL
+  - SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
+  competing_values:
+  - value: 7.0e9
+    unit: particles
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: Table 1 (p.4) 'Bunch population [10^11] 0.07 22' (μ+ column) = 7.0e9 per bunch, following 'Assuming rather conservatively
+      the μ+ yields at a level of 5% of the ones in the μTRISTAN proposal'. In-ring population at collision (no survival factor
+      stated). Parameter MACHINE_MU_BUNCH_POPULATION_DIS2026.
+  - value: 3.7e10
+    unit: particles
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: Table 1 (p.12) 'Number of muons per bunch [10^10] | μTRISTAN-based 3.7' = 4.5e10 injected x 82% booster survival
+      (p.6). Population at main-ring injection. Parameter MACHINE_MU_BUNCH_POPULATION_MUTRISTAN_MULHC.
+  - value: 3.0e10
+    unit: particles
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: Table 1 (p.12) 'ERL-based 3.0' = 4.5e10 x 67% survival (p.10). Parameter MACHINE_MU_BUNCH_POPULATION_ERL_MULHC.
+  - value: 4.5e10
+    unit: particles
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'p.6: ''the muon charge of each bunch injected into the booster ring is stated to be 7.2 nC, which corresponds
+      to 4.5×10^10 muons'' — population at booster injection (μTRISTAN value). Parameters SOURCE_MU_BUNCH_POPULATION_MULHC,
+      SOURCE_MU_BUNCH_CHARGE_MULHC.'
+  - value: 3.0e10
+    unit: particles
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: p.8 'µ+ per bunch [10^10] 3.0' and p.15 '3.0 × 10^10 µ+ per bunch'; p.5 gives 4.5e10 at the linac. Same chain
+      as the μLHC ERL option. Parameters MACHINE_MU_BUNCH_POPULATION_NUCL, SOURCE_LINAC_BUNCH_POPULATION_NUCL.
+  - value: 2.3e10
+    unit: particles
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'p.11 time-averaged population over the 2000-turn store: ''approximately 2.3×10^10 muons per bunch during its
+      lifetime'' (ERL option: 1.9e10). Not a design value; the averaging is what the luminosity code applies. Parameters MACHINE_MU_AVERAGE_BUNCH_POPULATION_*_MULHC.'
+  possible_cause: Different points in the chain (booster injection 4.5e10; main-ring injection 3.7e10 / 3.0e10; time average
+    2.3e10 / 1.9e10) and a deliberately different source assumption in the DIS2026 example (5% of the μTRISTAN yield, 80 instead
+    of 40 bunches, 12.5 Hz), which lowers the per-bunch population by a factor 4-5 and is compensated in the luminosity by
+    the tenfold proton bunch population.
+  selected_treatment: 'Separate scenarios and separate chain positions: every record names where in the chain it applies (booster
+    injection / main-ring injection / time average). The DIS2026 7.0e9 stays in LHMUC-DIS2026-1TEV; the 3.7e10 and 3.0e10
+    stay in their μLHC scenarios and in LHMUC-NUCL-*. No average across scenarios.'
+  effect_on_simulations: Luminosity, beam-beam tune shift of the proton/ion beam (which scales with N_mu; the nucleus deck
+    shows heavy-ion tune shift forcing N_mu/8 - N_mu/10), decay-neutrino flux and beam-induced background all scale linearly
+    or quadratically with N_mu; results must be reported per scenario.
+  required_future_evidence: The μ+ yield assumption behind '5% of the μTRISTAN proposal' (source-rate study of the workshop
+    contributions by Zhang, Rogers, Otani — refs. [17]-[20] of arXiv:2610.35154, not available); the White Paper parameter
+    table.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_REPETITION_RATE
+  affected_parameters:
+  - MACHINE_REPETITION_RATE_DIS2026
+  - MACHINE_REPETITION_RATE_NUCL
+  - SOURCE_MU_TRAIN_REPETITION_RATE_MULHC
+  - SOURCE_RCS_REPETITION_RATE_MULHC
+  - SOURCE_PROTON_DRIVER_REP_RATE_NUCL
+  - MACHINE_MU_LIFETIME_LAB_DIS2026
+  competing_values:
+  - value: 12.5
+    unit: Hz
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: Table 1 (p.4) 'Collision(Repet.) rate [MHz(Hz)] 4(12.5)' and text 'the repetition rate is 12.5 Hz'. Refill period
+      80 ms ≈ 3.85 lab lifetimes at 1 TeV. Parameter MACHINE_REPETITION_RATE_DIS2026.
+  - value: 50
+    unit: Hz
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'Figure 1 (p.4, reproduced from μTRISTAN): ''RCS : 3 GeV x 6.6 μC x 2-bunch x 50 Hz = 2 MW'' and booster label
+      ''x 40 bunch x 50Hz = 9 MW''. Refill period 20 ms ≈ one lab lifetime. Parameters SOURCE_RCS_REPETITION_RATE_MULHC, SOURCE_MU_TRAIN_REPETITION_RATE_MULHC.'
+  - value: 50
+    unit: Hz
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: p.5 '3 GeV rapid-cycling synchrotron, 2 MW, 50 Hz' and p.8 '≈ 0.64 N0 time-averaged bunch population between
+      50 Hz refills'. Parameters MACHINE_REPETITION_RATE_NUCL, SOURCE_PROTON_DRIVER_REP_RATE_NUCL.
+  possible_cause: The DIS2026 example assumes a 4 MW proton driver and only 5% of the μTRISTAN μ+ yield, so it refills the
+    ring four times less often with twice as many bunches; the μLHC/μTRISTAN chain refills every lab lifetime (20 ms). The
+    two choices imply very different time-averaged luminosities for the same peak (duty factor 0.25 vs 0.64 by the registry
+    author's decay-average estimate, see CONF_PEAK_LUMINOSITY).
+  selected_treatment: Separate scenarios (12.5 Hz in LHMUC-DIS2026-*, 50 Hz in MULHC-PTEP2026-* and LHMUC-NUCL-*). The repetition
+    rate is a scan variable in any source/driver trade-off study, with the decay-average factor computed explicitly from it
+    rather than taken from either source.
+  effect_on_simulations: Determines the peak-to-average luminosity ratio, the booster and main-ring injection duty cycle,
+    the proton-driver power per muon and the time structure of the decay-neutrino flux.
+  required_future_evidence: White Paper driver/source parameters; the proton-driver power vs rate assumption (4 MW at 12.5
+    Hz vs 2 MW at 50 Hz) from the source-chain workshop contributions.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_IP_BEAM_SIZE
+  affected_parameters:
+  - IR_SIGMA_X_IP_MUON_DIS2026
+  - IR_SIGMA_Y_IP_MUON_DIS2026
+  - IR_SIGMA_X_IP_PROTON_DIS2026
+  - IR_SIGMA_Y_IP_PROTON_DIS2026
+  - MACHINE_IP_BEAM_SIZE_MU_MUTRISTAN_MULHC
+  - MACHINE_IP_BEAM_SIZE_MU_ERL_MULHC
+  - PROTON_IP_BEAM_SIZE_MUTRISTAN_MULHC
+  - PROTON_IP_BEAM_SIZE_ERL_MULHC
+  - MACHINE_MU_BETA_X_STAR_MULHC
+  - MACHINE_MU_BETA_Y_STAR_MULHC
+  - MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC
+  - PROTON_BETA_STAR_MULHC
+  - PROTON_NORM_EMITTANCE_MULHC
+  - IR_SIGMA_STAR_MATCHED_MIN_NUCL
+  - IR_SIGMA_STAR_MATCHED_MAX_NUCL
+  - IR_SIGMA_XY_IP_NUCL_PB
+  - IR_SIGMA_XY_IP_NUCL_XE
+  - IR_SIGMA_XY_IP_NUCL_O
+  - IR_SIGMA_XY_IP_NUCL_NE
+  - MACHINE_MU_BETA_X_STAR_IP_MUTRISTAN_NUCL
+  - MACHINE_MU_BETA_Y_STAR_IP_MUTRISTAN_NUCL
+  - IR_BETA_X_STAR_MUON_SYN
+  - IR_BETA_Y_STAR_MUON_SYN
+  competing_values:
+  - value: 4.8
+    unit: um
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: Table 1 (p.4) 'RMS beam size at IP, σ_x,y [μm] 4.8 4.8' for μ+ and p (round, matched). No beta* or emittance
+      given, so the value cannot be decomposed. Parameters IR_SIGMA_*_IP_*_DIS2026.
+  - value: 4.3
+    unit: um
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'Table 3 (p.12) ''σx,y [μm] | μ+ 4.3 | p 4.3'' for both booster options, ''with beam size matched accordingly''.
+      AUDIT COMPUTATION: the proton value follows from Table 2 (beta* 7 cm, eps_n 2 um, gamma 7461): sqrt(0.07 x 2e-6/7461)
+      = 4.3 um; the μ+ Table 1 optics (beta*_x 3 cm, beta*_y 0.7 cm, eps_n 4 um, gamma 9464) would give 3.6 / 1.7 um instead,
+      so the matching amounts to beta*_mu = 4.37 cm in both planes (MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC). Parameters
+      MACHINE_IP_BEAM_SIZE_MU_*_MULHC, PROTON_IP_BEAM_SIZE_*_MULHC.'
+  - value: 3.6
+    unit: um
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'IMPLIED horizontal μ+ size from Table 1 (p.12) ''βx @ IP [cm] 3'', ''Norm. horizontal emittance [μm] 4'' at
+      1 TeV (vertical: 0.7 cm -> 1.7 um). Not printed; AUDIT COMPUTATION showing that Table 1 and Table 3 are not the same
+      optics. Parameters MACHINE_MU_BETA_X_STAR_MULHC, MACHINE_MU_BETA_Y_STAR_MULHC.'
+  - value: 5.5
+    unit: um
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: LHMUC-NUCL-MU-XE
+    context: 'p.11: ''The ion beam sets the beam size: σ* = √(εAβ*A) = 5.5–7.9 µm'' with beta*_A = 10 cm for every species
+      (p.10 ''One assumption''); per species 7.14 (Pb), 5.48 (Xe), 6.78 (O), 7.87 (Ne) um on p.12; ''The µ+ optics is relaxed
+      to match (β*µ ≈ 7–15 cm)''. Lower end of the range. Parameters IR_SIGMA_STAR_MATCHED_MIN_NUCL, IR_SIGMA_XY_IP_NUCL_*.'
+  - value: 7.9
+    unit: um
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: LHMUC-NUCL-MU-NE
+    context: 'Upper end of the same p.11 range (Ne: 7.87 um). Parameter IR_SIGMA_STAR_MATCHED_MAX_NUCL.'
+  possible_cause: 'Three different proton/ion optics: the DIS2026 example does not state its beta*/emittance (4.8 um would
+    correspond, e.g., to beta* = 7 cm with eps_n = 2.5 um, or 15 cm with ~1.15 um — undetermined); μLHC uses the LHeC ''ERL60-upgraded''
+    proton set (7 cm, 2 um -> 4.3 um) and matches the muon beam to it by an undocumented change of beta*_mu from 3/0.7 cm
+    to ~4.4 cm; the nucleus study takes beta* = 10 cm and the measured LHC ion emittances (0.87-1.77 um) and relaxes the muon
+    optics to 7-15 cm. In all cases the muon beam is matched to the hadron beam, so the conflict is really a conflict about
+    the hadron-beam optics and emittance (CONF_PROTON_EMITTANCE).'
+  selected_treatment: 'Separate scenarios: 4.8 um in LHMUC-DIS2026-1TEV (beta* and emittance unknown -> null, not inferred),
+    4.3 um with the implied beta*_mu = 4.37 cm (analytical_estimate) in MULHC-PTEP2026-*, species values in LHMUC-NUCL-*.
+    Any IR optics model for the DIS2026 scenario must scan the proton beta* (7-15 cm) and emittance (2.0-3.75 um) and report
+    sigma* as a range, flagged synthetic with an assumption record.'
+  effect_on_simulations: Luminosity scales as 1/sigma^2 (factor (4.8/4.3)^2 = 1.25 between the two μp sets, factor up to 3.4
+    against the ion cases); beam-beam tune shifts, the required final-focus gradients and apertures, and the matching condition
+    for the muon mini-beta insertion depend on it directly.
+  required_future_evidence: beta*, normalised emittance and bunch length of both beams in the White Paper or the IR design
+    (B. Holzer contribution); LHeC CDR Table 2.11 (SRC_ARXIV_1206_2913, blocked) to confirm the 'ERL60-upgraded' proton set;
+    AloHEP inputs behind the 'matched' 4.3 um.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_PROTON_BUNCH_POPULATION_AND_NUMBER
+  affected_parameters:
+  - PROTON_BUNCH_POPULATION_DIS2026
+  - PROTON_BUNCH_POPULATION_MULHC
+  - PROTON_BUNCHES_PER_RING_MULHC
+  - MACHINE_PROTON_BUNCH_FRACTION_USED_MULHC
+  - MACHINE_LHC_BUNCH_SYNCHRONISATION_RATIO_MULHC
+  - PROTON_BUNCH_SPACING_LHC_MULHC
+  - PROTON_PARAMETER_SET_ORIGIN_MULHC
+  competing_values:
+  - value: 2.2e12
+    unit: particles
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: Table 1 (p.4) 'Bunch population [10^11] 0.07 22' (p column) = 2.2e12 per bunch, justified by 'the possibility
+      of an increased population of LHC proton bunches due to their smaller number (hence, lower collision rate) [24]'. The
+      number of proton bunches is NOT given; ref. [24] (F. Zimmermann, SPS/LHC modifications, workshop talk) was not available.
+      Parameter PROTON_BUNCH_POPULATION_DIS2026.
+  - value: 2.2e11
+    unit: particles
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'Table 2 (p.12) ''Number of Particle per Bunch [10^10] | 22'' with ''Number of Bunches per Ring | 2760'', ''adopted
+      from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''. p.20: ''the options explored
+      in this study utilized only one-tenth of the available proton bunches. By decreasing the total number of bunches while
+      simultaneously increasing the number of protons per bunch, the luminosity could be enhanced by several times.'' Parameters
+      PROTON_BUNCH_POPULATION_MULHC, PROTON_BUNCHES_PER_RING_MULHC, MACHINE_PROTON_BUNCH_FRACTION_USED_MULHC.'
+  - value: 2760
+    unit: bunches
+    source_id: SRC_URL_CERN_2020_010_HLLHC_TDR
+    scenario: null
+    context: 'snippet (access blocked): HL-LHC TDR 2020, ''Its bunch counts are 2760 for standard and 2744 for BCMS, while
+      the nominal design has 2808 bunches'', with 2.2e11 p/b. Snippet-only; the table itself (Appendix A) was not read.'
+  - value: 2748
+    unit: bunches
+    source_id: SRC_URL_CERN_2017_007_M_HLLHC_TDR_V0_1
+    scenario: null
+    context: 'snippet (access blocked): HL-LHC TDR V0.1 (2017), ''lists 2.2×10^11 protons per bunch with 2748 bunches for
+      the standard 25 ns case, and 2604 for BCMS''. Snippet-only.'
+  - value: 2748
+    unit: bunches
+    source_id: SRC_ARXIV_2505_03535
+    scenario: null
+    context: 'snippet (access blocked): 2025 LHC/HL-LHC overview, ''Its HL-LHC column gives 2.2 × 10^11 per bunch and 2748
+      bunches, with a 5.0 × 10^34 cm^-2 s^-1 luminosity target''; nominal LHC 1.15e11 and 2808. Snippet-only.'
+  - value: 2808
+    unit: bunches
+    source_id: SRC_JACOW_IPAC2012_MOPPC005
+    scenario: null
+    context: 'snippet (access blocked): IPAC''12 HL-LHC parameter study, ''25 ns case as Nb 2.2, nb 2808, β* 0.15 m, γε 2.5
+      µm''. Historical (2012) value superseded by the TDRs; snippet-only.'
+  - value: 1.15e11
+    unit: particles
+    source_id: SRC_URL_CERN_2020_010_HLLHC_TDR
+    scenario: null
+    context: 'snippet (access blocked): TDR glossary, ''nominal beam as normalized emittance εn = 3.75 µm; Nb = 1.15 × 10¹¹;
+      nb = 2808, at β* = 0.55 m'' — nominal LHC, for reference only. Snippet-only.'
+  possible_cause: The μLHC paper takes the HL-LHC/LHeC-upgraded train (2.2e11 x 2760, only every tenth bunch colliding) as
+    given, and itself points out the unexploited option of fewer, more populated bunches; the DIS2026 example adopts exactly
+    that option (2.2e12 per bunch, 'smaller number' of bunches) on the authority of a workshop talk not available to this
+    audit. The bunch-count spread 2760/2744/2748/2604/2808 is a genuine version/filling-scheme difference between HL-LHC documents
+    (standard vs BCMS, 2017 vs 2020 TDR, nominal LHC).
+  selected_treatment: 'Separate scenarios and no averaging: 2.2e11 x 2760 (LHeC/HL-LHC set as quoted by arXiv:2506.15445)
+    in MULHC-PTEP2026-*; 2.2e12 with bunch number unknown (null) in LHMUC-DIS2026-1TEV. The HL-LHC bunch counts remain snippet
+    leads (confidence cap medium) until the TDR table is read; none is used as an LHμC parameter. The feasibility of 2.2e12
+    p/bunch in the LHC (beam-beam, electron cloud, injector chain, collimation) is recorded as an open risk, not assumed.'
+  effect_on_simulations: 'Factor 10 in the proton bunch population enters the luminosity linearly and dominates the difference
+    between 2.1e34 and 7-9e33; the proton tune shift (Table 3: 18-22e-4 for 2.2e11) would scale with N_mu, not N_p, but the
+    muon tune shift and the pile-up per crossing scale with N_p and would be ten times larger in the DIS2026 scenario. The
+    number of proton bunches sets the collision rate (every tenth 25 ns slot) and the fraction of LHC bunches never colliding
+    with muons.'
+  required_future_evidence: F. Zimmermann's workshop contribution ([24] of arXiv:2610.35154) on the modified LHC filling scheme
+    and the achievable bunch population; HL-LHC TDR 2020 Appendix A table (e-publishing.cern.ch, blocked); the White Paper
+    proton parameter set.
+  status: open
+  date_added: '2026-10-28'
+- conflict_id: CONF_PROTON_EMITTANCE
+  affected_parameters:
+  - PROTON_NORM_EMITTANCE_MULHC
+  - PROTON_BETA_STAR_MULHC
+  - IR_SIGMA_X_IP_PROTON_DIS2026
+  - IR_SIGMA_Y_IP_PROTON_DIS2026
+  - PROTON_PARAMETER_SET_ORIGIN_MULHC
+  competing_values:
+  - value: 2.0
+    unit: um
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: Table 2 (p.12) 'Norm. Emittance [μm] | 2' with 'β function @ IP [cm] | 7', the LHeC 'ERL60-upgraded' proton set
+      (Table 2.11 of their ref. [12]). An upgraded, not the baseline HL-LHC, emittance. Parameter PROTON_NORM_EMITTANCE_MULHC.
+  - value: 2.0
+    unit: um
+    source_id: SRC_ARXIV_2206_00037
+    scenario: null
+    context: 'snippet (access blocked): review of μp proposals, Table 15 ''Bunch intensity [10^11] 2.2, normalized emittance
+      2.0 µm, bunch spacing 25 ns, number of bunches per ring 2760'' (e-p style set with β* = 0.07 m). Snippet-only.'
+  - value: 2.5
+    unit: um
+    source_id: SRC_URL_CERN_2020_010_HLLHC_TDR
+    scenario: null
+    context: 'snippet (access blocked): HL-LHC TDR 2020, ''the 2.5 µm collision emittance is assumed for 25 ns operation''.
+      Baseline HL-LHC collision emittance. Snippet-only.'
+  - value: 2.5
+    unit: um
+    source_id: SRC_ARXIV_2206_00037
+    scenario: null
+    context: 'snippet (access blocked): same review, ''A companion table in the same review uses β* = 0.15 m with 2.5 µm emittance
+      and 2760 bunches''. Snippet-only.'
+  - value: 2.5
+    unit: um
+    source_id: SRC_JACOW_IPAC2012_MOPPC005
+    scenario: null
+    context: 'snippet (access blocked): IPAC''12, ''25 ns case as Nb 2.2, nb 2808, β* 0.15 m, γε 2.5 µm''. Snippet-only, 2012
+      value.'
+  - value: 3.75
+    unit: um
+    source_id: SRC_URL_CERN_2020_010_HLLHC_TDR
+    scenario: null
+    context: 'snippet (access blocked): TDR glossary, ''nominal beam as normalized emittance εn = 3.75 µm; Nb = 1.15 × 10¹¹;
+      nb = 2808, at β* = 0.55 m'' — nominal (2004-design) LHC. Snippet-only.'
+  possible_cause: 'Three generations of LHC proton parameters: nominal LHC (3.75 um), HL-LHC baseline (2.5 um at 25 ns) and
+    the LHeC ''ERL60-upgraded'' set (2.0 um with beta* = 7 cm) that the μLHC paper adopts because the LHeC IR design assumes
+    it. The DIS2026 proceedings give no emittance at all; its 4.8 um proton spot is consistent with several (beta*, emittance)
+    pairs.'
+  selected_treatment: 'Propagated as uncertainty for the LHμC scenarios: PROTON_NORM_EMITTANCE for LHMUC-DIS2026-* is unknown
+    (null); any optics or luminosity model for it scans 2.0-3.75 um (and beta* 7-15 cm) and reports a range, flagged synthetic
+    with an assumption record. The MULHC-PTEP2026-* scenarios keep 2.0 um / 7 cm because that is what the source used; the
+    HL-LHC snippets are leads (confidence cap medium) until the TDR table is read.'
+  effect_on_simulations: 'Proton spot size scales as sqrt(emittance): 2.0 -> 2.5 um is +12% in sigma and -20% in luminosity
+    at fixed beta*; 3.75 um is -47% in luminosity. The matched muon beta* (and hence the muon IR gradients/apertures) and
+    the proton beam-beam tune shift (∝ 1/emittance) move accordingly.'
+  required_future_evidence: HL-LHC TDR 2020 Appendix A / Table A-3 (blocked), LHeC CDR Table 2.11 (SRC_ARXIV_1206_2913, blocked)
+    and the LHeC 2020 update (SRC_ARXIV_2007_14491, blocked) for the 'ERL60-upgraded' set; the White Paper proton table.
+  status: propagated_as_uncertainty
+  date_added: '2026-10-28'
+- conflict_id: CONF_BOOSTER_DESIGN
+  affected_parameters:
+  - ACCEL_SCHEME_DIS2026
+  - ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
+  - ACCEL_BOOSTER_LINAC_COUNT_DIS2026
+  - ACCEL_LHEC_PASSES_1TEV_EXAMPLE_DIS2026
+  - ACCEL_VFFAG_BEAMLINE_COUNT_1TEV_EXAMPLE_DIS2026
+  - ACCEL_LHEC_ERL_PASSES_EXAMPLE_DIS2026
+  - ACCEL_ERL_THREE_PASS_ENERGY_DIS2026
+  - ACCEL_VFFAG_ONE_BEAMLINE_TOP_ENERGY_DIS2026
+  - ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN_MULHC
+  - ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC
+  - ACC_BOOSTER_ARC_RADIUS_MUTRISTAN_MULHC
+  - ACC_BOOSTER_TURNS_MUTRISTAN_MULHC
+  - ACC_BOOSTER_SURVIVAL_MUTRISTAN_MULHC
+  - ACC_BOOSTER_EXTRACTION_ENERGY_MUTRISTAN_MULHC
+  - ACC_BOOSTER_LINAC_ENERGY_GAIN_MUTRISTAN_MULHC
+  - ACC_BOOSTER_LINAC_GAIN_REQUIRED_1TEV_MULHC
+  - ACC_ERL_LINAC_LENGTH_MULHC
+  - ACC_ERL_ENERGY_GAIN_PER_PASS_MULHC
+  - ACC_ERL_BOOSTER_TURNS_MULHC
+  - ACC_BOOSTER_SURVIVAL_ERL_MULHC
+  - ACC_BOOSTER_LATTICE_TYPE_MULHC
+  - ACC_ERL_BOOSTER_ARC_SCHEME_MULHC
+  - ACCEL_BOOSTER_TURNS_NUCL
+  - ACCEL_BOOSTER_SURVIVAL_NUCL
+  - ACCEL_BOOSTER_RAMP_TIME_P5_NUCL
+  - ACCEL_BOOSTER_RAMP_TIME_P6_NUCL
+  - ACCEL_BOOSTER_ARC_TYPE_NUCL
+  competing_values:
+  - value: booster of about 9 km circumference; one-pass LHeC ERL plus two vFFAG beamlines (example); 1 GeV -> 1 (2) TeV;
+      two linacs
+    unit: dimensionless
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.4: ''if one assumes a three-pass acceleration to 70 GeV, inherited from the nominal LHeC design, adding one
+      vFFAG beamline might allow for further acceleration up to 500 GeV [22]. Therefore, one can expect to reach a 1 TeV energy
+      and beyond using a one-pass LHeC [23] and two vFFAG beamlines, for example. The 1(2) TeV anti-muon beams emerging from
+      the booster of about 9 km circumference ...''. Fixed-field vFFAG arcs, no magnet ramping; the origin of the 9 km figure
+      is not stated. Parameters ACCEL_*_DIS2026.'
+  - value: 9.0
+    unit: km
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: Booster circumference 'about 9 km' (p.4). Parameter ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026 (confidence medium, 'about').
+  - value: 'μTRISTAN racetrack: two 3 km linacs (30 GeV each; 31.25 GeV needed for 1 TeV), arcs R = 1 km, B = 3 T max; 212
+      MeV -> 960 GeV in 16 turns (~700 us); 82% survival'
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'p.6: ''race-track shape that comprises two 3 km-long LINAC sections and arc sections with a radius of 1 km.
+      Positive muons are accelerated from 212 MeV (see Figure 2) to 960 GeV over 16 turns within the ring ... approximately
+      82% of the initial muon population remains upon reaching 960 GeV. To achieve 1 TeV instead of 960 GeV, the acceleration
+      for the 3 km long linacs given in the μTRISTAN design should be 31.25 GeV instead of 30 GeV.'' Geometry taken from μTRISTAN
+      (their ref. [51]). Parameters ACC_BOOSTER_*_MUTRISTAN_MULHC.'
+  - value: 12.28
+    unit: km
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'AUDIT COMPUTATION (analytical_estimate, not printed): 2 x 3 km + 2 pi x 1 km = 12.28 km for the μTRISTAN racetrack.
+      Parameter ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN_MULHC. Differs from the DIS2026 ''about 9 km''.'
+  - value: 'LHeC-ERL racetrack: two ~1 km linacs, 10 GeV per pass (20 GeV per turn), three recirculation arcs; 212 MeV ->
+      1 TeV in 50 turns; 67% survival; vFFA (cascaded) arcs proposed'
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'p.7-10: ''a "race-track" layout utilizing two main linacs, each approximately 1 km long, which are connected
+      by three recirculation arcs ... These linacs are designed to provide an acceleration of 10 GeV per pass ... acceleration
+      of positive muons from 212 MeV to 1 TeV requires 50 turns within the ERL based booster ring ... approximately 67% of
+      the initial muon population remains upon reaching 1 TeV.'' ERL geometry from the LHeC design (their refs. [12],[14],[15],[55],[66]);
+      50-turn muon operation and vFFA arcs are μLHC proposals, not an LHeC design. Parameters ACC_ERL_*_MULHC, ACC_BOOSTER_SURVIVAL_ERL_MULHC.'
+  - value: 'LHeC ERL-based booster: 2 x 1 km linacs, 10 GeV per linac pass, 20 GeV per turn, 50 turns, 1 km radius arcs, vFFA
+      cascaded arcs; 212 MeV -> 1 TeV in ''about 1 ms'' (p.5) or ''≈ 1.4 ms'' (p.6); 67% survival'
+    unit: dimensionless
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: 'p.5 ''212 MeV → 1 TeV in about 1 ms; LHeC''s ERL-based booster''; p.6 ''2 × 1 km linacs LHeC racetrack: 10 GeV
+      per linac pass, 20 GeV per turn'', ''50 turns, ≈ 1.4 ms from 212 MeV to 1 TeV through 1 km radius arcs''; p.15 ''50
+      turns, 67% survival''. Internal 1 ms vs 1.4 ms conflict preserved as ACCEL_BOOSTER_RAMP_TIME_P5_NUCL / _P6_NUCL. Parameters
+      ACCEL_BOOSTER_*_NUCL.'
+  possible_cause: 'Three booster concepts at different maturity: the μTRISTAN racetrack (imported geometry, RCS-like ramping
+    questioned by the μLHC authors), the μLHC proposal to reuse the LHeC ERL racetrack with 50 recirculations and fixed-field
+    vFFA arcs, and the DIS2026 evolution of the latter into ''one-pass LHeC plus two vFFAG beamlines'' with injection at 1
+    GeV instead of 212 MeV and a quoted ''about 9 km'' circumference whose origin is not given (it is neither 2 x 1 km + 2
+    pi x 1 km = 8.3 km nor the μTRISTAN 12.3 km). The 1 ms vs 1.4 ms ramp time inside the nucleus deck is probably a rounding
+    of 50 turns x (circumference/c) with different assumed circumferences (1 ms corresponds to ~6 km per turn, 1.4 ms to ~8.4
+    km).'
+  selected_treatment: 'Separate scenarios: LHMUC-DIS2026-* (vFFAG scheme, 9 km, 1 GeV injection, survival unknown -> null),
+    MULHC-PTEP2026-MUTRISTAN-BOOSTER (16 turns, 82%), MULHC-PTEP2026-ERL-BOOSTER and LHMUC-NUCL-* (50 turns, 67%, both ramp
+    times kept). No booster lattice (vFFA cell, fields, apertures, tune) exists in any source, so booster simulations are
+    G0 and every survival number is a source statement, not a project result, until a documented decay-plus-acceleration calculation
+    reproduces it (tests/scientific).'
+  effect_on_simulations: Booster survival (82% / 67% / unknown) multiplies the muon bunch population delivered to the main
+    ring and therefore the luminosity; booster circumference and turn count set the acceleration time against the muon lifetime
+    (0.7 ms at 16 turns vs 1-1.4 ms at 50 turns) and the decay-neutrino source geometry (two linacs, directions); the 1 GeV
+    vs 212 MeV injection energy changes the low-energy decay loss and the required pre-accelerator (CONF_BOOSTER_INJECTION_ENERGY).
+  required_future_evidence: 'M. Topp-Mugglestone ''vFFA and LHμC'' (ref. [22] of arXiv:2610.35154, Indico contribution 7263315,
+    blocked); André et al. NJP 28 (2026) 013001 ''one-pass LHeC'' (ref. [23]; SRC_ARXIV_2503_20475 blocked); the origin of
+    the 9 km figure; the μLHC Figures 3 and 7 survival calculations (inputs: energy gain per turn, circumference) to reproduce
+    82% and 67%.'
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_BOOSTER_INJECTION_ENERGY
+  affected_parameters:
+  - ACCEL_INJECTION_ENERGY_DIS2026
+  - SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026
+  - ACC_BOOSTER_INJECTION_ENERGY_MULHC
+  - ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+  - SOURCE_LINAC_OUTPUT_ENERGY_NUCL
+  competing_values:
+  - value: 1
+    unit: GeV
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.4: ''the method of pre-acceleration of ultra-cold anti-muons to a GeV energy is also actively pursued [16,
+      20]. The rapid acceleration of anti-muons from an energy of 1 GeV to the collision energy of 1 or 2 TeV ...''. Parameters
+      ACCEL_INJECTION_ENERGY_DIS2026, SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026.'
+  - value: 212
+    unit: MeV
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'p.6: ''Positive muons are accelerated from 212 MeV (see Figure 2) to 960 GeV over 16 turns''; p.10 ''from 212
+      MeV to 1 TeV requires 50 turns''. J-PARC muon-linac output energy, taken from μTRISTAN; kinetic vs total not stated.
+      Parameter ACC_BOOSTER_INJECTION_ENERGY_MULHC.'
+  - value: 212
+    unit: MeV
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: 'p.5: ''Re-acceleration to 212 MeV, εn = 4 µm'' and ''212 MeV → 1 TeV in about 1 ms''. Parameters ACCEL_BOOSTER_INJECTION_ENERGY_NUCL,
+      SOURCE_LINAC_OUTPUT_ENERGY_NUCL.'
+  possible_cause: 'The DIS2026 concept inserts a pre-accelerator to ''a GeV energy'' (refs. [16], [20]: RF acceleration of
+    positive muons, M. Otani) between the J-PARC-type 212 MeV linac and the vFFAG booster, so the booster injection energy
+    moves from 212 MeV to 1 GeV; the μLHC/nucleus chain injects the 212 MeV linac beam directly.'
+  selected_treatment: Separate scenarios (1 GeV in LHMUC-DIS2026-*, 212 MeV in MULHC-PTEP2026-* and LHMUC-NUCL-*); not averaged.
+    The pre-accelerator (212 MeV -> 1 GeV) is an additional, unspecified subsystem of the DIS2026 scenario and is listed as
+    missing evidence.
+  effect_on_simulations: Changes the decay loss in the first booster turns (gamma 2 -> 9.5 at injection) and the booster's
+    momentum range (factor 1000 vs 4700), hence the vFFAG aperture/field requirements and the survival fraction.
+  required_future_evidence: Aritome et al. PRL 134 (2025) 245001 (ref. [16]) and M. Otani's workshop contribution (ref. [20])
+    for the pre-accelerator energy and emittance; the White Paper source chain.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_MAIN_RING_CIRCUMFERENCE
+  affected_parameters:
+  - MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026
+  - MACHINE_MAIN_RING_CIRCUMFERENCE_2TEV_DIS2026
+  - MACHINE_MAIN_RING_REVOLUTION_PERIOD_DIS2026
+  - MACHINE_MU_TRAIN_DURATION_DIS2026
+  - MACHINE_MAIN_RING_CIRCUMFERENCE_MULHC
+  - MACHINE_MAIN_RING_REVOLUTION_TIME_MULHC
+  - MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL
+  - MACHINE_MU_LIFETIME_TURNS_NUCL
+  competing_values:
+  - value: 3.0
+    unit: km
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.4: ''transferred to the circular main ring of about 3(6) km positioned tangentially to the LHC''; the 3 belongs
+      to the 1 TeV option (Fig. 2 caption). ''about'' -> confidence medium. Parameter MACHINE_MAIN_RING_CIRCUMFERENCE_DIS2026.'
+  - value: 6.0
+    unit: km
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-2TEV
+    context: Same sentence, the '(6)' for the 2 TeV option; Fig. 2 'The dash-dotted circle represents the 2 TeV muon ring.'
+      Parameter MACHINE_MAIN_RING_CIRCUMFERENCE_2TEV_DIS2026.
+  - value: 3
+    unit: km
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: Table 1 (p.12) 'Circumference [km] | 3'; p.7 'a single main ring with a circumference of 3 km that would be tangentially
+      aligned with the LHC's proton beam lines'; p.11 revolution ~10 us, 2000 turns per lifetime. Taken from μTRISTAN. Parameter
+      MACHINE_MAIN_RING_CIRCUMFERENCE_MULHC.
+  - value: 3
+    unit: km
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: p.8 'Circumference [km] 3' and 'about 2000 turns of the 3 km ring'; p.4 'A single 3 km µ+ main ring will be built
+      tangential to the LHC.' Parameter MACHINE_MAIN_RING_CIRCUMFERENCE_NUCL.
+  possible_cause: 'Agreement on 3 km for the 1 TeV ring; the DIS2026 proceedings add a 6 km ring for the 2 TeV option (same
+    bending field, twice the momentum) and qualify both with ''about''. The only tension is internal to DIS2026: an 80-bunch,
+    250 ns train (20 us) does not fit a 3 km ring (10 us revolution) if all bunches circulate simultaneously (CONF_MUON_BUNCHES_PER_TRAIN).'
+  selected_treatment: 'Separate scenarios: 3 km for LHMUC-DIS2026-1TEV, MULHC-PTEP2026-* and LHMUC-NUCL-*; 6 km for LHMUC-DIS2026-2TEV.
+    ''about'' is recorded as uncertainty type not_stated with a note; no numeric tolerance is invented. Ring-geometry models
+    use 3 km as a scan centre with the fill-pattern assumption declared.'
+  effect_on_simulations: Revolution period (10 vs 20 us), turns per lifetime (2000 vs 1000 at the same energy... at 2 TeV
+    the lifetime doubles so turns per lifetime stay ~2000), bending field for 1 or 2 TeV, tunnel length and the geometry of
+    the neutrino beam from the main-ring straight section.
+  required_future_evidence: White Paper main-ring lattice (circumference, dipole field, straight-section lengths) and Fig.
+    2 layout coordinates; B. Holzer's IR/ring contributions to the Kraków workshop.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_LHMUC_DESIGN_VERSIONS
+  affected_parameters:
+  - MACHINE_MU_BEAM_ENERGY_DIS2026
+  - MACHINE_MU_BEAM_ENERGY_2TEV_DIS2026
+  - MACHINE_SQRT_S_DIS2026
+  - MACHINE_SQRT_S_2TEV_DIS2026
+  - MACHINE_MU_BEAM_ENERGY_WP_OPT1
+  - MACHINE_MU_BEAM_ENERGY_WP_BASELINE
+  - MACHINE_MU_BEAM_ENERGY_WP_OPT2
+  - MACHINE_SQRT_S_WP_OPT1
+  - MACHINE_SQRT_S_WP_BASELINE
+  - MACHINE_SQRT_S_WP_OPT2
+  - MACHINE_WP_SOURCE_STATUS_WP
+  - MACHINE_MU_BEAM_ENERGY_DIHIGGS_500GEV
+  - MACHINE_MU_BEAM_ENERGY_DIHIGGS_1TEV
+  - MACHINE_SQRT_S_DIHIGGS_500GEV
+  - MACHINE_SQRT_S_DIHIGGS_1TEV
+  - MACHINE_MU_BEAM_ENERGY_MULHC
+  - MACHINE_SQRT_S_MULHC
+  competing_values:
+  - value: 500
+    unit: GeV
+    source_id: SRC_INDICO_1522800_6986580
+    scenario: null
+    context: 'snippet (access blocked): ICHEP 2026 (Natal, 30 Jul-5 Aug 2026) listing, ''a 500 GeV μ+ beam colliding with
+      a 7 TeV proton beam, resulting in √s = 3.74 TeV'', ''luminosity above 10^33''. Listing said ''no materials yet''. Snippet-only,
+      confidence cap medium.'
+  - value: 500
+    unit: GeV
+    source_id: SRC_INDICO_1664360_6996662
+    scenario: null
+    context: 'snippet (access blocked): CERN Accelerator Design Meeting contribution, ''7 TeV proton beam, a centre-of-mass
+      energy of 3.74 TeV, and expected luminosity above 10^33 cm⁻²s⁻¹'' (3.74 TeV implies 500 GeV muons). Meeting date not
+      visible. Snippet-only.'
+  - value: 1000
+    unit: GeV
+    source_id: SRC_URL_INDICO_FIS_AGH_462
+    scenario: null
+    context: 'snippet (access blocked): AGH HEP seminar listing (May 2026), ''a 1 TeV μ+ beam colliding with a 7 TeV proton
+      beam, resulting in a centre-of-mass energy of 5.3 TeV'', ''luminosity above 10^33''. Snippet-only.'
+  - value: 1 or 2 TeV (sqrt(s) 5.3 or 7.5 TeV), average luminosity close to 1e34
+    unit: dimensionless
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'Abstract (p.1): ''a 1 or 2 TeV μ+ beam collides with a 7 TeV proton beam, resulting in the μ+p centre-of-mass
+      energy of 5.3 or 7.5 TeV, respectively, at an average luminosity close to 10^34 cm^-2 s^-1''. Uploaded, read in full
+      (DIS2026, 4-8 May 2026; arXiv 26 Oct 2026). Parameters MACHINE_MU_BEAM_ENERGY_DIS2026 / _2TEV_DIS2026.'
+  - value: 500 / 1000 / 2000 GeV (option 1 / baseline / option 2; sqrt(s) 3.7 / 5.3 / 7.5 TeV)
+    unit: dimensionless
+    source_id: SRC_WS1681458_KHANPOUR_GAMMAGAMMA
+    scenario: LHMUC-WP-BASELINE-1TEV
+    context: 'p.4 benchmark working-point table ''From HELP4CERN White Paper (in preparation)'': ''LHμC (option 1) | Eμ =
+      500 GeV'', ''LHμC (baseline) | Eμ = 1000 GeV'', ''LHμC (option 2) | Eμ = 2000 GeV''. Uploaded. Parameters MACHINE_MU_BEAM_ENERGY_WP_*,
+      MACHINE_SQRT_S_WP_*.'
+  - value: 500 GeV and 1 TeV (sqrt(s) 3.74 and 5.29 TeV)
+    unit: dimensionless
+    source_id: SRC_WS_LEBOHO_KUMAR_DIHIGGS
+    scenario: LHMUC-DIHIGGS-500GEV
+    context: 'p.6 ''Collider configuration'': ''Eµ = 500 GeV and 1 TeV on Ep = 7 TeV'', ''√s = 3.74 and 5.29 TeV''. Uploaded.
+      Parameters MACHINE_MU_BEAM_ENERGY_DIHIGGS_*.'
+  - value: 500 GeV (1 TeV), sqrt(s) ≈ 3.74 (5.3) TeV
+    unit: dimensionless
+    source_id: SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS
+    scenario: null
+    context: 'snippet (access blocked): SAIP 2026 (6-10 Jul 2026) listing, ''500 GeV (1 TeV) muons with 7 TeV protons at center-of-mass
+      energies of √s ≈ 3.74 (5.3) TeV''. Snippet-only.'
+  - value: 1000
+    unit: GeV
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: μLHC Table 1 (p.12) 'Beam energy [GeV] | 1000', sqrt(s) 5.3 TeV (Table 3). Precursor design, 2025-2026. Parameters
+      MACHINE_MU_BEAM_ENERGY_MULHC, MACHINE_SQRT_S_MULHC.
+  possible_cause: 'The LHμC baseline moved during 2026: the mid-2026 conference listings (ICHEP, ADM, SAIP) present a 500
+    GeV μ+ beam (3.74 TeV) with ''>1e33'', the AGH seminar and the μLHC precursor present 1 TeV (5.3 TeV), and the October
+    2026 proceedings and the White Paper working points present 1 TeV as baseline with 500 GeV and 2 TeV as options and ''close
+    to 1e34'' average luminosity. Which set is ''current'' is stated nowhere; the ICHEP abstract may simply have been written
+    earlier than the talk.'
+  selected_treatment: 'Separate scenarios by document: LHMUC-DIS2026-1TEV / -2TEV, LHMUC-WP-OPT1-500GEV / -BASELINE-1TEV /
+    -OPT2-2TEV, LHMUC-DIHIGGS-500GEV / -1TEV, MULHC-PTEP2026-*. The snippet-level 500 GeV / 3.74 TeV / >1e33 set is NOT given
+    a scenario (no full text read; confidence cap medium) and is recorded here as a design-version lead. Reports must name
+    the scenario and the document date with every energy or luminosity.'
+  effect_on_simulations: Factor 2 in muon beam energy changes sqrt(s) by sqrt(2), the main-ring circumference/field, the lab
+    lifetime (20.8 vs 10.4 ms at 500 GeV), the booster top energy and every cross section in the physics programme (e.g. the
+    di-Higgs and γγ benchmarks are tabulated at 500 GeV and 1 TeV separately).
+  required_future_evidence: ICHEP 2026 slides/recording (contribution 6986580), the ADM slides (contribution 6996662) with
+    their dates, the AGH seminar slides (event 462), the SAIP slides PDF, and above all the HELP4CERN White Paper.
+  status: resolved_as_scenarios
+  date_added: '2026-10-28'
+- conflict_id: CONF_LHEC_CROSSING_ANGLE
+  affected_parameters:
+  - IR_CROSSING_ANGLE_DIS2026
+  - IR_CROSSING_ANGLE_REQUIREMENT_DIS2026
+  - IR_BEAM_SEPARATION_SCHEME_DIS2026
+  - IR_MUON_FOCUSING_OPTIONS_DIS2026
+  - IR_CROSSING_ANGLE_SYN
+  competing_values:
+  - value: null
+    unit: mrad
+    source_id: SRC_ARXIV_2610_35154
+    scenario: LHMUC-DIS2026-1TEV
+    context: 'p.4: ''The time separation of muon bunches is large at LHμC, therefore, a very small crossing angle is needed
+      to avoid parasitic collisions of muon and proton bunches. To achieve a "physical" separation of the muon and proton
+      beams, the most preferred scheme is by introducing a new separator dipole''. No number: value null = unknown (not zero;
+      head-on is not claimed). Parameter IR_CROSSING_ANGLE_DIS2026.'
+  - value: 6
+    unit: mrad
+    source_id: SRC_JACOW_IPAC2011_THPZ016
+    scenario: null
+    context: 'snippet (access snippet_only): LHeC linac-ring IR 2011, ''A crossing angle of 6 mrad between the non-colliding
+      proton beams allows enough separation to place the proton triplets.'' LHeC analogue (e-p), not an LHμC value; snippet-only.'
+  - value: 6.8
+    unit: mrad
+    source_id: SRC_JACOW_IPAC2014_TUPRO070
+    scenario: null
+    context: 'snippet (access blocked): LHeC IR optics with reversed D1/D2 polarity (2014), ''giving a crossing angle of θ
+      = 6.8 mrad between the proton beams''. Analogue; snippet-only.'
+  - value: 7
+    unit: mrad
+    source_id: SRC_INDICO_1072533_4787015
+    scenario: null
+    context: 'snippet (access blocked): DIS2022 LHeC talk (K. D. J. André), ''a large crossing angle of 7 mrad for both proton
+      beams'' with L* = 15 m, beta* = 10 cm (2020/2022 LHeC design). Analogue; snippet-only.'
+  - value: 0
+    unit: mrad
+    source_id: SRC_ARXIV_2503_20475
+    scenario: null
+    context: 'snippet (access blocked): 2025 phase-one LHeC concept (20 GeV single-pass ERL), ''Its separation scheme uses
+      head-on collisions between the proton and electron beam, so no crossing angle.'' Here 0 is a physical value (head-on),
+      as reported by the snippet for the LHeC, not a statement about the LHμC. Analogue; snippet-only.'
+  possible_cause: The LHeC IR evolved from a 6-7 mrad proton-proton crossing (2011-2022 designs with separator dipoles) to
+    a head-on scheme in the 2025 phase-one concept, and the LHμC proceedings only say 'very small'. All numeric values are
+    LHeC analogues seen in snippets; the muon-proton case differs (250 ns muon bunch spacing moves the first parasitic encounter
+    to 37.5 m from the IP, which is why a smaller angle suffices).
+  selected_treatment: Open; IR_CROSSING_ANGLE_DIS2026 stays null. Any LHμC IR model treats the crossing angle as a scan variable
+    0-7 mrad (head-on to the 2020 LHeC value), flagged synthetic with an assumption record naming the LHeC analogues, and
+    reports the luminosity geometric reduction and the separator-dipole requirement as functions of it. The LHeC values are
+    capped at confidence medium until the full texts are read.
+  effect_on_simulations: Crossing-angle luminosity reduction (Piwinski angle with a 7.5-9 cm proton bunch and 4-5 um beams
+    would be large even at a few mrad, unless crab cavities are assumed), separator-dipole strength and synchrotron/decay
+    background geometry, muon final-focus placement ('in between' vs 'outside' the LHC mini-beta quadrupoles).
+  required_future_evidence: B. Holzer's IR contribution to the Kraków workshop; LHeC CDR (SRC_ARXIV_1206_2913) and 2020 update
+    (SRC_ARXIV_2007_14491) IR chapters; André et al. 2025 (SRC_ARXIV_2503_20475) head-on scheme details; all blocked.
+  status: open
+  date_added: '2026-10-28'
+- conflict_id: CONF_MUON_SURVIVAL_RATES_ERRATUM
+  affected_parameters:
+  - ACC_BOOSTER_SURVIVAL_MUTRISTAN_MULHC
+  - ACC_BOOSTER_SURVIVAL_MUTRISTAN_ORIGINAL_CLAIM_MULHC
+  - ACC_BOOSTER_OUTPUT_BUNCH_CHARGE_MUTRISTAN_ORIGINAL_MULHC
+  - ACC_BOOSTER_SURVIVAL_ERL_MULHC
+  - ACCEL_BOOSTER_SURVIVAL_NUCL
+  - MACHINE_LUMINOSITY_ERRATUM_FACTOR_MUTRISTAN_MULHC
+  - MACHINE_LUMINOSITY_ERRATUM_FACTOR_ERL_MULHC
+  - MACHINE_MU_BUNCH_POPULATION_MUTRISTAN_MULHC
+  - MACHINE_MU_BUNCH_POPULATION_ERL_MULHC
+  competing_values:
+  - value: 50
+    unit: percent
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'Original μTRISTAN statement as paraphrased on p.6: ''While the μTRISTAN article roughly mentions that about
+      half of the muons survive''; Figure 1 label ''(7.2nC=>3.6nC)''. Superseded within the μLHC paper. Parameters ACC_BOOSTER_SURVIVAL_MUTRISTAN_ORIGINAL_CLAIM_MULHC,
+      ACC_BOOSTER_OUTPUT_BUNCH_CHARGE_MUTRISTAN_ORIGINAL_MULHC.'
+  - value: 82
+    unit: percent
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
+    context: 'p.6 (v2, corrected Figure 3): ''approximately 82% of the initial muon population remains upon reaching 960 GeV.''
+      Parameter ACC_BOOSTER_SURVIVAL_MUTRISTAN_MULHC.'
+  - value: 67
+    unit: percent
+    source_id: SRC_ARXIV_2506_15445
+    scenario: MULHC-PTEP2026-ERL-BOOSTER
+    context: 'p.10 (v2, corrected Figure 7): ''approximately 67% of the initial muon population remains upon reaching 1 TeV.
+      Consequently, the number of surviving muons ... is reduced from 4.5×10^10 to 3.0×10^10 muons per bunch.'' Parameter
+      ACC_BOOSTER_SURVIVAL_ERL_MULHC.'
+  - value: pre-erratum survival underestimated; luminosity x~2 (μTRISTAN-based) and x~4 (LHeC-based) after correction; pre-erratum
+      survival values not printed in v2
+    unit: dimensionless
+    source_id: SRC_ARXIV_2506_15445
+    scenario: null
+    context: 'Acknowledgements (p.21): ''We also thank Krzysztof Piotrzkowski for pointing out the inconsistency in antimuon
+      survival rates. As a result, the luminosity value increased by approximately 2 times for the μTRISTAN-based option and
+      4 times for the LHeC-based option.'' AUDIT INFERENCE (not evidence): if L ∝ N_mu, the pre-erratum survival fractions
+      would have been roughly 82/2 ≈ 41% and 67/4 ≈ 17%; these numbers appear in no source. Parameters MACHINE_LUMINOSITY_ERRATUM_FACTOR_*.'
+  - value: erratum replaced Figures 3 and 7 and Tables 1, 3, 4 and 6; 'muon survival rates had been underestimated as a result
+      of simulation errors'
+    unit: dimensionless
+    source_id: SRC_URL_RESEARCHGATE_ZIMMERMANN_PROFILE
+    scenario: null
+    context: 'snippet (access blocked, SECONDARY_SOURCE): ResearchGate listing ''Erratum μLHC: ...'' dated May 2026; the arXiv
+      v2 comment (SRC_ARXIV_2506_15445 fragment notes) says ''the authors say they noticed some calculation errors in Figures
+      3 and 7, and that muon survival rates had been underestimated as a result of simulation errors. Tables 1, 3, 4 and 6
+      were also replaced''. Secondary/snippet: backs no status; lead only.'
+  - value: 67
+    unit: percent
+    source_id: SRC_WS1681458_DAGLI_NUCLEUS
+    scenario: null
+    context: 'p.15: ''50 turns, 67% survival, 40 bunches and 3.0 × 10^10 µ+ per bunch''; p.4 ''(values after the erratum)''.
+      Confirms the post-erratum ERL value is the one the HELP4CERN study now uses. Parameter ACCEL_BOOSTER_SURVIVAL_NUCL.'
+  possible_cause: The μTRISTAN paper's rough 'about half' and the original μLHC simulation both underestimated the decay survival
+    during booster acceleration; after K. Piotrzkowski pointed out the inconsistency the authors recomputed Figures 3 and
+    7 (82% and 67%) and re-ran the luminosity (x2 and x4). The PTEP article page shows 'Corrected and typeset 28 March 2026';
+    no erratum DOI was found, and the uploaded arXiv v2 (12 Jun 2026) is taken to contain the corrected tables because its
+    acknowledgements describe the correction.
+  selected_treatment: 'Superseded: 82% / 67% and the post-erratum luminosities are the values carried by the MULHC-PTEP2026-*
+    scenarios; the 50% claim and the implied pre-erratum values are kept only as records of superseded statements (status
+    imported_related, applicability explanation saying ''not adopted''). The survival fractions are to be reproduced by the
+    project''s own decay-during-acceleration integral (inputs: injection energy, energy gain per turn, circumference) before
+    they are used in any derived quantity.'
+  effect_on_simulations: Factor 1.6 (μTRISTAN booster) to 4 (ERL booster) on the delivered muon population and luminosity
+    between pre- and post-erratum numbers; any source that quotes the pre-erratum μLHC values (e.g. earlier talks) must be
+    labelled superseded.
+  required_future_evidence: The PTEP erratum (academic.oup.com/ptep, blocked) or INSPIRE record (inspirehep.net, blocked)
+    to confirm which figures/tables changed and the pre-erratum numbers; the arXiv v1/v2 diff (arxiv.org blocked).
+  status: resolved_superseded
+  date_added: '2026-10-28'
+- conflict_id: CONF_JPARC_IHDTL_ENERGY
+  affected_parameters:
+  - SOURCE_LINAC_OUTPUT_ENERGY_NUCL
+  - ACC_BOOSTER_INJECTION_ENERGY_MULHC
+  - ACCEL_BOOSTER_INJECTION_ENERGY_NUCL
+  - SOURCE_ULTRACOLD_MU_ENERGY_NUCL
+  competing_values:
+  - value: 4.26
+    unit: MeV
+    source_id: SRC_URL_APS_PRAB_29_093201_NAKAZAWA
+    scenario: null
+    context: 'snippet (access snippet_only): PRAB 29, 093201 (2026), ''the team built a full-size prototype that accelerates
+      muons from 0.34 to 4.26 MeV and follows the RFQ stage.'' J-PARC muon linac IH-DTL output (analogous technology, g-2/EDM
+      ultra-slow muon re-acceleration). Snippet-only.'
+  - value: 4.5
+    unit: MeV
+    source_id: SRC_URL_INDICO_JLAB_951_YAMAZAKI_BDX2025
+    scenario: null
+    context: 'snippet (access snippet_only): Y. Yamazaki, BDX&Beyond talk (Sept 2025), ''the muon linac sequence as RFQ (0.3
+      MeV), IH-DTL (4.5 MeV), DAW (40 MeV), and DLS (212 MeV)''. Snippet-only.'
+  - value: 4.3
+    unit: MeV
+    source_id: SRC_URL_APS_PRAB_29_093201_NAKAZAWA
+    scenario: null
+    context: 'Mentioned only in the scout''s unresolved question attached to the PRAB record: ''IH-DTL output energy 4.26
+      MeV here vs 4.5 MeV (Yamazaki 2025 talk, older slides) and 4.3 MeV (some conference papers)''. No source record carries
+      the 4.3 MeV value; it is a lead without provenance and is listed here so it is not lost.'
+  possible_cause: 'Rounding and design evolution of the J-PARC muon linac: the design value (~4.3-4.5 MeV in design papers
+    and talks) versus the measured/commissioned prototype output (4.26 MeV). None of these documents was read; all three numbers
+    are search-snippet level.'
+  selected_treatment: 'Open and low priority: the IH-DTL stage energy is an intermediate energy of an analogous technology
+    (J-PARC g-2/EDM linac) and enters the LHμC only through the 212 MeV linac output that all LHμC documents agree on. No
+    parameter record is created; if a source-chain model ever needs it, use 4.26-4.5 MeV as a range (analogous, confidence
+    low) with an assumption record.'
+  effect_on_simulations: None on luminosity or main-ring quantities; affects only a stage-by-stage model of the muon linac
+    (decay loss and emittance growth between RFQ and DAW).
+  required_future_evidence: Full text of PRAB 29, 093201 (journals.aps.org blocked) and of Otani et al. PRAB 19, 040101 (design);
+    the J-PARC g-2/EDM TDR linac chapter.
+  status: open
+  date_added: '2026-10-28'

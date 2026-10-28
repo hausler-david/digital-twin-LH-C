@@ -1,0 +1,224 @@
+# Synthetic screening ranges for the LHmuC detector and nozzle (machine-detector interface).
+# status: synthetic (CLAUDE.md 1.4). Every record here is a screening RANGE with an assumption record in
+# parameters/assumptions/phase0_assumptions.yaml; 'value' is only the range midpoint (or a representative member of a
+# discrete set) so that software has a number to display. None of these numbers is an LHmuC design value.
+# Date: 2026-10-28. Author role: assumptions and synthetic-range author (Phase 0 evidence audit).
+parameters:
+- parameter_id: DET_NOZZLE_OPENING_ANGLE_SYN
+  name: Opening (half) angle of the decay-shielding nozzle on the incoming-muon side (synthetic screening range)
+  symbol: theta_nozzle
+  subsystem: detector
+  scenario: null
+  value: 12.5
+  unit: degree
+  uncertainty:
+    type: interval
+    lower: 5.0
+    upper: 20.0
+    unit: degree
+    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_OPENING_ANGLE.
+  allowed_range:
+    min: 5.0
+    max: 20.0
+    unit: degree
+    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_OPENING_ANGLE
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; applies to the single-sided LHmuC nozzle concept (DIS2026 and muLHC). Not a muon-collider two-sided
+        nozzle.
+    confidence: low
+    assumption_id: ASM_DET_NOZZLE_OPENING_ANGLE
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - DET_NOZZLE_PRESENCE_DIS2026
+  - DET_NOZZLE_PLACEMENT_MULHC
+  - MACHINE_MU_BUNCH_POPULATION_DIS2026
+  date_added: '2026-10-28'
+  responsible_module: parameters/detector
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+- parameter_id: DET_NOZZLE_LENGTH_SYN
+  name: Length of the decay-shielding nozzle along the beam (synthetic screening range)
+  symbol: L_nozzle
+  subsystem: detector
+  scenario: null
+  value: 6.0
+  unit: m
+  uncertainty:
+    type: interval
+    lower: 2.0
+    upper: 10.0
+    unit: m
+    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_LENGTH.
+  allowed_range:
+    min: 2.0
+    max: 10.0
+    unit: m
+    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_LENGTH
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; single-sided LHmuC nozzle concept.
+    confidence: low
+    assumption_id: ASM_DET_NOZZLE_LENGTH
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - DET_NOZZLE_LENGTH_MULHC
+  - IR_LSTAR_SYN
+  date_added: '2026-10-28'
+  responsible_module: parameters/detector
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+- parameter_id: DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN
+  name: Distance of the nozzle tip from the IP (synthetic screening range)
+  symbol: z_tip
+  subsystem: detector
+  scenario: null
+  value: 26.0
+  unit: cm
+  uncertainty:
+    type: interval
+    lower: 2.0
+    upper: 50.0
+    unit: cm
+    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP.
+  allowed_range:
+    min: 2.0
+    max: 50.0
+    unit: cm
+    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; single-sided LHmuC nozzle concept.
+    confidence: low
+    assumption_id: ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - DET_NOZZLE_PLACEMENT_MULHC
+  - PROTON_BUNCH_LENGTH_RMS_SYN
+  date_added: '2026-10-28'
+  responsible_module: parameters/detector
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+- parameter_id: DET_NOZZLE_MATERIAL_SYN
+  name: Bulk material of the decay-shielding nozzle (synthetic discrete set)
+  symbol: null
+  subsystem: detector
+  scenario: null
+  value: tungsten
+  unit: string
+  uncertainty:
+    type: not_stated
+    note: Categorical synthetic choice; see ASM_DET_NOZZLE_MATERIAL.
+  allowed_range:
+    min: null
+    max: null
+    unit: string
+    basis: 'discrete set of candidate values: tungsten, INERMET180, tungsten + borated polyethylene; see ASM_DET_NOZZLE_MATERIAL'
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; the choice among the three candidates is open and must be made with a transport simulation and an
+        engineering review.
+    confidence: low
+    assumption_id: ASM_DET_NOZZLE_MATERIAL
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - DET_NOZZLE_MATERIAL_MULHC
+  - DET_NOZZLE_CLADDING_MULHC
+  date_added: '2026-10-28'
+  responsible_module: parameters/detector
+  notes: 'SYNTHETIC: value is one representative member of the discrete candidate set in the assumption record and exists only so that
+    software, plots and exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and
+    the range (CLAUDE.md 1.4). Categorical synthetic parameter: value is one member of the discrete set in the assumption record; allowed_range
+    min/max are null because the set is not numeric.'
+- parameter_id: DET_SOLENOID_FIELD_SYN
+  name: Central field of the detector solenoid (synthetic screening range)
+  symbol: B_sol
+  subsystem: detector
+  scenario: null
+  value: 3.5
+  unit: T
+  uncertainty:
+    type: interval
+    lower: 2.0
+    upper: 5.0
+    unit: T
+    note: Synthetic range, not a measured uncertainty; see ASM_DET_SOLENOID_FIELD.
+  allowed_range:
+    min: 2.0
+    max: 5.0
+    unit: T
+    basis: synthetic screening range, see assumption record ASM_DET_SOLENOID_FIELD
+  provenance:
+    status: synthetic
+    extraction_method: assumption_record
+    source: null
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Screening only; general-purpose LHmuC detector concept (LHeC-derived baseline).
+    confidence: low
+    assumption_id: ASM_DET_SOLENOID_FIELD
+  validation:
+    level: P0
+    methods:
+    - dimensional check of the unit string
+    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    check_ids: []
+    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+  dependencies:
+  - DET_MAGNET_TYPE_MULHC
+  - DET_BASELINE_DESIGN_DIS2026
+  - DET_MUON_SYSTEM_OPTION_DIS2026
+  date_added: '2026-10-28'
+  responsible_module: parameters/detector
+  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
