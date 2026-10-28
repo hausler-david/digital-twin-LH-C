@@ -1,0 +1,47 @@
+# Batch-7 user uploads (2026-10-28). Existing ids (SRC_ARXIV_2201_02436, SRC_ARXIV_2605_25580, SRC_ARXIV_1901_03047)
+# were upgraded in place in research/source_registry.yaml (access: uploaded); only the new id is listed here.
+sources:
+- source_id: SRC_ARXIV_2610_09839
+  title: 'AloHEP Software: A luminosity optimizer for High Energy Physics colliders'
+  authors_or_org: B. Dağlı, Y. Karaca (TOBB University of Economics and Technology, Ankara)
+  source_type: arxiv_preprint
+  category: OFFICIAL_SOFTWARE_DOCUMENTATION
+  publication_date: 7 Oct 2026
+  version: arXiv 2610.09839v1 [physics.acc-ph] 7 Oct 2026; Computer Physics Communications program-summary format (CPC Library
+    link 'to be added by Technical Editor'); software repository https://github.com/tobbetuyef/AloHEP (MIT License)
+  url: https://arxiv.org/abs/2610.09839
+  doi: null
+  arxiv_id: '2610.09839'
+  access_date: '2026-10-28'
+  access: uploaded
+  relevance: 'First complete description of AloHEP, the luminosity code behind the μLHC PTEP 2026 luminosity figures (the paper
+    cites the μLHC paper as its ref. [7] and the Kaya–Ketenoglu–Sultansoy–Zimmermann muon–hadron luminosity paper as ref. [6]):
+    slice-based particle-in-cell (cloud-in-cell deposition, direct Green''s-function potential solve, finite-difference forces,
+    bicubic interpolation, Euler integration); hourglass effect, crossing angle, beam–beam pinch/disruption, beamstrahlung
+    (preliminary) and particle decay toggled independently; outputs L_eff, L_nom, disruption D_x,y (single-pass) or tune shifts
+    ξ_x,y (stored beams); JSON parameter database; GUI Launcher and HeadlessLauncher. Verification: analytic geometric luminosity
+    recovered to 0.1 % on a 100^3 grid (~10 % deficit at 10^3, ~1 % at 30^3); flat-beam hourglass factor Eq. (22) reproduced to
+    ~1 % for A = σ_z/β*_y ≲ 1.5; Piwinski crossing-angle factor to ~1 %; HERA / EIC unequal-beam hourglass L_eff/L_geo 0.977 /
+    0.912 (hourglass only; analytic 0.980 / 0.916) and 0.991 / 0.974 with pinch (Tables 5–6); 10 TeV μ+μ− (IMCC parameters)
+    decay factor 0.252 vs analytic 0.254 — the muon-decay factor is applied ANALYTICALLY, not simulated. Footnote p. 33: the
+    internal L_nom uses N1 N2 f_c / [4π max(σ_x1,σ_x2) max(σ_y1,σ_y2)], which underestimates the geometric luminosity for unequal
+    beams. Runtime ~12 s per crossing at 30^3 with 5e4 macroparticles on one core. Candidate M2 tool for reproducing the μLHC
+    7.2e33 / 8.8e33 cm^-2 s^-1 values and settling CONF_LUMI_MODEL_ASSUMPTIONS.'
+  parameters_extracted: []
+  unresolved_questions:
+  - The paper does not contain the μLHC input deck; which effects (hourglass, pinch, decay) were enabled for the PTEP 2026 figures
+    must be read from the μLHC paper or its erratum, or reproduced by running the code (ME_043).
+  - Beamstrahlung is preliminary and excluded from the benchmarks; crab crossing is not modelled (rigid rotation only).
+  - No lepton–hadron benchmark includes muon decay; the decay channel was exercised only for a symmetric μ+μ− store.
+  - The repository named in the paper (github.com/tobbetuyef/AloHEP, MIT License) differs from the copy registered as
+    SRC_URL_GITHUB_YEFETU_ALOHEP (github.com/yefetu/ALOHEP, no licence file seen); the relation between the two is not stated.
+  - Paper licence not stated in the uploaded PDF (software MIT License; bundled Gson Apache-2.0).
+  licence: paper licence not stated in the uploaded PDF; software MIT License (bundled Gson under Apache License 2.0) per the
+    program summary
+  archived_file: references/_local/arXiv-2610.09839v1.pdf (git-ignored; see research/archived_metadata/SRC_ARXIV_2610_09839.json)
+  sha256: e9d08e8d9abd740ac96ca618d37b1fa4a5b278f08a13295747d3e50232bf2d15
+  discovered_by_queries:
+  - user upload (batch 7, 2026-10-28)
+  notes: 'FULL TEXT UPLOADED 2026-10-28 (batch 7) and read in full (45 pages) as extracted text; the muon-collider and
+    asymmetric benchmarks (§5.6–5.7, Tables 5–6) and the hourglass verification (§5.3, Eq. 22–23) are the sections relevant to
+    the LHμC luminosity audit. No code was executed in this session.'

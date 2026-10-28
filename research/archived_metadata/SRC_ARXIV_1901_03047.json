@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_1901_03047",
+  "local_file": "references/_local/arXiv-1901.03047v2.pdf",
+  "committed_copy": null,
+  "title": "A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment",
+  "authors": "M. Abe et al., J-PARC muon g-2/EDM Collaboration",
+  "venue": "arXiv 1901.03047v2 [physics.ins-det] 11 Mar 2019; PTEP 2019, 053C02, DOI 10.1093/ptep/ptz030",
+  "identifier": "arXiv:1901.03047",
+  "pages": 24,
+  "licence": "as printed on p. 1: 'Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by-nc/3.0)'; the wording says CC BY while the URL is CC BY-NC 3.0 — treated as CC BY-NC 3.0 (the more restrictive reading)",
+  "redistribution": "not committed pending clarification of the CC BY vs CC BY-NC wording",
+  "category": "PEER_REVIEWED",
+  "upload_name": "06a37282-1901.03047v2.pdf",
+  "sha256": "2d184682ff6acb1689cf4c180ba431de19175f48655c41ec257cf4e70d8378e5",
+  "size_bytes": 3260422,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 7), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (24 pages) on 2026-10-28 (batch 7): pp. 4–11 (Table 1, §3 surface muon beam, §4 thermal muons, Figs 3–6, §5 linac, Table 2) and pp. 19–21 (Table 4 efficiency breakdown, Table 5, Table 6) read as page images; remainder as text"
+}

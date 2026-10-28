@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2610_09839",
+  "local_file": "references/_local/arXiv-2610.09839v1.pdf",
+  "committed_copy": null,
+  "title": "AloHEP Software: A luminosity optimizer for High Energy Physics colliders",
+  "authors": "B. Dağlı, Y. Karaca (TOBB University of Economics and Technology, Ankara)",
+  "venue": "arXiv 2610.09839v1 [physics.acc-ph] 7 Oct 2026; Computer Physics Communications program-summary format (CPC Library link 'to be added by Technical Editor')",
+  "identifier": "arXiv:2610.09839",
+  "pages": 45,
+  "licence": "paper licence not stated in the uploaded PDF; the software is MIT License (bundled Gson under Apache License 2.0) per the program summary, repository https://github.com/tobbetuyef/AloHEP",
+  "redistribution": "not committed",
+  "category": "OFFICIAL_SOFTWARE_DOCUMENTATION",
+  "upload_name": "c88c09bf-2610.09839v1.pdf",
+  "sha256": "e9d08e8d9abd740ac96ca618d37b1fa4a5b278f08a13295747d3e50232bf2d15",
+  "size_bytes": 3787035,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 7), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (45 pages) on 2026-10-28 (batch 7) as extracted text: program summary, §2 physics (geometric luminosity, hourglass, crossing angle, beam–beam), §3 numerical method, §4 usage (GUI and HeadlessLauncher), §5 benchmarks (Tables 1–6, Figs 19–24), §6 conclusion"
+}

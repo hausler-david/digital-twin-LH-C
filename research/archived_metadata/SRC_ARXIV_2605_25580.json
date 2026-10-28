@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2605_25580",
+  "local_file": "references/_local/arXiv-2605.25580v1.pdf",
+  "committed_copy": null,
+  "title": "Quantitative Evaluation of a Hybrid Target for Ultraslow-Muon Production in μTRISTAN",
+  "authors": "Yasuhito Sakaki, Shusei Kamioka, Mitsuhiro Yoshida (KEK)",
+  "venue": "arXiv 2605.25580v1 [physics.acc-ph] 25 May 2026 (dated May 26, 2026)",
+  "identifier": "arXiv:2605.25580",
+  "pages": 11,
+  "licence": "not stated in the uploaded PDF",
+  "redistribution": "not committed",
+  "category": "ANALOGOUS_TECHNOLOGY",
+  "upload_name": "92287196-2605.25580v1.pdf",
+  "sha256": "3d0987182382a4d9f4be8c9e4816d6e615f7e730a0cd8357c29d6d2fa7a5f7bf",
+  "size_bytes": 2068749,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 7), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (11 pages) on 2026-10-28 (batch 7) as extracted text; Table I value column and the numeric pre-extraction intensity on pp. 6–7 are garbled in the text layer and must be verified on the page images"
+}

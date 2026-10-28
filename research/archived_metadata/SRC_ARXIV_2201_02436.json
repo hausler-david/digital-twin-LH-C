@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2201_02436",
+  "local_file": "references/_local/arXiv-2201.02436v1.pdf",
+  "committed_copy": null,
+  "title": "An experiment for electron-hadron scattering at the LHC",
+  "authors": "K. D. J. André et al. (LHeC / FCC-eh study group; author list not transcribed)",
+  "venue": "arXiv 2201.02436v1 [hep-ex] 7 Jan 2022; Eur. Phys. J. C 82, 40 (2022), DOI 10.1140/epjc/s10052-021-09967-z (journal reference per earlier search snippet; uploaded file is the arXiv v1)",
+  "identifier": "arXiv:2201.02436",
+  "pages": 27,
+  "licence": "not stated in the uploaded arXiv v1 PDF; the EPJC journal version is CC BY 4.0 per an earlier search snippet (journal PDF not seen)",
+  "redistribution": "not committed (arXiv v1 carries no licence statement; a CC BY 4.0 journal copy could be committed if obtained)",
+  "category": "PEER_REVIEWED",
+  "upload_name": "1b83bfca-2201.02436v1.pdf",
+  "sha256": "c37c681be4b5b0972d53571955f9e127e6af886031caa0116945a5c23c7b9d7c",
+  "size_bytes": 9618322,
+  "archived_on": "2026-10-28",
+  "archive_method": "user upload to Claude Code session (batch 7), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (27 pages) on 2026-10-28 (batch 7): detector §3.2 (Fig. 4, Table 1 tracker via tkLayout, calorimetry, muon system), accelerator §4 (Table 2 ERL parameters, IR §4.3–4.5 with Bρ values, Table 3 synchrotron radiation, Table 4 luminosity, Table 5, Table 6 front-to-end tracking) and the joint eh/hh detector §5.2 (Fig. 24) read as page images; physics sections read as text"
+}
