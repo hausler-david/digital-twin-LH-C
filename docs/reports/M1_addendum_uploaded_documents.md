@@ -3,9 +3,9 @@
 **Date:** 2026-10-29 · **Branch:** `claude/lhmc-virtuallab-architecture-eitkjb` · **Basis:** commit
 `104073c` plus the registry stage, committed with this report on 2026-10-29 · **Author:** Claude
 (documentation task; counts filled by the lead session) for David Hausler · **Status:** registry stage
-committed after adversarial verification; batch 10 extracted, verified and committed afterwards (§A.7). The
-MR7 reference tables (held, verification pending) get their own section when their records are
-committed. Counts the draft gave as working-tree values were confirmed against the committed files.
+committed after adversarial verification; batch 10 extracted, verified and committed afterwards (§A.7); the
+MR7 reference tables (addendum group G7) verified and committed last (§A.8). Counts the draft gave as
+working-tree values were confirmed against the committed files.
 
 *Verifier note (registry stage, 2026-10-29):* after this draft was written, HEAD moved to `000f236`.
 Commit `ad5ac43` registered batch 10 — Kaya et al. EPL 138 (2022) 24002 (`SRC_ARXIV_1905_05564`), Beer
@@ -74,8 +74,8 @@ commit `104073c`; "rep." = `reported_lhmuc`.
 Totals at `104073c`: 4771 records cite these 29 documents, 563 of them `reported_lhmuc` (all from the
 `PRIMARY_LHMUC` decks), 28 `unknown` with `value: null` across the whole registry. The MR7 reference
 tables (collider, proton driver, target, cooling, magnets, RF, power converters) were extracted
-separately and are **held outside `parameters/`** until their verifier has run; this report cites
-`SRC_ARXIV_2510_27437` with a page wherever it needs them. One external repository was fetched:
+separately and held outside `parameters/` until their verifier had run; they were committed on 2026-10-29
+together with the Schulte-deck parameter slides (§A.8). One external repository was fetched:
 github.com/tobbetuyef/AloHEP tag v2.0 (`SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`), cloned read-only and
 read as text, not built or run.
 
@@ -94,6 +94,13 @@ read as text, not built or run.
 | `1252bf2` | 2026-10-29 09:57 | addendum verified records (Kraków decks, μTRISTAN, MuIC, MR7 MDI/acceleration, MAIA, MUSIC, Beare, Aritome) |
 | `68587c9` | 2026-10-29 10:03 | `parameters_extracted` sync; public AloHEP repository registered |
 | `104073c` | 2026-10-29 10:05 | registry loaded once per test session |
+| `ad5ac43` | 2026-10-29 12:54 | batch-10 registration (Kaya et al., Beer et al., Zhang et al., Shirotori et al.) and lead tests |
+| `000f236` | 2026-10-29 13:03 | MuCol MR7 luminosity-model tests |
+| `e0cfb0b` | 2026-10-29 13:12 | four software sources registered |
+| `9a93165` | 2026-10-29 14:20 | registry stage (verified) |
+| `3ea3f63` | 2026-10-29 14:34 | hourglass-factor fix; registry-verifier follow-ups |
+| `e2ec813` | 2026-10-29 16:31 | batch-10 verified records; scenario labels capped at their weakest record |
+| (this commit) | 2026-10-29 | IMCC reference tables (G7): verified records, four IMCC conflicts (§A.8) |
 
 ### A.3 Tests
 
@@ -105,7 +112,11 @@ clean snapshot of the commit, 2026-10-29); 94 are scientific. New since Phase 0:
 `test_registry_integrity.py::test_source_parameters_extracted_in_sync`. The registry-stage
 counterpart `tests/scientific/test_addendum_registry_consistency.py` announced in
 `test_addendum_canonical_records.py` is installed with the registry stage (3 functions, 12 cases; not
-present at `104073c`).
+present at `104073c`). *[Lead, 2026-10-29: with the IMCC reference tables (§A.8) `uv run pytest` collects 195 tests,
+136 of them scientific, and all pass in a clean worktree of that commit. The additions since `104073c` are
+`test_batch10_documents.py`, `test_imcc_mr7_reference.py` (8 functions, two of them extended for §A.8),
+`tests/unit/test_scenario_levels.py`, two hourglass-factor tests, the Zimmermann bunch-length extrapolation and
+the registry-stage consistency test.]*
 
 ### A.4 Registry stage (committed 2026-10-29 after adversarial verification)
 
@@ -126,6 +137,11 @@ present at `104073c`).
 inputs), `docs/software_inventory.md` (§15, AloHEP correction), `docs/architecture.md` (§15: AI4MuC
 principles, validator rules), `docs/validation_plan.md` (§2.0, §6a), `docs/uncertainty_policy.md`
 (§2.1, §8a), `README.md` (status paragraph), and this report.
+
+### A.6 Not done
+
+No simulation, no generator run, no transport run, no optics run, no geometry. AloHEP was not built
+or executed. No record was promoted above P1. No value from a search snippet was admitted. This holds for §A.7 and §A.8 as well.
 
 ### A.7 After the registry stage (2026-10-29)
 
@@ -161,10 +177,80 @@ No scenario is P1 now; individual records keep their own P1 checks.
 `tests/scientific/test_imcc_mr7_reference.py` (`000f236`). Conflicts: 27 (24 after the stage, plus
 `CONF_JPARC_DLS_FREQUENCY`, `CONF_ABLATED_AEROGEL_REMEASUREMENT`, `CONF_JPARC_SURFACE_MUON_MOMENTUM`).
 
-### A.6 Not done
+### A.8 IMCC reference tables (addendum group G7), committed 2026-10-29
 
-No simulation, no generator run, no transport run, no optics run, no geometry. AloHEP was not built
-or executed. No record was promoted above P1. No value from a search snippet was admitted.
+The MuCol MR7 tables and the parameter slides of the Schulte deck were extracted on 2026-10-28. Their verifier was killed
+by a container restart, so the records were held outside `parameters/` until a new verification pass. Before that pass
+the lead applied the three mechanical passes:
+- confidence caps: 1337 values lowered from `high` to `medium`;
+- unbacked P1 labels: 232 lowered to P0;
+- scenario rule 3: both IMCC scenarios lowered to P0.
+
+Each pass is logged in `research/_fragments/*_2026-10-29.csv`. Four adversarial verifiers then checked every record
+against the page images:
+
+| File | Records | Corrections | Removed | Arithmetic re-done (not reproduced) | Verifier note |
+|---|---|---|---|---|---|
+| `parameters/machine/imcc_mr7_collider_reference.yaml`, `scenarios_addendum_imcc.yaml` | 357 + 2 scenarios | 43 | 0 | 55 (10) | `verify_G7A_MR7_COLLIDER.md` |
+| `parameters/source/imcc_mr7_proton_driver_target_cooling.yaml` | 418 | 27 | 0 | 38 (4) | `verify_G7B_MR7_SOURCE.md` |
+| `parameters/machine/imcc_mr7_magnets_rf_power_infrastructure.yaml` | 311 (25 ids renamed) | 25 | 0 | 52 (28) | `verify_G7C_MR7_MAGNETS_RF_POWER.md` |
+| `parameters/machine/imcc_ws2026_schulte_parameters.yaml` | 342 → 341 | 37 | 1 duplicate | 38 (2) | `verify_G7D_SCHULTE_DECK.md` |
+
+**Status and labels.**
+- Every record is an IMCC analogue (`analogous`, confidence at most `medium`, 61 `low`).
+- The exception is the 27 slide-21 cost-bar and tornado-bar values. They are numbers read off a plot axis, so they are
+  `analytical_estimate` with the reading method in `derivation` (`research/source_quality_policy.md` §5 rule 3; lead
+  decision).
+- No record is `reported_lhmuc`.
+- Fourteen records are P1, each pinned by `tests/scientific/test_imcc_mr7_reference.py`: beam power, IP beam size,
+  luminosity lifetime, the 0.76/0.758 hourglass factor, the eq. (A.9) luminosity and the integrated luminosity per year.
+  Two assertions were added to that file for this: the 7.2 MW per-beam power of Table 6.1 and the three-digit 0.758 of
+  PDF p. 19.
+- Both scenarios stay P0 under rule 3. IMCC-MR7-3TEV is `partially_reported`, because MR7 covers the 3 TeV stage in only
+  a few tables.
+
+**What the verifiers found** (details in the notes):
+- **Not reproducible from MR7's own inputs** (kept as printed, confidence `low`):
+  - the ≈ 27.2 MeV energy loss per turn (29.0 MeV for the stated 16 T);
+  - 22.9 eV ms, against MR7's own "64 mm = 0.0225 eVs";
+  - the RCS RF wall-plug powers of Tables I.8/I.10 (5–21 % below the caption's ×1.32/0.65);
+  - the J.1/J.2 power-converter peak powers (they fit V × 11 kA, which MR7 does not state);
+  - the 10 GeV accumulator turns of Table B.2 (4167, the 5 GeV value; its own inputs give 4997);
+  - the Table 4.1 short-rectilinear 14.9 % (the 0.95 charge-separation factor is omitted) and the 5.8 % after
+    re-acceleration (5.5 % computed; 5.6 % in Table 1.3);
+  - the Table 1.3 RLA2–RCS4 estimated cumulative transmissions (copied from Table 1.2);
+  - the CTF3 1.5 kW (1.44 kW computed).
+- **Internal inconsistencies kept in the record notes:**
+  - muon window titanium (Table C.1) vs "it is required to use beryllium" on the same page;
+  - IR-quadrupole aperture up to 280 mm (Table 9.1) vs "up to 200 mm" (H.2);
+  - "kept below 42 T" vs −43.4 T (Table D.14);
+  - a 6D-cooling solenoid count of ≈ 6000 vs 3054;
+  - the deck's "400 MJ/pulse" (2 MW at 5 Hz gives 0.4 MJ, which its slide 29 prints).
+- **Cross-source conflicts, now registered** (F.9):
+  - collider circumference 11.4 km vs ≈ 10 km vs 10 000 m;
+  - MR7 vs deck luminosity: 18 vs 17.5 × 10³⁴ cm⁻² s⁻¹ at 10 TeV, 2.1 vs 1.8 × 10³⁴ at 3 TeV;
+  - MR7 Table 1.3 "Estimated" vs slide-8 "Achieved" muon chain: 1.4 vs 1.5 × 10¹² μ⁻/bunch at the 10 TeV collider,
+    against a target of 1.8;
+  - the slide-38 row "Int L 2.2 / 1.8", which repeats the slide-7 bunch populations under a wrong label (checked on
+    the slide images).
+- **Not recorded, by rule:** the slide-29 cells hidden behind overlays (visible only in the embedded raster).
+
+**Also in this commit:**
+- The Schulte source-registry text no longer claims a "4–18 BCHF" cost range; the slide prints a unit-less
+  4 | 7 | 12 | 18 | 30 | 50 scale and a bar chart.
+- `ME_038` (muon-decay heat load) is `partially_resolved` by MR7 Tables 6.2 and 12.2.
+- The slide-38 records name their conflict.
+- §5 rule 3 is applied to four earlier axis reads (E); two of them were `reported_lhmuc`.
+- The MR7 validation-registry rows list the records that cite them.
+- The 25 renamed ids (LEP2 cavity columns by frequency; one RF-power row) and the removed duplicate keep their old names in
+  the earlier mechanical-pass logs, which are a historical record.
+
+**Counts after this commit:**
+- 7346 parameter records: 202 P1, 7144 P0;
+- 51 scenarios, all P0;
+- 31 conflicts: 23 resolved as scenarios, 5 propagated as uncertainty, 2 superseded, 1 open;
+- 242 sources, 38 uploaded;
+- 121 validation-registry rows, 69 missing-evidence rows, 44 risks.
 
 ---
 
@@ -332,7 +418,8 @@ paper, not as a conflict.
 
 After the hygiene, 100 records are P1 and 5501 P0; none is higher. Scenario-level `validation_level`
 labels (P1 on 33 of 36 scenarios) are not covered by the record-level rule — an open point for the
-lead, not changed here.
+lead, not changed here. *[Lead, 2026-10-29: the scenario rule is now enforced (§A.7) and all 51 scenarios are P0; after
+the IMCC tables (§A.8) 202 records are P1 and 7144 P0.]*
 
 ### D.3 Verification of the extraction
 
@@ -343,7 +430,8 @@ applicability. Examples of what the verifiers caught: the LHeC Fig. 19 header gi
 bands unchanged); the M17 stage-4 tabulated field is the D-magnet field (13.62 T reconstructed,
 +0.2 %), not a discrepancy; the muon-ion collider records were moved to a single PDF-page
 convention; six Acosta nozzle records were moved from `reported_lhmuc` to `analogous`. Residual doubts
-are listed in E.
+are listed in E. The IMCC reference tables (§A.8) had four verifiers: 1428 records, 132 corrections, one
+duplicate removed, 183 arithmetic checks re-done (139 reproduced). The others are recorded in the notes and listed in §A.8.
 
 ### D.4 What is not validated
 
@@ -360,11 +448,24 @@ not run.
   André et al. 2025, HL-LHC TDR and LHC Project Report 627 / CERN-2005-006, Topp-Mugglestone thesis
   and notebooks, Beer 2014 and the Zhang papers, Kaya et al. EPL 138, IMCC BIB papers). *[Verifier
   note: Beer 2014, Zhang et al. 2021 (JPS Conf. Proc. 33) and Kaya et al. arrived in batch 10, commit
-  `ad5ac43`, after this draft; they are registered and read but not yet extracted into records.]*
+  `ad5ac43`, after this draft; their records were extracted, verified and committed in `e2ec813` (§A.7).]*
 - **Source quality.** The LHμC-specific numbers come from unrefereed slides (cap `medium`); several are
   explicitly preliminary (vFFA "in untested region of parameter space"; detector "still a WIP").
 - **Human review.** Pending (`RISK_028_HUMAN_REVIEW_PENDING`).
-- **MR7 reference tables.** Not yet in `parameters/`.
+- **MR7 reference tables.** Committed after verification (§A.8). Several MR7 numbers cannot be reproduced from MR7's
+  own inputs and are kept as printed at confidence `low`: the RCS RF wall-plug powers, the power-converter peak powers,
+  the 27.2 MeV energy loss per turn and the 22.9 eV ms emittance. How the headline 18 × 10³⁴ at 11.4 km was obtained
+  cannot be reconstructed (`CONF_IMCC_COLLIDER_CIRCUMFERENCE`).
+- **Figure reads.** `research/source_quality_policy.md` §5 rule 3 makes a number read off a plot axis an
+  `analytical_estimate`, never `reported_lhmuc`. A text search of all records for axis-read wording found four such
+  reads outside G7:
+  - two André et al. 2022 Fig. 10 prototype readings, which were `analogous`;
+  - two slide-20 dijet bins of the small-x deck, which were `reported_lhmuc`.
+
+  These four and the 27 G7 axis reads now carry `analytical_estimate`, with the reading method in `derivation` (log
+  `research/_fragments/axis_reads_relabelled_2026-10-29.csv`). The other figure records the search found are printed
+  numbers (legend values, tick labels, inset text, ROOT statistics boxes), which the rule allows. Because the search
+  matches wording, a read described in other words would escape it.
 - **Registry stage.** Committed after adversarial verification (`research/_fragments/verify_REGISTRY_STAGE.md`:
   182 entries checked, 39 corrections, none removed); its residual doubts are listed in that note.
 - **Residual extraction doubts** (verifier notes): the Kilic π⁺ 40 mrad panel duplicates the 100 mrad
@@ -543,6 +644,13 @@ Total after the stage: 24. None is averaged. Added afterwards (§A.7): `CONF_JPA
 resolved as scenarios), `CONF_ABLATED_AEROGEL_REMEASUREMENT` (open) and `CONF_JPARC_SURFACE_MUON_MOMENTUM`
 (27 vs 28 MeV/c, resolved as scenarios); batch 10 also extended `CONF_PEAK_LUMINOSITY`,
 `CONF_LUMI_MODEL_ASSUMPTIONS`, `CONF_MUONIUM_FORMATION_FRACTION` and `CONF_LASER_IONISATION_EFFICIENCY`. Total: 27.
+Added with the IMCC reference tables (§A.8):
+- `CONF_IMCC_COLLIDER_CIRCUMFERENCE`: 11.4 km vs ≈ 10 km vs 10 000 m; resolved as scenarios by design iteration.
+- `CONF_IMCC_LUMINOSITY_MR7_VS_WS2026`: 18 vs 17.5 and 2.1 vs 1.8 × 10³⁴; resolved as scenarios by document.
+- `CONF_IMCC_MUON_CHAIN_SNAPSHOTS`: MR7 "Estimated" vs 2026 "Achieved"; resolved as scenarios.
+- `CONF_IMCC_WS2026_SLIDE38_INT_LUMI_LABEL`: the slide-38 row label; resolved, superseded.
+
+None of them enters an LHμC quantity. Total: 31. One is open: `CONF_ABLATED_AEROGEL_REMEASUREMENT`.
 
 ### F.10 Demonstration or interface-only results
 
@@ -562,16 +670,22 @@ None.
    and André et al. 2025, HL-LHC TDR and LHC Project Report 627 / CERN-2005-006, Beer 2014, Kaya et al.,
    IMCC BIB papers). *[Beer 2014 and Kaya et al. have since been uploaded, extracted and verified
    (batch 10, §A.7).]*
-3. **Platform:** finish the MR7 reference-table verification; compute a μp luminosity for the Kaya and
-   LHμC options with the one-beam decay average and the μp hourglass factor in a recorded run; and
-   pre-register Benchmark 3.1 (AloHEP v2.0 in an isolated build, option sets of
-   `docs/validation_plan.md` §3.1) for the start of M2.
+3. **Platform:**
+   - compute a μp luminosity for the Kaya and LHμC options in a recorded run, with the one-beam decay average and the
+     μp hourglass factor;
+   - pre-register Benchmark 3.1 (AloHEP v2.0 in an isolated build, option sets of `docs/validation_plan.md` §3.1) for
+     the start of M2;
+   - make §5 rule 3 mechanical, e.g. with a separate extraction method for axis reads that the validator ties to
+     `analytical_estimate`, so it no longer depends on wording (E).
+
+   *[The MR7 reference-table verification named here first was completed on 2026-10-29 (§A.8).]*
 
 ---
 
 ## Sources cited
 
-Uploaded (read in full): the 29 documents of table A.1 with the pages cited in the text; Phase-0
+Uploaded (read in full): the 29 documents of table A.1 with the pages cited in the text, the batch-10 documents
+of §A.7 and the MR7 and Schulte-deck pages of §A.8; Phase-0
 uploads `SRC_ARXIV_2610_35154`, `SRC_ARXIV_2506_15445` (Tables 1–3, 6; §2.3; p.14, p.17),
 `SRC_WS1681458_DAGLI_NUCLEUS`, `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`, `SRC_WS_LEBOHO_KUMAR_DIHIGGS`.
 Fetched: `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP` (tag v2.0). Named but not read: `SRC_ARXIV_2007_14491`,

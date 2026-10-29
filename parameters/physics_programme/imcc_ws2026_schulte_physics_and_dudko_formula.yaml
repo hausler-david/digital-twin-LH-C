@@ -1966,7 +1966,8 @@ parameters:
   responsible_module: parameters/physics_programme
   notes: 'CONFLICT CANDIDATE: p.38 prints the row ''Int L | Ab-1 | 2.2 | 1.8'' while p.3 and p.28 of the same deck print ''Int L | ab-1 | 1 | 10'' for the
     same 3 / 10 TeV columns. The p.38 numbers equal the bunch-population row of the p.7 target-parameter table (''N | 10^12 | 2.2 | 1.8''), so the p.38
-    row label is most likely a mislabel of N; kept as printed for the lead to log in research/source_conflicts.yaml.'
+    row label is most likely a mislabel of N; kept as printed. Logged as CONF_IMCC_WS2026_SLIDE38_INT_LUMI_LABEL (resolved_superseded,
+    2026-10-29).'
 - parameter_id: PHYS_IMCC_INT_LUMI_10TEV_P38_WS2026_SCHULTE
   name: '''Int L'' value printed for 10 TeV on the backup programme slide (as printed; see conflict note)'
   symbol: Int L (as printed)
@@ -2010,7 +2011,8 @@ parameters:
   responsible_module: parameters/physics_programme
   notes: 'CONFLICT CANDIDATE: p.38 prints the row ''Int L | Ab-1 | 2.2 | 1.8'' while p.3 and p.28 of the same deck print ''Int L | ab-1 | 1 | 10'' for the
     same 3 / 10 TeV columns. The p.38 numbers equal the bunch-population row of the p.7 target-parameter table (''N | 10^12 | 2.2 | 1.8''), so the p.38
-    row label is most likely a mislabel of N; kept as printed for the lead to log in research/source_conflicts.yaml.'
+    row label is most likely a mislabel of N; kept as printed. Logged as CONF_IMCC_WS2026_SLIDE38_INT_LUMI_LABEL (resolved_superseded,
+    2026-10-29).'
 - parameter_id: PHYS_MUON_TURNS_PER_LIFETIME_FORMULA_DUDKO2026
   name: Turns-per-lifetime relation of a stored muon beam with cτ_μ = 659 m (review formula, traceability record)
   symbol: n_turns

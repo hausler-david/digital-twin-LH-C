@@ -160,8 +160,9 @@ pos.sissa.it, doi.org, journal and readthedocs hosts and all CERN hosts. Consequ
   reports were **not read**; their values appear here only as quoted by the uploads.
   *[Update 2026-10-29: the μTRISTAN paper and MuCol Milestone Reports 7 (`SRC_ARXIV_2510_27437`) and
   17 (`SRC_DOI_10_5281_ZENODO_15054073`) are now read in full. The MR7 reference tables for the
-  collider, proton driver, target, cooling, magnets, RF and power converters are still being
-  verified and are not in `parameters/`; cite `SRC_ARXIV_2510_27437` with a page until they are.
+  collider, proton driver, target, cooling, magnets, RF and power converters were verified and
+  committed later the same day (`docs/reports/M1_addendum_uploaded_documents.md` §A.8). MR7 numbers that cannot be
+  reproduced from MR7's own inputs are kept as printed at confidence `low`.
   The LHeC CDR, its 2020 update (`SRC_ARXIV_2007_14491`), André et al. 2025 (`SRC_ARXIV_2503_20475`),
   MuCol Report 5 (`SRC_ARXIV_2411_02966`) and the HL-LHC TDR (`SRC_URL_CERN_2020_010_HLLHC_TDR`)
   remain unread.]*

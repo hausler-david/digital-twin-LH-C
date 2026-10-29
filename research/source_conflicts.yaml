@@ -2546,3 +2546,219 @@ conflicts:
   required_future_evidence: The J-PARC H-line or S-line commissioning value of the delivered surface-muon momentum.
   status: resolved_as_scenarios
   date_added: '2026-10-29'
+- conflict_id: CONF_IMCC_COLLIDER_CIRCUMFERENCE
+  affected_parameters:
+  - MACHINE_COLLIDER_CIRCUMFERENCE_10TEV_MR7
+  - MACHINE_COLLIDER_CIRCUMFERENCE_10TEV_TABA1_MR7
+  - MACHINE_CHAIN_COLLIDER_10TEV_CIRCUMFERENCE_MR7
+  - MACHINE_RAD_STUDY_CIRCUMFERENCE_10TEV_MR7
+  - MACHINE_CIRCUMFERENCE_APPROX_TAB61_MR7
+  - MACHINE_AVG_DIPOLE_FIELD_LUMI_FORMULA_10TEV_MR7
+  - MACHINE_RAD_STUDY_DECAY_RATE_PER_M_10TEV_MR7
+  - MACHINE_DECAY_COLLIDER_LENGTH_MR7
+  - MACHINE_IMPEDANCE_CHAMBER_LENGTH_TAB113_MR7
+  - MACHINE_IMPEDANCE_CIRCUMFERENCE_TABK3_MR7
+  - INFRA_CERN_COLLIDER_RING_LENGTH_MR7
+  - MACHINE_IMCC_COLLIDER_CIRCUMFERENCE_10TEV_P7_WS2026_SCHULTE
+  - MACHINE_IMCC_COLLIDER_CIRCUMFERENCE_10TEV_P38_WS2026_SCHULTE
+  - MACHINE_IMCC_CHAIN_COLLIDER_10TEV_CIRCUMFERENCE_P8_WS2026_SCHULTE
+  competing_values:
+  - value: 11.4
+    unit: km
+    source_id: SRC_ARXIV_2510_27437
+    scenario: IMCC-MR7-10TEV
+    context: 'MR7 Table 1.1 (PDF p. 13) row ''Circumference'', unit km, ''Baseline'': 11.4, with 14 T arc dipoles; the same
+      in Table A.1 (p. 37), Table 1.2 (p. 14, ''◦11400'' m) and Table 12.2 (p. 28). Parameters MACHINE_COLLIDER_CIRCUMFERENCE_10TEV_MR7,
+      MACHINE_COLLIDER_CIRCUMFERENCE_10TEV_TABA1_MR7, MACHINE_CHAIN_COLLIDER_10TEV_CIRCUMFERENCE_MR7, MACHINE_RAD_STUDY_CIRCUMFERENCE_10TEV_MR7.'
+  - value: 10
+    unit: km
+    source_id: SRC_ARXIV_2510_27437
+    scenario: null
+    context: 'MR7 Table 6.1 (PDF p. 20) row ''Circumference'', unit km, cell spanning the ''relaxed'' and ''target'' columns:
+      ''≈ 10'' (the 16 T lattice of Section 6, footnotes 2-3 on p. 19). The eq. (A.9) average field B_avg = 10.5 T corresponds
+      to C = 9.98 km, and the Table 12.2 decay rate 1.8e9 /m/s needs C = 10 km although its column says 11.4 km (verify_G7A_MR7_COLLIDER.md).
+      Parameters MACHINE_CIRCUMFERENCE_APPROX_TAB61_MR7, MACHINE_AVG_DIPOLE_FIELD_LUMI_FORMULA_10TEV_MR7, MACHINE_RAD_STUDY_DECAY_RATE_PER_M_10TEV_MR7.'
+  - value: 10000
+    unit: m
+    source_id: SRC_ARXIV_2510_27437
+    scenario: null
+    context: 'MR7 Table A.2 (PDF p. 40) row ''Collider'', ''Lengths (m)'': 10000; Table 11.3 (p. 27) chamber length 10000
+      m; Table K.3 (p. 84) circumference 10 000 m; Table M.1 (p. 89) ''MUON Collider Ring'' 10000 m. Round model inputs of
+      the decay, impedance, vacuum and civil-engineering studies. Parameters MACHINE_DECAY_COLLIDER_LENGTH_MR7, MACHINE_IMPEDANCE_CHAMBER_LENGTH_TAB113_MR7,
+      MACHINE_IMPEDANCE_CIRCUMFERENCE_TABK3_MR7, INFRA_CERN_COLLIDER_RING_LENGTH_MR7.'
+  - value: 10000
+    unit: m
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slide 8 chain table, row ''10 TeV Collider'', column ''Length m'': ''◦10000'', while slides 7 and
+      38 of the same deck print ''C | km | 4.5 | 11.4''. Parameters MACHINE_IMCC_CHAIN_COLLIDER_10TEV_CIRCUMFERENCE_P8_WS2026_SCHULTE
+      (10000 m), MACHINE_IMCC_COLLIDER_CIRCUMFERENCE_10TEV_P7_WS2026_SCHULTE and _P38_WS2026_SCHULTE (11.4 km).'
+  possible_cause: 'Design iterations of the IMCC 10 TeV collider ring coexist in both documents: 11.4 km with 14 T arc dipoles
+    (Table 1.1, ''B_dipole 14 T''), about 10 km for the 16 T lattice of Section 6, and 10 000 m as a round input of later
+    studies. MR7 does not reconcile them. Its headline 18e34 cm^-2 s^-1 at 11.4 km cannot be reconstructed: eq. (A.9) gives
+    16.5e34 at 11.4 km before the beam-beam enhancement and 18.8e34 with B_avg 10.5 T (C = 9.98 km).'
+  selected_treatment: 'Resolved as scenarios by design iteration (lead decision 2026-10-29): IMCC-MR7-10TEV maps main_ring_circumference
+    to the 11.4 km of Table 1.1 (the consolidated headline table) and main_ring_circumference_16t_lattice to the Table 6.1
+    ''≈ 10'' km. Quantities that belong to the 10 km lattice (Table 6.1 geometric luminosities, the eq. A.9 analytic luminosity,
+    the Table 12.2 decay rate) say so in their notes. tests/scientific/test_imcc_mr7_reference.py follows MR7 in each place
+    (N_turn with 11.4 km, eq. A.9 with B_avg 10.5 T). Never averaged. The values are IMCC analogues; no LHμC quantity uses
+    them.'
+  effect_on_simulations: 'Only IMCC analogue calculations are affected. Every quantity scales as 1/C: luminosity lifetime
+    γτc/(2C) is 1367 turns at 11.4 km and 1558 at 10 km; eq. (A.9) luminosity (∝ B_avg = 2πBρ/C) is 16.5e34 at 11.4 km and
+    18.8e34 at 9.98 km; the decay rate 2Nf_r/C is 1.58e9 /m/s at 11.4 km and 1.8e9 /m/s at 10 km. The same holds for the arc
+    decay load per metre.'
+  required_future_evidence: The IMCC collider-ring design document (lattice report or CDR-phase parameter table) that fixes
+    the 10 TeV circumference and arc field and states which circumference the Table 1.1 18e34 assumes.
+  status: resolved_as_scenarios
+  date_added: '2026-10-29'
+- conflict_id: CONF_IMCC_LUMINOSITY_MR7_VS_WS2026
+  affected_parameters:
+  - MACHINE_ESTIMATED_LUMINOSITY_10TEV_MR7
+  - MACHINE_ESTIMATED_LUMINOSITY_10TEV_TABA1_MR7
+  - MACHINE_ESTIMATED_LUMINOSITY_3TEV_MR7
+  - MACHINE_IMCC_LUMI_PER_IP_SI10_P3_WS2026_SCHULTE
+  - MACHINE_IMCC_LUMI_PER_IP_10TEV_P7_WS2026_SCHULTE
+  - MACHINE_IMCC_LUMI_PER_IP_10TEV_P38_WS2026_SCHULTE
+  - PHYS_IMCC_LUMI_PER_IP_SI10_WS2026_SCHULTE
+  - MACHINE_IMCC_LUMI_PER_IP_SI3_P3_WS2026_SCHULTE
+  - MACHINE_IMCC_LUMI_PER_IP_3TEV_P7_WS2026_SCHULTE
+  - MACHINE_IMCC_LUMI_PER_IP_3TEV_P38_WS2026_SCHULTE
+  - PHYS_IMCC_LUMI_PER_IP_SI3_WS2026_SCHULTE
+  competing_values:
+  - value: 1.8e+35
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2510_27437
+    scenario: IMCC-MR7-10TEV
+    context: 'MR7 Table 1.1 (PDF p. 13) row ''Estimated luminosity'', unit ''10^34 cm−2 s−1'', ''Baseline'': 18; the same
+      in Table A.1 (p. 37) ''Stage 2''. Parameters MACHINE_ESTIMATED_LUMINOSITY_10TEV_MR7, MACHINE_ESTIMATED_LUMINOSITY_10TEV_TABA1_MR7.'
+  - value: 1.75e+35
+    unit: cm^-2 s^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slides 3, 7, 28 and 38, row ''L/IP'' (10^34 cm-2s-1), 10 TeV column: 17.5. Parameters MACHINE_IMCC_LUMI_PER_IP_SI10_P3_WS2026_SCHULTE,
+      MACHINE_IMCC_LUMI_PER_IP_10TEV_P7_WS2026_SCHULTE, MACHINE_IMCC_LUMI_PER_IP_10TEV_P38_WS2026_SCHULTE, PHYS_IMCC_LUMI_PER_IP_SI10_WS2026_SCHULTE.'
+  - value: 2.1e+34
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_2510_27437
+    scenario: IMCC-MR7-3TEV
+    context: 'MR7 Table A.1 (PDF p. 37) row ''Estimated luminosity'', unit ''10^34 cm−2 s−1'', ''Stage 1'': 2.1. Parameter
+      MACHINE_ESTIMATED_LUMINOSITY_3TEV_MR7.'
+  - value: 1.8e+34
+    unit: cm^-2 s^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slides 3, 7, 28 and 38, row ''L/IP'' (10^34 cm-2s-1), 3 TeV column: 1.8. Parameters MACHINE_IMCC_LUMI_PER_IP_SI3_P3_WS2026_SCHULTE,
+      MACHINE_IMCC_LUMI_PER_IP_3TEV_P7_WS2026_SCHULTE, MACHINE_IMCC_LUMI_PER_IP_3TEV_P38_WS2026_SCHULTE, PHYS_IMCC_LUMI_PER_IP_SI3_WS2026_SCHULTE.'
+  possible_cause: Neither document says whether the September 2026 deck values update the November 2025 consolidated parameters
+    (e.g. after a lattice revision) or round them differently. MR7 itself does not show how its 18e34 at 11.4 km was obtained
+    (CONF_IMCC_COLLIDER_CIRCUMFERENCE). The 10 TeV values differ by 2.9 %; at 3 TeV, MR7's 2.1e34 is 17 % above the deck's
+    1.8e34.
+  selected_treatment: Resolved as scenarios by document (lead decision 2026-10-29). IMCC-MR7-10TEV and IMCC-MR7-3TEV are,
+    by construction, the MR7 parameter sets and point to the MR7 values. The deck values are kept as separate records and
+    mapped to no scenario. An IMCC 2026 scenario, if one is defined, takes the deck values. Never averaged.
+  effect_on_simulations: 'Only IMCC analogue comparisons are affected: the reference μ+μ− luminosity against which LHμC figures
+    of merit (e.g. luminosity per beam power) are compared changes by 3 % at 10 TeV and 17 % at 3 TeV. No LHμC luminosity
+    uses either value.'
+  required_future_evidence: The IMCC parameter table that supersedes MR7 (2026 MuCol deliverable or the CDR-phase parameter
+    list), giving L/IP per stage and the lattice assumed.
+  status: resolved_as_scenarios
+  date_added: '2026-10-29'
+- conflict_id: CONF_IMCC_MUON_CHAIN_SNAPSHOTS
+  affected_parameters:
+  - MACHINE_CHAIN_COLLIDER_10TEV_EST_MU_PER_BUNCH_MR7
+  - MACHINE_IMCC_CHAIN_COLLIDER_10TEV_ACHIEVED_MU_PER_BUNCH_P8_WS2026_SCHULTE
+  - MACHINE_CHAIN_COLLIDER_3TEV_EST_MU_PER_BUNCH_MR7
+  - MACHINE_IMCC_CHAIN_COLLIDER_3TEV_ACHIEVED_MU_PER_BUNCH_P8_WS2026_SCHULTE
+  - MACHINE_CHAIN_PRE_ACC_EST_MU_PER_BUNCH_MR7
+  - MACHINE_IMCC_CHAIN_PRE_ACC_ACHIEVED_MU_PER_BUNCH_P8_WS2026_SCHULTE
+  - MACHINE_CHAIN_RECT_B_T13_TRANSMISSION_MR7
+  - MACHINE_IMCC_CHAIN_RECT_B_ACHIEVED_TRANSMISSION_P8_WS2026_SCHULTE
+  - MACHINE_CHAIN_RLA2_CIRCUMFERENCE_MR7
+  - MACHINE_IMCC_CHAIN_RLA2_CIRCUMFERENCE_P8_WS2026_SCHULTE
+  competing_values:
+  - value: 1400000000000.0
+    unit: particles
+    source_id: SRC_ARXIV_2510_27437
+    scenario: IMCC-MR7-10TEV
+    context: 'MR7 Table 1.3 (PDF p. 14) row ''10 TeV Collider'', column ''Estimated μ−/bunch'' (10^12): 1.4, against the Table
+      1.2 target 1.8. Parameter MACHINE_CHAIN_COLLIDER_10TEV_EST_MU_PER_BUNCH_MR7. Upstream: Rectilinear B transmission 28.6
+      % (MACHINE_CHAIN_RECT_B_T13_TRANSMISSION_MR7), 2.5e12 after pre-acceleration (MACHINE_CHAIN_PRE_ACC_EST_MU_PER_BUNCH_MR7).'
+  - value: 1500000000000.0
+    unit: particles
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slide 8, row ''10 TeV Collider'', column ''Achieved μ−/bunch (10^12)'': 1.5, target 1.8. Parameter
+      MACHINE_IMCC_CHAIN_COLLIDER_10TEV_ACHIEVED_MU_PER_BUNCH_P8_WS2026_SCHULTE. Upstream: Rectilinear B 32 % (MACHINE_IMCC_CHAIN_RECT_B_ACHIEVED_TRANSMISSION_P8_WS2026_SCHULTE),
+      2.8e12 after pre-acceleration against a 4.0e12 target; RLA2 length 2430 m against MR7 Table 1.2''s 2400 m.'
+  - value: 1500000000000.0
+    unit: particles
+    source_id: SRC_ARXIV_2510_27437
+    scenario: IMCC-MR7-3TEV
+    context: 'MR7 Table 1.3 (PDF p. 14) row ''3 TeV Collider'', ''Estimated μ−/bunch'': 1.5, target 2.2. Parameter MACHINE_CHAIN_COLLIDER_3TEV_EST_MU_PER_BUNCH_MR7.'
+  - value: 1700000000000.0
+    unit: particles
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slide 8, row ''3 TeV Collider'', ''Achieved μ−/bunch'': 1.7, target 2.2. Parameter MACHINE_IMCC_CHAIN_COLLIDER_3TEV_ACHIEVED_MU_PER_BUNCH_P8_WS2026_SCHULTE.'
+  possible_cause: 'Two snapshots of the IMCC chain simulation: MR7 Table 1.3 ''Estimated'' (November 2025) and the deck''s
+    ''Achieved'' column (September 2026). The deck''s Rectilinear B transmission (32 % vs 28.6 %) accounts for most of the
+    difference. Both documents print the same targets (1.8e12 at 10 TeV, 2.2e12 at 3 TeV), and both fall short of them.'
+  selected_treatment: 'Resolved as scenarios by document (lead decision 2026-10-29): the IMCC-MR7-* scenarios use the MR7
+    Table 1.3 estimates (role estimated_mu_per_bunch_at_collider); the 2026 ''Achieved'' chain is kept as separate records
+    and is not mapped. Never averaged.'
+  effect_on_simulations: 'For the IMCC μ+μ− analogue the luminosity scales as N²: relative to the target, 0.60 (MR7) vs 0.69
+    (deck) at 10 TeV and 0.46 vs 0.60 at 3 TeV. For the LHμC hybrid-source option (LHMUC-SOURCE-HYBRID-IMCC, CONF_SOURCE_CONCEPT)
+    the IMCC front-end and cooling transmissions are the analogue inputs; the 2026 Rectilinear B value raises the muons after
+    6D cooling by 12 %.'
+  required_future_evidence: The IMCC/MuCol study behind the slide-8 'Achieved' column (2026 front-end, cooling and acceleration
+    simulations), with the per-stage losses.
+  status: resolved_as_scenarios
+  date_added: '2026-10-29'
+- conflict_id: CONF_IMCC_WS2026_SLIDE38_INT_LUMI_LABEL
+  affected_parameters:
+  - PHYS_IMCC_INT_LUMI_3TEV_P38_WS2026_SCHULTE
+  - PHYS_IMCC_INT_LUMI_10TEV_P38_WS2026_SCHULTE
+  - MACHINE_IMCC_INT_LUMI_SI3_P3_WS2026_SCHULTE
+  - MACHINE_IMCC_INT_LUMI_SI10_P3_WS2026_SCHULTE
+  - PHYS_IMCC_INT_LUMI_SI3_WS2026_SCHULTE
+  - PHYS_IMCC_INT_LUMI_SI10_WS2026_SCHULTE
+  - MACHINE_TARGET_INT_LUMI_3TEV_MR7
+  - MACHINE_TARGET_INT_LUMI_10TEV_MR7
+  - MACHINE_IMCC_MU_BUNCH_POPULATION_3TEV_P7_WS2026_SCHULTE
+  - MACHINE_IMCC_MU_BUNCH_POPULATION_10TEV_P7_WS2026_SCHULTE
+  competing_values:
+  - value: 2.2
+    unit: ab^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Schulte deck slide 38 (reserve copy of the slide-7 table), row ''Int L | Ab-1'', 3 TeV: 2.2. Parameter PHYS_IMCC_INT_LUMI_3TEV_P38_WS2026_SCHULTE
+      (confidence low, applicability unresolved).'
+  - value: 1.8
+    unit: ab^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Same row, 10 TeV: 1.8. Parameter PHYS_IMCC_INT_LUMI_10TEV_P38_WS2026_SCHULTE.'
+  - value: 1
+    unit: ab^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Slides 3 and 28 of the same deck, ''Int L | ab-1'', 3 TeV: 1 (MACHINE_IMCC_INT_LUMI_SI3_P3_WS2026_SCHULTE, PHYS_IMCC_INT_LUMI_SI3_WS2026_SCHULTE);
+      MR7 Table A.1 (p. 37) ''Stage 1'' gives the same 1 ab^-1 (MACHINE_TARGET_INT_LUMI_3TEV_MR7).'
+  - value: 10
+    unit: ab^-1
+    source_id: SRC_WS1681458_SCHULTE_IMCC
+    scenario: null
+    context: 'Slides 3 and 28, 10 TeV: 10 (MACHINE_IMCC_INT_LUMI_SI10_P3_WS2026_SCHULTE, PHYS_IMCC_INT_LUMI_SI10_WS2026_SCHULTE);
+      MR7 Table 1.1 (p. 13) gives the same 10 ab^-1 (MACHINE_TARGET_INT_LUMI_10TEV_MR7).'
+  possible_cause: 'Label error on the reserve slide. Slide 38 repeats the slide-7 table, and in the second row, where slide
+    7 prints ''N | 10^12 | 2.2 | 1.8'' in blue (MACHINE_IMCC_MU_BUNCH_POPULATION_*_P7_WS2026_SCHULTE), slide 38 prints ''Int
+    L | Ab-1 | 2.2 | 1.8'' in the same blue type (checked on the slide images, 2026-10-29). The pair is not a per-year value
+    either: MR7''s 10 TeV value is 2.2 ab^-1 per year (MACHINE_INT_LUMI_PER_YEAR_10TEV_MR7), which is the reverse assignment
+    to the two stages.'
+  selected_treatment: Resolved, superseded (lead decision 2026-10-29). The integrated-luminosity targets are 1 ab^-1 (3 TeV)
+    and 10 ab^-1 (10 TeV), as on slides 3 and 28 and in MR7. The slide-38 records keep the printed values with confidence
+    low and applicability unresolved, and no scenario uses them.
+  effect_on_simulations: None. No scenario or calculation uses the slide-38 row.
+  required_future_evidence: A corrected version of the deck, or confirmation from the author.
+  status: resolved_superseded
+  date_added: '2026-10-29'

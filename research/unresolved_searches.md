@@ -222,9 +222,9 @@ residual stated here. Competing values found in the uploads are recorded in `res
   present in any snippet" and the nozzle part of its fetch entry: Table G.1 outer surface (z, r) = (6, 1), (100, 17.57),
   (595, 55) cm, "the inclination amounts to 10 degrees" near the IP, tip 6 cm, L* = 6 m (`DET_NOZZLE_*_MR7`,
   `IR_LSTAR_MR7`; `tests/scientific/test_workshop_decks.py::test_imcc_nozzle_outer_surface_angles_mr7_table_g1`); Table
-  F.5 restates the M17 vFFA rings. *Still open:* the MR7 reference tables for collider, proton driver, target, cooling,
-  magnets, RF and power converters are still being verified and are not in `parameters/` (cite `SRC_ARXIV_2510_27437`
-  with a page only); the licence is not printed.
+  F.5 restates the M17 vFFA rings. *Resolved 2026-10-29:* the MR7 reference tables for collider, proton driver, target,
+  cooling, magnets, RF and power converters were verified and committed (`docs/reports/M1_addendum_uploaded_documents.md`
+  §A.8). *Still open:* the licence is not printed.
 - **MAIA, arXiv:2502.00181v2** (`SRC_ARXIV_2502_00181`) and **MUSIC, arXiv:2601.13189v1** (`SRC_ARXIV_2601_13189`;
   addendum). *Resolve* the `muon-collider-mdi` author-list and fetch entries: MAIA (C. Bell et al.) has a 5 T solenoid
   "in contrast to the 3.57 T solenoid of the 3 TeV detector design", the nozzle edge at |η| = 2.44 ≈ 10° and L* = 6 m;
@@ -378,7 +378,7 @@ Still open (new):
   2026, ADM, AGH and SAIP listings and slides; the PTEP 2026 erratum text (`ME_016`); the HL-LHC TDR proton tables
   (`ME_044`); the LHeC CDR and 2020 update (`ME_046`) and arXiv:2503.20475; the Topp-Mugglestone thesis; IPAC'21
   WEPAB278; the Kraków contributions not uploaded (Otani `ME_008`, Piotrzkowski `ME_011`, Tentori `ME_012`, Holzer);
-  the μLHC AloHEP input decks (`ME_043`); the MR7 reference tables (being verified); every item of the
+  the μLHC AloHEP input decks (`ME_043`); the MR7 reference tables (verified and committed 2026-10-29); every item of the
   `theory-benchmarks` and `software-tools` families.
 - New, raised by the uploads: the nine conflict records listed at the top of this section, each with its own
   `required_future_evidence`; in particular a measured 122 + 355 nm ionisation efficiency, a 3D space-charge front-end

@@ -151,7 +151,8 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   6 cm), INERMET180 with a borated-polyethylene layer (material record `MAT_INERMET180_MR7`, Table
   G.2), L* = 6 m and the FLUKA BIB set-up (pp.65–66) are in `DET_NOZZLE_*_MR7`; MAIA and MUSIC were
   read as well. The MR7 reference tables for collider, proton driver, target, cooling, magnets, RF
-  and power converters are still being verified and are not in `parameters/`. Still unread:
+  and power converters are still being verified and are not in `parameters/`. *[Update 2026-10-29: verified and
+  committed; `docs/reports/M1_addendum_uploaded_documents.md` §A.8.]* Still unread:
   MuCol Report No. 5 (`SRC_ARXIV_2411_02966`), arXiv:2303.08533 and the IMCC BIB papers (§3a W10).
   The LHμC nozzle itself is now reported in workshop material (Kilic, Forthomme), so the IMCC values
   are comparators rather than the basis of a synthetic band.
@@ -364,7 +365,7 @@ extracted and adversarially verified (Kaya 148 records checked, Beer 78, Zhang 1
 Zhang et al. 2022 and the primary publication of the T = 322 K / D = 870 cm² s^-1 diffusion fit.]*
 
 Internal items that need no network and are not ranked here: verification of the MuCol MR7
-reference tables (held outside `parameters/` until their verifier runs); the owner's line-by-line
+reference tables (done 2026-10-29, report §A.8); the owner's line-by-line
 review of the headline tables (`RISK_028_HUMAN_REVIEW_PENDING`); building and running AloHEP v2.0 in an
 isolated container for the decks it does contain, as the first step of Benchmark 3.1.
 
@@ -415,7 +416,8 @@ parameter records added or corrected with verbatim quotations, conflicts recorde
 2. **Network allow-list:** arxiv.org, cds.cern.ch, indico.cern.ch, zenodo.org, doi.org; then fetch
    W3–W6 and W8–W10 in the order of §3a and run the fetch backlog of
    `research/unresolved_searches.md`.
-3. **Platform, no network:** finish the registry stage and the MR7 reference-table verification;
+3. **Platform, no network:** finish the registry stage and the MR7 reference-table verification (both done on
+   2026-10-29);
    prepare Benchmark 3.1 as a pre-registered test that runs AloHEP v2.0 (pinned commit, isolated
    build) on reconstructed μLHC decks for every option set, with the proton bunch length taken from
    `PROTON_BUNCH_LENGTH_RMS_SYN` and the one-beam decay average applied outside the code if the

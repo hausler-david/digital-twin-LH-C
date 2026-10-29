@@ -2616,7 +2616,7 @@ parameters:
     note: figure read; lowest populated bin at ≈ 1e-7 (within a factor ~1.5)
   allowed_range: null
   provenance:
-    status: reported_lhmuc
+    status: analytical_estimate
     extraction_method: manual_figure_read
     source:
       source_id: SRC_WS1681458_HEQCD_SMALLX
@@ -2629,7 +2629,7 @@ parameters:
       section: Dijet production in saturation formalism
       table_figure_or_equation: 'x-distribution panels: legend entries of the curves; value read off the x axis at the lowest populated bins'
       quotation: lead - xBj / proton - xBj
-    derivation: null
+    derivation: 'Manual reading of the slide-20 dijet x-distribution (''lead - xBj / proton - xBj'') on its logarithmic x axis: the lowest populated x_Bj bin lies at about 1e-7 (within a factor ~1.5); no number is printed for it. Status per research/source_quality_policy.md §5 rule 3 (numbers read off a plot axis are analytical_estimate, never reported_lhmuc); set by the lead on 2026-10-29 (previously reported_lhmuc).'
     applicability:
       category: screening_only
       scenario: null
@@ -2659,7 +2659,7 @@ parameters:
     note: figure read; lowest populated bin at ≈ 1.5e-5 (within a factor ~2)
   allowed_range: null
   provenance:
-    status: reported_lhmuc
+    status: analytical_estimate
     extraction_method: manual_figure_read
     source:
       source_id: SRC_WS1681458_HEQCD_SMALLX
@@ -2672,7 +2672,7 @@ parameters:
       section: Dijet production in saturation formalism
       table_figure_or_equation: 'x-distribution panels: legend entries of the curves; value read off the x axis at the lowest populated bins'
       quotation: lead - xg / proton - xg
-    derivation: null
+    derivation: 'Manual reading of the slide-20 dijet x-distribution (''lead - xg / proton - xg'') on its logarithmic x axis: the lowest populated gluon-x bin lies at about 1.5e-5 (within a factor ~2); no number is printed for it. Status per research/source_quality_policy.md §5 rule 3 (numbers read off a plot axis are analytical_estimate, never reported_lhmuc); set by the lead on 2026-10-29 (previously reported_lhmuc).'
     applicability:
       category: screening_only
       scenario: null

@@ -193,8 +193,8 @@ simulation", the rest are comparators or analogues.
 | Source-chain model | measured 2024 chain; formation fractions 0.52 and 0.655; the 0.73 calculation; μTRISTAN 0.137 budget; hybrid-target yield with η_conv unknown; hybrid-source 0.04 μ⁺/p; front-end space charge | `*_ARITOME2024`, `*_BAKULE2013`, `*_BEARE2020`, `*_ABE2019`, `*_WS2026_ZHANG`, `*_SAKAKI2026`, `*_WS2026_ROGERS`, `*_WS2026_NAKAZAWA` | measured 122 + 355 nm ionisation; extraction and second-stage cooling; a ≥ 10¹⁰ μ⁺ front-end design (`ME_030`–`ME_033`) |
 
 Not available and still blocking M2 exit: the μLHC AloHEP input decks (Benchmark 3.1), the LHμC
-proton bunch length and muon β*, and the MR7 reference tables (being verified, not in
-`parameters/`). M2 may start on the inputs above only after the M1 exit criteria are met (§1), with
+proton bunch length and muon β*. (The MR7 reference tables, listed here before, were verified and committed on
+2026-10-29; `docs/reports/M1_addendum_uploaded_documents.md` §A.8.) M2 may start on the inputs above only after the M1 exit criteria are met (§1), with
 every synthetic input carried as a range with its assumption record.
 
 ---
@@ -322,6 +322,7 @@ milestone is scheduled.
 | *2026-10-29:* **AloHEP model documented; μLHC input decks missing** (replaces the row above) | M2 Benchmark 3.1 | the decks and option set from the authors or the PTEP erratum | `ME_043`, `docs/tools/alohep_method_dagli2026.md` |
 | *2026-10-29:* Kraków contributions — **eleven uploaded**; Otani, Kamioka, Piotrzkowski, Tentori, Sultansoy, Holzer still missing (updates the Kraków row above) | M2 source/front end, M3 | Indico reachable or slides uploaded | `docs/research_roadmap.md` §3a W3 |
 | *2026-10-29:* **MR7 reference tables not yet verified** | M2 (IMCC analogues for driver, target, cooling, magnets, RF, power converters) | completion of the lead's verifier pass | cite `SRC_ARXIV_2510_27437` with a page meanwhile |
+| *2026-10-29 (later):* **MR7 reference tables verified and committed** (replaces the row above) | M2 | — | `docs/reports/M1_addendum_uploaded_documents.md` §A.8; `CONF_IMCC_*` |
 
 ---
 

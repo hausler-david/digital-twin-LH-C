@@ -30,10 +30,13 @@ def _f_decay_one_beam(e_gev: float, f_r: float) -> float:
 
 
 def test_mr7_beam_power_is_two_n_e_fr():
-    """Table A.1 beam power P_coll = 2 N E f_r (both beams, one bunch each): 14.4 MW at 10 TeV, 5.3 MW at 3 TeV."""
+    """Table A.1 beam power P_coll = 2 N E f_r (both beams, one bunch each): 14.4 MW at 10 TeV, 5.3 MW at 3 TeV. Table 6.1
+    (PDF p. 20) prints the per-beam half for 10 TeV, 'Injected beam power per beam' 7.2 MW = N E f_r (computed 7.21)."""
     for s in STAGES.values():
         p_mw = 2 * s["n"] * s["e_beam_gev"] * 1e9 * E_CHARGE * s["f_r"] / 1e6
         assert abs(p_mw / s["p_mw"] - 1) < 0.01
+    s10 = STAGES[10]
+    assert abs(s10["n"] * s10["e_beam_gev"] * 1e9 * E_CHARGE * s10["f_r"] / 1e6 / 7.2 - 1) < 0.005
 
 
 def test_mr7_ip_beam_size_from_emittance_and_beta_star():
@@ -54,9 +57,11 @@ def test_mr7_luminosity_lifetime_in_turns():
 def test_mr7_hourglass_factor_for_beta_star_equal_bunch_length():
     """A.1, PDF p. 37-38: 'The hourglass effect reduces the luminosity by a factor 0.76 for round beams with the
     beta-function and the rms bunch length being equal'; closed form √π u e^{u²} erfc(u) at u = β*/σ_z = 1 gives
-    0.7579, and the numerical double integral of lhmuc.analytical.hourglass_factor agrees."""
+    0.7579, and the numerical double integral of lhmuc.analytical.hourglass_factor agrees. Section 6 (PDF p. 19) prints
+    the same factor to three digits for β* = σ_z = 1.5 mm: 'fhg = 0.758'."""
     closed = math.sqrt(math.pi) * math.e * math.erfc(1.0)
     assert abs(closed - 0.76) < 0.005
+    assert round(closed, 3) == 0.758
     eps_geo = EPS_N / an.gamma(5000.0)
     numeric = an.hourglass_factor(1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, eps_geo, eps_geo, eps_geo, eps_geo)
     assert abs(numeric / closed - 1) < 2e-3

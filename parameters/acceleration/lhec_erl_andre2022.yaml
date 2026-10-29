@@ -901,7 +901,7 @@ parameters:
     note: graph reading on a logarithmic axis; no number is printed
   allowed_range: null
   provenance:
-    status: analogous
+    status: analytical_estimate
     extraction_method: manual_figure_read
     source:
       source_id: SRC_ARXIV_2201_02436
@@ -914,7 +914,7 @@ parameters:
       section: 4.1 Linac and RF system
       table_figure_or_equation: Fig. 10 (log-scale graph reading)
       quotation: Q0 (2K) ... Five-Cell Cavity ... E_acc (MV/m) [axis labels]; data points between 10^10 and 10^11 with the red cursor at ≈20 MV/m
-    derivation: null
+    derivation: 'Manual reading of Fig. 10 (p. 14), Q0 (2 K) against E_acc for the JLab five-cell prototype, at the red cursor (about 20 MV/m) on the logarithmic Q0 axis: about 4e10 (interval 3e10-5e10); no number is printed. Status per research/source_quality_policy.md §5 rule 3 (numbers read off a plot axis are analytical_estimate, never reported_lhmuc); set by the lead on 2026-10-29 (previously analogous).'
     applicability:
       category: screening_only
       scenario: LHEC-ANDRE2022-ERL-50GEV
@@ -946,7 +946,7 @@ parameters:
     note: graph reading against the 0/10/20 MV/m axis ticks; no number is printed
   allowed_range: null
   provenance:
-    status: analogous
+    status: analytical_estimate
     extraction_method: manual_figure_read
     source:
       source_id: SRC_ARXIV_2201_02436
@@ -959,7 +959,7 @@ parameters:
       section: 4.1 Linac and RF system
       table_figure_or_equation: Fig. 10 (graph reading of the 'quench limit' arrow)
       quotation: quench limit [annotation with an arrow at the last data points of the Five-Cell Cavity curve]
-    derivation: null
+    derivation: 'Manual reading of Fig. 10 (p. 14): the ''quench limit'' annotation points at the last data points of the five-cell curve, at about 30 MV/m against the 0/10/20 MV/m axis ticks (interval 28-32 MV/m); no number is printed. Status per research/source_quality_policy.md §5 rule 3 (numbers read off a plot axis are analytical_estimate, never reported_lhmuc); set by the lead on 2026-10-29 (previously analogous).'
     applicability:
       category: screening_only
       scenario: LHEC-ANDRE2022-ERL-50GEV

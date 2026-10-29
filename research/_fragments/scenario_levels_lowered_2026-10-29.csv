@@ -32,3 +32,5 @@ LHMUC-NUCL-MU-NE,parameters/machine/scenarios_nucleus.yaml,P1,P0,47,0,label exce
 LHMUC-WP-OPT1-500GEV,parameters/machine/scenarios_wp.yaml,P1,P0,4,0,label exceeds the minimum over its role records (docs/validation_plan.md §1 rule 3)
 LHMUC-WP-BASELINE-1TEV,parameters/machine/scenarios_wp.yaml,P1,P0,4,0,label exceeds the minimum over its role records (docs/validation_plan.md §1 rule 3)
 LHMUC-WP-OPT2-2TEV,parameters/machine/scenarios_wp.yaml,P1,P0,4,0,label exceeds the minimum over its role records (docs/validation_plan.md §1 rule 3)
+IMCC-MR7-10TEV,parameters/machine/scenarios_addendum_imcc.yaml,P1,P0,64,1,label exceeds the minimum over its role records (docs/validation_plan.md §1 rule 3)
+IMCC-MR7-3TEV,parameters/machine/scenarios_addendum_imcc.yaml,P1,P0,29,0,label exceeds the minimum over its role records (docs/validation_plan.md §1 rule 3)

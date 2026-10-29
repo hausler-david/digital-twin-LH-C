@@ -1,0 +1,204 @@
+# Scenarios added by the G7_IMCC_REFERENCE addendum extraction (2026-10-28). Schema: schemas/machine.schema.json. No numbers here: every role
+# references a parameter record, mostly in parameters/machine/imcc_mr7_collider_reference.yaml, parameters/source/imcc_mr7_proton_driver_target_
+# cooling.yaml, parameters/machine/imcc_mr7_magnets_rf_power_infrastructure.yaml and parameters/machine/imcc_ws2026_schulte_parameters.yaml, plus a
+# few MR7 records of the acceleration and MDI groups (named in the notes). machine IMCC; status reported for the 10 TeV baseline and
+# partially_reported for the 3 TeV stage, which MR7 covers only in a few tables (the values are reported by the IMCC for the IMCC machine; for
+# LHμC they are analogues); geometry fidelity G0 (no geometry exists). unknown_roles lists what the sources do not state.
+# VERIFIED 2026-10-29 by the G7A_MR7_COLLIDER adversarial verifier (research/_fragments/verify_G7A_MR7_COLLIDER.md): every role resolves to a
+# record holding the named quantity; the cooling-output roles now point to the MR7 chain tables (Table 1.2 targets, Table 1.3 estimates) instead
+# of the alternative short-rectilinear staging of Table D.13; the decay-only role was renamed because Table A.2 stops after 1000 collider turns;
+# the 3 TeV hourglass_factor now points to MR7's general β* = σ_z statement; every unknown role was re-searched in MR7 and the Schulte deck.
+scenarios:
+- scenario_id: IMCC-MR7-10TEV
+  label: IMCC/MuCol 10 TeV muon collider, consolidated baseline (MuCol Milestone Report 7, Table 1.1 / Table A.1 Stage 2)
+  description: 'Reference (analogue) muon-collider configuration for the LHμC digital twin: μ+μ− collisions at sqrt(s) = 10 TeV, 1.8e12 muons per bunch, one bunch per beam, 5 Hz, 25
+    µm normalised emittance, β* = σ_z = 1.5 mm (σ = 0.9 µm), 14 T arc peak field and an 11.4 km ring, estimated luminosity 18e34 cm^-2 s^-1 (decay-averaged, all targets met, beam-beam
+    included), two experiments; proton driver 5 GeV / 2 MW with 5e14 protons per bunch on a graphite target; rectilinear + final cooling to 22.5 µm. The MR7 values are ''ideal design
+    specifications that each subsystem aims to achieve'' (targets), with Table 1.3 estimates of what current simulations achieve. Several lattice-level roles (Table 6.1, Section 6,
+    Appendix A.1 analytic estimate) belong to the earlier ≈10 km / 16 T lattice and are marked as such. Three roles come from the Schulte workshop deck (collider dipole technology,
+    full-power total and the cost-chart marker) and are attributed there.'
+  machine: IMCC
+  design_version: MuCol Milestone Report No. 7 'Consolidated Parameters' (arXiv:2510.27437v1; document v1.0 Final, 30 Oct 2025), 10 TeV baseline after the ESPPU update (14 T arcs)
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_2510_27437
+  - SRC_WS1681458_SCHULTE_IMCC
+  parameters:
+    sqrt_s: MACHINE_SQRT_S_10TEV_MR7
+    muon_beam_energy: MACHINE_BEAM_ENERGY_TAB61_MR7
+    lorentz_factor: MACHINE_LORENTZ_FACTOR_TAB61_MR7
+    average_luminosity: MACHINE_ESTIMATED_LUMINOSITY_10TEV_MR7
+    geometric_luminosity: MACHINE_GEOMETRIC_LUMINOSITY_TARGET_TAB61_MR7
+    geometric_luminosity_relaxed: MACHINE_GEOMETRIC_LUMINOSITY_RELAXED_TAB61_MR7
+    luminosity_analytic: MACHINE_LUMINOSITY_ANALYTIC_10TEV_MR7
+    luminosity_beam_beam_simulation: MACHINE_LUMINOSITY_GUINEAPIG_10TEV_MR7
+    beam_beam_enhancement_max: MACHINE_BEAM_BEAM_ENHANCEMENT_MAX_10TEV_MR7
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_10TEV_MR7
+    integrated_luminosity_target: MACHINE_TARGET_INT_LUMI_10TEV_MR7
+    integrated_luminosity_per_year: MACHINE_INT_LUMI_PER_YEAR_10TEV_MR7
+    run_time_per_year: MACHINE_RUN_TIME_PER_YEAR_LUMI_MR7
+    number_of_ips: MACHINE_NUMBER_OF_EXPERIMENTS_10TEV_MR7
+    repetition_rate: MACHINE_REPETITION_RATE_10TEV_MR7
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_10TEV_MR7
+    muon_bunches: MACHINE_RAD_STUDY_BUNCHES_PER_BEAM_10TEV_MR7
+    beam_power: MACHINE_BEAM_POWER_10TEV_MR7
+    injected_beam_power_per_beam: MACHINE_INJECTED_BEAM_POWER_PER_BEAM_TAB61_MR7
+    main_ring_circumference: MACHINE_COLLIDER_CIRCUMFERENCE_10TEV_MR7
+    main_ring_circumference_16t_lattice: MACHINE_CIRCUMFERENCE_APPROX_TAB61_MR7
+    main_ring_dipole_field: MACHINE_COLLIDER_ARC_PEAK_FIELD_10TEV_MR7
+    main_ring_dipole_field_lattice: MACHINE_LATTICE_ARC_PEAK_FIELD_ASSUMED_MR7
+    main_ring_average_bending_field: MACHINE_AVG_BENDING_FIELD_SEC6_10TEV_MR7
+    luminosity_lifetime_turns: MACHINE_LUMINOSITY_LIFETIME_TURNS_10TEV_MR7
+    muon_norm_emittance: MACHINE_NORM_TRANS_EMITTANCE_10TEV_MR7
+    muon_long_emittance: MACHINE_LONG_EMITTANCE_10TEV_MR7
+    muon_bunch_length: IR_BUNCH_LENGTH_IP_10TEV_MR7
+    muon_energy_spread: MACHINE_REL_MOMENTUM_SPREAD_TARGET_TAB61_MR7
+    beta_x_star_muon: IR_BETA_STAR_10TEV_MR7
+    beta_y_star_muon: IR_BETA_STAR_10TEV_MR7
+    sigma_x_ip: IR_SIGMA_IP_10TEV_MR7
+    sigma_y_ip: IR_SIGMA_IP_10TEV_MR7
+    l_star: MACHINE_DIST_LAST_MAGNET_TO_IP_TAB61_MR7
+    energy_loss_per_turn: MACHINE_ENERGY_LOSS_PER_TURN_TAB61_MR7
+    rf_voltage: MACHINE_INTEGRATED_RF_VOLTAGE_TAB61_MR7
+    momentum_compaction: MACHINE_IMPEDANCE_MOMENTUM_COMPACTION_TABK3_MR7
+    required_chromaticity: MACHINE_IMPEDANCE_COLLIDER_CHROMATICITY_REQUIRED_MR7
+    arc_shielding_thickness: MACHINE_ARC_DIPOLE_TUNGSTEN_ABSORBER_THICKNESS_MR7
+    arc_coil_inner_radius: MACHINE_ARC_DIPOLE_COIL_CLEARANCE_OUTER_RADIUS_MR7
+    arc_magnet_operating_temperature: MACHINE_ARC_SHIELDING_OPERATING_TEMPERATURE_MR7
+    muon_decay_rate_per_m: MACHINE_RAD_STUDY_DECAY_RATE_PER_M_10TEV_MR7
+    decay_epm_power_per_m: MACHINE_RAD_STUDY_EPM_POWER_PER_M_10TEV_MR7
+    nozzle_outer_angle_near_ip: DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7
+    nozzle_tip_distance: DET_NOZZLE_TIP_DISTANCE_MR7
+    nozzle_length: DET_NOZZLE_LENGTH_MR7
+    proton_driver_power: SOURCE_PD_LINAC_BEAM_POWER_5GEV_MR7
+    proton_beam_energy: SOURCE_PROTON_ENERGY_ON_TARGET_10TEV_MR7
+    protons_on_target_per_bunch: SOURCE_PROTONS_ON_TARGET_PER_BUNCH_10TEV_MR7
+    target_material: SOURCE_TARGET_MATERIAL_BASELINE_MR7
+    front_end_mu_minus_yield: SOURCE_FE_OUTGOING_MUMINUS_YIELD_MR7
+    cooling_output_emittance_transverse: MACHINE_CHAIN_FINAL_COOLING_TARGET_EPS_T_MR7
+    cooling_output_emittance_longitudinal: MACHINE_CHAIN_FINAL_COOLING_TARGET_EPS_L_MR7
+    cooling_output_emittance_transverse_estimated: MACHINE_CHAIN_FINAL_COOLING_EST_EPS_T_MR7
+    cooling_output_emittance_longitudinal_estimated: MACHINE_CHAIN_FINAL_COOLING_EST_EPS_L_MR7
+    target_mu_per_bunch_after_cooling: MACHINE_CHAIN_PRE_ACC_TARGET_MU_PER_BUNCH_MR7
+    estimated_mu_per_bunch_after_cooling: MACHINE_CHAIN_PRE_ACC_EST_MU_PER_BUNCH_MR7
+    estimated_mu_per_bunch_at_collider: MACHINE_CHAIN_COLLIDER_10TEV_EST_MU_PER_BUNCH_MR7
+    booster_injection_energy: ACC_RCS1_INJECTION_ENERGY_MR7
+    collider_injection_energy: ACC_RCS4_EXTRACTION_ENERGY_MR7
+    booster_survival: ACC_RCS4_CUMULATIVE_SURVIVAL_RATE_MR7
+    decay_only_cumulative_transmission_1000_collider_turns: MACHINE_DECAY_COLLIDER_CUM_TRANSMISSION_MR7
+    rcs_rf_wall_plug_power: ACC_RF_RCS_GF_ALL_AVG_WALL_PLUG_POWER_MR7
+    collider_dipole_technology: MACHINE_IMCC_COLLIDER_TECHNOLOGY_10TEV_P7_WS2026_SCHULTE
+    wall_plug_power: INFRA_IMCC_POWER_TOTAL_10TEV_P21_WS2026_SCHULTE
+    cost_central: INFRA_IMCC_COST_10TEV_GREENFIELD_CENTRAL_P21_WS2026_SCHULTE
+  unknown_roles:
+  - peak_luminosity
+  - crossing_angle
+  - collision_rate
+  - main_ring_revolution_period
+  - muon_polarisation
+  - beam_beam_tune_shift
+  - energy_acceptance
+  - target_operation_temperature
+  - target_lifetime
+  geometry_fidelity: G0
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
+  notes: 'Verified 2026-10-29 (research/_fragments/verify_G7A_MR7_COLLIDER.md). Role records pinned at P1 by tests/scientific/test_imcc_mr7_reference.py:
+    beam_power (2NEf_r), sigma_x_ip / sigma_y_ip (√(β*ε_n/γ)), luminosity_lifetime_turns (γτc/2C), luminosity_analytic (eq. A.9) and integrated_luminosity_per_year;
+    the scenario stays P0 because most role records are P0 (docs/validation_plan.md §1 rule 3). Reproduced by verifier arithmetic only (P0): the Table 6.1 geometric
+    luminosities (C = 10 km, linearised decay factor, F_HG 0.758), hourglass_factor 0.758, injected_beam_power_per_beam, lorentz_factor, main_ring_average_bending_field
+    and decay_epm_power_per_m. Not reproduced, confidence low in the records: energy_loss_per_turn (≈ 27.2 MeV printed; 29.0 MeV for the stated constant 16 T, 25.4
+    MeV for 14 T), muon_decay_rate_per_m (1.8e9 /m/s needs C = 10 km, its own column says 11.4 km) and cooling_output_emittance_longitudinal (22.9 eV ms, while MR7
+    itself states "64 mm = 0.0225 eVs" for the same target). Design iterations coexist and are not averaged: main_ring_circumference 11.4 km (14 T; Tables 1.1, A.1,
+    1.2, 12.2) vs main_ring_circumference_16t_lattice ≈ 10 km (Table 6.1, Section 6 with B̄ ≈ 10.48 T); the geometric luminosities, the A.1 analytic estimate (B_avg 10.5 T
+    ↔ C = 9.98 km), main_ring_dipole_field_lattice, energy_loss_per_turn and rf_voltage belong to the ≈10 km / 16 T lattice; Tables A.2, 11.3, K.3 and M.1 use 10 000 m.
+    Cross-source conflicts (not averaged; registered 2026-10-29 as CONF_IMCC_LUMINOSITY_MR7_VS_WS2026, CONF_IMCC_MUON_CHAIN_SNAPSHOTS and
+    CONF_IMCC_COLLIDER_CIRCUMFERENCE): average_luminosity 18e34 (MR7) vs L/IP 17.5e34 in the Schulte deck (slides 3, 7, 28, 38); target μ−/bunch after
+    the pre-accelerator 3.6e12 (MR7 Table 1.2) vs 4.0e12, and estimated 2.5e12 vs "Achieved" 2.8e12, at the 10 TeV collider 1.4e12 vs 1.5e12 (Schulte slide 8).
+    average_luminosity is the IMCC "estimated luminosity" (decay-averaged with one bunch per beam, all targets reached, beam-beam included); the instantaneous peak is
+    not tabulated. MR7 states no crossing angle (the A.1 analytic estimate assumes "No crossing angle"), collision rate or revolution period (both derivable from C,
+    not printed), no polarisation, no beam-beam tune shift (only "the disruption parameter is of the order of 1"), no achieved energy acceptance (Schulte slide 18:
+    the lattice reaches the target beta-functions "but not yet full target energy acceptance"), and explicitly no target "operation temperature, mechanical response
+    and life-time" (App. C.1). The cooling-output roles point to the Table 1.2 targets and the Table 1.3 estimates (22.5 µm; 7.7 eV ms, long-rectilinear option, the
+    one Table 1.3 uses); the short-rectilinear Table D.13 output (0.0224 mm, 42.68 mm) is an alternative staging and is no longer mapped.
+    decay_only_cumulative_transmission_1000_collider_turns is the Table A.2 decay-only cumulative after 1000 turns of a 10 000 m ring (11 %), not the end of the
+    store. booster_injection_energy, collider_injection_energy and booster_survival point to the acceleration group''s MR7 Table 5.1 records, the nozzle roles to the
+    MDI group''s MR7 records, momentum_compaction (0) to the impedance-model Table K.3 (C = 10 000 m), wall_plug_power and cost_central to Schulte slide 21 (10 TeV
+    column of the full-power table; red marker of the "10 TeV Green Field" cost bar, a figure read). The full-power table names no site for its 10 TeV
+    column (probably the green-field design, verify_G7D_SCHULTE_DECK.md); the cost_central record is an analytical_estimate (axis read, research/source_quality_policy.md
+    §5 rule 3) at confidence low. Analogue configuration: none of these values is an LHμC value.'
+- scenario_id: IMCC-MR7-3TEV
+  label: IMCC/MuCol 3 TeV first-stage muon collider (MuCol Milestone Report 7, Table A.1 Stage 1)
+  description: 'Reference (analogue) first-stage configuration: sqrt(s) = 3 TeV, 2.2e12 muons per bunch, one bunch per beam, 5 Hz, 25 µm, β* = σ_z = 5 mm (σ = 3 µm), 11 T arcs (Nb3Sn,
+    40 mm shielding for LTS), 4.5 km ring, estimated luminosity 2.1e34 cm^-2 s^-1 and 1 ab^-1 target, same 5 GeV / 5e14 proton driver. MR7 lists this stage only in Table A.1, Table 12.2,
+    the 3 TeV collider rows of Tables 1.2/1.3, the Table 6.2 caption and one Appendix A.1 sentence (''this report only considers the final product''); the lattice-level quantities
+    of Table 6.1 exist only for 10 TeV.'
+  machine: IMCC
+  design_version: MuCol Milestone Report No. 7 'Consolidated Parameters' (arXiv:2510.27437v1; document v1.0 Final, 30 Oct 2025), Table A.1 Stage 1
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2510_27437
+  - SRC_WS1681458_SCHULTE_IMCC
+  parameters:
+    sqrt_s: MACHINE_SQRT_S_3TEV_MR7
+    muon_beam_energy: MACHINE_RAD_STUDY_PARTICLE_ENERGY_3TEV_MR7
+    average_luminosity: MACHINE_ESTIMATED_LUMINOSITY_3TEV_MR7
+    integrated_luminosity_target: MACHINE_TARGET_INT_LUMI_3TEV_MR7
+    repetition_rate: MACHINE_REPETITION_RATE_3TEV_MR7
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_3TEV_MR7
+    muon_bunches: MACHINE_RAD_STUDY_BUNCHES_PER_BEAM_3TEV_MR7
+    beam_power: MACHINE_BEAM_POWER_3TEV_MR7
+    main_ring_circumference: MACHINE_COLLIDER_CIRCUMFERENCE_3TEV_MR7
+    main_ring_dipole_field: MACHINE_COLLIDER_ARC_PEAK_FIELD_3TEV_MR7
+    luminosity_lifetime_turns: MACHINE_LUMINOSITY_LIFETIME_TURNS_3TEV_MR7
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_BETA_EQ_SIGMAZ_MR7
+    muon_norm_emittance: MACHINE_NORM_TRANS_EMITTANCE_3TEV_MR7
+    muon_long_emittance: MACHINE_LONG_EMITTANCE_3TEV_MR7
+    muon_bunch_length: IR_BUNCH_LENGTH_IP_3TEV_MR7
+    beta_x_star_muon: IR_BETA_STAR_3TEV_MR7
+    beta_y_star_muon: IR_BETA_STAR_3TEV_MR7
+    sigma_x_ip: IR_SIGMA_IP_3TEV_MR7
+    sigma_y_ip: IR_SIGMA_IP_3TEV_MR7
+    arc_shielding_thickness: MACHINE_ARC_SHIELDING_THICKNESS_3TEV_LTS_MR7
+    muon_decay_rate_per_m: MACHINE_RAD_STUDY_DECAY_RATE_PER_M_3TEV_MR7
+    decay_epm_power_per_m: MACHINE_RAD_STUDY_EPM_POWER_PER_M_3TEV_MR7
+    proton_beam_energy: SOURCE_PROTON_ENERGY_ON_TARGET_3TEV_MR7
+    protons_on_target_per_bunch: SOURCE_PROTONS_ON_TARGET_PER_BUNCH_3TEV_MR7
+    proton_driver_power: SOURCE_PD_LINAC_BEAM_POWER_5GEV_MR7
+    target_mu_per_bunch_at_collider: MACHINE_CHAIN_COLLIDER_3TEV_TARGET_MU_PER_BUNCH_MR7
+    estimated_mu_per_bunch_at_collider: MACHINE_CHAIN_COLLIDER_3TEV_EST_MU_PER_BUNCH_MR7
+    collider_injection_energy: MACHINE_CHAIN_RCS3_ENERGY_OUT_MR7
+    magnet_technology_assessment: MACHINE_MAGNET_NB3SN_ASSESSMENT_MR7
+    collider_dipole_technology: MACHINE_IMCC_COLLIDER_TECHNOLOGY_3TEV_P7_WS2026_SCHULTE
+  unknown_roles:
+  - peak_luminosity
+  - crossing_angle
+  - collision_rate
+  - geometric_luminosity
+  - muon_energy_spread
+  - l_star
+  - energy_loss_per_turn
+  - rf_voltage
+  - integrated_luminosity_per_year
+  - main_ring_revolution_period
+  - muon_polarisation
+  - beam_beam_tune_shift
+  - wall_plug_power
+  - cost_central
+  geometry_fidelity: G0
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
+  notes: 'Verified 2026-10-29 (research/_fragments/verify_G7A_MR7_COLLIDER.md). Pinned at P1 by tests/scientific/test_imcc_mr7_reference.py: beam_power 5.3 MW,
+    sigma_x_ip / sigma_y_ip 3 µm, luminosity_lifetime_turns 1039 and hourglass_factor 0.76; the scenario stays P0 (minimum over its role records). Reproduced by
+    verifier arithmetic only (P0): muon_decay_rate_per_m 4.9e9 /m/s (2Nf_r/C with C = 4.5 km) and decay_epm_power_per_m 0.411 kW/m (mean e± energy fraction 7/20,
+    which MR7 does not state). hourglass_factor points to MR7''s general statement ("a factor 0.76 for round beams with the beta-function and the rms bunch length
+    being equal"); Table A.1 Stage 1 has β* = σ_z = 5 mm, so it applies, but MR7 prints no 3 TeV-specific value. Conflicts preserved, not averaged (CONF_IMCC_LUMINOSITY_MR7_VS_WS2026,
+    CONF_IMCC_MUON_CHAIN_SNAPSHOTS): MR7 Table A.1
+    estimated luminosity 2.1e34 vs Schulte deck L/IP 1.8e34 (slides 3, 7, 28, 38); Schulte slide 8 gives "Achieved" 1.7e12 μ−/bunch at the 3 TeV collider vs MR7
+    Table 1.3''s estimated 1.5e12. MR7 covers this stage only in Table A.1, Table 12.2, the 3 TeV collider rows of Tables 1.2/1.3, the Table 6.2 caption (40 mm
+    shielding for low-temperature superconductor at 3 TeV) and Appendix A.1 ("For the 3 TeV parameters the disruption is higher"); the main text "only considers the
+    final product" (10 TeV), hence status partially_reported. Not printed for 3 TeV (unknown_roles): geometric luminosity, energy spread (ε_l/(σ_z/c)/E gives 0.1 %,
+    derivable but not printed), L*, energy loss per turn, RF voltage, integrated luminosity per year (Schulte gives only an accumulation time of 2+2.8 years for 1
+    ab^-1 with two IPs), revolution period and collision rate (derivable from C, not printed), polarisation, beam-beam tune shift, wall-plug power and cost (Schulte
+    slides 20-21 give only the 3.2 TeV CERN-site variant, a different configuration, not mapped). collider_dipole_technology (Nb3Sn) is from the Schulte deck slide 7;
+    MR7 Appendix H states Nb3Sn is "suitable for ∼ 3 TeV machines". Analogue configuration: none of these values is an LHμC value.'
