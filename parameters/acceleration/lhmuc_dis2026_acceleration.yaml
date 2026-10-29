@@ -18,7 +18,7 @@ parameters:
       applicability: {category: direct, scenario: null, explanation: "Applies to both energy options; consistent with the 'GeV energy' pre-acceleration target (SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026)."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "gamma(1 GeV) = 9.46, tau_lab = 20.8 us (lhmuc.analytical.tau_lab_s): sets the scale of the decay losses at injection"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "gamma(1 GeV) = 9.46, tau_lab = 20.8 us (lhmuc.analytical.tau_lab_s): sets the scale of the decay losses at injection"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/acceleration
@@ -179,7 +179,7 @@ parameters:
       applicability: {category: direct, scenario: null, explanation: "Same booster for both energy options (the sentence covers '1(2) TeV'). The paper states the booster re-uses the LHeC ERL infrastructure (abstract, p.2, Fig. 2 caption) but does not say whether the 9 km figure is the LHeC racetrack circumference; the origin of the number is not given in this source."}
       confidence: medium
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "revolution period C/c = 30.0 us; 50 turns (μLHC ERL-booster assumption) would take 1.5 ms, comparable to the ~20 ms lab lifetime at 1 TeV but ~70 lifetimes at 1 GeV: decay during early turns dominates (audit note)"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "revolution period C/c = 30.0 us; 50 turns (μLHC ERL-booster assumption) would take 1.5 ms, comparable to the ~20 ms lab lifetime at 1 TeV but ~70 lifetimes at 1 GeV: decay during early turns dominates (audit note)"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/acceleration

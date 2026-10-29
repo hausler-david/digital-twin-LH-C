@@ -291,7 +291,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1.0e34 * 1e7 s = 100 fb^-1'
     check_ids: []
@@ -334,7 +334,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 2*sqrt(20 GeV * 7000 GeV) = 748 GeV'
     check_ids: []
@@ -420,7 +420,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 6.0e33 * 1e7 s = 60 fb^-1'
     check_ids: []
@@ -462,7 +462,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 2*sqrt(50 GeV * 7000 GeV) = 1183 GeV'
     check_ids: []
@@ -546,7 +546,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1.4e33 * 1e7 s = 14 fb^-1'
     check_ids: []
@@ -719,7 +719,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: x = Q^2/(4 E_mu E_p) = 10/(4*1000*7000) = 3.57e-7'
     check_ids: []
@@ -764,7 +764,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: Q^2 = 4*1e-4*1000*7000 = 2800 GeV^2'
     check_ids: []
@@ -808,7 +808,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 10/(0.319e3)^2 = 9.8e-5'
     check_ids: []
@@ -892,7 +892,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 10/(0.145e3)^2 = 4.76e-4 (consistent with sqrt(s) = 0.145 TeV, not 0.105 TeV)'
     check_ids: []
@@ -934,7 +934,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1e-4*(145 GeV)^2 = 2.1 GeV^2'
     check_ids: []
@@ -977,7 +977,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 10/(4*20*7000) = 1.79e-5'
     check_ids: []
@@ -1020,7 +1020,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 4e-4*20*7000 = 56 GeV^2'
     check_ids: []
@@ -1062,7 +1062,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 10/(4*50*7000) = 7.14e-6'
     check_ids: []
@@ -1104,7 +1104,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 4e-4*50*7000 = 140 GeV^2'
     check_ids: []
@@ -1148,7 +1148,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: implies sigma(WW->H) = 33900/88 fb^-1 = 385 fb; ERL row gives 382 fb (consistent to 1%)'
     check_ids: []
@@ -1193,7 +1193,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: implies sigma(ZZ->H) = 6600/88 = 75 fb; ERL row gives 76 fb'
     check_ids: []
@@ -1238,7 +1238,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 33900 * 72/88 = 27736 ≈ 27500 (rounding)'
     check_ids: []
@@ -1284,7 +1284,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 6600 * 72/88 = 5400 ≈ 5500 (rounding)'
     check_ids: []
@@ -1332,7 +1332,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: ERL row gives 27500/72 = 382 fb, agreement to 1%'
     check_ids: []
@@ -1379,7 +1379,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: ERL row gives 5500/72 = 76 fb'
     check_ids: []
@@ -2598,7 +2598,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 2*sqrt(50 GeV * 7000 GeV) = 1183 GeV ≈ 1.2 TeV'
     check_ids: []

@@ -4132,7 +4132,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): the formula evaluated at 10 and 400 GeV gives σ/E = 2.70 % and 0.53 %, matching the plotted points (≈0.027 and ≈0.0054) in Fig. 8 (right)'
     check_ids: []
@@ -4178,7 +4178,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): the formula evaluated at 10 and 400 GeV gives σ/E = 2.70 % and 0.53 %, matching the plotted points in Fig. 8 (right)'
     check_ids: []
@@ -4303,7 +4303,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction); the plotted point at 10 GeV in Fig. 8 (right) reads ≈ 0.027
     check_ids: []
@@ -4347,7 +4347,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction); the plotted point at 400 GeV in Fig. 8 (right) reads ≈ 0.0054
     check_ids: []

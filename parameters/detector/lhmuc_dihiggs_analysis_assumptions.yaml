@@ -679,7 +679,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced: (0.01)^2 x (0.7)^2 = 4.90e-05'
     check_ids: []
@@ -724,7 +724,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced: (0.01)^2 x (0.6)^2 = 3.60e-05'
     check_ids: []
@@ -769,7 +769,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced: (0.01)^2 x (0.9)^2 = 8.10e-05'
     check_ids: []

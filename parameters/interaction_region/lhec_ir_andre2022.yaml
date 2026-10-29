@@ -127,7 +127,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction)
     check_ids: []

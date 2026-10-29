@@ -259,7 +259,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: c / 26.659 km = 11245 Hz (c / 26.7 km = 11228 Hz, 0.15% off due to the rounded circumference)'
     check_ids: []
@@ -435,7 +435,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical cross-check: sqrt(beta* eps_n/gamma_p) = sqrt(0.07 m * 2e-6 m / 7461) = 4.33 um — reproduces 4.3 um from Table 2'
     check_ids: []
@@ -481,7 +481,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: sqrt(0.07 m * 2e-6 m / 7461) = 4.33 um'
     check_ids: []
@@ -526,7 +526,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical (verifier): xi_p = N_mu r_p beta*_p / (2 pi gamma_p sigma (sigma_x + sigma_y)) with N_mu = 3.7e10, beta*_p = 7 cm, gamma_p =
       7461, sigma = 4.3 um gives 2.29e-3 = 22.9e-4 (printed 22e-4)'
@@ -573,7 +573,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: ratio 18/22 = 0.82 equals N_mu ratio 3.0/3.7 = 0.81 (tune shift linear in opposing bunch population)'
     - 'analytical (verifier): same formula with N_mu = 3.0e10 gives 1.86e-3 = 18.6e-4 (printed 18e-4)'

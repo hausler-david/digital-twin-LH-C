@@ -203,7 +203,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1000 x 2760) GeV = 3322 GeV'
     check_ids: []
@@ -245,7 +245,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(50 x 2760) GeV = 743 GeV'
     check_ids: []
@@ -287,7 +287,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(18 x 275) GeV = 141 GeV'
     check_ids: []
@@ -494,7 +494,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 3320 / 140 = 23.7'
     check_ids: []
@@ -537,7 +537,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 3320 / 743 = 4.47'
     check_ids: []
@@ -621,7 +621,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: x = Q^2 / (s y) with s = (3322 GeV)^2 = 1.104e7 GeV^2 and y = 1 gives 9.06e-7'
     check_ids: []
@@ -664,7 +664,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 10 GeV^2 / (743 GeV)^2 = 1.81e-5'
     check_ids: []
@@ -707,7 +707,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 10 GeV^2 / (140 GeV)^2 = 5.1e-4; the stated 1.3e-3 is 2.5x larger, i.e. not at y = 1 (the deck does not say which y or acceptance it assumes)'
     check_ids: []

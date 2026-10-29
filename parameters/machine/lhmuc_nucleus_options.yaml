@@ -40,7 +40,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - 'reproduced by hand: 2*sqrt(1 TeV x 7 TeV) = 5.29 TeV'
@@ -82,7 +82,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the sqrt(s) reproductions of MACHINE_SQRT_S_NUCL_* and MACHINE_SQRT_S_PER_NUCLEON_NUCL_*
@@ -124,7 +124,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the 5.3 TeV reproduction
@@ -166,7 +166,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 5.29 TeV / 1.18 TeV (LHeC ep, 50 GeV x 7 TeV: 2*sqrt(50*7000) GeV = 1.183 TeV) = 4.47'
     check_ids: []
@@ -287,7 +287,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 7.2e33 cm^-2 s^-1 x 1e7 s = 7.2e40 cm^-2 = 72 fb^-1 (ERL-based value)'
     check_ids: []
@@ -970,7 +970,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 4.5e10 x 1.602e-19 C = 7.2 nC (SOURCE_LINAC_BUNCH_CHARGE_NUCL); 4.5e10 x 0.67 = 3.0e10'
     check_ids: []
@@ -1011,7 +1011,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 4.5e10 x 1.602e-19 C = 7.21 nC'
     check_ids: []
@@ -1134,7 +1134,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 50 turns x 20 GeV per turn = 1000 GeV (ACCEL_BOOSTER_TURNS_NUCL, ACCEL_BOOSTER_ENERGY_PER_TURN_NUCL)'
     check_ids: []
@@ -1217,7 +1217,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: racetrack of 2 x 1 km linacs + 2 arcs of radius 1 km = 2 + 2*pi km = 8.28 km per turn; 50 turns = 414 km; / c = 1.38 ms'
     check_ids: []
@@ -1381,7 +1381,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2 linacs x 10 GeV = 20 GeV'
     check_ids: []
@@ -1424,7 +1424,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: (1000 - 0.212) GeV / 20 GeV per turn = 50 turns'
     check_ids: []
@@ -1585,7 +1585,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 3.0e10 / 4.5e10 = 0.667'
     check_ids: []
@@ -1868,7 +1868,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 40 bunches / (3 km / c = 10.0 us revolution period) = 4.0 MHz'
     check_ids: []
@@ -1952,7 +1952,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: gamma*tau_mu = (1e6/105.66) x 2.197 us = 20.8 ms'
     check_ids: []
@@ -1995,7 +1995,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 20.8 ms / 10.0 us = 2080 turns'
     check_ids: []
@@ -2039,7 +2039,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: (tau/T)(1 - exp(-T/tau)) with tau = 20.8 ms, T = 1/50 Hz = 20 ms gives 0.642'
     check_ids: []
@@ -2214,7 +2214,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.30 nm x 0.10 m) = 5.48 um (Xe)'
     check_ids: []
@@ -2259,7 +2259,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.62 nm x 0.10 m) = 7.87 um (Ne)'
     check_ids: []
@@ -2505,7 +2505,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1000 GeV x 2760 GeV) = 3.32 TeV'
     check_ids: []
@@ -2546,7 +2546,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -2590,7 +2590,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: min(4 MHz, 1200 x 11.245 kHz = 13.494 MHz) = 4.0 MHz'
     check_ids: []
@@ -2634,7 +2634,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 574.0 TeV) = 47.92 TeV'
     check_ids: []
@@ -2677,7 +2677,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 2.76 TeV) = 3.323 TeV'
     check_ids: []
@@ -2720,7 +2720,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 0.64 x f_c N_mu N_A / (4 pi sigma^2) = 0.64 x 4.0e6 x 3.0e10 x 1.80e+08 / (4 pi (7.14 um)^2) = 2.16e+30 cm^-2 s^-1 (round beams, no hourglass)'
     check_ids: []
@@ -2766,7 +2766,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: A x L = 208 x 2.16e+30 = 4.49e+32 cm^-2 s^-1'
     check_ids: []
@@ -2809,7 +2809,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.51 nm x 0.10 m) = 7.14 um'
     check_ids: []
@@ -2852,7 +2852,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~2%: xi_mu = Z N_A r_mu beta*_mu / (4 pi gamma_mu sigma^2) with r_mu = 1.3685e-17 m, gamma_mu = 9464.6, beta*_mu = MACHINE_MU_BETA_STAR_MATCHED_NUCL_PB'
     check_ids: []
@@ -2897,7 +2897,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~1%: xi_A = N_mu (Z^2/A) r_p beta*_A / (4 pi gamma_A sigma^2) with r_p = 1.535e-18 m, gamma_A = E_A/(A x 0.9315 GeV)'
     check_ids: []
@@ -2943,7 +2943,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: xi_A / 0.01 = 7.89 vs stated 8'
     check_ids: []
@@ -2986,7 +2986,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -3030,7 +3030,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: before value 449e30 / reduction 8 = 56.1e30 vs stated 56.9e30 (AloHEP recomputation, not exact scaling)'
     check_ids: []
@@ -3073,7 +3073,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -3118,7 +3118,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: min(4 MHz, 16 x 11.245 kHz = 0.180 MHz) = 0.18 MHz'
     check_ids: []
@@ -3162,7 +3162,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 350.88 TeV) = 37.46 TeV'
     check_ids: []
@@ -3205,7 +3205,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 2.72 TeV) = 3.298 TeV'
     check_ids: []
@@ -3248,7 +3248,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 0.64 x f_c N_mu N_A / (4 pi sigma^2) = 0.64 x 0.18e6 x 3.0e10 x 2.70e+08 / (4 pi (5.48 um)^2) = 2.47e+29 cm^-2 s^-1 (round beams, no hourglass)'
     check_ids: []
@@ -3294,7 +3294,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: A x L = 129 x 2.48e+29 = 3.2e+31 cm^-2 s^-1'
     check_ids: []
@@ -3337,7 +3337,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.3 nm x 0.10 m) = 5.48 um'
     check_ids: []
@@ -3380,7 +3380,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~2%: xi_mu = Z N_A r_mu beta*_mu / (4 pi gamma_mu sigma^2) with r_mu = 1.3685e-17 m, gamma_mu = 9464.6, beta*_mu = MACHINE_MU_BETA_STAR_MATCHED_NUCL_XE'
     check_ids: []
@@ -3425,7 +3425,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~1%: xi_A = N_mu (Z^2/A) r_p beta*_A / (4 pi gamma_A sigma^2) with r_p = 1.535e-18 m, gamma_A = E_A/(A x 0.9315 GeV)'
     check_ids: []
@@ -3471,7 +3471,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: xi_A / 0.01 = 9.52 vs stated 10'
     check_ids: []
@@ -3514,7 +3514,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -3558,7 +3558,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: before value 32e30 / reduction 10 = 3.2e30 vs stated 3.36e30 (AloHEP recomputation, not exact scaling)'
     check_ids: []
@@ -3601,7 +3601,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -3646,7 +3646,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: min(4 MHz, 62 x 11.245 kHz = 0.697 MHz) = 0.7 MHz'
     check_ids: []
@@ -3690,7 +3690,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 42.88 TeV) = 13.10 TeV'
     check_ids: []
@@ -3733,7 +3733,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 2.68 TeV) = 3.274 TeV'
     check_ids: []
@@ -3776,7 +3776,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 0.64 x f_c N_mu N_A / (4 pi sigma^2) = 0.64 x 0.7e6 x 3.0e10 x 2.90e+09 / (4 pi (6.78 um)^2) = 6.75e+30 cm^-2 s^-1 (round beams, no hourglass)'
     check_ids: []
@@ -3822,7 +3822,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: A x L = 16 x 6.73e+30 = 1.08e+32 cm^-2 s^-1'
     check_ids: []
@@ -3865,7 +3865,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.46 nm x 0.10 m) = 6.78 um'
     check_ids: []
@@ -3908,7 +3908,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~2%: xi_mu = Z N_A r_mu beta*_mu / (4 pi gamma_mu sigma^2) with r_mu = 1.3685e-17 m, gamma_mu = 9464.6, beta*_mu = MACHINE_MU_BETA_STAR_MATCHED_NUCL_O'
     check_ids: []
@@ -3953,7 +3953,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~1%: xi_A = N_mu (Z^2/A) r_p beta*_A / (4 pi gamma_A sigma^2) with r_p = 1.535e-18 m, gamma_A = E_A/(A x 0.9315 GeV)'
     check_ids: []
@@ -3999,7 +3999,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: xi_A / 0.01 = 1.12 vs stated 1.12'
     check_ids: []
@@ -4042,7 +4042,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -4086,7 +4086,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: before value 108e30 / reduction 1.12 = 96.4e30 vs stated 96.1e30 (AloHEP recomputation, not exact scaling)'
     check_ids: []
@@ -4129,7 +4129,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -4174,7 +4174,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: min(4 MHz, 62 x 11.245 kHz = 0.697 MHz) = 0.7 MHz'
     check_ids: []
@@ -4218,7 +4218,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 53.6 TeV) = 14.64 TeV'
     check_ids: []
@@ -4261,7 +4261,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 2*sqrt(1 TeV x 2.68 TeV) = 3.274 TeV'
     check_ids: []
@@ -4304,7 +4304,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: 0.64 x f_c N_mu N_A / (4 pi sigma^2) = 0.64 x 0.7e6 x 3.0e10 x 2.00e+09 / (4 pi (7.87 um)^2) = 3.45e+30 cm^-2 s^-1 (round beams, no hourglass)'
     check_ids: []
@@ -4350,7 +4350,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: A x L = 20 x 3.44e+30 = 6.88e+31 cm^-2 s^-1'
     check_ids: []
@@ -4393,7 +4393,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand: sqrt(0.62 nm x 0.10 m) = 7.87 um'
     check_ids: []
@@ -4436,7 +4436,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~2%: xi_mu = Z N_A r_mu beta*_mu / (4 pi gamma_mu sigma^2) with r_mu = 1.3685e-17 m, gamma_mu = 9464.6, beta*_mu = MACHINE_MU_BETA_STAR_MATCHED_NUCL_NE'
     check_ids: []
@@ -4481,7 +4481,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by hand to ~1%: xi_A = N_mu (Z^2/A) r_p beta*_A / (4 pi gamma_A sigma^2) with r_p = 1.535e-18 m, gamma_A = E_A/(A x 0.9315 GeV)'
     check_ids: []
@@ -4527,7 +4527,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: xi_A / 0.01 = 1.03 vs stated 1.03'
     check_ids: []
@@ -4570,7 +4570,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation
@@ -4614,7 +4614,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'consistency: before value 68.8e30 / reduction 1.03 = 66.8e30 vs stated 66.8e30 (AloHEP recomputation, not exact scaling)'
     check_ids: []
@@ -4657,7 +4657,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - hand computation as in derivation

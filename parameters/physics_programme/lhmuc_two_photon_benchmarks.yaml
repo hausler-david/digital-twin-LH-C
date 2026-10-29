@@ -681,7 +681,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as ratio of table entries 731/164 = 4.46 (arithmetic recorded here; no test file yet)
     check_ids: []
@@ -725,7 +725,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as ratio of table entries 221/19 = 11.63 (arithmetic recorded here; no test file yet)
     check_ids: []
@@ -769,7 +769,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as ratio of table entries 36.77/2.89 = 12.72 (arithmetic recorded here; no test file yet)
     check_ids: []
@@ -813,7 +813,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as ratio of table entries 2.23/0.0323 = 69.04 (arithmetic recorded here; no test file yet)
     check_ids: []
@@ -1370,7 +1370,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 2*m_W = 2*80.3692 GeV = 160.74 GeV with m_W from PDG 2024 (arithmetic recorded here)
     check_ids: []
@@ -1454,7 +1454,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as sigma x L_int = 0.037 pb x 250 fb^-1 = 9250 (arithmetic recorded here; no test file yet)
     check_ids: []
@@ -1499,7 +1499,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as sigma x L_int = 0.166 pb x 250 fb^-1 = 41500 (arithmetic recorded here; no test file yet)
     check_ids: []

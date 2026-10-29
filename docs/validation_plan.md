@@ -32,6 +32,10 @@ Rules:
 
 1. A level is claimed only for the specific quantity and scenario the check covers. A P1 check of
    √s does not make the luminosity P1.
+   Since 2026-10-29 `uv run python -m lhmuc validate` rejects a P1 label whose `validation.methods` or
+   `check_ids` name no existing `test_*` function under `tests/`. Arithmetic written in `validation.methods` of a P0
+   record is a candidate check, not a level; it becomes P1 when the test exists. `tools/apply_validation_levels.py`
+   lowered 327 committed P1 labels that had no test (list: `research/_fragments/validation_levels_lowered_2026-10-29.csv`).
 2. The highest level a *synthetic* input (`provenance.status: synthetic`) can confer on a derived
    result is P1; results that depend on a synthetic input must display the assumption id.
 3. The label displayed for a composite result is the **minimum** over its inputs and its own check.

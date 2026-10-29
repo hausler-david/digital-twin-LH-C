@@ -204,7 +204,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Table 1 cell '4(12.5)' read as collision rate 4 MHz and repetition rate 12.5 Hz."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "reproduced as 1 / (250 ns bunch separation) = 4.0 MHz from MACHINE_MU_BUNCH_SPACING_DIS2026"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "reproduced as 1 / (250 ns bunch separation) = 4.0 MHz from MACHINE_MU_BUNCH_SPACING_DIS2026"], check_ids: [], notes: ""}
     dependencies: [MACHINE_MU_BUNCH_SPACING_DIS2026]
     date_added: "2026-10-28"
     responsible_module: parameters/machine
@@ -227,7 +227,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Also in text p.4: 'and the repetition rate is 12.5 Hz'."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "cross-checked against the text statement on p.4 ('the repetition rate is 12.5 Hz'); 1/12.5 Hz = 80 ms between trains, ~3.8 lab lifetimes at 1 TeV (MACHINE_MU_LIFETIME_LAB_DIS2026)"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "cross-checked against the text statement on p.4 ('the repetition rate is 12.5 Hz'); 1/12.5 Hz = 80 ms between trains, ~3.8 lab lifetimes at 1 TeV (MACHINE_MU_LIFETIME_LAB_DIS2026)"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/machine
@@ -319,7 +319,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Text accompanying Table 1. Ten times the 25 ns LHC bunch spacing, consistent with 'the time separation of muon bunches is large at LHμC' (p.4, §3)."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "1/250 ns = 4.0 MHz reproduces the Table 1 collision rate (MACHINE_COLLISION_RATE_DIS2026)"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "1/250 ns = 4.0 MHz reproduces the Table 1 collision rate (MACHINE_COLLISION_RATE_DIS2026)"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/machine
@@ -342,7 +342,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "Derived to compare the train length with the main-ring revolution period."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "arithmetic 80 x 250 ns"], check_ids: [], notes: "Equals the revolution period of a ~6 km ring, not of the ~3 km ring stated for the 1 TeV option (see MACHINE_MU_BUNCHES_DIS2026 notes)."}
+    validation: {level: P0, methods: ["dimensional check", "arithmetic 80 x 250 ns"], check_ids: [], notes: "Equals the revolution period of a ~6 km ring, not of the ~3 km ring stated for the 1 TeV option (see MACHINE_MU_BUNCHES_DIS2026 notes)."}
     dependencies: [MACHINE_MU_BUNCHES_DIS2026, MACHINE_MU_BUNCH_SPACING_DIS2026]
     date_added: "2026-10-28"
     responsible_module: parameters/machine
@@ -388,7 +388,7 @@ parameters:
       applicability: {category: design_variant, scenario: LHMUC-DIS2026-2TEV, explanation: "The '(6)' of '3(6) km' belongs to the 2 TeV option; Fig. 2 caption: 'The dash-dotted circle represents the 2 TeV muon ring.'"}
       confidence: medium
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "revolution period C/c = 20.0 us; same bending field as the 3 km / 1 TeV ring (rigidity and radius both doubled)"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "revolution period C/c = 20.0 us; same bending field as the 3 km / 1 TeV ring (rigidity and radius both doubled)"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/machine

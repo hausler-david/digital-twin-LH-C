@@ -7,6 +7,7 @@ registries/ are *generated* from these by tools/build_registries.py and must sta
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -150,8 +151,25 @@ def load_all(root: Path = REPO_ROOT) -> Evidence:
         doc = load_yaml(path)
         _validate_doc(ev, "proposal", doc, rel)
         ev.proposals[doc.get("proposal_id")] = doc
-    cross_check(ev)
+    cross_check(ev, root)
     return ev
+
+
+TEST_NAME_RE = re.compile(r"(test_\w+)")
+
+
+def registered_test_names(root: Path = REPO_ROOT) -> set[str]:
+    """Names of all pytest functions under tests/ (used by the P1 rule of docs/validation_plan.md)."""
+    names: set[str] = set()
+    for f in (root / "tests").rglob("test_*.py"):
+        names |= set(re.findall(r"^def (test_\w+)", f.read_text(), re.M))
+    return names
+
+
+def p1_test_references(validation: dict) -> set[str]:
+    """test_* names cited in validation.methods and validation.check_ids."""
+    text = " ".join(map(str, (validation.get("methods") or []) + (validation.get("check_ids") or [])))
+    return set(TEST_NAME_RE.findall(text))
 
 
 CONFIDENCE_RANK = {"none": 0, "low": 1, "medium": 2, "high": 3}
@@ -183,8 +201,9 @@ def confidence_cap(prov: dict, source: dict | None) -> tuple[str | None, str]:
     return min(caps, key=lambda c: CONFIDENCE_RANK[c[0]])
 
 
-def cross_check(ev: Evidence) -> None:
+def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
     """Referential integrity and the null-vs-zero / provenance rules."""
+    tests = registered_test_names(root)
     for pid, p in ev.parameters.items():
         where = f"{ev.parameter_files.get(pid)}:{pid}"
         prov = p.get("provenance", {})
@@ -213,6 +232,12 @@ def cross_check(ev: Evidence) -> None:
                 ev.error(where, "reported_lhmuc requires a PRIMARY_LHMUC source")
         if status in ("derived_lhmuc", "analytical_estimate") and not prov.get("derivation"):
             ev.error(where, f"status {status} requires a derivation")
+        # P1 needs a registered test (docs/validation_plan.md, P1 entry criterion)
+        val = p.get("validation") or {}
+        if val.get("level") == "P1" and not (p1_test_references(val) & tests):
+            ev.error(where, "validation level P1 requires validation.methods or check_ids to name an existing test function "
+                            "under tests/ (docs/validation_plan.md); add the test or lower the level with "
+                            "tools/apply_validation_levels.py")
         # confidence caps (research/source_quality_policy.md §4)
         cap, why = confidence_cap(prov, ev.sources.get(src.get("source_id")) if src else None)
         conf = prov.get("confidence")

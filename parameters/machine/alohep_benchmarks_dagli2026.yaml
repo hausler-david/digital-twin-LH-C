@@ -2141,7 +2141,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): L_eff/L_nom = 3.420e+33/3.786e33 = 0.9033 vs printed 0.9032'
     check_ids: []
@@ -2225,7 +2225,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): [1 + (8/10)^2/6]^-1 = 0.9036 vs printed 0.904'
     check_ids: []
@@ -2347,7 +2347,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): L_eff/L_nom = 3.758e+33/3.786e33 = 0.9926 vs printed 0.9926'
     check_ids: []
@@ -2431,7 +2431,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): [1 + (8/30)^2/6]^-1 = 0.9883 vs printed 0.988'
     check_ids: []
@@ -2553,7 +2553,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): L_eff/L_nom = 3.771e+33/3.786e33 = 0.9960 vs printed 0.9959'
     check_ids: []
@@ -2637,7 +2637,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): [1 + (8/50)^2/6]^-1 = 0.9958 vs printed 0.996'
     check_ids: []
@@ -2759,7 +2759,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): L_eff/L_nom = 3.782e+33/3.786e33 = 0.9989 vs printed 0.9988'
     check_ids: []
@@ -2844,7 +2844,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): [1 + (8/100)^2/6]^-1 = 0.9989 vs printed 0.999'
     check_ids: []
@@ -3735,7 +3735,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): log(4.63 s / 48 ms) / log(1e6/1e4) = 0.99 from the Table 2 end points'
     check_ids: []
@@ -3778,7 +3778,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): from Table 1 runtime × potential-solve share, log[(12.2 s × 0.975)/(0.092 s × 0.47)]/log 3 = 5.11'
     check_ids: []
@@ -3823,7 +3823,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): log[(3.20 h × 3600 × 1.00)/(208 s × 0.996)]/log 2 = 5.80'
     check_ids: []
@@ -3992,7 +3992,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.3 mm / 13 mm = 0.023 with the ILC β*_x of p. 31'
     check_ids: []
@@ -4164,7 +4164,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.3 mm / 0.40 mm = 0.75 with the AloHEP ILC β*_y of p. 31 (0.73 with the design 0.41 mm)'
     check_ids: []
@@ -4781,7 +4781,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): S = 1/sqrt(1 + ((7.7 cm/16.7 µm) tan(142.5 µrad))²) = 0.836'
     check_ids: []
@@ -4865,7 +4865,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 1.20e34 × 0.835 = 1.00e34'
     check_ids: []
@@ -5071,7 +5071,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): Table 6 ratios 0.991/0.977 = 1.014'
     check_ids: []
@@ -5194,7 +5194,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): Table 6 ratios 0.974/0.912 = 1.068'
     check_ids: []
@@ -5561,7 +5561,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 2.22 − 1 = 1.22'
     check_ids: []
@@ -5644,7 +5644,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 8.394e+33/3.786e33 = 2.217'
     check_ids: []
@@ -5767,7 +5767,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 8.334e+33/3.786e33 = 2.201'
     check_ids: []
@@ -5851,7 +5851,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 8.394/8.334 − 1 = 0.72 %'
     check_ids: []
@@ -5896,7 +5896,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 603 ms / 277 ms = 2.18'
     check_ids: []
@@ -6329,7 +6329,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.82/0.374 = 2.19'
     check_ids: []
@@ -6418,7 +6418,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): sqrt(γε_y β*_y/γ) = sqrt(35 nm × 0.41 mm / (125 GeV/0.511 MeV)) = 7.66 nm'
     check_ids: []
@@ -6551,7 +6551,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): D_y = 2 N r_e σ_z/[γ σ_y (σ_x + σ_y)] with N = 2e10, σ_z = 0.3 mm, γ = 125 GeV/0.511 MeV, σ_x = sqrt(10 µm × 13 mm/γ) = 0.729 µm, σ_y = 7.57
       nm → 24.8'
@@ -6601,7 +6601,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): sqrt(35 nm × 0.40 mm / (125 GeV/0.511 MeV)) = 7.57 nm'
     check_ids: []
@@ -6696,7 +6696,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 2.22 × 0.90 = 2.00'
     check_ids: []
@@ -7084,7 +7084,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 2 sqrt(920 × 27.6) GeV = 318.7 GeV'
     check_ids: []
@@ -7213,7 +7213,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 2 sqrt(275 × 10) GeV = 104.9 GeV'
     check_ids: []
@@ -8156,7 +8156,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 4.22 × 10^31/4.32 × 10^31 = 0.977 vs printed 0.977 (difference within the three-significant-figure rounding of the table cells)'
     check_ids: []
@@ -8279,7 +8279,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 4.28 × 10^31/4.32 × 10^31 = 0.991 vs printed 0.991 (difference within the three-significant-figure rounding of the table cells)'
     check_ids: []
@@ -8448,7 +8448,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 9.55 × 10^33/1.05 × 10^34 = 0.910 vs printed 0.912 (difference within the three-significant-figure rounding of the table cells)'
     check_ids: []
@@ -8574,7 +8574,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 1.02 × 10^34/1.05 × 10^34 = 0.971 vs printed 0.974 (difference within the three-significant-figure rounding of the table cells)'
     check_ids: []
@@ -8743,7 +8743,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.977/0.980 − 1 = −0.3 %'
     check_ids: []
@@ -8788,7 +8788,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.912/0.916 − 1 = −0.4 % (printed 0.5 %, rounding of the three-digit ratios)'
     check_ids: []
@@ -8960,7 +8960,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.991/0.977 − 1 = 1.4 %'
     check_ids: []
@@ -9004,7 +9004,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 0.974/0.912 − 1 = 6.8 %'
     check_ids: []
@@ -9049,7 +9049,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 94.9/8.58 = 11.1 (proton), 94.8/8.63 = 11.0 (electron), Table 5'
     check_ids: []
@@ -9094,7 +9094,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 30 µm / 8.58 µm = 3.50 (Table 5)'
     check_ids: []
@@ -9139,7 +9139,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 27.6 GeV / 10 GeV = 2.76'
     check_ids: []
@@ -9184,7 +9184,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - formula of Appendix A evaluated in this extraction (2026-10-28); not printed in the paper
     check_ids: []
@@ -9233,7 +9233,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - formula of Appendix A evaluated in this extraction (2026-10-28); not printed in the paper
     check_ids: []
@@ -9831,7 +9831,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic reproduction (this extraction, 2026-10-28): 1/(5 Hz) = 0.2 s'
     check_ids: []
@@ -10276,7 +10276,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - formula σ = sqrt(ε_n β*/(βγ)) evaluated in this extraction (2026-10-28), βγ ≈ γ
     check_ids: []
@@ -10323,7 +10323,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction, 2026-10-28)
     check_ids: []

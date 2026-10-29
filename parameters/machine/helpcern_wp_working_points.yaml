@@ -37,7 +37,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 3.74 TeV against the slide's value (arithmetic recorded here; no test file yet)
@@ -79,7 +79,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 5.29 TeV against the slide's value (arithmetic recorded here; no test file yet)
@@ -121,7 +121,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 7.48 TeV against the slide's value (arithmetic recorded here; no test file yet)
@@ -163,7 +163,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the sqrt(s) reproduction of the three working points
@@ -207,7 +207,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - reproduced by 2*sqrt(E_mu*E_p) = 3.74 TeV from the muon and proton beam energies (arithmetic recorded here; no test file yet)
@@ -253,7 +253,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - reproduced by 2*sqrt(E_mu*E_p) = 5.29 TeV from the muon and proton beam energies (arithmetic recorded here; no test file yet)
@@ -299,7 +299,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - reproduced by 2*sqrt(E_mu*E_p) = 7.48 TeV from the muon and proton beam energies (arithmetic recorded here; no test file yet)
@@ -625,7 +625,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with 2*sqrt(E_e*E_p) = 1.18 TeV for E_e = 50 GeV, E_p = 7 TeV (arithmetic recorded here)
     check_ids: []

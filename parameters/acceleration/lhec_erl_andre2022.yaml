@@ -376,7 +376,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 801.58 MHz × 24.95 ns = 19.9994 ≈ 20 RF buckets per bunch (this extraction)
     check_ids: []
@@ -748,7 +748,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): 20 mA × (3 + 3) passes = 120 mA'
     check_ids: []
@@ -792,7 +792,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): 20 mA × 50 GV = 1.0 GW'
     check_ids: []
@@ -1337,7 +1337,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -1463,7 +1463,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -1591,7 +1591,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -1719,7 +1719,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -1845,7 +1845,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -1975,7 +1975,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): E_n = 0.5 GeV + n × 8.25 GeV reproduces all six Table 3 energies exactly (injection 0.5 GeV = the 500 MeV dump energy, p.19)'
     check_ids: []
@@ -2108,7 +2108,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction)
     check_ids: []
@@ -2282,7 +2282,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): Table 3 arc energies minus n × 8.25 GeV give 0.5 GeV, i.e. injection energy = dump energy'
     check_ids: []
@@ -2942,7 +2942,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction); the text rounds to 40 MHz (ACC_ERL_BUNCH_FREQUENCY_ANDRE2022)
     check_ids: []
@@ -2984,7 +2984,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'arithmetic (this extraction): integer to 3e-5'
     check_ids: []
@@ -3027,7 +3027,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction)
     check_ids: []
@@ -3074,7 +3074,7 @@ parameters:
     confidence: high
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction); equals the 500 MeV dump energy stated on p.19 (ACC_ERL_DUMP_ENERGY_ANDRE2022)
     check_ids: []
@@ -3117,7 +3117,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - arithmetic (this extraction)
     check_ids: []

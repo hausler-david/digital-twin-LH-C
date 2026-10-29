@@ -84,7 +84,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 16 turns * 2 linacs * 30 GeV = 960 GeV'
     check_ids: []
@@ -259,7 +259,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: B rho for 1 TeV muons = 3336 T m -> R = 1112 m at 3 T, consistent with R = 1 km at ''B = 3 T max'' within the label precision'
     check_ids: []
@@ -390,7 +390,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1000 GeV / (16 turns * 2 linacs) = 31.25 GeV'
     check_ids: []
@@ -479,7 +479,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 16 * (2*3 km + 2*pi*1 km)/c = 16 * 41.0 us = 656 us, consistent with ''~700 us'' assuming a race-track with two semicircular
       1 km-radius arcs'
@@ -525,7 +525,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - analytical geometry; cross-checked against Figure 1 '16 turns ~ 700 us' (gives 656 us)
     check_ids: []
@@ -573,7 +573,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical turn-by-turn decay integral (verifier, 2026-10-28): 16 turns of [3 km linac, +30 GeV linear ramp] -> [pi*1 km arc at constant
       E] -> [3 km linac, +30 GeV] -> [pi*1 km arc], 0.212 GeV -> 960.2 GeV, dN/N = -ds*m_mu/(c*tau*E(s)) with c*tau = 658.6 m: survival = 0.816,
@@ -665,7 +665,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 0.5 * 7.2 nC = 3.6 nC'
     check_ids: []
@@ -710,7 +710,7 @@ parameters:
     confidence: low
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1e12 V * Q * 40 * 50 Hz gives 14.4 MW for 7.2 nC and 7.2 MW for 3.6 nC — the printed 9 MW is NOT reproduced by either'
     check_ids: []
@@ -1271,7 +1271,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1000 GeV / (2 linacs * 10 GeV) = 50 turns'
     check_ids: []

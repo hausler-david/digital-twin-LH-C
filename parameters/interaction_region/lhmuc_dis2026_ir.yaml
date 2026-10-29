@@ -66,7 +66,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "p column; matched to the muon beam size. Proton beta* and emittance not given here (the μLHC paper's 7 cm / 2 um would give 4.3 um, not 4.8 um; the two documents differ)."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check", "sigma = sqrt(beta* eps_n / gamma): with HL-LHC eps_n = 2.5 um and 7 TeV, 4.8 um corresponds to beta* = 6.9 cm (audit arithmetic via lhmuc.analytical.sigma_from_emittance; not a source value)"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check", "sigma = sqrt(beta* eps_n / gamma): with HL-LHC eps_n = 2.5 um and 7 TeV, 4.8 um corresponds to beta* = 6.9 cm (audit arithmetic via lhmuc.analytical.sigma_from_emittance; not a source value)"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/interaction_region
@@ -89,7 +89,7 @@ parameters:
       applicability: {category: direct, scenario: LHMUC-DIS2026-1TEV, explanation: "p column; single value for σ_x,y (round beams)."}
       confidence: high
       assumption_id: null
-    validation: {level: P1, methods: ["dimensional check"], check_ids: [], notes: ""}
+    validation: {level: P0, methods: ["dimensional check"], check_ids: [], notes: ""}
     dependencies: []
     date_added: "2026-10-28"
     responsible_module: parameters/interaction_region

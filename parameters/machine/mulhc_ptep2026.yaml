@@ -39,7 +39,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 2*sqrt(E_mu*E_p) = 2*sqrt(1000 GeV*7000 GeV) = 5291.5 GeV ≈ 5.3 TeV (rounded as printed)'
     check_ids: []
@@ -86,7 +86,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical (verifier, 2026-10-28): L = f_coll N_mu N_p / (4 pi sigma^2) with f = 4 MHz, N_mu = 3.7e+10, N_p = 2.2e11, sigma_x = sigma_y
       = 4.3 um gives 1.40e34 cm^-2 s^-1; multiplied by the paper''s average-population factor 0.632 (1 - 1/e, p.11) gives 8.86e33 cm^-2 s^-1,
@@ -139,7 +139,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical (verifier, 2026-10-28): L = f_coll N_mu N_p / (4 pi sigma^2) with f = 4 MHz, N_mu = 3.0e+10, N_p = 2.2e11, sigma_x = sigma_y
       = 4.3 um gives 1.14e34 cm^-2 s^-1; multiplied by the paper''s average-population factor 0.632 (1 - 1/e, p.11) gives 7.18e33 cm^-2 s^-1,
@@ -368,7 +368,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 0.82 * 4.5e10 = 3.69e10 ≈ 3.7e10'
     check_ids: []
@@ -413,7 +413,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 0.67 * 4.5e10 = 3.0e10'
     check_ids: []
@@ -718,7 +718,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 1/250 ns = 4.0 MHz; 40 bunches / 10.0 us = 4.0 MHz'
     check_ids: []
@@ -853,7 +853,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - analytical cross-check sqrt(beta* eps_n/gamma) against Table 1 — does NOT reproduce 4.3 um (gives 3.6/1.7 um)
@@ -943,7 +943,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical (verifier): xi_mu = N_p r_mu beta*_mu / (2 pi gamma_mu sigma (sigma_x + sigma_y)) with N_p = 2.2e11, gamma_mu = 9464, sigma
       = 4.3 um gives 0.041 for beta*_mu = 3 cm and 0.0095 for 0.7 cm (Table 1 values), but 0.0597 ≈ 600e-4 for the matched beta*_mu = sigma^2
@@ -991,7 +991,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical (verifier): xi_mu = N_p r_mu beta*_mu / (2 pi gamma_mu sigma (sigma_x + sigma_y)) with N_p = 2.2e11, gamma_mu = 9464, sigma
       = 4.3 um gives 0.041 for beta*_mu = 3 cm and 0.0095 for 0.7 cm (Table 1 values), but 0.0597 ≈ 600e-4 for the matched beta*_mu = sigma^2
@@ -1040,7 +1040,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 3000 m / 40 bunches = 75 m'
     check_ids: []
@@ -1086,7 +1086,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 75 m / c = 250.2 ns'
     check_ids: []
@@ -1131,7 +1131,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 250 ns / 25 ns = 10'
     check_ids: []
@@ -1221,7 +1221,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: gamma*tau = (1000 GeV / 0.10566 GeV) * 2.197 us = 20.8 ms'
     check_ids: []
@@ -1267,7 +1267,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 3000 m / c = 10.0 us'
     check_ids: []
@@ -1312,7 +1312,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 20 ms / 10 us = 2000'
     check_ids: []
@@ -1359,7 +1359,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: mean of exp(-t/tau) over [0, tau] = 1 - 1/e = 0.632'
     check_ids: []
@@ -1404,7 +1404,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 0.632 * 3.7e10 = 2.34e10'
     check_ids: []
@@ -1450,7 +1450,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 0.632 * 3.0e10 = 1.90e10'
     check_ids: []
@@ -1539,7 +1539,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 8.8e33 cm^-2 s^-1 * 1e7 s = 8.8e40 cm^-2 = 88 fb^-1'
     check_ids: []
@@ -1584,7 +1584,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: 7.2e33 cm^-2 s^-1 * 1e7 s = 72 fb^-1'
     check_ids: []
@@ -1982,7 +1982,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'analytical: with this beta* the beam-beam formula gives xi_mu = 0.0597 (printed 0.060) and sigma_mu = 4.3 um'
     check_ids: []

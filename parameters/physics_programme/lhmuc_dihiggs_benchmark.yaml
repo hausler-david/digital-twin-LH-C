@@ -39,7 +39,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 3.74 TeV
@@ -84,7 +84,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the sqrt(s) reproduction 2*sqrt(E_mu*E_p) = 5.29 TeV
@@ -129,7 +129,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - input to the sqrt(s) reproduction of both configurations
@@ -174,7 +174,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by 2*sqrt(E_mu*E_p) = 3.742 TeV (lhmuc.analytical.sqrt_s_gev) vs stated 3.74 TeV
     check_ids: []
@@ -219,7 +219,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by 2*sqrt(E_mu*E_p) = 5.292 TeV (lhmuc.analytical.sqrt_s_gev) vs stated 5.29 TeV
     check_ids: []
@@ -265,7 +265,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - dimensional check
     - consistent with the 'Events / ab−1' column of the p.8 table (sigma[fb] x 1000)
@@ -599,7 +599,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced by summing the ''MC gen.'' column of the p.8 table: 300k+300k+800k+300k+200k+200k+300k+500k = 2 900 000'
     check_ids: []
@@ -649,7 +649,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - p.8 table has seven background rows (4b, 2b, ttj hadronic, ttj semi-leptonic, hbbj, hZj, ZZj)
     check_ids: []
@@ -779,7 +779,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 13 markers per curve counted on the p.7 figure (black and red curves)
     check_ids: []
@@ -822,7 +822,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with the p.8 table value 1.67e-1 fb (rounds to 0.17)
     check_ids: []
@@ -909,7 +909,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - SM-point ratio 0.33/0.17 = 1.94 from the p.7 text values
     check_ids: []
@@ -1082,7 +1082,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 0.167 fb x 1000 fb^-1 = 167 events
     check_ids: []
@@ -1213,7 +1213,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 32.0 fb x 1000 fb^-1 = 32000 events
     check_ids: []
@@ -1344,7 +1344,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 796.0 fb x 1000 fb^-1 = 796000 events
     check_ids: []
@@ -1475,7 +1475,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 1.24 fb x 1000 fb^-1 = 1240 events
     check_ids: []
@@ -1606,7 +1606,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 0.415 fb x 1000 fb^-1 = 415 events
     check_ids: []
@@ -1737,7 +1737,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 1.38 fb x 1000 fb^-1 = 1380 events
     check_ids: []
@@ -1868,7 +1868,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 0.536 fb x 1000 fb^-1 = 536 events
     check_ids: []
@@ -1999,7 +1999,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by sigma x L = 0.582 fb x 1000 fb^-1 = 582 events
     check_ids: []
@@ -2086,7 +2086,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - log10(7.96e2/1.67e-1) = 3.68
     check_ids: []
@@ -2468,7 +2468,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced by 0.167 fb x 1000 fb^-1 = 167 (p.8 rounds to 167)
     check_ids: []
@@ -2513,7 +2513,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as 166.7 x (0.7)^4 = 40.02
     check_ids: []
@@ -2773,7 +2773,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 534.64 (table: 534.6)'
     check_ids: []
@@ -2821,7 +2821,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.670 (table: 1.67)'
     check_ids: []
@@ -3124,7 +3124,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 236.16 (table: 236.2)'
     check_ids: []
@@ -3172,7 +3172,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.912 (table: 1.91)'
     check_ids: []
@@ -3475,7 +3475,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 152.52 (table: 152.5)'
     check_ids: []
@@ -3523,7 +3523,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.943 (table: 1.94)'
     check_ids: []
@@ -3826,7 +3826,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 150.11 (table: 150.1)'
     check_ids: []
@@ -3874,7 +3874,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.903 (table: 1.90)'
     check_ids: []
@@ -4177,7 +4177,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 145.08 (table: 145.1)'
     check_ids: []
@@ -4225,7 +4225,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.930 (table: 1.93)'
     check_ids: []
@@ -4528,7 +4528,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 5.19 (table: 5.19)'
     check_ids: []
@@ -4576,7 +4576,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 4.250 (table: 4.25)'
     check_ids: []
@@ -4621,7 +4621,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as 166.7 x (0.6)^4 = 21.60
     check_ids: []
@@ -4881,7 +4881,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 296.18 (table: 296.2)'
     check_ids: []
@@ -4929,7 +4929,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.212 (table: 1.21)'
     check_ids: []
@@ -5232,7 +5232,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 128.96 (table: 129.0)'
     check_ids: []
@@ -5280,7 +5280,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.398 (table: 1.40)'
     check_ids: []
@@ -5583,7 +5583,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 82.41 (table: 82.4)'
     check_ids: []
@@ -5631,7 +5631,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.427 (table: 1.43)'
     check_ids: []
@@ -5934,7 +5934,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 81.11 (table: 81.1)'
     check_ids: []
@@ -5982,7 +5982,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.398 (table: 1.40)'
     check_ids: []
@@ -6285,7 +6285,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 78.38 (table: 78.4)'
     check_ids: []
@@ -6333,7 +6333,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 1.418 (table: 1.42)'
     check_ids: []
@@ -6636,7 +6636,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 2.80 (table: 2.80)'
     check_ids: []
@@ -6684,7 +6684,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 3.122 (table: 3.12)'
     check_ids: []
@@ -6729,7 +6729,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as 166.7 x (0.9)^4 = 109.37
     check_ids: []
@@ -6989,7 +6989,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 1418.83 (table: 1418.8)'
     check_ids: []
@@ -7037,7 +7037,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 2.798 (table: 2.80)'
     check_ids: []
@@ -7340,7 +7340,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 637.11 (table: 637.1)'
     check_ids: []
@@ -7388,7 +7388,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 3.179 (table: 3.18)'
     check_ids: []
@@ -7691,7 +7691,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 416.30 (table: 416.3)'
     check_ids: []
@@ -7739,7 +7739,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 3.213 (table: 3.21)'
     check_ids: []
@@ -8042,7 +8042,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 409.72 (table: 409.7)'
     check_ids: []
@@ -8090,7 +8090,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 3.146 (table: 3.15)'
     check_ids: []
@@ -8393,7 +8393,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 395.99 (table: 396.0)'
     check_ids: []
@@ -8441,7 +8441,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 3.192 (table: 3.19)'
     check_ids: []
@@ -8744,7 +8744,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as 4b + hZj + hbbj + ZZj + Mistag = 14.12 (table: 14.12)'
     check_ids: []
@@ -8792,7 +8792,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced as S/sqrt(S+B) = 7.028 (table: 7.03)'
     check_ids: []
@@ -8838,7 +8838,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.12 'Higgs win.' signal 22.27 and p.22 row '70% b-tag, 1% mistag (results)' 22.3
     check_ids: []
@@ -8883,7 +8883,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.12 Tot. Bkg 5.19 and p.22 Background 5.18 within rounding
     check_ids: []
@@ -8928,7 +8928,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 22.3/sqrt(22.3+5.2) = 4.252
     check_ids: []
@@ -8973,7 +8973,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.22 row '60% b-tag, 1% mistag' 3.12
     check_ids: []
@@ -9017,7 +9017,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.22 row '90% b-tag, 1% mistag' 7.03
     check_ids: []
@@ -9062,7 +9062,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.12 Initial Tot. Bkg 534.6
     check_ids: []
@@ -9106,7 +9106,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.12 m(4b) row Tot. Bkg 145.1
     check_ids: []
@@ -9236,7 +9236,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as S/sqrt(S+B) = 8.680
     check_ids: []
@@ -9366,7 +9366,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as S/sqrt(S+B) = 3.119
     check_ids: []
@@ -9499,7 +9499,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as S/sqrt(S+B) = 4.254
     check_ids: []
@@ -9760,7 +9760,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - reproduced as S/sqrt(S+B) = 7.032
     check_ids: []
@@ -10334,7 +10334,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 'reproduced: 22.27/166.7 = 0.1336'
     check_ids: []
@@ -10505,7 +10505,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with p.12 Tot. Bkg 5.19
     check_ids: []
@@ -11190,7 +11190,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - 2*sqrt(60 GeV x 50 TeV) = 3.46 TeV
     check_ids: []
@@ -11359,7 +11359,7 @@ parameters:
     confidence: medium
     assumption_id: null
   validation:
-    level: P1
+    level: P0
     methods:
     - consistent with the p.12 table cell 0.033 (rounds to 0.03)
     check_ids: []
