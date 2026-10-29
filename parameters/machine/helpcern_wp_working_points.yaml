@@ -34,7 +34,7 @@ parameters:
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: Benchmark working point 'option 1' of the two-photon physics study. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not
         public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -76,7 +76,7 @@ parameters:
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: Benchmark working point 'baseline' of the two-photon physics study. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not
         public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -118,7 +118,7 @@ parameters:
       scenario: LHMUC-WP-OPT2-2TEV
       explanation: Benchmark working point 'option 2' of the two-photon physics study. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not
         public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -204,7 +204,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: Benchmark working point 'option 1'. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -250,7 +250,7 @@ parameters:
       category: direct
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: Benchmark working point 'baseline'. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -296,7 +296,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT2-2TEV
       explanation: Benchmark working point 'option 2'. Working point attributed on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -340,7 +340,7 @@ parameters:
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: Benchmark working point 'option 1'. The slide does not say whether L_int is per year or the total of a run, nor how it relates to the DIS2026 peak/average luminosity. Working point attributed
         on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -381,7 +381,7 @@ parameters:
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: Benchmark working point 'baseline'. The slide does not say whether L_int is per year or the total of a run, nor how it relates to the DIS2026 peak/average luminosity. Working point attributed
         on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -422,7 +422,7 @@ parameters:
       scenario: LHMUC-WP-OPT2-2TEV
       explanation: Benchmark working point 'option 2'. The slide does not say whether L_int is per year or the total of a run, nor how it relates to the DIS2026 peak/average luminosity. Working point attributed
         on the slide to 'From HELP4CERN White Paper (in preparation)'; the White Paper itself is not public and was not seen.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -542,7 +542,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC comparison benchmark quoted on the LHμC slide; the slide cites no LHeC design document for it. Comparator only, not an LHμC parameter.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -582,7 +582,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC comparison benchmark quoted on the LHμC slide; the slide cites no LHeC design document for it. Comparator only, not an LHμC parameter.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -622,7 +622,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC comparator quoted on the LHμC slide (same value in the p.19 W+W− table 'LHeC | 1.2 TeV | 0.037'). Not an LHμC parameter.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1

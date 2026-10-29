@@ -178,7 +178,7 @@ parameters:
       explanation: Estimate made by Sakaki et al. 2026 for the present-scheme room-temperature thermal muonium source (Eq.
         1, citing [10] M. Reiser, Theory and Design of Charged Particle Beams); analogous technology for the LHμC source,
         not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -225,7 +225,7 @@ parameters:
       explanation: Estimate made by Sakaki et al. 2026 for the present-scheme room-temperature thermal muonium source (Eq.
         1, citing [10] M. Reiser, Theory and Design of Charged Particle Beams); analogous technology for the LHμC source,
         not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -269,7 +269,7 @@ parameters:
       scenario: MUTRISTAN-HYBRID-TARGET-2026
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -313,7 +313,7 @@ parameters:
       scenario: MUTRISTAN-HYBRID-TARGET-2026
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -357,7 +357,7 @@ parameters:
         for the LHμC source, not an LHμC value. The paper cites [11] N. Kawamura et al., 'New concept for a large-acceptance
         general-purpose muon beamline', PTEP 2018, 113G01 for this value (the same paper Abe et al. 2019 cite as their H-line
         reference [26]).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -399,7 +399,7 @@ parameters:
       scenario: MUTRISTAN-HYBRID-TARGET-2026
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value. The paper cites [11] Kawamura et al. 2018 for this statement.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -441,7 +441,7 @@ parameters:
       scenario: MUTRISTAN-HYBRID-TARGET-2026
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value. The paper cites [15] Zhang et al., NIM A 1042 (2022) 167443 for this value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -487,7 +487,7 @@ parameters:
         for the LHμC source, not an LHμC value. The paper cites [15] Zhang et al. 2022; the same 0.52 appears in Abe et al.
         2019 (SOURCE_MUONIUM_FORMATION_PROBABILITY_ABE2019). Beare et al. 2020 measured 0.655 ± 0.018; the conflict id CONF_MUONIUM_FORMATION_FRACTION
         is named in research/source_registry.yaml but has no entry in research/source_conflicts.yaml as of 2026-10-29.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -534,7 +534,7 @@ parameters:
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value. No reference is attached to this sentence; the surrounding statements cite
         [15].
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -580,7 +580,7 @@ parameters:
       scenario: MUTRISTAN-HYBRID-TARGET-2026
       explanation: Present-scheme (J-PARC ultraslow-muon source) value restated by Sakaki et al. 2026; analogous technology
         for the LHμC source, not an LHμC value. The paper cites [8] Abe et al. 2019, where 73 % is a calculation (SOURCE_LASER_IONISATION_EFF_CALC_ABE2019).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

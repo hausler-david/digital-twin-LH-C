@@ -79,7 +79,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Single-column μ+ beam table of the 3 km main ring (Table 1 of the draft). Same 1 TeV μ+ beam for every ion species (p.7 caption 'Eµ = 1 TeV on 2.76 TeV/u Pb'; p.15 '1 TeV µ+ on the Pb, Xe, O and Ne beams').
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1625,7 +1625,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE). p.12 caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1665,7 +1665,7 @@ parameters:
       category: design_variant
       scenario: null
       explanation: Imported from the μTRISTAN μ+e− design per the deck caption ('optics values from the µTRISTAN µ+e− design'). NOT used for the μA scenarios, where 'the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm)' (MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL/_MAX_NUCL).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1705,7 +1705,7 @@ parameters:
       category: design_variant
       scenario: null
       explanation: Imported from the μTRISTAN μ+e− design per the deck caption. NOT used for the μA scenarios (optics relaxed to β*µ ≈ 7–15 cm).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1745,7 +1745,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1785,7 +1785,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE). Same value as the linac output εn = 4 µm on p.5.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1825,7 +1825,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1865,7 +1865,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE). Box: ''4 MHz bunch-crossing rate offered by the µ+ ring 40 bunches.'' For μA it is the cap in f_c = min(4 MHz, n_b x 11.245 kHz) (p.11).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1908,7 +1908,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Table 1 of the draft (single μ+ column). Deck caption: ''Table 1 of the draft; optics values from the µTRISTAN µ+e− design. For µA collisions the µ+ spot is matched to the ion beam (β*µ ≈ 7–15 cm).'' Applies to all four μA scenarios (LHMUC-NUCL-MU-PB/XE/O/NE).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2631,7 +2631,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2674,7 +2674,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2717,7 +2717,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. The deck does not label it peak or average; the 0.64 N0 decay-averaging factor is needed to reproduce it, so it behaves as a time-averaged value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2763,7 +2763,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2806,7 +2806,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Round beams (one value for x and y); equals the ion beam size sqrt(eps_A beta*_A) per p.11.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2849,7 +2849,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 4.00 x 10^-3.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2894,7 +2894,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Column ''µ–Pb'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 78.9 x 10^-3 (red row); side box: ''ξA > 0.01 for all four species: the ion beam sees a strong µ+ bunch.'' Repeated as bar label on p.13.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2940,7 +2940,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Heavy ions: ''Pb, Xe: Nµ\bunch is decreased approximately an order of magnitude.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3159,7 +3159,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3202,7 +3202,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3245,7 +3245,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. The deck does not label it peak or average; the 0.64 N0 decay-averaging factor is needed to reproduce it, so it behaves as a time-averaged value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3291,7 +3291,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3334,7 +3334,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Round beams (one value for x and y); equals the ion beam size sqrt(eps_A beta*_A) per p.11.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3377,7 +3377,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 3.95 x 10^-3.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3422,7 +3422,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Column ''µ–Xe'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 95.2 x 10^-3 (red row); side box: ''ξA > 0.01 for all four species: the ion beam sees a strong µ+ bunch.'' Repeated as bar label on p.13.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3468,7 +3468,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Heavy ions: ''Pb, Xe: Nµ\bunch is decreased approximately an order of magnitude.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3687,7 +3687,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3730,7 +3730,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3773,7 +3773,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. The deck does not label it peak or average; the 0.64 N0 decay-averaging factor is needed to reproduce it, so it behaves as a time-averaged value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3819,7 +3819,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3862,7 +3862,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Round beams (one value for x and y); equals the ion beam size sqrt(eps_A beta*_A) per p.11.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3905,7 +3905,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 6.29 x 10^-3.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3950,7 +3950,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Column ''µ–O'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 11.2 x 10^-3 (red row); side box: ''ξA > 0.01 for all four species: the ion beam sees a strong µ+ bunch.'' Repeated as bar label on p.13.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3996,7 +3996,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Light ions: ''O, Ne: marginal, 3–12%, no need to decrease Nµ\bunch.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4215,7 +4215,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4258,7 +4258,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4301,7 +4301,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. The deck does not label it peak or average; the 0.64 N0 decay-averaging factor is needed to reproduce it, so it behaves as a time-averaged value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4347,7 +4347,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4390,7 +4390,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Round beams (one value for x and y); equals the ion beam size sqrt(eps_A beta*_A) per p.11.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4433,7 +4433,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 5.42 x 10^-3.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4478,7 +4478,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Column ''µ–Ne'' of the μA table; caption: ''AloHEP with Nµ = 3.0 × 10^10 per bunch (Table 3 of the draft). L per nucleon = A × L. µTRISTAN-based values are in the backup.'' (the backup is not in the uploaded 16 pages). Ion beam: conservative LHC values of p.10, β* = 10 cm assumption. Table value 10.3 x 10^-3 (red row); side box: ''ξA > 0.01 for all four species: the ion beam sees a strong µ+ bunch.'' Repeated as bar label on p.13.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4524,7 +4524,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Light ions: ''O, Ne: marginal, 3–12%, no need to decrease Nµ\bunch.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1

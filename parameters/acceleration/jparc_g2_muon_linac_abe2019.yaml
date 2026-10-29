@@ -40,7 +40,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -82,7 +82,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -124,7 +124,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -166,7 +166,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -208,7 +208,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -250,7 +250,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -292,7 +292,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -334,7 +334,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -376,7 +376,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -420,7 +420,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -464,7 +464,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -508,7 +508,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -552,7 +552,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -594,7 +594,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -637,7 +637,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -679,7 +679,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -721,7 +721,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -763,7 +763,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -806,7 +806,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -848,7 +848,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -890,7 +890,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -933,7 +933,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -975,7 +975,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1017,7 +1017,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1059,7 +1059,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1101,7 +1101,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1146,7 +1146,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1191,7 +1191,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1236,7 +1236,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. The paper cites the spare J-PARC RFQ as [35] Y. Kondo et al., PRST-AB 16, 040102 (2013).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1281,7 +1281,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. The paper cites the 0.34 MeV RFQ acceleration as [36] Y. Kondo et al., IPAC2015, pp. 3801-3803.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1323,7 +1323,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1368,7 +1368,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1413,7 +1413,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1458,7 +1458,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1503,7 +1503,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1548,7 +1548,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1593,7 +1593,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1635,7 +1635,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1678,7 +1678,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1721,7 +1721,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1768,7 +1768,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1817,7 +1817,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1862,7 +1862,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1908,7 +1908,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1953,7 +1953,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1998,7 +1998,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2043,7 +2043,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2086,7 +2086,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2130,7 +2130,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2174,7 +2174,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value. The paper cites the muon DLS design as [46] Y. Kondo et al., JPCS 874, 012054 (2017).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2218,7 +2218,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2260,7 +2260,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2302,7 +2302,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2344,7 +2344,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2386,7 +2386,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2428,7 +2428,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2470,7 +2470,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2512,7 +2512,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2554,7 +2554,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2596,7 +2596,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2638,7 +2638,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2680,7 +2680,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2722,7 +2722,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2764,7 +2764,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2806,7 +2806,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2848,7 +2848,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2890,7 +2890,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2932,7 +2932,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2974,7 +2974,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3016,7 +3016,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3058,7 +3058,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3100,7 +3100,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3142,7 +3142,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3184,7 +3184,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3226,7 +3226,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3268,7 +3268,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3310,7 +3310,7 @@ parameters:
       explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
         μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
         an LHμC value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

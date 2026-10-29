@@ -36,7 +36,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -80,7 +80,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC. Also p.4: ''collision of 1 TeV muons with 7 TeV protons''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -124,7 +124,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -168,7 +168,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -212,7 +212,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC. Only one in ten of these collide with a muon bunch (p.11, p.20).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -256,7 +256,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -301,7 +301,7 @@ parameters:
       explanation: 'LHeC ''ERL60-upgraded'' proton parameter set adopted by Akturk et al. for the μLHC luminosity calculation (p.12: ''adopted
         from the ERL60-upgraded proton parameters developed for the LHeC ... (Table 2.11 in [12])''); original source is the LHeC design, not
         μLHC or LHμC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -343,7 +343,7 @@ parameters:
       category: design_variant
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Standard LHC value quoted by Akturk et al.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -432,7 +432,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. 'with beam size matched accordingly'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -478,7 +478,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -523,7 +523,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Printed as 22 in units of 1e-4.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -570,7 +570,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Printed as 18 in units of 1e-4.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1

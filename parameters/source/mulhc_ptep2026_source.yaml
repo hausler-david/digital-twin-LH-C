@@ -35,7 +35,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -389,7 +389,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''ΔEp=75[MeV](10mm)''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -433,7 +433,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label '(10mm)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -476,7 +476,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -519,7 +519,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''x 2-bunch x 40-turns x 50 Hz''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -562,7 +562,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -697,7 +697,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -741,7 +741,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -784,7 +784,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -827,7 +827,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -871,7 +871,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -919,7 +919,7 @@ parameters:
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''Booster ring (up to 1 TeV) 1 TeV x (7.2nC=>3.6nC)/μ x
         40 bunch x 50Hz = 9 MW''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -962,7 +962,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1006,7 +1006,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 booster label: ''x 40 bunch x 50Hz''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

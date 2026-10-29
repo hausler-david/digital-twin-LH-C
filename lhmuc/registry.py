@@ -154,6 +154,35 @@ def load_all(root: Path = REPO_ROOT) -> Evidence:
     return ev
 
 
+CONFIDENCE_RANK = {"none": 0, "low": 1, "medium": 2, "high": 3}
+
+
+def confidence_cap(prov: dict, source: dict | None) -> tuple[str | None, str]:
+    """Lowest applicable confidence cap of research/source_quality_policy.md §4.
+
+    Only the mechanical rules are applied here: synthetic values, status analogous, imported_related from a
+    design_variant, sources not read in full, and unrefereed slides. The conflict rule (low while a conflict has
+    no decided treatment) is applied by hand when a conflict record is written.
+    Returns (cap, reason) or (None, "") when no cap applies.
+    """
+    caps: list[tuple[str, str]] = []
+    status = prov.get("status")
+    if status == "synthetic":
+        caps.append(("low", "synthetic value"))
+    if status == "analogous":
+        caps.append(("medium", "status analogous"))
+    if status == "imported_related" and (prov.get("applicability") or {}).get("category") == "design_variant":
+        caps.append(("medium", "imported_related from a design_variant"))
+    if source:
+        if source.get("access") in ("snippet_only", "blocked", "pending_fetch"):
+            caps.append(("medium", f"source access {source.get('access')}"))
+        if source.get("source_type") == "workshop_talk":
+            caps.append(("medium", "unrefereed slides"))
+    if not caps:
+        return None, ""
+    return min(caps, key=lambda c: CONFIDENCE_RANK[c[0]])
+
+
 def cross_check(ev: Evidence) -> None:
     """Referential integrity and the null-vs-zero / provenance rules."""
     for pid, p in ev.parameters.items():
@@ -184,6 +213,12 @@ def cross_check(ev: Evidence) -> None:
                 ev.error(where, "reported_lhmuc requires a PRIMARY_LHMUC source")
         if status in ("derived_lhmuc", "analytical_estimate") and not prov.get("derivation"):
             ev.error(where, f"status {status} requires a derivation")
+        # confidence caps (research/source_quality_policy.md §4)
+        cap, why = confidence_cap(prov, ev.sources.get(src.get("source_id")) if src else None)
+        conf = prov.get("confidence")
+        if cap is not None and CONFIDENCE_RANK.get(conf, 0) > CONFIDENCE_RANK[cap]:
+            ev.error(where, f"confidence {conf!r} exceeds the {cap!r} cap of research/source_quality_policy.md §4 ({why}); "
+                            "lower it, e.g. with tools/apply_confidence_caps.py")
         # assumptions
         if status == "synthetic":
             aid = prov.get("assumption_id")

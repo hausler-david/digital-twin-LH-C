@@ -154,7 +154,7 @@ Conflicts are recorded, not resolved by averaging (`CLAUDE.md` §1.6). Pointers:
 2. `access` is `uploaded` or `fetched`, and the whole document was read.
 3. The status requested is admissible for the category (§3); `reported_lhmuc` ⇒ `PRIMARY_LHMUC`.
 4. Page, table/figure/equation and verbatim quotation copied; units pint-parseable (`lhmuc/units.py`).
-5. Confidence set to the lowest applicable cap (§4); slide-deck values ≤ `medium`.
+5. Confidence set to the lowest applicable cap (§4); slide-deck values ≤ `medium`. Since 2026-10-29 `uv run python -m lhmuc validate` reports every record above a mechanical cap (synthetic, analogous, imported_related from a design_variant, source not read in full, unrefereed slides) as an error; `tools/apply_confidence_caps.py` lowers them. The conflict cap is still applied by hand.
 6. Any competing value found in the registry or fragments → conflict record, not a choice.
 7. `research/source_registry.yaml` entry complete (licence, SHA-256 if archived, `discovered_by_queries`), fragments
    merged, `uv run python -m lhmuc validate` and `uv run pytest` pass.
@@ -166,3 +166,4 @@ Conflicts are recorded, not resolved by averaging (`CLAUDE.md` §1.6). Pointers:
 | Date | Change |
 |---|---|
 | 2026-10-28 | First version: nine categories with project examples, category→status mapping, confidence caps, slide rule, secondary/unverified rule, conflict pointers, checklist. |
+| 2026-10-29 | §4 caps enforced by the validator (`lhmuc/registry.py::confidence_cap`). 1088 committed records were above a cap (594 analogous, 367 slide values, 127 imported_related from a design_variant) because extraction briefs had allowed `high` for any value read directly from a page; all were lowered from `high` to `medium` without other changes. List: `research/_fragments/confidence_caps_applied_2026-10-29.csv`. |

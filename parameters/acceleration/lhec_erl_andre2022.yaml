@@ -875,7 +875,7 @@ parameters:
       category: analogous
       scenario: LHEC-ANDRE2022-ERL-50GEV
       explanation: Prototype-cavity statement (JLab/PERLE SRF R&D), analogous technology for any 802 MHz SRF ERL; not an LHeC design parameter and not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3159,7 +3159,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: PERLE is the lower-energy ERL prototype facility (IJCLab Orsay); analogous technology demonstrator, not an LHeC machine value and not an LHμC value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

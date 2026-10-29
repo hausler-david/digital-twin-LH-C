@@ -75,7 +75,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: Column header of the p.10 table; physical constant of fully stripped 208Pb82+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -115,7 +115,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: Column header of the p.10 table; physical constant of 208Pb82+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -155,7 +155,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. p.9: ''Parameters used here: LHeC CDR 2021, with 1200 bunches of 1.8 × 10^8 lead ions.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -195,7 +195,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -238,7 +238,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -279,7 +279,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. Deck ''One assumption'' box: ''β* = 10 cm for every species, as in the LHeC CDR for Pb, to maximise luminosity.'' For Xe, O, Ne this is the authors'' assumption, not an operational value.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -319,7 +319,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -359,7 +359,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -403,7 +403,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB. p.9: ''1200 bunches of 1.8 × 10^8 lead ions'' (LHeC CDR 2021).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -443,7 +443,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -485,7 +485,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-PB
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Pb'' (Z = 82, A = 208). Used as the ion-beam input of LHMUC-NUCL-MU-PB.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -605,7 +605,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: Column header of the p.10 table; physical constant of fully stripped 129Xe54+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -645,7 +645,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: Column header of the p.10 table; physical constant of 129Xe54+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -685,7 +685,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -725,7 +725,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -768,7 +768,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -849,7 +849,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -889,7 +889,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -933,7 +933,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE. p.9: ''Single pilot run: √sAA = 5.44 TeV with 16 bunches per beam.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -973,7 +973,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1015,7 +1015,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-XE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Xe'' (Z = 54, A = 129). Used as the ion-beam input of LHMUC-NUCL-MU-XE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1135,7 +1135,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: Column header of the p.10 table; physical constant of fully stripped 16O8+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1175,7 +1175,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: Column header of the p.10 table; physical constant of 16O8+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1215,7 +1215,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1255,7 +1255,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1298,7 +1298,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1379,7 +1379,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1419,7 +1419,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1463,7 +1463,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O. p.9: ''First light-ion run: p–O, O–O and Ne–Ne at √sAA = 5.36 TeV with 62 bunches per beam.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1503,7 +1503,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1545,7 +1545,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-O
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''O'' (Z = 8, A = 16). Used as the ion-beam input of LHMUC-NUCL-MU-O.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1665,7 +1665,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: Column header of the p.10 table; physical constant of fully stripped 20Ne10+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1705,7 +1705,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: Column header of the p.10 table; physical constant of 20Ne10+.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1745,7 +1745,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1785,7 +1785,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1828,7 +1828,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1909,7 +1909,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1949,7 +1949,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1993,7 +1993,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE. p.9: ''... Ne–Ne at √sAA = 5.36 TeV with 62 bunches per beam.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2033,7 +2033,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2075,7 +2075,7 @@ parameters:
       category: direct
       scenario: LHMUC-NUCL-MU-NE
       explanation: 'Imported LHC ion-beam value: deck ''Sources'' box: ''Pb: LHeC CDR 2021 (Table 4). Xe, O, Ne: Particle Data Group collider tables.'' and ''Conservative baseline These are values used experimentally in the LHC. A dedicated muon–nucleus collider can optimise them: bunch number, intensity, emittance, energy.'' Column ''Ne'' (Z = 10, A = 20). Used as the ion-beam input of LHMUC-NUCL-MU-NE.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

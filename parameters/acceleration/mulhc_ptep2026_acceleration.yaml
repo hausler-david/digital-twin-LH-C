@@ -36,7 +36,7 @@ parameters:
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 2 is the J-PARC g-2/EDM layout [54]; 212 MeV is the J-PARC muon
         linac output. Also used for the ERL option (p.10: ''from 212 MeV to 1 TeV'').'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -81,7 +81,7 @@ parameters:
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Table 1 nevertheless uses 1000 GeV, which requires 31.25 GeV linacs (see
         ACC_BOOSTER_LINAC_GAIN_REQUIRED_1TEV_MULHC).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -126,7 +126,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. §2.2 title: ''Boosting ultra-cold muons up to 1 TeV''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -170,7 +170,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''30 GeV muon LINAC ~ 3 km''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -213,7 +213,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -256,7 +256,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''R=1 km (B = 3 T max)''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -300,7 +300,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''R=1 km (B = 3 T max)''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -343,7 +343,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''30 GeV muon LINAC ~ 3 km'' (gradient 10 MV/m implied).'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -387,7 +387,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. μLHC modification of the μTRISTAN booster.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -432,7 +432,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. Figure 1 label: ''16 turns ~ 700μs''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -570,7 +570,7 @@ parameters:
         concept; not an LHμC specification. Authors' own decay calculation ('our calculation given in Figure 3'), which supersedes the μTRISTAN
         statement that 'about half' survive; the acknowledgements (p.21) thank K. Piotrzkowski 'for pointing out the inconsistency in antimuon
         survival rates'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -754,7 +754,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value quoted by Akturk et al. from the LHeC design (their refs. [12],[14],[15],[55],[66]); original source is LHeC, not μLHC
         or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -797,7 +797,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value quoted by Akturk et al. from the LHeC design (their refs. [12],[14],[15],[55],[66]); original source is LHeC, not μLHC
         or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -840,7 +840,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value quoted by Akturk et al. from the LHeC design (their refs. [12],[14],[15],[55],[66]); original source is LHeC, not μLHC
         or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -883,7 +883,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value quoted by Akturk et al. from the LHeC design (their refs. [12],[14],[15],[55],[66]); original source is LHeC, not μLHC
         or LHμC. The μLHC ERL-booster turn count (50) assumes this gain is retained for muons.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1268,7 +1268,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1313,7 +1313,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1358,7 +1358,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1405,7 +1405,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Proposal only; 'the specific lattice type is not defined in detail' in μTRISTAN.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1448,7 +1448,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: IMCC/MuCol baseline quoted by Akturk et al. (their refs. [56],[58]); rejected for μLHC because of the 40-bunch train.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1535,7 +1535,7 @@ parameters:
       scenario: null
       explanation: Muon Collider (IMCC) schedule quoted by Akturk et al. from ref. [49] (Accettura et al., arXiv:2504.21417); used in the paper
         as the feasibility/timeline argument for μ+h colliders preceding μ+μ- colliders. Calendar year, not a duration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

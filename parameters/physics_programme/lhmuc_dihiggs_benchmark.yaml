@@ -307,7 +307,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Second column of the p.15 limits table and the '3.74 TeV, 1 / 10 ab−1' entry of the p.16 comparison row; a projection assumption only, not an LHμC design value. The p.15 band plots extend
         from 0.1 to 10 ab^-1.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -349,7 +349,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Defines the benchmark process for both beam-energy configurations.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -390,7 +390,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Generator set-up of the benchmark; no shower, hadronisation or detector simulation is mentioned anywhere in the slides (parton level with smearing, p.9).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -431,7 +431,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Effective-Lagrangian model (p.21) implemented as a UFO; the model file is not public (see source registry unresolved question).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -472,7 +472,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Leading-order PDF set used for all samples.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -513,7 +513,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Logistics statement; recorded because sample availability determines whether the benchmark can be reproduced.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -554,7 +554,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Explains why the p.9 Higgs-mass windows act on smeared, not natural-width, distributions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -596,7 +596,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Sample size statement; the p.8 table lists the per-process sample sizes.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -646,7 +646,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Count of background processes in the p.8 table.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -688,7 +688,7 @@ parameters:
       category: direct
       scenario: null
       explanation: 'Normalisation of the scan variable; p.21: ''SM limit: ghhh(1) = 1, all other anomalous couplings = 0.'' The slides also give λSM = m_h^2/(2 v^2) ≈ 0.13.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -734,7 +734,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Scan variable (no single value); the figure on p.7 shows sigma(g_hhh^(1)) for E_mu = 500 GeV and 1 TeV.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -776,7 +776,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Scan granularity; 13 points over [-2.5, 2.5].
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -992,7 +992,7 @@ parameters:
       category: direct
       scenario: null
       explanation: Defines what the error bars of the p.7 figure mean.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1036,7 +1036,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1079,7 +1079,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1123,7 +1123,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1167,7 +1167,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1210,7 +1210,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1254,7 +1254,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1298,7 +1298,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1341,7 +1341,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1385,7 +1385,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1429,7 +1429,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1472,7 +1472,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1516,7 +1516,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1560,7 +1560,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1603,7 +1603,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1647,7 +1647,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1691,7 +1691,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1734,7 +1734,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1778,7 +1778,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1822,7 +1822,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1865,7 +1865,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1909,7 +1909,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1953,7 +1953,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Charged-current cross section at E_mu = 500 GeV, E_p = 7 TeV (sqrt(s) = 3.74 TeV), before b-tagging; generator-level with the p.9 object definitions implied but not stated as applied
         here.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1996,7 +1996,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Events at L = 1 ab^-1 before b-tagging, E_mu = 500 GeV configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2040,7 +2040,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Sample size of the generated parton-level sample (500 GeV configuration, the configuration of the table).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2127,7 +2127,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2169,7 +2169,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2212,7 +2212,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: 'Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions. Sign convention:
         the ''forward'' jet is at negative eta, i.e. the proton direction is taken as negative z (''signal backward, 2b central'' on p.10); the slides do not state the frame explicitly.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2254,7 +2254,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2296,7 +2296,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2338,7 +2338,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2380,7 +2380,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Fiducial selection defining the cut-flow observable (p.12, p.23, p.24) and the fiducial cross section used for the limits (p.15); parton-level objects per the p.9 definitions.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2465,7 +2465,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: 'Normalisation of all three cut-flows (p.12, p.23, p.24): sigma = 0.167 fb x 1 ab^-1.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2510,7 +2510,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2555,7 +2555,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2598,7 +2598,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2641,7 +2641,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2684,7 +2684,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2727,7 +2727,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2770,7 +2770,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2818,7 +2818,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2863,7 +2863,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2906,7 +2906,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2949,7 +2949,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2992,7 +2992,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3035,7 +3035,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3078,7 +3078,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3121,7 +3121,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3169,7 +3169,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3214,7 +3214,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3257,7 +3257,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3300,7 +3300,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3343,7 +3343,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3386,7 +3386,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3429,7 +3429,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3472,7 +3472,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3520,7 +3520,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3565,7 +3565,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3608,7 +3608,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3651,7 +3651,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3694,7 +3694,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3737,7 +3737,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3780,7 +3780,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3823,7 +3823,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3871,7 +3871,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3916,7 +3916,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3959,7 +3959,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4002,7 +4002,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4045,7 +4045,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4088,7 +4088,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4131,7 +4131,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4174,7 +4174,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4222,7 +4222,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4267,7 +4267,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4310,7 +4310,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4353,7 +4353,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4396,7 +4396,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4439,7 +4439,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4482,7 +4482,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4525,7 +4525,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4573,7 +4573,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 70% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Nominal result configuration.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4618,7 +4618,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4663,7 +4663,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4706,7 +4706,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4749,7 +4749,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4792,7 +4792,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4835,7 +4835,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4878,7 +4878,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4926,7 +4926,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4971,7 +4971,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5014,7 +5014,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5057,7 +5057,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5100,7 +5100,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5143,7 +5143,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5186,7 +5186,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5229,7 +5229,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5277,7 +5277,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5322,7 +5322,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5365,7 +5365,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5408,7 +5408,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5451,7 +5451,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5494,7 +5494,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5537,7 +5537,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5580,7 +5580,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5628,7 +5628,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5673,7 +5673,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5716,7 +5716,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5759,7 +5759,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5802,7 +5802,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5845,7 +5845,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5888,7 +5888,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5931,7 +5931,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5979,7 +5979,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6024,7 +6024,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6067,7 +6067,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6110,7 +6110,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6153,7 +6153,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6196,7 +6196,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6239,7 +6239,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6282,7 +6282,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6330,7 +6330,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6375,7 +6375,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6418,7 +6418,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6461,7 +6461,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6504,7 +6504,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6547,7 +6547,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6590,7 +6590,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6633,7 +6633,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6681,7 +6681,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 60% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6726,7 +6726,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6771,7 +6771,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6814,7 +6814,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6857,7 +6857,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6900,7 +6900,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6943,7 +6943,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6986,7 +6986,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7034,7 +7034,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7079,7 +7079,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7122,7 +7122,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7165,7 +7165,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7208,7 +7208,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7251,7 +7251,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7294,7 +7294,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7337,7 +7337,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7385,7 +7385,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7430,7 +7430,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7473,7 +7473,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7516,7 +7516,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7559,7 +7559,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7602,7 +7602,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7645,7 +7645,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7688,7 +7688,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7736,7 +7736,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7781,7 +7781,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7824,7 +7824,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7867,7 +7867,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7910,7 +7910,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7953,7 +7953,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7996,7 +7996,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8039,7 +8039,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8087,7 +8087,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8132,7 +8132,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8175,7 +8175,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8218,7 +8218,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8261,7 +8261,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8304,7 +8304,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8347,7 +8347,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8390,7 +8390,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8438,7 +8438,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8483,7 +8483,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8526,7 +8526,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8569,7 +8569,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8612,7 +8612,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8655,7 +8655,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8698,7 +8698,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8741,7 +8741,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8789,7 +8789,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Yield in events at L = 1 ab^-1, E_mu = 500 GeV, with eps_b = 90% per real b-jet and eps_mis = 1%; parton level with 12% jet-energy smearing. Backup b-tagging variant.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9146,7 +9146,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario 'No tagging (ideal, ϵb = 1)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9190,7 +9190,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario 'No tagging (ideal, ϵb = 1)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9233,7 +9233,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Counting significance for the b-tagging scenario 'No tagging (ideal, ϵb = 1)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9277,7 +9277,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '60% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9320,7 +9320,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '60% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9363,7 +9363,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Counting significance for the b-tagging scenario '60% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9408,7 +9408,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '70% b-tag, 1% mistag (results)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9452,7 +9452,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '70% b-tag, 1% mistag (results)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9496,7 +9496,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Counting significance for the b-tagging scenario '70% b-tag, 1% mistag (results)'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9540,7 +9540,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '70% b-tag, 2% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9583,7 +9583,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '70% b-tag, 2% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9626,7 +9626,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Counting significance for the b-tagging scenario '70% b-tag, 2% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9671,7 +9671,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '90% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9714,7 +9714,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Final yield after the full cut-flow for the b-tagging scenario '90% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9757,7 +9757,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Counting significance for the b-tagging scenario '90% b-tag, 1% mistag'.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9802,7 +9802,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9847,7 +9847,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9892,7 +9892,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9936,7 +9936,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9980,7 +9980,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10024,7 +10024,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10068,7 +10068,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10112,7 +10112,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10156,7 +10156,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10200,7 +10200,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10244,7 +10244,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10288,7 +10288,7 @@ parameters:
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Expected 95% CL allowed interval from the fiducial cross section after the full cut-flow (70% b-tag, 1% mistag), one coupling varied at a time, 5% systematic, Z_A >= 1.96 excess-over-SM
         criterion; E_mu = 500 GeV, E_p = 7 TeV. Rate-only ('This work, µ+p (rate only)', p.16). The 10 ab^-1 column is an extrapolation beyond the stated 1 ab^-1 benchmark luminosity.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10331,7 +10331,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Efficiency used in the limit-setting formula s = L ε [σ(g) − σSM]; includes the eps_b^4 tagging weight and all cuts C1-C5.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -10375,7 +10375,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Flat 5% systematic; what it is applied to (background, signal or both) is not stated.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10417,7 +10417,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Exclusion criterion corresponding to 95% CL (one-sided excess over SM only); couplings whose rate falls below the SM are therefore not excluded by this rate-only method.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10460,7 +10460,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Defines how the p.15 intervals were obtained.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10502,7 +10502,7 @@ parameters:
       category: direct
       scenario: LHMUC-DIHIGGS-500GEV
       explanation: Background input of the limit formula; rounded from the p.12 cut-flow (5.19).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -10545,7 +10545,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10587,7 +10587,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10629,7 +10629,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10671,7 +10671,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10713,7 +10713,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10755,7 +10755,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10801,7 +10801,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10843,7 +10843,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10885,7 +10885,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only. 100 TeV, 30 ab^-1.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10927,7 +10927,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: Comparator quoted on the LHμC slide without a citation (ATLAS/CMS/HL-LHC/FCC values); not an LHμC number. Screening comparator only. 100 TeV, 30 ab^-1.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10973,7 +10973,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he electron-proton benchmark (Kumar et al., PLB 764 (2017)) that this μ+p study builds on (p.4); related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -11144,7 +11144,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he e-p benchmark (Kumar et al., PLB 764 (2017)) quoted as the proof of principle this study builds on; related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -11187,7 +11187,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he e-p benchmark (Kumar et al., PLB 764 (2017)) quoted as the proof of principle this study builds on; related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -11229,7 +11229,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he e-p benchmark (Kumar et al., PLB 764 (2017)) quoted as the proof of principle this study builds on; related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -11271,7 +11271,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he e-p benchmark (Kumar et al., PLB 764 (2017)) quoted as the proof of principle this study builds on; related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -11313,7 +11313,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: FCC-he e-p benchmark (Kumar et al., PLB 764 (2017)) quoted as the proof of principle this study builds on; related lepton-proton machine, not LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

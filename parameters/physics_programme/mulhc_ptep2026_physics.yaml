@@ -34,7 +34,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: HERA value quoted by Akturk et al. from the PDG Review of Particle Physics (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -76,7 +76,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: HERA value quoted by Akturk et al. from the PDG Review of Particle Physics (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -118,7 +118,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: HERA value quoted by Akturk et al. from the PDG Review of Particle Physics (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -161,7 +161,7 @@ parameters:
       scenario: null
       explanation: 'EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only. CONFLICT: Table 5 prints 0.145
         TeV for the EIC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -204,7 +204,7 @@ parameters:
       scenario: null
       explanation: 'EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only. CONFLICT: Table 4 prints 0.105
         TeV for the EIC.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -246,7 +246,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -288,7 +288,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -587,7 +587,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Physics-case definition, also stated on p.2.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -630,7 +630,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -673,7 +673,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Corresponds to y = 1 (Q^2 = x y s with s = 4 E_mu E_p).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -716,7 +716,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -761,7 +761,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -805,7 +805,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: HERA value quoted by Akturk et al. from the PDG Review of Particle Physics (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -847,7 +847,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: HERA value quoted by Akturk et al. from the PDG Review of Particle Physics (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -889,7 +889,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -931,7 +931,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: EIC value quoted by Akturk et al. from the PDG (their ref. [65]); comparison collider only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1145,7 +1145,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Higgs yield per working year (1e7 s) from the W/Z-fusion cross sections of Figure 12 (values not printed
         numerically).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1190,7 +1190,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Higgs yield per working year (1e7 s) from the W/Z-fusion cross sections of Figure 12 (values not printed
         numerically).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1235,7 +1235,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Higgs yield per working year (1e7 s) from the W/Z-fusion cross sections of Figure 12 (values not printed
         numerically).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1281,7 +1281,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Higgs yield per working year (1e7 s) from the W/Z-fusion cross sections of Figure 12 (values not printed
         numerically).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1593,7 +1593,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1639,7 +1639,7 @@ parameters:
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
         p.18: ''Pythia8 [73] was utilized for the hadronization ... jet clustering algorithms with FastJet [74], and the analysis was completed
         using the MadAnalysis5 [75].'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1683,7 +1683,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1726,7 +1726,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1770,7 +1770,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1813,7 +1813,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1856,7 +1856,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1900,7 +1900,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1943,7 +1943,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1987,7 +1987,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
         1 ab^-1 corresponds to ~11 working years at 88 fb^-1/year.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2114,7 +2114,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2248,7 +2248,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2292,7 +2292,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
         About 1.1 working years at 88 fb^-1/year.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2335,7 +2335,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Hadron-level MadGraph5/Pythia8/FastJet/MadAnalysis5 study at E_mu = 1 TeV, E_p = 7 TeV with Λ = m_μ8.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2379,7 +2379,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Only the colour-octet muon case is quantified in the paper.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2595,7 +2595,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC comparator quoted by Akturk et al. (their refs. [14],[15]); Table 4 prints 1.18 TeV for the same configuration (rounding).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1

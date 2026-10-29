@@ -36,7 +36,7 @@ parameters:
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Same value in both columns of Table 3; also p.4: ''center-of-mass energy of 5.3 TeV, resulting from
         the collision of 1 TeV muons with 7 TeV protons''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -83,7 +83,7 @@ parameters:
         concept; not an LHμC specification. Computed by the authors with the AloHEP code ('with beam size matched accordingly'). The acknowledgements
         (p.21) state the luminosity 'increased by approximately 2 times for the μTRISTAN-based option' after the survival-rate correction; v2
         is taken to be the post-erratum value (unresolved, see source registry).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -136,7 +136,7 @@ parameters:
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. AloHEP result. Acknowledgements (p.21): luminosity ''increased by approximately ... 4 times for the
         LHeC-based option'' after the survival-rate correction.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -188,7 +188,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Qualitative claim; the actual values are 8.8e33 and 7.2e33 (Table 3).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -322,7 +322,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Single merged cell for both columns.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -365,7 +365,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. 'The numbers of antimuons are taken from the muon population exiting the boosting ring' (p.11).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -410,7 +410,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -456,7 +456,7 @@ parameters:
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. p.11: ''The remaining beam parameters are adapted from the μ+ beam detailed
         in the μ+e- collider proposal of [51].'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -499,7 +499,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -542,7 +542,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -585,7 +585,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -628,7 +628,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -672,7 +672,7 @@ parameters:
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. p.11: ''A beam composed of 40 bunches [51] of ultra-cold muons then enters
         the main ring.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -715,7 +715,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Consistent with 40 bunches every ~10 us revolution (250 ns spacing).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -760,7 +760,7 @@ parameters:
       explanation: 'Value taken by Akturk et al. from the μTRISTAN design (Hamada et al., PTEP 2022, their ref. [51]) and adopted unchanged for
         the μLHC chain; original source is μTRISTAN, not μLHC or LHμC. p.7: ''construction of a single main ring with a circumference of 3 km
         that would be tangentially aligned with the LHC''s proton beam lines.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -806,7 +806,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -850,7 +850,7 @@ parameters:
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. 'luminosity values ... calculated within the AloHEP software, with beam size matched accordingly'
         (p.12); a single value is printed for x and y.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -897,7 +897,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Same matched beam size as the μTRISTAN option.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -940,7 +940,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Printed as 600 in units of 1e-4.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -988,7 +988,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Printed as 600 in units of 1e-4.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1037,7 +1037,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1083,7 +1083,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1128,7 +1128,7 @@ parameters:
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Conclusion p.20 restates: ''the options explored in this study utilized only one-tenth of the available
         proton bunches.'''
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1174,7 +1174,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. The paper flags this as an unexploited optimisation margin; no optimised value is given.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1218,7 +1218,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Also in Figure 1 label (μTRISTAN): ''3 km Main ring τμ = 20 ms (2000 turns)''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1264,7 +1264,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1309,7 +1309,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Also in Figure 1 label: ''τμ = 20 ms (2000 turns)''.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1356,7 +1356,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1401,7 +1401,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. The paper states that the precise decay treatment in the luminosity was delegated to AloHEP.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1447,7 +1447,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1493,7 +1493,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: 'Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Refs. [60]-[62]: IPAC 2021 paper, GitHub yefetu/ALOHEP, yef.etu.edu.tr/ALOHEP2_eng.html.'
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1536,7 +1536,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1581,7 +1581,7 @@ parameters:
       scenario: MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -1626,7 +1626,7 @@ parameters:
       scenario: MULHC-PTEP2026-MUTRISTAN-BOOSTER; MULHC-PTEP2026-ERL-BOOSTER
       explanation: Value reported by Akturk et al. for the μLHC (HL-LHC based μ+p collider), a related machine and direct precursor of the LHμC
         concept; not an LHμC specification. Standard HEP convention adopted by the authors.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

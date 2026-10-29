@@ -32,7 +32,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC (E_e = 20 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -73,7 +73,7 @@ parameters:
       scenario: null
       explanation: LHeC (E_e = 50 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only; reference column for the 'Key comparisons' enhancement
         factors.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -113,7 +113,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (E_mu = 500 GeV, sqrt(s) ≃ 3.7 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -153,7 +153,7 @@ parameters:
       category: direct
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: LHμC nominal baseline (E_mu = 1 TeV, sqrt(s) ≃ 5.3 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -193,7 +193,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC (E_e = 20 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -234,7 +234,7 @@ parameters:
       scenario: null
       explanation: LHeC (E_e = 50 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only; reference column for the 'Key comparisons' enhancement
         factors.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -274,7 +274,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (E_mu = 500 GeV, sqrt(s) ≃ 3.7 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -314,7 +314,7 @@ parameters:
       category: direct
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: LHμC nominal baseline (E_mu = 1 TeV, sqrt(s) ≃ 5.3 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -354,7 +354,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC (E_e = 20 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -395,7 +395,7 @@ parameters:
       scenario: null
       explanation: LHeC (E_e = 50 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only; reference column for the 'Key comparisons' enhancement
         factors.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -435,7 +435,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (E_mu = 500 GeV, sqrt(s) ≃ 3.7 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -475,7 +475,7 @@ parameters:
       category: direct
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: LHμC nominal baseline (E_mu = 1 TeV, sqrt(s) ≃ 5.3 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -515,7 +515,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC (E_e = 20 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -556,7 +556,7 @@ parameters:
       scenario: null
       explanation: LHeC (E_e = 50 GeV) comparison column quoted on the LHμC slide; the slide cites no origin for the LHeC numbers. Comparator only; reference column for the 'Key comparisons' enhancement
         factors.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -596,7 +596,7 @@ parameters:
       category: design_variant
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (E_mu = 500 GeV, sqrt(s) ≃ 3.7 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -636,7 +636,7 @@ parameters:
       category: direct
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: LHμC nominal baseline (E_mu = 1 TeV, sqrt(s) ≃ 5.3 TeV). Inclusive lp cross section; generator, PDF set, cuts and order are not stated on the slide.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -853,7 +853,7 @@ parameters:
       scenario: null
       explanation: LHeC (sqrt(s) = 1.2 TeV) comparator quoted on the LHμC slide. Comparator only. 'Elastic' = both beams intact; the figure legend on the same slide specifies the photon-virtuality cuts
         'Q_ℓ^2 < M_Z^2 GeV^2, Q_p^2 < M_Z^2 GeV^2' (PHYS_EL_PHOTON_VIRTUALITY_CUT_WP).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -895,7 +895,7 @@ parameters:
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (sqrt(s) ≃ 3.7 TeV, E_mu = 500 GeV). 'Elastic' = both beams intact; the figure legend on the same slide specifies the photon-virtuality cuts 'Q_ℓ^2 < M_Z^2 GeV^2, Q_p^2
         < M_Z^2 GeV^2' (PHYS_EL_PHOTON_VIRTUALITY_CUT_WP).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -937,7 +937,7 @@ parameters:
       scenario: LHMUC-WP-BASELINE-1TEV
       explanation: LHμC baseline (sqrt(s) ≃ 5.3 TeV, E_mu = 1 TeV). 'Elastic' = both beams intact; the figure legend on the same slide specifies the photon-virtuality cuts 'Q_ℓ^2 < M_Z^2 GeV^2, Q_p^2 <
         M_Z^2 GeV^2' (PHYS_EL_PHOTON_VIRTUALITY_CUT_WP).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1283,7 +1283,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: LHeC comparator quoted on the LHμC slide. Comparator only. Minimum W0 for this table is not stated on the slide (the figure shows σ(Wγγ > W0) vs W0).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1325,7 +1325,7 @@ parameters:
       scenario: LHMUC-WP-OPT1-500GEV
       explanation: LHμC option 1 (E_mu = 500 GeV). The table gives no value for the 1 TeV baseline; the p.21 inset gives a generator-level σ = 0.288 pb for 'μLHC@5.3TeV' (PHYS_XSEC_GEN_GG_WW_SM_LHMUC1TEV_AQGCFIG_WP).
         Minimum W0 for this table is not stated.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

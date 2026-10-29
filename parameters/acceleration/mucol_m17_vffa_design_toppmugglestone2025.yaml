@@ -43,7 +43,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -83,7 +83,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -124,7 +124,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -165,7 +165,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -205,7 +205,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -245,7 +245,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -285,7 +285,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -325,7 +325,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -365,7 +365,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -406,7 +406,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -447,7 +447,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -487,7 +487,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -527,7 +527,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -567,7 +567,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -607,7 +607,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -647,7 +647,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -687,7 +687,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -727,7 +727,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -767,7 +767,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -807,7 +807,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -847,7 +847,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -887,7 +887,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -927,7 +927,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -968,7 +968,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1008,7 +1008,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1048,7 +1048,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1088,7 +1088,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1128,7 +1128,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1168,7 +1168,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1208,7 +1208,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1248,7 +1248,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1288,7 +1288,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1328,7 +1328,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1368,7 +1368,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1408,7 +1408,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1448,7 +1448,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1488,7 +1488,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1528,7 +1528,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1568,7 +1568,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1608,7 +1608,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA4-2025
       explanation: MuCol analytic vFFA alternative to RCS4 ('Stage 4 vFFA', 1.5-5 TeV, 35000 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1648,7 +1648,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1688,7 +1688,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1728,7 +1728,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1768,7 +1768,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1808,7 +1808,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1848,7 +1848,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1888,7 +1888,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1928,7 +1928,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1968,7 +1968,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS1 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2008,7 +2008,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2048,7 +2048,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2088,7 +2088,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2128,7 +2128,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2168,7 +2168,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2208,7 +2208,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2248,7 +2248,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2288,7 +2288,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2328,7 +2328,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: RCS4 comparator column of Table 2.3 (the report attributes the RCS values to the IMCC tentative parameter list, its ref. [4]); an IMCC 10 TeV muon-collider chain value recorded only as the comparison baseline of the vFFA study, not an LHμC design value.
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2368,7 +2368,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2408,7 +2408,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2448,7 +2448,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2489,7 +2489,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2530,7 +2530,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2570,7 +2570,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2610,7 +2610,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2650,7 +2650,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2690,7 +2690,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2730,7 +2730,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2771,7 +2771,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2812,7 +2812,7 @@ parameters:
       category: analogous
       scenario: MUCOL-M17-VFFA1-2025
       explanation: MuCol analytic vFFA alternative to RCS1 ('Stage 1 vFFA', 0.06-0.3 TeV, 5990 m footprint) of the IMCC 10 TeV muon-collider acceleration chain; not an LHμC design. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3546,7 +3546,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3587,7 +3587,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3629,7 +3629,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3669,7 +3669,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3709,7 +3709,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3749,7 +3749,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3789,7 +3789,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3829,7 +3829,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3869,7 +3869,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3909,7 +3909,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3949,7 +3949,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3989,7 +3989,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4029,7 +4029,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4069,7 +4069,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4109,7 +4109,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4149,7 +4149,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4189,7 +4189,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4229,7 +4229,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4269,7 +4269,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4309,7 +4309,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4349,7 +4349,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4389,7 +4389,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4429,7 +4429,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4469,7 +4469,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4509,7 +4509,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4549,7 +4549,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4589,7 +4589,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4629,7 +4629,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4669,7 +4669,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4709,7 +4709,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4749,7 +4749,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4789,7 +4789,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4829,7 +4829,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4869,7 +4869,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4909,7 +4909,7 @@ parameters:
       category: analogous
       scenario: null
       explanation: General statement of the MuCol M17 analytic vFFA study for the IMCC 10 TeV muon-collider chain; not an LHμC design statement. The report states that the lattices proposed with the analytic formalism must still be verified by numerical simulation and their non-linear properties studied (p. 15).
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0

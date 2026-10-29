@@ -40,7 +40,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -80,7 +80,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -122,7 +122,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -162,7 +162,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -203,7 +203,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -244,7 +244,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -284,7 +284,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -325,7 +325,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -366,7 +366,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -407,7 +407,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -448,7 +448,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -489,7 +489,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -532,7 +532,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -572,7 +572,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -616,7 +616,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -657,7 +657,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -697,7 +697,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -739,7 +739,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -781,7 +781,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -821,7 +821,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -864,7 +864,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -907,7 +907,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -949,7 +949,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -991,7 +991,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1031,7 +1031,7 @@ parameters:
       category: screening_only
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1074,7 +1074,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1115,7 +1115,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1155,7 +1155,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1197,7 +1197,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1238,7 +1238,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1280,7 +1280,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1323,7 +1323,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1364,7 +1364,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1405,7 +1405,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1446,7 +1446,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1487,7 +1487,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1528,7 +1528,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1569,7 +1569,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1610,7 +1610,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1651,7 +1651,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1692,7 +1692,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1733,7 +1733,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1774,7 +1774,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1815,7 +1815,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1857,7 +1857,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1898,7 +1898,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1938,7 +1938,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -1978,7 +1978,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2018,7 +2018,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2058,7 +2058,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2098,7 +2098,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2138,7 +2138,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2181,7 +2181,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2222,7 +2222,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2264,7 +2264,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2304,7 +2304,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2344,7 +2344,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2387,7 +2387,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2428,7 +2428,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2470,7 +2470,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2510,7 +2510,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2550,7 +2550,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2593,7 +2593,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2634,7 +2634,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2676,7 +2676,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2716,7 +2716,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2756,7 +2756,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2800,7 +2800,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2841,7 +2841,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -2884,7 +2884,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2925,7 +2925,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -2966,7 +2966,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3007,7 +3007,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3048,7 +3048,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3088,7 +3088,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3128,7 +3128,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3168,7 +3168,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3208,7 +3208,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3248,7 +3248,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3288,7 +3288,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3328,7 +3328,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3368,7 +3368,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3408,7 +3408,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3448,7 +3448,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3488,7 +3488,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3528,7 +3528,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3568,7 +3568,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3608,7 +3608,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3648,7 +3648,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3690,7 +3690,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3732,7 +3732,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3775,7 +3775,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3820,7 +3820,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -3866,7 +3866,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3907,7 +3907,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3948,7 +3948,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -3989,7 +3989,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4034,7 +4034,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4076,7 +4076,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4119,7 +4119,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4161,7 +4161,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4205,7 +4205,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4245,7 +4245,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4285,7 +4285,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4326,7 +4326,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4367,7 +4367,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4408,7 +4408,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4450,7 +4450,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4492,7 +4492,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4534,7 +4534,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4575,7 +4575,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4617,7 +4617,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4658,7 +4658,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19] (the paper's ref. [19]) and LHC [22], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4698,7 +4698,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4738,7 +4738,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4778,7 +4778,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4822,7 +4822,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4862,7 +4862,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; worked example of Eq. (11) taken from Herr & Muratori [19], not an AloHEP run
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -4905,7 +4905,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4948,7 +4948,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -4988,7 +4988,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5028,7 +5028,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5068,7 +5068,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5111,7 +5111,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5151,7 +5151,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5191,7 +5191,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5234,7 +5234,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5274,7 +5274,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5314,7 +5314,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5354,7 +5354,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5394,7 +5394,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5435,7 +5435,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5476,7 +5476,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5517,7 +5517,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5558,7 +5558,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5600,7 +5600,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5641,7 +5641,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5684,7 +5684,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5724,7 +5724,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5764,7 +5764,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5807,7 +5807,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5848,7 +5848,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5893,7 +5893,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -5939,7 +5939,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -5982,7 +5982,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6025,7 +6025,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6068,7 +6068,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6111,7 +6111,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6154,7 +6154,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6197,7 +6197,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6240,7 +6240,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6283,7 +6283,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6326,7 +6326,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6372,7 +6372,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6415,7 +6415,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6461,7 +6461,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6504,7 +6504,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6548,7 +6548,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6598,7 +6598,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6648,7 +6648,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6693,7 +6693,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -6740,7 +6740,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6784,7 +6784,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6828,7 +6828,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6872,7 +6872,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6917,7 +6917,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; ILC-125 e+e− design values quoted by the paper from the ILC Machine Staging Report 2017 (its ref. [31], arXiv:1711.00568) or from the AloHEP
         ILC parameter set; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6957,7 +6957,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -6999,7 +6999,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7040,7 +7040,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7081,7 +7081,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7126,7 +7126,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7168,7 +7168,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7210,7 +7210,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -7254,7 +7254,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7296,7 +7296,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7337,7 +7337,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7378,7 +7378,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7420,7 +7420,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7462,7 +7462,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7503,7 +7503,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7543,7 +7543,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7583,7 +7583,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7623,7 +7623,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7663,7 +7663,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7703,7 +7703,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7743,7 +7743,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7784,7 +7784,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7825,7 +7825,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7866,7 +7866,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7907,7 +7907,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7948,7 +7948,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -7989,7 +7989,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8030,7 +8030,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8070,7 +8070,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8113,7 +8113,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8153,7 +8153,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8196,7 +8196,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8236,7 +8236,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8276,7 +8276,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8319,7 +8319,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8360,7 +8360,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8404,7 +8404,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8445,7 +8445,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8489,7 +8489,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8530,7 +8530,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8571,7 +8571,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8615,7 +8615,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8656,7 +8656,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8699,7 +8699,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8740,7 +8740,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8785,7 +8785,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -8830,7 +8830,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8873,7 +8873,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8916,7 +8916,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -8957,7 +8957,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; HERA-II benchmark configuration as tabulated by the Particle Data Group (the paper's ref. [32], Navas et al. 2024); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9001,7 +9001,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9046,7 +9046,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9091,7 +9091,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9136,7 +9136,7 @@ parameters:
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; EIC benchmark configuration from the EIC Conceptual Design Report 2021 (the paper's ref. [33]) as tabulated by the Particle Data Group
         (ref. [32]); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9277,7 +9277,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; LHC Pb–Pb benchmark (the paper's ref. [22], Evans & Bryant 2008); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9318,7 +9318,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; RHIC Au–Au benchmark (the paper's ref. [34], Hahn et al. 2003); not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9360,7 +9360,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9401,7 +9401,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value; LHC Pb–Pb benchmark; not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9441,7 +9441,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9484,7 +9484,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9527,7 +9527,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9570,7 +9570,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9613,7 +9613,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9656,7 +9656,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9699,7 +9699,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9742,7 +9742,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9785,7 +9785,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -9828,7 +9828,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9873,7 +9873,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -9961,7 +9961,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10004,7 +10004,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10047,7 +10047,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10090,7 +10090,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10134,7 +10134,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -10182,7 +10182,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P1
@@ -10367,7 +10367,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10408,7 +10408,7 @@ parameters:
       scenario: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
       explanation: tool-benchmark value, not an LHμC design value; IMCC / MuCol 10 TeV μ+μ− consolidated baseline as quoted by the paper from MuCol Milestone Report No. 7 (its ref. [35], arXiv:2510.27437);
         symmetric μ+μ− collider, not an LHμC value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10448,7 +10448,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10490,7 +10490,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
@@ -10532,7 +10532,7 @@ parameters:
       category: screening_only
       scenario: null
       explanation: tool-benchmark value, not an LHμC design value
-    confidence: high
+    confidence: medium
     assumption_id: null
   validation:
     level: P0
