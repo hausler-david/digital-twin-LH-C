@@ -82,3 +82,14 @@ def test_search_log_and_unresolved_exist():
     assert (REPO_ROOT / "research" / "search_log.csv").exists()
     assert (REPO_ROOT / "research" / "unresolved_searches.md").exists()
     assert (REPO_ROOT / "research" / "source_quality_policy.md").exists()
+
+
+def test_source_parameters_extracted_in_sync():
+    """Every source lists exactly the parameter ids that cite it (tools/sync_parameters_extracted.py)."""
+    import subprocess
+    import sys
+    from pathlib import Path
+    root = Path(__file__).resolve().parents[2]
+    r = subprocess.run([sys.executable, str(root / "tools" / "sync_parameters_extracted.py"), "--check"],
+                       capture_output=True, text=True)
+    assert r.returncode == 0, r.stdout[-2000:]
