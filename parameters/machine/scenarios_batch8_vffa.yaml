@@ -1,0 +1,169 @@
+# Scenarios added by the batch-8 G11_MUCOL_M17_VFFA extraction (2026-10-28). Schema: schemas/machine.schema.json. No numbers here: every role
+# references a record in parameters/acceleration/mucol_m17_vffa_design_toppmugglestone2025.yaml. Both scenarios are IMCC/MuCol comparators (machine IMCC),
+# not LHμC scenarios; status 'reported' means reported by the MuCol M17 report for its own analytic design. unknown_roles lists what the report does not
+# give (RF voltage/frequency/cavity count, turns, acceleration time, injection/extraction systems, magnet apertures, ...).
+scenarios:
+- scenario_id: MUCOL-M17-VFFA1-2025
+  label: 'MuCol M17 Stage 1 vFFA: analytic vFFA FODO ring replacing RCS1 (0.06-0.3 TeV, 5990 m), IMCC comparator'
+  description: 'Stage 1 vFFA of MuCol Milestone Report 17 (Topp-Mugglestone, 27 Mar 2025): a vertical-excursion FFA designed with the analytic closed-orbit/transfer-matrix formalism to match the footprint and energy range of RCS1 of the IMCC 10 TeV muon-collider chain. Table 2.2 inputs r0 = 953 m, θF = 0.01033 rad, Nc = 790, βF = 0.001564 rad, βD = 0.00118 rad, γF = 0.252 rad, m = 31.94 1/m; Table 2.3 outputs: 5990 m, 0.06→0.3 TeV, SC fixed magnets, ramp rate 0 T/s, vertical excursion 0.048 m, peak field on orbit 6.93 T (good field region 12.52 T for 25 µm), drift 1.18 m, tunes (0.382, 0.079). All values are analogous (IMCC design, not LHμC); the derived entries are audit arithmetic with named inputs. The report states the lattice is analytic only and must be verified by numerical simulation (p. 15); no RF, longitudinal or injection/extraction design exists.'
+  machine: IMCC
+  design_version: MuCol Milestone Report No. 17 v1.0 Final (27 Mar 2025, DOI 10.5281/zenodo.15054073), Tables 2.2-2.3; analytic lattice, not tracked
+  status: reported
+  primary_source_ids:
+  - SRC_DOI_10_5281_ZENODO_15054073
+  parameters:
+    orbit_radius_f_magnet_centre: ACC_VFFA1_ORBIT_RADIUS_MUCOLM17
+    f_magnet_bend_angle: ACC_VFFA1_F_BEND_ANGLE_MUCOLM17
+    cell_count: ACC_VFFA1_CELL_COUNT_MUCOLM17
+    f_magnet_opening_angle: ACC_VFFA1_F_OPENING_ANGLE_MUCOLM17
+    d_magnet_opening_angle: ACC_VFFA1_D_OPENING_ANGLE_MUCOLM17
+    f_magnet_inclination: ACC_VFFA1_F_INCLINATION_MUCOLM17
+    field_index: ACC_VFFA1_FIELD_INDEX_MUCOLM17
+    circumference: ACC_VFFA1_CIRCUMFERENCE_MUCOLM17
+    injection_energy: ACC_VFFA1_INJECTION_ENERGY_MUCOLM17
+    extraction_energy: ACC_VFFA1_EXTRACTION_ENERGY_MUCOLM17
+    energy_ratio: ACC_VFFA1_ENERGY_RATIO_MUCOLM17
+    nc_ramped_magnets: ACC_VFFA1_NC_RAMPED_MAGNETS_MUCOLM17
+    sc_fixed_magnets: ACC_VFFA1_SC_FIXED_MAGNETS_MUCOLM17
+    ramp_rate: ACC_VFFA1_RAMP_RATE_MUCOLM17
+    vertical_excursion: ACC_VFFA1_VERTICAL_EXCURSION_MUCOLM17
+    relative_path_length_difference: ACC_VFFA1_RELATIVE_PATH_LENGTH_DIFFERENCE_MUCOLM17
+    momentum_compaction: ACC_VFFA_MOMENTUM_COMPACTION_MUCOLM17
+    peak_dipole_field_on_orbit: ACC_VFFA1_PEAK_FIELD_ON_ORBIT_MUCOLM17
+    peak_dipole_field_good_field_region: ACC_VFFA1_PEAK_FIELD_GOOD_FIELD_REGION_MUCOLM17
+    good_field_region_emittance_assumed: ACC_VFFA_GOOD_FIELD_EMITTANCE_ASSUMED_MUCOLM17
+    good_field_region_evaluation_method: ACC_VFFA_GOOD_FIELD_EVALUATION_METHOD_MUCOLM17
+    drift_length: ACC_VFFA1_DRIFT_LENGTH_MUCOLM17
+    tune_1: ACC_VFFA1_TUNE_1_MUCOLM17
+    tune_2: ACC_VFFA1_TUNE_2_MUCOLM17
+    tune_evaluation_method: ACC_VFFA_TUNE_EVALUATION_METHOD_MUCOLM17
+    d_magnet_bend_angle_derived: ACC_VFFA1_D_BEND_ANGLE_DERIVED_MUCOLM17
+    f_magnet_radius_of_curvature_derived: ACC_VFFA1_F_RADIUS_OF_CURVATURE_DERIVED_MUCOLM17
+    d_magnet_inclination_derived: ACC_VFFA1_D_INCLINATION_DERIVED_MUCOLM17
+    d_magnet_radius_of_curvature_derived: ACC_VFFA1_D_RADIUS_OF_CURVATURE_DERIVED_MUCOLM17
+    f_magnet_on_orbit_field_check_derived: ACC_VFFA1_ON_ORBIT_FIELD_CHECK_MUCOLM17
+    d_magnet_on_orbit_field_check_derived: ACC_VFFA1_D_ON_ORBIT_FIELD_DERIVED_MUCOLM17
+    f_magnet_length_hard_edge_derived: ACC_VFFA1_F_MAGNET_LENGTH_DERIVED_MUCOLM17
+    d_magnet_length_hard_edge_derived: ACC_VFFA1_D_MAGNET_LENGTH_DERIVED_MUCOLM17
+    dispersion_derived: ACC_VFFA1_DISPERSION_DERIVED_MUCOLM17
+    vertical_excursion_scaling_law_estimate: ACC_VFFA1_EXCURSION_SCALING_LAW_ESTIMATE_MUCOLM17
+    good_field_vertical_extent_derived: ACC_VFFA1_GOOD_FIELD_VERTICAL_EXTENT_DERIVED_MUCOLM17
+    drift_length_from_angles_derived: ACC_VFFA1_DRIFT_LENGTH_FROM_ANGLES_DERIVED_MUCOLM17
+    sc_dipole_design_limit: ACC_VFFA_DESIGN_LIMIT_SC_DIPOLE_MUCOLM17
+    minimum_drift_length_assumed: ACC_VFFA_MIN_DRIFT_LENGTH_MUCOLM17
+    design_objectives: ACC_VFFA_DESIGN_OBJECTIVES_MUCOLM17
+    scaling_law: ACC_VFFA_SCALING_LAW_MUCOLM17
+    closed_orbit_model_assumption: ACC_VFFA_CLOSED_ORBIT_MODEL_ASSUMPTION_MUCOLM17
+    analytic_model_validity_conditions: ACC_VFFA_ANALYTIC_MODEL_VALIDITY_CONDITIONS_MUCOLM17
+    optics_notebook: ACC_VFFA_OPTICS_NOTEBOOK_LOCATION_MUCOLM17
+    verification_status: ACC_VFFA_CONCLUSION_NUMERICAL_VERIFICATION_REQUIRED_MUCOLM17
+    field_growth_caveat: ACC_VFFA_CONCLUSION_HIGH_M_FIELD_GROWTH_MUCOLM17
+    vertical_excursion_upper_bound_statement: ACC_VFFA1_EXCURSION_UPPER_BOUND_STATEMENT_MUCOLM17
+    kicker_example_field: ACC_VFFA1_KICKER_FIELD_EXAMPLE_MUCOLM17
+    kicker_example_energy: ACC_VFFA1_KICKER_EXTRACTION_ENERGY_EXAMPLE_MUCOLM17
+    kicker_example_length: ACC_VFFA1_KICKER_LENGTH_EXAMPLE_MUCOLM17
+    kicker_example_deflection: ACC_VFFA1_KICKER_DEFLECTION_EXAMPLE_MUCOLM17
+    single_drift_extraction_feasibility: ACC_VFFA1_KICKER_SINGLE_DRIFT_EXTRACTION_INFEASIBLE_MUCOLM17
+  unknown_roles:
+  - rf_voltage
+  - rf_frequency
+  - cavity_count
+  - energy_gain_per_turn
+  - turn_count
+  - acceleration_time
+  - repetition_rate
+  - injection_system
+  - extraction_system
+  - magnet_aperture
+  - f_magnet_physical_length
+  - d_magnet_physical_length
+  - number_of_straight_sections
+  - bunch_population
+  - number_of_bunches
+  - design_normalised_emittance
+  - momentum_acceptance
+  - dynamic_aperture
+  - muon_survival_fraction
+  - tune_plane_assignment
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'Validation P1 only in the sense of the lead arithmetic in tests/scientific/test_mucol_m17_vffa.py: test_stage1_on_orbit_peak_field_from_closed_orbit_geometry (6.93 T reproduced to 0.1 %), test_cell_bending_angles_consistent_with_cell_count (planar θD estimate only; the eq. (2.1) value 0.006554 rad is 3.1 % higher and is the one recorded), test_dispersion_is_inverse_field_index, test_good_field_region_peak_implies_vertical_extent, test_vertical_excursion_from_scaling_law_recorded_bands (48 mm vs 50 mm band), test_kicker_example_deflection. Everything else is P0, including the D-magnet records added by the 2026-10-28 verification (γD = 0.404 rad, ρD = 171.6 m, B_D = 5.83 T < B_F = 6.94 T, hard-edge magnet lengths 2.98 m / 2.25 m; the eqs (2.1)-(2.6) geometry closes exactly and reproduces the 1.18 m drift). Comparator column records ACC_RCS1_*_MUCOLM17 are not part of this scenario. MuCol MR7 Table F.5 restates the same table (ACC_VFFA1_*_MR7, other extraction, unverified here). Stage 1 meets the stated constraints: 6.93 T < 8.3 T, excursion 0.048 m < 5 cm, drift 1.18 m > 1 m.'
+- scenario_id: MUCOL-M17-VFFA4-2025
+  label: 'MuCol M17 Stage 4 vFFA: analytic vFFA FODO ring replacing RCS4 (1.5-5 TeV, 35000 m), IMCC comparator'
+  description: 'Stage 4 vFFA of MuCol Milestone Report 17 (Topp-Mugglestone, 27 Mar 2025): a vertical-excursion FFA designed with the analytic closed-orbit/transfer-matrix formalism to match the footprint and energy range of RCS4 of the IMCC 10 TeV muon-collider chain. Table 2.2 inputs r0 = 5570 m, θF = 0.00786 rad, Nc = 1000, βF = 0.00179 rad, βD = 0.001166 rad, γF = -0.492 rad, m = 12.13 1/m; Table 2.3 outputs: 35000 m, 1.5→5 TeV, SC fixed magnets, ramp rate 0 T/s, vertical excursion 0.12 m, peak field on orbit 13.59 T (good field region 29.04 T for 25 µm), drift 1.03 m, tunes (0.460, 0.057). All values are analogous (IMCC design, not LHμC); the derived entries are audit arithmetic with named inputs. The report states the lattice is analytic only and must be verified by numerical simulation (p. 15); no RF, longitudinal or injection/extraction design exists.'
+  machine: IMCC
+  design_version: MuCol Milestone Report No. 17 v1.0 Final (27 Mar 2025, DOI 10.5281/zenodo.15054073), Tables 2.2-2.3; analytic lattice, not tracked
+  status: reported
+  primary_source_ids:
+  - SRC_DOI_10_5281_ZENODO_15054073
+  parameters:
+    orbit_radius_f_magnet_centre: ACC_VFFA4_ORBIT_RADIUS_MUCOLM17
+    f_magnet_bend_angle: ACC_VFFA4_F_BEND_ANGLE_MUCOLM17
+    cell_count: ACC_VFFA4_CELL_COUNT_MUCOLM17
+    f_magnet_opening_angle: ACC_VFFA4_F_OPENING_ANGLE_MUCOLM17
+    d_magnet_opening_angle: ACC_VFFA4_D_OPENING_ANGLE_MUCOLM17
+    f_magnet_inclination: ACC_VFFA4_F_INCLINATION_MUCOLM17
+    field_index: ACC_VFFA4_FIELD_INDEX_MUCOLM17
+    circumference: ACC_VFFA4_CIRCUMFERENCE_MUCOLM17
+    injection_energy: ACC_VFFA4_INJECTION_ENERGY_MUCOLM17
+    extraction_energy: ACC_VFFA4_EXTRACTION_ENERGY_MUCOLM17
+    energy_ratio: ACC_VFFA4_ENERGY_RATIO_MUCOLM17
+    nc_ramped_magnets: ACC_VFFA4_NC_RAMPED_MAGNETS_MUCOLM17
+    sc_fixed_magnets: ACC_VFFA4_SC_FIXED_MAGNETS_MUCOLM17
+    ramp_rate: ACC_VFFA4_RAMP_RATE_MUCOLM17
+    vertical_excursion: ACC_VFFA4_VERTICAL_EXCURSION_MUCOLM17
+    relative_path_length_difference: ACC_VFFA4_RELATIVE_PATH_LENGTH_DIFFERENCE_MUCOLM17
+    momentum_compaction: ACC_VFFA_MOMENTUM_COMPACTION_MUCOLM17
+    peak_dipole_field_on_orbit: ACC_VFFA4_PEAK_FIELD_ON_ORBIT_MUCOLM17
+    peak_dipole_field_good_field_region: ACC_VFFA4_PEAK_FIELD_GOOD_FIELD_REGION_MUCOLM17
+    good_field_region_emittance_assumed: ACC_VFFA_GOOD_FIELD_EMITTANCE_ASSUMED_MUCOLM17
+    good_field_region_evaluation_method: ACC_VFFA_GOOD_FIELD_EVALUATION_METHOD_MUCOLM17
+    drift_length: ACC_VFFA4_DRIFT_LENGTH_MUCOLM17
+    tune_1: ACC_VFFA4_TUNE_1_MUCOLM17
+    tune_2: ACC_VFFA4_TUNE_2_MUCOLM17
+    tune_evaluation_method: ACC_VFFA_TUNE_EVALUATION_METHOD_MUCOLM17
+    d_magnet_bend_angle_derived: ACC_VFFA4_D_BEND_ANGLE_DERIVED_MUCOLM17
+    f_magnet_radius_of_curvature_derived: ACC_VFFA4_F_RADIUS_OF_CURVATURE_DERIVED_MUCOLM17
+    d_magnet_inclination_derived: ACC_VFFA4_D_INCLINATION_DERIVED_MUCOLM17
+    d_magnet_radius_of_curvature_derived: ACC_VFFA4_D_RADIUS_OF_CURVATURE_DERIVED_MUCOLM17
+    f_magnet_on_orbit_field_check_derived: ACC_VFFA4_ON_ORBIT_FIELD_CHECK_MUCOLM17
+    d_magnet_on_orbit_field_check_derived: ACC_VFFA4_D_ON_ORBIT_FIELD_DERIVED_MUCOLM17
+    f_magnet_length_hard_edge_derived: ACC_VFFA4_F_MAGNET_LENGTH_DERIVED_MUCOLM17
+    d_magnet_length_hard_edge_derived: ACC_VFFA4_D_MAGNET_LENGTH_DERIVED_MUCOLM17
+    dispersion_derived: ACC_VFFA4_DISPERSION_DERIVED_MUCOLM17
+    vertical_excursion_scaling_law_estimate: ACC_VFFA4_EXCURSION_SCALING_LAW_ESTIMATE_MUCOLM17
+    good_field_vertical_extent_derived: ACC_VFFA4_GOOD_FIELD_VERTICAL_EXTENT_DERIVED_MUCOLM17
+    drift_length_from_angles_derived: ACC_VFFA4_DRIFT_LENGTH_FROM_ANGLES_DERIVED_MUCOLM17
+    sc_dipole_design_limit: ACC_VFFA_DESIGN_LIMIT_SC_DIPOLE_MUCOLM17
+    minimum_drift_length_assumed: ACC_VFFA_MIN_DRIFT_LENGTH_MUCOLM17
+    design_objectives: ACC_VFFA_DESIGN_OBJECTIVES_MUCOLM17
+    scaling_law: ACC_VFFA_SCALING_LAW_MUCOLM17
+    closed_orbit_model_assumption: ACC_VFFA_CLOSED_ORBIT_MODEL_ASSUMPTION_MUCOLM17
+    analytic_model_validity_conditions: ACC_VFFA_ANALYTIC_MODEL_VALIDITY_CONDITIONS_MUCOLM17
+    optics_notebook: ACC_VFFA_OPTICS_NOTEBOOK_LOCATION_MUCOLM17
+    verification_status: ACC_VFFA_CONCLUSION_NUMERICAL_VERIFICATION_REQUIRED_MUCOLM17
+    field_growth_caveat: ACC_VFFA_CONCLUSION_HIGH_M_FIELD_GROWTH_MUCOLM17
+  unknown_roles:
+  - rf_voltage
+  - rf_frequency
+  - cavity_count
+  - energy_gain_per_turn
+  - turn_count
+  - acceleration_time
+  - repetition_rate
+  - injection_system
+  - extraction_system
+  - magnet_aperture
+  - f_magnet_physical_length
+  - d_magnet_physical_length
+  - number_of_straight_sections
+  - bunch_population
+  - number_of_bunches
+  - design_normalised_emittance
+  - momentum_acceptance
+  - dynamic_aperture
+  - muon_survival_fraction
+  - tune_plane_assignment
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'Validation P1 only in the sense of the lead arithmetic in tests/scientific/test_mucol_m17_vffa.py: test_stage4_on_orbit_peak_field_recorded_band (F-magnet field 13.15 T vs 13.59 T, 3.3 % low, a band, NOT a reproduction), test_cell_bending_angles_consistent_with_cell_count (planar θD estimate only; the eq. (2.1) value 0.005303 rad is 11 % higher and is the one recorded), test_dispersion_is_inverse_field_index, test_good_field_region_peak_implies_vertical_extent, test_vertical_excursion_from_scaling_law_recorded_bands (120 mm vs 99 mm band). Everything else is P0, including the D-magnet records added by the 2026-10-28 verification: γD = -0.776 rad, ρD = 1224.7 m and B_D = 13.62 T, which reproduces the tabulated 13.59 T peak to +0.2 % (the stage-4 peak field on orbit is the reverse-bend D-magnet field, not the F-magnet field); hard-edge magnet lengths 19.94 m / 12.99 m; the eqs (2.1)-(2.6) geometry closes exactly and reproduces the 1.03 m drift. Not yet in the test suite. Comparator column records ACC_RCS4_*_MUCOLM17 are not part of this scenario. MuCol MR7 Table F.5 restates the same table (ACC_VFFA4_*_MR7, other extraction, unverified here). Stage 4 on-orbit field 13.59 T exceeds the 8.3 T limit the report adopts for stage 1; the report does not comment on it.'
