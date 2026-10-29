@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_2608_25374",
+  "local_file": "references/_local/arXiv-2608.25374v1.pdf",
+  "committed_copy": null,
+  "title": "Feasibility demonstration of a high-momentum, high-purity muon beamline at the J-PARC Hadron Experimental Facility",
+  "authors": "K. Shirotori, T. Akaishi, K. Aoki, W.-C. Chang, R. Honda, Y. Hori, T. Ishikawa, N. Kobayashi, R. Kurasaki, C.-S. Lin, Y. Morino, M. Naruki, H. Noumi, K. Ozawa, S. Sawada, K. Suzuki, H. Takahashi, T. Toda, N. Tomida (RCNP Osaka, KEK IPNS, Academia Sinica, Kyoto)",
+  "venue": "arXiv:2608.25374v1 [physics.acc-ph] 26 Aug 2026 (PTEP-style manuscript; no journal reference)",
+  "identifier": "arXiv:2608.25374",
+  "pages": 20,
+  "licence": "not stated in the uploaded PDF (arXiv GenPDF file, no licence line)",
+  "redistribution": "not committed (no licence stated)",
+  "category": "ANALOGOUS_TECHNOLOGY",
+  "upload_name": "30e4e3d7-2608.25374v1.pdf",
+  "sha256": "548aca1f50a8f50da7efb8f59c6a21f2c64df14a5559802ad816bfcf215ed087",
+  "size_bytes": 2254683,
+  "archived_on": "2026-10-29",
+  "archive_method": "user upload to Claude Code session (batch 10), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (20 pages) on 2026-10-29 (batch 10); Tables 1-3 read as page images"
+}

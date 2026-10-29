@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_DOI_10_7566_JPSCP_33_011125",
+  "local_file": "references/_local/JPSCP-33-011125_Zhang2021.pdf",
+  "committed_copy": null,
+  "title": "Simulation Study of Laser Ionization of Muonium by 1S-2S Excitation for the Muon g - 2/EDM Experiment at J-PARC",
+  "authors": "Ce Zhang, H. Hara, T. Hiraki, Y. Ikedo, Y. Imai, K. Ishida, S. Kamal, N. Kawamura, A. Koda, Y. Mao, T. Masuda, T. Mibe, Y. Miyake, Y. Miyamoto, Y. Oishi, M. Otani, P. Strasser, K. Shimomura, K. Suzuki, S. Uetake, T. Yamazaki, S. Yamamoto, K. Yoshimura, M. Yoshida (Peking, Okayama, KEK, RIKEN, UBC)",
+  "venue": "JPS Conf. Proc. 33, 011125 (2021), Proceedings of the 3rd J-PARC Symposium (J-PARC2019); received 10 Jan 2020; DOI 10.7566/JPSCP.33.011125",
+  "identifier": "doi:10.7566/JPSCP.33.011125",
+  "pages": 6,
+  "licence": "as printed on p. 1: '©2021 The Author(s). This article is published by the Physical Society of Japan under the terms of the Creative Commons Attribution 4.0 License' (CC BY 4.0)",
+  "redistribution": "not committed although CC BY 4.0: every page of the uploaded file carries a per-download watermark line identifying the downloading connection and date",
+  "category": "CONFERENCE_PROCEEDING",
+  "upload_name": "af01992c-jpscp.33.011125.pdf",
+  "sha256": "1dafba9ee40d09eba8f7ea1633c9687618d49172099562cf9f3121d1d7b10e2f",
+  "size_bytes": 5967079,
+  "archived_on": "2026-10-29",
+  "archive_method": "user upload to Claude Code session (batch 10), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (6 pages) on 2026-10-29 (batch 10); pp. 2, 3 and 6 (S-line intensities, Table I) read as page images"
+}

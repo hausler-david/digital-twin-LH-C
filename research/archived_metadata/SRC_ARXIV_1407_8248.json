@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_1407_8248",
+  "local_file": "references/_local/arXiv-1407.8248v1.pdf",
+  "committed_copy": null,
+  "title": "Enhancement of muonium emission rate from silica aerogel with a laser ablated surface",
+  "authors": "G.A. Beer, Y. Fujiwara, S. Hirota, K. Ishida, M. Iwasaki, S. Kanda, H. Kawai, N. Kawamura, R. Kitamura, S. Lee, W. Lee, G.M. Marshall, T. Mibe, Y. Miyake, S. Okada, K. Olchanski, A. Olin, Y. Oishi, H. Onishi, M. Otani, N. Saito, K. Shimomura, P. Strasser, M. Tabata, D. Tomono, K. Ueno, K. Yokoyama, E. Won (Victoria, RIKEN, Tokyo, KEK, Chiba, Korea, TRIUMF)",
+  "venue": "arXiv:1407.8248v1 [physics.ins-det] 31 Jul 2014; the file carries the PTEP template header 'Prog. Theor. Exp. Phys. 2013, 00000' and DOI placeholder 10.1093/ptep/0000000000; journal reference PTEP 2014 (9) 091C01 as cited by SRC_DOI_10_7566_JPSCP_33_011125 ref. [8]",
+  "identifier": "arXiv:1407.8248",
+  "pages": 8,
+  "licence": "as printed on p. 1 (PTEP template of the arXiv v1): 'Open Access article distributed under the terms of the Creative Commons Attribution License (http://creativecommons.org/licenses/by-nc/3.0)'; wording says CC BY while the URL is CC BY-NC 3.0, treated as CC BY-NC 3.0 (more restrictive reading)",
+  "redistribution": "not committed pending clarification of the CC BY vs CC BY-NC wording",
+  "category": "PEER_REVIEWED",
+  "upload_name": "db4a6a82-1407.8248v1.pdf",
+  "sha256": "351875859ffafd32033a1f2234b50eee92d11c2ba0587afcdb8eaeb8ceb7721a",
+  "size_bytes": 515901,
+  "archived_on": "2026-10-29",
+  "archive_method": "user upload to Claude Code session (batch 10), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (8 pages) on 2026-10-29 (batch 10); Table 1 and Fig. 3 checked against the page text"
+}

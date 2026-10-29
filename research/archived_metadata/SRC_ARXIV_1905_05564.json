@@ -1,0 +1,19 @@
+{
+  "source_id": "SRC_ARXIV_1905_05564",
+  "local_file": "references/_local/arXiv-1905.05564v2.pdf",
+  "committed_copy": null,
+  "title": "Luminosity and Physics Considerations on HL-LHC and HE-LHC based µp Colliders",
+  "authors": "U. Kaya (TOBB ETU Ankara), B. Ketenoglu (Ankara University, corresponding author), S. Sultansoy (TOBB ETU; ANAS Institute of Physics, Baku), F. Zimmermann (CERN)",
+  "venue": "arXiv:1905.05564v2 (PDF created 4 Nov 2021; the Word-generated file carries no arXiv stamp, journal reference or DOI); EPL 138 (2022) 24002, DOI 10.1209/0295-5075/ac4f98 as recorded from the earlier search, not printed in the upload",
+  "identifier": "arXiv:1905.05564",
+  "pages": 8,
+  "licence": "not stated in the uploaded PDF (Word-generated arXiv v2 file, no licence line)",
+  "redistribution": "not committed (no licence stated)",
+  "category": "RELATED_MACHINE",
+  "upload_name": "8cd8fcde-1905.05564v2.pdf",
+  "sha256": "f071d25d92f2bd2c550588811d9cbeaca6f4930face2f654170fe5f593060132",
+  "size_bytes": 342794,
+  "archived_on": "2026-10-29",
+  "archive_method": "user upload to Claude Code session (batch 10), copied unmodified; per-page text extracted with pdftotext",
+  "read_status": "read in full (8 pages) on 2026-10-29 (batch 10); pp. 3-5 (eqs. 1-10, Tables 2-7) read as page images"
+}
