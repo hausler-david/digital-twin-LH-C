@@ -1,0 +1,168 @@
+# Scenario added by the batch-7 G8_LHEC_DETECTOR_ERL extraction (2026-10-28). Schema: schemas/machine.schema.json. No numbers here: every role references a
+# parameter record in parameters/detector/lhec_detector_andre2022.yaml, parameters/acceleration/lhec_erl_andre2022.yaml or
+# parameters/interaction_region/lhec_ir_andre2022.yaml; unknown_roles lists what the paper does not give (notably the proton bunch population and emittance behind
+# the Table 4 luminosity). LHEC-ANDRE2022-ERL-50GEV is a related-machine comparator (machine LHEC), not an LHμC scenario.
+# G8 VERIFICATION (2026-10-29): roles for the Fig. 19 absolute SR values and the §§2.2–2.4 physics prospects added; two unknown_roles resolved. See the scenario notes.
+scenarios:
+- scenario_id: LHEC-ANDRE2022-ERL-50GEV
+  label: LHeC ERL-based ep collider as described by André et al. 2022 (50 GeV electrons on 7 TeV LHC protons at IP2), related-machine comparator
+  description: 'LHeC design iteration of arXiv:2201.02436v1: 3-turn racetrack ERL (two ~900 m SRF linacs, three return arcs per side, 801.58 MHz, 20.06 MV/m, 6665 m total length) delivering 50 GeV electrons,
+    499 pC bunches every 24.95 ns (20 mA, 120 mA circulating, 1 GW virtual beam power, Q0 > 1e10, 30 µm normalised emittance), head-on collisions with the 7 TeV proton beam (or 2.76 TeV/nucleon ions) at
+    IP2 in a three-beam IR (Bρ 23 333 vs 167 T m, L* = 15 m, QA1 electron aperture 106 mm from the proton orbit, matched beam sizes, Fig. 19 β*_p = 10.0 cm / β*_e = 10.9 cm), luminosity goal 1e34 cm^-2
+    s^-1 with 8.2e33 from the optical-matching beam-beam simulation (Table 4), SR in arc 6 of 609.3 keV / 12.17 MW (Table 3), front-to-end transmission 98.4–99.9 % and energy recovery 95.4–97.9 % for 1/5–1/3
+    C_LHC (Table 6), dump at 500 MeV; updated detector (3 T solenoid + 0.17 T dipole, 13.75 m × 9 m, tracker R = 80 cm, η 5.2/−4.6) and the 15.26 m symmetrised eh/hh variant. All values are imported_related
+    (LHeC), the derived ones analytical_estimate; nothing here is an LHμC value. The paper states neither the proton bunch population nor the proton emittance used for Table 4.'
+  machine: LHEC
+  design_version: arXiv:2201.02436v1 (7 Jan 2022; Eur. Phys. J. C 82, 40), Tables 1–6 and §§3.2, 4, 5.2 — the 2020 CDR-update design with the 2022 detector/IR updates
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_2201_02436
+  parameters:
+    electron_beam_energy: ACC_ERL_BEAM_ENERGY_ANDRE2022
+    electron_beam_energy_original_cdr2012: ACC_ERL_BEAM_ENERGY_CDR2012_ANDRE2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_ANDRE2022
+    ion_beam_energy_per_nucleon: ION_BEAM_ENERGY_PER_NUCLEON_ANDRE2022
+    sqrt_s: MACHINE_SQRT_S_ANDRE2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_ANDRE2022
+    luminosity_goal: MACHINE_LUMINOSITY_GOAL_ANDRE2022
+    integrated_luminosity_goal: MACHINE_INTEGRATED_LUMINOSITY_GOAL_ANDRE2022
+    initial_dataset_integrated_luminosity: MACHINE_INITIAL_DATASET_LUMINOSITY_ANDRE2022
+    electron_bunch_charge: ACC_ERL_BUNCH_CHARGE_ANDRE2022
+    electron_bunch_charge_text: ACC_ERL_BUNCH_CHARGE_TEXT_ANDRE2022
+    electron_bunch_population: ACC_ERL_BUNCH_POPULATION_ANDRE2022
+    bunch_spacing: ACC_ERL_BUNCH_SPACING_ANDRE2022
+    bunch_frequency: ACC_ERL_BUNCH_FREQUENCY_ANDRE2022
+    bunch_frequency_implied: ACC_ERL_BUNCH_FREQUENCY_IMPLIED_ANDRE2022
+    rf_buckets_per_bunch: ACC_ERL_RF_BUCKETS_PER_BUNCH_ANDRE2022
+    electron_current: ACC_ERL_CURRENT_ANDRE2022
+    erl_circulating_current: ACC_ERL_CIRCULATING_CURRENT_ANDRE2022
+    erl_virtual_beam_power: ACC_ERL_VIRTUAL_BEAM_POWER_ANDRE2022
+    electron_norm_emittance: ACC_ERL_NORM_EMITTANCE_ANDRE2022
+    electron_norm_emittance_ip: ACC_ERL_NORM_EMITTANCE_IP_ANDRE2022
+    rf_frequency: ACC_ERL_RF_FREQUENCY_ANDRE2022
+    erl_gradient: ACC_ERL_GRADIENT_ANDRE2022
+    erl_total_length: ACC_ERL_TOTAL_LENGTH_ANDRE2022
+    erl_circumference_options: ACC_ERL_CIRCUMFERENCE_OPTIONS_ANDRE2022
+    erl_linacs: ACC_ERL_LINAC_COUNT_ANDRE2022
+    erl_linac_length: ACC_ERL_LINAC_LENGTH_ANDRE2022
+    erl_linac_active_length_implied: ACC_ERL_LINAC_ACTIVE_LENGTH_IMPLIED_ANDRE2022
+    erl_passes: ACC_ERL_TURNS_ANDRE2022
+    erl_deceleration_passes: ACC_ERL_DECELERATION_TURNS_ANDRE2022
+    erl_return_arcs_per_side: ACC_ERL_RETURN_ARCS_PER_SIDE_ANDRE2022
+    erl_energy_gain_per_linac_pass: ACC_ERL_ENERGY_GAIN_PER_LINAC_ANDRE2022
+    erl_injection_energy_implied: ACC_ERL_INJECTION_ENERGY_IMPLIED_ANDRE2022
+    erl_dump_energy: ACC_ERL_DUMP_ENERGY_ANDRE2022
+    cavity_q0_min: ACC_ERL_CAVITY_Q0_MIN_ANDRE2022
+    linac_fodo_phase_advance: ACC_ERL_LINAC_FODO_PHASE_ADVANCE_ANDRE2022
+    arc_optics_arcs_1_3: ACC_ERL_ARC123_OPTICS_ANDRE2022
+    arc_optics_arcs_4_6: ACC_ERL_ARC456_OPTICS_ANDRE2022
+    erl_arc6_energy: ACC_ERL_ARC6_ENERGY_ANDRE2022
+    sr_critical_energy_arc6: ACC_ERL_CRITICAL_ENERGY_ARC6_ANDRE2022
+    sr_power_arc6: ACC_ERL_SR_POWER_ARC6_ANDRE2022
+    sr_power_arcs_total: ACC_ERL_SR_TOTAL_POWER_ARCS_ANDRE2022
+    erl_transmission_1over3_clhc: ACC_ERL_TRANSMISSION_1OVER3CLHC_ANDRE2022
+    erl_transmission_1over4_clhc: ACC_ERL_TRANSMISSION_1OVER4CLHC_ANDRE2022
+    erl_transmission_1over5_clhc: ACC_ERL_TRANSMISSION_1OVER5CLHC_ANDRE2022
+    erl_energy_recovery_1over3_clhc: ACC_ERL_ENERGY_RECOVERY_1OVER3CLHC_ANDRE2022
+    erl_energy_recovery_1over4_clhc: ACC_ERL_ENERGY_RECOVERY_1OVER4CLHC_ANDRE2022
+    erl_energy_recovery_1over5_clhc: ACC_ERL_ENERGY_RECOVERY_1OVER5CLHC_ANDRE2022
+    electron_momentum_spread_ip_1over3_clhc: ACC_ERL_DPP_AT_IP_1OVER3CLHC_ANDRE2022
+    electron_momentum_spread_ip_1over4_clhc: ACC_ERL_DPP_AT_IP_1OVER4CLHC_ANDRE2022
+    electron_momentum_spread_ip_1over5_clhc: ACC_ERL_DPP_AT_IP_1OVER5CLHC_ANDRE2022
+    electron_injection_emittance_x_1over3_clhc: ACC_ERL_INJ_EMITTANCE_X_1OVER3CLHC_ANDRE2022
+    electron_injection_emittance_x_1over4_clhc: ACC_ERL_INJ_EMITTANCE_X_1OVER4CLHC_ANDRE2022
+    electron_injection_emittance_x_1over5_clhc: ACC_ERL_INJ_EMITTANCE_X_1OVER5CLHC_ANDRE2022
+    ip_location: IR_IP_LOCATION_ANDRE2022
+    three_beam_configuration: IR_THREE_BEAM_CONFIGURATION_ANDRE2022
+    collision_scheme: IR_COLLISION_SCHEME_ANDRE2022
+    proton_optics: IR_PROTON_OPTICS_ANDRE2022
+    l_star: IR_LSTAR_ANDRE2022
+    beta_star_proton: IR_BETA_STAR_PROTON_ANDRE2022
+    beta_star_proton_fig19_header: IR_BETA_STAR_PROTON_FIG19_ANDRE2022
+    beta_star_electron_fig19_header: IR_BETA_STAR_ELECTRON_FIG19_ANDRE2022
+    beta_star_noncolliding_proton: IR_BETA_STAR_NONCOLLIDING_PROTON_ANDRE2022
+    q1a_additional_aperture_noncolliding: IR_Q1A_ADDITIONAL_APERTURE_NONCOLLIDING_ANDRE2022
+    sigma_ip_transverse: IR_BEAM_SIZE_IP_ANDRE2022
+    beam_size_matching: IR_BEAM_SIZE_MATCHING_CONDITION_ANDRE2022
+    brho_proton: IR_BRHO_PROTON_ANDRE2022
+    brho_electron: IR_BRHO_ELECTRON_ANDRE2022
+    qa1_electron_aperture_distance: IR_QA1_ELECTRON_APERTURE_DISTANCE_ANDRE2022
+    separation_scheme: IR_SEPARATION_SCHEME_ANDRE2022
+    ir_element_sequence: IR_ELEMENT_SEQUENCE_ANDRE2022
+    separation_scheme_variants: IR_SEPARATION_SCHEME_VARIANTS_ANDRE2022
+    noncolliding_beam_separation: IR_NONCOLLIDING_BEAM_SEPARATION_ANDRE2022
+    parasitic_encounter_half_spacing: IR_PARASITIC_ENCOUNTER_HALF_SPACING_ANDRE2022
+    beam_beam_emittance_growth: MACHINE_ELECTRON_EMITTANCE_GROWTH_ANDRE2022
+    beam_beam_simulation_method: IR_BEAMBEAM_SIMULATION_METHOD_ANDRE2022
+    beam_beam_proton_effect: IR_BEAMBEAM_PROTON_EFFECT_ANDRE2022
+    solenoid_field: DET_SOLENOID_FIELD_ANDRE2022
+    detector_dipole_field: DET_DIPOLE_FIELD_ANDRE2022
+    detector_dipole_z_half_length: DET_DIPOLE_Z_HALF_LENGTH_ANDRE2022
+    detector_length: DET_LENGTH_PRECISE_ANDRE2022
+    detector_length_rounded: DET_LENGTH_ANDRE2022
+    detector_diameter: DET_DIAMETER_ANDRE2022
+    detector_outer_radius: DET_OUTER_RADIUS_ANDRE2022
+    joint_eh_hh_detector_length: DET_JOINT_EH_HH_LENGTH_ANDRE2022
+    tracker_outer_radius: DET_TRACKER_OUTER_RADIUS_ANDRE2022
+    tracker_barrel_layers: DET_TRACKER_BARREL_LAYERS_ANDRE2022
+    tracker_eta_max: DET_TRACKER_ETA_MAX_ANDRE2022
+    tracker_eta_min: DET_TRACKER_ETA_MIN_ANDRE2022
+    calo_polar_angle_min: DET_CALO_POLAR_ANGLE_MIN_ANDRE2022
+    calo_polar_angle_max: DET_CALO_POLAR_ANGLE_MAX_ANDRE2022
+    emc_depth_x0: DET_EMC_DEPTH_X0_ANDRE2022
+    hcal_depth_lambda_min: DET_HCAL_DEPTH_LAMBDA_MIN_ANDRE2022
+    hcal_depth_lambda_max: DET_HCAL_DEPTH_LAMBDA_MAX_ANDRE2022
+    emc_resolution_stochastic: DET_EMC_RESOLUTION_STOCHASTIC_ANDRE2022
+    emc_resolution_constant: DET_EMC_RESOLUTION_CONSTANT_ANDRE2022
+    muon_eta_coverage: DET_MUON_ETA_COVERAGE_ANDRE2022
+    pileup: DET_PILEUP_PER_CROSSING_MAX_ANDRE2022
+    neutron_fluence: DET_NEUTRON_FLUENCE_ANDRE2022
+    background_rate_ratio_vs_pp: DET_BACKGROUND_RATE_RATIO_VS_PP_ANDRE2022
+    ir_sr_power_dipole_reference_scheme: IR_SR_POWER_DIPOLE_SCHEME_FIG19_ANDRE2022
+    ir_sr_critical_energy_dipole_reference_scheme: IR_SR_CRITICAL_ENERGY_DIPOLE_SCHEME_FIG19_ANDRE2022
+    ir_sr_power_optimised_scheme_min: IR_SR_POWER_MIN_OPTIMISED_FIG19_ANDRE2022
+    ir_sr_critical_energy_optimised_scheme_min: IR_SR_CRITICAL_ENERGY_MIN_OPTIMISED_FIG19_ANDRE2022
+    higgs_cc_cross_section: PHYS_HIGGS_CC_XSEC_ANDRE2022
+    single_top_cc_cross_section: PHYS_SINGLE_TOP_CC_XSEC_ANDRE2022
+    ttbar_photoproduction_cross_section: PHYS_TTBAR_PHOTOPRODUCTION_XSEC_ANDRE2022
+    alpha_s_uncertainty_inclusive: PHYS_ALPHA_S_UNCERTAINTY_INCLUSIVE_ANDRE2022
+    alpha_s_uncertainty_jets: PHYS_ALPHA_S_UNCERTAINTY_JETS_ANDRE2022
+    sin2thetaw_uncertainty: PHYS_SIN2THETAW_UNCERTAINTY_ANDRE2022
+  unknown_roles:
+  - proton_bunch_population
+  - proton_norm_emittance
+  - proton_bunch_length
+  - proton_bunches
+  - proton_bunch_spacing
+  - electron_bunches
+  - electron_bunch_length
+  - electron_polarisation
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_star_per_plane
+  - crossing_angle
+  - noncolliding_beam_horizontal_offset
+  - beam_beam_tune_shift
+  - collision_rate
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - main_ring_circumference
+  - lhc_circumference
+  - erl_linac_fill_factor
+  - erl_injector_energy_stated
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1 for the scenario: the Table 2 current (499 pC / 24.95 ns = 20.0 mA), the rigidities (Bρ_p 23 350 vs 23 333 T m, Bρ_e 166.8 vs 167 T m) and the arc 5→6 synchrotron scaling (E_c ∝ E^3, P ∝ E^4
+    within 1 %) are reproduced in tests/scientific/test_batch7_documents.py (test_andre2022_table2_current_from_charge_and_spacing, test_andre2022_magnetic_rigidities, test_andre2022_table3_synchrotron_scaling_between_arcs);
+    this extraction adds 801.58 MHz × 24.95 ns = 20.0 RF buckets, Table 3 energies = 0.5 + 8.25 n GeV (injection = dump energy 500 MeV) and 20 mA × 50 GV = 1 GW. The Table 4 luminosity is only band-checked
+    (ratio ≈ 0.75 with assumed HL-LHC protons, test_andre2022_table4_luminosity_with_hl_lhc_proton_parameters_recorded_band) because the proton inputs are not in the paper. TWO READING CORRECTIONS vs the
+    batch-7 brief: the Fig. 19 header gives β*_p = 10.0 cm and β*_e = 10.9 cm (subscripts p/e, not x/y; the lead ids IR_BETA_X/Y_STAR_ANDRE2022 are kept as labels only), and the Fig. 8 constant term reads
+    (0.318 ± 0.02) %, not ± 0.021. Internal inconsistencies of the paper preserved as separate records: ''about 13 m'' vs 13.75 m detector length; ''five backward disks'' vs Table 1 Bwd rings 2+1+4 = 7;
+    ''roughly 2 m'' magnet radius vs the 156 cm drawing label; text 500 pC / 40 MHz vs Table 2 499 pC / 24.95 ns. Status ''reported'' as instructed by the lead (every slot is a value the paper states or
+    a documented derivation); electron-beam roles are LHeC roles, not LHμC muon roles. Detector records carry scenario null (detector values are not tied to the machine scenario) but are linked here for
+    the G0 geometry. G8 VERIFICATION (2026-10-29): all 275 records re-checked against the page images and the text layer (no value, unit, page or quotation error found; the extractor''s three corrections
+    to the brief are confirmed); four IR_SR_*_FIG19_ANDRE2022 records added that recover the absolute IR synchrotron-radiation power (≈ 30 kW reference, ≈ 16.9 kW optimised) and critical energy (≈ 300 keV
+    reference, ≈ 264 keV optimised) from the Fig. 19 twin axes, so ir_sr_absolute_critical_energy / ir_sr_absolute_power left unknown_roles; physics-programme prospects of §§2.2–2.4 added in parameters/physics_programme/lhec_physics_andre2022.yaml
+    and linked as roles (scenario null on those records: the paper does not tie them to the 50 GeV configuration explicitly). See research/_fragments/verify_G8_LHEC_DETECTOR_ERL.md.'

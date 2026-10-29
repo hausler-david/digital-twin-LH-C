@@ -1,0 +1,499 @@
+# LHeC physics-programme prospects quoted in André et al., arXiv:2201.02436v1 (SRC_ARXIV_2201_02436), §§2.2–2.4. Added by the G8_LHEC_DETECTOR_ERL
+# VERIFICATION (2026-10-29): these quotable numbers lie outside the extractor's detector/ERL/IR scope and were not recorded; they are comparators
+# for the LHμC physics programme. Schema: schemas/provenance.schema.json. Status imported_related throughout (LHeC = related machine); scenario null
+# because the paper does not tie the numbers to its 50 GeV configuration explicitly. NO record carries reported_lhmuc.
+parameters:
+- parameter_id: PHYS_HIGGS_CC_XSEC_ANDRE2022
+  name: 'Inclusive Higgs production cross section in charged-current e−p DIS at the LHeC (text: ''about 200 fb'')'
+  symbol: sigma(CC, H)
+  subsystem: physics_programme
+  scenario: null
+  value: 200
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says 'about'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 5
+      section: 2.2 Higgs Boson Physics
+      table_figure_or_equation: text; cf. Fig. 2
+      quotation: The cross section at the LHeC is about 200 fb, which is close to the e+ e− → HZ cross section in electron-positron scattering at 250 GeV energy.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: 'Fig. 2 caption: ''Inclusive Higgs cross section in charged current e−p DIS, plotted as log(σ/fb), as a function of the cms ep scattering energy, √s = 2√(Ee Ep) in TeV''. Whether the 200 fb refers
+    to 50 or 60 GeV electrons or to a polarised beam is not stated in this paper. Compare PHYS_ENHANCEMENT_1TEV_VS_LHEC50_CC_HIGGS_WP (DIS2026 working points).'
+- parameter_id: PHYS_HIGGS_CHARM_COUPLING_PRECISION_ANDRE2022
+  name: Expected precision of the Higgs–charm coupling κc measured in ep at the LHeC
+  symbol: delta_kappa_c
+  subsystem: physics_programme
+  scenario: null
+  value: 4
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: source writes 'δκc ≃ 4 %'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 5
+      section: 2.2 Higgs Boson Physics
+      table_figure_or_equation: null
+      quotation: A striking result is the expectation to measure the charm coupling accurately in ep, to δκc ≃ 4 %, which is considered to be unaccessible in pp scattering for large combinatorial background
+        reasons
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: Kappa-framework prospect (Fig. 3, Refs. [2, 15]); the integrated luminosity assumed is not stated in this paper.
+- parameter_id: PHYS_TOP_YUKAWA_CP_PRECISION_ANDRE2022
+  name: Accuracy on the top-Yukawa coupling size (SM structure assumed) with 1 ab^-1, quoted in the tth CP-phase discussion
+  symbol: delta_y_t
+  subsystem: physics_programme
+  scenario: null
+  value: 17
+  unit: percent
+  uncertainty: &id001
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 6
+      section: 2.2 Higgs Boson Physics
+      table_figure_or_equation: null
+      quotation: Assuming the Yukawa coupling to have the same structure as in the SM, the coupling size could be measured at the LHC with an accuracy of 17% with 1 ab−1 of integrated luminosity [20].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: 'ATTRIBUTION AMBIGUOUS: the sentence says ''at the LHC'' but stands in the LHeC pe− → thνe discussion and cites Ref. [20] (Coleppa, Kumar, Kumar, Mellado, PLB 770 (2017) 335, an LHeC study); whether
+    ''LHC'' is a misprint for ''LHeC'' cannot be decided from this paper. Recorded as printed; confidence medium for that reason.'
+- parameter_id: PHYS_SINGLE_TOP_CC_XSEC_ANDRE2022
+  name: Charged-current single-top production cross section at the LHeC
+  symbol: sigma(CC, single top)
+  subsystem: physics_programme
+  scenario: null
+  value: 1.9
+  unit: pb
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 6
+      section: 2.3 Top Quark Physics
+      table_figure_or_equation: null
+      quotation: The charged current cross section is 1.9 pb, compared to 0.05 pb of the photo-production of tt.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: '''tt'' is printed as t t-bar. Compare PHYS_ENHANCEMENT_1TEV_VS_LHEC50_SINGLE_TOP_WP.'
+- parameter_id: PHYS_TTBAR_PHOTOPRODUCTION_XSEC_ANDRE2022
+  name: Top-pair photoproduction cross section at the LHeC
+  symbol: sigma(gamma p -> t tbar)
+  subsystem: physics_programme
+  scenario: null
+  value: 0.05
+  unit: pb
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 6
+      section: 2.3 Top Quark Physics
+      table_figure_or_equation: null
+      quotation: The charged current cross section is 1.9 pb, compared to 0.05 pb of the photo-production of tt.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: '''tt'' is printed as t t-bar. Compare PHYS_ENHANCEMENT_1TEV_VS_LHEC50_TTBAR_WP.'
+- parameter_id: PHYS_WTB_COUPLING_PRECISION_ANDRE2022
+  name: Relative error achievable on the Wtb coupling with 100 fb^-1 of ep luminosity
+  symbol: delta(Wtb)/Wtb
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: percent
+  uncertainty:
+    type: order_of_magnitude
+    note: source says 'relative errors of order of 1%'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 7
+      section: 2.3 Top Quark Physics
+      table_figure_or_equation: null
+      quotation: With 100 fb−1 of integrated ep luminosity relative errors of order of 1% can be achieved in the measurement of the W tb coupling.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: Luminosity assumption recorded separately (PHYS_WTB_COUPLING_LUMINOSITY_ANDRE2022).
+- parameter_id: PHYS_WTB_COUPLING_LUMINOSITY_ANDRE2022
+  name: Integrated ep luminosity assumed for the ~1 % Wtb-coupling measurement
+  symbol: L_int(Wtb)
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: fb^-1
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 7
+      section: 2.3 Top Quark Physics
+      table_figure_or_equation: null
+      quotation: With 100 fb−1 of integrated ep luminosity relative errors of order of 1% can be achieved in the measurement of the W tb coupling.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SINGLE_TOP_NLO_FIDUCIAL_REDUCTION_ANDRE2022
+  name: Reduction of the expected fiducial single-top cross section by the NLO corrections
+  symbol: Delta_NLO
+  subsystem: physics_programme
+  scenario: null
+  value: 14
+  unit: percent
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 7
+      section: 2.3 Top Quark Physics
+      table_figure_or_equation: null
+      quotation: These may reduce the expected fiducial cross-section of single top production by 14%, while providing stability against scale variations.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: '''cross-section'' is hyphenated across a line break in the PDF; the paper writes ''cross-sections'' elsewhere in the same paragraph. NLO corrections of Ref. [23].'
+- parameter_id: PHYS_ALPHA_S_UNCERTAINTY_INCLUSIVE_ANDRE2022
+  name: Expected uncertainty of αs(MZ) from inclusive DIS at the LHeC, determined together with the PDFs
+  symbol: delta_alpha_s(MZ)
+  subsystem: physics_programme
+  scenario: null
+  value: 0.00022
+  unit: dimensionless
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 7
+      section: 2.4 Precision Standard Model Physics
+      table_figure_or_equation: null
+      quotation: When determined together with the PDFs, the value of αs (MZ ) will be determined at the LHeC with an uncertainty of ±0.00022 [2].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: '''This represents an impressive improvement by a factor of five as compared to the present world average value [32].'' The paper quotes the current status of αs as ''about 2 % uncertainty'' (p.4).'
+- parameter_id: PHYS_ALPHA_S_UNCERTAINTY_JETS_ANDRE2022
+  name: Expected experimental uncertainty of αs(MZ) from inclusive jet cross sections at the LHeC
+  symbol: delta_alpha_s(MZ, jets)
+  subsystem: physics_programme
+  scenario: null
+  value: 0.00016
+  unit: dimensionless
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 7
+      section: 2.4 Precision Standard Model Physics
+      table_figure_or_equation: null
+      quotation: This will result in a determination of αs (MZ ) with an experimental uncertainty of ±0.00016 [2], which is about a factor 10 more precise than the best measurements from HERA jet data [35,
+        36].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: Relies on a jet-energy-scale uncertainty of about 0.5 % (DET_JET_ENERGY_SCALE_UNCERTAINTY_ANDRE2022).
+- parameter_id: PHYS_SIN2THETAW_UNCERTAINTY_ANDRE2022
+  name: Expected uncertainty of the weak mixing angle sin²θW from polarisation-asymmetry and NC/CC-ratio measurements in e−p at the LHeC
+  symbol: Delta sin2theta_W
+  subsystem: physics_programme
+  scenario: null
+  value: 0.00022
+  unit: dimensionless
+  uncertainty: *id001
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 8
+      section: 2.4 Precision Standard Model Physics (Electroweak Measurements)
+      table_figure_or_equation: null
+      quotation: With an uncertainty of ∆ sin2 θW = ±0.00022 [37] this is per se not an improvement over the precise Z-pole measurements at LEP+SLC [38].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: 'The paper''s point is the scale dependence: ''the scale dependence of sin2 θW can be measured for the first time with percent precision in the range of √Q2 between 20 GeV up to nearly a TeV [2]''.'
+- parameter_id: PHYS_LIGHT_QUARK_Z_COUPLING_UNCERTAINTY_ANDRE2022
+  name: Uncertainty on the vector and axial-vector Z couplings of the light quarks (u, d) achievable at the LHeC
+  symbol: delta(g_V, g_A)(u,d)
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: source says 'about'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_02436
+      title: An experiment for electron-hadron scattering at the LHC
+      author_or_org: K. D. J. André et al.
+      url: https://arxiv.org/abs/2201.02436
+      date: '2022-01-07'
+      version: arXiv v1
+      page: 8
+      section: 2.4 Precision Standard Model Physics (Electroweak Measurements)
+      table_figure_or_equation: null
+      quotation: uncertainties of the vector and axial-vector couplings of the light-quarks of about 1 % are achieved, which is an improvement by a factor of ten and more as compared to present best measurements
+        [32, 39]
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: LHeC physics-programme prospect quoted by André et al. 2022 for the ep collider of this paper (50 GeV electrons on 7 TeV protons; the electron energy, polarisation and integrated luminosity
+        behind each number are those of the underlying studies [1, 2] and are not restated here unless quoted). Comparator for the LHμC physics programme (μp at √s ≈ 1 TeV), not an LHμC value.
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: '''axial-vector'' is hyphenated across a line break in the PDF.'

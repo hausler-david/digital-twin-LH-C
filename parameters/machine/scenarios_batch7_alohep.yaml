@@ -1,0 +1,77 @@
+# Scenario added by the batch-7 G10_ALOHEP extraction (2026-10-28). Schema: schemas/machine.schema.json. No numbers here: every role references a
+# parameter record in parameters/machine/alohep_benchmarks_dagli2026.yaml (SRC_ARXIV_2610_09839, Dağlı & Karaca, AloHEP software paper).
+# ALOHEP-MUCOL-10TEV-BENCHMARK-2026 is the IMCC / MuCol 10 TeV μ+μ− parameter set AS QUOTED BY THE ALOHEP PAPER for its species-coverage and
+# muon-decay benchmark (§5.7, p. 36) — a tool-benchmark comparator (machine IMCC), NOT an LHμC scenario and NOT the MuCol Milestone Report
+# itself (the paper's ref. [35], arXiv:2510.27437, which is not among the uploads). The hourglass / grid / macroparticle settings of the muon run
+# and the absolute luminosity are not stated in the paper and are listed in unknown_roles; the run is head-on (Fig. 24), so crossing_angle maps to a
+# 0 mrad record (confidence medium: inferred from the word 'head-on'). Verified against the page images on 2026-10-29 (research/_fragments/verify_G10_ALOHEP.md).
+scenarios:
+- scenario_id: ALOHEP-MUCOL-10TEV-BENCHMARK-2026
+  label: IMCC / MuCol 10 TeV μ+μ− consolidated-baseline parameters as used for the AloHEP muon-decay benchmark (Dağlı & Karaca 2026, §5.7), tool-benchmark comparator
+  description: 'Symmetric μ+μ− collider at √s = 10 TeV with the consolidated baseline parameters of the International Muon Collider Collaboration and the MuCol design study as quoted
+    by arXiv:2610.09839v1 (p. 36): 1.8e12 muons per bunch, β*_x,y = σ_z = 1.5 mm, normalised emittance 25 µm, 11.4 km ring, 5 Hz repetition rate, each bunch stored for one repetition
+    period (0.2 s = 5260 turns). AloHEP recovers the analytic geometric luminosity to ∼1 % with decay off (three runs between 0.997 and 1.003) and, with the -decay option, applies an
+    ANALYTIC muon-survival factor over the store: 0.252 simulated against the analytic F_decay = 0.254 of MuCol ref. [35], set by γτ = 0.104 s (both beams decay). The beam energy
+    (5 TeV = √s/2) and the IP spot (0.89 µm) are computed in this extraction (analytical_estimate), not printed. Every value is status analogous, applicability screening_only
+    (tool-benchmark value, not an LHμC design value). For LHμC the relevant decay average is the one-beam form (0.632 over one dilated lifetime), not the two-beam μ+μ− form
+    (tests/scientific/test_batch7_documents.py::test_decay_averaging_differs_between_mumu_and_mup); see docs/tools/alohep_method_dagli2026.md.'
+  machine: IMCC
+  design_version: IMCC / MuCol consolidated baseline (MuCol Milestone Report No. 7, 2025, arXiv:2510.27437) as quoted in arXiv:2610.09839v1 §5.7 (7 Oct 2026), p. 36; benchmark run of Fig. 24 and Appendix A (results_muon.csv)
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_2610_09839
+  parameters:
+    sqrt_s: MACHINE_ALOHEP_MUCOL_SQRT_S_DAGLI2026
+    muon_beam_energy: MACHINE_ALOHEP_MUCOL_BEAM_ENERGY_DAGLI2026
+    muon_bunch_population: MACHINE_ALOHEP_MUCOL_BUNCH_POPULATION_DAGLI2026
+    beta_x_star_muon: MACHINE_ALOHEP_MUCOL_BETA_X_STAR_DAGLI2026
+    beta_y_star_muon: MACHINE_ALOHEP_MUCOL_BETA_Y_STAR_DAGLI2026
+    muon_bunch_length: MACHINE_ALOHEP_MUCOL_BUNCH_LENGTH_DAGLI2026
+    muon_norm_emittance: MACHINE_ALOHEP_MUCOL_NORM_EMITTANCE_DAGLI2026
+    main_ring_circumference: MACHINE_ALOHEP_MUCOL_RING_CIRCUMFERENCE_DAGLI2026
+    repetition_rate: MACHINE_ALOHEP_MUCOL_REPETITION_RATE_DAGLI2026
+    store_time: MACHINE_ALOHEP_MUCOL_STORE_TIME_DAGLI2026
+    turns_per_store: MACHINE_ALOHEP_MUCOL_TURNS_PER_STORE_DAGLI2026
+    muon_lifetime_lab: MACHINE_ALOHEP_MUCOL_GAMMA_TAU_DAGLI2026
+    crossing_angle: MACHINE_ALOHEP_MUCOL_CROSSING_ANGLE_DAGLI2026
+    sigma_ip_implied: MACHINE_ALOHEP_MUCOL_SIGMA_IP_IMPLIED_DAGLI2026
+    decay_factor_simulated: MACHINE_ALOHEP_MUCOL_DECAY_FACTOR_SIM_DAGLI2026
+    decay_factor_analytic: MACHINE_ALOHEP_MUCOL_DECAY_FACTOR_ANALYTIC_DAGLI2026
+    decay_factor_sim_over_analytic: MACHINE_ALOHEP_MUCOL_DECAY_FACTOR_SIM_OVER_ANALYTIC_DAGLI2026
+    decay_implementation: MACHINE_ALOHEP_DECAY_IMPLEMENTATION_DAGLI2026
+    geometric_luminosity_agreement: MACHINE_ALOHEP_MUCOL_GEOMETRIC_AGREEMENT_DAGLI2026
+    geometric_luminosity_ratio_min: MACHINE_ALOHEP_MUCOL_LEFF_OVER_LNOM_MIN_DAGLI2026
+    geometric_luminosity_ratio_max: MACHINE_ALOHEP_MUCOL_LEFF_OVER_LNOM_MAX_DAGLI2026
+    luminosity_code: MACHINE_ALOHEP_PROGRAM_TITLE_DAGLI2026
+    luminosity_code_licence: MACHINE_ALOHEP_LICENCE_DAGLI2026
+    luminosity_code_repository: MACHINE_ALOHEP_REPOSITORY_DAGLI2026
+    parameter_source: MACHINE_ALOHEP_MUCOL_PARAMETER_SOURCE_DAGLI2026
+    benchmark_results_file: MACHINE_ALOHEP_MUCOL_RESULTS_CSV_DAGLI2026
+  unknown_roles:
+  - peak_luminosity
+  - geometric_luminosity_absolute
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - collision_rate
+  - muon_bunches
+  - bunch_spacing
+  - sigma_x_ip
+  - sigma_y_ip
+  - beam_beam_tune_shift_x
+  - beam_beam_tune_shift_y
+  - disruption_parameter
+  - hourglass_enabled_in_muon_run
+  - grid_resolution_muon_run
+  - macroparticle_count_muon_run
+  - main_ring_dipole_field
+  - injection_energy
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'validation_level P1 because the store length (5260 turns), the dilated lifetime (0.104 s) and the analytic decay factor (0.254) are reproduced arithmetically in
+    tests/scientific/test_batch7_documents.py::test_dagli2026_mucol_10tev_decay_factor_and_turns; the simulated 0.252 and the 0.997–1.003 scatter are the paper''s own numbers (P0 for
+    this repository). Proton-beam roles are not applicable (μ+μ− collider). The absolute L_nom of the muon run is not printed anywhere in the paper; only ratios are. The MuCol
+    Milestone Report No. 7 itself (ref. [35]) was not read: these values are the AloHEP paper''s quotation of it (imported at second hand, hence screening_only).'

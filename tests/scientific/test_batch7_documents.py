@@ -38,18 +38,20 @@ def test_andre2022_table3_synchrotron_scaling_between_arcs():
 
 def test_andre2022_table4_luminosity_with_hl_lhc_proton_parameters_recorded_band():
     """Table 4 quotes 8.2e33 cm^-2 s^-1. The paper does not list the proton bunch population or
-    emittance used; with HL-LHC nominal protons (2.2e11, ε_n 2.5 µm, γ 7461), β* = 10.0 / 10.9 cm
-    (Fig. 19) and the Table 2 electron beam, the naive formula gives ≈ 6e33. The ratio is recorded
-    as a band (0.5–1.5), not a reproduction: the proton inputs are not in the paper."""
+    emittance used; with HL-LHC nominal protons (2.2e11, ε_n 2.5 µm, γ 7461), the proton β*_p = 10.0 cm
+    of the Fig. 19 header in both planes, the electron beam matched to the proton size (p. 13) and the
+    Table 2 electron bunch charge and spacing, the naive formula gives ≈ 6.5e33. The ratio is recorded
+    as a band (0.5–1.5), not a reproduction: the proton inputs are not in the paper.
+    Corrected 2026-10-29: the first version read the header's β*_p = 10.0 cm and β*_e = 10.9 cm as
+    horizontal and vertical values (ratio ≈ 0.75); the bands are unchanged."""
     n_e = 499e-12 / E_CHARGE
     f = 1.0 / 24.95e-9
     gamma_p = 7000.0 / an.M_P_GEV
-    sx = math.sqrt(0.100 * 2.5e-6 / gamma_p)
-    sy = math.sqrt(0.109 * 2.5e-6 / gamma_p)
-    lum = an.luminosity_naive_cm2s(f, n_e, 2.2e11, sx, sy)
+    sigma_p = math.sqrt(0.100 * 2.5e-6 / gamma_p)
+    lum = an.luminosity_naive_cm2s(f, n_e, 2.2e11, sigma_p, sigma_p)
     ratio = lum / 8.2e33
     assert 0.5 < ratio < 1.5
-    assert 0.65 < ratio < 0.85  # recorded value ≈ 0.75; a change here means an input changed
+    assert 0.65 < ratio < 0.85  # recorded value ≈ 0.80; a change here means an input changed
 
 
 # ---------------------------------------------------------------- J-PARC g-2/EDM (Abe et al. 2019)
