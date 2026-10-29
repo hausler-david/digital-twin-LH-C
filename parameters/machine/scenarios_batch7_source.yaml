@@ -1,0 +1,425 @@
+# Scenarios added by the batch-7 G9 extraction (2026-10-28): JPARC-G2-EDM-DESIGN-2019 (J-PARC muon g-2/EDM design, Abe et al. 2019) and
+# MUTRISTAN-HYBRID-TARGET-2026 (μTRISTAN hybrid target, Sakaki et al. 2026). Schema: schemas/machine.schema.json. No numbers here: every role
+# references a parameter record in parameters/source/jparc_g2_design_chain_abe2019.yaml, parameters/acceleration/jparc_g2_muon_linac_abe2019.yaml
+# or parameters/source/hybrid_target_mutristan_sakaki2026.yaml; unknown_roles lists what the papers do not give. Both are related/analogous
+# comparators for the LHμC ultra-cold μ+ source, not LHμC scenarios.
+scenarios:
+- scenario_id: JPARC-G2-EDM-DESIGN-2019
+  label: 'J-PARC muon g-2/EDM experiment design (Abe et al. 2019, PTEP 053C02): 1 MW H-line surface muons → aerogel muonium
+    → laser ionisation → 212 MeV muon linac → 3 T MRI-type storage solenoid'
+  description: 'Design chain of arXiv:1901.03047v2 as the reference analogous technology for the LHμC ultra-cold μ+ source:
+    3 GeV, 1 MW RCS protons on a 2 cm graphite target (double pulse 100 ns FWHM, 600 ns apart, 25 Hz); H-line ∼ 1e8 surface
+    μ+/s at 27 MeV/c (Δp/p 5 % RMS, focus σ 31 × 14 mm); very-low-density silica aerogel muonium target (formation probability
+    0.52, 3.4e-3 thermal muonium per surface muon in the 50 × 200 × 5 mm^3 laser region at ≈ 1.0 µs); 122 nm (80 GHz, 100
+    µJ) + 355 nm (440 mJ) 1 ns lasers with a CALCULATED 73 % ionisation efficiency; Soa 5.6 keV → RFQ 0.34 MeV (324 MHz) →
+    IH-DTL 4.5 MeV → DAW 40 MeV (1296 MHz, 5.6 MV/m) → DLS 212 MeV (≈ 20 MV/m); 300 MeV/c with 0.04 % RMS momentum spread
+    and ε_n 0.33/0.21 π mm mrad; 50 % polarisation; 3 T storage field, 333 mm orbit radius, field index ∼ 1e-4; Table 4 overall
+    efficiency 1.3e-5 per initial muon at production; 5.2e12 stored muons and 5.7e11 reconstructed e+ in 2.2e7 s; goals 450
+    ppb (stat.) / < 70 ppb (syst.) on a_mu and 1.5e-21 / 0.36e-21 e·cm on the EDM. All values are analogous (J-PARC design),
+    the recomputed ones analytical_estimate; nothing here is an LHμC value.'
+  machine: JPARC_MUSE
+  design_version: 'Abe et al., arXiv:1901.03047v2 (11 Mar 2019) / PTEP 2019, 053C02: Tables 1, 2, 4, 5, 6, Figs 3-7 and §§3-6,
+    8-9'
+  status: reported
+  primary_source_ids:
+  - SRC_ARXIV_1901_03047
+  parameters:
+    proton_beam_energy: SOURCE_PROTON_KINETIC_ENERGY_ABE2019
+    proton_beam_power: SOURCE_PROTON_BEAM_POWER_ABE2019
+    proton_driver: SOURCE_PROTON_ACCELERATOR_ABE2019
+    production_target_material: SOURCE_PRODUCTION_TARGET_MATERIAL_ABE2019
+    production_target_thickness: SOURCE_PRODUCTION_TARGET_THICKNESS_ABE2019
+    proton_pulse_structure: SOURCE_PROTON_PULSE_STRUCTURE_ABE2019
+    proton_pulse_width_fwhm: SOURCE_PROTON_PULSE_WIDTH_FWHM_ABE2019
+    proton_double_pulse_separation: SOURCE_PROTON_DOUBLE_PULSE_SEPARATION_ABE2019
+    repetition_rate: SOURCE_PROTON_REPETITION_RATE_ABE2019
+    muon_beamlines: SOURCE_MLF_MUON_BEAMLINES_COUNT_ABE2019
+    beamline: SOURCE_BEAMLINE_ABE2019
+    beamline_optics_concept: SOURCE_HLINE_OPTICS_CONCEPT_ABE2019
+    beamline_final_focus: SOURCE_HLINE_FINAL_FOCUS_ABE2019
+    surface_muon_polarisation: SOURCE_SURFACE_MU_POLARISATION_ABE2019
+    surface_muon_momentum_end_point: SOURCE_SURFACE_MU_MOMENTUM_MAX_ABE2019
+    surface_muon_rate: SOURCE_SURFACE_MU_RATE_HLINE_ABE2019
+    surface_muon_rate_implied_by_table5: SOURCE_HLINE_RATE_IMPLIED_BY_TABLE5_ABE2019
+    surface_muon_momentum: SOURCE_SURFACE_MU_MOMENTUM_ABE2019
+    surface_muon_momentum_spread: SOURCE_SURFACE_MU_MOMENTUM_SPREAD_ABE2019
+    surface_muon_momentum_spread_fig3: SOURCE_SURFACE_MU_MOMENTUM_SPREAD_FIG3_ABE2019
+    surface_muon_kinetic_energy: SOURCE_SURFACE_MU_KINETIC_ENERGY_FIG3_ABE2019
+    surface_muon_focus_sigma_x: SOURCE_SURFACE_MU_FOCUS_SIGMA_X_ABE2019
+    surface_muon_focus_sigma_y: SOURCE_SURFACE_MU_FOCUS_SIGMA_Y_ABE2019
+    muonium_target_material: SOURCE_MUONIUM_TARGET_MATERIAL_ABE2019
+    muonium_formation_probability: SOURCE_MUONIUM_FORMATION_PROBABILITY_ABE2019
+    muonium_formation_probability_text_bound: SOURCE_MUONIUM_FORMATION_PROBABILITY_MIN_ABE2019
+    muonium_polarisation_max: SOURCE_MUONIUM_POLARISATION_MAX_ABE2019
+    muonium_emission_enhancement_ablation: SOURCE_MUONIUM_EMISSION_ENHANCEMENT_ABLATION_ABE2019
+    thermal_muon_kinetic_energy: SOURCE_THERMAL_MU_KINETIC_ENERGY_ABE2019
+    thermal_muon_momentum: SOURCE_THERMAL_MU_MOMENTUM_ABE2019
+    thermal_muon_momentum_spread: SOURCE_THERMAL_MU_MOMENTUM_SPREAD_ABE2019
+    laser_region_distance: SOURCE_LASER_REGION_DISTANCE_FROM_AEROGEL_ABE2019
+    laser_region_transverse_1: SOURCE_LASER_REGION_TRANSVERSE_1_ABE2019
+    laser_region_transverse_2: SOURCE_LASER_REGION_TRANSVERSE_2_ABE2019
+    laser_region_longitudinal: SOURCE_LASER_REGION_LONGITUDINAL_ABE2019
+    laser_optimum_time: SOURCE_LASER_IONISATION_OPTIMUM_TIME_ABE2019
+    surface_muon_pulse_separation: SOURCE_SURFACE_MU_PULSE_SEPARATION_ABE2019
+    thermal_muonium_efficiency: SOURCE_THERMAL_MU_EFFICIENCY_ABE2019
+    thermal_muonium_efficiency_check: SOURCE_THERMAL_MU_EFFICIENCY_CHECK_ABE2019
+    fig4_beam_muons: SOURCE_FIG4_BEAM_MUONS_ABE2019
+    fig4_muonium_in_laser_region: SOURCE_FIG4_MU_IN_LASER_REGION_PEAK_ABE2019
+    laser_repetition_rate: SOURCE_LASER_REPETITION_RATE_ABE2019
+    laser_ionisation_scheme: SOURCE_LASER_IONISATION_SCHEME_ABE2019
+    laser_excitation_wavelength: SOURCE_LASER_122NM_WAVELENGTH_ABE2019
+    laser_ionisation_wavelength: SOURCE_LASER_355NM_WAVELENGTH_ABE2019
+    laser_excitation_linewidth: SOURCE_LASER_122NM_LINEWIDTH_ABE2019
+    laser_excitation_pulse_energy: SOURCE_LASER_122NM_PULSE_ENERGY_ABE2019
+    laser_ionisation_pulse_energy: SOURCE_LASER_355NM_PULSE_ENERGY_ABE2019
+    laser_pulse_width: SOURCE_LASER_PULSE_WIDTH_ABE2019
+    laser_ionisation_efficiency_calculated: SOURCE_LASER_IONISATION_EFF_CALC_ABE2019
+    lyman_alpha_generation: SOURCE_LYMAN_ALPHA_GENERATION_ABE2019
+    laser_pump_amplifier_stages: SOURCE_LASER_PUMP_AMPLIFIER_STAGES_ABE2019
+    laser_frequency_converter_stages: SOURCE_LASER_FREQUENCY_CONVERTER_STAGES_ABE2019
+    linac_stage_sequence: ACC_G2_LINAC_STAGE_SEQUENCE_ABE2019
+    linac_output_momentum: ACC_G2_LINAC_EXIT_MOMENTUM_ABE2019
+    linac_output_momentum_simulated_mean: ACC_G2_LINAC_EXIT_MOMENTUM_MEAN_SIM_ABE2019
+    linac_output_kinetic_energy: ACC_G2_LINAC_EXIT_KINETIC_ENERGY_ABE2019
+    linac_output_momentum_spread: ACC_G2_LINAC_EXIT_MOMENTUM_SPREAD_ABE2019
+    linac_output_momentum_spread_fig3: ACC_G2_LINAC_EXIT_MOMENTUM_SPREAD_FIG3_ABE2019
+    linac_output_emittance_x: ACC_G2_LINAC_EXIT_EMITTANCE_X_ABE2019
+    linac_output_emittance_y: ACC_G2_LINAC_EXIT_EMITTANCE_Y_ABE2019
+    linac_rfq_matched_emittance: ACC_G2_LINAC_RFQ_MATCHED_EMITTANCE_ABE2019
+    linac_soa_energy: ACC_G2_LINAC_SOA_OUTPUT_ENERGY_ABE2019
+    linac_rfq_energy: ACC_G2_LINAC_RFQ_OUTPUT_ENERGY_ABE2019
+    linac_ih_energy: ACC_G2_LINAC_IH_OUTPUT_ENERGY_ABE2019
+    linac_daw_energy: ACC_G2_LINAC_DAW_OUTPUT_ENERGY_ABE2019
+    linac_dls_energy: ACC_G2_LINAC_DLS_OUTPUT_ENERGY_ABE2019
+    linac_rf_frequency_low: ACC_G2_LINAC_RF_FREQUENCY_LOW_ABE2019
+    linac_rf_frequency_high: ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019
+    linac_rfq_length: ACC_G2_LINAC_RFQ_LENGTH_ABE2019
+    linac_rfq_origin: ACC_G2_LINAC_RFQ_ORIGIN_ABE2019
+    linac_rfq_entrance_pulse_width: ACC_G2_LINAC_RFQ_ENTRANCE_PULSE_WIDTH_ABE2019
+    linac_rfq_bunches: ACC_G2_LINAC_RFQ_BUNCHES_ABE2019
+    linac_ih_cells: ACC_G2_LINAC_IH_CELLS_ABE2019
+    linac_ih_cells_length: ACC_G2_LINAC_IH_CELLS_TOTAL_LENGTH_ABE2019
+    linac_ih_length_fig5: ACC_G2_LINAC_IH_LENGTH_FIG5_ABE2019
+    linac_ih_mode: ACC_G2_LINAC_IH_MODE_ABE2019
+    linac_ih_q0: ACC_G2_LINAC_IH_Q0_ABE2019
+    linac_ih_power: ACC_G2_LINAC_IH_POWER_DISSIPATION_ABE2019
+    linac_ih_shunt_impedance: ACC_G2_LINAC_IH_SHUNT_IMPEDANCE_ABE2019
+    linac_daw_gradient: ACC_G2_LINAC_DAW_GRADIENT_ABE2019
+    linac_daw_kilpatrick_fraction_max: ACC_G2_LINAC_DAW_KILPATRICK_FRACTION_MAX_ABE2019
+    linac_daw_design_betas: ACC_G2_LINAC_DAW_DESIGN_BETAS_ABE2019
+    linac_daw_length: ACC_G2_LINAC_DAW_TOTAL_LENGTH_ABE2019
+    linac_daw_length_fig5: ACC_G2_LINAC_DAW_LENGTH_FIG5_ABE2019
+    linac_daw_modules: ACC_G2_LINAC_DAW_MODULES_ABE2019
+    linac_daw_cells_per_module: ACC_G2_LINAC_DAW_CELLS_PER_MODULE_ABE2019
+    linac_daw_phase_advance_first_module: ACC_G2_LINAC_DAW_PHASE_ADVANCE_FIRST_MODULE_ABE2019
+    linac_daw_phase_advance_max: ACC_G2_LINAC_DAW_PHASE_ADVANCE_MAX_ABE2019
+    linac_daw_power: ACC_G2_LINAC_DAW_POWER_DISSIPATION_ABE2019
+    linac_dls_gradient: ACC_G2_LINAC_DLS_GRADIENT_ABE2019
+    linac_dls_structures: ACC_G2_LINAC_DLS_STRUCTURES_ABE2019
+    linac_dls_length: ACC_G2_LINAC_DLS_LENGTH_ABE2019
+    linac_dls_design_feature: ACC_G2_LINAC_DLS_DESIGN_FEATURE_ABE2019
+    linac_beta_source: ACC_G2_LINAC_BETA_SOURCE_ABE2019
+    linac_beta_rfq_out: ACC_G2_LINAC_BETA_RFQ_OUT_ABE2019
+    linac_beta_ih_out: ACC_G2_LINAC_BETA_IH_OUT_ABE2019
+    linac_beta_daw_out: ACC_G2_LINAC_BETA_DAW_OUT_ABE2019
+    linac_beta_dls_out: ACC_G2_LINAC_BETA_DLS_OUT_ABE2019
+    linac_transmission_soa: ACC_G2_LINAC_TRANSMISSION_SOA_ABE2019
+    linac_transmission_rfq: ACC_G2_LINAC_TRANSMISSION_RFQ_ABE2019
+    linac_transmission_ih: ACC_G2_LINAC_TRANSMISSION_IH_ABE2019
+    linac_transmission_daw: ACC_G2_LINAC_TRANSMISSION_DAW_ABE2019
+    linac_transmission_dls: ACC_G2_LINAC_TRANSMISSION_DLS_ABE2019
+    linac_decay_loss_soa: ACC_G2_LINAC_DECAY_LOSS_SOA_ABE2019
+    linac_decay_loss_rfq: ACC_G2_LINAC_DECAY_LOSS_RFQ_ABE2019
+    linac_decay_loss_ih: ACC_G2_LINAC_DECAY_LOSS_IH_ABE2019
+    linac_decay_loss_daw: ACC_G2_LINAC_DECAY_LOSS_DAW_ABE2019
+    linac_decay_loss_dls: ACC_G2_LINAC_DECAY_LOSS_DLS_ABE2019
+    linac_decay_survival: ACC_G2_LINAC_DECAY_SURVIVAL_ABE2019
+    linac_emittance_x_soa: ACC_G2_LINAC_EMITTANCE_X_SOA_ABE2019
+    linac_emittance_x_rfq: ACC_G2_LINAC_EMITTANCE_X_RFQ_ABE2019
+    linac_emittance_x_ih: ACC_G2_LINAC_EMITTANCE_X_IH_ABE2019
+    linac_emittance_x_daw: ACC_G2_LINAC_EMITTANCE_X_DAW_ABE2019
+    linac_emittance_y_soa: ACC_G2_LINAC_EMITTANCE_Y_SOA_ABE2019
+    linac_emittance_y_rfq: ACC_G2_LINAC_EMITTANCE_Y_RFQ_ABE2019
+    linac_emittance_y_ih: ACC_G2_LINAC_EMITTANCE_Y_IH_ABE2019
+    linac_emittance_y_daw: ACC_G2_LINAC_EMITTANCE_Y_DAW_ABE2019
+    linac_beam_pulse_width: ACC_G2_LINAC_BEAM_PULSE_WIDTH_ABE2019
+    linac_microbunches: ACC_G2_LINAC_MICROBUNCHES_ABE2019
+    linac_repetition_rate: ACC_G2_LINAC_REPETITION_RATE_ABE2019
+    muon_lifetime_reference: ACC_G2_MUON_LIFETIME_REFERENCE_ABE2019
+    muon_beam_momentum: MACHINE_MUON_MOMENTUM_ABE2019
+    muon_lorentz_gamma: MACHINE_MUON_LORENTZ_GAMMA_ABE2019
+    muon_polarisation: MACHINE_MUON_POLARISATION_ABE2019
+    storage_field: MACHINE_STORAGE_FIELD_ABE2019
+    focusing_field_type: MACHINE_FOCUSING_FIELD_TYPE_ABE2019
+    field_index: MACHINE_FIELD_INDEX_ABE2019
+    cyclotron_period: MACHINE_CYCLOTRON_PERIOD_ABE2019
+    spin_precession_period: MACHINE_SPIN_PRECESSION_PERIOD_ABE2019
+    orbit_radius: MACHINE_CYCLOTRON_RADIUS_ABE2019
+    orbit_diameter: MACHINE_ORBIT_DIAMETER_ABE2019
+    momentum_ratio_vs_previous_g2: MACHINE_MOMENTUM_RATIO_VS_PREVIOUS_G2_ABE2019
+    solenoid_diameter_ratio_vs_previous_g2: MACHINE_SOLENOID_DIAMETER_RATIO_VS_PREVIOUS_G2_ABE2019
+    emittance_ratio_vs_previous_g2: MACHINE_EMITTANCE_RATIO_VS_PREVIOUS_G2_ABE2019
+    field_uniformity_local: MACHINE_FIELD_UNIFORMITY_LOCAL_ABE2019
+    field_uniformity_integrated: MACHINE_STORAGE_FIELD_INTEGRATED_UNIFORMITY_ABE2019
+    field_variation_orbit_averaged: MACHINE_STORAGE_FIELD_ORBIT_AVERAGED_VARIATION_ABE2019
+    storage_magnet_type: MACHINE_STORAGE_MAGNET_TYPE_ABE2019
+    storage_magnet_height_fig8: MACHINE_STORAGE_MAGNET_HEIGHT_FIG8_ABE2019
+    storage_magnet_width_fig8: MACHINE_STORAGE_MAGNET_WIDTH_FIG8_ABE2019
+    solenoid_inner_radius: MACHINE_SOLENOID_INNER_RADIUS_ABE2019
+    solenoid_main_coils: MACHINE_SOLENOID_MAIN_COILS_ABE2019
+    weak_focus_coils: MACHINE_WEAK_FOCUS_COILS_ABE2019
+    kicker_coil_height: MACHINE_KICKER_COIL_HEIGHT_ABE2019
+    pc_mode_field_decay_rate: MACHINE_PC_MODE_FIELD_DECAY_RATE_ABE2019
+    injection_scheme: MACHINE_INJECTION_SCHEME_ABE2019
+    injection_pitch_angle: MACHINE_INJECTION_PITCH_ANGLE_ABE2019
+    injection_pitch_angle_mrad: MACHINE_INJECTION_PITCH_ANGLE_MRAD_ABE2019
+    pitch_angle_after_three_turns: MACHINE_PITCH_ANGLE_AFTER_THREE_TURNS_ABE2019
+    injection_line_dipoles: MACHINE_INJECTION_LINE_DIPOLES_ABE2019
+    injection_line_normal_quads: MACHINE_INJECTION_LINE_NORMAL_QUADS_ABE2019
+    injection_line_rotated_quads: MACHINE_INJECTION_LINE_ROTATED_QUADS_ABE2019
+    eff_hline_acceptance: SOURCE_G2_EFF_HLINE_ACCEPTANCE_ABE2019
+    eff_mu_emission: SOURCE_G2_EFF_MU_EMISSION_ABE2019
+    eff_laser_ionisation: SOURCE_G2_EFF_LASER_IONISATION_ABE2019
+    eff_metal_mesh: SOURCE_G2_EFF_METAL_MESH_ABE2019
+    eff_initial_acceleration: ACC_G2_EFF_INITIAL_ACCELERATION_ABE2019
+    eff_rfq_transmission: ACC_G2_EFF_RFQ_TRANSMISSION_ABE2019
+    eff_rfq_decay: ACC_G2_EFF_RFQ_DECAY_ABE2019
+    eff_ih_transmission: ACC_G2_EFF_IH_TRANSMISSION_ABE2019
+    eff_ih_decay: ACC_G2_EFF_IH_DECAY_ABE2019
+    eff_daw_transmission: ACC_G2_EFF_DAW_TRANSMISSION_ABE2019
+    eff_daw_decay: ACC_G2_EFF_DAW_DECAY_ABE2019
+    eff_dls_transmission: ACC_G2_EFF_DLS_TRANSMISSION_ABE2019
+    eff_dls_decay: ACC_G2_EFF_DLS_DECAY_ABE2019
+    eff_injection_transmission: MACHINE_G2_EFF_INJECTION_TRANSMISSION_ABE2019
+    eff_injection_decay: MACHINE_G2_EFF_INJECTION_DECAY_ABE2019
+    eff_kicker_decay: MACHINE_G2_EFF_KICKER_DECAY_ABE2019
+    eff_positron_energy_window: DET_G2_EFF_POSITRON_ENERGY_WINDOW_ABE2019
+    eff_detector_acceptance: DET_G2_EFF_DETECTOR_ACCEPTANCE_ABE2019
+    eff_reconstruction: DET_G2_EFF_RECONSTRUCTION_ABE2019
+    chain_efficiency: SOURCE_G2_CHAIN_EFFICIENCY_ABE2019
+    chain_efficiency_product: SOURCE_G2_CHAIN_EFFICIENCY_PRODUCT_ABE2019
+    data_taking_time: MACHINE_DATA_TAKING_TIME_ABE2019
+    stored_muons_total: MACHINE_STORED_MUONS_TOTAL_ABE2019
+    detected_positrons: PHYS_DETECTED_POSITRONS_TABLE1_ABE2019
+    detected_electrons: PHYS_DETECTED_ELECTRONS_TABLE1_ABE2019
+    expected_positrons_1mw: PHYS_EXPECTED_POSITRONS_1MW_ABE2019
+    reconstructed_positrons: PHYS_RECONSTRUCTED_POSITRONS_TABLE5_ABE2019
+    positron_energy_window_min: PHYS_POSITRON_ENERGY_WINDOW_MIN_ABE2019
+    positron_energy_window_max: PHYS_POSITRON_ENERGY_WINDOW_MAX_ABE2019
+    analyzing_power: PHYS_ANALYZING_POWER_ABE2019
+    omega_a_stat_uncertainty: PHYS_OMEGA_A_STAT_UNCERTAINTY_ABE2019
+    amu_precision_stat: PHYS_AMU_PRECISION_STAT_TABLE1_ABE2019
+    amu_precision_syst: PHYS_AMU_PRECISION_SYST_TABLE1_ABE2019
+    amu_precision_stat_table5: PHYS_AMU_PRECISION_STAT_TABLE5_ABE2019
+    amu_precision_syst_table5: PHYS_AMU_PRECISION_SYST_TABLE5_ABE2019
+    edm_precision_stat: PHYS_EDM_PRECISION_STAT_TABLE1_ABE2019
+    edm_precision_syst: PHYS_EDM_PRECISION_SYST_TABLE1_ABE2019
+    edm_precision_stat_table5: PHYS_EDM_PRECISION_STAT_TABLE5_ABE2019
+    edm_precision_syst_table5: PHYS_EDM_PRECISION_SYST_TABLE5_ABE2019
+    edm_improvement_factor: PHYS_EDM_IMPROVEMENT_FACTOR_ABE2019
+    syst_omega_a_timing_shift: PHYS_SYST_OMEGA_A_TIMING_SHIFT_ABE2019
+    syst_omega_a_pitch_effect: PHYS_SYST_OMEGA_A_PITCH_EFFECT_ABE2019
+    syst_omega_a_electric_field: PHYS_SYST_OMEGA_A_ELECTRIC_FIELD_ABE2019
+    syst_omega_a_delayed_positrons: PHYS_SYST_OMEGA_A_DELAYED_POSITRONS_ABE2019
+    syst_omega_a_differential_decay: PHYS_SYST_OMEGA_A_DIFFERENTIAL_DECAY_ABE2019
+    syst_omega_a_total: PHYS_SYST_OMEGA_A_TOTAL_ABE2019
+    syst_omega_p_absolute_calibration: PHYS_SYST_OMEGA_P_ABSOLUTE_CALIBRATION_ABE2019
+    syst_omega_p_probe_calibration: PHYS_SYST_OMEGA_P_PROBE_CALIBRATION_ABE2019
+    syst_omega_p_probe_position: PHYS_SYST_OMEGA_P_PROBE_POSITION_ABE2019
+    syst_omega_p_field_decay: PHYS_SYST_OMEGA_P_FIELD_DECAY_ABE2019
+    syst_omega_p_kicker_eddy_current: PHYS_SYST_OMEGA_P_KICKER_EDDY_CURRENT_ABE2019
+    syst_omega_p_total: PHYS_SYST_OMEGA_P_TOTAL_ABE2019
+    e_field_monitor_resolution: PHYS_E_FIELD_MONITOR_RESOLUTION_ABE2019
+    injection_efficiency_gain_vs_previous_g2: MACHINE_INJECTION_EFFICIENCY_GAIN_ABE2019
+    storage_region_radial_half_width: MACHINE_STORAGE_REGION_RADIAL_HALF_WIDTH_ABE2019
+    storage_region_half_height: MACHINE_STORAGE_REGION_HALF_HEIGHT_ABE2019
+    field_uniformity_local_table3: MACHINE_STORAGE_FIELD_LOCAL_UNIFORMITY_TABLE3_ABE2019
+    injection_region_z_min: MACHINE_INJECTION_REGION_Z_MIN_ABE2019
+    injection_region_z_max: MACHINE_INJECTION_REGION_Z_MAX_ABE2019
+    kicker_region_z_half_extent: MACHINE_KICKER_REGION_Z_HALF_EXTENT_ABE2019
+    field_index_table3: MACHINE_FIELD_INDEX_TABLE3_ABE2019
+    muon_dilated_lifetime: MACHINE_MUON_DILATED_LIFETIME_ABE2019
+    muons_per_fill_stored: MACHINE_MUONS_PER_FILL_ABE2019
+    measurement_interval_per_fill: MACHINE_MEASUREMENT_INTERVAL_PER_FILL_ABE2019
+    detector_radial_coverage_min: DET_G2_RADIAL_COVERAGE_MIN_ABE2019
+    detector_radial_coverage_max: DET_G2_RADIAL_COVERAGE_MAX_ABE2019
+    detector_height_coverage_half: DET_G2_HEIGHT_COVERAGE_HALF_ABE2019
+    detector_vanes: DET_G2_VANES_ABE2019
+    detector_sensors_per_vane: DET_G2_SENSORS_PER_VANE_ABE2019
+  unknown_roles:
+  - surface_muons_per_pulse
+  - surface_muon_norm_emittance
+  - surface_muon_pulse_width
+  - aerogel_density
+  - aerogel_thickness
+  - aerogel_ablation_hole_geometry
+  - laser_spot_size
+  - laser_beam_overlap_fraction
+  - measured_laser_ionisation_efficiency
+  - thermal_muons_per_pulse
+  - thermal_muon_norm_emittance
+  - soa_lens_voltage
+  - mesh_transmission_basis
+  - linac_total_length
+  - linac_rf_peak_power
+  - linac_longitudinal_emittance
+  - muons_per_pulse_at_linac_exit
+  - muons_per_bunch_stored
+  - storage_field_ppb_map_values
+  - kicker_field_strength
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1 for the scenario: four arithmetic reproductions pinned in tests/scientific/test_batch7_documents.py — Fig. 4
+    caption 0.52 × 2.1e4/3.23e6 = 3.38e-3 (test_abe2019_fig4_thermal_muonium_efficiency_decomposition), the Table 4 product
+    1.35e-5 vs the stated 1.3e-5 (test_abe2019_table4_overall_efficiency_product), the Table 2 decay survival 0.63 (test_abe2019_table2_decay_survival_through_linac)
+    and the Table 5-implied H-line rate ≈ 3.0e8/s against the text''s ''∼ 1e8 per second'' (test_abe2019_hline_rate_implied_by_table5_vs_quoted_1e8,
+    recorded as an internal-consistency observation, not a conflict); plus the Zhang-deck chain cross-check (test_abe2019_vs_zhang_g2_target_chain_consistency).
+    Unpinned audit arithmetic lives in the record notes (γ = 3.01, R = p/eB = 333.6 mm, T_c = 7.41 ns, Table 6 quadratic sums
+    39.6 and 56.1 ppb, combined 69 ppb). The 73 % ionisation efficiency is a CALCULATION; the 0.52 formation probability is
+    quoted without a numbered reference; its origin is Bakule et al. 2013 (SRC_ARXIV_1306_3810, p. 3, MuSR, 0.52 ± 0.01; Abe
+    et al. cite Bakule et al. as ref. [29] on p. 8); the conflict id CONF_MUONIUM_FORMATION_FRACTION is named in research/source_registry.yaml
+    but has no entry in research/source_conflicts.yaml yet. Source-internal duplicates are kept as separate records (Table
+    1 vs Table 5 precision goals; 1.4 m Fig. 5 vs 1.29 m text IH length; 16 m vs 16.3 m DAW; IH transmission 100 % in Table
+    2 vs 0.99 in Table 4). Status ''reported'' because every slot is a value the design paper states or a documented recomputation;
+    the paper is a design (pre-construction) document, so nothing here is measured performance. Detector and physics-programme
+    records carry the scenario id for traceability only. Verified 2026-10-29 (G9 adversarial verification, research/_fragments/verify_G9_JPARC_G2_AND_HYBRID_TARGET.md):
+    16 records added from pp. 4, 15 (Table 3), 16 and 17 (muons per fill ∼ 1e4, 33 µs measurement interval, storage-region
+    size, Table 3 field index, detector coverage); computed records carry confidence ''medium''.'
+- scenario_id: MUTRISTAN-HYBRID-TARGET-2026
+  label: 'μTRISTAN hybrid target (Sakaki, Kamioka, Yoshida 2026): liquid-Li pion target inside multilayer hot-tungsten muonium
+    emitters, pre-extraction ultraslow-muon yield per p–Li collision'
+  description: 'Target-side benchmark of arXiv:2605.25580v1 (PHITS/JAM with a HARP-fitted angle-dependent π+ correction, ∼
+    10 % hadronic systematic): 3 GeV protons on liquid lithium inside an energy-recovery internal-target ring; surrounding
+    tungsten wire layers (hot W at 2000 K, D = 2e-3 cm^2/s, ℓ_diff ≈ 0.7 µm, ≈ 95 % of emission from within 3 ℓ_diff, ≈ 1/3
+    of uniformly stopped near-surface muons emitted, ≈ 10 % in vacuum at the optimal laser time, muonium lost on wall collision);
+    representative geometry L_x 3 m, L_z+ 10 m, L_z− 1 m, L_y ∼ 5 m, gap 10 mm, layer 0.1 mm, 500 layers; stopped-muon rms
+    extents 10.9 m (z > 0), 1.3 m (z < 0), 2.7 m (x); η_REMPI = 0.73; yield 6e-4 per p–Li collision (saturating at ≈ 1e-3
+    for a 5 mm gap) excluding the unquantified muon-to-muonium conversion η_conv; N_p = 2e15/s at 1 MW gives η_conv × 1.2e12
+    ultraslow μ+/s before extraction (one collision per proton, idealised). The present J-PARC scheme limits are restated
+    (π+ stops 1e-5 per proton, aerogel emission 1.3 % with 52 % formation, ~30 % laser overlap, 73 % ionisation, idealised
+    second-stage efficiency ∼ 25 %). μTRISTAN values are imported_related, restated J-PARC values analogous; nothing here
+    is an LHμC value.'
+  machine: MUTRISTAN
+  design_version: 'Sakaki, Kamioka, Yoshida, arXiv:2605.25580v1 (25 May 2026): §§II-IV, Table I, Figs 2-6, Appendices A-B'
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2605_25580
+  parameters:
+    target_concept: SOURCE_HYBRID_TARGET_CONCEPT_SAKAKI2026
+    proton_beam_energy: SOURCE_HYBRID_PROTON_ENERGY_SAKAKI2026
+    proton_beam_power_normalisation: SOURCE_HYBRID_BEAM_POWER_NORMALISATION_SAKAKI2026
+    proton_rate_1mw: SOURCE_HYBRID_PROTON_RATE_1MW_SAKAKI2026
+    proton_energy_loss_fraction_max: SOURCE_HYBRID_PROTON_ENERGY_LOSS_FRACTION_MAX_SAKAKI2026
+    pion_target_material: SOURCE_HYBRID_PION_TARGET_MATERIAL_SAKAKI2026
+    stopping_target_material: SOURCE_HYBRID_STOPPING_TARGET_MATERIAL_SAKAKI2026
+    stopping_region_layout: SOURCE_HYBRID_Z_ASYMMETRY_SAKAKI2026
+    pion_lifetime_reference: SOURCE_HYBRID_PION_LIFETIME_REFERENCE_SAKAKI2026
+    tungsten_temperature: SOURCE_HYBRID_TUNGSTEN_TEMPERATURE_SAKAKI2026
+    diffusion_coefficient: SOURCE_HYBRID_DIFFUSION_COEFFICIENT_SAKAKI2026
+    diffusion_length: SOURCE_HYBRID_DIFFUSION_LENGTH_SAKAKI2026
+    emission_depth_fraction_3ldiff: SOURCE_HYBRID_EMISSION_DEPTH_FRACTION_SAKAKI2026
+    emitted_fraction_uniform_3ldiff: SOURCE_HYBRID_EMITTED_FRACTION_UNIFORM_3LDIFF_SAKAKI2026
+    vacuum_fraction_at_laser_time: SOURCE_HYBRID_VACUUM_FRACTION_SAKAKI2026
+    muonium_wall_collision_assumption: SOURCE_HYBRID_MUONIUM_WALL_COLLISION_ASSUMPTION_SAKAKI2026
+    interlayer_gap_min_evaluated: SOURCE_HYBRID_INTERLAYER_GAP_MIN_SAKAKI2026
+    interlayer_gap_max_evaluated: SOURCE_HYBRID_INTERLAYER_GAP_MAX_SAKAKI2026
+    fig6_laser_times: SOURCE_HYBRID_FIG6_LASER_TIMES_SAKAKI2026
+    drift_loss_status: SOURCE_HYBRID_DRIFT_LOSS_STATUS_SAKAKI2026
+    simulation_code: SOURCE_HYBRID_SIM_CODE_SAKAKI2026
+    harp_benchmark_target: SOURCE_HYBRID_HARP_BENCHMARK_TARGET_SAKAKI2026
+    stopped_muon_energy_threshold: SOURCE_HYBRID_STOPPED_MU_ENERGY_THRESHOLD_SAKAKI2026
+    reduced_density_factor: SOURCE_HYBRID_REDUCED_DENSITY_FACTOR_SAKAKI2026
+    validation_layer_thickness: SOURCE_HYBRID_VALIDATION_LAYER_THICKNESS_SAKAKI2026
+    validation_gap: SOURCE_HYBRID_VALIDATION_GAP_SAKAKI2026
+    validation_n_layers: SOURCE_HYBRID_VALIDATION_NLAYERS_SAKAKI2026
+    validation_lx: SOURCE_HYBRID_VALIDATION_LX_SAKAKI2026
+    validation_lz_minus: SOURCE_HYBRID_VALIDATION_LZMINUS_SAKAKI2026
+    validation_lz_plus: SOURCE_HYBRID_VALIDATION_LZPLUS_SAKAKI2026
+    validation_agreement: SOURCE_HYBRID_VALIDATION_AGREEMENT_SAKAKI2026
+    stopped_muon_z_extent: SOURCE_HYBRID_STOPPED_MU_Z_EXTENT_SAKAKI2026
+    stopped_muon_rms_z_plus: SOURCE_HYBRID_STOPPED_MU_RMS_ZPLUS_SAKAKI2026
+    stopped_muon_rms_z_minus: SOURCE_HYBRID_STOPPED_MU_RMS_ZMINUS_SAKAKI2026
+    stopped_muon_rms_x: SOURCE_HYBRID_STOPPED_MU_RMS_X_SAKAKI2026
+    target_lx: SOURCE_HYBRID_LX_SAKAKI2026
+    target_lz_plus: SOURCE_HYBRID_LZPLUS_SAKAKI2026
+    target_lz_minus: SOURCE_HYBRID_LZMINUS_SAKAKI2026
+    target_ly: SOURCE_HYBRID_LY_SAKAKI2026
+    interlayer_gap: SOURCE_HYBRID_INTERLAYER_GAP_SAKAKI2026
+    layer_thickness: SOURCE_HYBRID_LAYER_THICKNESS_SAKAKI2026
+    n_layers: SOURCE_HYBRID_NLAYERS_SAKAKI2026
+    yield_formula: SOURCE_HYBRID_YIELD_FORMULA_SAKAKI2026
+    rempi_efficiency: SOURCE_HYBRID_REMPI_EFFICIENCY_SAKAKI2026
+    usm_yield_per_collision: SOURCE_HYBRID_USM_YIELD_PER_COLLISION_SAKAKI2026
+    usm_yield_saturation_5mm_gap: SOURCE_HYBRID_USM_YIELD_SATURATION_SAKAKI2026
+    usm_yield_order_of_magnitude: SOURCE_HYBRID_USM_YIELD_LEVEL_SAKAKI2026
+    hadronic_systematic: SOURCE_HYBRID_HADRONIC_SYSTEMATIC_SAKAKI2026
+    one_collision_per_proton_assumption: SOURCE_HYBRID_ONE_COLLISION_ASSUMPTION_SAKAKI2026
+    pre_extraction_usm_rate_per_unit_eta_conv: SOURCE_HYBRID_PRE_EXTRACTION_RATE_SAKAKI2026
+    muon_to_muonium_conversion_eta_conv: SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026
+    extraction_efficiency: SOURCE_HYBRID_EXTRACTION_EFFICIENCY_SAKAKI2026
+    extracted_usm_rate: SOURCE_HYBRID_EXTRACTED_USM_RATE_SAKAKI2026
+    initial_transverse_emittance: SOURCE_HYBRID_INITIAL_EMITTANCE_STATUS_SAKAKI2026
+    muon_rate_requirement: SOURCE_HYBRID_MUON_RATE_REQUIREMENT_SAKAKI2026
+    second_stage_efficiency_idealised: SOURCE_HYBRID_SECOND_STAGE_EFFICIENCY_SAKAKI2026
+    thermal_source_emittance_estimate: SOURCE_THERMAL_SOURCE_EMITTANCE_ESTIMATE_SAKAKI2026
+    thermal_source_rms_size_typical: SOURCE_THERMAL_SOURCE_RMS_SIZE_TYPICAL_SAKAKI2026
+    present_scheme_surface_muon_kinetic_energy: SOURCE_SURFACE_MU_KINETIC_ENERGY_SAKAKI2026
+    present_scheme_surface_muon_momentum_spread: SOURCE_SURFACE_MU_MOMENTUM_SPREAD_SAKAKI2026
+    present_scheme_surface_pion_stop_yield: SOURCE_SURFACE_PION_STOP_YIELD_PER_PROTON_SAKAKI2026
+    present_scheme_surface_pion_stop_depth: SOURCE_SURFACE_PION_STOP_DEPTH_SAKAKI2026
+    present_scheme_aerogel_emission_efficiency: SOURCE_AEROGEL_MU_EMISSION_EFFICIENCY_SAKAKI2026
+    present_scheme_muonium_formation: SOURCE_AEROGEL_MUONIUM_FORMATION_SAKAKI2026
+    present_scheme_laser_overlap: SOURCE_LASER_OVERLAP_FRACTION_SAKAKI2026
+    present_scheme_laser_ionisation_efficiency: SOURCE_LASER_IONISATION_EFF_SINGLE_MU_SAKAKI2026
+    harp_benchmark_energy_low: SOURCE_HYBRID_HARP_BENCHMARK_ENERGY_LOW_SAKAKI2026
+    harp_benchmark_energy_high: SOURCE_HYBRID_HARP_BENCHMARK_ENERGY_HIGH_SAKAKI2026
+    harp_scale_factor_intercept: SOURCE_HYBRID_HARP_SCALE_INTERCEPT_SAKAKI2026
+    harp_scale_factor_slope: SOURCE_HYBRID_HARP_SCALE_SLOPE_SAKAKI2026
+    harp_fit_angle_min: SOURCE_HYBRID_HARP_FIT_ANGLE_MIN_SAKAKI2026
+    harp_fit_angle_max: SOURCE_HYBRID_HARP_FIT_ANGLE_MAX_SAKAKI2026
+    harp_fit_momentum_max: SOURCE_HYBRID_HARP_FIT_MOMENTUM_MAX_SAKAKI2026
+    harp_residuals_max: SOURCE_HYBRID_HARP_RESIDUALS_MAX_SAKAKI2026
+    jam_agreement_momentum_max: SOURCE_HYBRID_JAM_AGREEMENT_MOMENTUM_MAX_SAKAKI2026
+    jam_discrepancy_momentum_min: SOURCE_HYBRID_JAM_DISCREPANCY_MOMENTUM_MIN_SAKAKI2026
+  unknown_roles:
+  - muon_to_muonium_conversion_eta_conv
+  - extraction_efficiency
+  - extracted_usm_rate
+  - initial_transverse_emittance
+  - emittance_after_extraction
+  - drift_loss
+  - drift_field_strength
+  - wire_voltage
+  - wire_diameter_and_pitch
+  - laser_system_for_meter_scale_gaps
+  - laser_pulse_energy
+  - lithium_target_thickness
+  - proton_ring_design
+  - beam_recovery_efficiency
+  - proton_beam_power_design
+  - repetition_rate
+  - bunch_structure
+  - usm_energy_spread
+  - second_stage_cooling_design
+  - end_to_end_usm_intensity
+  - tungsten_heating_and_radiation_environment
+  - muonium_wall_collision_model
+  - eta_mu_stopped_muon_yield_separately
+  - eta_vac_per_gap_values
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1 for the scenario: three arithmetic reproductions pinned in tests/scientific/test_batch7_documents.py — ℓ_diff
+    = sqrt(2e-3 cm^2/s × τ_μ) = 0.66 µm vs ''≈ 0.7 µm'' and (1 − e^−3)/3 ≈ 1/3 (test_sakaki2026_diffusion_length_and_emitted_fraction),
+    Eq. (1) → 0.77 π mm mrad vs ''∼ 1'' (test_sakaki2026_thermal_source_emittance_estimate), and 6e-4 × 2e15/s = 1.2e12/s
+    reproducing Eq. (6) (test_sakaki2026_pre_extraction_rate_upper_limit). Unpinned audit arithmetic in the record notes:
+    N_p = 1 MW / 3 GeV = 2.08e15/s; L_y ≈ 500 × 10.1 mm = 5.05 m; 1 − e^−3 = 0.95. The Table I cells N_layers = 500 and η_REMPI
+    = 0.73 and the Eq. (6) coefficient 1.2e12 were read on the page images (the text layer drops them). Status partially_reported:
+    the yield excludes η_conv (treated as a material-dependent unknown), and extraction, drift, laser, lithium-thickness,
+    proton-ring and second-stage quantities are explicitly outside the paper''s scope, so no extracted μ+ rate or emittance
+    exists; the explicit unknown records (value null) are listed both as roles and in unknown_roles. η_vac^laser per gap (Fig.
+    2/5) and the Fig. 4 curves are not transcribed numerically. Related existing records: SOURCE_HYBRID_*_WS2026_ROGERS describe
+    a different ''hybrid'' (IMCC capture + cooling) concept for the LHμC. Verified 2026-10-29 (G9 adversarial verification):
+    Table I records re-labelled to §IV.D, the Eq. (6) rate carries uncertainty type order_of_magnitude as the paper states,
+    role hadronic_model renamed harp_benchmark_target.'

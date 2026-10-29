@@ -1,0 +1,3374 @@
+# J-PARC muon g-2/EDM muon linac extracted from SRC_ARXIV_1901_03047 (M. Abe et al., arXiv:1901.03047v2 / PTEP 2019, 053C02, §5
+# 'Acceleration', Figs 5-7, Table 2, and the linac-stage cells of Table 4; batch 7, 2026-10-28, group G9). Records tagged _ABE2019, scenario
+# JPARC-G2-EDM-DESIGN-2019. Soa 5.6 keV → RFQ 0.34 MeV (324 MHz, spare J-PARC RFQ) → IH-DTL 4.5 MeV (16 cells, 1.29 m, Q0 1.03e4, 320 kW,
+# 58 MΩ/m) → DAW 40 MeV (1296 MHz, 5.6 MV/m, 15 modules × 10 cells, 16.3 m, 4.5 MW) → DLS 212 MeV (≈ 20 MV/m, 4 structures, ≈ 10 m);
+# exit 299.7 MeV/c mean with 0.04 % RMS spread; Table 2 transmissions/decay losses/emittances per stage (unit 'π mm mrad' as printed).
+# Status 'analogous' (J-PARC design values); the decay-survival product is 'analytical_estimate' with its derivation. MV/m and MΩ/m are
+# written out for pint. Confidence 'high': pp. 8-11 read as page images. Generated from a scripted transcription (scratchpad gen/g9_*.py);
+# this YAML file is the single source of truth.
+# Verified 2026-10-29 (research/_fragments/verify_G9_JPARC_G2_AND_HYBRID_TARGET.md): the computed decay-survival record carries confidence
+# 'medium'; Table 4 cells re-labelled to §8 'Estimation of the number of reconstructed positrons'.
+parameters:
+- parameter_id: ACC_G2_EFF_INITIAL_ACCELERATION_ABE2019
+  name: 'Table 4 efficiency: Initial acceleration transmission and decay'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.72
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'Initial acceleration transmission and decay: 0.72'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Consistent with Table 2 Soa column: 0.87 transmission × (1 − 0.17) decay = 0.72.'
+- parameter_id: ACC_G2_EFF_RFQ_TRANSMISSION_ABE2019
+  name: 'Table 4 efficiency: RFQ transmission'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.95
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'RFQ transmission: 0.95'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 RFQ transmission 95 %.
+- parameter_id: ACC_G2_EFF_RFQ_DECAY_ABE2019
+  name: 'Table 4 efficiency: RFQ decay'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.81
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'RFQ decay: 0.81'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 RFQ decay loss 19 % → survival 0.81.
+- parameter_id: ACC_G2_EFF_IH_TRANSMISSION_ABE2019
+  name: 'Table 4 efficiency: IH transmission'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.99
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'IH transmission: 0.99'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 gives IH transmission 100 %; Table 4 lists 0.99 (preserved as printed).
+- parameter_id: ACC_G2_EFF_IH_DECAY_ABE2019
+  name: 'Table 4 efficiency: IH decay'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.99
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'IH decay: 0.99'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 IH decay loss 1 % → survival 0.99.
+- parameter_id: ACC_G2_EFF_DAW_TRANSMISSION_ABE2019
+  name: 'Table 4 efficiency: DAW transmission'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'DAW transmission: 1.00'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_EFF_DAW_DECAY_ABE2019
+  name: 'Table 4 efficiency: DAW decay'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.96
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'DAW decay: 0.96'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 DAW decay loss 4 % → survival 0.96.
+- parameter_id: ACC_G2_EFF_DLS_TRANSMISSION_ABE2019
+  name: 'Table 4 efficiency: DLS transmission'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'DLS transmission: 1.00'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_EFF_DLS_DECAY_ABE2019
+  name: 'Table 4 efficiency: DLS decay'
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.99
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 20
+      section: 8 Estimation of the number of reconstructed positrons (Table 4)
+      table_figure_or_equation: Table 4 'Breakdown of estimated efficiency'
+      quotation: 'DLS decay: 0.99'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table 2 DLS decay loss 1 % → survival 0.99.
+- parameter_id: ACC_G2_LINAC_EXIT_MOMENTUM_ABE2019
+  name: Muon linac design output momentum
+  symbol: p_out
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 300
+  unit: MeV/c
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 9
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The room-temperature muons created by the laser ionization of thermal muonium will be accelerated to a momentum
+        of 300 MeV/c (212 MeV in kinetic energy). The muons must be accelerated in a sufficiently short time compared with
+        the muon lifetime of 2.2 µs to suppress muon decay loss during the acceleration.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Fig. 3: accelerated muons ''p 300 MeV/c''; Fig. 7 simulation mean 299.7 MeV/c.'
+- parameter_id: ACC_G2_LINAC_EXIT_KINETIC_ENERGY_ABE2019
+  name: Muon linac design output kinetic energy
+  symbol: E_out
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 212
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 9
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The room-temperature muons created by the laser ionization of thermal muonium will be accelerated to a momentum
+        of 300 MeV/c (212 MeV in kinetic energy). The muons must be accelerated in a sufficiently short time compared with
+        the muon lifetime of 2.2 µs to suppress muon decay loss during the acceleration.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Same as the DLS output energy (ACC_G2_LINAC_DLS_OUTPUT_ENERGY_ABE2019).
+- parameter_id: ACC_G2_MUON_LIFETIME_REFERENCE_ABE2019
+  name: Muon lifetime quoted as the acceleration-time reference
+  symbol: tau_mu
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 2.2
+  unit: us
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 9
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The room-temperature muons created by the laser ionization of thermal muonium will be accelerated to a momentum
+        of 300 MeV/c (212 MeV in kinetic energy). The muons must be accelerated in a sufficiently short time compared with
+        the muon lifetime of 2.2 µs to suppress muon decay loss during the acceleration.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Rounded physical constant as quoted by the source (2.197 µs).
+- parameter_id: ACC_G2_LINAC_STAGE_SEQUENCE_ABE2019
+  name: Muon linac stage sequence
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: Soa lens (electrostatic) → RFQ → IH-DTL → DAW → DLS
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 9
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The acceleration steps are 1) electrostatic acceleration with a Soa lens, 2) radio frequency quadrupole (RFQ),
+        3) interdigital H-type drift tube linac (IH-DTL), 4) disk-and-washer structure (DAW), and 5) disk-loaded traveling
+        wave structure (DLS).
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Categorical.
+- parameter_id: ACC_G2_LINAC_RFQ_MATCHED_EMITTANCE_ABE2019
+  name: Matched ellipse emittance at the RFQ entrance
+  symbol: eps_match
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1.0
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 9
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 6
+      quotation: The ellipses in the x-x′ and y-y′ distributions represent the matched ellipses of 1.0π mm mrad.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 6 caption repeats '1.0π mm mrad'. Fig. 6 also shows the energy at the RFQ entrance between 5.6 and 5.7 keV and
+    the arrival time 470–485 ns (histogram axes, not transcribed).
+- parameter_id: ACC_G2_LINAC_SOA_OUTPUT_ENERGY_ABE2019
+  name: Kinetic energy after the Soa lens / at the RFQ entrance (Fig. 5)
+  symbol: E_Soa
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 5.6
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'E: 5.6 keV (muon source / RFQ entrance)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 6 energy histogram at the RFQ entrance spans 5.6–5.7 keV.
+- parameter_id: ACC_G2_LINAC_RFQ_LENGTH_ABE2019
+  name: RFQ length (Fig. 5)
+  symbol: L_RFQ
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 3.2
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'length: 3.2 m (RFQ)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_IH_LENGTH_FIG5_ABE2019
+  name: IH-DTL length (Fig. 5)
+  symbol: L_IH
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1.4
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'length: 1.4 m (IH-DTL)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: The text gives 1.29 m for the total length of the cells (ACC_G2_LINAC_IH_CELLS_TOTAL_LENGTH_ABE2019); both preserved.
+- parameter_id: ACC_G2_LINAC_DAW_LENGTH_FIG5_ABE2019
+  name: DAW section length (Fig. 5)
+  symbol: L_DAW
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 16
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'length: 16 m (DAW)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Text: 16.3 m (ACC_G2_LINAC_DAW_TOTAL_LENGTH_ABE2019).'
+- parameter_id: ACC_G2_LINAC_DLS_LENGTH_ABE2019
+  name: DLS section length
+  symbol: L_DLS
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 10
+  unit: m
+  uncertainty:
+    type: not_stated
+    note: source says 'approximately'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The DLS section consists of four accelerating structures and the total length is approximately 10 m.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Fig. 5 label: ''10 m''.'
+- parameter_id: ACC_G2_LINAC_RF_FREQUENCY_LOW_ABE2019
+  name: RF frequency of the RFQ and IH-DTL
+  symbol: f_RF,low
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 324
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'RF: 324 MHz (spanning RFQ and IH-DTL)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'p. 10: ''during the acceleration in the RFQ at the frequency of 324 MHz''.'
+- parameter_id: ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019
+  name: RF frequency of the DAW and DLS
+  symbol: f_RF,high
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1296
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'RF: 1296 MHz (spanning DAW and DLS)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'p. 10: ''DAW structures with a frequency of 1,296 MHz''; p. 11: ''An RF frequency of 1,296 MHz is adequate for the
+    wider phase space'' (DLS). 1296 = 4 × 324.'
+- parameter_id: ACC_G2_LINAC_BETA_SOURCE_ABE2019
+  name: β at the muon source / RFQ entrance (Fig. 5)
+  symbol: beta
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.01
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'β: 0.01 (5.6 keV)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_BETA_RFQ_OUT_ABE2019
+  name: β at the RFQ exit (Fig. 5)
+  symbol: beta
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.08
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'β: 0.08 (0.34 MeV)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_BETA_IH_OUT_ABE2019
+  name: β at the IH-DTL exit (Fig. 5)
+  symbol: beta
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'β: 0.3 (4.5 MeV)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_BETA_DAW_OUT_ABE2019
+  name: β at the DAW exit (Fig. 5)
+  symbol: beta
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.7
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'β: 0.7 (40 MeV)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_BETA_DLS_OUT_ABE2019
+  name: β at the DLS exit (Fig. 5)
+  symbol: beta
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.94
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 5 'Schematic configuration of the muon linac' (labels)
+      quotation: 'β: 0.94 (212 MeV)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_RFQ_ENTRANCE_PULSE_WIDTH_ABE2019
+  name: Time width of the muon pulse at the RFQ entrance
+  symbol: tau_in
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 10
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Even though the pulse width of the dissociation laser is 1 ns, the time width at the RFQ entrance is 10 ns
+        owing to the spatial distribution at ionization. Therefore, the beam from the source divides into three bunches during
+        the acceleration in the RFQ at the frequency of 324 MHz. A spare RFQ of the J-PARC linac [35] will be used as a front-end
+        structure accelerating the muons to 0.34 MeV [36].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_RFQ_BUNCHES_ABE2019
+  name: Number of bunches formed in the RFQ
+  symbol: N_b
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Even though the pulse width of the dissociation laser is 1 ns, the time width at the RFQ entrance is 10 ns
+        owing to the spatial distribution at ionization. Therefore, the beam from the source divides into three bunches during
+        the acceleration in the RFQ at the frequency of 324 MHz. A spare RFQ of the J-PARC linac [35] will be used as a front-end
+        structure accelerating the muons to 0.34 MeV [36].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 10 ns ≈ 3.2 RF periods at 324 MHz.
+- parameter_id: ACC_G2_LINAC_RFQ_ORIGIN_ABE2019
+  name: RFQ hardware
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: spare RFQ of the J-PARC linac
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Even though the pulse width of the dissociation laser is 1 ns, the time width at the RFQ entrance is 10 ns
+        owing to the spatial distribution at ionization. Therefore, the beam from the source divides into three bunches during
+        the acceleration in the RFQ at the frequency of 324 MHz. A spare RFQ of the J-PARC linac [35] will be used as a front-end
+        structure accelerating the muons to 0.34 MeV [36].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. The paper cites the spare J-PARC RFQ as [35] Y. Kondo et al., PRST-AB 16, 040102 (2013).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Categorical.
+- parameter_id: ACC_G2_LINAC_RFQ_OUTPUT_ENERGY_ABE2019
+  name: RFQ output kinetic energy
+  symbol: E_RFQ
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.34
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Even though the pulse width of the dissociation laser is 1 ns, the time width at the RFQ entrance is 10 ns
+        owing to the spatial distribution at ionization. Therefore, the beam from the source divides into three bunches during
+        the acceleration in the RFQ at the frequency of 324 MHz. A spare RFQ of the J-PARC linac [35] will be used as a front-end
+        structure accelerating the muons to 0.34 MeV [36].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. The paper cites the 0.34 MeV RFQ acceleration as [36] Y. Kondo et al., IPAC2015, pp. 3801-3803.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label '0.34 MeV'.
+- parameter_id: ACC_G2_LINAC_IH_OUTPUT_ENERGY_ABE2019
+  name: IH-DTL output kinetic energy
+  symbol: E_IH
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 4.5
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The energy of the muon beam is boosted to 4.5 MeV with an IH-DTL.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label '4.5 MeV'.
+- parameter_id: ACC_G2_LINAC_IH_MODE_ABE2019
+  name: IH-DTL operating mode and focusing
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: TE11 eigenmode, π-mode acceleration, alternative phase focusing (APF), no quadrupoles in the drift tubes
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Different from the Alvarez DTL, the IH-DTL uses the TE11 eigenmode, and π-mode acceleration [38]. With this
+        mode, the acceleration length is halved compared with the 2π-mode acceleration. In addition, alternative phase focusing
+        (APF) [39] is adopted. Since the use of APF eliminates the need for installing quadrupoles in the drift tubes, a higher
+        shunt impedance per length can be achieved.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Categorical.
+- parameter_id: ACC_G2_LINAC_IH_CELLS_ABE2019
+  name: Number of IH-DTL cells
+  symbol: N_cells
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 16
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Sixteen cells are required to accelerate up to 4.5 MeV, and the total length of the cells is 1.29 m. The
+        quality factor Q0 is calculated to be 1.03 × 10^4, and the power dissipation is 320 kW. The effective shunt impedance
+        per unit length is calculated to be 58 MΩ/m, which is competitive with those of other IH structures, taking our IH
+        application to a relatively higher velocity region into account.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_IH_CELLS_TOTAL_LENGTH_ABE2019
+  name: Total length of the IH-DTL cells
+  symbol: L_IH,cells
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1.29
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Sixteen cells are required to accelerate up to 4.5 MeV, and the total length of the cells is 1.29 m. The
+        quality factor Q0 is calculated to be 1.03 × 10^4, and the power dissipation is 320 kW. The effective shunt impedance
+        per unit length is calculated to be 58 MΩ/m, which is competitive with those of other IH structures, taking our IH
+        application to a relatively higher velocity region into account.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label gives 1.4 m for the IH-DTL block.
+- parameter_id: ACC_G2_LINAC_IH_Q0_ABE2019
+  name: IH-DTL unloaded quality factor (calculated)
+  symbol: Q0
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 10300.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Sixteen cells are required to accelerate up to 4.5 MeV, and the total length of the cells is 1.29 m. The
+        quality factor Q0 is calculated to be 1.03 × 10^4, and the power dissipation is 320 kW. The effective shunt impedance
+        per unit length is calculated to be 58 MΩ/m, which is competitive with those of other IH structures, taking our IH
+        application to a relatively higher velocity region into account.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_IH_POWER_DISSIPATION_ABE2019
+  name: IH-DTL power dissipation
+  symbol: P_IH
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 320
+  unit: kW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Sixteen cells are required to accelerate up to 4.5 MeV, and the total length of the cells is 1.29 m. The
+        quality factor Q0 is calculated to be 1.03 × 10^4, and the power dissipation is 320 kW. The effective shunt impedance
+        per unit length is calculated to be 58 MΩ/m, which is competitive with those of other IH structures, taking our IH
+        application to a relatively higher velocity region into account.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_IH_SHUNT_IMPEDANCE_ABE2019
+  name: IH-DTL effective shunt impedance per unit length (calculated)
+  symbol: Z_eff
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 58
+  unit: megaohm/meter
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Sixteen cells are required to accelerate up to 4.5 MeV, and the total length of the cells is 1.29 m. The
+        quality factor Q0 is calculated to be 1.03 × 10^4, and the power dissipation is 320 kW. The effective shunt impedance
+        per unit length is calculated to be 58 MΩ/m, which is competitive with those of other IH structures, taking our IH
+        application to a relatively higher velocity region into account.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. IH-DTL beam dynamics cited as [40] M. Otani et al., PRAB 19, 040101 (2016).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Unit MΩ/m written out for pint.
+- parameter_id: ACC_G2_LINAC_DAW_OUTPUT_ENERGY_ABE2019
+  name: DAW output kinetic energy
+  symbol: E_DAW
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 40
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Following the IH-DTL, DAW structures with a frequency of 1,296 MHz are used to accelerate to 40 MeV.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label '40 MeV'.
+- parameter_id: ACC_G2_LINAC_DAW_DESIGN_BETAS_ABE2019
+  name: Velocities for which the DAW cells were optimised
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: β = 0.3, 0.4, 0.5 and 0.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The cell design was optimized for the velocities of β = 0.3, 0.4, 0.5, and 0.6 by using the SIMPLEX algorithm
+        [43]. PARMILA [44] was used to design the beam dynamics of the DAW section.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Categorical list.
+- parameter_id: ACC_G2_LINAC_DAW_GRADIENT_ABE2019
+  name: DAW acceleration gradient
+  symbol: E_acc,DAW
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 5.6
+  unit: megavolt/meter
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The acceleration gradient is determined to be 5.6 MV/m to keep the maximum electric field less than 0.9 times
+        the Kilpatrick limit [45].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Unit MV/m written out for pint.
+- parameter_id: ACC_G2_LINAC_DAW_KILPATRICK_FRACTION_MAX_ABE2019
+  name: DAW maximum surface field as a fraction of the Kilpatrick limit (bound)
+  symbol: E_max/E_K
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.9
+  unit: dimensionless
+  uncertainty:
+    type: interval
+    lower: null
+    upper: 0.9
+    unit: dimensionless
+    note: design condition 'less than 0.9 times the Kilpatrick limit'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 10
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The acceleration gradient is determined to be 5.6 MV/m to keep the maximum electric field less than 0.9 times
+        the Kilpatrick limit [45].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DAW_PHASE_ADVANCE_MAX_ABE2019
+  name: DAW phase advance per focusing period (design bound)
+  symbol: sigma_max
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 90
+  unit: degree
+  uncertainty:
+    type: interval
+    lower: null
+    upper: 90
+    unit: degree
+    note: design condition 'less than 90 degrees'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DAW_CELLS_PER_MODULE_ABE2019
+  name: DAW cells per module
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 10
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DAW_PHASE_ADVANCE_FIRST_MODULE_ABE2019
+  name: DAW phase advance in the first module
+  symbol: sigma_1
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 83
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says 'approximately'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DAW_TOTAL_LENGTH_ABE2019
+  name: DAW total length
+  symbol: L_DAW
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 16.3
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label '16 m'.
+- parameter_id: ACC_G2_LINAC_DAW_MODULES_ABE2019
+  name: Number of DAW modules
+  symbol: N_mod
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 15
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 15 modules × 10 cells = 150 cells (audit arithmetic).
+- parameter_id: ACC_G2_LINAC_DAW_POWER_DISSIPATION_ABE2019
+  name: DAW estimated power dissipation
+  symbol: P_DAW
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 4.5
+  unit: MW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The field strengths of the quadrupole doublets between the modules and the number of cells in each module
+        are determined with a condition that the phase advance in one focusing period is less than 90 degrees. The number
+        of cells in a module is set to ten, and the phase advance is approximately 83 degrees in the first module, where the
+        RF defocusing is strongest. The total length is 16.3 m with 15 modules. The estimated power dissipation is 4.5 MW.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DLS_OUTPUT_ENERGY_ABE2019
+  name: DLS output kinetic energy (linac exit)
+  symbol: E_DLS
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 212
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Finally, the muons are accelerated from 40 MeV to 212 MeV by using a DLS, which is widely used for electron
+        linacs. The advantage of the DLS is its high acceleration gradient; approximately 20 MV/m.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Fig. 5 label '212 MeV'; Fig. 3 'E 212 MeV'.
+- parameter_id: ACC_G2_LINAC_DLS_GRADIENT_ABE2019
+  name: DLS acceleration gradient
+  symbol: E_acc,DLS
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 20
+  unit: megavolt/meter
+  uncertainty:
+    type: not_stated
+    note: source says 'approximately'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: Finally, the muons are accelerated from 40 MeV to 212 MeV by using a DLS, which is widely used for electron
+        linacs. The advantage of the DLS is its high acceleration gradient; approximately 20 MV/m.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Unit MV/m written out for pint.
+- parameter_id: ACC_G2_LINAC_DLS_DESIGN_FEATURE_ABE2019
+  name: DLS design feature specific to muons
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: disk spacing varied with the muon velocity (β < 1 traveling-wave structure)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The particular design feature of the DLS for muon acceleration, which is different from the general accelerating
+        structure for an electron accelerator, is the variation of the disk spacing corresponding to the muon velocity [46].
+        The DLS section consists of four accelerating structures and the total length is approximately 10 m.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value. The paper cites the muon DLS design as [46] Y. Kondo et al., JPCS 874, 012054 (2017).'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Categorical.
+- parameter_id: ACC_G2_LINAC_DLS_STRUCTURES_ABE2019
+  name: Number of DLS accelerating structures
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The particular design feature of the DLS for muon acceleration, which is different from the general accelerating
+        structure for an electron accelerator, is the variation of the disk spacing corresponding to the muon velocity [46].
+        The DLS section consists of four accelerating structures and the total length is approximately 10 m.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_EXIT_MOMENTUM_MEAN_SIM_ABE2019
+  name: Simulated mean momentum at the linac exit (Fig. 7)
+  symbol: <p>
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 299.7
+  unit: MeV/c
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Fig. 7 momentum histogram inset
+      quotation: 'Mean: 299.7 MeV/c; RMS/Mean: 0.04%'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_EXIT_MOMENTUM_SPREAD_ABE2019
+  name: Momentum spread at the linac exit (RMS, simulation)
+  symbol: dp/p
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.04
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The estimated momentum spread is 0.04% (RMS).
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Fig. 7 inset ''RMS/Mean: 0.04%''; Fig. 3 ''∆p/p 4×10^-4'' (ACC_G2_LINAC_EXIT_MOMENTUM_SPREAD_FIG3_ABE2019).'
+- parameter_id: ACC_G2_LINAC_EXIT_MOMENTUM_SPREAD_FIG3_ABE2019
+  name: Momentum spread of the accelerated muons (Fig. 3)
+  symbol: dp/p
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.0004
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 8
+      section: 4 Production of thermal muons from surface muons
+      table_figure_or_equation: Fig. 3 (kinematic table in the scheme figure)
+      quotation: accelerated muons — E 212 MeV, p 300 MeV/c, ∆p/p 4×10^-4
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Equals the 0.04 % (RMS) of p. 11.
+- parameter_id: ACC_G2_LINAC_BEAM_PULSE_WIDTH_ABE2019
+  name: Beam pulse width at the linac exit
+  symbol: tau_pulse
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 10
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The beam pulse width is 10 ns consisting of three microbunches, and the repetition rate is 25 Hz.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_MICROBUNCHES_ABE2019
+  name: Microbunches per pulse at the linac exit
+  symbol: null
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The beam pulse width is 10 ns consisting of three microbunches, and the repetition rate is 25 Hz.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_REPETITION_RATE_ABE2019
+  name: Linac beam repetition rate
+  symbol: f_rep
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 25
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: null
+      quotation: The beam pulse width is 10 ns consisting of three microbunches, and the repetition rate is 25 Hz.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_TRANSMISSION_SOA_ABE2019
+  name: Table 2 transmission through the Soa section (simulation)
+  symbol: T
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 87
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Transmission (%) — Soa: 87'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_TRANSMISSION_RFQ_ABE2019
+  name: Table 2 transmission through the RFQ section (simulation)
+  symbol: T
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 95
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Transmission (%) — RFQ: 95'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_TRANSMISSION_IH_ABE2019
+  name: Table 2 transmission through the IH section (simulation)
+  symbol: T
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 100
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Transmission (%) — IH: 100'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_TRANSMISSION_DAW_ABE2019
+  name: Table 2 transmission through the DAW section (simulation)
+  symbol: T
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 100
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Transmission (%) — DAW: 100'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_TRANSMISSION_DLS_ABE2019
+  name: Table 2 transmission through the DLS section (simulation)
+  symbol: T
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 100
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Transmission (%) — DLS: 100'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DECAY_LOSS_SOA_ABE2019
+  name: Table 2 decay loss in the Soa section (simulation)
+  symbol: L_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 17
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Decay loss (%) — Soa: 17'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DECAY_LOSS_RFQ_ABE2019
+  name: Table 2 decay loss in the RFQ section (simulation)
+  symbol: L_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 19
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Decay loss (%) — RFQ: 19'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DECAY_LOSS_IH_ABE2019
+  name: Table 2 decay loss in the IH section (simulation)
+  symbol: L_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Decay loss (%) — IH: 1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DECAY_LOSS_DAW_ABE2019
+  name: Table 2 decay loss in the DAW section (simulation)
+  symbol: L_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 4
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Decay loss (%) — DAW: 4'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_DECAY_LOSS_DLS_ABE2019
+  name: Table 2 decay loss in the DLS section (simulation)
+  symbol: L_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 1
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'Decay loss (%) — DLS: 1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: null
+- parameter_id: ACC_G2_LINAC_EMITTANCE_X_SOA_ABE2019
+  name: Table 2 normalised rms horizontal emittance after the Soa section
+  symbol: eps_n,rms,x
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.38
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,x (π mm mrad) — Soa: 0.38'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_X_RFQ_ABE2019
+  name: Table 2 normalised rms horizontal emittance after the RFQ section
+  symbol: eps_n,rms,x
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.3
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,x (π mm mrad) — RFQ: 0.30'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_X_IH_ABE2019
+  name: Table 2 normalised rms horizontal emittance after the IH section
+  symbol: eps_n,rms,x
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.32
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,x (π mm mrad) — IH: 0.32'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_X_DAW_ABE2019
+  name: Table 2 normalised rms horizontal emittance after the DAW section
+  symbol: eps_n,rms,x
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.32
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,x (π mm mrad) — DAW: 0.32'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EXIT_EMITTANCE_X_ABE2019
+  name: Normalised rms horizontal emittance at the linac exit (Table 2, DLS column)
+  symbol: eps_n,rms,x
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.33
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,x (π mm mrad) — DLS: 0.33'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_Y_SOA_ABE2019
+  name: Table 2 normalised rms vertical emittance after the Soa section
+  symbol: eps_n,rms,y
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.11
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,y (π mm mrad) — Soa: 0.11'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_Y_RFQ_ABE2019
+  name: Table 2 normalised rms vertical emittance after the RFQ section
+  symbol: eps_n,rms,y
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.17
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,y (π mm mrad) — RFQ: 0.17'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_Y_IH_ABE2019
+  name: Table 2 normalised rms vertical emittance after the IH section
+  symbol: eps_n,rms,y
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.2
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,y (π mm mrad) — IH: 0.20'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EMITTANCE_Y_DAW_ABE2019
+  name: Table 2 normalised rms vertical emittance after the DAW section
+  symbol: eps_n,rms,y
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.21
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,y (π mm mrad) — DAW: 0.21'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_EXIT_EMITTANCE_Y_ABE2019
+  name: Normalised rms vertical emittance at the linac exit (Table 2, DLS column)
+  symbol: eps_n,rms,y
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.21
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: 'εn,rms,y (π mm mrad) — DLS: 0.21'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: 'J-PARC muon g-2/EDM design value (Abe et al. 2019, PTEP 053C02): analogous technology for the LHμC ultra-cold
+        μ+ source chain (surface-muon beamline, aerogel muonium target, laser ionisation, muon linac, storage solenoid); not
+        an LHμC value.'
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: Table header unit 'π mm mrad' kept as printed (the registry treats pi mm mrad and mm mrad as the same 1e-6 m).
+- parameter_id: ACC_G2_LINAC_DECAY_SURVIVAL_ABE2019
+  name: Decay survival through the whole linac (product of Table 2 decay losses)
+  symbol: S_decay
+  subsystem: acceleration
+  scenario: JPARC-G2-EDM-DESIGN-2019
+  value: 0.6326
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_ARXIV_1901_03047
+      title: A New Approach for Measuring the Muon Anomalous Magnetic Moment and Electric Dipole Moment
+      author_or_org: M. Abe et al. (J-PARC muon g-2/EDM Collaboration)
+      url: https://arxiv.org/abs/1901.03047
+      date: '2019-03-11'
+      version: arXiv:1901.03047v2 (PTEP 2019, 053C02)
+      page: 11
+      section: 5 Acceleration
+      table_figure_or_equation: Table 2 'Summary of the particle simulations through the muon linac'
+      quotation: Decay loss (%) — Soa 17, RFQ 19, IH 1, DAW 4, DLS 1
+    derivation: '(1 − 0.17) × (1 − 0.19) × (1 − 0.01) × (1 − 0.04) × (1 − 0.01) = 0.6326 (inputs: ACC_G2_LINAC_DECAY_LOSS_SOA_ABE2019,
+      ACC_G2_LINAC_DECAY_LOSS_RFQ_ABE2019, ACC_G2_LINAC_DECAY_LOSS_IH_ABE2019, ACC_G2_LINAC_DECAY_LOSS_DAW_ABE2019, ACC_G2_LINAC_DECAY_LOSS_DLS_ABE2019)'
+    applicability:
+      category: analogous
+      scenario: JPARC-G2-EDM-DESIGN-2019
+      explanation: Computed in this extraction from J-PARC g-2/EDM design values stated in Abe et al. 2019 (derivation given);
+        internal-consistency check of the analogous design, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - product of (1 − decay loss) over Soa–RFQ–IH–DAW–DLS = 0.633, inside the 0.62–0.65 band
+    check_ids:
+    - tests/scientific/test_batch7_documents.py::test_abe2019_table2_decay_survival_through_linac
+    notes: ''
+  dependencies:
+  - ACC_G2_LINAC_DECAY_LOSS_SOA_ABE2019
+  - ACC_G2_LINAC_DECAY_LOSS_RFQ_ABE2019
+  - ACC_G2_LINAC_DECAY_LOSS_IH_ABE2019
+  - ACC_G2_LINAC_DECAY_LOSS_DAW_ABE2019
+  - ACC_G2_LINAC_DECAY_LOSS_DLS_ABE2019
+  date_added: '2026-10-28'
+  responsible_module: parameters/acceleration
+  notes: 'Transmission losses (87 % × 95 % = 83 %) are not included. Status analytical_estimate per the schema definition
+    of derived_lhmuc. Table 4 lists the decay factors stage by stage (0.81, 0.99, 0.96, 0.99 plus the combined Soa 0.72).
+    Confidence ''medium'': computed value, not read from the page (batch-7 rule).'
