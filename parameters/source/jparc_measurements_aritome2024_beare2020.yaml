@@ -3917,8 +3917,8 @@ parameters:
   responsible_module: parameters/source
   notes: User program 2011MS06 (acknowledgements).
 - parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020
-  name: Muonium formation fraction in laser-ablated silica aerogel from spin-precession amplitudes (sum of all aerogel targets,
-    1.92 mT)
+  name: Muonium formation fraction from spin-precession amplitudes, all aerogel targets of the study combined (laser-ablated and
+    flat, silica and PMSQ; 1.92 mT)
   symbol: f_Mu
   subsystem: source
   scenario: null

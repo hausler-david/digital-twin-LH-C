@@ -107,26 +107,30 @@ def hourglass_factor(beta_x1: float, beta_y1: float, sigma_z1: float,
                      eps_x1: float, eps_y1: float, eps_x2: float, eps_y2: float) -> float:
     """Geometric luminosity reduction for two head-on Gaussian bunches with s-dependent beam sizes
     sigma_i(s)^2 = eps_i beta_i (1 + s^2/beta_i^2). All lengths in metres, emittances geometric.
-    Returns L / L(no hourglass). Numerical double integral over s and ct."""
+    Returns L / L(no hourglass).
+
+    The collision-time integral is done analytically: for counter-moving Gaussian bunches,
+    int g(s - ct; sz1) g(s + ct; sz2) dct = exp(-2 s^2 / S) / sqrt(2 pi S) with S = sz1^2 + sz2^2, a
+    luminous region of rms sqrt(S)/2. What remains is a 1-D integral over s. (Until 2026-10-29 this
+    was a 2-D dblquad, which under-reported H for bunches longer than about 0.13 m.)"""
     def sig2(eps, beta, s):
         return eps * beta * (1.0 + (s / beta) ** 2)
 
-    def g(z, sz):
-        return math.exp(-0.5 * (z / sz) ** 2) / (math.sqrt(2 * math.pi) * sz)
+    s_sum = sigma_z1 ** 2 + sigma_z2 ** 2
 
-    smax = 6.0 * max(sigma_z1, sigma_z2)
-
-    def integrand(ct, s):
+    def integrand(s):
         sx = sig2(eps_x1, beta_x1, s) + sig2(eps_x2, beta_x2, s)
         sy = sig2(eps_y1, beta_y1, s) + sig2(eps_y2, beta_y2, s)
-        return g(s - ct, sigma_z1) * g(s + ct, sigma_z2) / math.sqrt(sx * sy)
+        return math.exp(-2.0 * s * s / s_sum) / math.sqrt(2.0 * math.pi * s_sum) / math.sqrt(sx * sy)
 
-    val, _ = integrate.dblquad(integrand, -smax, smax, lambda s: -smax, lambda s: smax, epsabs=0, epsrel=1e-6)
-    l_full = 2.0 * val / (2.0 * math.pi)
+    # the integrand is even in s; break points at multiples of the smallest beta* help quad
+    smax = 4.0 * math.sqrt(s_sum)   # 8 rms of the luminous region
+    b_min = min(beta_x1, beta_y1, beta_x2, beta_y2)
+    points = [k * b_min for k in (1.0, 3.0, 10.0, 30.0) if k * b_min < smax]
+    half, _ = integrate.quad(integrand, 0.0, smax, points=points or None, limit=500, epsabs=0.0, epsrel=1e-10)
     sx0 = eps_x1 * beta_x1 + eps_x2 * beta_x2
     sy0 = eps_y1 * beta_y1 + eps_y2 * beta_y2
-    l_ref = 1.0 / (2.0 * math.pi * math.sqrt(sx0 * sy0))
-    return l_full / l_ref
+    return 4.0 * half * math.sqrt(sx0 * sy0)
 
 
 def luminosity_general_cm2s(f_coll_hz: float, n1: float, n2: float,

@@ -121,3 +121,14 @@ def test_muic_lhmuc_column_beam_size_acosta2022():
     # arXiv:2203.06258 LHmuC column: 1.5 TeV muons, ε_n 25 µm, β* 0.5 cm → σ ≈ 3 µm
     s = an.sigma_from_emittance(25e-6, 0.005, 1500.0, an.M_MU_GEV)
     assert math.isclose(s, 3.0e-6, rel_tol=0.02)
+
+
+def test_zimmermann_rule_bunch_length_extrapolation():
+    """Zimmermann slide 14 rule of thumb σ_δ σ_z ≈ 2 n_b,0 σ_δ,0 σ_z,0, with σ_z,0 = 7.7 cm (nominal LHC, LHC Project
+    Report 627) and n_b,0 counted in 2.2e11 bunches (ASM_PROTON_BUNCH_LENGTH_RMS physical basis). The Forthomme-implied
+    7.0e11 gives 0.19 m if the growth is shared equally between σ_δ and σ_z and 0.49 m if it all goes into length; the
+    DIS2026 22e11 gives 0.34 m and 1.54 m. Audit arithmetic on a rule of thumb, not a design value."""
+    for n_p, (equal_share, all_length) in ((7.0e11, (0.19, 0.49)), (22e11, (0.34, 1.54))):
+        n_b0 = n_p / 2.2e11
+        assert abs(0.077 * math.sqrt(2 * n_b0) - equal_share) < 0.01, n_p
+        assert abs(0.077 * 2 * n_b0 - all_length) < 0.01, n_p

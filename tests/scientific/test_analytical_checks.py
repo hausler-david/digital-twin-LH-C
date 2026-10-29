@@ -79,6 +79,37 @@ def test_hourglass_factor_for_mulhc_like_optics():
     assert math.isclose(h1, 1.0, abs_tol=1e-3)
 
 
+def test_hourglass_factor_matches_closed_form_for_equal_optics():
+    """With the same β* and emittance for both beams in both planes the hourglass factor has the closed form
+    √π u e^{u²} erfc(u), u = √2 β*/√(σ_z1² + σ_z2²) (u = β*/σ_z for equal bunches: 0.758 at β* = σ_z, MR7 App. A.1).
+    The 1-D implementation agrees for proton bunches from 1.5 mm to 1 m against a 2 mm muon bunch at β* = 7 cm
+    (H = 0.157 at 1 m). The 2-D dblquad used until 2026-10-29 fell 10/35/49 % short at 0.2/0.5/1 m (found by the
+    registry-stage verifier)."""
+    from scipy.special import erfcx
+
+    def closed(beta, sz1, sz2):
+        u = math.sqrt(2.0) * beta / math.sqrt(sz1 ** 2 + sz2 ** 2)
+        return math.sqrt(math.pi) * u * erfcx(u)
+
+    for sz_p in (0.0015, 0.075, 0.13, 0.2, 0.5, 1.0):
+        h = an.hourglass_factor(0.07, 0.07, 0.002, 0.07, 0.07, sz_p, 1e-9, 1e-9, 1e-9, 1e-9)
+        assert math.isclose(h, closed(0.07, 0.002, sz_p), rel_tol=1e-9), sz_p
+    assert math.isclose(closed(0.07, 0.002, 1.0), 0.1575, rel_tol=1e-3)
+    assert math.isclose(an.hourglass_factor(1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, 1.5e-3, 1e-9, 1e-9, 1e-9, 1e-9),
+                        math.sqrt(math.pi) * math.e * math.erfc(1.0), rel_tol=1e-9)
+
+
+def test_hourglass_factor_long_proton_bunches_mulhc_like_optics():
+    """The μLHC-like optics of the test above (muon β* 3 cm × 0.7 cm, proton β* 7 cm, 2 mm muon bunch) with proton
+    bunches of 0.2/0.5/1 m, the range opened by Zimmermann's long-bunch options (PROTON_BUNCH_LENGTH_RMS_SYN,
+    5-100 cm): H = 0.269/0.122/0.064. Audit values for the scan band, not LHμC results."""
+    eps_mu = 4e-6 / (1000.0 / an.M_MU_GEV)
+    eps_p = 2e-6 / (7000.0 / an.M_P_GEV)
+    for sz_p, expected in ((0.2, 0.2695), (0.5, 0.1221), (1.0, 0.0638)):
+        h = an.hourglass_factor(0.03, 0.007, 0.002, 0.07, 0.07, sz_p, eps_mu, eps_mu, eps_p, eps_p)
+        assert math.isclose(h, expected, rel_tol=2e-3), (sz_p, h)
+
+
 def test_proton_beam_size_reproduces_mulhc_table3():
     """2506.15445 Table 2-3: eps_n = 2 um, beta* = 7 cm, 7 TeV -> sigma = 4.3 um."""
     assert math.isclose(an.sigma_from_emittance(2e-6, 0.07, 7000.0, an.M_P_GEV), 4.3e-6, rel_tol=0.02)

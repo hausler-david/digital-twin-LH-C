@@ -6540,10 +6540,12 @@ parameters:
       url: https://arxiv.org/abs/2502.00181
       date: '2026-07-07'
       version: arXiv 2502.00181v2 [physics.ins-det]; PDF page numbers = printed page numbers
-      page: 23
+      page: 22-23
       section: V. Object reconstruction and expected performance
       table_figure_or_equation: null
-      quotation: These functionalities include a combinatorial Kalman filter (CKF) [49–51] based track reconstruction using version 32.1.0 of
+      quotation: Event reconstruction and significant portions of the analysis chain are run using the Gaudi-based event processing
+        framework of Key4hep. We also use k4MarlinWrapper to run many existing components from previous studies developed inside the
+        iLCSoft framework [47] using Marlin [48] and LCIO. These functionalities include a combinatorial Kalman filter (CKF) [49–51] based track reconstruction using version 32.1.0 of
         A Common Tracking Software (ACTS) [52] and dedicated overlay and digitization algorithms to handle BIB. Particle flow event reconstruction
         is performed using the Pandora algorithm [53], with a configuration adapted from CLIC.
     derivation: null

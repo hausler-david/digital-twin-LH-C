@@ -453,4 +453,5 @@ parameters:
     band uniform 5-12 cm (2026-10-28) widened on 2026-10-29 to log-uniform 5-100 cm (0.05-1 m) because the LHmuC asks for 3-10 times
     the HL-LHC bunch population and, by Zimmermann''s rule of thumb, longer bunches and/or larger energy spread (see ASM_PROTON_BUNCH_LENGTH_RMS).
     CAUTION: lhmuc.analytical.hourglass_factor under-reports H above sigma_z,p ~ 0.13 m (IntegrationWarning; see the assumption record).
+    Fixed 2026-10-29: hourglass_factor now integrates the collision time analytically and evaluates a 1-D integral; it matches the closed form for equal optics at all bunch lengths up to 1 m (tests/scientific/test_analytical_checks.py::test_hourglass_factor_matches_closed_form_for_equal_optics) and gives H = 0.269 / 0.122 / 0.064 at 0.2 / 0.5 / 1 m for the muLHC-like optics (::test_hourglass_factor_long_proton_bunches_mulhc_like_optics).
     Subsystem proton_beam; record kept in the IR synthetic file because it is used only in the IP model.'

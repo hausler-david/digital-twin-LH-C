@@ -246,8 +246,8 @@ conflicts:
       cf. MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC), or no hourglass term. Not determinable from the sources; requires AloHEP
       input decks (missing_evidence). Note (registry-stage verifier, 2026-10-29): the 7.5 cm is the order-of-magnitude input
       of tests/scientific/test_analytical_checks.py::test_hourglass_factor_for_mulhc_like_optics, not the value of PROTON_BUNCH_LENGTH_RMS_SYN,
-      which was 8.5 cm (midpoint of the Phase-0 band 5–12 cm) and is 22.4 cm (geometric midpoint of the log-uniform 5–100 cm
-      band) since 2026-10-29; the sourced nominal-LHC rms length is 7.7 cm (PROTON_LHC_PR627_RMS_BUNCH_LENGTH_NOMINAL_WS2026_ZIMMERMANN).'
+      which was 8.5 cm (midpoint of the Phase-0 band 5–12 cm) and is 22.4 cm (geometric midpoint of the log-uniform 5–100
+      cm band) since 2026-10-29; the sourced nominal-LHC rms length is 7.7 cm (PROTON_LHC_PR627_RMS_BUNCH_LENGTH_NOMINAL_WS2026_ZIMMERMANN).'
   - value: 1
     unit: dimensionless
     source_id: SRC_ARXIV_2203_06258
@@ -362,10 +362,12 @@ conflicts:
     applied separately and reported; (iv) when a scenario assumes a proton population above HL-LHC, the hourglass scan must
     also cover the longer proton bunches implied by Zimmermann''s rule, through the band of PROTON_BUNCH_LENGTH_RMS_SYN (ASM_PROTON_BUNCH_LENGTH_RMS:
     uniform 5–12 cm as written on 2026-10-28, widened on 2026-10-29 to log-uniform 5–100 cm for proton populations of 3–10
-    times HL-LHC; the 7.5–9 cm of the text above is superseded — the record governs), which must state that it does so;
-    lhmuc.analytical.hourglass_factor under-reports H above σ_z,p ≈ 0.13 m with a 2 mm muon bunch (ASM_PROTON_BUNCH_LENGTH_RMS
-    notes) and may be used for such a scan only once fixed or bounded by a registered test (band text updated by the registry-stage
-    verifier, 2026-10-29).'
+    times HL-LHC; the 7.5–9 cm of the text above is superseded — the record governs), which must state that it does so; lhmuc.analytical.hourglass_factor
+    under-reports H above σ_z,p ≈ 0.13 m with a 2 mm muon bunch (ASM_PROTON_BUNCH_LENGTH_RMS notes) and may be used for such
+    a scan only once fixed or bounded by a registered test (band text updated by the registry-stage verifier, 2026-10-29).
+    Fixed 2026-10-29: hourglass_factor now integrates the collision time analytically and evaluates a 1-D integral; it matches
+    the closed form for equal optics at all bunch lengths up to 1 m (tests/scientific/test_analytical_checks.py::test_hourglass_factor_matches_closed_form_for_equal_optics)
+    and gives H = 0.269 / 0.122 / 0.064 at 0.2 / 0.5 / 1 m for the muLHC-like optics (::test_hourglass_factor_long_proton_bunches_mulhc_like_optics).'
   effect_on_simulations: 'A factor 0.6-1.0 (hourglass) times 0.25-1.0 (decay/duty averaging) on every luminosity-driven output.
     Rate and pile-up estimates for the detector must be done at the in-train peak (H = 1, fresh bunch) and the physics-reach
     estimates at the average; mixing the two silently is the main risk this conflict guards against. Update 2026-10-29: the
@@ -790,8 +792,8 @@ conflicts:
       PROTON_LHC_LONGBUNCH_MERGE_RATIO_WS2026_ZIMMERMANN; gain 1.72 with five RF systems, p.11, PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N5_WS2026_ZIMMERMANN);
       LHC Project Report 627 (1 bunch, 1.0 A, σ_z = 7500 cm, p.9, PROTON_LHC_PR627_BUNCHES_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN,
       PROTON_LHC_PR627_BEAM_CURRENT_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN, PROTON_LHC_PR627_RMS_BUNCH_LENGTH_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN);
-      QCD Explorer 6.5e13 protons in one super-bunch of 12.4 m rms length with a uniform profile (Table 1 ''12.4 m (uniform)''; the
-      Fig. 1 label says ''30 m long''; p.10, PROTON_QCDX_SUPERBUNCH_POPULATION_WS2026_ZIMMERMANN, PROTON_QCDX_SUPERBUNCH_RMS_LENGTH_WS2026_ZIMMERMANN).
+      QCD Explorer 6.5e13 protons in one super-bunch of 12.4 m rms length with a uniform profile (Table 1 ''12.4 m (uniform)'';
+      the Fig. 1 label says ''30 m long''; p.10, PROTON_QCDX_SUPERBUNCH_POPULATION_WS2026_ZIMMERMANN, PROTON_QCDX_SUPERBUNCH_RMS_LENGTH_WS2026_ZIMMERMANN).
       Each comes with bunches far longer than the HL-LHC ones (σ_δσ_z ≈ 2 n_b,0 σ_δ,0 σ_z,0, p.14, PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN);
       none is an LHμC parameter set and none is shown to be compatible with a β*_p = 7 cm IR. imported_related precedents,
       confidence cap medium (slides).'
@@ -1046,11 +1048,11 @@ conflicts:
     times kept). No booster lattice (vFFA cell, fields, apertures, tune) exists in any source, so booster simulations are
     G0 and every survival number is a source statement, not a project result, until a documented decay-plus-acceleration calculation
     reproduces it (tests/scientific). Update 2026-10-29: the Kraków 70 → 500 GeV single-arc-pair vFFA (ACC_*_WS2026_TOPPMUGGLESTONE,
-    preliminary) is the documented booster-stage option for LHMUC-DIS2026-type scenarios; no scenario slot points to these records
-    yet and the records carry no scenario tag (corrected by the registry-stage verifier; scenario changes belong to parameters/machine/scenarios*.yaml);
-    the M17 rings are analogues for field, excursion and lattice-method
-    questions only (CONF_VFFA_PEAK_FIELD) and are never scaled to the LHμC booster by hand; the μTRISTAN original values stay
-    with the μTRISTAN-based μLHC scenario.'
+    preliminary) is the documented booster-stage option for LHMUC-DIS2026-type scenarios; no scenario slot points to these
+    records yet and the records carry no scenario tag (corrected by the registry-stage verifier; scenario changes belong to
+    parameters/machine/scenarios*.yaml); the M17 rings are analogues for field, excursion and lattice-method questions only
+    (CONF_VFFA_PEAK_FIELD) and are never scaled to the LHμC booster by hand; the μTRISTAN original values stay with the μTRISTAN-based
+    μLHC scenario.'
   effect_on_simulations: Booster survival (82% / 67% / unknown) multiplies the muon bunch population delivered to the main
     ring and therefore the luminosity; booster circumference and turn count set the acceleration time against the muon lifetime
     (0.7 ms at 16 turns vs 1-1.4 ms at 50 turns) and the decay-neutrino source geometry (two linacs, directions); the 1 GeV
@@ -1309,13 +1311,14 @@ conflicts:
   possible_cause: 'The LHeC IR evolved from a 6-7 mrad proton-proton crossing (2011-2022 designs with separator dipoles) to
     a head-on scheme in the 2025 phase-one concept, and the LHμC proceedings only say ''very small''. All numeric values are
     LHeC analogues seen in snippets; the muon-proton case differs (250 ns muon bunch spacing moves the first parasitic encounter
-    to 37.5 m from the IP, which is why a smaller angle suffices). [Verifier note 2026-10-29: 37.5 m = c × 250 ns / 2 holds only
-    if the proton bunches are also spaced by ≥ 250 ns, as the reduced proton bunch number of DIS2026 p.4 suggests but does
-    not state; with 25 ns proton spacing each muon bunch would meet a proton bunch every c × 25 ns / 2 = 3.75 m.] Update 2026-10-29: André et al. 2022 (read in full) show
-    that the LHeC e–p collision was already head-on in the 2022 design, the electrons being steered by the detector dipole,
-    while the non-colliding proton beam gets a horizontal offset and a vertical crossing angle against parasitic encounters
-    12.5 ns away; the 6–7 mrad snippet values refer, in their own wording, to the angle between the proton beams, so they
-    are not an e–p (or μ–p) collision angle. Forthomme''s LHμC set repeats ''small crossing angle'' without a number.'
+    to 37.5 m from the IP, which is why a smaller angle suffices). [Verifier note 2026-10-29: 37.5 m = c × 250 ns / 2 holds
+    only if the proton bunches are also spaced by ≥ 250 ns, as the reduced proton bunch number of DIS2026 p.4 suggests but
+    does not state; with 25 ns proton spacing each muon bunch would meet a proton bunch every c × 25 ns / 2 = 3.75 m.] Update
+    2026-10-29: André et al. 2022 (read in full) show that the LHeC e–p collision was already head-on in the 2022 design,
+    the electrons being steered by the detector dipole, while the non-colliding proton beam gets a horizontal offset and a
+    vertical crossing angle against parasitic encounters 12.5 ns away; the 6–7 mrad snippet values refer, in their own wording,
+    to the angle between the proton beams, so they are not an e–p (or μ–p) collision angle. Forthomme''s LHμC set repeats
+    ''small crossing angle'' without a number.'
   selected_treatment: 'Decided 2026-10-29 (status changed from ''open'' to ''propagated_as_uncertainty''; the scan treatment
     below was already named on 2026-10-28 and is now recorded as decided): IR_CROSSING_ANGLE_DIS2026 stays null. Any LHμC
     IR model treats the crossing angle as a scan variable 0-7 mrad (head-on to the 2020 LHeC value), flagged synthetic with
@@ -1590,7 +1593,8 @@ conflicts:
     and forward-hadron coverage (Kilic''s hadron acceptance and energy-loss tables; Yamazaki''s remark that forward hadronic
     flow ''may be spoiled by the nozzle''), the tungsten mass, and the beam-induced background in the first tracker layers
     (DET_LHMUC_NOZZLE_OPTIMISATION_STATEMENT_WS2026_FORTHOMME). An acceptance or background study run with the Phase-0 synthetic
-    5–20° range (re-based on 2026-10-29 to uniform 2–12°) would miss the 40 mrad option entirely (RISK_006_NOZZLE_ACCEPTANCE_VS_FORWARD_PHYSICS, RISK_007_MUON_DECAY_BACKGROUNDS_UNQUANTIFIED).'
+    5–20° range (re-based on 2026-10-29 to uniform 2–12°) would miss the 40 mrad option entirely (RISK_006_NOZZLE_ACCEPTANCE_VS_FORWARD_PHYSICS,
+    RISK_007_MUON_DECAY_BACKGROUNDS_UNQUANTIFIED).'
   required_future_evidence: The HELP4CERN choice between 40 and 100 mrad (White Paper, ME_001); a μ+p beam-induced-background
     simulation for each option (ME_026); the final Kilic geometry as a CAD/GDML file, including the rear-section angle rule
     'θ/2' (DET_NOZZLE_REAR_SECTION_ANGLE_RULE_WS2026_KILIC) and materials (ME_024).
@@ -1827,8 +1831,11 @@ conflicts:
     calculation (ME_032), not by this record.'
   required_future_evidence: A measured 122 nm + 355 nm ionisation efficiency (J-PARC light source under development; ME_032);
     the updated J-PARC efficiency budget that replaces 0.73 (Kamioka's workshop slides cited by Zhang p.20, not uploaded);
-    the g-2/EDM TDR behind the 0.20 'TDR reference'; the results of the 2026 J-PARC 340 keV run with the upgraded laser (Nakazawa
-    p.8, SOURCE_JPARC_STEP2_ENERGY_2026_WS2026_NAKAZAWA).
+    the g-2/EDM TDR behind the 0.20 'TDR reference'; the yield and ionisation efficiency of the 2026 J-PARC 340 keV run with
+    the upgraded laser (Nakazawa p.8, SOURCE_JPARC_STEP2_ENERGY_2026_WS2026_NAKAZAWA). The deck already reports that this
+    run accelerated muons to 340 keV ('These results indicate that we have successfully accelerated muons to 340 keV', p.17)
+    at about 0.4 muons per pulse ('~0.4 (10 muon/s@25 Hz rep.)', p.16); what is missing is the yield per surface muon and
+    the ionisation efficiency of that run (verifier note, 2026-10-29).
   status: resolved_as_scenarios
   date_added: '2026-10-29'
 - conflict_id: CONF_SOURCE_CONCEPT
@@ -2030,9 +2037,9 @@ conflicts:
     momentum resolution (MAIA; their 3 TeV predecessor had 3.57 T). No PRIMARY_LHMUC source gives an LHμC solenoid field.'
   selected_treatment: 'Propagated as uncertainty, decided 2026-10-29: the LHμC field stays unknown; detector studies use DET_SOLENOID_FIELD_SYN
     (ASM_DET_SOLENOID_FIELD) as the scan variable, its band bracketing all three source values (the Phase-0 band, 2–5 T, did;
-    so does the band re-based on 2026-10-29, uniform 3–5.5 T),
-    and report results per field. 3.8 T is used only to reproduce the Forthomme/LHeC Delphes fast-simulation results (and
-    labelled so), 3 T only for LHeC-detector comparisons, 5 T only for IMCC μ+μ− comparisons; never averaged.'
+    so does the band re-based on 2026-10-29, uniform 3–5.5 T), and report results per field. 3.8 T is used only to reproduce
+    the Forthomme/LHeC Delphes fast-simulation results (and labelled so), 3 T only for LHeC-detector comparisons, 5 T only
+    for IMCC μ+μ− comparisons; never averaged.'
   effect_on_simulations: At a fixed lever arm the momentum resolution scales as 1/(B L²) (factor 5/3 ≈ 1.7 between the extremes);
     the field also sets the curl-up radius of low-pT beam-induced background and the magnet cost. Results obtained with the
     LHeC Delphes card (3.8 T) are not LHμC detector predictions.
@@ -2130,7 +2137,12 @@ conflicts:
     T) are 1.8 and 2.1 times the on-orbit values because B ∝ exp(m z) over the vertical extent; (3) M17''s acceptance criterion
     is the 8.3 T LHC dipole. All are analytic lattices without tracking (M17 p.15; Kraków p.46). The printed M17 eq. (2.7)
     also appears to contain a typographical error (tests/scientific/test_mucol_m17_vffa.py::test_printed_eq27_inconsistent_with_closed_orbit_geometry);
-    no record uses it.'
+    no record uses it. Internal tension recorded on 2026-10-29 (registry-stage verifier): M17 p.10 sets the design objective
+    ''maintaining a peak SC dipole field on-orbit below that achievable with current technology (the LHC main dipoles operate
+    at 8.3 T [5], so this was considered as the maximum allowable field)'', yet its stage-4 ring is tabulated at 13.59 T on
+    orbit, and the p.15 conclusion states that ''These vFFA rings have been shown to have parameters (drift lengths, peak
+    dipole strengths on orbit) within realistic bounds'' without mentioning that stage 4 exceeds the 8.3 T objective. Kept
+    as printed; RISK_039 carries the magnet feasibility question.'
   selected_treatment: 'Resolved as separate scenarios with explicit field definitions, decided 2026-10-29: the LHμC booster
     field is carried from the Kraków deck as its preliminary design options (8 T with m = 60 /m and ~3 cm; 10 T with ~44 /m;
     relaxed < 9 T with < 30 /m and < 7 cm), reported_lhmuc but preliminary and never one averaged field; the M17 stage-1 and
@@ -2312,5 +2324,38 @@ conflicts:
   required_future_evidence: 'A 3D space-charge front-end design for 1e10 – 4.5e10 μ+ per bunch (RFQ or alternative structure,
     injection energy, aperture, bunch length): Otani''s workshop contribution on pre-acceleration (ME_008, not uploaded) and
     J-PARC/KEK front-end studies (ME_033); the ultra-cold μ+ pulse length for each source option (CONF_SOURCE_CONCEPT).'
+  status: resolved_as_scenarios
+  date_added: '2026-10-29'
+- conflict_id: CONF_JPARC_DLS_FREQUENCY
+  affected_parameters:
+  - ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019
+  - SOURCE_JPARC_DLS_FREQUENCY_WS2026_NAKAZAWA
+  competing_values:
+  - value: 1296
+    unit: MHz
+    source_id: SRC_ARXIV_1901_03047
+    scenario: JPARC-G2-EDM-DESIGN-2019
+    context: 'Abe et al. 2019 (PTEP 2019 053C02) p.11: ''Finally, the muons are accelerated from 40 MeV to 212 MeV by using
+      a DLS, which is widely used for electron linacs. The advantage of the DLS is its high acceleration gradient; approximately
+      20 MV/m. An RF frequency of 1,296 MHz is adequate for the wider phase space.'' Fig. 4 (p.10) labels the high-frequency
+      section ''RF: 1296 MHz (spanning DAW and DLS)''. The 2019 design. Parameter ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019.'
+  - value: 2592
+    unit: MHz
+    source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+    scenario: null
+    context: 'Nakazawa, Kraków deck slide 2 (linac layout): ''RFQ (324 MHz) IH-DTL (324 MHz) DAW-CCL (1296 MHz) DLS (2592
+      MHz)''. The 2026 front end of the J-PARC g-2/EDM muon linac. Parameter SOURCE_JPARC_DLS_FREQUENCY_WS2026_NAKAZAWA.'
+  possible_cause: 'Design evolution of the J-PARC muon linac, not a measurement disagreement: the 2019 design paper runs the
+    DAW and the DLS at 1296 MHz, while the 2026 deck lists the DLS at 2592 MHz (the second harmonic of 1296 MHz), as for the
+    IH-DTL output energy (CONF_JPARC_IHDTL_ENERGY). Neither document gives the reason for the change. Proposed by the registry-stage
+    verifier on 2026-10-29 and added by the lead.'
+  selected_treatment: 'Resolved as scenarios by design version, decided 2026-10-29: 1296 MHz belongs to JPARC-G2-EDM-DESIGN-2019
+    (Abe et al. 2019), 2592 MHz to the 2026 front end (Nakazawa); never averaged. The DLS frequency is an analogous-technology
+    parameter and enters no LHμC parameter; a stage-by-stage model of an LHμC pre-accelerator must state which version it
+    uses.'
+  effect_on_simulations: None on luminosity or main-ring quantities; affects only a stage-by-stage model of the muon linac
+    (gradient, aperture and wakefield scaling of the DLS section between 40 and 212 MeV).
+  required_future_evidence: The current J-PARC g-2/EDM linac design document (TDR linac chapter or a PRAB article) stating
+    the DLS frequency and the reason for the change.
   status: resolved_as_scenarios
   date_added: '2026-10-29'

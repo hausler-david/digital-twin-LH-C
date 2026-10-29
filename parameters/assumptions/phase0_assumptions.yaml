@@ -665,7 +665,7 @@ assumptions:
     the Forthomme-implied 7.0e11 (n_b,0 = 3.2; PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME, tests/scientific/test_workshop_decks.py::test_forthomme_beam_set_implied_proton_bunch_population)
     gives sigma_z = 0.19 m if the growth is shared equally between sigma_delta and sigma_z and 0.49 m if it goes entirely into length;
     the DIS2026 22e11 (n_b,0 = 10, PROTON_BUNCH_POPULATION_DIS2026) gives 0.34 m and 1.54 m. Audit arithmetic on a rule of thumb, not
-    a design value.'
+    a design value (pinned on 2026-10-29 by tests/scientific/test_workshop_decks.py::test_zimmermann_rule_bunch_length_extrapolation).'
   - 'Long-bunch options restated by Zimmermann: Damerau-Garoby ''short and flat'' 40-50 cm total (0.12-0.14 m rms for a uniform profile,
     L/sqrt(12)), ''long and flat'' 4-5 m (1.15-1.44 m rms) and ''superbunch'' 200-400 m total (PROTON_LHC_FLATBUNCH_SHORT_FLAT_TOTAL_LENGTH_MIN_WS2026_ZIMMERMANN,
     PROTON_LHC_FLATBUNCH_LONG_FLAT_TOTAL_LENGTH_MIN_WS2026_ZIMMERMANN and their _MAX_ partners); PR627 super-bunch 75 m rms (PROTON_LHC_PR627_RMS_BUNCH_LENGTH_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN).
@@ -719,7 +719,8 @@ assumptions:
     CAUTION for scans: lhmuc.analytical.hourglass_factor (2-D scipy dblquad) is accurate to 1e-7 or better up to sigma_z,p = 0.13 m
     but raises an IntegrationWarning from about 0.15 m and under-reports H with a 2 mm muon bunch (-0.2 % at 0.15 m; -4.5 % / -16 %
     / -24 % at 0.2 / 0.5 / 1 m for the muLHC-like optics; -10 % / -35 % / -49 % for round 7 cm optics), against the converged 1-D integral
-    of the same model; do not use it above ~0.13 m until it is fixed or bounded by a registered test. CONF_LUMI_MODEL_ASSUMPTIONS refers
+    of the same model; do not use it above ~0.13 m until it is fixed or bounded by a registered test. Fixed 2026-10-29: hourglass_factor now integrates the collision time analytically and evaluates a 1-D integral; it matches the closed form for equal optics at all bunch lengths up to 1 m (tests/scientific/test_analytical_checks.py::test_hourglass_factor_matches_closed_form_for_equal_optics) and gives H = 0.269 / 0.122 / 0.064 at 0.2 / 0.5 / 1 m for the muLHC-like optics (::test_hourglass_factor_long_proton_bunches_mulhc_like_optics).
+    CONF_LUMI_MODEL_ASSUMPTIONS refers
     to this record as ''7.5 cm''; its value was the Phase-0 band midpoint (8.5 cm) and is now the geometric midpoint (22.4 cm), never
     an estimate.'
 - assumption_id: ASM_DET_NOZZLE_OPENING_ANGLE

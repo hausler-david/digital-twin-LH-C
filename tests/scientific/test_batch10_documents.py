@@ -122,12 +122,15 @@ def test_kaya2022_table6_presumes_matched_beam_sizes():
 def test_kaya2022_max_convention_vs_gaussian_overlap():
     """Eq. (1) divides by 4π max[σ_p,σ_μ]² (round beams); the Gaussian overlap integral divides by 2π(σ_p² + σ_μ²).
     The ratio 2 max²/(σ_p² + σ_μ²) is 1 for matched beams and approaches 2 for very unequal ones: 1.92 for HL-LHC
-    nominal with E_μ = 3 TeV (7.1 vs 1.48 µm). Kaya's tables are therefore the matched-beam luminosities."""
+    nominal with E_μ = 3 TeV (7.1 vs 1.48 µm). Kaya's tables are therefore the matched-beam luminosities. The same
+    ratio is the AloHEP L_geo/L_nom relation (MACHINE_ALOHEP_LGEO_FROM_LNOM_RELATION_DAGLI2026); for the muon-ion
+    collider's LHmuC column (σ_μ = 3 µm, σ_p = 7.1 µm) it is the 1.70 quoted in CONF_LUMI_MODEL_ASSUMPTIONS."""
     def ratio(sp, sm):
         return 2 * max(sp, sm) ** 2 / (sp ** 2 + sm ** 2)
 
     assert ratio(7.1, 7.1) == 1.0
     assert 1.90 < ratio(7.1, 1.48) < 1.93
+    assert abs(ratio(7.1, 3.0) - 1.70) < 0.005
     assert all(1.0 <= ratio(sp, sm) < 2.0 for sp in (4.17, 4.45, 7.1, 9.0) for sm in (1.48, 2.95, 5.9))
 
 
