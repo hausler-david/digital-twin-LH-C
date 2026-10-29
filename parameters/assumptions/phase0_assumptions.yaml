@@ -5,10 +5,38 @@
 # evidence that would replace the assumption. sensitivity_analysis is not_started for all (docs/uncertainty_policy.md 3.4).
 # External source_ids are taken verbatim from research/_fragments/*_sources.yaml (to be merged into source_registry.yaml).
 # Date: 2026-10-28.
+# Updated 2026-10-29 (assumptions and synthetic-range updater; evidence read in full from the uploaded documents, no web access):
+# ten records are status superseded_by_evidence (ASM_IR_LSTAR, ASM_DET_NOZZLE_OPENING_ANGLE, ASM_DET_NOZZLE_LENGTH,
+# ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP, ASM_DET_NOZZLE_MATERIAL, ASM_DET_SOLENOID_FIELD, ASM_ACC_VFFA_PEAK_FIELD,
+# ASM_SOURCE_MUONIUM_FORMATION_FRACTION, ASM_SOURCE_LASER_IONISATION_EFFICIENCY, ASM_MACHINE_MUON_POLARISATION). Their _SYN parameters
+# survive only as scan variables whose bands bracket every documented option; range_vs_evidence states whether the evidence fell
+# inside the Phase-0 band (it did not for the 40 mrad nozzle cone and the 244 nm ionisation efficiency). Six records stay synthetic
+# with updated physical bases and analogues (ASM_PROTON_BUNCH_LENGTH_RMS, widened to log-uniform 5-100 cm; ASM_IR_CROSSING_ANGLE;
+# ASM_IR_BETA_X_STAR_MUON; ASM_IR_BETA_Y_STAR_MUON; ASM_ACC_RF_FREQUENCY; ASM_ACC_RF_GRADIENT). The four separator-dipole and Q1
+# records are unchanged apart from two cross-reference notes. 'snippet-level' statements that remain are Phase-0 text kept for the
+# audit trail; entries added on 2026-10-29 say 'read in full'. sensitivity_analysis is still not_started everywhere.
 assumptions:
 - assumption_id: ASM_IR_LSTAR
   parameter_id: IR_LSTAR_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - IR_LSTAR_LHEC_WS2026_FORTHOMME
+  - IR_LSTAR_ANDRE2022
+  - IR_LSTAR_MR7
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_02436
+  - SRC_ARXIV_2510_27437
+  range_vs_evidence: 'Superseding values INSIDE; one documented option ABOVE. Phase-0 band (2026-10-28): uniform 5-20 m. No LHmuC L*
+    is published even now; the superseding records are related-machine values. LHeC: L* = 15 m to the first proton quadrupole (Andre
+    et al. 2022 p.16 ''At this position, L* =15 m'', IR_LSTAR_ANDRE2022; the shorter option on the Forthomme LHmuC deck p.4, IR_LSTAR_LHEC_WS2026_FORTHOMME).
+    IMCC 10 TeV: L* = 6 m to the last magnet, the nozzle filling that space (MuCol MR7 Appendix G p.65, IR_LSTAR_MR7). Both lie inside
+    5-20 m. The longer LHeC IR option on the same Forthomme slide, L* = 23 m (''factor 2 in critical energy levels from L*=15m to 23m'';
+    IR_LSTAR_FCCEH_WS2026_FORTHOMME, whose id token does not mean the slide names FCC-eh), lies ABOVE the Phase-0 upper bound, which
+    had excluded the then snippet-level 23 m. Definitional caveat: the LHeC 15 m is the PROTON L*, with the electron mini-beta quadrupoles
+    Q0F/Q0D inside it (IR_ELEMENT_SEQUENCE_ANDRE2022), so for the LHmuC option of focusing the muons ''in between the mini-beta quadrupoles''
+    the muon L* would be shorter than 15 m; only the IMCC 6 m is a muon L*. Scan band re-based on 2026-10-29 to uniform 4-25 m.'
   reason_required: Every IR optics model (beta-function growth in the final doublet/triplet, chromaticity, aperture, separator-dipole
     requirement, nozzle length) needs L*, and no LHmuC document states it.
   search_summary:
@@ -23,6 +51,10 @@ assumptions:
   - 'Searched (lhec-erl family): ''LHeC interaction region design crossing angle separator dipole mini-beta quadrupole Q1 gradient aperture
     L*'' and ''Andre Holzer interaction region LHeC 50 GeV HL-LHC optics IPAC 2021 WEPAB001 L* 15 m separator dipole field''; (muon-collider-mdi
     family): ''MuCol Milestone Report No. 5 ... nozzle ... L* 6 m 10 TeV''. No hit mentions an LHmuC L*.'
+  - '2026-10-29 (addendum and batch 7; uploads read in full): SRC_WS1681458_FORTHOMME_DETECTOR p.4 compares two LHeC IR options, L*
+    = 15 m and 23 m, and states no LHmuC L*; SRC_ARXIV_2201_02436 p.16 gives the LHeC proton L* = 15 m; SRC_ARXIV_2510_27437 p.65 (Appendix
+    G) gives the IMCC L* = 6 m (''The nozzle extends from the last magnet (L* = 6 m) to almost the IP''). No document gives an LHmuC
+    L*.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -38,47 +70,62 @@ assumptions:
   - SRC_INDICO_DESY_45968_187027
   - SRC_ARXIV_2411_02966
   - SRC_DOI_10_5170_CERN_2004_003_V_1
-  reason_authoritative_value_missing: SRC_ARXIV_2610_35154 p.4 (section 3) only lists two options - muon focusing 'in between the mini-beta
-    quadrupoles of the LHC, as is proposed for electrons at the LHeC' or 'outside ... in a linear collider type style' - and selects
-    neither; SRC_ARXIV_2506_15445 gives beta* but no L*; the three workshop decks give no IR geometry. The LHeC IR papers that would
-    anchor the inside option (arXiv:2007.14491, arXiv:2207.02095, IPAC2021 WEPAB001) and the IMCC MDI slides were blocked.
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_02436
+  - SRC_ARXIV_2510_27437
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2610_35154 p.4 (section 3) only lists two options - muon focusing
+    ''in between the mini-beta quadrupoles of the LHC, as is proposed for electrons at the LHeC'' or ''outside ... in a linear collider
+    type style'' - and selects neither; SRC_ARXIV_2506_15445 gives beta* but no L*; the three workshop decks give no IR geometry. The
+    LHeC IR papers that would anchor the inside option (arXiv:2007.14491, arXiv:2207.02095, IPAC2021 WEPAB001) and the IMCC MDI slides
+    were blocked. Superseded on 2026-10-29: still no LHmuC L*; the LHeC (15 m, proton L*) and IMCC (6 m) values are now read in full
+    and serve as evidence-backed baselines (superseded_by).'
   synthetic_model:
     distribution: uniform
-    minimum: 5.0
-    maximum: 20.0
+    minimum: 4.0
+    maximum: 25.0
     unit: m
   physical_basis:
   - beta(s) = beta* + s^2/beta* grows to ~L*^2/beta* at the first quadrupole, so L* together with beta* sets the magnet aperture and
-    chromaticity; the range must be read together with IR_BETA_X_STAR_MUON_SYN / IR_BETA_Y_STAR_MUON_SYN.
-  - 'Lower bound 5 m: a detector of LHeC/CMS-like size (SRC_ARXIV_2610_35154 p.5 ''most segments of the baseline LHeC detector'') plus
-    the single-sided nozzle (DET_NOZZLE_LENGTH_SYN) must fit inside L*; the IMCC 10 TeV layout uses L* = 6 m with the nozzle filling
-    that space.'
-  - 'Upper bound 20 m: the LHeC ''inside'' option places the first proton quadrupole at L* = 15 m; a linear-collider-style ''outside''
-    option would place the muon doublet beyond the LHC mini-beta quadrupoles, whose position is fixed by the existing LHC IR layout
-    (to be verified in SRC_DOI_10_5170_CERN_2004_003_V_1, blocked).'
-  - The muon beam is stiff (B rho = 3336 T m at 1 TeV) so the beam-separation argument that fixes L* at the LHeC (soft 60 GeV electrons)
+    chromaticity; the band must be read together with IR_BETA_X_STAR_MUON_SYN and IR_BETA_Y_STAR_MUON_SYN.
+  - 'Lower bound 4 m (re-based 2026-10-29): below the IMCC muon L* of 6 m (IR_LSTAR_MR7). The IMCC nozzle ends at the last magnet
+    (base plane at |z| = 595 cm, DET_NOZZLE_LENGTH_MR7; MR7 p.65 states that the nozzle extends from the last magnet, L* = 6 m, to
+    almost the IP). The LHmuC study puts its nozzle base 593.8 cm from the IP (DET_NOZZLE_BASE_DISTANCE_FROM_IP_IMPLIED_WS2026_KILIC)
+    but does not say what lies behind it (corrected by the registry-stage verifier, 2026-10-29). An L* below ~6 m is therefore consistent
+    only with a shorter nozzle; scans must impose z_tip + L_nozzle <= L* jointly with DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN and DET_NOZZLE_LENGTH_SYN.'
+  - 'Upper bound 25 m: just above the longer LHeC IR option L* = 23 m (IR_LSTAR_FCCEH_WS2026_FORTHOMME), chosen there to halve the synchrotron-radiation
+    critical energy of 50-60 GeV electrons, an argument that does not transfer to 1 TeV muons (ASM_IR_SEPARATOR_DIPOLE_FIELD). A ''linear
+    collider type'' focusing outside the LHC mini-beta quadrupoles (SRC_ARXIV_2610_35154 p.4) would need the LHC IR layout distances,
+    which are still not in the registry (SRC_DOI_10_5170_CERN_2004_003_V_1 blocked).'
+  - The LHeC 15 m is a proton L* with the electron final-focus quadrupoles inside it, so the muon L* is expected below 15 m for the
+    'in between the mini-beta quadrupoles' option and above it for the 'outside' option; the band spans both.
+  - The muon beam is stiff (B rho = 3336 T m at 1 TeV), so the beam-separation argument that fixes L* at the LHeC (soft 50-60 GeV electrons)
     does not transfer directly; see ASM_IR_SEPARATOR_DIPOLE_FIELD.
   analogous_systems:
-  - 'LHeC (electron-proton, 50-60 GeV e-): L* = 15 m - snippet-level, SRC_ARXIV_2207_02095 (''first superconducting proton quadrupole
-    QA1 at a position of L* = 15 m'') and SRC_INDICO_1072533_4787015 (''L* = 15 m & beta* = 10 cm''); not read in full.'
-  - 'IMCC 10 TeV muon collider: L* = 6 m layout - snippet-level, SRC_INDICO_FNAL_64493_294885 (relevance line) and SRC_INDICO_DESY_45968_187027
-    (''increasing L* from 6 m to 10 m'', result cut off); not read in full.'
-  - 'FCC-eh: L* = 23 m, beta* = 30 cm - snippet-level, SRC_INDICO_1072533_4787015; outside the adopted range and listed only to show
-    the spread among e-h designs.'
-  applicability: Screening only, LHMUC-DIS2026-1TEV optics models. The LHmuC IR has not been designed; the range brackets the two focusing
-    options named in the DIS2026 proceedings and must be replaced before any optics result is reported.
+  - 'LHeC (read in full): proton L* = 15 m, Andre et al. 2022 p.16 (SRC_ARXIV_2201_02436, IR_LSTAR_ANDRE2022); the same 15 m and a longer
+    23 m option on the LHmuC detector deck p.4 (SRC_WS1681458_FORTHOMME_DETECTOR, unrefereed slides; IR_LSTAR_LHEC_WS2026_FORTHOMME,
+    IR_LSTAR_FCCEH_WS2026_FORTHOMME).'
+  - 'IMCC 10 TeV (MuCol MR7 Appendix G p.65, SRC_ARXIV_2510_27437, read in full): L* = 6 m (IR_LSTAR_MR7); the same 6 m in MAIA (IR_LSTAR_MAIA).'
+  - 'FCC-eh: L* = 23 m, beta* = 30 cm - snippet-level, SRC_INDICO_1072533_4787015; outside the Phase-0 band, inside the 4-25 m scan
+    band of 2026-10-29; the Forthomme slide shows the same 23 m as an LHeC IR option without naming FCC-eh (IR_LSTAR_FCCEH_WS2026_FORTHOMME).'
+  applicability: Scan variable only (assumption superseded by evidence on 2026-10-29). IR_LSTAR_SYN may be used only to scan L* over
+    4-25 m in screening optics, IR-length-budget and nozzle studies of LHMUC-DIS2026-1TEV-type IR sketches; no scenario slot may point
+    to it. Baselines are the superseding records, each with its own applicability (LHeC proton L* 15 m; IMCC muon L* 6 m); no LHmuC
+    L* exists.
   affected_outputs:
   - 'IR optics (beta_max, chromaticity, aperture of Q1: IR_Q1_APERTURE_RADIUS_SYN)'
   - separator-dipole integrated field needed for beam separation (IR_SEPARATOR_DIPOLE_FIELD_SYN, IR_SEPARATOR_DIPOLE_LENGTH_SYN)
   - available length for the decay-shielding nozzle (DET_NOZZLE_LENGTH_SYN)
   - beam-induced background and forward detector acceptance
   - G1 conceptual geometry of the IR in cad/
-  replacement_evidence: An LHmuC IR layout from the HELP4CERN study (White Paper 'in preparation', or the IR/MDI workshop contributions
-    of Indico 1681458); failing that, the LHeC 2020 IR table read in full (arXiv:2007.14491) for the inside option and an LHmuC-specific
-    MAD-X/Xsuite IR study for the outside option.
+  replacement_evidence: An LHmuC IR layout from the HELP4CERN study (White Paper or a dedicated IR/MDI contribution) that states the
+    muon L*. The LHeC and IMCC IR values are now read in full (SRC_ARXIV_2201_02436, SRC_ARXIV_2510_27437); the LHeC 2020 IR table (arXiv:2007.14491)
+    and an LHmuC-specific MAD-X/Xsuite IR study for the outside option remain open.
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Phase-0 band uniform 5-20 m (2026-10-28) re-based on 2026-10-29 to uniform 4-25 m to bracket every documented option (6, 15,
+    23 m) with margin. ASM_IR_SEPARATOR_DIPOLE_LENGTH and ASM_IR_Q1_GRADIENT quote the Phase-0 band in their physical bases; their own
+    bands are unchanged. Conflict record: CONF_IR_LSTAR (propagated as uncertainty: the LHmuC L* stays unknown and every IR result is
+    labelled with the L* used).'
 - assumption_id: ASM_IR_CROSSING_ANGLE
   parameter_id: IR_CROSSING_ANGLE_SYN
   status: synthetic_assumption
@@ -96,6 +143,14 @@ assumptions:
   - 'Searched (lhec-erl family): ''LHeC interaction region design crossing angle separator dipole ...'' and ''site:indico.cern.ch LHeC
     ERL workshop 2025 Holzer interaction region Q1 gradient T/m crossing angle mrad''. No LHmuC-specific crossing angle appeared in
     any snippet.'
+  - '2026-10-29 (uploads read in full): the Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17) adds only ''adding in small
+    crossing angle to drop extra parasitic collisions outside IP'' (IR_CROSSING_ANGLE_SCHEME_WS2026_FORTHOMME; the angle is an explicit
+    unknown, IR_CROSSING_ANGLE_WS2026_FORTHOMME, value null). The LHeC detector paper (SRC_ARXIV_2201_02436 p.10, p.16) has head-on
+    e-p collisions with the electron beam steered by the detector dipole (IR_COLLISION_SCHEME_ANDRE2022) and separates the non-colliding
+    proton beam by a horizontal offset plus a vertical crossing angle whose value is not stated (IR_NONCOLLIDING_BEAM_SEPARATION_ANDRE2022).
+    The MuIC paper (SRC_ARXIV_2203_06258 p.8) quotes the EIC 25 mrad with crab cavities only as context (IR_CROSSING_ANGLE_EIC_DESIGN_MUIC2022).
+    The Zimmermann deck (SRC_WS1681458_ZIMMERMANN_SPS_LHC p.9) restates the LHC Project Report 627 p-p crossing angles (300, 466 and
+    1000 urad). No source gives an LHmuC crossing angle.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -107,26 +162,46 @@ assumptions:
   - SRC_INDICO_1072533_4787015
   - SRC_ARXIV_2503_20475
   - SRC_ARXIV_2007_14491
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_02436
+  - SRC_ARXIV_2203_06258
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  - SRC_ARXIV_2610_09839
   reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 p.4: ''The time separation of muon bunches is large at LHmuC, therefore,
     a very small crossing angle is needed to avoid parasitic collisions of muon and proton bunches'' - no number, and a head-on scheme
     is not claimed (recorded as IR_CROSSING_ANGLE_DIS2026 = unknown). SRC_ARXIV_2506_15445 and the workshop decks are silent. LHeC values
-    exist only as snippets and differ between design iterations.'
+    exist only as snippets and differ between design iterations. Status 2026-10-29: unchanged; the Forthomme beam set repeats the qualitative
+    requirement (''small crossing angle'') without a number (IR_CROSSING_ANGLE_WS2026_FORTHOMME is unknown, value null).'
   synthetic_model:
     distribution: uniform
     minimum: 0.0
     maximum: 10.0
     unit: mrad
   physical_basis:
-  - 0 mrad (head-on) is a physical value inside the range, not 'unknown'; the DIS2026 Table 1 peak luminosity is reproduced with no
-    geometric reduction factor (docs/limitations.md section 5), which is consistent with a head-on or near head-on scheme.
-  - 'Parasitic encounters: with 250 ns muon bunch spacing (MACHINE_MU_BUNCH_SPACING_DIS2026) the first parasitic meeting point of a
-    muon bunch with the next proton bunch (25 ns LHC slots) is at c*25 ns/2 = 3.75 m from the IP, where the beams must already be separated
-    by many sigma - either by angle or by the separator dipole (IR_SEPARATOR_DIPOLE_FIELD_SYN).'
-  - 'Luminosity: the Piwinski parameter phi = theta_c*sigma_z/(2*sigma*) with sigma* = 4.8 um (IR_SIGMA_X_IP_MUON_DIS2026) and a proton
-    bunch length of order 7.5 cm (PROTON_BUNCH_LENGTH_RMS_SYN) reaches 1 already at theta_c ~ 0.13 mrad, so any angle above ~0.1 mrad
-    costs a large luminosity factor unless crab cavities are used (not mentioned in any LHmuC source).'
-  - Upper bound 10 mrad brackets every LHeC proton-proton crossing angle quoted in snippets (6, 6.8, 7 mrad).
+  - '0 mrad (head-on) is a physical value inside the range, not ''unknown''. The DIS2026 Table 1 peak luminosity is reproduced with
+    no geometric reduction factor (docs/limitations.md section 5), and so is the Forthomme set (tests/scientific/test_workshop_decks.py::test_forthomme_beam_set_implied_proton_bunch_population):
+    neither published LHmuC luminosity contains a crossing-angle reduction.'
+  - 'Parasitic encounters: the first one lies at c x (proton bunch spacing)/2 from the IP - 3.75 m for the 25 ns LHC pattern (PROTON_BUNCH_SPACING_LHC_MULHC;
+    the LHeC paper: ''at a distance of half a bunch spacing (25/2 ns)'', IR_PARASITIC_ENCOUNTER_HALF_SPACING_ANDRE2022), but 37.5-45
+    m if the proton bunches follow the 250-300 ns muon spacing (MACHINE_MU_BUNCH_SPACING_DIS2026, MACHINE_MU_BUNCH_SPACING_WS2026_FORTHOMME),
+    as the request for far fewer, more intense LHC bunches implies (''say, 1%'', PROTON_BUNCH_NUMBER_FRACTION_REQUESTED_WS2026_ZIMMERMANN).
+    The LHmuC proton bunch spacing is not stated; the DIS2026 remark that the large muon bunch separation needs only ''a very small
+    crossing angle'' fits the second case.'
+  - 'Luminosity: for head-on-crossing Gaussian bunches without hourglass, the reduction is 1/sqrt(1 + phi^2) with phi = tan(theta_c/2)
+    sqrt(sigma_z,mu^2 + sigma_z,p^2)/sqrt(sigma*_mu^2 + sigma*_p^2); for round matched 4.8 um beams (IR_SIGMA_X_IP_MUON_DIS2026), a
+    2 mm muon bunch and a 7.7 cm proton bunch, phi = 1 at theta_c ~ 0.18 mrad, and at ~0.014 mrad for a 1 m proton bunch (PROTON_BUNCH_LENGTH_RMS_SYN
+    now spans 5-100 cm). The Phase-0 text used the equal-bunch-length form (0.13 mrad at 7.5 cm). Any angle above a few tenths of a
+    mrad costs a large luminosity factor unless crab cavities are used, which no LHmuC source mentions.'
+  - Upper bound 10 mrad brackets every LHeC proton-proton crossing angle quoted in snippets (6, 6.8, 7 mrad) and the LHC Project Report
+    627 values (0.3-1 mrad); the EIC 25 mrad with crab cavities lies outside and would require crab cavities.
   analogous_systems:
+  - 'LHeC 2022 (SRC_ARXIV_2201_02436, read in full): head-on e-p collisions, the electron beam steered by the detector dipole B0 (IR_COLLISION_SCHEME_ANDRE2022);
+    the non-colliding proton beam is separated by a horizontal offset at IP2 and a vertical crossing angle whose value is not stated
+    (IR_NONCOLLIDING_BEAM_SEPARATION_ANDRE2022). The LHmuC detector deck shows the same head-on LHeC scheme (IR_COLLISION_SCHEME_LHEC_WS2026_FORTHOMME).'
+  - 'LHC Project Report 627 restated by Zimmermann (SRC_WS1681458_ZIMMERMANN_SPS_LHC slide 9, read in full): full p-p crossing angles
+    300 urad (nominal, ultimate), 466 urad (Piwinski upgrade), 1000 urad (super-bunch) (PROTON_LHC_PR627_CROSSING_ANGLE_NOMINAL_WS2026_ZIMMERMANN
+    and its partners); AloHEP LHC Piwinski example 285 urad (MACHINE_ALOHEP_LHC_EXAMPLE_FULL_CROSSING_ANGLE_DAGLI2026).'
+  - 'EIC: 25 mrad with crab cavities, quoted as context by the MuIC paper (SRC_ARXIV_2203_06258 p.8, IR_CROSSING_ANGLE_EIC_DESIGN_MUIC2022).'
   - 'LHeC linac-ring IR 2011: 6 mrad between the non-colliding proton beams - snippet-level, SRC_JACOW_IPAC2011_THPZ016.'
   - 'LHeC IR 2014 (reversed D1/D2 polarity): 6.8 mrad - snippet-level, SRC_JACOW_IPAC2014_TUPRO070.'
   - 'LHeC 2020/2022: ''a large crossing angle of 7 mrad for both proton beams'' - snippet-level, SRC_INDICO_1072533_4787015.'
@@ -140,11 +215,15 @@ assumptions:
   - parasitic beam-beam encounters and separation scheme
   - IR magnet layout (separator dipole, Q1 aperture)
   - detector forward acceptance and near-beam instrumentation (DET_GG_NEAR_BEAM_INSTRUMENTATION_WP)
-  replacement_evidence: A numerical crossing angle from the HELP4CERN IR study or White Paper; until then, the LHeC IR papers read in
-    full (arXiv:2007.14491, arXiv:2503.20475) to fix the related-machine value and the record IR_CROSSING_ANGLE_DIS2026 stays unknown.
+  replacement_evidence: A numerical crossing angle from the HELP4CERN IR study or White Paper (neither the DIS2026 proceedings nor the
+    Forthomme beam set give one), together with the LHmuC proton bunch spacing; until then IR_CROSSING_ANGLE_DIS2026 and IR_CROSSING_ANGLE_WS2026_FORTHOMME
+    stay unknown.
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Updated 2026-10-29: kept synthetic, band unchanged (uniform 0-10 mrad). The parasitic-encounter and Piwinski statements of
+    Phase 0 were corrected: the encounter distance depends on the (unstated) LHmuC proton bunch spacing, and the reduction factor for
+    a short muon bunch on a long proton bunch uses sqrt(sigma_z,mu^2 + sigma_z,p^2)/sqrt(sigma*_mu^2 + sigma*_p^2). Conflict record:
+    CONF_LHEC_CROSSING_ANGLE.'
 - assumption_id: ASM_IR_SEPARATOR_DIPOLE_FIELD
   parameter_id: IR_SEPARATOR_DIPOLE_FIELD_SYN
   status: synthetic_assumption
@@ -239,7 +318,8 @@ assumptions:
   - The physically relevant quantity is the integrated field B*L (deflection = B*L/(B rho)); the length range is chosen so that 0.1-1
     T x 3-15 m spans 0.3-15 T m, i.e. from the LHeC CDR value (2.7 T m) to LHC-D1-like separation strengths.
   - 'The dipole must fit between the detector/nozzle and the first quadrupole: L_sep < L* - (detector half-length) ; with IR_LSTAR_SYN
-    in 5-20 m this caps the length at about 15 m.'
+    in 5-20 m (the Phase-0 band) this caps the length at about 15 m; the 4-25 m scan band of 2026-10-29 (ASM_IR_LSTAR superseded) would
+    allow about 20 m, but this band is kept unchanged.'
   - 'Lower bound 3 m: a shorter dipole at <= 1 T gives < 1 mrad of muon deflection and no useful separation.'
   analogous_systems:
   - 'LHeC CDR 2012: separator field ''extending over 9 m'' - snippet-level, SRC_ARXIV_1206_2913.'
@@ -287,7 +367,7 @@ assumptions:
     unit: T/m
   physical_basis:
   - 'k = G/(B rho): with B rho = 3336 T m (1 TeV muon), 100-300 T/m gives k = 0.03-0.09 m^-2; the focal length of a 3.5 m long quadrupole
-    is then 3-10 m, commensurate with L* = 5-20 m (IR_LSTAR_SYN).'
+    is then 3-10 m, commensurate with L* = 5-20 m (IR_LSTAR_SYN Phase-0 band; a 4-25 m scan band since 2026-10-29).'
   - The same Q1 may have to focus (or let pass) the 7 TeV proton beam (B rho = 23350 T m) if the LHeC-style 'in between the mini-beta
     quadrupoles' option is chosen; the LHeC half-quadrupole/field-free-region design is the analogue.
   - Range brackets NbTi designs at small aperture (~150-250 T/m) and Nb3Sn designs (up to ~300 T/m at 20 mm aperture); peak pole-tip
@@ -373,6 +453,13 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Checked the uploaded DIS2026 Table 1 (p.4), muLHC Tables 1-3 (p.11-12), nucleus deck p.8 and p.11-14, and the White Paper working
     points (Khanpour p.4) for a DIS2026 beta*: none.'
+  - '2026-10-29 (uploads read in full): the Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17) gives sigma_x,y ~ 4.3 um
+    for ''ultimate HL-LHC optics, beta* = 7 cm'' (proton; PROTON_BETA_STAR_WS2026_FORTHOMME, IR_SIGMA_XY_IP_WS2026_FORTHOMME) with the
+    IP beam size ''constrained from matching of mu-p emittance'' (IR_BEAM_SIZE_MATCHING_WS2026_FORTHOMME), but states no muon beta*,
+    emittance or energy. Acosta et al. (SRC_ARXIV_2203_06258 Table 2 p.8) give a muon beta* of 0.5 cm for their 1.5 TeV ''LHmuC'' column
+    (a different concept; name collision) with a 15 cm proton beta*, and 0.75-1.7 cm for MuIC at BNL. Andre et al. 2022 (SRC_ARXIV_2201_02436)
+    give the LHeC proton beta* = 10 cm (p.16) and, in the Fig. 19 header, beta*_p = 10.0 cm and beta*_e = 10.9 cm (one value per beam,
+    plane not specified). No LHmuC muon beta* is published.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -381,10 +468,15 @@ assumptions:
   - SRC_WS_LEBOHO_KUMAR_DIHIGGS
   - SRC_ARXIV_2007_14491
   - SRC_INDICO_1072533_4787015
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2203_06258
+  - SRC_ARXIV_2201_02436
   reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 Table 1 (p.4): ''RMS beam size at IP, sigma_x,y [um] 4.8 4.8'' with no beta*
-    row. SRC_ARXIV_2506_15445 Table 2 (p.12) gives 3 cm for the muLHC (a different parameter set, flat beams, MACHINE_MU_BETA_X_STAR_MULHC);
+    row. SRC_ARXIV_2506_15445 Table 1 (p.12) gives 3 cm for the muLHC (a different parameter set, flat beams, MACHINE_MU_BETA_X_STAR_MULHC);
     SRC_WS1681458_DAGLI_NUCLEUS p.11 relaxes the muon optics to ''beta*_mu ~ 7-15 cm'' for ion collisions. These are competing values
-    for different scenarios (CLAUDE.md 1.6), not a DIS2026 value.'
+    for different scenarios (CLAUDE.md 1.6), not a DIS2026 value. Status 2026-10-29: unchanged for the muon; the Forthomme set gives
+    only the proton beta* (7 cm) and a matched 4.3 um beam size, from which the muon beta* cannot be derived without the unstated muon
+    energy and emittance.'
   synthetic_model:
     distribution: uniform
     minimum: 0.5
@@ -393,14 +485,27 @@ assumptions:
   physical_basis:
   - 'sigma*^2 = beta* eps_n/gamma: with sigma* = 4.8 um (IR_SIGMA_X_IP_MUON_DIS2026), eps_n = 4 um (muLHC, MACHINE_MU_NORM_EMITTANCE_X_MULHC)
     and gamma = 9460 the implied beta* is 5.4 cm - inside the range (audit arithmetic, not a source value).'
-  - 'Hourglass: luminosity is reduced once beta* < sigma_z of the longer (proton) bunch; with sigma_z,p ~ 5-12 cm (PROTON_BUNCH_LENGTH_RMS_SYN)
-    values below ~5 cm give H well below 1 (H ~ 0.53 computed for the muLHC-like 3/0.7 cm optics, docs/limitations.md 5).'
-  - 'Lower bound 0.5 cm: just below the muLHC beta_y* = 0.7 cm, the most aggressive value in any related document; upper bound 20 cm:
-    above the relaxed 15 cm of the nucleus options and the LHeC 10 cm, where round 4.8 um beams would need eps_n < 1.1 um.'
+  - 'Forthomme matched set: for equal muon and proton beam sizes sigma* = 4.3 um the muon beta* is sigma*^2 gamma_mu / eps_n,mu, which
+    needs the unstated muon energy and emittance; with the muLHC muon values (1 TeV, 4 um) it is 4.37 cm (MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC,
+    analytical estimate), inside the band.'
+  - 'Hourglass: luminosity is reduced once beta* < sigma_z of the longer (proton) bunch; with sigma_z,p now scanned over 5-100 cm (PROTON_BUNCH_LENGTH_RMS_SYN,
+    widened 2026-10-29) small beta* values are strongly penalised (H ~ 0.53 for the muLHC-like 3/0.7 cm optics at 7.5 cm, tests/scientific/test_analytical_checks.py::test_hourglass_factor_for_mulhc_like_optics).'
+  - 'Lower bound 0.5 cm: equal to the most aggressive muon beta* in any related document (0.5 cm, Acosta et al. ''LHmuC'' column, IR_BETA_STAR_MUON_LHMUC_MUIC2022;
+    the muLHC / muTRISTAN beta_y* is 0.7 cm). Upper bound 20 cm: above the relaxed 15 cm of the nucleus options and the LHeC 10.0 /
+    10.9 cm (proton / electron, Fig. 19), where round 4.8 um beams would need eps_n < 1.1 um.'
   - DIS2026 states round beams (sigma_x = sigma_y), so beta_x* = beta_y* is the natural first assumption for this scenario; the two
     records are kept separate so flat-beam scans remain possible.
   analogous_systems:
-  - 'muLHC (SRC_ARXIV_2506_15445 Table 2 p.12, read in full, imported_related): beta_x* = 3 cm, beta_y* = 0.7 cm (MACHINE_MU_BETA_X_STAR_MULHC).'
+  - 'Acosta et al. MuIC / ''LHmuC'' (SRC_ARXIV_2203_06258 Table 2 p.8, read in full): muon beta* 0.5 cm in the ''LHmuC'' column (1.5
+    TeV, eps_n 25 um, sigma 3 um against 7.1 um for the 15 cm proton beta*; IR_BETA_STAR_MUON_LHMUC_MUIC2022, tests/scientific/test_workshop_decks.py::test_muic_lhmuc_column_beam_size_acosta2022)
+    and 1.7 / 1.0 / 0.75 cm for MuIC at BNL (IR_BETA_STAR_MUON_MUIC033_MUIC2022, IR_BETA_STAR_MUON_MUIC074_MUIC2022, IR_BETA_STAR_MUON_MUIC100_MUIC2022).
+    NAME COLLISION: Acosta''s ''LHmuC'' is not the HELP4CERN LHmuC.'
+  - 'Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17, read in full, unrefereed slides): proton beta* = 7 cm and a matched
+    4.3 um beam size (PROTON_BETA_STAR_WS2026_FORTHOMME, IR_SIGMA_XY_IP_WS2026_FORTHOMME); muon beta* not stated.'
+  - 'LHeC 2022 (SRC_ARXIV_2201_02436, read in full): proton beta* = 10 cm (p.16, IR_BETA_STAR_PROTON_ANDRE2022); Fig. 19 header beta*_p
+    = 10.0 cm and beta*_e = 10.9 cm, one value per beam, not per plane (IR_BETA_STAR_PROTON_FIG19_ANDRE2022, IR_BETA_STAR_ELECTRON_FIG19_ANDRE2022).
+    The 7 cm LHeC high-luminosity case below remains snippet-level.'
+  - 'muLHC (SRC_ARXIV_2506_15445 Table 1 p.12, read in full, imported_related): beta_x* = 3 cm, beta_y* = 0.7 cm (MACHINE_MU_BETA_X_STAR_MULHC).'
   - 'LHmuC nucleus options (SRC_WS1681458_DAGLI_NUCLEUS p.11, read in full): ''The mu+ optics is relaxed to match (beta*_mu ~ 7-15 cm)''
     (MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL / _MAX_NUCL).'
   - 'muTRISTAN mu+ table restated on SRC_WS1681458_DAGLI_NUCLEUS p.8: beta_x/beta_y at IP 3.0 / 0.7 cm (MACHINE_MU_BETA_X_STAR_IP_MUTRISTAN_NUCL).'
@@ -415,7 +520,9 @@ assumptions:
   replacement_evidence: A beta*/emittance row for the DIS2026 (or White Paper) parameter set from HELP4CERN, or an LHmuC IR optics file.
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Updated 2026-10-29: kept synthetic (no LHmuC muon beta* exists); band unchanged (uniform 0.5-20 cm). Every new related value
+    lies inside it: 0.5-1.7 cm (Acosta et al.), 4.37 cm (matched muLHC estimate), 10.0 / 10.9 cm (LHeC per beam); the muLHC beta_x*
+    is 3 cm (MACHINE_MU_BETA_X_STAR_MULHC). Conflict record: CONF_IP_BEAM_SIZE.'
 - assumption_id: ASM_IR_BETA_Y_STAR_MUON
   parameter_id: IR_BETA_Y_STAR_MUON_SYN
   status: synthetic_assumption
@@ -432,6 +539,13 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Checked the uploaded DIS2026 Table 1 (p.4), muLHC Tables 1-3 (p.11-12), nucleus deck p.8 and p.11-14, and the White Paper working
     points (Khanpour p.4) for a DIS2026 beta*: none.'
+  - '2026-10-29 (uploads read in full): the Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17) gives sigma_x,y ~ 4.3 um
+    for ''ultimate HL-LHC optics, beta* = 7 cm'' (proton; PROTON_BETA_STAR_WS2026_FORTHOMME, IR_SIGMA_XY_IP_WS2026_FORTHOMME) with the
+    IP beam size ''constrained from matching of mu-p emittance'' (IR_BEAM_SIZE_MATCHING_WS2026_FORTHOMME), but states no muon beta*,
+    emittance or energy. Acosta et al. (SRC_ARXIV_2203_06258 Table 2 p.8) give a muon beta* of 0.5 cm for their 1.5 TeV ''LHmuC'' column
+    (a different concept; name collision) with a 15 cm proton beta*, and 0.75-1.7 cm for MuIC at BNL. Andre et al. 2022 (SRC_ARXIV_2201_02436)
+    give the LHeC proton beta* = 10 cm (p.16) and, in the Fig. 19 header, beta*_p = 10.0 cm and beta*_e = 10.9 cm (one value per beam,
+    plane not specified). No LHmuC muon beta* is published.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -440,10 +554,15 @@ assumptions:
   - SRC_WS_LEBOHO_KUMAR_DIHIGGS
   - SRC_ARXIV_2007_14491
   - SRC_INDICO_1072533_4787015
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2203_06258
+  - SRC_ARXIV_2201_02436
   reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 Table 1 (p.4): ''RMS beam size at IP, sigma_x,y [um] 4.8 4.8'' with no beta*
-    row. SRC_ARXIV_2506_15445 Table 2 (p.12) gives 0.7 cm for the muLHC (a different parameter set, flat beams, MACHINE_MU_BETA_Y_STAR_MULHC);
+    row. SRC_ARXIV_2506_15445 Table 1 (p.12) gives 0.7 cm for the muLHC (a different parameter set, flat beams, MACHINE_MU_BETA_Y_STAR_MULHC);
     SRC_WS1681458_DAGLI_NUCLEUS p.11 relaxes the muon optics to ''beta*_mu ~ 7-15 cm'' for ion collisions. These are competing values
-    for different scenarios (CLAUDE.md 1.6), not a DIS2026 value.'
+    for different scenarios (CLAUDE.md 1.6), not a DIS2026 value. Status 2026-10-29: unchanged for the muon; the Forthomme set gives
+    only the proton beta* (7 cm) and a matched 4.3 um beam size, from which the muon beta* cannot be derived without the unstated muon
+    energy and emittance.'
   synthetic_model:
     distribution: uniform
     minimum: 0.5
@@ -452,14 +571,27 @@ assumptions:
   physical_basis:
   - 'sigma*^2 = beta* eps_n/gamma: with sigma* = 4.8 um (IR_SIGMA_X_IP_MUON_DIS2026), eps_n = 4 um (muLHC, MACHINE_MU_NORM_EMITTANCE_X_MULHC)
     and gamma = 9460 the implied beta* is 5.4 cm - inside the range (audit arithmetic, not a source value).'
-  - 'Hourglass: luminosity is reduced once beta* < sigma_z of the longer (proton) bunch; with sigma_z,p ~ 5-12 cm (PROTON_BUNCH_LENGTH_RMS_SYN)
-    values below ~5 cm give H well below 1 (H ~ 0.53 computed for the muLHC-like 3/0.7 cm optics, docs/limitations.md 5).'
-  - 'Lower bound 0.5 cm: just below the muLHC beta_y* = 0.7 cm, the most aggressive value in any related document; upper bound 20 cm:
-    above the relaxed 15 cm of the nucleus options and the LHeC 10 cm, where round 4.8 um beams would need eps_n < 1.1 um.'
+  - 'Forthomme matched set: for equal muon and proton beam sizes sigma* = 4.3 um the muon beta* is sigma*^2 gamma_mu / eps_n,mu, which
+    needs the unstated muon energy and emittance; with the muLHC muon values (1 TeV, 4 um) it is 4.37 cm (MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC,
+    analytical estimate), inside the band.'
+  - 'Hourglass: luminosity is reduced once beta* < sigma_z of the longer (proton) bunch; with sigma_z,p now scanned over 5-100 cm (PROTON_BUNCH_LENGTH_RMS_SYN,
+    widened 2026-10-29) small beta* values are strongly penalised (H ~ 0.53 for the muLHC-like 3/0.7 cm optics at 7.5 cm, tests/scientific/test_analytical_checks.py::test_hourglass_factor_for_mulhc_like_optics).'
+  - 'Lower bound 0.5 cm: equal to the most aggressive muon beta* in any related document (0.5 cm, Acosta et al. ''LHmuC'' column, IR_BETA_STAR_MUON_LHMUC_MUIC2022;
+    the muLHC / muTRISTAN beta_y* is 0.7 cm). Upper bound 20 cm: above the relaxed 15 cm of the nucleus options and the LHeC 10.0 /
+    10.9 cm (proton / electron, Fig. 19), where round 4.8 um beams would need eps_n < 1.1 um.'
   - DIS2026 states round beams (sigma_x = sigma_y), so beta_x* = beta_y* is the natural first assumption for this scenario; the two
     records are kept separate so flat-beam scans remain possible.
   analogous_systems:
-  - 'muLHC (SRC_ARXIV_2506_15445 Table 2 p.12, read in full, imported_related): beta_x* = 3 cm, beta_y* = 0.7 cm (MACHINE_MU_BETA_Y_STAR_MULHC).'
+  - 'Acosta et al. MuIC / ''LHmuC'' (SRC_ARXIV_2203_06258 Table 2 p.8, read in full): muon beta* 0.5 cm in the ''LHmuC'' column (1.5
+    TeV, eps_n 25 um, sigma 3 um against 7.1 um for the 15 cm proton beta*; IR_BETA_STAR_MUON_LHMUC_MUIC2022, tests/scientific/test_workshop_decks.py::test_muic_lhmuc_column_beam_size_acosta2022)
+    and 1.7 / 1.0 / 0.75 cm for MuIC at BNL (IR_BETA_STAR_MUON_MUIC033_MUIC2022, IR_BETA_STAR_MUON_MUIC074_MUIC2022, IR_BETA_STAR_MUON_MUIC100_MUIC2022).
+    NAME COLLISION: Acosta''s ''LHmuC'' is not the HELP4CERN LHmuC.'
+  - 'Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17, read in full, unrefereed slides): proton beta* = 7 cm and a matched
+    4.3 um beam size (PROTON_BETA_STAR_WS2026_FORTHOMME, IR_SIGMA_XY_IP_WS2026_FORTHOMME); muon beta* not stated.'
+  - 'LHeC 2022 (SRC_ARXIV_2201_02436, read in full): proton beta* = 10 cm (p.16, IR_BETA_STAR_PROTON_ANDRE2022); Fig. 19 header beta*_p
+    = 10.0 cm and beta*_e = 10.9 cm, one value per beam, not per plane (IR_BETA_STAR_PROTON_FIG19_ANDRE2022, IR_BETA_STAR_ELECTRON_FIG19_ANDRE2022).
+    The 7 cm LHeC high-luminosity case below remains snippet-level.'
+  - 'muLHC (SRC_ARXIV_2506_15445 Table 1 p.12, read in full, imported_related): beta_x* = 3 cm, beta_y* = 0.7 cm (MACHINE_MU_BETA_Y_STAR_MULHC).'
   - 'LHmuC nucleus options (SRC_WS1681458_DAGLI_NUCLEUS p.11, read in full): ''The mu+ optics is relaxed to match (beta*_mu ~ 7-15 cm)''
     (MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL / _MAX_NUCL).'
   - 'muTRISTAN mu+ table restated on SRC_WS1681458_DAGLI_NUCLEUS p.8: beta_x/beta_y at IP 3.0 / 0.7 cm (MACHINE_MU_BETA_X_STAR_IP_MUTRISTAN_NUCL).'
@@ -474,12 +606,15 @@ assumptions:
   replacement_evidence: A beta*/emittance row for the DIS2026 (or White Paper) parameter set from HELP4CERN, or an LHmuC IR optics file.
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Updated 2026-10-29: kept synthetic (no LHmuC muon beta* exists); band unchanged (uniform 0.5-20 cm). Every new related value
+    lies inside it: 0.5-1.7 cm (Acosta et al.), 4.37 cm (matched muLHC estimate), 10.0 / 10.9 cm (LHeC per beam); the muLHC beta_y*
+    is 0.7 cm (MACHINE_MU_BETA_Y_STAR_MULHC). Conflict record: CONF_IP_BEAM_SIZE.'
 - assumption_id: ASM_PROTON_BUNCH_LENGTH_RMS
   parameter_id: PROTON_BUNCH_LENGTH_RMS_SYN
   status: synthetic_assumption
-  reason_required: The hourglass factor and the crossing-angle luminosity reduction depend on the proton bunch length; tests/scientific
-    uses 7.5 cm as an order-of-magnitude input and docs/limitations.md lists the quantity as unknown for LHmuC.
+  reason_required: The hourglass factor, the crossing-angle luminosity reduction, the luminous-region length and the pile-up / vertex
+    spread depend on the proton bunch length. The LHmuC asks for about 3 to 10 times the HL-LHC proton bunch population, which by Zimmermann's
+    rule of thumb lengthens the bunch and/or increases its energy spread, and no LHmuC source states the resulting bunch length.
   search_summary:
   - Reconnaissance of 2026-10-28 by the family scouts lhmuc-primary, lhec-erl, muon-collider-mdi, vffa-acceleration, ultracold-source,
     mulhc-mutristan and lhc-hl-lhc-protons (WebSearch only); their hits, queries and snippet quotations are in research/_fragments/<family>_sources.yaml,
@@ -491,6 +626,13 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (lhc-hl-lhc-protons family): HL-LHC TDR parameter-table queries (''2.2e11 ... 2760 bunches 2.5 um 15 cm beta* 25 ns 7
     TeV parameters table''), PDG collider-parameter review queries, LHC Design Report queries; bunch length appeared in no snippet.'
+  - '2026-10-29 (uploads read in full, no web access): the Zimmermann deck (SRC_WS1681458_ZIMMERMANN_SPS_LHC) restates LHC Project Report
+    627 Table 1 (slide 9: rms bunch length 7.7 cm in the nominal, ultimate and 2808-bunch upgrade columns, 7500 cm for one super-bunch,
+    or 10 super-bunches of 7.5 m) and the Damerau-Garoby flat-bunch comparison CERN-2005-006 Table 3 (slide 13: total lengths 40-50
+    cm, 4-5 m, 200-400 m), and concludes (slide 14) ''Higher intensity is accompanied by longer bunches and/or larger energy spread
+    - Roughly speaking sigma_delta sigma_z ~ 2 n_b,0 sigma_delta,0 sigma_z,0''. AloHEP (SRC_ARXIV_2610_09839) uses 7.7 cm (LHC Piwinski
+    example), 8.5 cm (HERA) and 6 cm (EIC). The Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17) states no bunch length.
+    No LHmuC proton bunch length exists.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -502,43 +644,105 @@ assumptions:
   - SRC_URL_CERN_2017_007_M_HLLHC_TDR_V0_1
   - SRC_URL_PDG_2020_REV_HEP_COLLIDER_PARAMS
   - SRC_URL_JINST_2008_3_S08001_LHC_MACHINE
-  reason_authoritative_value_missing: 'Not stated in any upload: SRC_ARXIV_2610_35154 Table 1 has no bunch-length row; SRC_ARXIV_2506_15445
-    Table 2 gives 2 mm for the muon bunch only; the decks give the 2 mm muon value (SRC_WS1681458_DAGLI_NUCLEUS p.8). The LHC Design
-    Report (SRC_DOI_10_5170_CERN_2004_003_V_1) and HL-LHC TDR (SRC_URL_CERN_2020_010_HLLHC_TDR) that would give the nominal LHC/HL-LHC
-    rms bunch length were blocked and no snippet in lhc-hl-lhc-protons_sources.yaml quotes it. The 7.5 cm used so far is an unsourced
-    recollection of the nominal LHC value.'
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  - SRC_ARXIV_2610_09839
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  reason_authoritative_value_missing: 'No LHmuC source states it: SRC_ARXIV_2610_35154 Table 1 and SRC_WS1681458_FORTHOMME_DETECTOR
+    p.17 have no bunch-length row, and SRC_ARXIV_2506_15445 Table 1 gives 2 mm for the muon bunch only. The nominal LHC rms length is
+    now sourced (7.7 cm, LHC Project Report 627 restated by SRC_WS1681458_ZIMMERMANN_SPS_LHC p.9; the Phase-0 7.5 cm was an unsourced
+    recollection), but it is not the LHmuC value: the LHmuC needs about 3 (Forthomme, implied under H = 1) to 10 (DIS2026) times the
+    HL-LHC bunch population, and the long-bunch schemes reviewed by Zimmermann were worked out 20-25 years ago for the LHC, not for
+    LHmuC conditions. The HL-LHC rms length is still not in the registry (TDR blocked).'
   synthetic_model:
-    distribution: uniform
+    distribution: log_uniform
     minimum: 5.0
-    maximum: 12.0
+    maximum: 100.0
     unit: cm
   physical_basis:
-  - Hourglass factor H depends on sigma_z,p/beta*_mu (lhmuc.analytical.hourglass_factor); for beta_y* = 0.7 cm and sigma_z,p = 7.5 cm
-    the computed H is ~0.53 (docs/limitations.md 5), so this input dominates the luminosity-model discrepancy.
-  - Range 5-12 cm brackets nominal LHC/HL-LHC collision bunch lengths (order 7-9 cm rms, to be verified in the blocked design reports)
-    and allows for the longer bunches a 2.2e12-proton bunch (PROTON_BUNCH_POPULATION_DIS2026, ten times nominal) would likely need for
-    longitudinal stability.
-  - The proton bunch length is set by the LHC RF (400 MHz bucket) and longitudinal emittance, not by the LHmuC, so this is a related-machine
-    value awaiting the source.
+  - 'Zimmermann rule of thumb (PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN, slide 14; checked against LHC Project Report
+    627 to a ratio of 0.91 in that record): merging n_b,0 bunches multiplies sigma_delta sigma_z by ~2 n_b,0. Counting n_b,0 in HL-LHC-type
+    bunches of 2.2e11 (PROTON_BUNCH_POPULATION_MULHC) and taking sigma_z,0 = 7.7 cm (nominal LHC; the HL-LHC value is not in the registry),
+    the Forthomme-implied 7.0e11 (n_b,0 = 3.2; PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME, tests/scientific/test_workshop_decks.py::test_forthomme_beam_set_implied_proton_bunch_population)
+    gives sigma_z = 0.19 m if the growth is shared equally between sigma_delta and sigma_z and 0.49 m if it goes entirely into length;
+    the DIS2026 22e11 (n_b,0 = 10, PROTON_BUNCH_POPULATION_DIS2026) gives 0.34 m and 1.54 m. Audit arithmetic on a rule of thumb, not
+    a design value.'
+  - 'Long-bunch options restated by Zimmermann: Damerau-Garoby ''short and flat'' 40-50 cm total (0.12-0.14 m rms for a uniform profile,
+    L/sqrt(12)), ''long and flat'' 4-5 m (1.15-1.44 m rms) and ''superbunch'' 200-400 m total (PROTON_LHC_FLATBUNCH_SHORT_FLAT_TOTAL_LENGTH_MIN_WS2026_ZIMMERMANN,
+    PROTON_LHC_FLATBUNCH_LONG_FLAT_TOTAL_LENGTH_MIN_WS2026_ZIMMERMANN and their _MAX_ partners); PR627 super-bunch 75 m rms (PROTON_LHC_PR627_RMS_BUNCH_LENGTH_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN).
+    The band contains the nominal and short-flat options and excludes the long-flat and super-bunch schemes, which would change the
+    IR, the detector and the luminosity model qualitatively and need their own scenarios.'
+  - 'Hourglass (audit arithmetic: the head-on Gaussian model of lhmuc.analytical.hourglass_factor evaluated in 1-D form, ct-integral
+    analytic; agrees with the tool to 1e-7 or better for sigma_z,p <= 0.13 m): H = 0.66 / 0.53 / 0.27 / 0.12 / 0.064 at sigma_z,p =
+    5 / 7.7 / 20 / 50 / 100 cm for the muLHC-like optics of tests/scientific/test_analytical_checks.py::test_hourglass_factor_for_mulhc_like_optics
+    (muon beta* 3 / 0.7 cm, proton beta* 7 cm, muon bunch 2 mm), and 0.90 / 0.82 / 0.54 / 0.28 / 0.16 for round beta* = 7 cm on both
+    beams with sigma* = 4.3 um (the Forthomme set with the muon beta* assumed equal to the proton one).'
+  - 'Upper bound 1 m: it covers the equal-share extrapolation for both populations and the full-length extrapolation for the Forthomme
+    population; at 1 m the hourglass factor has fallen to 0.06-0.16 for the optics above, so most of the luminosity gained from a 3-10
+    times higher population would be lost; the full-length DIS2026 extrapolation (1.54 m) and the long-flat option lie beyond it.'
+  - 'Luminous region: for head-on Gaussian bunches the collision-point rms before hourglass weighting is sqrt(sigma_z,mu^2 + sigma_z,p^2)/2,
+    i.e. 3.9 cm at 7.7 cm and 50 cm at 1 m. With the hourglass weighting 14-25 % (muLHC-like optics) or 31-50 % (round 7 cm optics)
+    of the luminosity is produced at |s| > 6 cm, the documented nozzle-tip distance (DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC), for sigma_z,p
+    = 0.2-1 m, against 3-7 % at 7.7 cm; this record must therefore be scanned jointly with DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN.'
+  - 'Lower bound 5 cm: below the nominal LHC 7.7 cm and the EIC 6 cm used by AloHEP; a higher population is expected to lengthen, not
+    shorten, the bunch, so values below 7.7 cm are margin only.'
+  - 'Distribution log-uniform (uniform until 2026-10-28): the band spans a factor 20 and the rule of thumb is multiplicative, with an
+    unknown split of the growth between sigma_delta and sigma_z, so equal weight per factor is the defensible prior; the representative
+    value is the geometric midpoint.'
+  - 'The proton bunch length is set by the LHC RF systems and the longitudinal emittance, not by the LHmuC: the long-bunch schemes need
+    new 40-80 MHz RF systems in the LHC (PROTON_LHC_LONGBUNCH_NEW_RF_FREQUENCY_MIN_WS2026_ZIMMERMANN, PROTON_LHC_LONGBUNCH_NEW_RF_FREQUENCY_MAX_WS2026_ZIMMERMANN),
+    so any value well above the nominal implies an LHC modification.'
   analogous_systems:
-  - 'Nominal LHC: rms bunch length of order 7.5 cm at collision - NOT captured in any snippet of this reconnaissance; value from memory,
-    flagged unsourced; to be read in SRC_DOI_10_5170_CERN_2004_003_V_1 (blocked).'
-  - 'HL-LHC: rms bunch length in the TDR parameter table - SRC_URL_CERN_2020_010_HLLHC_TDR (blocked), not in snippets.'
-  - 'muLHC muon bunch (not proton): 2 mm, SRC_ARXIV_2506_15445 Table 2 p.12 (read in full, MACHINE_MU_BUNCH_LENGTH_MULHC).'
-  applicability: Screening only, LHMUC-DIS2026-1TEV luminosity models; placed in the IR file because its only use so far is the IP hourglass
-    term.
+  - 'Nominal LHC (2002 design, LHC Project Report 627 Table 1 restated on Zimmermann slide 9, SRC_WS1681458_ZIMMERMANN_SPS_LHC, read
+    in full): rms bunch length 7.7 cm (PROTON_LHC_PR627_RMS_BUNCH_LENGTH_NOMINAL_WS2026_ZIMMERMANN); the same 7.7 cm in the AloHEP LHC
+    Piwinski example (MACHINE_ALOHEP_LHC_EXAMPLE_BUNCH_LENGTH_DAGLI2026). Replaces the Phase-0 ''7.5 cm from memory, unsourced''.'
+  - HERA protons 8.5 cm and EIC protons 6 cm as used in the AloHEP benchmarks (SRC_ARXIV_2610_09839 p.33, read in full; MACHINE_ALOHEP_HERA_PROTON_BUNCH_LENGTH_DAGLI2026,
+    MACHINE_ALOHEP_EIC_PROTON_BUNCH_LENGTH_DAGLI2026).
+  - 'LHC long-bunch upgrade options (Zimmermann slides 9-13, read in full, unrefereed slides restating LHC Project Report 627 and CERN-2005-006):
+    PR627 super-bunch 75 m rms (or 10 x 7.5 m); Damerau-Garoby flat bunches of 40-50 cm, 4-5 m and 200-400 m total length.'
+  - 'HL-LHC: rms bunch length in the TDR parameter table - SRC_URL_CERN_2020_010_HLLHC_TDR (blocked), not in the registry.'
+  - 'muLHC muon bunch (not proton): 2 mm, SRC_ARXIV_2506_15445 Table 1 p.12 (read in full, MACHINE_MU_BUNCH_LENGTH_MULHC).'
+  applicability: 'Screening only: LHMUC-DIS2026-1TEV and LHMUC-WS2026-FORTHOMME luminosity, hourglass and luminous-region models; widened
+    on 2026-10-29 to cover proton bunch populations of 3-10 times HL-LHC. Not valid for the long-flat or super-bunch schemes (rms of
+    order 1 m and above), which need separate scenarios. Placed in the IR file because its use is the IP model.'
   affected_outputs:
   - hourglass factor and luminosity reproduction tests
   - crossing-angle luminosity reduction
   - pile-up per crossing and vertex spread along z
-  replacement_evidence: LHC Design Report Vol. 1 Table of nominal beam parameters and HL-LHC TDR 2020 Appendix A table, read in full
-    (imported_related).
+  - luminous-region length and the fraction of collisions beyond the nozzle tip (DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN)
+  - LHC RF requirements implied by long proton bunches
+  replacement_evidence: A proton bunch length for the LHmuC proton bunch population from an LHC bunch-merging / long-bunch study for
+    LHmuC conditions (SPS/LHC RF), or the White Paper parameter table; the HL-LHC TDR 2020 Appendix A table read in full for the HL-LHC
+    reference (imported_related).
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Phase-0 band uniform 5-12 cm (2026-10-28) widened on 2026-10-29 to log-uniform 5-100 cm (0.05-1 m) after the Zimmermann deck.
+    CAUTION for scans: lhmuc.analytical.hourglass_factor (2-D scipy dblquad) is accurate to 1e-7 or better up to sigma_z,p = 0.13 m
+    but raises an IntegrationWarning from about 0.15 m and under-reports H with a 2 mm muon bunch (-0.2 % at 0.15 m; -4.5 % / -16 %
+    / -24 % at 0.2 / 0.5 / 1 m for the muLHC-like optics; -10 % / -35 % / -49 % for round 7 cm optics), against the converged 1-D integral
+    of the same model; do not use it above ~0.13 m until it is fixed or bounded by a registered test. CONF_LUMI_MODEL_ASSUMPTIONS refers
+    to this record as ''7.5 cm''; its value was the Phase-0 band midpoint (8.5 cm) and is now the geometric midpoint (22.4 cm), never
+    an estimate.'
 - assumption_id: ASM_DET_NOZZLE_OPENING_ANGLE
   parameter_id: DET_NOZZLE_OPENING_ANGLE_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME
+  - DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME
+  - DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2510_27437
+  range_vs_evidence: 'OUTSIDE (below) for the LHmuC baseline. Phase-0 band (2026-10-28): uniform 5-20 degree. The LHmuC detector concept
+    gives a conical half opening angle of 40 mrad = 2.29 degree (baseline) and 100 mrad = 5.73 degree (alternative): SRC_WS1681458_FORTHOMME_DETECTOR
+    p.9 ''conical half opening angle: 40(100) mrad -> eta_max ~ 4(3)'', restated on SRC_WS1681458_KILIC_NOZZLE p.5 (DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_KILIC).
+    The baseline lies BELOW the Phase-0 lower bound, the alternative just inside it; the IMCC 10 degree (MuCol MR7 Appendix G p.66,
+    DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7, a mu+mu- collider analogue) lies inside. eta_edge = -ln tan(theta/2) = 3.91 (40 mrad), 3.00
+    (100 mrad), 2.44 (10 degree) (tests/scientific/test_workshop_decks.py::test_nozzle_half_angle_to_eta_max_forthomme_and_imcc and
+    ::test_imcc_nozzle_outer_surface_angles_mr7_table_g1). Calibration lesson: the Phase-0 band was centred on a snippet-level mu+mu-
+    collider value (10 degree) and its 5 degree lower bound came from an acceptance argument, although the same record argued that the
+    LHmuC decay source is two to three orders of magnitude weaker than the IMCC one, which made a smaller cone foreseeable. Scan band
+    re-based on 2026-10-29 to uniform 2-12 degree.'
   reason_required: The nozzle angle fixes the detector's polar-angle acceptance on the incoming-muon side and the beam-induced-background
     suppression; the DIS2026 proceedings say its size 'has to be carefully optimised' but give no angle.
   search_summary:
@@ -553,6 +757,11 @@ assumptions:
   - 'Searched (muon-collider-mdi family): ''muon collider detector nozzle tungsten borated polyethylene 10 degree beam-induced background
     FLUKA 10 TeV'', ''muon collider nozzle length 6 m tungsten cone 10 degrees opening angle nozzle MDI design 10 TeV MuCol''; (lhmuc-primary):
     Indico 1681458 contributions - the Kilic nozzle talk was not retrievable.'
+  - '2026-10-29 (addendum and batches 7-9; uploads read in full, no web access): SRC_WS1681458_FORTHOMME_DETECTOR p.9 gives the LHmuC
+    nozzle half-angle 40(100) mrad; SRC_WS1681458_KILIC_NOZZLE p.5 restates it (''Adapted from K. Piotrzkowski, DIS 2026'') and p.12
+    adds 60 and 80 mrad cones in a hadron-acceptance table (DET_NOZZLE_HALF_OPENING_ANGLE_60MRAD_WS2026_KILIC, DET_NOZZLE_HALF_OPENING_ANGLE_80MRAD_WS2026_KILIC);
+    SRC_ARXIV_2510_27437 p.66 (Appendix G) gives the IMCC 10 degree outer-surface inclination near the IP; SRC_ARXIV_2502_00181 p.10
+    (MAIA) gives |eta| = 2.44, ''approximately 10 degree'' (DET_NOZZLE_POLAR_ANGLE_EDGE_MAIA).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -567,47 +776,89 @@ assumptions:
   - SRC_ARXIV_2311_03280
   - SRC_URL_POS_ICHEP2024_819
   - SRC_INDICO_FNAL_64493_294885
-  reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 p.5: ''the so-called nozzle should be located inside the LHmuC detector
-    in the direction of incoming muons [27], its size has to be carefully optimised'' - no angle (DET_NOZZLE_PRESENCE_DIS2026). SRC_ARXIV_2506_15445
-    p.13-14 describes a 6 m tungsten cone with borated-polyethylene cladding but gives no opening angle. Ref. [27] (A. Kilic et al.,
-    workshop contribution 7263330) was not available. IMCC/MAP values are snippet-level.'
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_WS1681458_KILIC_NOZZLE
+  - SRC_ARXIV_2502_00181
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2610_35154 p.5: ''the so-called nozzle should be located inside
+    the LHmuC detector in the direction of incoming muons [27], its size has to be carefully optimised'' - no angle (DET_NOZZLE_PRESENCE_DIS2026).
+    SRC_ARXIV_2506_15445 p.13-14 describes a 6 m tungsten cone with borated-polyethylene cladding but gives no opening angle. Ref. [27]
+    (A. Kilic et al., workshop contribution 7263330) was not available. IMCC/MAP values are snippet-level. Superseded on 2026-10-29:
+    the Kilic and Forthomme workshop decks are now read in full (see superseded_by and range_vs_evidence); neither freezes the angle.'
   synthetic_model:
     distribution: uniform
-    minimum: 5.0
-    maximum: 20.0
+    minimum: 2.0
+    maximum: 12.0
     unit: degree
   physical_basis:
-  - 'Decay load: N_mu/(gamma c tau) = 0.07e11/(9460 x 659 m) ~ 1123 decays per metre per bunch passage for the DIS2026 muon bunch, versus
-    ~2.3e5 per metre per bunch crossing quoted for the 3 TeV muon collider (SRC_URL_MDPI_PARTICLES_2025_8_1_25, snippet): the LHmuC
-    decay source is two to three orders of magnitude weaker, so a smaller nozzle than the 10-degree MAP/IMCC cone may suffice.'
-  - The nozzle is single-sided at LHmuC (incoming-muon side only; DET_NOZZLE_PLACEMENT_MULHC), the proton side stays open for forward
+  - 'Scan band 2-12 degree (re-based 2026-10-29) brackets every documented cone: 40 mrad = 2.29 degree (LHmuC baseline), 60 and 80 mrad
+    = 3.44 and 4.58 degree (Kilic acceptance study), 100 mrad = 5.73 degree (LHmuC alternative) and 10 degree (IMCC MR7 and MAIA).'
+  - 'Lower bound 2 degree (34.9 mrad, eta_edge = 4.05): just below the smallest documented cone (40 mrad); no source studies a smaller
+    angle, so values below 2 degree would be extrapolation.'
+  - 'Upper bound 12 degree (209 mrad, eta_edge = 2.25): 20 % above the IMCC 10 degree cone, which is designed for a two-sided nozzle
+    against a 10 TeV mu+mu- decay load; the Phase-0 upper value 20 degree is dropped because no source motivates a cone wider than the
+    IMCC one.'
+  - 'Decay load (Phase-0 audit arithmetic, unchanged): N_mu/(gamma c tau) = 0.07e11/(9460 x 659 m) ~ 1123 decays per metre per bunch
+    passage for the DIS2026 muon bunch, against ~2.3e5 per metre per bunch crossing quoted for the 3 TeV muon collider (SRC_URL_MDPI_PARTICLES_2025_8_1_25,
+    snippet): the weaker LHmuC source is consistent with the much smaller LHmuC cone.'
+  - The nozzle is single-sided at LHmuC (incoming-muon side only; DET_NOZZLE_PLACEMENT_MULHC); the proton side stays open for forward
     hadrons.
-  - 'Acceptance trade-off: the nozzle removes polar angles below theta_nozzle on the muon side where the scattered muon at small Q^2
-    and the two-photon tagging requirements live (DET_GG_SCATTERED_MUON_MEASUREMENT_WP, DET_GG_NEAR_BEAM_INSTRUMENTATION_WP), so the
-    range extends down to 5 degrees.'
-  - Upper bound 20 degrees doubles the MAP/IMCC angle and marks where central tracking acceptance (|eta| < ~1.7) would be visibly lost.
+  - 'Acceptance trade-off: the nozzle removes polar angles below theta_nozzle on the muon side, where the scattered muon at small Q^2
+    and the two-photon tagging requirements live (DET_GG_SCATTERED_MUON_MEASUREMENT_WP, DET_GG_NEAR_BEAM_INSTRUMENTATION_WP); the LHmuC
+    decks state the aim as the ''best compromise between protection and reconstruction capabilities of forward produced hadrons'' (DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_KILIC).'
   analogous_systems:
+  - 'LHmuC detector concept (SRC_WS1681458_FORTHOMME_DETECTOR p.9, read in full, unrefereed slides): 40 mrad baseline, 100 mrad alternative
+    (DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME, DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME); same statement in the
+    Kilic nozzle study (SRC_WS1681458_KILIC_NOZZLE p.5, DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_KILIC).'
+  - 'IMCC 10 TeV (MuCol MR7, SRC_ARXIV_2510_27437 p.66, read in full): ''Near the interaction point, the inclination amounts to 10 degrees,
+    which determines the angular acceptance of the detector'' (DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7); MAIA |eta| = 2.44 (DET_NOZZLE_POLAR_ANGLE_EDGE_MAIA).'
   - 'MAP/IMCC: ''two tungsten cone-shaped shields around the beampipe, with a borated polyethylene coating, having an opening angle
     of 10 degrees'' - snippet-level, SRC_ARXIV_2203_08033.'
   - 'MuCol Milestone Report 5: ''near the interaction point, the inclination amounts to 10 degrees, which determines the angular acceptance
     of the detector'' - snippet-level, SRC_ARXIV_2411_02966.'
   - 'Snowmass Muon Collider Forum: ''the nozzle restricts detector acceptance to polar angles above 10 degrees'' - snippet-level, SRC_ARXIV_2209_01318.'
   - 'muLHC: 6 m tungsten cone, no angle given - SRC_ARXIV_2506_15445 p.13-14 (read in full).'
-  applicability: Screening only; applies to the single-sided LHmuC nozzle concept (DIS2026 and muLHC). Not a muon-collider two-sided
+  applicability: Scan variable only (assumption superseded by evidence on 2026-10-29). DET_NOZZLE_OPENING_ANGLE_SYN may be used only
+    to scan the cone half-angle over 2-12 degree in screening, acceptance and BIB sensitivity studies of the single-sided LHmuC nozzle;
+    no scenario slot may point to it. Baselines are DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME (40 mrad) and DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME
+    (100 mrad) for the LHmuC and DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7 (10 degree) as the IMCC analogue. Not a muon-collider two-sided
     nozzle.
   affected_outputs:
   - detector polar-angle acceptance on the incoming-muon side
   - beam-induced-background flux into the tracker and calorimeters (future FLUKA/Geant4 runs)
   - scattered-muon and two-photon tagging acceptance
   - G1 detector geometry in cad/
-  replacement_evidence: The nozzle geometry of A. Kilic et al. (Indico 1681458 contribution 7263330, ref. [27] of SRC_ARXIV_2610_35154)
-    or the LHmuC White Paper MDI section.
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 by the Krakow workshop decks (Forthomme detector concept, Kilic nozzle study),
+    read in full. Still open: a frozen LHmuC nozzle specification (White Paper MDI section) and a transport study that chooses between
+    the 40 and 100 mrad options; the Kilic Geant4 study compares them but selects neither.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Definition: polar angle of the nozzle''s outer conical surface near the IP, measured from the incoming-muon axis (cone half-angle);
+    the LHmuC decks call it ''conical half opening angle'', MR7 ''inclination ... near the interaction point''. Phase-0 band uniform
+    5-20 degree (2026-10-28) replaced by the scan band uniform 2-12 degree (2026-10-29); the record is kept for the audit trail. Corroborating
+    records not listed in superseded_by: DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_KILIC, DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_KILIC,
+    DET_NOZZLE_HALF_OPENING_ANGLE_60MRAD_WS2026_KILIC, DET_NOZZLE_HALF_OPENING_ANGLE_80MRAD_WS2026_KILIC, DET_NOZZLE_POLAR_ANGLE_EDGE_MAIA.
+    The 40 and 100 mrad are options of a concept study on unrefereed slides (confidence medium); neither is frozen. Conflict record:
+    CONF_NOZZLE_OPENING_ANGLE (the LHmuC options are carried as separate scenarios, never averaged; the IMCC 10 degree is a comparison
+    case).'
 - assumption_id: ASM_DET_NOZZLE_LENGTH
   parameter_id: DET_NOZZLE_LENGTH_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - DET_NOZZLE_LENGTH_WS2026_KILIC
+  - DET_NOZZLE_LENGTH_MR7
+  - DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC
+  - DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_KILIC_NOZZLE
+  - SRC_ARXIV_2510_27437
+  range_vs_evidence: 'INSIDE, near the centre. Phase-0 band (2026-10-28): uniform 2-10 m. The Kilic LHmuC study drawing (SRC_WS1681458_KILIC_NOZZLE
+    slide 4) dimensions a 487.8 cm rear section (DET_NOZZLE_LENGTH_WS2026_KILIC) and a 100 cm tip section (DET_NOZZLE_FIRST_SECTION_LENGTH_WS2026_KILIC),
+    i.e. 587.8 cm tip-to-base (derived, DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC) with the base 593.8 cm from the IP (DET_NOZZLE_BASE_DISTANCE_FROM_IP_IMPLIED_WS2026_KILIC).
+    The IMCC nozzle base plane is at |z| = 595 cm (MR7 Table G.1, DET_NOZZLE_LENGTH_MR7), 589 cm tip-to-base (DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7);
+    the muLHC cone is 6 m (DET_NOZZLE_LENGTH_MULHC). All lie inside 2-10 m; the two documented geometries agree to 1.2 cm at the base.
+    Band kept unchanged as the scan band. Definitional caution: the 487.8 cm is the rear-section dimension, not the full length, and
+    the 595 cm is a base-plane coordinate, not a length.'
   reason_required: The nozzle length sets how much of the IR straight it occupies (must fit inside L*) and how many decay electrons
     it intercepts.
   search_summary:
@@ -621,6 +872,9 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (muon-collider-mdi family): ''muon collider nozzle length 6 m tungsten cone ...''; the IMCC nozzle length itself was cut
     off or absent in snippets.'
+  - '2026-10-29 (uploads read in full): Kilic et al. slide-4 drawing (SRC_WS1681458_KILIC_NOZZLE): ''487.8 cm'' rear section, ''100
+    cm'' tip section, ''6 cm'' to the IP; MuCol MR7 Table G.1 (SRC_ARXIV_2510_27437 p.65): outer surface from z = 6 cm to the base plane
+    at z = 595 cm, and ''The nozzle extends from the last magnet (L* = 6 m) to almost the IP''.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -630,37 +884,65 @@ assumptions:
   - SRC_INDICO_FNAL_64493_294885
   - SRC_INDICO_DESY_45968_187027
   - SRC_ARXIV_2411_02966
-  reason_authoritative_value_missing: The only LHmuC-related number is the muLHC '6-meter-long tungsten shielding cone' (SRC_ARXIV_2506_15445
-    p.14, DET_NOZZLE_LENGTH_MULHC), a related-machine simulation set-up, not an LHmuC design; SRC_ARXIV_2610_35154 gives no length.
-    IMCC nozzle lengths were not in any snippet.
+  - SRC_WS1681458_KILIC_NOZZLE
+  - SRC_ARXIV_2510_27437
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): The only LHmuC-related number is the muLHC ''6-meter-long tungsten shielding
+    cone'' (SRC_ARXIV_2506_15445 p.14, DET_NOZZLE_LENGTH_MULHC), a related-machine simulation set-up, not an LHmuC design; SRC_ARXIV_2610_35154
+    gives no length. IMCC nozzle lengths were not in any snippet. Superseded on 2026-10-29: see superseded_by and range_vs_evidence.'
   synthetic_model:
     distribution: uniform
     minimum: 2.0
     maximum: 10.0
     unit: m
   physical_basis:
-  - 'Geometric constraint: L_nozzle <= L* minus the space for the separator dipole, so with IR_LSTAR_SYN in 5-20 m the nozzle cannot
-    exceed ~10 m.'
+  - 'Geometric constraint: z_tip + L_nozzle <= L*. The IMCC nozzle ends at the last magnet (base plane at 595 cm with L* = 6 m, IR_LSTAR_MR7,
+    MR7 p.65); the LHmuC study gives a base 593.8 cm from the IP but does not say what lies behind it (corrected by the registry-stage
+    verifier, 2026-10-29); with L* scanned over 4-25 m (IR_LSTAR_SYN, since 2026-10-29) and room reserved for a separator dipole, nozzles
+    longer than ~10 m are excluded from the scan.'
   - Decay electrons from muons decaying within ~L_nozzle upstream of the IP are intercepted; the decay rate per metre (ASM_DET_NOZZLE_OPENING_ANGLE)
     is constant along the straight, so background scales roughly with the unshielded length between the last magnet and the nozzle tip.
-  - 'Lower bound 2 m: shorter cones at 5-20 degrees would not reach the first IR magnet and leave the detector exposed.'
+  - 'Lower bound 2 m: shorter cones at 2-12 degrees (DET_NOZZLE_OPENING_ANGLE_SYN) would not reach the first IR magnet and leave the
+    detector exposed.'
+  - 'Scan band unchanged (uniform 2-10 m): every documented length (5.88-6.0 m) lies near its centre; the band stays wide because the
+    LHmuC L* is unknown.'
   analogous_systems:
+  - 'LHmuC nozzle study (Kilic et al., SRC_WS1681458_KILIC_NOZZLE slide 4, read in full, unrefereed slides): 487.8 cm rear section +
+    100 cm tip section = 587.8 cm, base 593.8 cm from the IP (DET_NOZZLE_LENGTH_WS2026_KILIC, DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC).'
+  - 'IMCC 10 TeV (MuCol MR7 Table G.1, SRC_ARXIV_2510_27437 p.65, read in full): base plane at |z| = 595 cm, tip at 6 cm, 589 cm long
+    (DET_NOZZLE_LENGTH_MR7, DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7); MR7 Table 7.2 lists the z range as 60-6000 mm, a 5 cm internal
+    difference preserved in the MR7 records.'
   - 'muLHC: ''the 6-meter-long tungsten shielding cone'' (GEANT4/FLUKA set-up) - SRC_ARXIV_2506_15445 p.14, read in full.'
-  - 'IMCC 10 TeV: L* = 6 m with the nozzle in that space - snippet-level, SRC_INDICO_FNAL_64493_294885 and SRC_INDICO_DESY_45968_187027
-    (no explicit length).'
-  applicability: Screening only; single-sided LHmuC nozzle concept.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). DET_NOZZLE_LENGTH_SYN may be used only to scan
+    the nozzle length over 2-10 m, jointly with IR_LSTAR_SYN and DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN; no scenario slot may point to
+    it. Baselines: the Kilic LHmuC geometry (587.8 cm) and the IMCC geometry (589 cm, base at 595 cm). Single-sided LHmuC nozzle concept.'
   affected_outputs:
   - IR length budget (with IR_LSTAR_SYN)
   - beam-induced background
   - nozzle mass and support
   - G1 detector/IR geometry
-  replacement_evidence: Kilic et al. nozzle study (ref. [27] of SRC_ARXIV_2610_35154) or the White Paper MDI section.
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (Kilic deck and MuCol MR7 read in full). Still open: a frozen LHmuC nozzle
+    geometry with base and step radii (not dimensioned on the Kilic drawing) and the LHmuC L*.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Band unchanged (Phase-0 uniform 2-10 m). superseded_by also names the derived total lengths DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC
+    (587.8 cm, derived_lhmuc) and DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7 (589 cm, analytical_estimate), because DET_NOZZLE_LENGTH_WS2026_KILIC
+    is the rear-section dimension only (487.8 cm) and DET_NOZZLE_LENGTH_MR7 is the base-plane z (595 cm); using either alone as ''the
+    nozzle length'' would mislead. Conflict record: CONF_NOZZLE_OPENING_ANGLE (also covers the lengths and tip distances).'
 - assumption_id: ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
   parameter_id: DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC
+  - DET_NOZZLE_TIP_DISTANCE_MR7
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_KILIC_NOZZLE
+  - SRC_ARXIV_2510_27437
+  range_vs_evidence: 'INSIDE, near the lower edge. Phase-0 band (2026-10-28): uniform 2-50 cm. The Kilic LHmuC drawing (slide 4, DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC)
+    and the IMCC nozzle (MR7 Appendix G p.66 ''The nozzle tip is located at a distance of 6 cm from the IP'', DET_NOZZLE_TIP_DISTANCE_MR7;
+    Table G.1 tip point z = 6 cm, r = 1 cm) both place the tip 6 cm from the IP. The Phase-0 expectation that a weaker LHmuC decay source
+    would let the tip retreat from the IP did not appear in the first LHmuC study, which uses the IMCC distance (the deck does not say
+    whether the value was taken from the muon-collider design). Band kept unchanged as the scan band.'
   reason_required: The tip position fixes the innermost unobstructed region around the IP (vertex-detector length, beam-pipe design)
     and the BIB entry point.
   search_summary:
@@ -673,6 +955,8 @@ assumptions:
     (source access snippet_only or blocked), may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md 1.5). The assumption
     author made no new web requests and did not use WebSearch.
   - Covered by the muon-collider-mdi nozzle queries (ASM_DET_NOZZLE_OPENING_ANGLE); only the IMCC 6 cm value appeared.
+  - '2026-10-29 (uploads read in full): Kilic et al. slide-4 drawing, ''6 cm'' between the tip and the IP (SRC_WS1681458_KILIC_NOZZLE);
+    MuCol MR7 Appendix G p.66, ''The nozzle tip is located at a distance of 6 cm from the IP'' (SRC_ARXIV_2510_27437).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -681,36 +965,63 @@ assumptions:
   - SRC_WS_LEBOHO_KUMAR_DIHIGGS
   - SRC_ARXIV_2411_02966
   - SRC_ARXIV_2510_27437
-  reason_authoritative_value_missing: No LHmuC source gives it; SRC_ARXIV_2506_15445 Figure 8 (p.13) shows the cone but no tip coordinate.
-    The IMCC value is snippet-level.
+  - SRC_WS1681458_KILIC_NOZZLE
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): No LHmuC source gives it; SRC_ARXIV_2506_15445 Figure 8 (p.13) shows the
+    cone but no tip coordinate. The IMCC value is snippet-level. Superseded on 2026-10-29: see superseded_by and range_vs_evidence.'
   synthetic_model:
     distribution: uniform
     minimum: 2.0
     maximum: 50.0
     unit: cm
   physical_basis:
-  - The tip must clear the beam-pipe and the luminous region (~sigma_z,p/sqrt(2) ~ 5 cm for an 7.5 cm proton bunch, PROTON_BUNCH_LENGTH_RMS_SYN),
-    so 2 cm is a hard lower limit for any design.
-  - A weaker decay source at LHmuC (ASM_DET_NOZZLE_OPENING_ANGLE) allows the tip to retreat from the IP and keep more vertex-detector
+  - The tip must clear the beam pipe and the luminous region. For head-on Gaussian bunches the rms of the collision-point distribution
+    before hourglass weighting is sqrt(sigma_z,mu^2 + sigma_z,p^2)/2, i.e. 3.9 cm for a 2 mm muon bunch (MACHINE_MU_BUNCH_LENGTH_MULHC)
+    on a 7.7 cm proton bunch (the Phase-0 text used sigma_z,p/sqrt(2), valid only for equal bunch lengths); 2 cm stays a hard lower
+    limit for any design.
+  - 'Coupling to the proton bunch length: with PROTON_BUNCH_LENGTH_RMS_SYN widened to 5-100 cm, 14-50 % of the luminosity is produced
+    at |s| > 6 cm (both sides; on the incoming-muon side inside the nozzle) for sigma_z,p = 0.2-1 m, against 3-7 % at 7.7 cm (audit
+    arithmetic quoted in ASM_PROTON_BUNCH_LENGTH_RMS); tip distance and proton bunch length must be scanned jointly.'
+  - A weaker decay source at LHmuC (ASM_DET_NOZZLE_OPENING_ANGLE) would allow the tip to retreat from the IP and keep more vertex-detector
     length; 50 cm is roughly where the tip would sit outside a typical vertex detector.
   - Only one tip exists (single-sided nozzle; DET_NOZZLE_PLACEMENT_MULHC).
+  - Scan band unchanged (uniform 2-50 cm); both documented values (6 cm) lie near its lower edge.
   analogous_systems:
+  - 'LHmuC nozzle study (Kilic et al., SRC_WS1681458_KILIC_NOZZLE slide 4, read in full, unrefereed slides): tip 6 cm from the IP (DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC).'
+  - 'IMCC 10 TeV (MuCol MR7 Appendix G p.66, SRC_ARXIV_2510_27437, read in full): tip 6 cm from the IP (DET_NOZZLE_TIP_DISTANCE_MR7);
+    same point (6, 1) cm on MAIA Fig. 1.'
   - 'MuCol Milestone Report 5: ''The nozzle tip is located at a distance of 6 cm from the IP'' and ''aperture bottleneck at 100 cm from
     the IP'' - snippet-level, SRC_ARXIV_2411_02966.'
-  applicability: Screening only; single-sided LHmuC nozzle concept.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN may be used
+    only to scan the tip distance over 2-50 cm, jointly with PROTON_BUNCH_LENGTH_RMS_SYN; no scenario slot may point to it. Baselines:
+    DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC (6 cm, LHmuC study) and DET_NOZZLE_TIP_DISTANCE_MR7 (6 cm, IMCC analogue).'
   affected_outputs:
   - vertex detector layout and impact-parameter resolution
   - beam-pipe design near the IP
   - beam-induced background entering the tracker
   - G1 detector geometry
-  replacement_evidence: Kilic et al. nozzle geometry (ref. [27] of SRC_ARXIV_2610_35154); MuCol Report 5 Table 9.1 read in full for
-    the analogue.
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (Kilic deck and MuCol MR7 read in full). Still open: the origin of the 6 cm
+    in the LHmuC study and an LHmuC vertex-detector and beam-pipe layout.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Band unchanged (Phase-0 uniform 2-50 cm). Both superseding records give the same 6 cm; they are not independent evidence of
+    an LHmuC optimum. Conflict record: CONF_NOZZLE_OPENING_ANGLE (also covers the tip distance).'
 - assumption_id: ASM_DET_NOZZLE_MATERIAL
   parameter_id: DET_NOZZLE_MATERIAL_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - DET_NOZZLE_MATERIAL_WS2026_KILIC
+  - DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_KILIC_NOZZLE
+  - SRC_ARXIV_2510_27437
+  range_vs_evidence: 'INSIDE (all candidates confirmed). Phase-0 discrete set {tungsten, INERMET180, tungsten + borated polyethylene}.
+    The LHmuC study names a tungsten nozzle cladded with borated polyethylene (SRC_WS1681458_KILIC_NOZZLE p.4: ''The shielding tungsten
+    nozzle cladded with borated polyethylene is placed to the muon coming side''; DET_NOZZLE_MATERIAL_WS2026_KILIC, DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC),
+    i.e. the member ''tungsten + borated polyethylene'', the same wording as the muLHC (DET_NOZZLE_MATERIAL_MULHC, DET_NOZZLE_CLADDING_MULHC).
+    The IMCC nozzle uses INERMET180 (density 18 g/cm3, MR7 Table G.2, MAT_INERMET180_MR7) with a borated-polyethylene neutron absorber
+    (MAT_BORATED_POLYETHYLENE_MR7). Whether the Kilic ''tungsten'' is pure W or an alloy, its density and the cladding thickness are
+    not stated (MAT_TUNGSTEN_WS2026_KILIC has density null). Set kept unchanged as the scan set.'
   reason_required: Shower containment, neutron moderation, mass and cost of the nozzle depend on the material; a material_id is needed
     for any transport simulation.
   search_summary:
@@ -723,6 +1034,10 @@ assumptions:
     (source access snippet_only or blocked), may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md 1.5). The assumption
     author made no new web requests and did not use WebSearch.
   - Covered by the muon-collider-mdi nozzle/material queries (ASM_DET_NOZZLE_OPENING_ANGLE).
+  - '2026-10-29 (uploads read in full): Kilic et al. p.4 ''We consider use of conical tungsten nozzle, placed around beampipe near interaction
+    point in the LHeC detector'' and ''The shielding tungsten nozzle cladded with borated polyethylene is placed to the muon coming
+    side'' (SRC_WS1681458_KILIC_NOZZLE); MuCol MR7 Table G.2 ''Material composition of nozzle'' (SRC_ARXIV_2510_27437 p.66): EM shower
+    absorber INERMET180 (18 g/cm3) and a borated-polyethylene neutron absorber.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -733,10 +1048,11 @@ assumptions:
   - SRC_ARXIV_2411_02966
   - SRC_ARXIV_2502_00181
   - SRC_ARXIV_2203_08033
-  reason_authoritative_value_missing: SRC_ARXIV_2506_15445 p.13 ('The shielding tungsten nozzle cladded with borated polyethylene',
-    DET_NOZZLE_MATERIAL_MULHC / DET_NOZZLE_CLADDING_MULHC) is a related-machine simulation choice; SRC_ARXIV_2610_35154 names no material.
-    IMCC uses the INERMET180 tungsten alloy (snippet-level) for manufacturability, 'which slightly reduces shielding because of lower
-    density'.
+  - SRC_WS1681458_KILIC_NOZZLE
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2506_15445 p.13 (''The shielding tungsten nozzle cladded with
+    borated polyethylene'', DET_NOZZLE_MATERIAL_MULHC / DET_NOZZLE_CLADDING_MULHC) is a related-machine simulation choice; SRC_ARXIV_2610_35154
+    names no material. IMCC uses the INERMET180 tungsten alloy (snippet-level) for manufacturability, ''which slightly reduces shielding
+    because of lower density''. Superseded on 2026-10-29: see superseded_by and range_vs_evidence.'
   synthetic_model:
     distribution: discrete_set
     minimum: null
@@ -747,31 +1063,61 @@ assumptions:
     - INERMET180
     - tungsten + borated polyethylene
   physical_basis:
-  - 'Electromagnetic showers from decay electrons are contained within a few radiation lengths: X0(W) = 0.35 cm; a tungsten heavy alloy
-    (INERMET180, ~18 g/cm^3 versus 19.3 g/cm^3 for pure W) lengthens X0 by ~7% at much better machinability.'
-  - Borated polyethylene cladding moderates and captures the photo-neutrons produced in the tungsten, which otherwise dominate the neutron
-    flux in the calorimeters.
-  - Material records with densities, X0 and composition belong in parameters/materials/*.yaml (not yet written); this record only names
-    the candidate set.
+  - Electromagnetic showers from decay electrons are contained within a few radiation lengths of a high-Z, high-density absorber. INERMET180
+    (18 g/cm3, MR7 Table G.2, MAT_INERMET180_MR7) is less dense than pure tungsten, which according to MR7 slightly reduces the shielding
+    effectiveness, at much better machinability. The pure-W density (19.3 g/cm3) and X0(W) = 0.35 cm quoted in Phase 0 are handbook
+    values not held in the registry.
+  - 'Borated polyethylene cladding moderates and captures the photo-neutrons produced in the tungsten, which otherwise dominate the
+    neutron flux in the calorimeters (MR7: ''Neutron Absorber'', MAT_BORATED_POLYETHYLENE_MR7).'
+  - 'Material records now exist in parameters/materials/nozzle_materials_addendum.yaml: MAT_TUNGSTEN_WS2026_KILIC (density null, the
+    slides say only ''tungsten''), MAT_INERMET180_MR7 and MAT_BORATED_POLYETHYLENE_MR7; this record only names the candidate set.'
+  - 'Scan set unchanged: the LHmuC study corresponds to the member ''tungsten + borated polyethylene'', the IMCC nozzle to the member
+    INERMET180 with a borated-polyethylene absorber.'
   analogous_systems:
+  - 'LHmuC nozzle study (Kilic et al., SRC_WS1681458_KILIC_NOZZLE p.4, read in full, unrefereed slides): tungsten, cladded with borated
+    polyethylene (DET_NOZZLE_MATERIAL_WS2026_KILIC, DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC, MAT_TUNGSTEN_WS2026_KILIC).'
+  - 'IMCC 10 TeV (MuCol MR7 Table G.2, SRC_ARXIV_2510_27437 p.66, read in full): INERMET180 EM-shower absorber, 18 g/cm3, plus a borated-polyethylene
+    neutron absorber (MAT_INERMET180_MR7, MAT_BORATED_POLYETHYLENE_MR7).'
   - 'muLHC: tungsten nozzle cladded with borated polyethylene - SRC_ARXIV_2506_15445 p.13 (read in full).'
-  - 'MuCol Report 7: ''the nozzle is built mainly from INERMET180, a tungsten alloy, rather than pure tungsten'' - snippet-level, SRC_ARXIV_2510_27437.'
   - 'MuCol Report 5: INERMET180 inner layer, borated polyethylene outer - snippet-level, SRC_ARXIV_2411_02966.'
   - 'MAIA (10 TeV detector): tungsten heavy-alloy inner layer, borated polyethylene outer cladding - snippet-level, SRC_ARXIV_2502_00181.'
-  applicability: Screening only; the choice among the three candidates is open and must be made with a transport simulation and an engineering
-    review.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). DET_NOZZLE_MATERIAL_SYN may be used only to
+    switch among the three candidates in transport-simulation sensitivity studies; no scenario slot may point to it. Baselines: DET_NOZZLE_MATERIAL_WS2026_KILIC
+    (tungsten) with DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC (borated polyethylene) for the LHmuC study; the IMCC materials MAT_INERMET180_MR7
+    and MAT_BORATED_POLYETHYLENE_MR7 as analogues.'
   affected_outputs:
   - beam-induced background spectra (photons, neutrons) in future FLUKA/Geant4 runs
   - nozzle mass, support and cost
   - materials registry entries
-  replacement_evidence: Kilic et al. nozzle study (ref. [27] of SRC_ARXIV_2610_35154) stating the simulated material; vendor data sheet
-    for INERMET180 for the materials file.
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (Kilic deck and MuCol MR7 read in full). Still open: whether the Kilic ''tungsten''
+    is pure W (G4_W) or an alloy, its density, and the cladding composition and thickness (not stated on the slides); a vendor data
+    sheet for INERMET180.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: Set unchanged. superseded_by takes parameter ids only; the material records MAT_TUNGSTEN_WS2026_KILIC, MAT_INERMET180_MR7 and
+    MAT_BORATED_POLYETHYLENE_MR7 (parameters/materials/nozzle_materials_addendum.yaml) are the superseding material evidence. DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC
+    is listed with DET_NOZZLE_MATERIAL_WS2026_KILIC because the set member 'tungsten + borated polyethylene' needs both records.
 - assumption_id: ASM_DET_SOLENOID_FIELD
   parameter_id: DET_SOLENOID_FIELD_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME
+  - DET_SOLENOID_FIELD_ANDRE2022
+  - DET_SOLENOID_FIELD_MAIA
+  - DET_SOLENOID_FIELD_MUSIC
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_02436
+  - SRC_ARXIV_2502_00181
+  - SRC_ARXIV_2601_13189
+  range_vs_evidence: 'INSIDE (the IMCC 5 T at the upper edge). Phase-0 band (2026-10-28): uniform 2-5 T. No LHmuC-specific solenoid
+    field is published: the LHmuC detector is presented as an adaptation of the LHeC detector (SRC_WS1681458_FORTHOMME_DETECTOR), whose
+    inputs are 3.8 T in the Delphes LHeC model (p.13 ''magnet: Bz = 3.8 T'', DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME) and 3
+    T in the updated LHeC detector design (Andre et al. 2022 p.10, DET_SOLENOID_FIELD_ANDRE2022, reduced from 3.5 T, DET_SOLENOID_FIELD_PREVIOUS_ANDRE2022)
+    - an internal LHeC difference, preserved and not averaged. The IMCC 10 TeV concepts use 5 T (MAIA p.17, DET_SOLENOID_FIELD_MAIA;
+    MUSIC p.2, DET_SOLENOID_FIELD_MUSIC) and the 3 TeV design 3.57 T (DET_SOLENOID_FIELD_3TEV_DESIGN_MAIA). The Phase-0 ''LHeC 3.5 T
+    from memory'' is the previous LHeC design value. Scan band re-based on 2026-10-29 to uniform 3-5.5 T.'
   reason_required: Track momentum resolution for TeV-scale final-state muons (sigma(pT)/pT ~ pT/(B L^2)) and the detector envelope depend
     on the solenoid field; no LHmuC value exists.
   search_summary:
@@ -785,6 +1131,10 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (muon-collider-mdi family): ''MAIA MUSIC detector concept muon collider 10 TeV arXiv''; the lhec-erl family did not query
     the LHeC detector solenoid - recorded as a gap.'
+  - '2026-10-29 (uploads read in full): SRC_WS1681458_FORTHOMME_DETECTOR p.13 ''basic assumptions on operational parameters (e.g. magnet:
+    Bz = 3.8 T)'' for the Delphes LHeC model; SRC_ARXIV_2201_02436 p.10 ''the central solenoid providing a field of 3 T'' (updated LHeC
+    detector; previous design 3.5 T); SRC_ARXIV_2502_00181 p.17 (MAIA, 5 T; 3 TeV design 3.57 T) and SRC_ARXIV_2601_13189 p.2 (MUSIC,
+    5 T). No LHmuC-specific solenoid field is stated.'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -795,39 +1145,75 @@ assumptions:
   - SRC_ARXIV_2601_13189
   - SRC_ARXIV_2007_14491
   - SRC_ARXIV_1206_2913
-  reason_authoritative_value_missing: 'SRC_ARXIV_2506_15445 p.12: ''The detector is configured superconducting solenoid magnet (SSM)''
-    - no field (DET_MAGNET_TYPE_MULHC). SRC_ARXIV_2610_35154 p.5 takes the LHeC detector as baseline (''most segments of the baseline
-    LHeC detector can be expected to remain directly applicable'') but the LHeC detector solenoid field was not captured by any snippet
-    of the lhec-erl reconnaissance, and the LHeC CDR/2020 update are blocked. IMCC detector fields are snippet-level.'
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_02436
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2506_15445 p.12: ''The detector is configured superconducting
+    solenoid magnet (SSM)'' - no field (DET_MAGNET_TYPE_MULHC). SRC_ARXIV_2610_35154 p.5 takes the LHeC detector as baseline (''most
+    segments of the baseline LHeC detector can be expected to remain directly applicable'') but the LHeC detector solenoid field was
+    not captured by any snippet of the lhec-erl reconnaissance, and the LHeC CDR/2020 update are blocked. IMCC detector fields are snippet-level.
+    Superseded on 2026-10-29: the LHeC values the LHmuC concept inherits (3 T, 3.8 T) and the IMCC values (5 T) are now read in full;
+    an LHmuC-specific field is still not stated.'
   synthetic_model:
     distribution: uniform
-    minimum: 2.0
-    maximum: 5.0
+    minimum: 3.0
+    maximum: 5.5
     unit: T
   physical_basis:
   - 'Sagitta s = 0.3 B L^2/(8 p): for a 1 TeV muon in B = 3.5 T over L = 1.2 m, s = 0.19 mm, so percent-level TeV momentum resolution
     needs ~10 um hit resolution or a CMS-like muon system with the return yoke (DET_MUON_SYSTEM_OPTION_DIS2026).'
-  - 'Lower bound 2 T: below typical HERA/LHeC-class solenoids; upper bound 5 T: the IMCC 10 TeV detector concepts, the strongest large-bore
-    detector solenoids proposed.'
-  - The field also bends low-energy BIB electrons/positrons and affects nozzle shower leakage - coupling to the nozzle records.
+  - 'Scan band 3-5.5 T (re-based 2026-10-29): lower bound 3 T = the updated LHeC central solenoid (DET_SOLENOID_FIELD_ANDRE2022), the
+    lowest field of any detector concept in the evidence; upper bound 5.5 T = 10 % above the IMCC 10 TeV detectors (5 T, MAIA and MUSIC),
+    the strongest large-bore detector solenoids documented. The Phase-0 lower bound 2 T is dropped because no documented concept uses
+    less than 3 T.'
+  - The LHeC carries two values, 3.8 T in the Delphes card used for physics studies and 3 T in the updated detector design; a fast-simulation
+    study must state which one it uses.
+  - The field also bends low-energy BIB electrons and positrons and affects nozzle shower leakage, coupling this record to the nozzle
+    records.
   analogous_systems:
-  - 'IMCC MAIA 10 TeV: ''an all-silicon tracker inside a 5 T solenoid'' - snippet-level, SRC_ARXIV_2502_00181.'
-  - 'IMCC MUSIC 10 TeV: ''a 5 T superconducting solenoid'' - snippet-level, SRC_ARXIV_2601_13189.'
-  - LHeC detector solenoid (3.5 T from memory, UNSOURCED in this session - not in any fragment; to be read in SRC_ARXIV_2007_14491 or
-    SRC_ARXIV_1206_2913, both blocked).
+  - 'LHeC detector, updated design (Andre et al. 2022, SRC_ARXIV_2201_02436 p.10, read in full): central solenoid ''providing a field
+    of 3 T'' (DET_SOLENOID_FIELD_ANDRE2022); previous design 3.5 T (DET_SOLENOID_FIELD_PREVIOUS_ANDRE2022).'
+  - 'LHeC Delphes model restated on the LHmuC detector deck (SRC_WS1681458_FORTHOMME_DETECTOR p.13, read in full, unrefereed slides):
+    ''magnet: Bz = 3.8 T'' (DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME).'
+  - 'IMCC MAIA 10 TeV (SRC_ARXIV_2502_00181 p.17, read in full): 5 T (DET_SOLENOID_FIELD_MAIA); 3 TeV design 3.57 T (DET_SOLENOID_FIELD_3TEV_DESIGN_MAIA).
+    IMCC MUSIC 10 TeV (SRC_ARXIV_2601_13189 p.2, read in full): 5 T (DET_SOLENOID_FIELD_MUSIC).'
   - CMS-like muon system option named in SRC_ARXIV_2610_35154 p.5 (DET_MUON_SYSTEM_OPTION_DIS2026); CMS field not cited here.
-  applicability: Screening only; general-purpose LHmuC detector concept (LHeC-derived baseline).
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). DET_SOLENOID_FIELD_SYN may be used only to scan
+    the central field over 3-5.5 T in fast-simulation and envelope studies of the LHeC-derived LHmuC detector; no scenario slot may
+    point to it. Baselines: DET_SOLENOID_FIELD_ANDRE2022 (3 T) or DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME (3.8 T) for the LHeC-derived
+    detector, DET_SOLENOID_FIELD_MAIA and DET_SOLENOID_FIELD_MUSIC (5 T) as IMCC analogues; none is an LHmuC design value.'
   affected_outputs:
   - tracker momentum resolution model (fast simulation / Delphes cards)
   - detector envelope and G1 geometry
   - BIB charged-particle trajectories
-  replacement_evidence: LHeC detector chapter read in full (arXiv:2007.14491) and the HELP4CERN detector talk (ref. [26] of SRC_ARXIV_2610_35154).
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (LHeC detector paper and the LHmuC detector deck read in full). Still open:
+    an LHmuC-specific solenoid field (White Paper detector chapter or the HELP4CERN detector design).'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Phase-0 band uniform 2-5 T (2026-10-28) re-based on 2026-10-29 to uniform 3-5.5 T. All superseding values lay inside the Phase-0
+    band. Every superseding record is a related-machine value (imported_related or analogous), not an LHmuC value. Conflict record:
+    CONF_DETECTOR_SOLENOID_FIELD (the LHmuC field stays unknown; results are reported per field; its text quotes the Phase-0 2-5 T band).'
 - assumption_id: ASM_ACC_VFFA_PEAK_FIELD
   parameter_id: ACC_VFFA_PEAK_FIELD_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - ACC_VFFA_PEAK_DIPOLE_FIELD_8T_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA_PEAK_DIPOLE_FIELD_10T_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA_PEAK_FIELD_RELAXED_MAX_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA1_PEAK_FIELD_ON_ORBIT_MUCOLM17
+  - ACC_VFFA4_PEAK_FIELD_ON_ORBIT_MUCOLM17
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_TOPPMUGGLESTONE_VFFA
+  - SRC_DOI_10_5281_ZENODO_15054073
+  range_vs_evidence: 'INSIDE. Phase-0 band (2026-10-28): uniform 3-16 T. HELP4CERN vFFA deck (SRC_WS1681458_TOPPMUGGLESTONE_VFFA slides
+    35-36, a preliminary analytic parameter study for a single arc pair 70 -> 500 GeV, first shown on 13/05/2025): peak dipole field
+    ~8 T at field index 60 /m (excursion ~3 cm), ~10 T at ~44 /m, relaxed variant < 9 T (< 30 /m, < 7 cm). MuCol Milestone 17 Table
+    2.3 (SRC_DOI_10_5281_ZENODO_15054073; analytic lattices, no tracking): 6.93 T on orbit for stage 1 (the F-magnet field) and 13.59
+    T for stage 4 (the reverse-bend D-magnet field) (tests/scientific/test_mucol_m17_vffa.py::test_tabulated_peak_fields_are_f_magnet_stage1_and_d_magnet_stage4);
+    the report''s design limit is the LHC main dipole at 8.3 T, which stage 4 exceeds (::test_lhc_dipole_reference_limit). All on-orbit
+    values lie inside the Phase-0 band. The good-field-region peaks (12.52 T and 29.04 T) are a different quantity and are not compared
+    with this band. No tracked lattice of the LHmuC 70-500 GeV booster exists in either document. Scan band re-based on 2026-10-29 to
+    uniform 5-14 T (on-orbit peak field).'
   reason_required: The vFFA arc field fixes the booster radius/circumference, the magnet technology (NbTi, Nb3Sn, HTS) and the orbit
     excursion; the DIS2026 scheme relies on vFFAG arcs without giving a field.
   search_summary:
@@ -841,6 +1227,11 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (vffa-acceleration family): vFFA optics and muon-acceleration queries (Machida/Kelliher/Lagrange/Rogers, Brooks PRSTAB
     16 084001, IMCC vFFA, RCS vs vFFA comparison tables).'
+  - '2026-10-29 (uploads read in full): SRC_WS1681458_TOPPMUGGLESTONE_VFFA slides 35-36: ''Stable optics with peak dipole field ~8T
+    exist for field gradient of 60'', ''... normalised field gradient ~44/m, stable optics, but dipole field ~10T'', ''Relaxed version
+    allows maximum fields <9 T, field index <30/m, excursion < 7cm''; SRC_DOI_10_5281_ZENODO_15054073 (MuCol Milestone 17) Table 2.3:
+    peak dipole field on orbit 6.93 T (stage 1, 0.06-0.3 TeV) and 13.59 T (stage 4, 1.5-5 TeV), good-field-region peaks 12.52 T and
+    29.04 T; p.10 design limit 8.3 T (LHC main dipoles).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -852,41 +1243,66 @@ assumptions:
   - SRC_DOI_10_1103_PHYSREVSTAB_16_084001
   - SRC_INDICO_STFC_927_5619
   - SRC_JACOW_NAPAC2025_BERG_RCS_CHAIN
-  reason_authoritative_value_missing: SRC_ARXIV_2610_35154 p.4 proposes 'a novel acceleration scheme based on the vertical Fixed-Field
-    Alternating Gradient (vFFAG) principle' with a ~9 km booster (ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026) but no field. SRC_ARXIV_2506_15445
-    p.10 quotes 'alternative gradient bending magnets of 3 T' for the muTRISTAN booster (ACC_BOOSTER_MAX_FIELD_MUTRISTAN_MULHC), a different
-    lattice. IMCC vFFA fields are snippet-level.
+  - SRC_WS1681458_TOPPMUGGLESTONE_VFFA
+  - SRC_DOI_10_5281_ZENODO_15054073
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2610_35154 p.4 proposes ''a novel acceleration scheme based on
+    the vertical Fixed-Field Alternating Gradient (vFFAG) principle'' with a ~9 km booster (ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026) but
+    no field. SRC_ARXIV_2506_15445 p.10 quotes ''alternative gradient bending magnets of 3 T'' for the muTRISTAN booster (ACC_BOOSTER_MAX_FIELD_MUTRISTAN_MULHC),
+    a different lattice. IMCC vFFA fields are snippet-level. Superseded on 2026-10-29: the HELP4CERN vFFA deck and the MuCol M17 report
+    give peak fields (see range_vs_evidence); no tracked LHmuC booster lattice exists.'
   synthetic_model:
     distribution: uniform
-    minimum: 3.0
-    maximum: 16.0
+    minimum: 5.0
+    maximum: 14.0
     unit: T
   physical_basis:
-  - 'Mean bending field for an all-dipole ring: B = (B rho)/rho; with B rho = 3336 T m (1 TeV) and rho = C/(2 pi) = 1432 m for the 9
-    km booster, B_mean = 2.33 T; the peak on-orbit field is higher by the arc fill factor and by the vFFA vertical field excursion (B
-    ~ exp(k y)).'
-  - 'Lower bound 3 T: the muTRISTAN booster magnets quoted by the muLHC paper (a 2 x 3 km linac racetrack with 1 km radius arcs); upper
-    bound 16 T: the IMCC final-stage vFFA limit and the 10 TeV collider-ring dipole field.'
-  - In a vFFA the field rises exponentially with vertical position; the peak field is reached at the extraction orbit and is set by
-    the energy ratio and the excursion (<120 mm per IMCC stage, snippet).
+  - 'Mean bending field for an all-dipole ring: B = (B rho)/rho. With B rho = 1668 T m at 500 GeV (3336 T m at 1 TeV) and rho = C/(2
+    pi) = 1432 m for the ~9 km booster (ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026), B_mean = 1.16 T (2.33 T); the on-orbit peak is higher
+    by the lattice peak-to-mean ratio, 6.6 for MuCol stage 1 (6.93 T against a 1.05 T mean, tests/scientific/test_workshop_decks.py::test_vffa_rigidity_and_mr7_vffa1_mean_bending_field).'
+  - 'Scan band 5-14 T (re-based 2026-10-29): the upper bound is 3 % above the highest documented on-orbit peak (13.59 T, MuCol stage
+    4); the lower bound is 28 % below the lowest (6.93 T, MuCol stage 1) and leaves room for an LHmuC design relaxed below the Krakow
+    ''< 9 T'' variant. The Phase-0 bounds are dropped: 3 T was the muTRISTAN AG booster (not a vFFA) and 16 T a snippet-level IMCC limit
+    never read in full.'
+  - The band is for the on-orbit peak field; the good-field-region peaks (ACC_VFFA1_PEAK_FIELD_GOOD_FIELD_REGION_MUCOLM17 12.52 T, ACC_VFFA4_PEAK_FIELD_GOOD_FIELD_REGION_MUCOLM17
+    29.04 T) are fields at the edge of the good-field region and must not be compared with it.
+  - 'Technology: on-orbit fields above 8.3 T exceed the LHC main-dipole reference adopted as design limit by MuCol M17 (ACC_VFFA_DESIGN_LIMIT_SC_DIPOLE_MUCOLM17),
+    as do stage 4 and the Krakow ~10 T option; any scan point above 8.3 T must be flagged as beyond that limit.'
+  - 'Energy: the Krakow numbers are for 70 -> 500 GeV (ACC_BOOSTER_EXTRACTION_ENERGY_WS2026_TOPPMUGGLESTONE). The ''(to 1 TeV?)'' option
+    (ACC_BOOSTER_EXTRACTION_ENERGY_OPTION_1TEV_WS2026_TOPPMUGGLESTONE) has no field statement; at fixed geometry the rigidity, and with
+    it the on-orbit field, doubles from 500 GeV to 1 TeV, which would leave this band.'
+  - In a vFFA the field rises exponentially with vertical position (B = B0 e^(mZ)); the peak field is reached at the extraction orbit
+    and set by the energy ratio and the excursion, ln(500/70)/m = 3.3 cm at m = 60 /m and 4.9 cm at 40 /m (ACC_VFFA_EXCURSION_IMPLIED_M60_WS2026_TOPPMUGGLESTONE,
+    ACC_VFFA_EXCURSION_IMPLIED_M40_WS2026_TOPPMUGGLESTONE).
   analogous_systems:
+  - 'MuCol Milestone 17 (SRC_DOI_10_5281_ZENODO_15054073 Table 2.3, read in full): stage 1 vFFA 6.93 T on orbit (F magnet), stage 4
+    13.59 T (reverse-bend D magnet); analytic lattices, no tracking; the printed eq. (2.7) appears to contain a typographical error
+    (tests/scientific/test_mucol_m17_vffa.py::test_printed_eq27_inconsistent_with_closed_orbit_geometry; no record uses it).'
+  - 'HELP4CERN vFFA deck (SRC_WS1681458_TOPPMUGGLESTONE_VFFA slides 35-36, read in full, unrefereed slides): ~8 T at 60 /m, ~10 T at
+    ~44 /m, relaxed < 9 T; a preliminary analytic study (''Developed using analytic model in untested region of parameter space'').'
   - 'IMCC (The Muon Collider, 2025): ''the peak dipole fields on orbit are maintained below 8 T in the early-stage vFFA and below 16
     T in the final-stage vFFA'' - snippet-level, SRC_ARXIV_2504_21417.'
   - 'muTRISTAN booster: ''alternative gradient bending magnets of 3 T'' - SRC_ARXIV_2506_15445 p.10 (read in full, imported_related).'
   - 'IMCC RCS chain: normal-conducting dipoles swinging -1.8 to +1.8 T, 16 T superconducting collider ring - snippet-level, SRC_JACOW_NAPAC2025_BERG_RCS_CHAIN
     (listed for context; not vFFA).'
-  applicability: Screening only; LHmuC vFFAG booster concept (DIS2026) and the muLHC vFFA booster option (SRC_ARXIV_2506_15445 section
-    2.2.3).
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). ACC_VFFA_PEAK_FIELD_SYN may be used only to
+    scan the on-orbit peak dipole field over 5-14 T for the 70-500 GeV vFFA booster concept; no scenario slot may point to it. Baselines:
+    the Krakow options (ACC_VFFA_PEAK_DIPOLE_FIELD_8T_WS2026_TOPPMUGGLESTONE, ACC_VFFA_PEAK_DIPOLE_FIELD_10T_WS2026_TOPPMUGGLESTONE,
+    ACC_VFFA_PEAK_FIELD_RELAXED_MAX_WS2026_TOPPMUGGLESTONE; LHmuC, preliminary) and the MuCol M17 stages (6.93 T, 13.59 T; analogous).
+    Not valid for the 1 TeV extraction option.'
   affected_outputs:
   - booster circumference/radius consistency check
   - magnet technology and cost class
   - muon survival during acceleration (ramp-free but path-length dependent)
   - G1 booster layout
-  replacement_evidence: HELP4CERN vFFAG beamline study (ref. [22] of SRC_ARXIV_2610_35154) or IMCC vFFA design papers read in full (arXiv:2504.21417,
-    arXiv:2011.10783).
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (HELP4CERN vFFA deck and MuCol M17 read in full). Still open: a tracked LHmuC
+    70-500 GeV (or 1 TeV) vFFA lattice with its peak field, and a magnet design for it.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Phase-0 band uniform 3-16 T (2026-10-28) re-based on 2026-10-29 to uniform 5-14 T: narrower, but bracketing every documented
+    on-orbit value with margin. The superseding records are a preliminary analytic study (Krakow deck) and analytic lattices for a different
+    machine (MuCol, 0.06-5 TeV); neither is a tracked LHmuC booster lattice (the Krakow deck names the Fixfield tracking code as the
+    next step, ACC_VFFA_TRACKING_CODE_WS2026_TOPPMUGGLESTONE). Conflict record: CONF_VFFA_PEAK_FIELD (field definitions on orbit vs
+    good-field region and F vs D magnet must be stated with every value).'
 - assumption_id: ASM_ACC_RF_FREQUENCY
   parameter_id: ACC_RF_FREQUENCY_SYN
   status: synthetic_assumption
@@ -903,6 +1319,18 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (lhec-erl family): ''PERLE energy recovery linac facility Orsay 500 MeV three-pass arXiv'' and the PERLE PRAB 2024 query;
     no LHmuC RF frequency appeared.'
+  - '2026-10-29 (uploads read in full; no LHmuC RF frequency in any of them): LHeC ERL 801.58 MHz (SRC_ARXIV_2201_02436 Table 2, ACC_ERL_RF_FREQUENCY_ANDRE2022)
+    with a 40 MHz bunch frequency (ACC_ERL_BUNCH_FREQUENCY_ANDRE2022); J-PARC muon linac 324 MHz for RFQ and IH-DTL and 1296 MHz ''spanning
+    DAW and DLS'' (SRC_ARXIV_1901_03047 Fig. 5; ACC_G2_LINAC_RF_FREQUENCY_LOW_ABE2019, ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019), restated
+    in 2026 as RFQ and IH-DTL 324 MHz, DAW-CCL 1296 MHz and DLS 2592 MHz (SRC_WS1681458_NAKAZAWA_LOW_VELOCITY slides 2-5; SOURCE_RFQ_FREQUENCY_MU_OPERATION_WS2026_NAKAZAWA,
+    SOURCE_IHDTL_FREQUENCY_WS2026_NAKAZAWA, SOURCE_JPARC_DAW_CCL_FREQUENCY_WS2026_NAKAZAWA, SOURCE_JPARC_DLS_FREQUENCY_WS2026_NAKAZAWA)
+    and the 2024 prototype RFQ at 324.03 MHz (SRC_ARXIV_2410_11367, SOURCE_RFQ_FREQUENCY_ARITOME2024); IMCC (SRC_ARXIV_2510_27437, committed
+    acceleration records only): linac cryomodules 88 / 264 MHz (ACC_LINAC_CM1_RF_FREQUENCY_FIRST_MR7, ACC_LINAC_CM1_RF_FREQUENCY_SECOND_MR7),
+    RLA1 and RLA2 352 / 1056 MHz (Table E.2; ACC_RLA1_RF_FREQUENCY_FIRST_MR7, ACC_RLA1_RF_FREQUENCY_SECOND_MR7, ACC_RLA2_RF_FREQUENCY_FIRST_MR7,
+    ACC_RLA2_RF_FREQUENCY_SECOND_MR7), RCS1-4 1.3 GHz (Table 5.1; ACC_RCS1_RF_FREQUENCY_MR7 to ACC_RCS4_RF_FREQUENCY_MR7); hybrid-source
+    cooling front end 352 / 704 MHz (SRC_WS1681458_ROGERS_HYBRID_SOURCE; SOURCE_HYBRID_RECT_A1_RF_FREQUENCY_WS2026_ROGERS to SOURCE_HYBRID_RECT_A4_RF_FREQUENCY_WS2026_ROGERS)
+    and the 704 MHz INFN thin-window cavities (SRC_IMCC2026_GIOVE_RF_SYSTEM, SOURCE_COOLING_RF_FREQUENCY_GIOVE2026). The vFFA deck states
+    only that no RF frequency ramping is needed (ACC_VFFA_NO_RF_FREQUENCY_RAMPING_WS2026_TOPPMUGGLESTONE).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -913,9 +1341,18 @@ assumptions:
   - SRC_URL_HAL_02283606
   - SRC_ARXIV_2007_14491
   - SRC_DOI_10_5170_CERN_2004_003_V_1
-  reason_authoritative_value_missing: SRC_ARXIV_2610_35154 p.4 inherits 'a three-pass acceleration to 70 GeV, inherited from the nominal
-    LHeC design' without naming the RF; SRC_ARXIV_2506_15445 section 2.2 gives linac lengths and energy gains, not frequencies. The
-    LHeC/PERLE 801.58 MHz is snippet-level (PERLE PRAB 2024).
+  - SRC_ARXIV_2201_02436
+  - SRC_ARXIV_1901_03047
+  - SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+  - SRC_ARXIV_2410_11367
+  - SRC_ARXIV_2510_27437
+  - SRC_WS1681458_ROGERS_HYBRID_SOURCE
+  - SRC_IMCC2026_GIOVE_RF_SYSTEM
+  - SRC_WS1681458_TOPPMUGGLESTONE_VFFA
+  reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 p.4 inherits ''a three-pass acceleration to 70 GeV, inherited from the nominal
+    LHeC design'' without naming the RF; SRC_ARXIV_2506_15445 section 2.2 gives linac lengths and energy gains, not frequencies. The
+    LHeC/PERLE 801.58 MHz is snippet-level (PERLE PRAB 2024). Status 2026-10-29: still no LHmuC RF frequency; the LHeC ERL value is
+    now read in full (801.58 MHz, SRC_ARXIV_2201_02436 Table 2) and replaces the PERLE snippet as the anchor of the 802 MHz member.'
   synthetic_model:
     distribution: discrete_set
     minimum: 325.0
@@ -928,20 +1365,38 @@ assumptions:
     - 802
     - 1300
   physical_basis:
-  - 'Bunch structure: the muon bunch passage frequency is 1/(250 ns) = 4.0079 MHz when 250 ns is ten 24.95 ns LHC slots (MACHINE_MU_BUNCH_SPACING_DIS2026);
-    an RF frequency must be an integer multiple of it: 400.79 MHz (LHC) = 100 x, 801.58 MHz = 200 x; 1300 MHz is NOT a harmonic of the
-    LHC 40.079 MHz structure (ratio 32.44) and 325/352 MHz are not either - so members of the set are not equally admissible and the
-    check must be made in any scan.'
-  - The 2 mm muon bunch (MACHINE_MU_BUNCH_LENGTH_MULHC) is short compared with every candidate wavelength (23-92 cm), so bunch length
-    does not constrain the choice.
+  - 'Bunch structure: 801.58 MHz = 20 x 40.079 MHz, the LHC bunch frequency (1/24.95 ns = 40.08 MHz, ACC_ERL_BUNCH_FREQUENCY_IMPLIED_ANDRE2022),
+    so an LHeC-type ERL is harmonic with any muon spacing that is a whole number of 24.95 ns slots (250 ns = 10 slots, MACHINE_MU_BUNCH_SPACING_DIS2026;
+    300 ns ~ 12 slots, MACHINE_MU_BUNCH_SPACING_WS2026_FORTHOMME). The LHC main RF (~400.79 MHz = 10 x; the ''Blow-up by 400 MHz RF
+    system'' step of the Damerau-Garoby table, PROTON_LHC_LONGBUNCH_BLOWUP_AFTER_400MHZ_BLOWUP_WS2026_ZIMMERMANN, names it, the exact
+    frequency is not in the registry) is harmonic too; 1300 MHz is NOT a harmonic of 40.079 MHz (ratio 32.44) and neither are 325 or
+    352 MHz - members of the set are not equally admissible and the check must be made in any scan.'
+  - The 2 mm muon bunch (MACHINE_MU_BUNCH_LENGTH_MULHC) is short compared with every candidate wavelength in the set (23-92 cm), so
+    bunch length does not constrain the choice.
+  - 'Front-end harmonic chains in the evidence: J-PARC 324 -> 1296 (4 x) -> 2592 MHz (8 x) and IMCC 352 -> 1056 MHz (3 x, an observation
+    recorded with ACC_RLA1_RF_FREQUENCY_SECOND_MR7) followed by 1.3 GHz RCS cavities. The LHmuC ultra-cold front end (pre-acceleration
+    to 1 GeV, SOURCE_PRE_ACCELERATION_TARGET_ENERGY_DIS2026) would inherit one of these chains; it is a different stage from the 70
+    GeV ERL this record describes.'
   - Lower frequencies give larger apertures and lower wakefields at the cost of gradient and cryomodule length; the LHeC ERL cryomodule
-    design (802 MHz) is the natural inheritance.
+    design (801.58 MHz, ACC_ERL_RF_FREQUENCY_ANDRE2022) is the natural inheritance for the DIS2026 'three-pass acceleration to 70 GeV,
+    inherited from the nominal LHeC design'.
+  - 'Set unchanged on 2026-10-29: 802 MHz stands for the LHeC 801.58 MHz, 352 MHz for the IMCC RLA and hybrid front end, 1300 MHz for
+    the IMCC RCS, 400 MHz for the LHC main RF; 325 MHz remains an unsourced technology-class label and is NOT the J-PARC 324 MHz. Not
+    in the set: 1056, 1296, 2592, 704, 88 and 264 MHz, which belong to front-end, cooling or IMCC-specific stages and need stage-specific
+    records rather than members of this ERL set.'
   analogous_systems:
-  - 'PERLE / LHeC ERL: ''an 801.58 MHz RF frequency'' - snippet-level, SRC_DOI_10_1103_PHYSREVACCELBEAMS_27_031603; ''801.6 MHz cavities''
-    - snippet-level, SRC_URL_HAL_02283606.'
-  - LHC main RF 400.79 MHz (nominal; UNSOURCED in this session, to be read in SRC_DOI_10_5170_CERN_2004_003_V_1, blocked).
-  - '1300 MHz TESLA/ILC-type SRF and 325/352 MHz proton-linac/LEP-type SRF: generic technology classes, not tied to any source in the
-    fragments.'
+  - 'LHeC ERL (SRC_ARXIV_2201_02436 Table 2, read in full): 801.58 MHz (ACC_ERL_RF_FREQUENCY_ANDRE2022). PERLE / LHeC ERL ''an 801.58
+    MHz RF frequency'' - snippet-level, SRC_DOI_10_1103_PHYSREVACCELBEAMS_27_031603; ''801.6 MHz cavities'' - snippet-level, SRC_URL_HAL_02283606.'
+  - 'J-PARC muon linac (read in full): 324 MHz RFQ / IH-DTL and 1296 MHz DAW (Abe et al. 2019 Fig. 5; Nakazawa 2026 slides 2-5; Aritome
+    2024 RFQ 324.03 MHz). The DLS is at 1296 MHz in Abe 2019 (''spanning DAW and DLS'') and at 2592 MHz on the Nakazawa slide 2 - a
+    difference between the two documents, preserved, not averaged.'
+  - 'IMCC (MuCol MR7, SRC_ARXIV_2510_27437, read in full): RLA 352 / 1056 MHz, RCS 1.3 GHz, linac cryomodules 88 / 264 MHz.'
+  - 'Hybrid source and cooling (read in full, unrefereed slides): 352 / 704 MHz rectilinear-cooling cavities (Rogers deck), 704 MHz
+    thin-window cavities near 30 MV/m (Giove 2026, no gradient or breakdown measurement).'
+  - LHC main RF 400.79 MHz (nominal; the exact frequency is UNSOURCED in the registry, to be read in SRC_DOI_10_5170_CERN_2004_003_V_1,
+    blocked).
+  - 1300 MHz TESLA/ILC-type SRF is now also the IMCC RCS frequency (MR7 Table 5.1); 325 MHz remains a generic proton-linac class label
+    not tied to any registry source.
   applicability: Screening only; LHmuC ERL/linac acceleration chain (DIS2026 and muLHC). Members must pass the bunch-harmonic check
     before use.
   affected_outputs:
@@ -949,11 +1404,12 @@ assumptions:
   - cavity gradient class (ACC_RF_GRADIENT_SYN) and linac length
   - cryogenic power estimate
   - G1 linac layout
-  replacement_evidence: LHeC ERL RF parameters read in full (arXiv:2007.14491; PERLE PRAB 27 031603) and the HELP4CERN acceleration
-    study.
+  replacement_evidence: An LHmuC acceleration-chain RF specification (HELP4CERN acceleration study or White Paper), stage by stage (front
+    end, ERL, vFFA booster, main ring). The LHeC ERL RF parameters are now read in full (SRC_ARXIV_2201_02436 Table 2).
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Updated 2026-10-29: kept synthetic; discrete set {325, 352, 400, 802, 1300} MHz unchanged. The J-PARC DLS frequency differs
+    between Abe 2019 (1296 MHz) and Nakazawa 2026 (2592 MHz); preserved, not averaged; no conflict record was written by this role.'
 - assumption_id: ASM_ACC_RF_GRADIENT
   parameter_id: ACC_RF_GRADIENT_SYN
   status: synthetic_assumption
@@ -969,6 +1425,17 @@ assumptions:
     (source access snippet_only or blocked), may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md 1.5). The assumption
     author made no new web requests and did not use WebSearch.
   - Covered by the lhec-erl PERLE/LHeC-ERL queries (ASM_ACC_RF_FREQUENCY); no gradient appeared in snippets.
+  - '2026-10-29 (uploads read in full; no LHmuC gradient in any of them): LHeC ERL acceleration gradient 20.06 MV/m (SRC_ARXIV_2201_02436
+    Table 2, ACC_ERL_GRADIENT_ANDRE2022; ''20 MV/m'' on SRC_WS1681458_FORTHOMME_DETECTOR p.16, ACC_ERL_GRADIENT_LHEC_WS2026_FORTHOMME)
+    with 900 m linacs (ACC_ERL_LINAC_LENGTH_ANDRE2022), 8.25 GeV per linac pass (ACC_ERL_ENERGY_GAIN_PER_LINAC_ANDRE2022) and a five-cell
+    prototype curve annotated ''quench limit'' near 30 MV/m (graph reading, confidence low, ACC_ERL_PROTOTYPE_QUENCH_LIMIT_GRADIENT_ANDRE2022);
+    J-PARC muon linac DAW 5.6 MV/m (Kilpatrick-limited) and DLS ~20 MV/m (SRC_ARXIV_1901_03047; ACC_G2_LINAC_DAW_GRADIENT_ABE2019, ACC_G2_LINAC_DLS_GRADIENT_ABE2019);
+    IMCC (SRC_ARXIV_2510_27437, committed acceleration records): RLA1 / RLA2 15 MV/m at 352 MHz and 25 MV/m at 1056 MHz (Table E.2;
+    ACC_RLA1_RF_GRADIENT_352MHZ_MR7, ACC_RLA1_RF_GRADIENT_1056MHZ_MR7), linac cryomodules 5 / 8 MV/m (ACC_LINAC_CM1_RF_GRADIENT_FIRST_MR7,
+    ACC_LINAC_CM1_RF_GRADIENT_SECOND_MR7), an ''effective average gradient of 4.1 MV/m'' for LINAC + RLA1 at 90 % transmission (ACC_LINAC_RLA1_EFFECTIVE_GRADIENT_MR7)
+    and RCS average gradients over the circumference of 1.06-2.44 MV/m (Table 5.1); hybrid-source cooling cavities 26.4-31.7 MV/m maximum
+    (SRC_WS1681458_ROGERS_HYBRID_SOURCE) and the INFN 704 MHz thin-window cavities near 30 MV/m (SRC_IMCC2026_GIOVE_RF_SYSTEM; no gradient
+    or breakdown measurement, SOURCE_COOLING_RF_BREAKDOWN_DATA_GIOVE2026 is unknown).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -978,9 +1445,16 @@ assumptions:
   - SRC_DOI_10_1103_PHYSREVACCELBEAMS_27_031603
   - SRC_URL_HAL_02283606
   - SRC_ARXIV_2007_14491
+  - SRC_ARXIV_2201_02436
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_1901_03047
+  - SRC_ARXIV_2510_27437
+  - SRC_WS1681458_ROGERS_HYBRID_SOURCE
+  - SRC_IMCC2026_GIOVE_RF_SYSTEM
   reason_authoritative_value_missing: 'No LHmuC source states a gradient. The uploads give real-estate values only indirectly: muLHC
     ERL ''10 GeV per pass'' over ''~1 km'' linacs (SRC_ARXIV_2506_15445 p.7-8), muTRISTAN 31.25 GeV over 3 km linacs (p.6), nucleus
-    deck ''2 x 1 km linacs LHeC racetrack: 10 GeV per linac pass'' (p.6). The LHeC/PERLE cavity gradient was not in any snippet.'
+    deck ''2 x 1 km linacs LHeC racetrack: 10 GeV per linac pass'' (p.6). The LHeC/PERLE cavity gradient was not in any snippet. Status
+    2026-10-29: still no LHmuC gradient; the LHeC ERL cavity gradient (20.06 MV/m) is now read in full.'
   synthetic_model:
     distribution: uniform
     minimum: 10.0
@@ -990,11 +1464,25 @@ assumptions:
   - 'Real-estate gradient implied by the uploads: 10 GeV / 1 km = 10 MV/m (ACC_ERL_ENERGY_GAIN_PER_PASS_MULHC / ACC_ERL_LINAC_LENGTH_MULHC;
     ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL / ACCEL_BOOSTER_LINAC_LENGTH_NUCL) and 31.25 GeV / 3 km = 10.4 MV/m (ACC_BOOSTER_LINAC_ENERGY_GAIN_MUTRISTAN_MULHC
     / ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC) - the lower bound.'
-  - Cavity (active-length) gradients of modern SRF linacs are 20-30 MV/m; the real-estate value is lower by the cryomodule fill factor
-    (~0.5-0.7), so 10-30 MV/m spans both definitions - the record must state which one a model uses.
+  - 'The LHeC ERL that the DIS2026 chain inherits has a real-estate gradient of 8.25 GeV per pass over a 900 m linac = 9.2 MV/m (audit
+    arithmetic on ACC_ERL_ENERGY_GAIN_PER_LINAC_ANDRE2022 and ACC_ERL_LINAC_LENGTH_ANDRE2022) at a cavity gradient of 20.06 MV/m (fill
+    factor 0.46; implied active length 411 m, ACC_ERL_LINAC_ACTIVE_LENGTH_IMPLIED_ANDRE2022): the real-estate value lies 8 % BELOW the
+    band''s 10 MV/m lower edge, the cavity value inside it. A model that reads this record as a real-estate gradient must note that
+    its closest analogue lies outside the band.'
+  - Cavity (active-length) gradients of beta ~ 1 linac structures in the evidence are 15 / 25 MV/m (IMCC RLA at 352 / 1056 MHz), ~20
+    MV/m (J-PARC DLS) and 20.06 MV/m (LHeC ERL), with the LHeC prototype quench limit near 30 MV/m; 10-30 MV/m therefore spans these
+    cavity values and the muLHC / muTRISTAN real-estate values, and the record must state which definition a model uses.
+  - 'Outside the band and belonging to other stages: low-velocity structures (J-PARC DAW 5.6 MV/m, IMCC linac cryomodules 5 / 8 MV/m),
+    the IMCC ''effective average gradient'' of 4.1 MV/m for LINAC + RLA1 (a real-estate value including the arcs) and the ring-average
+    RCS gradients of 1.06-2.44 MV/m; the band applies only to the high-energy linac passes of the LHmuC ERL.'
   - 'Muon decay during acceleration favours high gradient: the survival fraction over a pass is exp(-L_linac/(gamma_mean c tau)), so
     lengthening the linacs at low gradient costs muons.'
   analogous_systems:
+  - 'LHeC ERL (SRC_ARXIV_2201_02436 Table 2, read in full): acceleration gradient 20.06 MV/m (ACC_ERL_GRADIENT_ANDRE2022), 900 m linacs,
+    8.25 GeV per linac pass; ''20 MV/m'' restated on the LHmuC detector deck (ACC_ERL_GRADIENT_LHEC_WS2026_FORTHOMME).'
+  - 'IMCC (MuCol MR7, SRC_ARXIV_2510_27437, read in full): RLA 15 / 25 MV/m (352 / 1056 MHz), linac cryomodules 5 / 8 MV/m, effective
+    average 4.1 MV/m for LINAC + RLA1, RCS average 1.06-2.44 MV/m.'
+  - 'J-PARC muon linac (Abe et al. 2019, SRC_ARXIV_1901_03047, read in full): DAW 5.6 MV/m, DLS ~20 MV/m.'
   - 'muLHC ERL booster: 10 GeV per pass over ~1 km linacs (SRC_ARXIV_2506_15445 p.7-8, read in full).'
   - 'muTRISTAN booster: 31.25 GeV over 3 km linacs (SRC_ARXIV_2506_15445 p.6, read in full; corrected from 30 GeV).'
   - 'PERLE: 82.2 MeV per linac from two four-cavity cryomodules - snippet-level, SRC_DOI_10_1103_PHYSREVACCELBEAMS_27_031603 (cavity
@@ -1005,13 +1493,31 @@ assumptions:
   - muon survival through acceleration (with ACC_BOOSTER_SURVIVAL_* records)
   - RF power and cryogenic load
   - G1 linac layout
-  replacement_evidence: LHeC ERL cryomodule parameters read in full (arXiv:2007.14491) and the HELP4CERN acceleration study.
+  replacement_evidence: An LHmuC ERL / linac RF specification (HELP4CERN acceleration study or White Paper) stating cavity and real-estate
+    gradients. The LHeC ERL cryomodule parameters are now read in full (SRC_ARXIV_2201_02436 Table 2).
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Updated 2026-10-29: kept synthetic; band unchanged (uniform 10-30 MV/m). The LHeC real-estate gradient (9.2 MV/m) falls 8
+    % below the lower edge; flagged to the lead for a decision rather than re-based by this role.'
 - assumption_id: ASM_SOURCE_MUONIUM_FORMATION_FRACTION
   parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013
+  - SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_ARXIV_1306_3810
+  - SRC_ARXIV_2006_01947
+  range_vs_evidence: 'INSIDE. Phase-0 band (2026-10-28): uniform 0.3-0.7. Two measurements on different aerogel samples: 0.52
+    +- 0.01 (Bakule et al. 2013, MuSR on three non-ablated aerogel samples, SRC_ARXIV_1306_3810 p.3) and 0.655 +- 0.018 (Beare et al.
+    2020, all aerogel targets of that study combined - laser-ablated and flat, silica and PMSQ, p.23 - Eq. (4) p.25, SRC_ARXIV_2006_01947).
+    They differ by 6.6 sigma with both uncertainties
+    (7.5 sigma with Beare''s alone; tests/scientific/test_batch9_documents.py::test_bakule2013_formation_fraction_vs_beare2020_combined_significance,
+    tests/scientific/test_workshop_decks.py::test_muonium_formation_fraction_two_values_are_incompatible) and are kept as separate baselines,
+    never averaged (Beare et al.: ''Although the discrepancy of the two muonium fractions is not understood well, it does not affect
+    the muonium emission rates because they were measured independently''). The 0.52 is the value used downstream by Abe et al. 2019,
+    muTRISTAN 2022, the Zhang deck and Aritome et al. 2024. Scan band re-based on 2026-10-29 to uniform 0.4-0.75.'
   reason_required: The ultra-cold mu+ yield factorises as muon stopping x muonium formation x vacuum emission x laser ionisation; the
     formation fraction is the first unknown factor for the LHmuC source model.
   search_summary:
@@ -1025,6 +1531,12 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Searched (ultracold-source family): J-PARC ultra-slow muon, laser-ablated aerogel muonium, hot tungsten muonium and hybrid target
     queries.'
+  - '2026-10-29 (uploads read in full): Bakule et al. 2013 (SRC_ARXIV_1306_3810 p.3): ''the fraction of muonium formed in the three
+    aerogel samples was 0.52 +- 0.01'' (MuSR); Beare et al. 2020 (SRC_ARXIV_2006_01947 p.25): ''f_Mu = 2A_Mu / A_0 = 0.655 +- 0.018'',
+    larger than ''the one obtained in the past study (0.52 +- 0.01)''. The 0.52 is used by SOURCE_MUONIUM_FORMATION_PROBABILITY_ABE2019,
+    SOURCE_MUONIUM_FORMATION_FRACTION_MUTRISTAN2022, SOURCE_MUONIUM_FORMATION_FRACTION_TRIUMF_WS2026_ZHANG and SOURCE_MUONIUM_CONVERSION_EFF_ARITOME2024.
+    The hybrid-target paper (SRC_ARXIV_2605_25580) assumes unit muon-to-muonium conversion (SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026
+    is unknown).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -1036,40 +1548,81 @@ assumptions:
   - SRC_DOI_10_1103_PHYSREVLETT_74_4811
   - SRC_ARXIV_2605_25580
   - SRC_ARXIV_2410_11367
-  reason_authoritative_value_missing: SRC_ARXIV_2610_35154 p.3-4 describes the J-PARC/KEK ultra-cold source and names aerogel slabs,
-    hot tungsten wires and a hybrid target (SOURCE_MUONIUM_TARGET_OPTIONS_DIS2026) but gives no formation fraction, only a global '5%
-    of the muTRISTAN yields' assumption (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026). The measured aerogel value is snippet-level
-    and target-specific.
+  - SRC_ARXIV_1306_3810
+  - SRC_WS1681458_ZHANG_MUONIUM
+  - SRC_ARXIV_1901_03047
+  - SRC_ARXIV_2201_06664
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2610_35154 p.3-4 describes the J-PARC/KEK ultra-cold source and
+    names aerogel slabs, hot tungsten wires and a hybrid target (SOURCE_MUONIUM_TARGET_OPTIONS_DIS2026) but gives no formation fraction,
+    only a global ''5% of the muTRISTAN yields'' assumption (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026). The measured aerogel value
+    is snippet-level and target-specific. Superseded on 2026-10-29: two measured aerogel values now exist (see range_vs_evidence);
+    no LHmuC target has been chosen.'
   synthetic_model:
     distribution: uniform
-    minimum: 0.3
-    maximum: 0.7
+    minimum: 0.4
+    maximum: 0.75
     unit: dimensionless
   physical_basis:
   - Formation fraction in the bulk is not the fraction emitted into vacuum (a separate, smaller factor governed by diffusion to the
     laser-ablated surface) and not the ionisation efficiency (SOURCE_LASER_IONISATION_EFFICIENCY_SYN); the three must not be conflated.
-  - Range 0.3-0.7 brackets the measured (65.5 +- 1.8)% for laser-ablated silica aerogel and allows for lower fractions in hot-tungsten
-    or hybrid targets whose values were not captured.
-  - The fraction enters the source yield linearly, so the range maps to a factor ~2 on the muon rate and on the luminosity.
+  - 'Scan band 0.4-0.75 (re-based 2026-10-29) brackets both aerogel measurements by at least 5 sigma of either (0.52 +- 0.01
+    lies 12 sigma above 0.40; 0.655 +- 0.018 lies 5.3 sigma below 0.75). The two measurements are 6.6 sigma apart and are never averaged:
+    a scan must report results for each measured value separately as well as over the band.'
+  - The fraction enters the source yield linearly, so the band maps to a factor ~1.9 on the muon rate and on the luminosity.
+  - 'The band is for silica-aerogel targets only. The fraction is strongly material dependent: Bakule et al. 2013 p.3 report 0.21 +-
+    0.01 for porous silica (SOURCE_MUONIUM_FORMATION_FRACTION_POROUS_SILICA_BAKULE2013) and restate 0.64 +- 0.03 for silica powder (SOURCE_MUONIUM_FORMATION_FRACTION_SILICA_POWDER_BAKULE2013);
+    hot-tungsten targets have no fraction in the registry, and the hybrid target (Sakaki et al. 2026) assumes unit conversion without
+    a measurement.'
   analogous_systems:
-  - 'Laser-ablated silica aerogel (J-PARC/TRIUMF measurement): ''a muonium formation fraction of (65.5 +- 1.8)%'' - snippet-level, SRC_ARXIV_2006_01947.'
+  - 'Bakule et al. 2013 (SRC_ARXIV_1306_3810 p.3, read in full): 0.52 +- 0.01, MuSR, three non-ablated hydrophobic aerogel samples (SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013);
+    cited as the source of the 0.52 by Beare et al. 2020 (ref. [14]) and Aritome et al. 2024 (ref. [21]); Abe et al. 2019 (p.9), muTRISTAN
+    (p.7) and the Zhang deck (p.20, ''measurement from TRIUMF'') give no reference for it, so for them the origin is inferred.'
+  - 'Beare et al. 2020 (SRC_ARXIV_2006_01947 p.25, read in full; previously snippet-level): 0.655 +- 0.018, all aerogel targets of that
+    study combined (laser-ablated and flat, silica and PMSQ: ''All the aerogel targets (even those composed of PMSQ instead of silica)
+    yielded the same muonium amplitudes ... therefore all such data were combined'', p.23) (SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020).'
   - Laser-ablated aerogel emission enhancement 'at least 8x (300 um hole pitch)' - snippet-level, SRC_ARXIV_1407_8248 (emission, not
     formation).
   - Hot tungsten foil (2300 K) thermal muonium, PRL 74 4811 - snippet-level, SRC_DOI_10_1103_PHYSREVLETT_74_4811 (no fraction quoted).
-  applicability: Screening only; LHmuC ultra-cold mu+ source model (aerogel-type target). Hot-tungsten and hybrid targets need their
-    own records once sourced.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). SOURCE_MUONIUM_FORMATION_FRACTION_SYN may be
+    used only to scan the formation fraction over 0.4-0.75 for silica-aerogel targets; no scenario slot may point to it. Baselines:
+    the two measurements, carried as separate scenarios or as a two-valued uncertainty, never their average.'
   affected_outputs:
   - muon source yield chain and the 5%-of-muTRISTAN assumption
   - muon bunch population and luminosity scenarios
   - proton-driver power requirement
-  replacement_evidence: Published formation/emission fractions for the chosen LHmuC target (J-PARC g-2/EDM and muTRISTAN source papers
-    read in full; hybrid-target paper arXiv:2605.25580).
+  replacement_evidence: 'Fulfilled in part on 2026-10-29 (both aerogel measurements read in full). Still open: the reason for the 0.52
+    / 0.655 discrepancy (different samples and methods according to Beare et al.) and a measured fraction for the target the LHmuC source
+    would use (aerogel, hot tungsten or hybrid).'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: 'Phase-0 band uniform 0.3-0.7 (2026-10-28) re-based on 2026-10-29 to uniform 0.4-0.75. Both measured values lay inside the
+    Phase-0 band. Conflict record: CONF_MUONIUM_FORMATION_FRACTION (two measurements kept separate by target sample; published J-PARC
+    and muTRISTAN budgets are reproduced with 0.52 exactly as published).'
 - assumption_id: ASM_SOURCE_LASER_IONISATION_EFFICIENCY
   parameter_id: SOURCE_LASER_IONISATION_EFFICIENCY_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG
+  - SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG
+  - SOURCE_LASER_IONISATION_EFF_CALC_ABE2019
+  - SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_ZHANG_MUONIUM
+  - SRC_ARXIV_1901_03047
+  - SRC_ARXIV_2410_11367
+  range_vs_evidence: 'OUTSIDE (below) for the demonstrated scheme. Phase-0 band (2026-10-28): log-uniform 1e-3 - 1. The 244 nm (1S-2S
+    spectroscopy laser, 1.5 mJ) scheme used in the J-PARC tests has a laser-ionisation efficiency of ~1e-6 ''from laser simulation''
+    (Zhang deck p.10, SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG; Aritome et al. simulate 7e-6 - 6e-5 for 0.5-1.3 mJ, SOURCE_LASER_IONISATION_EFF_SIM_MIN_ARITOME2024,
+    SOURCE_LASER_IONISATION_EFF_SIM_MAX_ARITOME2024): three decades below the Phase-0 lower bound. The 122 nm + 355 nm design values
+    lie inside: 0.73 calculated by Abe et al. 2019 from transition rates and photon density (a calculation, not a measurement; SOURCE_LASER_IONISATION_EFF_CALC_ABE2019)
+    and the same 0.73 in the muTRISTAN budget restated on the Zhang deck p.20 (marked as pending updates; SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG);
+    Aritome et al. project ''around 10%'' (SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024). The measured end-to-end chain
+    (Aritome 2024) is 2.1e-8 ultra-slow mu+ per surface muon at 100 keV, a factor ~2.5e6 below the muTRISTAN post-stopping budget 0.137
+    and ~1.2e5 below the J-PARC g-2 target 2.6e-3 per surface muon (tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain,
+    ::test_zhang_hline_chain_and_mutristan_budget; tests/scientific/test_batch7_documents.py::test_abe2019_vs_zhang_g2_target_chain_consistency).
+    Calibration lesson: the Phase-0 lower bound 1e-3 was set by what the DIS2026 yield assumption needs, not by what has been demonstrated;
+    a screening band must bracket the demonstrated state of the art. Scan band re-based on 2026-10-29 to log-uniform 1e-7 - 1.'
   reason_required: The ionisation step converts emitted muonium into ultra-cold mu+; its efficiency multiplies every source yield and
     is undocumented for the LHmuC.
   search_summary:
@@ -1082,6 +1635,12 @@ assumptions:
     (source access snippet_only or blocked), may not back reported_lhmuc and is capped at confidence medium (CLAUDE.md 1.5). The assumption
     author made no new web requests and did not use WebSearch.
   - 'Searched (ultracold-source family): Lyman-alpha laser ionisation of muonium, J-PARC USM efficiency, muTRISTAN source queries.'
+  - '2026-10-29 (uploads read in full): Zhang deck (SRC_WS1681458_ZHANG_MUONIUM) p.10 ''Laser ionization | ~10^-6 (from laser simulation)
+    | 0.19 (244 nm, 1.5 mJ)'' and p.20 the muTRISTAN budget ''0.73: 122 nm laser ionisation efficiency (100 uJ covering all the spatial
+    muon distributions, followed-by 355 nm)''; Abe et al. 2019 (SRC_ARXIV_1901_03047 p.8): ''The ionization efficiency was calculated
+    to be 73% based on the transition rates given by theoretical excitation and dissociation cross sections multiplied with the expected
+    laser photon density''; Aritome et al. 2024 (SRC_ARXIV_2410_11367) simulate 7e-6 - 6e-5 for the 244 nm spectroscopy laser and project
+    around 10 % for dedicated 122 and 355 nm sources; Sakaki et al. 2026 (SRC_ARXIV_2605_25580) adopt 0.73 (SOURCE_LASER_IONISATION_EFF_SINGLE_MU_SAKAKI2026).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -1094,43 +1653,90 @@ assumptions:
   - SRC_URL_INSPIRE_FILES_6103970C
   - SRC_URL_APS_PRAB_29_093201_NAKAZAWA
   - SRC_ARXIV_2410_11367
-  reason_authoritative_value_missing: No LHmuC source gives it. Snippets give only a theoretical ceiling ('can reach 100% in principle',
-    SRC_ARXIV_2601_15818) and a demonstrated total cooled-muon efficiency of 1e-7 per mu+ with a 244 nm spectroscopy laser 'not designed
-    for efficient ionization' (SRC_URL_KEK_INDICO_346_HOKKAIDO_2026), which is a product of several factors, not the ionisation efficiency
-    alone.
+  - SRC_WS1681458_ZHANG_MUONIUM
+  - SRC_ARXIV_1901_03047
+  - SRC_ARXIV_2605_25580
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): No LHmuC source gives it. Snippets give only a theoretical ceiling (''can
+    reach 100% in principle'', SRC_ARXIV_2601_15818) and a demonstrated total cooled-muon efficiency of 1e-7 per mu+ with a 244 nm spectroscopy
+    laser ''not designed for efficient ionization'' (SRC_URL_KEK_INDICO_346_HOKKAIDO_2026), which is a product of several factors, not
+    the ionisation efficiency alone. Superseded on 2026-10-29: the simulated efficiency of the demonstrated 244 nm scheme and the calculated
+    122 nm design value are now read in full (see range_vs_evidence); no MEASURED 122 nm ionisation efficiency exists.'
   synthetic_model:
     distribution: log_uniform
-    minimum: 0.001
+    minimum: 1.0e-07
     maximum: 1.0
     unit: dimensionless
   physical_basis:
   - Two-photon resonant ionisation (122 nm Lyman-alpha 1S-2P + 355 nm) saturates when the Lyman-alpha pulse energy exceeds the saturation
-    fluence within the laser-muonium overlap volume and time; the efficiency is therefore laser-power and timing limited, between well
-    below 1% today and the theoretical unity.
-  - Only ratios spanning decades are defensible, hence a log-uniform prior over three decades; the lower bound 1e-3 is where the DIS2026
-    yield assumption (5% of muTRISTAN) could no longer be met with any plausible formation fraction.
+    fluence within the laser-muonium overlap volume and time; the efficiency is therefore laser-power and timing limited, between far
+    below 1 % today and the theoretical unity.
+  - 'Scan band log-uniform 1e-7 - 1 (seven decades, re-based 2026-10-29): the lower bound lies one decade below the ~1e-6 simulated
+    for the 244 nm, 1.5 mJ scheme actually used at J-PARC (and below the 7e-6 - 6e-5 simulated by Aritome et al. for 0.5-1.3 mJ); the
+    upper bound is the theoretical unity; the 122 + 355 nm design values (0.73 calculated, ~0.1 projected) lie inside. Log-uniform because
+    the evidence spans six decades and only ratios are defensible.'
   - USM production efficiency = ionisation efficiency x muonium production efficiency (factorisation quoted in SRC_URL_KEK_INDICO_346_HOKKAIDO_2026).
+  - 'Definitions differ: Aritome et al. define the efficiency relative to all emitted muonium including decay loss, Abe et al. from
+    transition rates and photon density (SOURCE_LASER_IONISATION_EFF_CALC_ABE2019 notes), so the values are not strictly comparable;
+    a scan must state the definition it uses.'
+  - 'End-to-end measurement (Aritome 2024): 2.1e-8 ultra-slow mu+ per surface muon at 100 keV and 4.2e-8 at 5.7 keV; the 5.7 keV yield
+    divided by the pre-ionisation product 0.38 x 0.52 x 0.13 x 0.81 = 0.0208 implies an ionisation-and-transport factor of ~2.0e-6
+    (test band 1.5e-6 - 2.5e-6; tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain).'
   analogous_systems:
+  - 'J-PARC 244 nm scheme (Zhang deck p.10, SRC_WS1681458_ZHANG_MUONIUM, read in full, unrefereed slides): ~1e-6 ''from laser simulation''
+    (SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG); Aritome et al. 2024 (SRC_ARXIV_2410_11367, read in full): simulated 7e-6 - 6e-5
+    (SOURCE_LASER_IONISATION_EFF_SIM_MIN_ARITOME2024, SOURCE_LASER_IONISATION_EFF_SIM_MAX_ARITOME2024), projected ~0.1 for 122 + 355
+    nm (SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024).'
+  - '122 nm + 355 nm design: 0.73 calculated (Abe et al. 2019 p.8, SRC_ARXIV_1901_03047, read in full; SOURCE_LASER_IONISATION_EFF_CALC_ABE2019);
+    the same 0.73 in the muTRISTAN budget (SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG, SOURCE_LASER_IONISATION_EFF_MUTRISTAN2022)
+    and in Sakaki et al. 2026 (SOURCE_LASER_IONISATION_EFF_SINGLE_MU_SAKAKI2026); 0.114 implied by the Zhang g-2 target column (SOURCE_LASER_IONISATION_EFF_IMPLIED_G2_TARGET_WS2026_ZHANG).'
   - 'Review of thermal-muonium laser ionisation: ''122 nm + 355 nm, 2 ns pulses, 1S-2P resonant two-photon'' and ''ionization efficiency
     can reach 100% in principle'' - snippet-level, SRC_ARXIV_2601_15818.'
   - 'J-PARC 2026 talk: cooled-muon production efficiency 1e-7 per mu+ with a non-optimised 244 nm laser - snippet-level, SRC_URL_KEK_INDICO_346_HOKKAIDO_2026
     (total, not ionisation-only).'
   - Muonium ionisation rate 'up to about 1e5 per second, laser-energy dependent' - snippet-level, SRC_URL_INDICO_IHEP_24109_KAMIOKA_MIP2025.
   - RIKEN all-solid-state 122.088 nm Lyman-alpha laser - snippet-level, SRC_URL_INSPIRE_FILES_6103970C.
-  applicability: Screening only; LHmuC ultra-cold mu+ source model. The value is a prior for sensitivity studies, not a performance
-    claim.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). SOURCE_LASER_IONISATION_EFFICIENCY_SYN may be
+    used only to scan the ionisation efficiency log-uniformly over 1e-7 - 1; no scenario slot may point to it. The band spans two laser
+    schemes and every scan point must be labelled with the one it represents: the demonstrated 244 nm scheme (~1e-6 simulated, SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG;
+    lower decades) and the 122 + 355 nm design (0.73 calculated, SOURCE_LASER_IONISATION_EFF_CALC_ABE2019 and SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG;
+    ~0.1 projected, SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024). The baselines are kept separate and the demonstrated
+    values are never extrapolated to 122 nm by hand; the gap between them is a technology risk, not an uncertainty to be averaged.'
   affected_outputs:
   - muon source yield and the 5%-of-muTRISTAN assumption
   - muon bunch population, collision rate and luminosity scenarios
   - laser system requirements
-  replacement_evidence: Measured ionisation efficiency of the J-PARC/KEK ultra-slow muon source with the dedicated Lyman-alpha laser
-    (papers read in full), or the muTRISTAN source design value.
+  replacement_evidence: 'Fulfilled in part on 2026-10-29. Still open: a MEASURED ionisation efficiency with the dedicated 122 nm (Lyman-alpha)
+    + 355 nm laser at J-PARC, or the muTRISTAN source design value after the ''pending updates'' noted on the Zhang deck.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: Phase-0 band log-uniform 1e-3 - 1 (2026-10-28) re-based on 2026-10-29 to log-uniform 1e-7 - 1. The ~1e-6 for the 244 nm scheme
+    is a laser SIMULATION for the scheme used in the measurement, not a direct measurement of the ionisation step; the measured end-to-end
+    chain is 2.1e-8 per surface muon. SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024 is listed in superseded_by in addition
+    to the three 2026-10-29 baseline records because CONF_LASER_IONISATION_EFFICIENCY makes the ~0.1 projection the reference case for
+    LHmuC source-rate estimates (the 0.73 being flagged as pending updates by its originator). That conflict record requires every
+    scan band to state the laser scheme it represents and results drawn from a band spanning both schemes to be reported per scheme;
+    this record brackets both schemes, as the 2026-10-29 re-base requires, and therefore makes the per-point scheme label mandatory
+    (see applicability). (Description of the conflict record corrected by the registry-stage verifier, 2026-10-29.)
 - assumption_id: ASM_MACHINE_MUON_POLARISATION
   parameter_id: MACHINE_MUON_POLARISATION_SYN
-  status: synthetic_assumption
+  status: superseded_by_evidence
+  superseded_by:
+  - MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  - MACHINE_MUON_POLARISATION_ABE2019
+  superseded_on: '2026-10-29'
+  superseding_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_2201_06664
+  - SRC_ARXIV_1901_03047
+  range_vs_evidence: 'INSIDE (the muTRISTAN value at the upper edge). Phase-0 band (2026-10-28): uniform 0-0.8. The LHmuC beam set assumes
+    50 % (''polarisation: assuming 50%'', Forthomme p.17, MACHINE_MUON_POLARISATION_WS2026_FORTHOMME - an assumption of the proponents,
+    not a demonstrated value). J-PARC g-2/EDM designs for 50 %, the maximum after the statistical hyperfine distribution in the muonium
+    atom (Abe et al. 2019 Table 1 and p.7, MACHINE_MUON_POLARISATION_ABE2019, SOURCE_MUONIUM_POLARISATION_MAX_ABE2019). muTRISTAN assumes
+    0.8 with a ~0.3 T longitudinal field during muonium formation (Hamada et al. 2022 p.10, MACHINE_MUON_POLARISATION_MUTRISTAN2022,
+    explicitly an assumption; worst case 0.25, SOURCE_MUON_POLARISATION_WORST_CASE_MUTRISTAN2022). No measured polarisation after laser
+    ionisation and re-acceleration exists (SOURCE_MUONIUM_POLARISATION_IN_VACUUM_BEARE2020 is unknown). Band kept unchanged as the scan
+    band; 0 (unpolarised) stays a physical value inside it.'
   reason_required: Charged-current and electroweak cross sections scale with the lepton polarisation; the DIS2026 proceedings only say
     high polarisation 'might also be feasible'.
   search_summary:
@@ -1144,6 +1750,12 @@ assumptions:
     author made no new web requests and did not use WebSearch.
   - 'Checked the uploads (DIS2026 p.4; Khanpour p.17) and grep of all fragments for ''polari''/''spin'': no numeric muon polarisation
     found in any family.'
+  - '2026-10-29 (uploads read in full): Forthomme LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17) ''polarisation: assuming 50%'';
+    muTRISTAN (SRC_ARXIV_2201_06664 p.10): ''we assume in this work that P_mu+ = 0.8 can be obtained'' under a magnetic field of order
+    0.3 T in the longitudinal direction; J-PARC g-2/EDM (SRC_ARXIV_1901_03047 Table 1 and p.7): 50 %, ''The maximum polarization is
+    50% after the statistical spin distribution among hyperfine states settles in the Mu atom''; MuIC (SRC_ARXIV_2203_06258 p.11): ~20
+    % at production and up to 50 % with energy selection, for a proton-driver source (MACHINE_MU_POLARISATION_AT_PRODUCTION_MUIC2022,
+    MACHINE_MU_POLARISATION_MAX_ENERGY_SELECTED_MUIC2022).'
   sources_inspected:
   - SRC_ARXIV_2610_35154
   - SRC_ARXIV_2506_15445
@@ -1154,35 +1766,47 @@ assumptions:
   - SRC_ARXIV_2201_06664
   - SRC_ARXIV_2406_02647
   - SRC_ARXIV_2601_15818
-  reason_authoritative_value_missing: 'SRC_ARXIV_2610_35154 p.4: ''high polarisation of the mu+ beam might also be feasible [2]'' -
-    no value (SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026). SRC_ARXIV_2506_15445 does not discuss polarisation; SRC_WS1681458_KHANPOUR_GAMMAGAMMA
-    p.17 quotes unpolarised rates. No fragment of the ultracold-source or mulhc-mutristan families quotes a polarisation value.'
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  - SRC_ARXIV_1901_03047
+  - SRC_ARXIV_2203_06258
+  reason_authoritative_value_missing: 'Phase 0 (2026-10-28): SRC_ARXIV_2610_35154 p.4: ''high polarisation of the mu+ beam might also
+    be feasible [2]'' - no value (SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026). SRC_ARXIV_2506_15445 does not discuss polarisation; SRC_WS1681458_KHANPOUR_GAMMAGAMMA
+    p.17 quotes unpolarised rates. No fragment of the ultracold-source or mulhc-mutristan families quotes a polarisation value. Superseded
+    on 2026-10-29: the LHmuC beam set now assumes 50 %, the related designs 50 % (J-PARC) and 80 % (muTRISTAN), all assumptions or design
+    values; no measured polarisation after ionisation and re-acceleration exists.'
   synthetic_model:
     distribution: uniform
     minimum: 0.0
     maximum: 0.8
     unit: dimensionless
   physical_basis:
-  - Surface mu+ from pi+ decay at rest are fully polarised (two-body decay kinematics); formation of muonium and thermalisation partly
-    depolarise the muon (hyperfine mixing in the muonium ground state leaves on average half of the muon polarisation in zero field),
-    so an ultra-cold source starts below unity.
+  - Surface mu+ from pi+ decay at rest are fully polarised (SOURCE_SURFACE_MU_POLARISATION_ABE2019); in zero field the muonium hyperfine
+    distribution leaves at most 50 % (SOURCE_MUONIUM_POLARISATION_MAX_ABE2019), and muTRISTAN argues that a ~0.3 T longitudinal field
+    preserves more (0.8 assumed, 0.25 worst case), so an ultra-cold source starts below unity.
   - Spin transport through acceleration to 1 TeV (spin tune a*gamma ~ 11 at 1 TeV) and storage over ~20 ms must preserve the polarisation;
     no study exists for the LHmuC chain.
-  - 0 (unpolarised) is a physical value inside the range; 0.8 is an optimistic upper bound below the surface-muon limit.
+  - 0 (unpolarised) is a physical value inside the band; 0.8, the muTRISTAN assumption, is the highest value in any source and the upper
+    bound.
   - 'Physics impact: charged-current DIS cross sections scale as (1 +- P) for the lepton helicity, and electroweak asymmetries are proportional
     to P.'
   analogous_systems:
-  - J-PARC ultra-slow muon source (muonium ionisation) - polarisation after re-acceleration not captured in any snippet of the ultracold-source
-    family.
+  - 'LHmuC beam set (SRC_WS1681458_FORTHOMME_DETECTOR p.17, read in full, unrefereed slides): 50 % assumed (MACHINE_MUON_POLARISATION_WS2026_FORTHOMME).'
+  - 'J-PARC g-2/EDM design (SRC_ARXIV_1901_03047 Table 1, read in full): 50 % (MACHINE_MUON_POLARISATION_ABE2019); muTRISTAN (SRC_ARXIV_2201_06664
+    p.10, read in full): 0.8 assumed (MACHINE_MUON_POLARISATION_MUTRISTAN2022); MuIC proton-driver source (SRC_ARXIV_2203_06258 p.11,
+    read in full): ~0.2 at production, up to 0.5 with energy selection.'
   - 'HERA: longitudinally polarised e+/e- beams of order 30-40% (from memory, UNSOURCED in this session) - listed only as the related
     e-p precedent.'
-  applicability: Screening only; LHmuC mu+ beam. Any physics projection using P > 0 must state this assumption explicitly.
+  applicability: 'Scan variable only (assumption superseded by evidence on 2026-10-29). MACHINE_MUON_POLARISATION_SYN may be used only
+    to scan P over 0-0.8 in physics-sensitivity studies; no scenario slot may point to it. Baselines: MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+    (0.5, an LHmuC assumption), with the J-PARC (0.5) and muTRISTAN (0.8) design assumptions as related values. Any physics projection
+    using P > 0 must state which one it uses.'
   affected_outputs:
   - charged-current and electroweak cross-section projections
   - two-photon and Higgs-coupling benchmark yields (unpolarised baselines in the decks)
   - spin-tracking requirements in the booster/main ring
-  replacement_evidence: Ref. [2] of SRC_ARXIV_2610_35154 (the muTRISTAN proposal) read in full for the source polarisation, and an LHmuC
-    spin-transport study.
+  replacement_evidence: 'The Phase-0 request (muTRISTAN proposal read in full) is fulfilled. Still open: a measured polarisation of
+    laser-ionised, re-accelerated muons and an LHmuC spin-transport study through the booster and the main ring.'
   sensitivity_analysis: not_started
   date_added: '2026-10-28'
-  notes: null
+  notes: Band unchanged (Phase-0 uniform 0-0.8); every superseding value lies inside it (0.8 at the upper edge). All three superseding
+    values are assumptions or design targets, not measurements.

@@ -1,6 +1,7 @@
 # LHμC-VirtualLab — Validation plan
 
-**Document date:** 2026-10-28 · **Project phase:** Phase 0 (evidence and feasibility audit) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§2.0, §6a; dated notes in §2–§5) ·
+**Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status:** describes the validation ladder, the checks that exist on
 2026-10-28, and the benchmarks planned for later milestones. Every planned item is marked
 *planned*; nothing here claims a validation that has not been run.
@@ -43,6 +44,29 @@ Rules:
    (authored) until resolved.
 
 ---
+
+## 2.0 Addendum 2026-10-29 — P1 checks for the uploaded documents
+
+At commit `104073c` the scientific suite holds six files — `test_analytical_checks.py` of Phase 0
+and the five of the table below; `uv run pytest` collects 151 tests, 94 of them scientific, and all
+pass (run on a clean snapshot of that commit on 2026-10-29). *[Verifier note 2026-10-29: commits
+`ad5ac43` and `000f236` add `test_batch10_documents.py` (18 tests) and `test_imcc_mr7_reference.py`
+(8); at `000f236` 177 tests are collected, 120 of them scientific.]* The checks added for the Phase-0 addendum and batches 7–9 are, like those of §2, checks
+of the internal consistency of the uploaded documents and of this repository's derived statements —
+not a beam-physics model — and they confer at most P1 on the records that name them:
+
+| File | Functions | What they pin (source, page) |
+|---|---|---|
+| `tests/scientific/test_workshop_decks.py` | 10 | nozzle half-angle → η_max (Forthomme p.9; MAIA 10° ↔ 2.44); MR7 Table G.1 slopes; the Forthomme set's implied N_p ≈ 7.0 × 10¹¹ under H = 1 (p.17); the Zhang H-line chain and the μTRISTAN budget 0.137 (pp.10, 20); the Aritome 2024 measured chain (2.1 × 10⁻⁸ per surface muon); the 0.52 vs 0.655 incompatibility; Nakazawa's perveance ratio 220 (p.16); vFFA rigidity and the MR7 vFFA1 mean field; Dudko's turns formula; the MuIC LHmuC beam size |
+| `tests/scientific/test_batch7_documents.py` | 14 | André 2022 rigidities, Table 2 current, Table 3 scaling, the Table 4 luminosity **band** (≈ 0.80, not a reproduction); Abe 2019 Fig. 4, Table 4 product, Table 2 decay survival, Table 5 vs "∼ 1e8 per second", the Abe–Zhang consistency; Sakaki 2026 diffusion length, source emittance, pre-extraction rate; the AloHEP 10 TeV decay factor and the **one-beam vs two-beam decay average** |
+| `tests/scientific/test_mucol_m17_vffa.py` | 13 | M17 closed-orbit geometry eqs. (2.1)–(2.6): stage-1 F-magnet and stage-4 D-magnet peak fields, good-field extents, dispersion, kicker, drift lengths, the 8.3 T limit, and the printed eq. (2.7) inconsistency |
+| `tests/scientific/test_batch9_documents.py` | 9 | Bakule 2013 vacuum-yield scaling to 9.6 × 10⁻⁴, the combined 6.6 σ separation from Beare 2020, the density law, the thermal speed; Cheung & Wang (μ⁻p, screening comparators for the μ⁺p LHμC) Table I energies, integrated luminosity, hbb precision, Higgs yields, the cut-flow **band** |
+| `tests/scientific/test_addendum_canonical_records.py` | 4 (33 cases) | the canonical addendum records carry exactly the pinned values, `reported_lhmuc` only from `PRIMARY_LHMUC` decks, analogues not `reported_lhmuc`, uploaded sources with SHA-256 |
+
+Bands are recorded where an input is missing from the source (LHeC Table 4: proton parameters;
+Cheung cut flow: branching ratios not printed; M17 stage-4 F-magnet field; vertical excursion
+definition). A band asserts that a stated model lands in a region; it is never presented as a
+reproduction, and it is not widened (§4).
 
 ## 2. What is implemented on 2026-10-28 (Phase 0, P1 only)
 
@@ -95,6 +119,17 @@ requires the authors' model, not a tuned parameter.
   test (commit dfec8d7, "corrected muLHC luminosity audit check") computes 1.14×10³⁴, ratio 1.58,
   fully explained by the decay average. The test is right (f N_μ N_p /(4πσ²) with the Table 1–3
   inputs gives 1.14×10³⁴); the prose in `architecture.md` §5 should be corrected by its author.
+  *[Resolved 2026-10-29: `architecture.md` §5 states 1.14×10³⁴. `research/source_conflicts.yaml` exists
+  with `CONF_LUMI_MODEL_ASSUMPTIONS` (15 conflict records at `104073c`).]*
+- **Open items added 2026-10-29.** (a) AloHEP applies the muon-decay factor analytically and its
+  μ⁺μ⁻ benchmark value is a two-beam average; a μp run needs the one-beam average
+  (`test_decay_averaging_differs_between_mumu_and_mup`), and which form the code uses for an
+  asymmetric pair is not stated (`SRC_ARXIV_2610_09839` p.36). (b) The LHeC Table 4 luminosity is
+  recorded as a band (ratio ≈ 0.80) because the paper lists no proton bunch population or emittance.
+  (c) The Kilic "ΔQ²rec %" definition could not be reproduced by the verifier (`DET_NOZZLE_*_Q2_SMEARING_*`
+  stay P0). (d) The printed eq. (2.7) of MuCol M17 is inconsistent with the closed-orbit geometry;
+  no record uses it. (e) The 0.52 and 0.655 muonium-formation fractions are 6.6 σ apart; the conflict
+  is kept, not resolved by a fit.
 
 ### 2.2 How the P1 checks are linked to parameter records
 
@@ -104,6 +139,10 @@ function in `validation.methods` (e.g. "reproduced by 2*sqrt(E_mu*E_p) = 5.29 Te
 (tests/scientific/test_analytical_checks.py::test_sqrt_s)"). The `validation.check_ids` field is
 **empty in every record** on this date; it is to be filled with the `check_id`s of
 `registries/validation_registry.csv` once that registry exists (§5).
+*[Update 2026-10-29 (commit `104073c`): of 5601 records, 100 are P1 and 5501 are P0; none claims P2
+or higher. 64 records use `validation.check_ids`, all of them in the form
+`tests/scientific/<file>.py::<test>`. Since 2026-10-29 rule 1 of §1 is enforced by the validator, and
+847 P1 labels that named no test were lowered to P0 (`research/_fragments/validation_levels_lowered_2026-10-29.csv`).]*
 
 ---
 
@@ -126,6 +165,17 @@ reproduced is a result to report (`CLAUDE.md` §1.10), not a parameter to tune.
 - Blocked until: AloHEP's model (or its documentation) is obtained — all CERN/Indico hosts are
   blocked in the current session; the proton bunch length and muon β* for LHμC proper are unknown
   (`unknown_roles` in `parameters/machine/scenarios_dis2026.yaml`).
+- *Update 2026-10-29.* The model is now documented (`SRC_ARXIV_2610_09839`;
+  `docs/tools/alohep_method_dagli2026.md`) and the code named by the paper is available (tag v2.0,
+  MIT, `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`, not yet built or run), so the benchmark is blocked only by
+  the **μLHC input decks and option set**, which the public repository does not contain (`ME_043`),
+  and by the proton bunch length. Pre-registered additions, fixed now: (i) the option sets to be run
+  are hourglass only, hourglass + pinch, each with and without the Matched Beams helper, each with
+  the decay factor applied as the *one-beam* store average if the code's `-decay` option turns out to
+  be the two-beam form; (ii) any unmatched μp run converts L_nom to L_geo with the paper's Appendix-A
+  factor before comparison; (iii) the hourglass parameter A = σ_z/β*_y of each deck is checked against
+  the range the paper validates (A ≲ 1.5, p.27) and the vertical grid refined beyond it; (iv) the
+  Forthomme set is run as a band over its unknown inputs. The 5 % tolerance is unchanged.
 
 ### 3.2 Optics cross-check MAD-X vs Xsuite (M2–M3, target P3)
 
@@ -149,6 +199,12 @@ reproduced is a result to report (`CLAUDE.md` §1.10), not a parameter to tune.
   bin-wise with statistical uncertainty ≥ 10⁴ primaries per run.
 - The snippet-only IMCC leads (INERMET180, nozzle tip 6 cm from the IP, 10° outer inclination,
   L* = 6 m at 10 TeV) are **not verified** and may be used only as `analogous`, confidence ≤ medium.
+  *[Update 2026-10-29: these IMCC values are now read in full in MuCol MR7 (`SRC_ARXIV_2510_27437`
+  pp.65–66; `DET_NOZZLE_*_MR7`, `IR_LSTAR_MR7`, `MAT_INERMET180_MR7`) and remain `analogous`. The LHμC
+  nozzle options of the Kilic study (40–100 mrad, 487.8 cm + 100 cm, tip 6 cm, tungsten + borated
+  polyethylene, Geant4 11.4) are an additional benchmark candidate: reproducing its p.12 acceptance
+  table with the same chain (`docs/software_inventory.md` §15.3) would be a P2 target with a
+  pre-registered tolerance, once Geant4 is available. Tolerances above are unchanged.]*
 
 ### 3.4 Generator cross-section reproduction (M3, target P2)
 
@@ -199,6 +255,12 @@ reproduced is a result to report (`CLAUDE.md` §1.10), not a parameter to tune.
 | **regression** | `tests/regression/` (empty) | — | frozen outputs of every completed P2/P3 benchmark; any change in a result must be explained in the commit |
 | end-to-end | `tests/end_to_end/` (empty) | — | later milestones |
 
+*Update 2026-10-29:* `tests/unit/` also holds `test_confidence_caps.py` and `test_validation_levels.py`
+(the two validator rules of 2026-10-29) and `test_registry_integrity.py::test_source_parameters_extracted_in_sync`;
+`tests/scientific/` holds `test_analytical_checks.py` and the five files of §2.0 (since `000f236` also
+`test_batch10_documents.py` and `test_imcc_mr7_reference.py`). `tests/geometry/`, `integration/`, `regression/`
+and `end_to_end/` are still empty.
+
 **Tolerance rule.** A scientific or regression tolerance is set *before* the first run, with its
 justification written in the test docstring (as in §2). It may be tightened at any time. It is
 **never loosened** without (a) an investigation written in `docs/reports/` or the commit message
@@ -243,6 +305,15 @@ Rows are added when a test is added, updated when it is re-run with a different 
 never deleted (a retired check gets `result: not_run` and a note). The 13 functions of §2 map to
 13 rows (`test_sqrt_s` as one row listing its three parametrisations).
 
+*Note 2026-10-29.* The authored file as built carries the shorter header
+`check_id,description,model_or_parameter_ids,level,method,expected,obtained,tolerance,status,date,source_of_expected,notes`
+(36 rows at `104073c`: 24 pass, 12 planned). The table above is the target content; the columns map
+as `target_parameter_ids`/`input_parameter_ids` → `model_or_parameter_ids`, `code_reference` →
+`method`, `reported_value` → `expected`, `computed_value` → `obtained`, `result` → `status`,
+`last_run` → `date`, `source_ids` → `source_of_expected`, with `tolerance_justification`,
+`tolerance_history` and `open_items` in `notes`. The header is kept as built (CSV headers are not
+changed by documentation work); rows for the §2.0 checks are added by the registry stage.
+
 ---
 
 ## 6. Reporting
@@ -250,6 +321,32 @@ never deleted (a retired check gets `result: not_run` and a note). The 13 functi
 Every milestone report under `docs/reports/` lists, per claimed result: provenance status of the
 inputs, G-label, P-label, the check ids that support the P-label, the assumption ids involved,
 and the open conflicts. A result whose P-label is P0 is reported as unverified in those words.
+
+## 6a. Addendum 2026-10-29 — the AI4MuC principles in the validation ladder
+
+The AI4MuC report (`SRC_ARXIV_2610_14303`, §11, pp.12–13) states seven "verifiable AI workflow"
+principles, adopted as process rules in `docs/architecture.md` §15.1. Four of them bear directly on
+this plan and are met as follows; none changes the P-ladder or rule 1 of §1.
+
+- *"Choose metrics before training."* — the tolerance rule of §4: every tolerance and band is fixed
+  before the first run and may only be tightened; the pre-registered additions to Benchmark 3.1
+  (§3.1, 2026-10-29) are written before any AloHEP run exists.
+- *"Validate tails and failures."* — benchmarks of losses, backgrounds and breakdown (§3.3 and any
+  later BIB, dose or RF benchmark) must include tail statistics and failure cases, not only means;
+  a background sample built by cloning parent decays in azimuth (as described for the IMCC FLUKA
+  samples, AI4MuC p.10) cannot validate tails.
+- *"Compare to trusted tools."* — P2 requires a published benchmark reproduced by a documented code,
+  P3 a second independent code; surrogate or ML models are validated against such runs, never the
+  reverse. Values extracted by LLM agents are checked by independent verifiers against the page
+  images (`research/_fragments/verify_*.md`) and, where arithmetic allows, by P1 tests.
+- *"Make the benchmark rerunnable."* — every check is a pytest function that reruns from the locked
+  environment; a benchmark whose inputs are private (§3.1 decks, §3.4 `effdihiggs-v2`) is reported as
+  blocked rather than approximated.
+
+The report's success criteria for an agent-produced validation report — "the plots agree with the
+reference within a stated tolerance (or improve on it), that a second user can rerun the workflow
+from the recorded artifacts alone, and that any changes from the reference are reported" (p.12) —
+are the criteria this repository applies to its own P1 and future P2/P3 records.
 
 ## 7. Sources cited
 
@@ -267,3 +364,7 @@ and the open conflicts. A result whose P-label is P0 is reported as unverified i
   the future μ⁺p collider", configuration p.6, cross sections p.7–8, cut-flow p.12, results p.14–16.
 - arXiv:2610.28252 and arXiv:2610.17801 — `access: blocked`, `UNVERIFIED`; metadata from search
   snippets only (`research/_fragments/theory-benchmarks_sources.yaml`).
+- Added 2026-10-29 (uploaded, read in full): `SRC_ARXIV_2610_09839` (AloHEP, pp.2, 19, 27, 31, 33,
+  36, 39), `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP` (fetched), `SRC_ARXIV_2510_27437` (pp.65–66),
+  `SRC_WS1681458_KILIC_NOZZLE` (pp.4–12), `SRC_ARXIV_2610_14303` (pp.10, 12–13), and the documents
+  pinned by the §2.0 test files (sources and pages in each test's docstring).

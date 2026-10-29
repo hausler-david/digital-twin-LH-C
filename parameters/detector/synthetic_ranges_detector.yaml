@@ -3,25 +3,31 @@
 # parameters/assumptions/phase0_assumptions.yaml; 'value' is only the range midpoint (or a representative member of a
 # discrete set) so that software has a number to display. None of these numbers is an LHmuC design value.
 # Date: 2026-10-28. Author role: assumptions and synthetic-range author (Phase 0 evidence audit).
+# Updated 2026-10-29: records whose assumption is superseded_by_evidence (parameters/assumptions/phase0_assumptions.yaml) are
+# SYNTHETIC SCAN VARIABLES ONLY; their bands were re-based to bracket every documented option and no scenario slot may point to
+# them. Records whose assumption stays synthetic carry updated dependencies and notes; PROTON_BUNCH_LENGTH_RMS_SYN was widened to
+# a log-uniform 5-100 cm range (value = geometric midpoint).
 parameters:
 - parameter_id: DET_NOZZLE_OPENING_ANGLE_SYN
-  name: Opening (half) angle of the decay-shielding nozzle on the incoming-muon side (synthetic screening range)
+  name: Opening (half) angle of the decay-shielding nozzle on the incoming-muon side (synthetic scan variable; assumption superseded
+    by evidence)
   symbol: theta_nozzle
   subsystem: detector
   scenario: null
-  value: 12.5
+  value: 7.0
   unit: degree
   uncertainty:
     type: interval
-    lower: 5.0
-    upper: 20.0
+    lower: 2.0
+    upper: 12.0
     unit: degree
-    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_OPENING_ANGLE.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_DET_NOZZLE_OPENING_ANGLE (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 5.0
-    max: 20.0
+    min: 2.0
+    max: 12.0
     unit: degree
-    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_OPENING_ANGLE
+    basis: synthetic scan band bracketing every documented cone (40, 60, 80, 100 mrad LHmuC study; 10 degree IMCC); see ASM_DET_NOZZLE_OPENING_ANGLE
+      (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -30,27 +36,36 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; applies to the single-sided LHmuC nozzle concept (DIS2026 and muLHC). Not a muon-collider two-sided
-        nozzle.
+      explanation: 'Scan variable only (ASM_DET_NOZZLE_OPENING_ANGLE superseded by evidence on 2026-10-29); single-sided LHmuC nozzle.
+        Baselines: DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME (40 mrad), DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME
+        (100 mrad), DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7 (10 degree, IMCC analogue). No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_DET_NOZZLE_OPENING_ANGLE
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - DET_NOZZLE_PRESENCE_DIS2026
   - DET_NOZZLE_PLACEMENT_MULHC
   - MACHINE_MU_BUNCH_POPULATION_DIS2026
+  - DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME
+  - DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME
+  - DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7
   date_added: '2026-10-28'
   responsible_module: parameters/detector
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_DET_NOZZLE_OPENING_ANGLE is superseded by evidence (2026-10-29); this record survives only
+    to scan the band 2-12 degree in screening and sensitivity studies, and no scenario slot may point to it. Baselines: DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME
+    (40 mrad = 2.29 degree), DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME (100 mrad = 5.73 degree), DET_NOZZLE_OUTER_ANGLE_NEAR_IP_MR7
+    (10 degree, IMCC). value is the arithmetic midpoint of the band and exists only so that software, plots and exports have a number
+    to display; it is NOT an LHmuC design value. Phase-0 band uniform 5-20 degree (2026-10-28); re-based on 2026-10-29 to bracket every
+    documented option. Any use must carry the assumption_id and the band (CLAUDE.md 1.4). The LHmuC 40 mrad baseline lay BELOW the Phase-0
+    band.'
 - parameter_id: DET_NOZZLE_LENGTH_SYN
-  name: Length of the decay-shielding nozzle along the beam (synthetic screening range)
+  name: Length of the decay-shielding nozzle along the beam (synthetic scan variable; assumption superseded by evidence)
   symbol: L_nozzle
   subsystem: detector
   scenario: null
@@ -61,12 +76,13 @@ parameters:
     lower: 2.0
     upper: 10.0
     unit: m
-    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_LENGTH.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_DET_NOZZLE_LENGTH (superseded by evidence on 2026-10-29).
   allowed_range:
     min: 2.0
     max: 10.0
     unit: m
-    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_LENGTH
+    basis: synthetic scan band bracketing every documented nozzle (5.88 m LHmuC study, 5.89 m IMCC, 6 m muLHC); see ASM_DET_NOZZLE_LENGTH
+      (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -75,25 +91,35 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; single-sided LHmuC nozzle concept.
+      explanation: 'Scan variable only (ASM_DET_NOZZLE_LENGTH superseded by evidence on 2026-10-29); single-sided LHmuC nozzle, to be
+        scanned jointly with IR_LSTAR_SYN and DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN. Baselines: DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC
+        (587.8 cm) and DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7 (589 cm). No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_DET_NOZZLE_LENGTH
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - DET_NOZZLE_LENGTH_MULHC
   - IR_LSTAR_SYN
+  - DET_NOZZLE_LENGTH_WS2026_KILIC
+  - DET_NOZZLE_LENGTH_MR7
+  - DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC
+  - DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7
   date_added: '2026-10-28'
   responsible_module: parameters/detector
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_DET_NOZZLE_LENGTH is superseded by evidence (2026-10-29); this record survives only to scan
+    the band 2-10 m in screening and sensitivity studies, and no scenario slot may point to it. Baselines: DET_NOZZLE_TOTAL_LENGTH_IMPLIED_WS2026_KILIC
+    (587.8 cm = 487.8 cm rear section DET_NOZZLE_LENGTH_WS2026_KILIC + 100 cm tip section), DET_NOZZLE_PHYSICAL_LENGTH_IMPLIED_MR7 (589
+    cm; base plane at 595 cm, DET_NOZZLE_LENGTH_MR7). value is the arithmetic midpoint of the band and exists only so that software,
+    plots and exports have a number to display; it is NOT an LHmuC design value. Phase-0 band uniform 2-10 m (2026-10-28); unchanged
+    on 2026-10-29 because every documented option lies inside it. Any use must carry the assumption_id and the band (CLAUDE.md 1.4).'
 - parameter_id: DET_NOZZLE_TIP_DISTANCE_FROM_IP_SYN
-  name: Distance of the nozzle tip from the IP (synthetic screening range)
+  name: Distance of the nozzle tip from the IP (synthetic scan variable; assumption superseded by evidence)
   symbol: z_tip
   subsystem: detector
   scenario: null
@@ -104,12 +130,13 @@ parameters:
     lower: 2.0
     upper: 50.0
     unit: cm
-    note: Synthetic range, not a measured uncertainty; see ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP (superseded by evidence on 2026-10-29).
   allowed_range:
     min: 2.0
     max: 50.0
     unit: cm
-    basis: synthetic screening range, see assumption record ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
+    basis: synthetic scan band; both documented tips (6 cm, LHmuC study and IMCC) lie near its lower edge; see ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
+      (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -118,25 +145,33 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; single-sided LHmuC nozzle concept.
+      explanation: 'Scan variable only (ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP superseded by evidence on 2026-10-29); single-sided LHmuC
+        nozzle, to be scanned jointly with PROTON_BUNCH_LENGTH_RMS_SYN. Baselines: DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC and DET_NOZZLE_TIP_DISTANCE_MR7
+        (6 cm each). No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - DET_NOZZLE_PLACEMENT_MULHC
   - PROTON_BUNCH_LENGTH_RMS_SYN
+  - DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC
+  - DET_NOZZLE_TIP_DISTANCE_MR7
   date_added: '2026-10-28'
   responsible_module: parameters/detector
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_DET_NOZZLE_TIP_DISTANCE_FROM_IP is superseded by evidence (2026-10-29); this record survives
+    only to scan the band 2-50 cm in screening and sensitivity studies, and no scenario slot may point to it. Baselines: DET_NOZZLE_TIP_DISTANCE_WS2026_KILIC
+    (6 cm, LHmuC study), DET_NOZZLE_TIP_DISTANCE_MR7 (6 cm, IMCC). value is the arithmetic midpoint of the band and exists only so that
+    software, plots and exports have a number to display; it is NOT an LHmuC design value. Phase-0 band uniform 2-50 cm (2026-10-28);
+    unchanged on 2026-10-29 because every documented option lies inside it. Any use must carry the assumption_id and the band (CLAUDE.md
+    1.4).'
 - parameter_id: DET_NOZZLE_MATERIAL_SYN
-  name: Bulk material of the decay-shielding nozzle (synthetic discrete set)
+  name: Bulk material of the decay-shielding nozzle (synthetic discrete scan set; assumption superseded by evidence)
   symbol: null
   subsystem: detector
   scenario: null
@@ -144,12 +179,14 @@ parameters:
   unit: string
   uncertainty:
     type: not_stated
-    note: Categorical synthetic choice; see ASM_DET_NOZZLE_MATERIAL.
+    note: Categorical synthetic scan set, not a measured uncertainty; see ASM_DET_NOZZLE_MATERIAL (superseded by evidence on 2026-10-29).
   allowed_range:
     min: null
     max: null
     unit: string
-    basis: 'discrete set of candidate values: tungsten, INERMET180, tungsten + borated polyethylene; see ASM_DET_NOZZLE_MATERIAL'
+    basis: 'discrete set of candidate values: tungsten, INERMET180, tungsten + borated polyethylene; all confirmed by the evidence (LHmuC
+      study: tungsten cladded with borated polyethylene; IMCC: INERMET180 with a borated-polyethylene absorber); see ASM_DET_NOZZLE_MATERIAL
+      (superseded_by_evidence)'
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -158,44 +195,53 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; the choice among the three candidates is open and must be made with a transport simulation and an
-        engineering review.
+      explanation: 'Scan variable only (ASM_DET_NOZZLE_MATERIAL superseded by evidence on 2026-10-29): switch among the three candidates
+        in transport-simulation sensitivity studies. Baselines: DET_NOZZLE_MATERIAL_WS2026_KILIC with DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC
+        (LHmuC study); material records MAT_TUNGSTEN_WS2026_KILIC, MAT_INERMET180_MR7, MAT_BORATED_POLYETHYLENE_MR7. No scenario slot
+        may point to this record.'
     confidence: low
     assumption_id: ASM_DET_NOZZLE_MATERIAL
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - DET_NOZZLE_MATERIAL_MULHC
   - DET_NOZZLE_CLADDING_MULHC
+  - DET_NOZZLE_MATERIAL_WS2026_KILIC
+  - DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC
   date_added: '2026-10-28'
   responsible_module: parameters/detector
-  notes: 'SYNTHETIC: value is one representative member of the discrete candidate set in the assumption record and exists only so that
-    software, plots and exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and
-    the range (CLAUDE.md 1.4). Categorical synthetic parameter: value is one member of the discrete set in the assumption record; allowed_range
-    min/max are null because the set is not numeric.'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_DET_NOZZLE_MATERIAL is superseded by evidence (2026-10-29); this record survives only to
+    scan the band {tungsten, INERMET180, tungsten + borated polyethylene} in screening and sensitivity studies, and no scenario slot
+    may point to it. Baselines: DET_NOZZLE_MATERIAL_WS2026_KILIC (tungsten) with DET_NOZZLE_CLADDING_MATERIAL_WS2026_KILIC (borated
+    polyethylene); materials MAT_TUNGSTEN_WS2026_KILIC, MAT_INERMET180_MR7, MAT_BORATED_POLYETHYLENE_MR7 (parameters/materials/nozzle_materials_addendum.yaml).
+    value is one representative member of the discrete candidate set and exists only so that software, plots and exports have a number
+    to display; it is NOT an LHmuC design value. Phase-0 band discrete set (same three members) (2026-10-28); unchanged on 2026-10-29
+    because every documented option lies inside it. Any use must carry the assumption_id and the band (CLAUDE.md 1.4). Categorical:
+    allowed_range min/max are null because the set is not numeric.'
 - parameter_id: DET_SOLENOID_FIELD_SYN
-  name: Central field of the detector solenoid (synthetic screening range)
+  name: Central field of the detector solenoid (synthetic scan variable; assumption superseded by evidence)
   symbol: B_sol
   subsystem: detector
   scenario: null
-  value: 3.5
+  value: 4.25
   unit: T
   uncertainty:
     type: interval
-    lower: 2.0
-    upper: 5.0
+    lower: 3.0
+    upper: 5.5
     unit: T
-    note: Synthetic range, not a measured uncertainty; see ASM_DET_SOLENOID_FIELD.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_DET_SOLENOID_FIELD (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 2.0
-    max: 5.0
+    min: 3.0
+    max: 5.5
     unit: T
-    basis: synthetic screening range, see assumption record ASM_DET_SOLENOID_FIELD
+    basis: synthetic scan band bracketing every documented detector field (3 T and 3.8 T LHeC, 5 T IMCC); see ASM_DET_SOLENOID_FIELD
+      (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -204,21 +250,31 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; general-purpose LHmuC detector concept (LHeC-derived baseline).
+      explanation: 'Scan variable only (ASM_DET_SOLENOID_FIELD superseded by evidence on 2026-10-29); LHeC-derived LHmuC detector concept.
+        Baselines: DET_SOLENOID_FIELD_ANDRE2022 (3 T) or DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME (3.8 T); IMCC analogues DET_SOLENOID_FIELD_MAIA
+        and DET_SOLENOID_FIELD_MUSIC (5 T). No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_DET_SOLENOID_FIELD
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - DET_MAGNET_TYPE_MULHC
   - DET_BASELINE_DESIGN_DIS2026
   - DET_MUON_SYSTEM_OPTION_DIS2026
+  - DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME
+  - DET_SOLENOID_FIELD_ANDRE2022
+  - DET_SOLENOID_FIELD_MAIA
+  - DET_SOLENOID_FIELD_MUSIC
   date_added: '2026-10-28'
   responsible_module: parameters/detector
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_DET_SOLENOID_FIELD is superseded by evidence (2026-10-29); this record survives only to
+    scan the band 3-5.5 T in screening and sensitivity studies, and no scenario slot may point to it. Baselines: DET_SOLENOID_FIELD_ANDRE2022
+    (3 T), DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME (3.8 T), DET_SOLENOID_FIELD_MAIA and DET_SOLENOID_FIELD_MUSIC (5 T); none
+    is an LHmuC value. value is the arithmetic midpoint of the band and exists only so that software, plots and exports have a number
+    to display; it is NOT an LHmuC design value. Phase-0 band uniform 2-5 T (2026-10-28); re-based on 2026-10-29 to bracket every documented
+    option. Any use must carry the assumption_id and the band (CLAUDE.md 1.4).'

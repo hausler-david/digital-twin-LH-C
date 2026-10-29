@@ -1,11 +1,15 @@
 # LHμC-VirtualLab — Software inventory
 
-**Document date:** 2026-10-28 · **Project phase:** Phase 0 (evidence and feasibility audit) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15, dated notes in §8–§10) ·
+**Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status of this document:** inventory of the tools the master project
 prompt (§3) names for later milestones, with the version, licence and install route *seen on
 2026-10-28*, and the honest state of this environment. **Nothing in this table has been adopted,
 pinned, installed or executed except the core Python stack in §9.** No lattice, geometry, transport,
 generator, analysis or optimisation code exists yet (see `docs/limitations.md` §4).
+*[2026-10-29: still true. §15 adds the tools named in the 29 uploaded documents of the addendum and
+batches 7–9, with the source and page where each is cited; the only one whose code was obtained is
+AloHEP v2.0, read as text and not executed.]*
 
 Read `CLAUDE.md` first. CLAUDE.md §5 requires third-party licences to be documented here; CLAUDE.md §1.8
 ("tools, not the LLM, do the science") is the reason every tool below has an explicit *role* and an
@@ -228,6 +232,17 @@ cited as a derivation — the project's own closed-form check (`lhmuc/analytical
 better than 2 %, i.e. no hourglass reduction is visible in the published values; see `docs/limitations.md` §5) is
 what `tests/scientific` reproduces.
 
+**Correction 2026-10-29.** The licence statement above concerns the copy at github.com/yefetu/ALOHEP
+only. The AloHEP software paper (`SRC_ARXIV_2610_09839`, read in full) names a different repository,
+github.com/tobbetuyef/AloHEP, with "Licensing provisions: MIT License (the bundled Gson library is
+distributed under the Apache License 2.0)" (p.2). Its tag v2.0 (`SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`,
+commit c45c40c4e2f5edf1588bd55f0249425e91266f19, LICENSE file MIT) was cloned read-only into an
+isolated folder on 2026-10-28; files and JSON decks were read as text and nothing was compiled or
+run. It contains decks for MuCol 10 TeV, MuIC, Tevatron-based μp and LHC/HL-LHC protons, but **no
+μLHC or LHμC deck**. The luminosity formula set is now documented (`docs/tools/alohep_method_dagli2026.md`),
+so the sentence "its luminosity formula is not documented" is superseded; AloHEP output still cannot
+be cited as a derivation without the option set of the run. See §15.
+
 ---
 
 ## 9. What is actually installed (Phase 0 environment, read with `uv pip list` / `importlib.metadata`)
@@ -247,6 +262,8 @@ Python 3.13.17 managed with `uv`; `pyproject.toml` declares `requires-python = "
 
 **Nothing from §2–§8 is installed.** No conda/mamba, no C++ toolchain check, no Fortran check, no Java runtime
 check and no Mathematica has been performed or is claimed.
+*[Re-checked 2026-10-29 with `uv pip list`: the same versions, plus their dependencies and the editable
+`lhmuc-virtuallab` package; nothing from §2–§8 or §15 is installed, and no Java runtime is used.]*
 
 ---
 
@@ -267,7 +284,10 @@ check and no Mathematica has been performed or is claimed.
    UFO export cannot be executed. Public UFO files can still be used with MG5.
 4. **Registration-gated: FLUKA.** "Registration as a FLUKA user is subject to approval." No account; not planned.
 5. **No licence at all: AloHEP** (GitHub copy). Cannot be redistributed or modified; may only be *run* after the
-   authors clarify terms.
+   authors clarify terms. *[Corrected 2026-10-29: this applies to github.com/yefetu/ALOHEP only. The repository
+   named in the AloHEP paper, github.com/tobbetuyef/AloHEP tag v2.0, is MIT-licensed with a bundled Apache-2.0
+   Gson library; running it is permitted, subject to `docs/security_policy.md` (pinned commit, isolated build, no
+   credentials). The relation between the two repositories is unresolved.]*
 6. **Non-public model file: "HELv2 effdihiggs-v2 (not public)"** (Kraków di-Higgs deck). Not software this project
    can obtain; the benchmark stays *pending*.
 7. **Stale or unmaintained routes:** PyPI `LHAPDF` 6.2.1.post10 ("stale, empty metadata"); `pip install root`
@@ -344,3 +364,58 @@ available), `research/source_quality_policy.md` §2 (category `OFFICIAL_SOFTWARE
 | Date | Change |
 |---|---|
 | 2026-10-28 | First version: 40 table rows covering the 33 tools and tool groups named in master prompt §3 (including AloHEP, BLonD, Bmad-X, Xopt) plus geant4-pybind, pybdsim and the installed core stack; versions/licences quoted from the software-tools journal; session reachability probes; licence decisions list; drift/pinning policy. |
+| 2026-10-29 | §15 added: tools named in the uploaded documents of the Phase-0 addendum and batches 7–9, each with source id, page and record id. AloHEP corrected (§8, §10 item 5): the repository named in its paper is MIT-licensed (tag v2.0) and holds no μLHC deck. §9 re-checked. |
+
+---
+
+## 15. Addendum 2026-10-29 — software named in the uploaded documents
+
+The 29 documents uploaded on 2026-10-28/29 name the codes their authors used. They are listed here
+because a reproduction of any of their numbers needs the same code and version, and because CLAUDE.md
+§5 requires licences to be documented. **A tool appearing here is not adopted, installed or run by
+this project** unless the "Here" column says otherwise; versions are as printed by the citing
+document, and licences are given only where a source states them (otherwise "not verified", never
+recalled). Mark **U** = read in an uploaded document (page cited), **F** = fetched repository.
+
+### 15.1 Luminosity
+
+| Tool | As cited | Cited by (source_id, page; record) | Licence (as seen) | Here | Role / must not |
+|---|---|---|---|---|---|
+| **AloHEP v2.0** | Java (Java 7-compatible syntax; OpenJDK 8–21, benchmarks on OpenJDK 17; Gson 2.9.1); GUI `org.hepforge.alohep.Launcher` and headless entry point `org.hepforge.alohep.HeadlessLauncher` with options `-hourglass -pinch -decay -fom -macrop -xres/-yres/-zres -csv`; machine decks as JSON under `save/` | `SRC_ARXIV_2610_09839` pp.2, 19, 21, 34, 36 (**U**); `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`, tag v2.0, commit c45c40c4e2f5edf1588bd55f0249425e91266f19 (**F**); records `MACHINE_ALOHEP_*_DAGLI2026`; method note `docs/tools/alohep_method_dagli2026.md` | MIT (LICENSE file; paper p.2); bundled Gson Apache-2.0 | cloned read-only into an isolated folder; decks read as text; **not built, not run**; **no μLHC or LHμC deck** (`ME_043`) | Benchmark 3.1 (M2) once the μLHC decks and option set are known; the internal L_nom underestimates unequal beams (p.33); the analytic decay factor's form for μp is not stated (p.36). Never cite its output without the option set; untrusted third-party code under `docs/security_policy.md` |
+
+### 15.2 Detector simulation and reconstruction frameworks
+
+| Tool | As cited | Cited by (source_id, page; record) | Licence (as seen) | Here | Role / must not |
+|---|---|---|---|---|---|
+| **Key4hep** (with Gaudi, **DD4hep**, **EDM4hep**, podio) | "LHeCSW • built on top of Key4hep stack (based on Gaudi, with DD4hep geometry definition, EDM4hep output/transient collections, podio I/O components" | `SRC_WS1681458_FORTHOMME_DETECTOR` p.13 (`DET_LHECSW_STACK_STATEMENT_WS2026_FORTHOMME`), p.14 (`DET_LHMUC_FAST_SIMULATION_STATUS_WS2026_FORTHOMME`); `SRC_ARXIV_2502_00181` pp.21, 23 (`DET_SIM_SOFTWARE_MAIA`, `DET_RECO_FRAMEWORK_MAIA`); `SRC_ARXIV_2610_14303` p.11; DD4hep also `SRC_ARXIV_2201_02436` p.10 (`DET_DESCRIPTION_TOOL_ANDRE2022`) | not verified | not installed | the frameworks of the LHeC and IMCC detector chains; the route for any G2 detector geometry of M3. Not for machine optics |
+| **LHeC Key4hep toolbox (LHeCSW)** | "Geometry re-optimisation using LHeC Key4hep-based simulation toolbox"; inputs HepMC2/3 and Pythia 8, CepGen for γγ, Pythia 6, a BDSIM interface "to act as feedback loop to beamline/shielding optimisation parameters" | `SRC_WS1681458_FORTHOMME_DETECTOR` pp.9, 13 (`DET_LHMUC_GEOMETRY_OPTIMISATION_TOOL_WS2026_FORTHOMME`, `DET_LHMUC_SIMULATION_FRAMEWORK_WS2026_FORTHOMME`) | not verified | not available (no public location recorded) | the proponents' own LHμC detector tool, "minimal adaptation to fit the nozzle, not yet an adapted LHμC tracker" (p.13) |
+| **ACTS** | version 32.1.0, combinatorial Kalman filter | `SRC_ARXIV_2502_00181` p.23 (`DET_ACTS_VERSION_MAIA`); `SRC_ARXIV_2601_13189` p.3 (`DET_TRACK_RECONSTRUCTION_METHOD_MUSIC`); `SRC_ARXIV_2610_14303` p.11 | not verified | not installed | IMCC tracking reconstruction; analogue only |
+| **MuonColliderSoft** | "MuonColliderSoft software stack within the Key4hep software ecosystem", DD4hep geometry, Geant4 via ddsim, k4MarlinWrapper; restructured for the 3.x release series, "the first tag of which was issued in June 2026"; open source (github.com/MuonColliderSoft) | `SRC_ARXIV_2502_00181` pp.21–23 (k4MarlinWrapper p.22); `SRC_ARXIV_2610_14303` p.11 and ref. [36] p.17 | "open source" (AI4MuC p.11); licence file not verified | not installed | IMCC μ⁺μ⁻ detector chain with BIB overlay; a reference workflow, not an LHμC chain |
+| **Spack** and **CVMFS** | "Releases are assembled with Spack and distributed as layered container images … built for both x86_64 and aarch64 and replicated to CVMFS" | `SRC_ARXIV_2610_14303` p.11 | not verified | not installed; CVMFS not reachable (CERN hosts blocked) | packaging and distribution route if the IMCC stack is ever adopted |
+
+### 15.3 Transport, generators and fast simulation as used in the uploads
+
+| Tool | As cited | Cited by (source_id, page; record) | Licence (as seen) | Here | Role / must not |
+|---|---|---|---|---|---|
+| **Geant4 11.4**, **Pythia 8.312**, **HepMC 2.06.11**, MadGraph5_aMC@NLO, ROOT, PDF NNPDF23_lo_as_0130_qed | the Kilic nozzle chain "MadGraph5_aMC@NLO -> Pythia8 -> HepMC -> Geant4"; ISR, FSR and hadronisation on, muon decay off; 250 000 events; HepMC units GeV and mm; ROOT for storage and histograms | `SRC_WS1681458_KILIC_NOZZLE` pp.6–7 (`DET_NOZZLE_SIM_GEANT4_VERSION_WS2026_KILIC`, `DET_NOZZLE_SIM_PYTHIA_VERSION_WS2026_KILIC`, `DET_NOZZLE_SIM_HEPMC_VERSION_WS2026_KILIC`, `DET_NOZZLE_SIM_GENERATOR_CHAIN_WS2026_KILIC`, `DET_NOZZLE_SIM_ANALYSIS_TOOL_WS2026_KILIC`, `DET_NOZZLE_SIM_PDF_SET_WS2026_KILIC`) | Geant4, Pythia, ROOT: see §3–§5; HepMC not verified | none installed (pythia8mc 8.318 is on PyPI, §4) | reproducing the Kilic acceptance and energy-loss numbers needs this chain at these versions; the MadGraph version is not printed |
+| Geant4 (other uses) | Geant4 toroid model (Acosta); GEANT4 and FLUKA for the μLHC cone (μLHC); Geant4 for the J-PARC stopping fraction (Aritome) | `SRC_WS1681458_ACOSTA_NEAR_BEAM` pp.11–12; `SRC_ARXIV_2506_15445` p.14 (`DET_NOZZLE_SIMULATION_CODES_MULHC`); `SRC_ARXIV_2410_11367` p.2 (`SOURCE_MUON_STOPPING_EFF_ARITOME2024`) | §3 | not installed | — |
+| **FLUKA for beam-induced background** | IMCC BIB "obtained with FLUKA Monte Carlo simulations", bunch intensity 1.8 × 10¹² muons; neutrons to thermal energies, other species to 100 keV; current BIB samples take "a FLUKA sample representing 10% of a single bunch crossing's parent muon population" and clone it in azimuth | `SRC_ARXIV_2510_27437` p.66 (`DET_BIB_SIM_CODE_MR7`, `MACHINE_MU_BUNCH_POPULATION_BIB_SIM_MR7`); `SRC_ARXIV_2502_00181` p.7 (`DET_BIB_SIM_CODE_MAIA`, `DET_BIB_SIM_THRESHOLD_NON_NEUTRON_MAIA`); `SRC_ARXIV_2601_13189` p.3 (`DET_BIB_SIM_CODE_MUSIC`); `SRC_ARXIV_2610_14303` p.10 | registration-gated (§3, §10 item 4) | not available | every IMCC BIB number is a FLUKA result for a 10 TeV μ⁺μ⁻ lattice; an LHμC comparison needs FLUKA access or a Geant4/BDSIM substitute declared as such. AI4MuC p.10 notes that azimuthal cloning erases lattice asymmetries and under-samples rare events |
+| **Delphes — LHeC card** | "Delphes 3 LHeC model developed since 2016 by U. Klein, P. Kostka et al.", Bz = 3.8 T, calorimeter resolutions, efficiencies from full simulation; also Delphes 3.4.2 "with an LHeC-specific Delphes card which includes the beam asymmetry" in Cheung & Wang | `SRC_WS1681458_FORTHOMME_DETECTOR` p.13 (`DET_DELPHES_LHEC_MODEL_STATEMENT_WS2026_FORTHOMME`, `DET_DELPHES_*_LHEC_WS2026_FORTHOMME`, `DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME`); `SRC_ARXIV_2101_10476` p.2 (`PHYS_TOOL_DELPHES_CHEUNG2021`) | Delphes GPL v3+ (§4); card licence not stated | not installed (needs ROOT) | fast simulation is "available for LHeC, not yet for LHμC" (Forthomme p.14); an LHμC card must carry its own provenance |
+| **Delphes — MuIC card** | Tables 16–18 of the muon-ion collider paper (tracker, calorimeters, muon system), plus the H → bb̄ study selections | `SRC_ARXIV_2203_06258` PDF pp.30–31, 41–45 (`parameters/detector/muic_acosta2022_delphes_card.yaml`, records `DET_DELPHES_*_MUIC2022`, `DET_T16_*_MUIC2022`) | printed in the paper; paper licence not stated | not installed | candidate fast-simulation placeholder for M2 with that provenance (a different machine: 1.5 TeV IMCC muons or BNL MuIC) |
+| **PHITS 3.33** | "Particle and Heavy Ion Transport code System (PHITS)" with the JAM hadronic model and an angle-dependent π⁺ correction from HARP data (Be target, 2.2 and 4.1 GeV) | `SRC_ARXIV_2605_25580` pp.4, 9 (`SOURCE_HYBRID_SIM_CODE_SAKAKI2026`, `SOURCE_HYBRID_HARP_BENCHMARK_*_SAKAKI2026`) | not verified | not installed | the hybrid-target yields are PHITS results; a reproduction needs PHITS and the HARP correction |
+| Other generator tools in the uploads | MadGraph5 3.0.2 (LO), Pythia 6.428 patched for asymmetric lepton–hadron collisions, FastJet 3.3.2 with anti-kt (Cheung & Wang); MadGraph 3.3.1 with NNPDF31_nlo_pdfas, Pythia 8 with NNPDF2.3, Pythia 8.3 (muon-ion collider paper); Whizard in the IMCC simulation layer; CepGen in LHeCSW | `SRC_ARXIV_2101_10476` p.2 (`PHYS_TOOL_MADGRAPH_CHEUNG2021`, `PHYS_TOOL_PYTHIA_CHEUNG2021`, `PHYS_TOOL_FASTJET_CHEUNG2021`); `SRC_ARXIV_2203_06258` PDF pp.19, 23, 30 (`PHYS_DIS_XSEC_GENERATOR_MUIC2022`, `PHYS_SM_XSEC_GENERATOR_MUIC2022`); `SRC_ARXIV_2610_14303` p.11; `SRC_WS1681458_FORTHOMME_DETECTOR` p.13 | not verified | none installed | needed only to reproduce those papers' numbers, which are comparators (μ⁻p, or another machine) |
+
+### 15.4 Accelerator and beamline codes as used in the uploads
+
+| Tool | As cited | Cited by (source_id, page; record) | Licence (as seen) | Here | Role / must not |
+|---|---|---|---|---|---|
+| **PARMILA** | "PARMILA [44] was used to design the beam dynamics of the DAW section" (cell design by the SIMPLEX algorithm) | `SRC_ARXIV_1901_03047` p.10 (`ACC_G2_LINAC_DAW_DESIGN_BETAS_ABE2019`) | not verified | not installed | J-PARC muon-linac design code; analogue context only |
+| **PLACET2** | ERL tracking "with the tracking code PLACET2 … beyond the properties of the magnetic fields, the Incoherent Synchrotron Radiation (ISR) and the weak-strong beam-beam interaction" | `SRC_ARXIV_2201_02436` p.19, Table 6 p.20 (`ACC_ERL_TRACKING_CODE_ANDRE2022`, `ACC_ERL_TRANSMISSION_*_ANDRE2022`) | not verified | not installed | LHeC ERL results; electron machine, comparator only |
+| **BDSIM** | synchrotron-light critical energy, power and light cone in the LHeC arcs and IR; "full Geant4 (BDSIM) simulation of the interaction region"; BDSIM interface in LHeCSW | `SRC_ARXIV_2201_02436` p.18, Table 3, Fig. 19 (`ACC_ERL_SR_SIMULATION_CODE_ANDRE2022`); `SRC_WS1681458_FORTHOMME_DETECTOR` pp.4, 13 (`IR_SR_SIMULATION_TOOL_LHEC_WS2026_FORTHOMME`, `DET_LHECSW_STACK_STATEMENT_WS2026_FORTHOMME`) | GPL v3 (§3) | not installed | as in §3: losses, synchrotron light and backgrounds, never optics design |
+| ROXIE | magnet design code for the LHeC QA1 field calculations | `SRC_ARXIV_2201_02436` p.15 (`IR_QA1_DESIGN_CODE_ANDRE2022`) | not verified | not installed | comparator context |
+| Fixfield | tracking code of the vFFA studies | `SRC_WS1681458_TOPPMUGGLESTONE_VFFA` p.46 (`ACC_VFFA_TRACKING_CODE_WS2026_TOPPMUGGLESTONE`) | not verified | not available | a toy vFFA cell of this project must be cross-checked with an independent optics code (Benchmark 3.2 logic) |
+| G4beamline; General Particle Tracer | surface-muon beam transport (G4beamline); ultra-slow-muon transport with 3 % decay loss (GPT) | `SRC_ARXIV_2410_11367` pp.2–3 (`SOURCE_SURFACE_MU_MOMENTUM_MEAN_ARITOME2024`, `SOURCE_DIAG_LINE_DECAY_LOSS_ARITOME2024`); G4beamline also `SRC_ARXIV_1901_03047` (beam-transport simulation, its ref. [27]) | G4beamline §3; GPT not verified | not installed | J-PARC source-chain context |
+
+None of these codes changes a value in `parameters/`; they back provenance and future run metadata
+only (`research/source_quality_policy.md` §2, category `OFFICIAL_SOFTWARE_DOCUMENTATION` where a
+software source is registered). Adoption of any of them requires the steps of §11.

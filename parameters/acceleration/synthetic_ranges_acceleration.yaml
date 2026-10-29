@@ -3,9 +3,13 @@
 # parameters/assumptions/phase0_assumptions.yaml; 'value' is only the range midpoint (or a representative member of a
 # discrete set) so that software has a number to display. None of these numbers is an LHmuC design value.
 # Date: 2026-10-28. Author role: assumptions and synthetic-range author (Phase 0 evidence audit).
+# Updated 2026-10-29: records whose assumption is superseded_by_evidence (parameters/assumptions/phase0_assumptions.yaml) are
+# SYNTHETIC SCAN VARIABLES ONLY; their bands were re-based to bracket every documented option and no scenario slot may point to
+# them. Records whose assumption stays synthetic carry updated dependencies and notes; PROTON_BUNCH_LENGTH_RMS_SYN was widened to
+# a log-uniform 5-100 cm range (value = geometric midpoint).
 parameters:
 - parameter_id: ACC_VFFA_PEAK_FIELD_SYN
-  name: Peak on-orbit magnetic field of the vFFA booster arcs (synthetic screening range)
+  name: Peak on-orbit magnetic field of the vFFA booster arcs (synthetic scan variable; assumption superseded by evidence)
   symbol: B_peak
   subsystem: acceleration
   scenario: null
@@ -13,15 +17,16 @@ parameters:
   unit: T
   uncertainty:
     type: interval
-    lower: 3.0
-    upper: 16.0
+    lower: 5.0
+    upper: 14.0
     unit: T
-    note: Synthetic range, not a measured uncertainty; see ASM_ACC_VFFA_PEAK_FIELD.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_ACC_VFFA_PEAK_FIELD (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 3.0
-    max: 16.0
+    min: 5.0
+    max: 14.0
     unit: T
-    basis: synthetic screening range, see assumption record ASM_ACC_VFFA_PEAK_FIELD
+    basis: synthetic scan band bracketing every documented on-orbit peak field (6.93-13.59 T MuCol M17; 8, 10, <9 T Krakow deck); see
+      ASM_ACC_VFFA_PEAK_FIELD (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -30,26 +35,40 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; LHmuC vFFAG booster concept (DIS2026) and the muLHC vFFA booster option (SRC_ARXIV_2506_15445 section
-        2.2.3).
+      explanation: 'Scan variable only (ASM_ACC_VFFA_PEAK_FIELD superseded by evidence on 2026-10-29); on-orbit peak field of the 70-500
+        GeV vFFA booster concept, not valid for the 1 TeV extraction option. Baselines: ACC_VFFA_PEAK_DIPOLE_FIELD_8T_WS2026_TOPPMUGGLESTONE,
+        ACC_VFFA_PEAK_DIPOLE_FIELD_10T_WS2026_TOPPMUGGLESTONE, ACC_VFFA_PEAK_FIELD_RELAXED_MAX_WS2026_TOPPMUGGLESTONE (LHmuC, preliminary),
+        ACC_VFFA1_PEAK_FIELD_ON_ORBIT_MUCOLM17 and ACC_VFFA4_PEAK_FIELD_ON_ORBIT_MUCOLM17 (analogous). No scenario slot may point to
+        this record.'
     confidence: low
     assumption_id: ASM_ACC_VFFA_PEAK_FIELD
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - ACCEL_SCHEME_DIS2026
   - ACCEL_BOOSTER_CIRCUMFERENCE_DIS2026
   - ACC_BOOSTER_MAX_FIELD_MUTRISTAN_MULHC
   - ACC_BOOSTER_LATTICE_TYPE_MULHC
+  - ACC_VFFA_PEAK_DIPOLE_FIELD_8T_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA_PEAK_DIPOLE_FIELD_10T_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA_PEAK_FIELD_RELAXED_MAX_WS2026_TOPPMUGGLESTONE
+  - ACC_VFFA1_PEAK_FIELD_ON_ORBIT_MUCOLM17
+  - ACC_VFFA4_PEAK_FIELD_ON_ORBIT_MUCOLM17
+  - ACC_VFFA_DESIGN_LIMIT_SC_DIPOLE_MUCOLM17
   date_added: '2026-10-28'
   responsible_module: parameters/acceleration
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_ACC_VFFA_PEAK_FIELD is superseded by evidence (2026-10-29); this record survives only to
+    scan the band 5-14 T (on-orbit peak field) in screening and sensitivity studies, and no scenario slot may point to it. Baselines:
+    Krakow deck ~8 T, ~10 T, relaxed < 9 T (preliminary analytic study, 70 -> 500 GeV); MuCol M17 6.93 T (stage 1) and 13.59 T (stage
+    4), analytic lattices. value is the arithmetic midpoint of the band and exists only so that software, plots and exports have a number
+    to display; it is NOT an LHmuC design value. Phase-0 band uniform 3-16 T (2026-10-28); re-based on 2026-10-29 to bracket every documented
+    option. Any use must carry the assumption_id and the band (CLAUDE.md 1.4). Scan points above 8.3 T exceed the LHC-dipole design
+    limit of MuCol M17 (ACC_VFFA_DESIGN_LIMIT_SC_DIPOLE_MUCOLM17) and must be flagged.'
 - parameter_id: ACC_RF_FREQUENCY_SYN
   name: RF frequency of the muon accelerating linacs (synthetic discrete set)
   symbol: f_RF
@@ -84,7 +103,8 @@ parameters:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
@@ -92,12 +112,19 @@ parameters:
   - ACCEL_ERL_THREE_PASS_ENERGY_DIS2026
   - MACHINE_MU_BUNCH_SPACING_DIS2026
   - MACHINE_MU_BUNCH_LENGTH_MULHC
+  - ACC_ERL_RF_FREQUENCY_ANDRE2022
+  - ACC_G2_LINAC_RF_FREQUENCY_LOW_ABE2019
+  - ACC_G2_LINAC_RF_FREQUENCY_HIGH_ABE2019
+  - SOURCE_RFQ_FREQUENCY_MU_OPERATION_WS2026_NAKAZAWA
+  - ACC_RLA1_RF_FREQUENCY_FIRST_MR7
+  - ACC_RCS1_RF_FREQUENCY_MR7
   date_added: '2026-10-28'
   responsible_module: parameters/acceleration
   notes: 'SYNTHETIC: value is one representative member of the discrete candidate set in the assumption record and exists only so that
     software, plots and exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and
     the range (CLAUDE.md 1.4). Discrete set {325, 352, 400, 802, 1300} MHz; allowed_range min/max are the set bounds, not a continuous
-    interval.'
+    interval. Updated 2026-10-29: kept synthetic, set unchanged; 802 MHz now stands for the LHeC 801.58 MHz (ACC_ERL_RF_FREQUENCY_ANDRE2022),
+    and 325 MHz is an unsourced class label, not the J-PARC 324 MHz.'
 - parameter_id: ACC_RF_GRADIENT_SYN
   name: Accelerating gradient of the muon linacs (synthetic screening range)
   symbol: E_acc
@@ -131,7 +158,8 @@ parameters:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
@@ -141,28 +169,38 @@ parameters:
   - ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC
   - ACCEL_BOOSTER_ENERGY_PER_LINAC_PASS_NUCL
   - ACCEL_BOOSTER_LINAC_LENGTH_NUCL
+  - ACC_ERL_GRADIENT_ANDRE2022
+  - ACC_ERL_LINAC_LENGTH_ANDRE2022
+  - ACC_ERL_ENERGY_GAIN_PER_LINAC_ANDRE2022
+  - ACC_RLA1_RF_GRADIENT_352MHZ_MR7
+  - ACC_RLA1_RF_GRADIENT_1056MHZ_MR7
+  - ACC_G2_LINAC_DLS_GRADIENT_ABE2019
   date_added: '2026-10-28'
   responsible_module: parameters/acceleration
   notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Updated
+    2026-10-29: kept synthetic, band unchanged; the LHeC real-estate gradient (8.25 GeV / 900 m = 9.2 MV/m) lies 8 % below the lower
+    edge, the LHeC cavity gradient (20.06 MV/m) inside it (see ASM_ACC_RF_GRADIENT).'
 - parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_SYN
-  name: Fraction of stopped mu+ forming muonium in the ultra-cold source target (synthetic screening range)
+  name: Fraction of stopped mu+ forming muonium in a silica-aerogel source target (synthetic scan variable; assumption superseded by
+    evidence)
   symbol: f_Mu
   subsystem: source
   scenario: null
-  value: 0.5
+  value: 0.575
   unit: dimensionless
   uncertainty:
     type: interval
-    lower: 0.3
-    upper: 0.7
+    lower: 0.4
+    upper: 0.75
     unit: dimensionless
-    note: Synthetic range, not a measured uncertainty; see ASM_SOURCE_MUONIUM_FORMATION_FRACTION.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_SOURCE_MUONIUM_FORMATION_FRACTION (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 0.3
-    max: 0.7
+    min: 0.4
+    max: 0.75
     unit: dimensionless
-    basis: synthetic screening range, see assumption record ASM_SOURCE_MUONIUM_FORMATION_FRACTION
+    basis: synthetic scan band bracketing both aerogel measurements (0.52 +- 0.01 and 0.655 +- 0.018; the latter combines silica and
+      PMSQ aerogel targets) by at least 5 sigma; see ASM_SOURCE_MUONIUM_FORMATION_FRACTION (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -171,44 +209,52 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; LHmuC ultra-cold mu+ source model (aerogel-type target). Hot-tungsten and hybrid targets need their
-        own records once sourced.
+      explanation: 'Scan variable only (ASM_SOURCE_MUONIUM_FORMATION_FRACTION superseded by evidence on 2026-10-29); silica-aerogel
+        targets only. Baselines: SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013 (0.52 +- 0.01) and SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020
+        (0.655 +- 0.018), 6.6 sigma apart, never averaged. No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_SOURCE_MUONIUM_FORMATION_FRACTION
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - SOURCE_MUONIUM_TARGET_OPTIONS_DIS2026
   - SOURCE_COOLING_METHOD_DIS2026
   - SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
+  - SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013
+  - SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020
   date_added: '2026-10-28'
   responsible_module: parameters/source
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Subsystem
-    source; kept in the acceleration synthetic file (muon production/acceleration chain) because no source synthetic file was assigned.'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_SOURCE_MUONIUM_FORMATION_FRACTION is superseded by evidence (2026-10-29); this record survives
+    only to scan the band 0.4-0.75 in screening and sensitivity studies, and no scenario slot may point to it. Baselines: SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013
+    (0.52 +- 0.01) and SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020 (0.655 +- 0.018), kept as two separate measurements. value is the
+    arithmetic midpoint of the band and exists only so that software, plots and exports have a number to display; it is NOT an LHmuC
+    design value. Phase-0 band uniform 0.3-0.7 (2026-10-28); re-based on 2026-10-29 to bracket every documented option. Any use must
+    carry the assumption_id and the band (CLAUDE.md 1.4). Subsystem source; kept in the acceleration synthetic file (muon production/acceleration
+    chain) because no source synthetic file was assigned.'
 - parameter_id: SOURCE_LASER_IONISATION_EFFICIENCY_SYN
-  name: Laser ionisation efficiency of thermal muonium (synthetic log-uniform screening range)
+  name: Laser ionisation efficiency of thermal muonium (synthetic log-uniform scan variable; assumption superseded by evidence)
   symbol: eps_ion
   subsystem: source
   scenario: null
-  value: 0.0316
+  value: 0.000316
   unit: dimensionless
   uncertainty:
     type: interval
-    lower: 0.001
+    lower: 1.0e-07
     upper: 1.0
     unit: dimensionless
-    note: Synthetic range, not a measured uncertainty; see ASM_SOURCE_LASER_IONISATION_EFFICIENCY.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_SOURCE_LASER_IONISATION_EFFICIENCY (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 0.001
+    min: 1.0e-07
     max: 1.0
     unit: dimensionless
-    basis: synthetic screening range, see assumption record ASM_SOURCE_LASER_IONISATION_EFFICIENCY
+    basis: synthetic log-uniform scan band bracketing the simulated 244 nm value (~1e-6) and the calculated 122 nm value (0.73); see
+      ASM_SOURCE_LASER_IONISATION_EFFICIENCY (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -217,28 +263,39 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; LHmuC ultra-cold mu+ source model. The value is a prior for sensitivity studies, not a performance
-        claim.
+      explanation: 'Scan variable only (ASM_SOURCE_LASER_IONISATION_EFFICIENCY superseded by evidence on 2026-10-29); every scan point
+        must be labelled with the laser scheme it represents. Baselines: SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG (~1e-6, laser
+        simulation of the demonstrated 244 nm scheme); SOURCE_LASER_IONISATION_EFF_CALC_ABE2019 and SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG
+        (0.73, 122 nm design, calculated); SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024 (~0.1, projected); kept separate.
+        No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_SOURCE_LASER_IONISATION_EFFICIENCY
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - SOURCE_COOLING_METHOD_DIS2026
   - SOURCE_MUONIUM_FORMATION_FRACTION_SYN
+  - SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG
+  - SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG
+  - SOURCE_LASER_IONISATION_EFF_CALC_ABE2019
+  - SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024
   date_added: '2026-10-28'
   responsible_module: parameters/source
-  notes: 'SYNTHETIC: value is the geometric midpoint of the log-uniform synthetic range and exists only so that software, plots and
-    exports have a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md
-    1.4). Subsystem source; kept in the acceleration synthetic file. The representative value is the geometric midpoint of a log-uniform
-    range.'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_SOURCE_LASER_IONISATION_EFFICIENCY is superseded by evidence (2026-10-29); this record survives
+    only to scan the band 1e-7 - 1 (log-uniform) in screening and sensitivity studies, and no scenario slot may point to it. Baselines:
+    SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG (~1e-6, simulated, demonstrated 244 nm scheme), SOURCE_LASER_IONISATION_EFF_CALC_ABE2019
+    and SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG (0.73, calculated 122 nm design value), SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024
+    (~0.1, projected). value is the geometric midpoint of the log-uniform band and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Phase-0 band log-uniform 1e-3 - 1 (2026-10-28); re-based on 2026-10-29 to
+    bracket every documented option. Any use must carry the assumption_id and the band (CLAUDE.md 1.4). The demonstrated 244 nm scheme
+    lay three decades BELOW the Phase-0 band. Subsystem source; kept in the acceleration synthetic file.'
 - parameter_id: MACHINE_MUON_POLARISATION_SYN
-  name: Longitudinal polarisation of the mu+ beam at collision (synthetic screening range)
+  name: Longitudinal polarisation of the mu+ beam at collision (synthetic scan variable; assumption superseded by evidence)
   symbol: P_mu
   subsystem: machine
   scenario: null
@@ -249,12 +306,13 @@ parameters:
     lower: 0.0
     upper: 0.8
     unit: dimensionless
-    note: Synthetic range, not a measured uncertainty; see ASM_MACHINE_MUON_POLARISATION.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_MACHINE_MUON_POLARISATION (superseded by evidence on 2026-10-29).
   allowed_range:
     min: 0.0
     max: 0.8
     unit: dimensionless
-    basis: synthetic screening range, see assumption record ASM_MACHINE_MUON_POLARISATION
+    basis: synthetic scan band bracketing every documented value (0.5 LHmuC and J-PARC, 0.8 muTRISTAN; 0 = unpolarised, a physical value);
+      see ASM_MACHINE_MUON_POLARISATION (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -263,21 +321,30 @@ parameters:
     applicability:
       category: screening_only
       scenario: null
-      explanation: Screening only; LHmuC mu+ beam. Any physics projection using P > 0 must state this assumption explicitly.
+      explanation: 'Scan variable only (ASM_MACHINE_MUON_POLARISATION superseded by evidence on 2026-10-29). Baselines: MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+        (0.5, an LHmuC assumption), MACHINE_MUON_POLARISATION_ABE2019 (0.5) and MACHINE_MUON_POLARISATION_MUTRISTAN2022 (0.8), all assumptions
+        or design values. Any physics projection using P > 0 must state which. No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_MACHINE_MUON_POLARISATION
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026
   - SOURCE_COOLING_METHOD_DIS2026
+  - MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  - MACHINE_MUON_POLARISATION_ABE2019
   date_added: '2026-10-28'
   responsible_module: parameters/machine
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Subsystem
-    machine; kept in the acceleration synthetic file because polarisation is a beam-production/transport property.'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_MACHINE_MUON_POLARISATION is superseded by evidence (2026-10-29); this record survives only
+    to scan the band 0-0.8 in screening and sensitivity studies, and no scenario slot may point to it. Baselines: MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+    (0.5, assumed), MACHINE_MUON_POLARISATION_ABE2019 (0.5), MACHINE_MUON_POLARISATION_MUTRISTAN2022 (0.8, assumed). value is the arithmetic
+    midpoint of the band and exists only so that software, plots and exports have a number to display; it is NOT an LHmuC design value.
+    Phase-0 band uniform 0-0.8 (2026-10-28); unchanged on 2026-10-29 because every documented option lies inside it. Any use must carry
+    the assumption_id and the band (CLAUDE.md 1.4). 0 inside this band means unpolarised, a physical value. Subsystem machine; kept
+    in the acceleration synthetic file because polarisation is a beam-production/transport property.'

@@ -1,6 +1,7 @@
 # LHμC-VirtualLab — Roadmap (Milestones M1–M5)
 
-**Document date:** 2026-10-28 · **Project phase:** Phase 0 = Milestone M1 (evidence and
+**Document date:** 2026-10-28 · **Revised:** 2026-10-29 (baseline note, M1 state, §2.1 M2 inputs
+now available, dated notes on blockers) · **Project phase:** Phase 0 = Milestone M1 (evidence and
 feasibility audit) · **Owner:** David Hausler.
 
 **Scope note.** The master project prompt (§42–46) defines the milestone sequence M1–M5; the
@@ -25,6 +26,16 @@ fragments (only the five-upload registry exists), `research/source_conflicts.yam
 `parameters/materials/*.yaml`, `theory/benchmarks/*/proposal.yaml`, `docs/software_inventory.md`,
 and the M1 report under `docs/reports/`.
 
+**Baseline update (commit `104073c`, 2026-10-29):** `uv run python -m lhmuc validate` reports 5601
+parameters (1035 `reported_lhmuc`, 1748 `imported_related`, 2647 `analogous`, 27 `derived_lhmuc`,
+95 `analytical_estimate`, 20 `synthetic`, 1 `scan_variable`, 28 `unknown`), 236 sources (34
+`uploaded`), 36 scenarios, 20 assumptions, 15 conflicts, 4 proposals, 0 errors, 0 warnings; the suite
+collects 151 tests. Every item of the "not yet present" list above now exists, including the M1
+report `docs/reports/M1_evidence_audit.md` and its addendum `docs/reports/M1_addendum_uploaded_documents.md`
+(draft). A registry stage (assumption supersession, nine new conflict records, missing-evidence,
+risk and validation rows) was in progress in the working tree on 2026-10-29; the counts above are
+those of the commit, not of that stage.
+
 ---
 
 ## 0. Milestone overview
@@ -36,6 +47,11 @@ and the M1 report under `docs/reports/`.
 | **M3** | Benchmarks, generation and recasting; simulation geometry | P2–P3 (where codes exist), G1–G2 | not started; blocked on inputs |
 | **M4** | Optimisation, uncertainty propagation and robustness | P2–P3 | not started |
 | **M5** | Integrated co-design loop, commissioning-style studies and virtual controls | depends on inputs | not started; entry criterion ("LHμC hardware specifications exist") unreachable today |
+
+*Status 2026-10-29:* unchanged in kind. M1 is still in progress (addendum extraction and
+verification complete; registry stage and addendum report being finalised); M2–M5 are not started.
+The uploads move several M2 inputs from "unknown" to "reported in workshop material, unverified by
+simulation" (§2.1); none of them is a design, and no milestone label changes.
 
 Rule for every milestone: a milestone may *start* only when its entry criteria are met, may
 *exit* only when every exit criterion is verified by a test or a reviewed report, and every result
@@ -66,6 +82,19 @@ closed-form checks reproduce the reported numbers.
 | 1.10 | Policy and architecture documents, software inventory | `docs/*.md` | 11 of 12 present; `software_inventory.md` missing |
 | 1.11 | M1 evidence-audit report (§49 format) | `docs/reports/` | not written |
 
+*State of the deliverables on 2026-10-29 (commit `104073c`):* 1.1 — 5601 records, of which 4771 cite
+the 29 addendum documents, each verified against the page images by an independent agent
+(`research/_fragments/verify_G*.md`); human line-by-line review still pending. 1.2 — 36 scenarios.
+1.4 — P1 checks in five scientific test files (`test_analytical_checks.py`, `test_workshop_decks.py`,
+`test_batch7_documents.py`, `test_mucol_m17_vffa.py`, `test_batch9_documents.py`) plus canonical-value
+tests; 151 tests collected. 1.5 — merged registry and logs present. 1.6 — 15 conflict records
+committed, nine more drafted in the registry stage. 1.7 — 20 assumption records, of which the
+registry stage marks those overtaken by uploaded evidence `superseded_by_evidence`; materials records
+present. 1.8 — all five registries present (authored ones being extended in the registry stage). 1.9
+— four proposal records. 1.10 — all documents present, revised on 2026-10-29. 1.11 —
+`docs/reports/M1_evidence_audit.md` (2026-10-28) and the draft addendum
+`docs/reports/M1_addendum_uploaded_documents.md`.
+
 **Entry criteria (met).** Uploaded documents available and archived with SHA-256.
 
 **Exit criteria.**
@@ -89,6 +118,10 @@ the DIS2026 peak luminosity 2.1×10³⁴ cm⁻²s⁻¹ is reproduced by the naiv
 decay average 0.63 alone, while the hourglass factor for the stated optics with a 7.5 cm proton
 bunch is ≈0.53 and is not visible in the published numbers; the DIS2026 proton bunch population
 22×10¹¹ is ten times the HL-LHC value and rests on a workshop reference not available here.
+*[Update 2026-10-29: the workshop reference (Zimmermann, `SRC_WS1681458_ZIMMERMANN_SPS_LHC`) is now
+read; it answers with earlier fewer-bunch schemes and the rule σδσz ≈ 2 n_b,0 σδ,0 σz,0 (p.14), not
+with an LHμC proton bunch. AloHEP simulates hourglass and pinch and applies the decay factor
+analytically; its public v2.0 code holds no μLHC deck. Details in `docs/limitations.md` §5.1.]*
 
 ---
 
@@ -133,6 +166,36 @@ with overlap and label-propagation tests; the M2 report is written.
 - *Proton bunch length and muon β* for LHμC*: `unknown_roles` in the DIS2026 scenarios.
 - *Nozzle geometry*: only the μLHC description (6 m tungsten + borated polyethylene, 19 % of the
   energy deposited) is read; IMCC numbers are snippet-only (R4).
+- *Update 2026-10-29:* the AloHEP model is now documented (`SRC_ARXIV_2610_09839`) and its public code
+  is on file: github.com/tobbetuyef/AloHEP, tag v2.0, MIT (`SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`), the
+  repository the method paper names, not the `yefetu/ALOHEP` copy of the first bullet; it has no μLHC
+  deck (first bullet narrowed, not resolved); the proton bunch length and muon β*
+  are still unknown; the nozzle geometry is now reported in workshop material and the IMCC numbers are
+  read in full (§2.1).
+
+### 2.1 M2 inputs now available (2026-10-29)
+
+The uploads of the Phase-0 addendum and batches 7–9 put the following on file for M2. Each is an
+input *with provenance*, not a design; LHμC values are "reported in workshop material, unverified by
+simulation", the rest are comparators or analogues.
+
+| M2 deliverable | Input now available | Record ids / source (page) | Still missing |
+|---|---|---|---|
+| Luminosity model, Benchmark 3.1 | AloHEP equations, toggles, outputs, decay treatment and limits; public code v2.0 (MIT) with a headless entry point; the one-beam vs two-beam decay average pinned | `MACHINE_ALOHEP_*_DAGLI2026`, `SRC_ARXIV_2610_09839` pp.7–39, `docs/tools/alohep_method_dagli2026.md`, `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`; `test_decay_averaging_differs_between_mumu_and_mup` | μLHC input decks and option set (`ME_043`); proton bunch length |
+| Luminosity model, second LHμC set | Forthomme beam set (40 bunches of 10¹⁰ μ⁺, 300 ns, σ 4.3 µm, β*_p 7 cm, 10³⁴) and its implied N_p ≈ 7.0 × 10¹¹ under H = 1 | `MACHINE_*_WS2026_FORTHOMME`, `PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME` (p.17) | muon energy, emittance, β* and bunch length of that set |
+| Luminosity model, proton side | Zimmermann's fewer-bunch schemes and σδσz rule; LHC Project Report 627 and CERN-2005-006 tables as restated | `PROTON_*_WS2026_ZIMMERMANN` (request p.2, Report 627 Table 1 p.9, CERN-2005-006 Table 3 p.13, rule p.14), scenarios `LHC-PR627-*`, `QCD-EXPLORER-EPAC2004`, `LHC-DAMERAU-GAROBY-LONGBUNCH-EPAC2004` | an LHμC proton bunch population and length; HL-LHC TDR (`ME_044`) |
+| Hourglass / IR comparators | LHeC L* 15 m, β*_p 10 cm, Fig. 19 β*_p 10.0 cm / β*_e 10.9 cm (per beam), head-on scheme, QA1 concept; IMCC L* 6 m; MuIC H = 1 convention | `IR_*_ANDRE2022` (pp.10–18), `IR_LSTAR_MR7` (p.65), `MACHINE_HOURGLASS_FACTOR_ASSUMED_MUIC2022` (p.7) | LHμC L*, Q1, crossing angle, separator (`ME_017`–`ME_020`) |
+| G0/G1 nozzle placeholder | LHμC options 40 / 60 / 80 / 100 mrad, 487.8 cm + 100 cm drawing dimensions, tip 6 cm, tungsten + borated polyethylene, single-sided; IMCC Table G.1 profile and INERMET180 composition | `DET_NOZZLE_*_WS2026_KILIC` (pp.4–5, 12), `DET_NOZZLE_*_WS2026_FORTHOMME` (p.9), `DET_NOZZLE_*_MR7` (pp.65–66), `MAT_INERMET180_MR7`; `test_nozzle_half_angle_to_eta_max_forthomme_and_imcc` | base dimensions (to be set by simulation, Kilic p.22); tungsten grade and cladding thickness (not stated) |
+| G0/G1 detector envelope | LHeC detector (LHeD 13 m × 9 m, 3 T in the 2022 paper, 3.8 T in the Delphes card); LHμC adaptations | `DET_LHED_LENGTH_WS2026_FORTHOMME`, `DET_LHED_DIAMETER_WS2026_FORTHOMME` (p.3), `DET_SOLENOID_FIELD_*`, `DET_LHMUC_*_WS2026_FORTHOMME` | an LHμC dimension table and solenoid field (`CONF_DETECTOR_SOLENOID_FIELD`) |
+| Fast detector placeholder | MuIC Delphes card (Tables 16–18); LHeC Delphes resolutions as restated; TeV-muon resolutions 6–7 % (main) and ~6 % (far-forward) | `DET_DELPHES_*_MUIC2022` (PDF pp.41–45), `DET_DELPHES_*_LHEC_WS2026_FORTHOMME` (p.13), `CONF_TEV_MUON_RESOLUTION` | an LHμC card with provenance |
+| Booster placeholder, toy vFFA cell | Kraków requirement and preliminary field options; M17 closed-orbit geometry and Tables 2.2–2.3 | `ACC_*_WS2026_TOPPMUGGLESTONE` (pp.3, 35–36), `*_MUCOLM17` (pp.6–13), `tests/scientific/test_mucol_m17_vffa.py` | an LHμC booster lattice with tracking (`ME_027`); RF |
+| Muon decay along booster and ring | turns per lifetime n = γcτ_μ/C (2079 at 1 TeV in 3 km) | `PHYS_MUON_TURNS_PER_LIFETIME_FORMULA_DUDKO2026` (p.14); `test_turns_per_lifetime_dudko_formula` | stored-turn and fill-pattern model (`ME_042`) |
+| Source-chain model | measured 2024 chain; formation fractions 0.52 and 0.655; the 0.73 calculation; μTRISTAN 0.137 budget; hybrid-target yield with η_conv unknown; hybrid-source 0.04 μ⁺/p; front-end space charge | `*_ARITOME2024`, `*_BAKULE2013`, `*_BEARE2020`, `*_ABE2019`, `*_WS2026_ZHANG`, `*_SAKAKI2026`, `*_WS2026_ROGERS`, `*_WS2026_NAKAZAWA` | measured 122 + 355 nm ionisation; extraction and second-stage cooling; a ≥ 10¹⁰ μ⁺ front-end design (`ME_030`–`ME_033`) |
+
+Not available and still blocking M2 exit: the μLHC AloHEP input decks (Benchmark 3.1), the LHμC
+proton bunch length and muon β*, and the MR7 reference tables (being verified, not in
+`parameters/`). M2 may start on the inputs above only after the M1 exit criteria are met (§1), with
+every synthetic input carried as a range with its assumption record.
 
 ---
 
@@ -180,6 +243,11 @@ reproduced first); every unreproducible benchmark is reported as such, not tuned
 - **HELP4CERN White Paper** ("in preparation"): origin of the Khanpour working points
   (500 GeV/3.7 TeV/250 fb⁻¹; 1 TeV/5.3 TeV/1000 fb⁻¹; 2 TeV/7.5 TeV/1000 fb⁻¹) and presumably of
   the baseline the benchmarks assume; no URL, arXiv id or date exists.
+- *Update 2026-10-29:* all four bullets above stand. New for M3: the Kilic nozzle study used
+  Geant4 11.4, Pythia 8.312, HepMC 2.06.11, MadGraph5_aMC@NLO and NNPDF23_lo_as_0130_qed
+  (`DET_NOZZLE_SIM_*_WS2026_KILIC`, pp.6–7) — a reproduction (Benchmark 3.3 class) needs those
+  versions; the μ⁻p results of Cheung & Wang and the μ⁺p/μ⁻p tables of the muon-ion collider paper
+  are comparators for M3 generator runs, never targets for μ⁺p (`docs/scientific_scope.md` §1.11).
 
 ---
 
@@ -251,6 +319,9 @@ milestone is scheduled.
 | **Kraków workshop contributions (Indico 1681458)** not obtained (nozzle, vFFA, SPS/LHC modifications, detector, near-beam) | M2 geometry, M3 backgrounds, M4 bounds | Indico reachable or slides uploaded | `docs/internet_research_protocol.md` §10 |
 | **`effdihiggs-v2` UFO not public** | M3 benchmark C | authors | `docs/limitations.md` §6 |
 | **AloHEP luminosity model undocumented here** | M2 Benchmark 3.1 | IPAC'21 paper, hepforge page, or reading the repository source | `research/_fragments/mulhc-mutristan_unresolved.md` |
+| *2026-10-29:* **AloHEP model documented; μLHC input decks missing** (replaces the row above) | M2 Benchmark 3.1 | the decks and option set from the authors or the PTEP erratum | `ME_043`, `docs/tools/alohep_method_dagli2026.md` |
+| *2026-10-29:* Kraków contributions — **eleven uploaded**; Otani, Kamioka, Piotrzkowski, Tentori, Sultansoy, Holzer still missing (updates the Kraków row above) | M2 source/front end, M3 | Indico reachable or slides uploaded | `docs/research_roadmap.md` §3a W3 |
+| *2026-10-29:* **MR7 reference tables not yet verified** | M2 (IMCC analogues for driver, target, cooling, magnets, RF, power converters) | completion of the lead's verifier pass | cite `SRC_ARXIV_2510_27437` with a page meanwhile |
 
 ---
 
@@ -274,6 +345,7 @@ milestone is scheduled.
 | Date | Change |
 |---|---|
 | 2026-10-28 | First version. Baseline = repository state at the end of the Phase 0 extraction (796 parameters, 13 scenarios, 0 assumptions/conflicts/proposals, registries and M1 report pending). |
+| 2026-10-29 | Baseline note for commit `104073c` (5601 parameters, 36 scenarios, 34 uploaded sources); M1 deliverable states; §2.1 M2 inputs now available from the addendum and batches 7–9; dated notes on the M2/M3 blockers and the cross-cutting table. No milestone status changed. |
 
 ## 9. Sources cited
 
@@ -283,3 +355,4 @@ milestone is scheduled.
 - `SRC_WS1681458_KHANPOUR_GAMMAGAMMA` — Khanpour, "Two-Photon Physics at the LHμC", Kraków workshop slides (p.4 working points attributed to the HELP4CERN White Paper, in preparation).
 - `SRC_WS_LEBOHO_KUMAR_DIHIGGS` — Leboho, Kumar, "Probing anomalous Higgs couplings at the future μ+p collider" (p.6–8 configuration and cross sections; p.14–16 results).
 - Snippet-level (not read, `UNVERIFIED`): arXiv:2610.28252, arXiv:2610.17801 (`research/_fragments/theory-benchmarks_sources.yaml`).
+- Added 2026-10-29 (uploaded, read in full; pages as cited in §2.1): `SRC_ARXIV_2610_09839` (AloHEP), `SRC_URL_GITHUB_TOBBETUYEF_ALOHEP` (fetched), `SRC_WS1681458_FORTHOMME_DETECTOR`, `SRC_WS1681458_ZIMMERMANN_SPS_LHC`, `SRC_WS1681458_KILIC_NOZZLE`, `SRC_WS1681458_TOPPMUGGLESTONE_VFFA`, `SRC_DOI_10_5281_ZENODO_15054073`, `SRC_ARXIV_2510_27437`, `SRC_ARXIV_2201_02436`, `SRC_ARXIV_2203_06258`, `SRC_ARXIV_2607_16904`, and the source-chain documents listed in `docs/scientific_scope.md` §7.

@@ -1,6 +1,7 @@
 # LHμC-VirtualLab — Uncertainty policy
 
-**Document date:** 2026-10-28 · **Project phase:** Phase 0 (evidence and feasibility audit) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§2.1, §8a; dated notes in §1, §6–§8) ·
+**Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status:** policy. It fixes how uncertainty is represented, propagated
 and reported from Milestone 2 onwards; on 2026-10-28 only the representation (§1–§2) is
 implemented in schemas and registries. `uncertainty/` contains a README and empty
@@ -29,6 +30,15 @@ preserved, not averaged), §1.8 (tools, not the LLM, do the science). Companion 
 | `order_of_magnitude` | `note` (mandatory, quoting the wording) | the source says "close to 10³⁴", "about 3 (6) km", "~", "approximately" | 45 records |
 | `not_stated` | `note` optional | the source prints digits with no uncertainty — **the default for every table value**; it means "precision unknown", not "exact" | 704 records (27 further categorical records carry `null`) |
 
+*Counts at commit `104073c` (2026-10-29, 5601 parameters):* `gaussian_sigma` 93, `interval` 53,
+`relative_fraction` 140, `order_of_magnitude` 75, `not_stated` 5213, `null` (categorical) 27. The
+growth of `gaussian_sigma` comes mainly from measurements with stated errors in the uploaded
+source-chain papers — Beare 2020 (29 records), Bakule 2013 (13), Aritome 2024 (10), e.g. 0.52 ± 0.01
+in `SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013` and 0.655 ± 0.018 in
+`SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020` — and from the Gaussian-fit parameters with their printed standard errors in the Kilic
+nozzle-study insets (16); that of `relative_fraction` almost entirely from the MadGraph scale and PDF
+uncertainties of the muon-ion collider tables (132 of 140). Rule 1 below applies unchanged.
+
 Rules:
 
 1. `not_stated` is never silently upgraded. A table value "5.3 TeV" keeps `not_stated`; the
@@ -54,7 +64,10 @@ have no single value and are varied over `allowed_range`; they are never average
 Every synthetic input is a range or a distribution (`CLAUDE.md` §1.4), never a bare point. The
 assumption record (`schemas/assumption.schema.json`, `parameters/assumptions/*.yaml`, none written
 yet) carries `synthetic_model.distribution ∈ {uniform, log_uniform, triangular, gaussian,
-discrete_set, range_only}` with `minimum`, `maximum`, `mode`, `mean`, `sigma` or `values`, plus
+discrete_set, range_only}` with `minimum`, `maximum`, `mode`, `mean`, `sigma` or `values`
+*(2026-10-29: 20 records exist in `parameters/assumptions/phase0_assumptions.yaml`; those overtaken
+by uploaded evidence are marked `superseded_by_evidence` and their `_SYN` parameters survive only as
+scan variables, `docs/synthetic_data_policy.md`)*, plus
 `reason_required`, `search_summary`, `reason_authoritative_value_missing`, `physical_basis`,
 `analogous_systems`, `affected_outputs`, `replacement_evidence`, `sensitivity_analysis
 ∈ {not_started, planned, done}`. `range_only` means the band is physical but no distribution can
@@ -99,6 +112,29 @@ marked and are **not** registry values.
 
 The table is the Phase 0 input to `uncertainty/priors/` (Milestone 4). An input missing from
 the registry cannot be given a prior by this document.
+
+### 2.1 Addendum 2026-10-29 — input classes changed by the uploaded documents
+
+The rows above stay as written on 2026-10-28. The uploads of the Phase-0 addendum and batches 7–9
+change what is known for the classes below; the representation column says how each enters a
+future propagation. LHμC values from the Kraków decks are reported in workshop material and
+unverified by simulation; everything else is a comparator.
+
+| Input class | What is known now (record, source page) | Uncertainty character | Representation |
+|---|---|---|---|
+| Muon source yield | measured 2.1 × 10⁻⁸ μ⁺ at 100 keV per surface muon (`SOURCE_USM_PER_SURFACE_MUON_100KEV_ARITOME2024`, pp.2, 4); design budgets 2.5–2.6 × 10⁻³ per surface muon (J-PARC g-2) and 0.137 after stopping (μTRISTAN, Zhang p.20); hybrid source 0.04 μ⁺ per 5 GeV proton to the end of stage A (Rogers p.14); hybrid target 6 × 10⁻⁴ per p–Li collision × unknown η_conv | gap of 10⁵–10⁶ between demonstrated and design values; scheme-dependent | separate scenarios per source concept and laser scheme (`CONF_SOURCE_CONCEPT`, `CONF_LASER_IONISATION_EFFICIENCY`); a result that needs η_conv or the extraction efficiency is **not evaluable** (both null) |
+| Muonium formation fraction | 0.52 ± 0.01 (Bakule 2013 p.3) and 0.655 ± 0.018 (Beare 2020 p.25), different samples, 6.6 σ apart | two measurements, not one quantity with scatter | the value of the target type the model represents, with its σ; never a pooled mean (`CONF_MUONIUM_FORMATION_FRACTION`) |
+| Laser-ionisation efficiency | 0.73 calculated (Abe 2019 p.8); ~10⁻⁶ for the 244 nm scheme used in 2024 (Zhang p.10); simulated 7 × 10⁻⁶ – 6 × 10⁻⁵ (Aritome); "around 10%" projected for 122 + 355 nm (Aritome p.5) | model-form: which scheme | discrete set by scheme, each labelled calculated / simulated / projected; no measured 122 + 355 nm value exists |
+| Nozzle opening angle and length | 40 / 60 / 80 / 100 mrad, 587.8 cm, tip 6 cm (Kilic, Forthomme); IMCC 10°, 595 cm base plane (MR7) | design options | discrete set of options (`CONF_NOZZLE_OPENING_ANGLE`); the superseded `_SYN` bands only as scan variables |
+| L* | 15 m (LHeC), 23 m (unnamed layout), 6 m (IMCC) — none for the LHμC | missing for LHμC | `IR_LSTAR_SYN` as scan variable, every result labelled with the L* used (`CONF_IR_LSTAR`) |
+| Detector solenoid field | 3 T (LHeC paper), 3.8 T (LHeC Delphes card), 5 T (MAIA, MUSIC) — none for the LHμC | missing for LHμC | `DET_SOLENOID_FIELD_SYN` scan, results per field (`CONF_DETECTOR_SOLENOID_FIELD`) |
+| vFFA peak field | Kraków options ~8 / ~10 / < 9 T (preliminary analytic); M17 6.93 T (F-magnet, stage 1) and 13.59 T (D-magnet, stage 4), good-field 12.52 / 29.04 T | definition-dependent (which magnet, on orbit vs good-field region) | separate scenarios with the field definition stated (`CONF_VFFA_PEAK_FIELD`) |
+| Proton bunch population | 2.2 × 10¹¹ (μLHC/HL-LHC), ≈ 7.0 × 10¹¹ implied by the Forthomme set under H = 1, 22 × 10¹¹ (DIS2026) | design difference plus an unstated convention | separate scenarios (`CONF_PROTON_BUNCH_POPULATION_AND_NUMBER`); the implied value carries its conventions in the derivation |
+| Proton bunch length | still no LHμC value; Zimmermann's rule σδσz ≈ 2 n_b,0 σδ,0 σz,0 for merged bunches (p.14) | missing; correlated with the bunch population | `PROTON_BUNCH_LENGTH_RMS_SYN` (synthetic range) with the correlation to the population stated in any model that varies both |
+| Luminosity model | AloHEP: hourglass and pinch simulated, decay applied analytically, L_nom equal-beam approximation (`SRC_ARXIV_2610_09839` pp.33, 36); H = 1 stated by the muon-ion collider paper (PDF p.7); one-beam (0.632) vs two-beam (0.432) decay average over one lifetime | model-form uncertainty, now enumerable | discrete set of option sets (§3.2), results per option set; the decay term always in its one-beam μp form |
+| TeV-muon momentum resolution | 6–7 % at 1 TeV main detector (Yamazaki p.10); ~6 % far-forward toroid, Geant4 (Acosta p.12) | by detector region and method | per region (`CONF_TEV_MUON_RESOLUTION`) |
+| Front-end transmission for ≥ 10¹⁰ μ⁺ per bunch | unknown; 0.75 A at the RFQ entrance, 220 × the design perveance (Nakazawa p.16) | missing | `unknown`; no scaled J-PARC value is used (`CONF_FRONT_END_SPACE_CHARGE`) |
+| Muon polarisation | assumed 50 % (Forthomme p.17), assumed 0.8 (μTRISTAN p.10), 50 % for the J-PARC g-2/EDM muon beam (Abe 2019 p.4, Table 1) | assumptions or design values, not measurements | discrete set of assumed values, labelled as assumptions |
 
 ---
 
@@ -202,6 +238,11 @@ reports no optimum.
   `reviewed` (`schemas/proposal.schema.json`); extraction confidence does not shorten that step.
 - Reports never phrase a scientific uncertainty as "we are fairly confident"; they give the
   interval, the distribution or the statement "not evaluable", with the method.
+- *Added 2026-10-29:* the `confidence` field is now bounded by the caps of
+  `research/source_quality_policy.md` §4, enforced by the validator; 1423 records were lowered from
+  `high` to `medium` on 2026-10-29 (`research/_fragments/confidence_caps_applied_2026-10-29.csv`). The
+  lowering changed provenance quality flags only — no value, interval or σ was touched, and none
+  enters a propagation.
 
 ---
 
@@ -223,6 +264,12 @@ seen. Consequences, enforced by `lhmuc/registry.py::cross_check` and
    bunch counts, the HNL and 2HDM+VLQ paper contents) are in this class.
 4. When the document is later fetched and read in full, the record is re-extracted with page and
    quotation; the snippet-era record is marked `applicability.category: superseded`, not deleted.
+
+*Update 2026-10-29:* several leads of item 3 are now read in uploaded documents and leave this
+class — LHeC L* = 15 m and β*_p = 10 cm (`SRC_ARXIV_2201_02436` p.16), the IMCC nozzle and L* = 6 m
+(`SRC_ARXIV_2510_27437` pp.65–66), the J-PARC chain (Abe 2019, Aritome 2024), the HNL and 2HDM+VLQ
+papers excepted (still blocked). They enter as read comparators with their own provenance; the
+Q1A gradient, the J-PARC design rate and the HL-LHC bunch counts and emittance remain snippet-level.
 
 ---
 
@@ -254,7 +301,48 @@ The first entry to be written is `CONF_LUMI_MODEL_ASSUMPTIONS` (referenced by
 the decay-only reproduction of the μLHC Tables 1–3 and the computed hourglass ≈ 0.53; its status
 will be `open` until the luminosity model behind the published numbers is documented.
 
+*Update 2026-10-29:* `research/source_conflicts.yaml` holds 15 records at commit `104073c`, among them
+`CONF_LUMI_MODEL_ASSUMPTIONS` with status `open`. Because `research/source_quality_policy.md` §4 caps
+every competitor of an undecided conflict at `low`, each conflict must name a treatment. The registry
+stage of 2026-10-29 records decided treatments for the open Phase-0 records and drafts nine new
+records, which illustrate the decision tree: design options kept as scenarios
+(`CONF_NOZZLE_OPENING_ANGLE`, `CONF_SOURCE_CONCEPT`, `CONF_VFFA_PEAK_FIELD`, `CONF_TEV_MUON_RESOLUTION`);
+two measurements on different samples kept per sample, never pooled
+(`CONF_MUONIUM_FORMATION_FRACTION`); calculated, simulated and projected values kept per scheme
+(`CONF_LASER_IONISATION_EFFICIENCY`); comparators carried by a scan variable
+(`CONF_IR_LSTAR`, `CONF_DETECTOR_SOLENOID_FIELD`, both `propagated_as_uncertainty`); and a scaled
+design rejected in favour of an explicit unknown (`CONF_FRONT_END_SPACE_CHARGE`). The committed file
+is authoritative; confirm statuses there once the registry stage is committed.
+
 ---
+
+## 8a. Addendum 2026-10-29 — the AI4MuC principles applied to uncertainty
+
+The AI4MuC report (`SRC_ARXIV_2610_14303`, §11, pp.12–13; adopted as process rules in
+`docs/architecture.md` §15.1) states, among its seven principles: "Validate tails and failures. For
+Muon Collider problems, losses, rare backgrounds, high occupancies, quenches, breakdown, and unusual
+signal signatures may dominate the risk." and "Track uncertainty and domain of validity. Fast models
+are most useful when users know where they can and cannot be trusted." For this policy they mean:
+
+1. **Tail statements need tail statistics.** P(dose ≤ limit), occupancy and breakdown statements
+   (§4) are computed with sample sizes adequate for the tail (≥ 10⁴ for tail probabilities, §3.2), and
+   the sampling procedure must not erase the tail. The report notes that current IMCC BIB samples take
+   "a FLUKA sample representing 10% of a single bunch crossing's parent muon population, clones and
+   randomizes each parent's decay products in azimuth", which "washes out the genuine asymmetries" and
+   under-represents rare events (p.10); such samples may be used for means, not for tails, and any
+   surrogate trained on them inherits that limit.
+2. **Every fast model carries its domain.** A surrogate stores its training hull and refuses
+   queries outside it (§3.3); an external code is used inside the regime its authors validated — for
+   AloHEP the hourglass treatment to A = σ_z/β*_y ≲ 1.5 and the pinch to D_y ≤ 1.3
+   (`SRC_ARXIV_2610_09839` pp.27, 31) — and any result outside it is labelled as such until a refined
+   run or a second code confirms it.
+3. **Comparison with trusted tools bounds model-form uncertainty.** "Compare to trusted tools" (p.12)
+   is how the discrete model variants of §3.2 are narrowed: a variant survives only if it reproduces
+   the published benchmark it claims to describe (`docs/validation_plan.md` §3.1).
+4. **Unknowns stay unknown.** Where the uploads say a quantity was not determined — the
+   muon-to-muonium conversion η_conv and the extraction efficiency of the hybrid target, the RF
+   breakdown gradient of the thin-window cavities, the front-end transmission at ≥ 10¹⁰ μ⁺ per bunch —
+   the dependent statement is "not evaluable; missing: …" (§4, rule 3), not a sampled number.
 
 ## 9. Sources cited
 
@@ -269,3 +357,8 @@ will be `open` until the luminosity model behind the published numbers is docume
   slides, p.6–8, 12, 14–16.
 - Snippet-only leads (unverified, `research/_fragments/*_sources.yaml`): LHeC IR, IMCC nozzle,
   J-PARC source, HL-LHC beam parameters, arXiv:2610.28252, arXiv:2610.17801.
+- Added 2026-10-29 (uploaded, read in full): `SRC_ARXIV_2610_14303` (AI4MuC, pp.10, 12–13),
+  `SRC_ARXIV_2610_09839` (AloHEP, pp.27, 31, 33, 36), `SRC_ARXIV_1306_3810`, `SRC_ARXIV_2006_01947`,
+  `SRC_ARXIV_2410_11367`, `SRC_ARXIV_1901_03047`, `SRC_ARXIV_2605_25580`, `SRC_ARXIV_2201_02436`,
+  `SRC_ARXIV_2510_27437`, `SRC_ARXIV_2203_06258`, `SRC_DOI_10_5281_ZENODO_15054073` and the Kraków decks
+  `SRC_WS1681458_*` cited in §2.1 (pages there).

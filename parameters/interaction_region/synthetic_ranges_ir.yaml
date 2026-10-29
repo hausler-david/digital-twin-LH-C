@@ -3,25 +3,30 @@
 # parameters/assumptions/phase0_assumptions.yaml; 'value' is only the range midpoint (or a representative member of a
 # discrete set) so that software has a number to display. None of these numbers is an LHmuC design value.
 # Date: 2026-10-28. Author role: assumptions and synthetic-range author (Phase 0 evidence audit).
+# Updated 2026-10-29: records whose assumption is superseded_by_evidence (parameters/assumptions/phase0_assumptions.yaml) are
+# SYNTHETIC SCAN VARIABLES ONLY; their bands were re-based to bracket every documented option and no scenario slot may point to
+# them. Records whose assumption stays synthetic carry updated dependencies and notes; PROTON_BUNCH_LENGTH_RMS_SYN was widened to
+# a log-uniform 5-100 cm range (value = geometric midpoint).
 parameters:
 - parameter_id: IR_LSTAR_SYN
-  name: Distance from the IP to the first final-focus magnet of the muon beam (L*)
+  name: Distance from the IP to the first final-focus magnet of the muon beam (L*) (synthetic scan variable; assumption superseded by
+    evidence)
   symbol: L*
   subsystem: interaction_region
   scenario: LHMUC-DIS2026-1TEV
-  value: 12.5
+  value: 14.5
   unit: m
   uncertainty:
     type: interval
-    lower: 5.0
-    upper: 20.0
+    lower: 4.0
+    upper: 25.0
     unit: m
-    note: Synthetic range, not a measured uncertainty; see ASM_IR_LSTAR.
+    note: Synthetic scan band, not a measured uncertainty; see ASM_IR_LSTAR (superseded by evidence on 2026-10-29).
   allowed_range:
-    min: 5.0
-    max: 20.0
+    min: 4.0
+    max: 25.0
     unit: m
-    basis: synthetic screening range, see assumption record ASM_IR_LSTAR
+    basis: synthetic scan band bracketing every documented L* (6 m IMCC, 15 m and 23 m LHeC options); see ASM_IR_LSTAR (superseded_by_evidence)
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -30,23 +35,32 @@ parameters:
     applicability:
       category: screening_only
       scenario: LHMUC-DIS2026-1TEV
-      explanation: Screening only, LHMUC-DIS2026-1TEV optics models. The LHmuC IR has not been designed; the range brackets the two
-        focusing options named in the DIS2026 proceedings and must be replaced before any optics result is reported.
+      explanation: 'Scan variable only (ASM_IR_LSTAR superseded by evidence on 2026-10-29); LHMUC-DIS2026-1TEV-type IR sketches. No
+        LHmuC L* exists; baselines are related-machine values: IR_LSTAR_ANDRE2022 and IR_LSTAR_LHEC_WS2026_FORTHOMME (LHeC proton L*
+        15 m) and IR_LSTAR_MR7 (IMCC muon L* 6 m). No scenario slot may point to this record.'
     confidence: low
     assumption_id: ASM_IR_LSTAR
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - band brackets every evidence-backed record named in the assumption record (read in full; see range_vs_evidence)
     check_ids: []
-    notes: Unverified synthetic input; no LHmuC source gives this quantity.
+    notes: Synthetic scan variable; it validates nothing and confers at most P1 on dependents.
   dependencies:
   - IR_MUON_FOCUSING_OPTIONS_DIS2026
+  - IR_LSTAR_LHEC_WS2026_FORTHOMME
+  - IR_LSTAR_ANDRE2022
+  - IR_LSTAR_MR7
+  - IR_LSTAR_FCCEH_WS2026_FORTHOMME
   date_added: '2026-10-28'
   responsible_module: parameters/interaction_region
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+  notes: 'SYNTHETIC SCAN VARIABLE ONLY: ASM_IR_LSTAR is superseded by evidence (2026-10-29); this record survives only to scan the band
+    4-25 m in screening and sensitivity studies, and no scenario slot may point to it. Baselines: IR_LSTAR_ANDRE2022 and IR_LSTAR_LHEC_WS2026_FORTHOMME
+    (15 m, LHeC proton L*), IR_LSTAR_MR7 (6 m, IMCC muon L*); the 23 m LHeC option (IR_LSTAR_FCCEH_WS2026_FORTHOMME) lay above the Phase-0
+    band. value is the arithmetic midpoint of the band and exists only so that software, plots and exports have a number to display;
+    it is NOT an LHmuC design value. Phase-0 band uniform 5-20 m (2026-10-28); re-based on 2026-10-29 to bracket every documented option.
+    Any use must carry the assumption_id and the band (CLAUDE.md 1.4).'
 - parameter_id: IR_CROSSING_ANGLE_SYN
   name: Muon-proton crossing angle at the IP (synthetic screening range)
   symbol: theta_c
@@ -81,7 +95,8 @@ parameters:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
@@ -89,11 +104,15 @@ parameters:
   - IR_CROSSING_ANGLE_DIS2026
   - MACHINE_MU_BUNCH_SPACING_DIS2026
   - IR_SIGMA_X_IP_MUON_DIS2026
+  - IR_CROSSING_ANGLE_WS2026_FORTHOMME
+  - IR_CROSSING_ANGLE_SCHEME_WS2026_FORTHOMME
+  - IR_PARASITIC_ENCOUNTER_HALF_SPACING_ANDRE2022
   date_added: '2026-10-28'
   responsible_module: parameters/interaction_region
   notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
     a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). 0 inside
-    this range means head-on, a physical value; the unknown reported value stays in IR_CROSSING_ANGLE_DIS2026.'
+    this range means head-on, a physical value; the unknown reported value stays in IR_CROSSING_ANGLE_DIS2026. Updated 2026-10-29: kept
+    synthetic, band unchanged; the Forthomme beam set (IR_CROSSING_ANGLE_WS2026_FORTHOMME) also gives no number.'
 - parameter_id: IR_SEPARATOR_DIPOLE_FIELD_SYN
   name: Field of the muon-proton separator dipole (synthetic screening range)
   symbol: B_sep
@@ -302,7 +321,8 @@ parameters:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
@@ -311,10 +331,18 @@ parameters:
   - MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
   - MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
   - MACHINE_MU_NORM_EMITTANCE_X_MULHC
+  - IR_BETA_STAR_MUON_LHMUC_MUIC2022
+  - PROTON_BETA_STAR_WS2026_FORTHOMME
+  - IR_SIGMA_XY_IP_WS2026_FORTHOMME
+  - IR_BETA_STAR_PROTON_FIG19_ANDRE2022
+  - IR_BETA_STAR_ELECTRON_FIG19_ANDRE2022
+  - MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC
   date_added: '2026-10-28'
   responsible_module: parameters/interaction_region
   notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Updated
+    2026-10-29: kept synthetic, band unchanged; the new related values (0.5-1.7 cm MuIC, 4.37 cm matched muLHC, 10.0 / 10.9 cm LHeC)
+    lie inside it.'
 - parameter_id: IR_BETA_Y_STAR_MUON_SYN
   name: Muon beta function at the IP, vertical (DIS2026 example set, synthetic screening range)
   symbol: beta_y*
@@ -349,7 +377,8 @@ parameters:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
@@ -358,28 +387,36 @@ parameters:
   - MACHINE_MU_BETA_STAR_RELAXED_MIN_NUCL
   - MACHINE_MU_BETA_STAR_RELAXED_MAX_NUCL
   - MACHINE_MU_NORM_EMITTANCE_Y_MULHC
+  - IR_BETA_STAR_MUON_LHMUC_MUIC2022
+  - PROTON_BETA_STAR_WS2026_FORTHOMME
+  - IR_SIGMA_XY_IP_WS2026_FORTHOMME
+  - IR_BETA_STAR_PROTON_FIG19_ANDRE2022
+  - IR_BETA_STAR_ELECTRON_FIG19_ANDRE2022
+  - MACHINE_MU_BETA_STAR_MATCHED_IMPLIED_MULHC
   date_added: '2026-10-28'
   responsible_module: parameters/interaction_region
   notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4).'
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Updated
+    2026-10-29: kept synthetic, band unchanged; the new related values (0.5-1.7 cm MuIC, 4.37 cm matched muLHC, 10.0 / 10.9 cm LHeC)
+    lie inside it.'
 - parameter_id: PROTON_BUNCH_LENGTH_RMS_SYN
-  name: RMS proton bunch length at collision (synthetic screening range)
+  name: RMS proton bunch length at collision (synthetic log-uniform screening range)
   symbol: sigma_z,p
   subsystem: proton_beam
   scenario: LHMUC-DIS2026-1TEV
-  value: 8.5
+  value: 22.4
   unit: cm
   uncertainty:
     type: interval
     lower: 5.0
-    upper: 12.0
+    upper: 100.0
     unit: cm
-    note: Synthetic range, not a measured uncertainty; see ASM_PROTON_BUNCH_LENGTH_RMS.
+    note: Synthetic log-uniform range, not a measured uncertainty; see ASM_PROTON_BUNCH_LENGTH_RMS.
   allowed_range:
     min: 5.0
-    max: 12.0
+    max: 100.0
     unit: cm
-    basis: synthetic screening range, see assumption record ASM_PROTON_BUNCH_LENGTH_RMS
+    basis: synthetic log-uniform screening range (0.05-1 m), widened on 2026-10-29; see assumption record ASM_PROTON_BUNCH_LENGTH_RMS
   provenance:
     status: synthetic
     extraction_method: assumption_record
@@ -388,23 +425,32 @@ parameters:
     applicability:
       category: screening_only
       scenario: LHMUC-DIS2026-1TEV
-      explanation: Screening only, LHMUC-DIS2026-1TEV luminosity models; placed in the IR file because its only use so far is the IP
-        hourglass term.
+      explanation: Screening only, LHMUC-DIS2026-1TEV and LHMUC-WS2026-FORTHOMME luminosity, hourglass and luminous-region models; covers
+        proton bunch populations of 3-10 times HL-LHC; not the long-flat or super-bunch schemes. Placed in the IR file because its use
+        is the IP model.
     confidence: low
     assumption_id: ASM_PROTON_BUNCH_LENGTH_RMS
   validation:
     level: P0
     methods:
     - dimensional check of the unit string
-    - range bracketed by the analogous-system values listed in the assumption record (snippet-level, unverified)
+    - range bracketed by the analogous-system values listed in the assumption record (read-in-full records added 2026-10-29; Phase-0
+      snippet-level entries marked as such)
     check_ids: []
     notes: Unverified synthetic input; no LHmuC source gives this quantity.
   dependencies:
   - IR_BETA_Y_STAR_MUON_SYN
   - PROTON_BUNCH_POPULATION_DIS2026
   - MACHINE_MU_BUNCH_LENGTH_MULHC
+  - PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+  - PROTON_LHC_PR627_RMS_BUNCH_LENGTH_NOMINAL_WS2026_ZIMMERMANN
+  - PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME
+  - PROTON_BUNCH_POPULATION_MULHC
   date_added: '2026-10-28'
   responsible_module: parameters/proton_beam
-  notes: 'SYNTHETIC: value is the arithmetic midpoint of the synthetic range and exists only so that software, plots and exports have
-    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Subsystem
-    proton_beam; record kept in the IR synthetic file because it is used only in the IP hourglass/crossing-angle model.'
+  notes: 'SYNTHETIC: value is the geometric midpoint of the log-uniform band and exists only so that software, plots and exports have
+    a number to display; it is NOT an LHmuC design value. Any use must carry the assumption_id and the range (CLAUDE.md 1.4). Phase-0
+    band uniform 5-12 cm (2026-10-28) widened on 2026-10-29 to log-uniform 5-100 cm (0.05-1 m) because the LHmuC asks for 3-10 times
+    the HL-LHC bunch population and, by Zimmermann''s rule of thumb, longer bunches and/or larger energy spread (see ASM_PROTON_BUNCH_LENGTH_RMS).
+    CAUTION: lhmuc.analytical.hourglass_factor under-reports H above sigma_z,p ~ 0.13 m (IntegrationWarning; see the assumption record).
+    Subsystem proton_beam; record kept in the IR synthetic file because it is used only in the IP model.'

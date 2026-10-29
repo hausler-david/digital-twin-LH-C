@@ -1,9 +1,12 @@
 # LHμC-VirtualLab — Repository architecture
 
-**Document date:** 2026-10-28 · **Project phase:** Phase 0 (evidence and feasibility audit) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15; dated notes in §3, §5, §9, §11–§13) ·
+**Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status of this document:** describes what exists on 2026-10-28 and what
 is planned; every planned item is marked *future*. Nothing here claims that a digital twin,
 a CAD model, a lattice, an event sample or a user interface exists. None does.
+*[2026-10-29: still none exists. §15 records the process rules adopted from the AI4MuC report, the
+validator rules added on 2026-10-29 and the repository state after the uploads.]*
 
 Read `CLAUDE.md` first; its rules are binding and this document only explains how the repository
 is laid out to satisfy them.
@@ -87,6 +90,12 @@ and by `tests/unit/test_registry_integrity.py`):
 CSV files are *views*: `tools/build_registries.py --check` fails the test-suite if a CSV is out of
 sync with the YAML. The YAML is the only place a number is edited.
 
+*[Update 2026-10-29: the "(none exist yet)" and "(not yet present)" remarks in the diagram above
+are superseded — 20 assumption records, materials records, the conflict file and four proposal
+records exist, and the source registry holds 236 sources (34 uploaded). Three rules were added to
+the list above (§15.2): confidence caps, the P1 test rule and the `parameters_extracted` sync; the
+assumption-supersession checks were added on 2026-10-28 with the addendum scaffolding.]*
+
 ---
 
 ## 4. Schemas and what each governs
@@ -147,6 +156,16 @@ Phase 0 tasks. Everything else is a placeholder directory with a README.
 | `backend/` | README only (`api/ database/ job_scheduler/ workers/`) | Milestone 2 (minimal) |
 | `frontend/` | README only (`collider_explorer/ cad_studio/ machine_control/ theory_lab/ event_viewer/ optimization_center/ evidence_graph/`) | Milestone 2 (illustrative) |
 | `results/` | `.gitkeep`, `README.md`; contents git-ignored | Milestone 2+ |
+
+*[Status 2026-10-29 (commit `104073c`): `parameters/` holds 5601 records in the subsystem
+directories plus `assumptions/` and `materials/`, and 36 scenarios; `research/` holds the merged
+registry, search log, conflicts, unresolved searches, source-quality policy, 34 archived-metadata
+records and the per-batch verification notes; `registries/` holds all five CSV files; `docs/` holds
+all companion documents listed in §13, `docs/tools/alohep_method_dagli2026.md` and the M1 reports;
+`theory/benchmarks/` holds proposals A–D; `tests/` holds five scientific test files, the
+canonical-record tests and the unit tests (151 tests collected); `tools/` adds
+`apply_confidence_caps.py`, `apply_validation_levels.py` and `sync_parameters_extracted.py`. Every
+other row of the table is unchanged: placeholders only.]*
 
 What Phase 0 has verified so far (P1, `tests/scientific/test_analytical_checks.py`, inputs from
 the uploaded documents): γ(1 TeV μ) = 9464 and τ_lab = 20.8 ms; √s = 2√(E_μE_p) reproduces 5.3 TeV
@@ -256,7 +275,8 @@ Nothing in this section exists. `docker-compose.yml` defines only a `validate` s
 | `subsystem` enum | `machine, source, acceleration, interaction_region, detector, materials, physics_programme, infrastructure, proton_beam, ion_beam` | — |
 | `source_id` | `SRC_ARXIV_<id, dots→underscores>`, `SRC_INDICO_<event>_<contribution>`, `SRC_DOI_<slug>`, `SRC_URL_<slug>`, `SRC_WS1681458_<SPEAKER>_<TOPIC>` (Kraków workshop) | `SRC_ARXIV_2610_35154`, `SRC_ARXIV_2506_15445`, `SRC_WS1681458_DAGLI_NUCLEUS`, `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`, `SRC_WS_LEBOHO_KUMAR_DIHIGGS` |
 | `scenario_id` | `UPPER-WITH-HYPHENS`, `<MACHINE>-<DOCUMENT>-<VARIANT>` | `LHMUC-DIS2026-1TEV`, `LHMUC-DIS2026-2TEV`, `MULHC-PTEP2026-MUTRISTAN-BOOSTER`, `MULHC-PTEP2026-ERL-BOOSTER`, `LHMUC-NUCL-MU-PB`, `LHMUC-WP-BASELINE-1TEV`, `LHMUC-DIHIGGS-1TEV` |
-| `assumption_id` / `conflict_id` / `proposal_id` | `ASM_…` / `CONF_…` / `PROP_…` | none exist yet |
+| `assumption_id` / `conflict_id` / `proposal_id` | `ASM_…` / `CONF_…` / `PROP_…` | none existed on 2026-10-28; on 2026-10-29 e.g. `ASM_DET_NOZZLE_OPENING_ANGLE`, `CONF_LUMI_MODEL_ASSUMPTIONS`, `CONF_MUONIUM_FORMATION_FRACTION` |
+| document tags added by the addendum (2026-10-29) | `_WS2026_<SPEAKER>` for Kraków decks, `_<AUTHOR><YEAR>` for papers (`_ANDRE2022`, `_ABE2019`, `_BAKULE2013`, `_CHEUNG2021`, `_SAKAKI2026`, `_DAGLI2026`, `_ARITOME2024`, `_BEARE2020`, `_MUTRISTAN2022`, `_MUIC2022`, `_DUDKO2026`), `_MR7`, `_MAIA`, `_MUSIC`, `_MUCOLM17`, `_GIOVE2026` | `DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME`, `IR_LSTAR_MR7`, `ACC_VFFA1_PEAK_FIELD_ON_ORBIT_MUCOLM17` |
 | run ids | `lhmuc-<topic>-NNNNNN` | none exist yet |
 | units | pint-parseable strings via `lhmuc/units.py::UNIT_ALIASES`: `GeV, TeV, um, mm, cm, m, km, MHz, Hz, "cm^-2 s^-1", "fb^-1", "ab^-1", pb, fb, dimensionless, degree, mrad, ms, us, ns, nC, "T/m", "mm mrad", percent, "g/cm^3"` | — |
 | provenance status for the five uploads | `reported_lhmuc` only from `PRIMARY_LHMUC` sources (DIS2026 paper and the three workshop decks); μLHC values are `imported_related`; values the μLHC paper itself imports from μTRISTAN / LHeC / HL-LHC are `imported_related` with `applicability.explanation` saying so | — |
@@ -302,6 +322,8 @@ Roles that recur in `unknown_roles` across scenarios (`beta_x_star_muon`, `muon_
   pythia8mc 8.318, pylhe 2.1, pyhf 0.7.6, cadquery 2.8, build123d 0.13, pyg4ometry 1.4.6, pymoo,
   botorch; MadGraph5_aMC@NLO via launchpad/GitHub. **Not installed:** Geant4, ROOT, LHAPDF, FLUKA.
   Licences will be recorded in `docs/software_inventory.md` when that document is written.
+  *[2026-10-29: written; §15 of it lists the codes named in the uploaded documents. The only external
+  code obtained is AloHEP v2.0 (MIT), cloned read-only and not built or run.]*
 
 ---
 
@@ -321,6 +343,11 @@ Roles that recur in `unknown_roles` across scenarios (`beta_x_star_muon`, `muon_
 | 2026-10-28 | **Parameter ids carry a document tag** (`_DIS2026`, `_MULHC`, `_NUCL`, `_WP`, `_DIHIGGS`). | The same physical quantity reported by different documents is kept as separate records (conflicts preserved, `CLAUDE.md` §1.6) and can be compared in `source_conflicts.yaml`. |
 | 2026-10-28 | **Code Apache-2.0, data/docs CC BY 4.0**, split by path (`LICENSE`, `LICENSE-DATA`). | Reuse of the evidence database with attribution; standard permissive licence for tooling. |
 | 2026-10-28 | **Docker Compose defines only a `validate` service**; `api`, `worker`, `frontend` remain commented. | Nothing claims that a backend or frontend exists before Milestone 2. |
+| 2026-10-28 | **Assumption supersession by evidence** (addendum scaffolding, commit `1f929d1`): status `superseded_by_evidence` with `superseded_by`, `superseded_on`, `range_vs_evidence`; no scenario slot may point to a superseded synthetic value. | A synthetic band overtaken by a reported value is kept as history and as a scan variable, never silently replaced (`docs/synthetic_data_policy.md`). |
+| 2026-10-29 | **Confidence caps are validator errors** (commit `03e0ab1`): `lhmuc.registry.confidence_cap` applies the mechanical rules of `research/source_quality_policy.md` §4; `tools/apply_confidence_caps.py` lowers offending records. | 1423 confidences had to be lowered (§15.2); the rule prevents a high confidence on analogous values, slide values, design-variant imports or unread sources from returning. |
+| 2026-10-29 | **P1 requires a registered test** (commit `a8de068`): a P1 label must name an existing `test_*` function under `tests/` in `validation.methods` or `check_ids`. | 847 unbacked P1 labels lowered to P0; arithmetic in scratch scripts no longer earns a label. |
+| 2026-10-29 | **`parameters_extracted` synced from the records** (commit `68587c9`, `tools/sync_parameters_extracted.py`, test `test_source_parameters_extracted_in_sync`). | The source registry's list of records per source cannot drift from the parameter files. |
+| 2026-10-29 | **The AI4MuC "verifiable AI workflow" principles are adopted as process rules** (§15.1). | They state, for the muon-collider community, the same discipline CLAUDE.md requires; adopting them makes the mapping to repository mechanisms explicit and auditable. |
 
 ---
 
@@ -333,6 +360,14 @@ Named in `README.md` and `CLAUDE.md` and planned for Phase 0, but **not present 
 `research/unresolved_searches.md`, and the milestone report under `docs/reports/`. When they are
 written, this section should be replaced by links.
 
+*[2026-10-29: all are present — `docs/scientific_scope.md`, `docs/limitations.md`,
+`docs/validation_plan.md`, `docs/internet_research_protocol.md` (the research protocol),
+`docs/synthetic_data_policy.md`, `docs/fidelity_policy.md`, `docs/uncertainty_policy.md`,
+`docs/security_policy.md`, `docs/roadmap.md`, `docs/research_roadmap.md`, `docs/software_inventory.md`,
+`docs/tools/alohep_method_dagli2026.md`, `research/source_quality_policy.md`,
+`research/unresolved_searches.md`, `docs/reports/M1_evidence_audit.md` and the draft
+`docs/reports/M1_addendum_uploaded_documents.md`.]*
+
 ## 14. Sources cited in this document
 
 - `SRC_ARXIV_2610_35154` — K. Piotrzkowski (HELP4CERN), "LHμC: A high energy, high luminosity
@@ -343,3 +378,86 @@ written, this section should be replaced by links.
 - `SRC_WS1681458_DAGLI_NUCLEUS`, `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`,
   `SRC_WS_LEBOHO_KUMAR_DIHIGGS` — Kraków workshop (Indico 1681458) decks, uploaded; metadata in
   `research/archived_metadata/`.
+- Added 2026-10-29: `SRC_ARXIV_2610_14303` — J. S. Berg et al., "AI Acceleration of Muon Collider
+  R&D: A Report from the AI4MuC Workshop", arXiv:2610.14303v1 (9 Oct 2026), `SECONDARY_SOURCE`,
+  uploaded and read in full (pp.4, 8, 10–13 cited in §15); the other uploads of 2026-10-28/29 are
+  listed in `docs/scientific_scope.md` §7.
+
+---
+
+## 15. Addendum 2026-10-29
+
+### 15.1 The AI4MuC "verifiable AI workflow" principles, adopted as rules
+
+The AI4MuC workshop report (`SRC_ARXIV_2610_14303`, §11 "Verifiable AI workflows", pp.12–13) states
+seven validation principles: "Across all of these subsystems, the same validation principles
+apply." They describe, for the
+muon-collider community, the discipline that `CLAUDE.md` already requires of this repository. From
+2026-10-29 they are adopted here as **process rules**; the table records how each is met. The
+report also frames the use of LLM agents: they "can help if they are constrained to auditable
+workflows … They are not reliable enough to replace experts" (p.4); "The benchmark should be
+reproducibility and expert auditability: can the workflow produce the same plots, with the same
+inputs, and can a human understand why a candidate design passed or failed?" (p.8); and an agent's
+utility "is bounded by the environment it is able to enter, by whether failures are reported rather
+than silently absorbed, and by the availability of reference output against which its results can
+be checked" (pp.11–12).
+
+| AI4MuC principle (verbatim, p.12–13) | Rule adopted here | Where it is enforced or recorded |
+|---|---|---|
+| 1. "Start from a physics decision. Define what design or operational choice the model is meant to inform. A model without a decision context is difficult to validate." | No model, benchmark or optimisation is started without the decision it informs and a statement of what passing proves; an optimisation without sourced constraint bounds reports `conclusions_blocked_by`, not an optimum. | `docs/validation_plan.md` §3 ("what passing proves"); `schemas/optimization.schema.json`; proposal → experiment records |
+| 2. "Choose metrics before training. Metrics chosen after the model is built tend to reward what the model already does well." | Tolerances, bands and figures of merit are fixed before the first run and may only be tightened; the same applies to any surrogate or ML metric. A band that turns out wrong is investigated and documented, not widened. | `docs/validation_plan.md` §4 (tolerance rule); test docstrings; `tolerance_history` of `registries/validation_registry.csv` |
+| 3. "Validate tails and failures. For Muon Collider problems, losses, rare backgrounds, high occupancies, quenches, breakdown, and unusual signal signatures may dominate the risk." | Validation of any loss, background, dose or breakdown model includes its tails; samples that symmetrise or clone events (as the IMCC BIB samples do, AI4MuC p.10) are out of domain for tail statements; missing breakdown data stay explicit unknowns. | `docs/uncertainty_policy.md` §4 (≥ 10⁴ samples for tails) and §8a; `SOURCE_COOLING_RF_BREAKDOWN_DATA_GIOVE2026` = null |
+| 4. "Track uncertainty and domain of validity. Fast models are most useful when users know where they can and cannot be trusted." | Every result carries its fidelity tier, P-label and domain of validity; a surrogate refuses queries outside its training hull; external codes are used only inside the regime their authors validated, unless refined and re-checked. | `docs/uncertainty_policy.md` §3.3; `CLAUDE.md` §1.10; `docs/tools/alohep_method_dagli2026.md` §7 (AloHEP hourglass validated for A ≲ 1.5, pinch for D_y ≤ 1.3) |
+| 5. "Preserve provenance. Geometry, lattice, software version, random seeds, detector conditions, timing conventions, and intended use are part of the data product." | Every number has a provenance record; every future run has an immutable run record with code commit, software versions, seed, assumption ids and dependencies; intended use is recorded as `applicability.category` (e.g. `screening_only`). | `schemas/provenance.schema.json`, `schemas/simulation_run.schema.json`; `uv run python -m lhmuc validate` |
+| 6. "Compare to trusted tools. AI methods should be benchmarked against established simulations, test-stand data, or expert-reviewed reduced models." | No P-label above P1 without a documented code run against a published number (P2) or a second code (P3); surrogates need a reference optics or transport run in the same record; LLM-extracted values are checked by an independent verifier against the page images and, where arithmetic allows, by P1 tests; the LLM never produces a physics number (`CLAUDE.md` §1.8). | `docs/validation_plan.md` §1, §3; `docs/software_inventory.md` §2; `research/_fragments/verify_*.md` |
+| 7. "Make the benchmark rerunnable. The community should be able to reproduce the validation plots without private knowledge." | Every P1 check is a pytest function that runs from the locked environment (`uv.lock`); a benchmark that depends on private inputs (`effdihiggs-v2`, the μLHC AloHEP decks) is reported as blocked, not approximated. | `tests/`; `docs/validation_plan.md` §3.1, §3.4; `ME_043`, `ME_051` |
+
+Agent-specific consequences adopted with them: every agent action leaves an artefact a human can
+audit (commit, verifier note, label-change log); failures are reported, never absorbed (a failing
+test is not weakened, `CLAUDE.md` §1.9; validator errors block `tools/build_registries.py`); outputs
+are checked against reference values (published numbers via P1 tests); and an expert's line-by-line
+review remains a separate, still pending step (`RISK_028_HUMAN_REVIEW_PENDING`). The report is a
+`SECONDARY_SOURCE`; it backs process rules only and no parameter value.
+
+### 15.2 Validator rules added on 2026-10-29
+
+`uv run python -m lhmuc validate` (`lhmuc/registry.py::cross_check`) gained three rules, each with
+a tool that applies it and a unit test that pins it:
+
+1. **Confidence caps** (commit `03e0ab1`; `confidence_cap`). The mechanical rules of
+   `research/source_quality_policy.md` §4 — `synthetic` at most `low`; `analogous`, `imported_related`
+   from a `design_variant`, values read from unrefereed slides (`source_type: workshop_talk`) and
+   sources with `access` `snippet_only`, `blocked` or `pending_fetch` at most `medium`; the lowest
+   cap applies — and a record above its cap is an **error**. The conflict rule (every competitor of a
+   conflict without a decided treatment at most `low`) is applied by hand, so every conflict record
+   must name a treatment. Tool `tools/apply_confidence_caps.py`; test `tests/unit/test_confidence_caps.py`.
+2. **P1 needs a registered test** (commit `a8de068`; `registered_test_names`, `p1_test_references`).
+   A record at P1 must name, in `validation.methods` or `check_ids`, an existing `test_*` function
+   under `tests/`; otherwise the validator reports an error. Tool `tools/apply_validation_levels.py`;
+   test `tests/unit/test_validation_levels.py`. (The P1 entry criterion itself is
+   `docs/validation_plan.md` §1, rule 1.)
+3. **`parameters_extracted` in sync** (commit `68587c9`). Each source's `parameters_extracted` is the
+   sorted list of records citing it; `tools/sync_parameters_extracted.py` writes it and
+   `tests/unit/test_registry_integrity.py::test_source_parameters_extracted_in_sync` checks it.
+
+Both lowering tools edit only the target token, re-parse the file and abort if anything else
+changed. Applying the first two rules lowered 1423 confidences from `high` to `medium` (1088 in
+`03e0ab1`, 170 in the batch-9 commit `9484d49`, 165 in the addendum commit `1252bf2`) and 847 P1
+labels to P0 (327 in `a8de068`, 520 in `1252bf2`); logs in
+`research/_fragments/confidence_caps_applied_2026-10-29.csv` and
+`research/_fragments/validation_levels_lowered_2026-10-29.csv`. The assumption-supersession checks
+(a superseded assumption must name evidence-backed ids; no scenario slot may point to a superseded
+synthetic value) date from 2026-10-28 (commit `1f929d1`). Not covered by these rules, and noted
+here without a change: scenario-level `validation_level` labels (P1 on 33 of the 36 scenarios at
+`104073c`).
+
+### 15.3 Repository state after the uploads (commit `104073c`)
+
+5601 parameter records (1035 `reported_lhmuc`, 1748 `imported_related`, 2647 `analogous`, 27
+`derived_lhmuc`, 95 `analytical_estimate`, 20 `synthetic`, 1 `scan_variable`, 28 `unknown`); 100 at
+P1 and 5501 at P0; confidence 1138 `high`, 4330 `medium`, 105 `low`, 28 `none`; 236 sources (34
+`uploaded`); 36 scenarios, all `geometry_fidelity: G0`; 20 assumptions; 15 conflicts; 4 proposals;
+validator 0 errors and 0 warnings; 151 tests collected. A registry stage that supersedes assumptions
+and adds conflict, missing-evidence, risk and validation records was in progress on 2026-10-29;
+its results are reported in `docs/reports/M1_addendum_uploaded_documents.md`. No geometry, lattice,
+event sample, detector simulation, surrogate, optimisation or user interface exists.

@@ -1,15 +1,18 @@
 # Unresolved searches — LHμC-VirtualLab
 
-**Document date:** 2026-10-28 · **Status:** living register (CLAUDE.md §4: "record what remains unresolved in
+**Document date:** 2026-10-28, updated 2026-10-29 (new section "Resolved or narrowed by uploads (2026-10-28/29)")
+· **Status:** living register (CLAUDE.md §4: "record what remains unresolved in
 `research/unresolved_searches.md`") · **Built from:** the nine reconnaissance-family fragments
 `research/_fragments/*_unresolved.md` (concatenated, headings demoted one level, bullet blocks that repeat an
 earlier family verbatim replaced by a pointer; see the de-duplication note at the end).
 
-Nothing in this file is a parameter record. Every value mentioned below was seen in a search-engine snippet or
-in a page that could not be fetched; such evidence may not back a `reported_lhmuc` status and is capped at
-confidence `medium` (CLAUDE.md §1.5, `research/source_quality_policy.md` §4). Competing values that were found
-are registered in `research/source_conflicts.yaml`; this file lists what could *not* be determined and what
-must be fetched once the network allows it.
+Nothing in this file is a parameter record. Every value mentioned in the family sections below was seen in a
+search-engine snippet or in a page that could not be fetched; such evidence may not back a `reported_lhmuc`
+status and is capped at confidence `medium` (CLAUDE.md §1.5, `research/source_quality_policy.md` §4). The section
+"Resolved or narrowed by uploads" instead quotes documents that were uploaded and read in full, and names the
+parameter record that carries the provenance of each value. Competing values that were found are registered in
+`research/source_conflicts.yaml`; this file lists what could *not* be determined and what must be fetched once the
+network allows it.
 
 ## Network access blocked on 2026-10-28
 
@@ -58,7 +61,287 @@ them, so they appear here only so the allow-list request is complete.
 Status per source is kept in `research/source_registry.yaml` (`access: blocked | snippet_only | pending_fetch`);
 the per-family "Fetch backlog" sections below say what to extract from each page once it is reachable.
 
+---
 
+## Resolved or narrowed by uploads (2026-10-28/29)
+
+**Added:** 2026-10-29 · **Scope:** the documents uploaded by the project owner after the reconnaissance of
+2026-10-28 (Phase-0 addendum and batches 7, 8 and 9). Each was read in full, archived with SHA-256
+(`research/archived_metadata/<source_id>.json`) and extracted into parameter records that independent verifiers
+checked against the page images (`research/_fragments/verify_G*.md`). The network policy has not changed: on
+2026-10-29 the literature hosts listed above are still blocked, so every item below was closed or narrowed by an
+upload, not by a fetch.
+
+How to read this section: each entry names the backlog item(s) of the family sections further down that the upload
+resolves or narrows, what it settled (with the record ids that carry the provenance) and what remains open. The
+family sections are kept unchanged as the record of what was searched on 2026-10-28; where an entry here says
+*resolved*, it supersedes the corresponding bullet below, and *narrowed* means the bullet stays open with the
+residual stated here. Competing values found in the uploads are recorded in `research/source_conflicts.yaml`
+(nine new conflict records on 2026-10-29: `CONF_NOZZLE_OPENING_ANGLE`, `CONF_MUONIUM_FORMATION_FRACTION`,
+`CONF_LASER_IONISATION_EFFICIENCY`, `CONF_SOURCE_CONCEPT`, `CONF_IR_LSTAR`, `CONF_DETECTOR_SOLENOID_FIELD`,
+`CONF_VFFA_PEAK_FIELD`, `CONF_TEV_MUON_RESOLUTION`, `CONF_FRONT_END_SPACE_CHARGE`; nine earlier records extended).
+
+### Kraków workshop decks (Indico 1681458, 24–26 Sept 2026; Phase-0 addendum)
+
+- **Forthomme, "LHeC/LHμC main detector"** (`SRC_WS1681458_FORTHOMME_DETECTOR`; `ME_003`). *Resolves* the
+  `lhmuc-primary` item "Kraków workshop contributions" for this talk (cited by arXiv:2610.35154). Settled: a second
+  LHμC beam set, "Peak luminosity of 10^34 cm^-2s^-1 for 40 bunches of 10^10 µ⁺ in main ring", "Assuming 300 ns
+  bunch spacing", σx,y ≈ 4.3 µm with β* = 7 cm (`MACHINE_PEAK_LUMINOSITY_WS2026_FORTHOMME`,
+  `MACHINE_MU_BUNCHES_WS2026_FORTHOMME`, `IR_SIGMA_XY_IP_WS2026_FORTHOMME`; `CONF_PEAK_LUMINOSITY`,
+  `CONF_MUON_BUNCHES_PER_TRAIN`, `CONF_IP_BEAM_SIZE`); the nozzle half-angle 40 (100) mrad (`CONF_NOZZLE_OPENING_ANGLE`);
+  L* 15 m vs 23 m (`CONF_IR_LSTAR`); Bz = 3.8 T in the LHeC Delphes card (`CONF_DETECTOR_SOLENOID_FIELD`).
+  *Still open:* "peak" is undefined; the proton bunch population is not stated (≈ 7.0e11 implied only under H = 1,
+  `PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME`); the circumference behind 40 × 300 ns = 12 µs; which machine the
+  23 m layout belongs to. The Natal 2026 / ICHEP speaker-attribution item is not touched by this deck.
+- **Kilic, "Nozzle design studies for mu+p collider detector"** (`SRC_WS1681458_KILIC_NOZZLE`; `ME_002`; ref. [27]
+  of arXiv:2610.35154). *Resolves* the `muon-collider-mdi` items "No LHμC-specific MDI statement (mu+p, asymmetric,
+  single muon beam) was found" and "Applicability of the 10 degree nozzle acceptance to LHμC must be checked".
+  Settled: a single-sided tungsten nozzle with borated-polyethylene cladding on the incoming-muon side, half-angle
+  40 (100) mrad (60 and 80 mrad also studied), 487.8 cm + 100 cm long (587.8 cm), tip 6 cm from the IP
+  (`DET_NOZZLE_*_WS2026_KILIC`; `CONF_NOZZLE_OPENING_ANGLE`). *Still open:* the choice between the options; a μ+p
+  beam-induced-background simulation (`ME_026`); the Phase-0 band of `DET_NOZZLE_OPENING_ANGLE_SYN` written on
+  2026-10-28 (5–20°) excluded the 40 mrad = 2.29° option (supersession under CLAUDE.md §4 is recorded in
+  `parameters/assumptions/`, not here).
+- **Topp-Mugglestone, "vFFA and LHμC"** (`SRC_WS1681458_TOPPMUGGLESTONE_VFFA`; `ME_004`; ref. [22] of
+  arXiv:2610.35154). *Resolves* the `vffa-acceleration` item "Relevance to LHμC is indirect ... the Kraków workshop
+  Topp-Mugglestone contribution was not found"; *narrows* "No vFFA muon ring energy range, circumference, RF
+  frequency, number of turns, or power-efficiency figure was found". Settled: the LHμC booster stage "70 GeV to 500 GeV
+  (to 1 TeV?)" in a single arc pair with order-10 turns; preliminary field options ~8 T (index 60 /m, excursion
+  ~3 cm), ~10 T (~44 /m), relaxed < 9 T (< 30 /m, < 7 cm) (`ACC_VFFA_*_WS2026_TOPPMUGGLESTONE`,
+  `ACC_BOOSTER_*_WS2026_TOPPMUGGLESTONE`; `CONF_VFFA_PEAK_FIELD`, `CONF_BOOSTER_DESIGN`). *Still open:* an analytic study
+  "in untested region of parameter space"; the integrated full-ring simulation is still to be done (deck p.46); no
+  LHμC booster lattice (`ME_027`); the Topp-Mugglestone thesis (ora.ox.ac.uk) is still unread.
+- **Zimmermann, "Potential possibilities of modifying SPS/LHC"** (`SRC_WS1681458_ZIMMERMANN_SPS_LHC`; `ME_005`; ref.
+  [24] of arXiv:2610.35154). *Resolves* the `lhc-hl-lhc-protons` items "The Zimmermann ... talk/note was not found" and
+  "Ref. [24] of arXiv:2610.35154 must be resolved". Settled: the deck answers the LHμC request for "a much lower
+  number of bunches in the LHC (say, 1% of the today's one)" with older schemes for fewer, more intense bunches
+  (Damerau–Garoby long flat bunches, the LHC Project Report 627 super-bunch, QCD Explorer) and the rule "Higher
+  intensity is accompanied by longer bunches and/or larger energy spread – Roughly speaking σδ σz ≈ 2 n_b,0 σδ,0 σz,0"
+  (`PROTON_*_WS2026_ZIMMERMANN`; `CONF_PROTON_BUNCH_POPULATION_AND_NUMBER`, `CONF_LUMI_MODEL_ASSUMPTIONS`). *Still
+  open:* no LHμC proton population, bunch number or bunch length is given; the 200 MHz / 8b4e / 50 ns linkage of the
+  `lhc-hl-lhc-protons` bullet is not addressed in the records extracted from the deck (there, 200 MHz appears only as
+  the SPS RF at ejection in the Damerau–Garoby scheme); the restated papers themselves were not read.
+- **Acosta, "Near-Beam Muon Detectors"** (`SRC_WS1681458_ACOSTA_NEAR_BEAM`; `ME_006`) and **Yamazaki, "Challenges of
+  TeV-muon Detectors"** (`SRC_WS1681458_YAMAZAKI_TEV_MUON`; `ME_007`). *Resolve* the `lhmuc-primary` item for these
+  two contributions. Settled: TeV-muon momentum resolution "~6% @ 1 TeV" (Geant4) and "~5% @ 1 TeV, ~25% at 5 TeV"
+  (idealised) for a far-forward toroidal spectrometer, and "6-7 %" at 1 TeV for the main-detector muon system
+  (`CONF_TEV_MUON_RESOLUTION`); Acosta also restates the IMCC nozzle ("6m long tungsten nozzles (~2.4 < |η| < 7)").
+  *Still open:* no full simulation of an LHμC muon system; the multiple-scattering impact of the nozzle on the
+  downstream muon measurement (`DET_NOZZLE_MS_IMPACT_STATEMENT_WS2026_ACOSTA`) is not quantified for μ+p.
+- **Rogers, "Hybrid Source of Ultra Cold Muons"** (`SRC_WS1681458_ROGERS_HYBRID_SOURCE`; `ME_009`; ref. [19] of
+  arXiv:2610.35154). *Resolves* the `lhmuc-primary` item for this contribution. Settled: the hybrid IMCC-front-end
+  chain (capture, rectilinear A-stage cooling, deceleration, low-energy cooling), "Estimate 0.04 μ+ per 5 GeV proton
+  on target to end of A-stage", "Target ~ 50 % efficiency for deceleration" (`SOURCE_HYBRID_*_WS2026_ROGERS`;
+  `CONF_SOURCE_CONCEPT`). *Still open:* the deceleration is "Not designed" and the low-energy cooling efficiency is
+  unknown (`SOURCE_HYBRID_LOW_ENERGY_COOLING_EFFICIENCY_WS2026_ROGERS` = null); RF breakdown in solenoids (see Giove 2026
+  below).
+- **Zhang, "Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling"**
+  (`SRC_WS1681458_ZHANG_MUONIUM`; `ME_010`). *Narrows* the `ultracold-source` item "Rate chain (per-stage efficiencies)
+  is incomplete": the H-line chain table (p.10) and the μTRISTAN budget 0.52 × 0.6 × 0.6 × 0.73 = 0.137 after stopping
+  (p.20; `SOURCE_MUTRISTAN_POST_STOPPING_BUDGET_WS2026_ZHANG`) are now quoted, and the μTRISTAN source numbers ("We
+  thank Cedric Zhang to provide us with those numbers") are traced to them; Zhang flags the 0.73 ionisation
+  efficiency as "pending updates", and his own g-2 target column implies 0.114 (`CONF_LASER_IONISATION_EFFICIENCY`).
+  *Still open:* Kamioka's workshop slides (cited on p.20) are not uploaded; the unattributed "~1e-3 / surface μ" slide
+  of the `ultracold-source` family remains unattributed (the nearest uploaded figures are 2.5e-3 per surface muon in
+  Abe 2019 and 2.6e-3 in Zhang's g-2 target column).
+- **Nakazawa, "Acceleration in the Low-velocity Region"** (`SRC_WS1681458_NAKAZAWA_LOW_VELOCITY`). *Narrows* the
+  `ultracold-source` item "IH-DTL output energy varies across sources": "IN/OUT energy 0.34 MeV > 4.26 MeV" is now read
+  on p.5, and `CONF_JPARC_IHDTL_ENERGY` is resolved as two design versions (4.5 MeV in Abe 2019). New: the first
+  quantitative space-charge statement for LHμC bunch charges, 1e10 μ+ in ~2 ns ≈ 0.75 A at the RFQ entrance, "220
+  larger perveance(K) scale than the original 30-mA H⁻ RFQ" (`SOURCE_RFQ_PERVEANCE_RATIO_WS2026_NAKAZAWA`;
+  `CONF_FRONT_END_SPACE_CHARGE`). *Still open:* the 4.3 MeV value has no source; PRAB 29, 093201 itself is unread; no
+  high-charge front-end design exists (`ME_033`).
+- **Schulte, "Muon Collider (IMCC overview)"** (`SRC_WS1681458_SCHULTE_IMCC`) and the AGH **"High energy QCD at LHμC"**
+  deck (`SRC_WS1681458_HEQCD_SMALLX`): context for the IMCC programme and the LHμC small-x physics case; they close the
+  "speaker list only" part of the `lhmuc-primary` item for these talks and raise no conflict.
+- *Not uploaded:* Otani (pre-acceleration, `ME_008`), Piotrzkowski (luminosity measurement, `ME_011`), Tentori
+  (`ME_012`) and Holzer (IR design, named in several conflict records). The Kumar, Khanpour and Dağlı decks were
+  already uploaded in Phase 0. The timetable, registration-date and proceedings items of `lhmuc-primary` stay open.
+
+### Related machines, reference designs and tools
+
+- **μTRISTAN, arXiv:2201.06664v2** (`SRC_ARXIV_2201_06664`, PTEP 2022 053B02; addendum; `ME_047`). *Resolves* the
+  `mulhc-mutristan` item "μTRISTAN Table 1 per-bunch values were quoted from a secondary reproduction
+  (arXiv:2403.17034)" and its fetch-backlog entry. Settled in the original: 1.4e10 μ+ per bunch at the IP (2.3 nC),
+  β* = 30 mm / 7 mm, σ = 3.6 / 1.7 µm, normalised emittance 4 mm mrad, 7.2 nC ultra-cold μ+ per bunch, booster of 16
+  turns in about 700 µs with 3 km linacs and R = 1 km arcs at 3 T, "about a half of the muons decays", a 14 %
+  ultra-cold-muon production efficiency with numbers from C. Zhang (`*_MUTRISTAN2022`; `CONF_BOOSTER_DESIGN`,
+  `CONF_FRONT_END_SPACE_CHARGE`, `CONF_MUONIUM_FORMATION_FRACTION`, `CONF_LASER_IONISATION_EFFICIENCY`). *Still open:*
+  the booster injection energy is not stated (`ACC_BOOSTER_INJECTION_ENERGY_MUTRISTAN2022` = null); the PTEP DOI and
+  licence.
+- **MuIC, arXiv:2203.06258v3** (`SRC_ARXIV_2203_06258`; addendum). *Resolves* the `lhmuc-primary` item "Name collision
+  'LHmuC'" from the full text: one 1.5 TeV beam of a 3 TeV IMCC μ+μ− collider on 7 TeV LHC protons, √s = 6.5 TeV,
+  2.8e33 cm^-2 s^-1, 237 fb^-1 per 10 years (`MACHINE_*_LHMUC_MUIC2022`; `RISK_022_LHMUC_NAME_COLLISION`); and the
+  `mulhc-mutristan` / `lhmuc-primary` fetch-backlog entries for 2203.06258: parameter tables, "the hour-glass factor,
+  H_hg, is assumed to be unity", luminosity with max(σ_μ, σ_p) (`CONF_LUMI_MODEL_ASSUMPTIONS`, `CONF_PEAK_LUMINOSITY`,
+  `CONF_MUON_BUNCH_POPULATION`, `CONF_IP_BEAM_SIZE`). *Still open:* the journal reference JINST 18 (2023) P09025 is
+  still snippet-level (Forthomme cites it for "δE/E ~ 10%"); the Wei Li Snowmass slides are unread.
+- **Cheung & Wang 2021, arXiv:2101.10476v2** (`SRC_ARXIV_2101_10476`, PRD 103, 116009; batch 9). *Resolves* the
+  `mulhc-mutristan` fetch-backlog entry (beam combinations and luminosities) and `lhc-hl-lhc-protons` backlog item 30.
+  Settled: μp-1 = 7 TeV p × 1 TeV μ− (√s = 5.3 TeV), an assumed 1e33 cm^-2 s^-1 → 0.1 ab^-1, WW-fusion Higgs 0.978 pb,
+  Δg_hbb/g_hbb = 0.69 % (`*_CHEUNG2021`; `tests/scientific/test_batch9_documents.py`). *Still open:* μ−p only — LHμC
+  collides μ+, which changes the charged-current rates, so the cross sections are screening comparators only
+  (`CONF_PEAK_LUMINOSITY` keeps the assumed 1e33 as a comparator); the branching ratios and the LHeC Delphes card
+  version are not printed; the journal version was not seen.
+- **LHeC detector paper, André et al. 2022, arXiv:2201.02436v1** (`SRC_ARXIV_2201_02436`, EPJC 82, 40; batch 7).
+  *Resolves, for this paper,* the `lhec-erl` item "No full text of any LHeC document was read" and its fetch-backlog
+  entry for 2201.02436. Settled: L* = 15 m (p.16), β*_p = 10 cm (p.16; the Fig. 19 header gives β*_p = 10.0 cm and
+  β*_e = 10.9 cm per beam, not per plane), head-on e–p collisions with the electrons steered by the detector dipole
+  and a vertical crossing angle only for the non-colliding proton beam (pp.10, 16; `CONF_LHEC_CROSSING_ANGLE`), a 3 T
+  solenoid reduced from 3.5 T (`CONF_DETECTOR_SOLENOID_FIELD`), ERL Tables 2–3 (499 pC, 24.95 ns, 20 mA; arc energies
+  and synchrotron radiation), luminosity 8.2e33 cm^-2 s^-1 (Table 4). *Still open:* Table 4 is not reproducible from
+  the paper, which lists no proton bunch population or emittance (≈ 0.80 × 8.2e33 with HL-LHC protons;
+  `CONF_LUMI_MODEL_ASSUMPTIONS`); the "LHeC-at-HL-LHC proton beam parameter table" item, the LHeC CDR and 2020 update
+  (`ME_046`) and the 2025 phase-one paper (arXiv:2503.20475) remain unread; the CC BY 4.0 licence of the journal
+  version is still snippet-level.
+- **AloHEP method — Dağlı & Karaca 2026, arXiv:2610.09839v1** (`SRC_ARXIV_2610_09839`; batch 7) **and the repository
+  it names, github.com/tobbetuyef/AloHEP tag v2.0** (`SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`, MIT, cloned and read as text on
+  2026-10-28, nothing built or run). *Narrows* the `mulhc-mutristan` item "AloHEP GitHub repo (yefetu/ALOHEP): no
+  license, version tag or release found" and the `SRC_JACOW_IPAC2021_WEPAB278` fetch entry (luminosity formula,
+  hourglass handling). Settled: hourglass and beam–beam pinch are simulated with macroparticles and verified to ~1 %;
+  "The decay factor is applied analytically" (functional form not written); the internal L_nom uses the equal-beam
+  max(σ) approximation, which "underestimates the geometric luminosity when the beams differ"; a "Matched Beams"
+  helper exists (`MACHINE_ALOHEP_*_DAGLI2026`; `docs/tools/alohep_method_dagli2026.md`; `CONF_LUMI_MODEL_ASSUMPTIONS`,
+  `CONF_IP_BEAM_SIZE`). *Still open:* **the μLHC input decks are still missing** — the public v2.0 repository holds no
+  μLHC or LHμC deck, so the PTEP 2026 values 7.2e33 / 8.8e33 cannot be reproduced (`ME_043`); whether the decay factor
+  is a one- or two-beam average for μp (the 0.254 μ+μ− benchmark is two-beam; μp needs the one-beam 0.632,
+  `tests/scientific/test_batch7_documents.py::test_decay_averaging_differs_between_mumu_and_mup`); the relation between
+  tobbetuyef/AloHEP and yefetu/ALOHEP; the IPAC'21 paper itself.
+- **vFFA design note — MuCol Milestone Report 17, "Tentative design of the FFA"** (M. Topp-Mugglestone, 27 Mar 2025,
+  `SRC_DOI_10_5281_ZENODO_15054073`; batch 8). *Resolves* the `vffa-acceleration` item "No source found giving a vFFA
+  muon ring's explicit energy range in GeV/TeV"; *narrows* "Topp-Mugglestone thesis: ... any field/energy numbers for
+  the muon-collider vFFA stage not confirmed" and the "no energy range, circumference ..." item. Settled: stage 1
+  0.06 → 0.3 TeV, 5990 m, 6.93 T on orbit (the F-magnet field) and 12.52 T in the good-field region; stage 4 1.5 → 5 TeV,
+  35000 m, 13.59 T on orbit (the reverse-bend D-magnet field) and 29.04 T good-field; design limit 8.3 T (LHC dipole),
+  which stage 4 exceeds (`*_MUCOLM17`; `tests/scientific/test_mucol_m17_vffa.py`; `CONF_VFFA_PEAK_FIELD`). *Still
+  open:* analytic lattices only (no tracking, non-linear or longitudinal study); the printed eq. (2.7) appears to
+  contain a typographical error (`test_printed_eq27_inconsistent_with_closed_orbit_geometry`); the thesis, the
+  acc-models-mc notebooks (CERN GitLab) and the Zenodo licence; the LHμC 70 → 500 GeV booster is in neither M17 nor MR7.
+- **MuCol Milestone Report 7, arXiv:2510.27437v1** (`SRC_ARXIV_2510_27437`; addendum, MDI and acceleration sections).
+  *Resolves* the `muon-collider-mdi` item "Exact 10 TeV nozzle inner aperture angles ... and total nozzle length were not
+  present in any snippet" and the nozzle part of its fetch entry: Table G.1 outer surface (z, r) = (6, 1), (100, 17.57),
+  (595, 55) cm, "the inclination amounts to 10 degrees" near the IP, tip 6 cm, L* = 6 m (`DET_NOZZLE_*_MR7`,
+  `IR_LSTAR_MR7`; `tests/scientific/test_workshop_decks.py::test_imcc_nozzle_outer_surface_angles_mr7_table_g1`); Table
+  F.5 restates the M17 vFFA rings. *Still open:* the MR7 reference tables for collider, proton driver, target, cooling,
+  magnets, RF and power converters are still being verified and are not in `parameters/` (cite `SRC_ARXIV_2510_27437`
+  with a page only); the licence is not printed.
+- **MAIA, arXiv:2502.00181v2** (`SRC_ARXIV_2502_00181`) and **MUSIC, arXiv:2601.13189v1** (`SRC_ARXIV_2601_13189`;
+  addendum). *Resolve* the `muon-collider-mdi` author-list and fetch entries: MAIA (C. Bell et al.) has a 5 T solenoid
+  "in contrast to the 3.57 T solenoid of the 3 TeV detector design", the nozzle edge at |η| = 2.44 ≈ 10° and L* = 6 m;
+  MUSIC (P. Andreetto et al.) has 5 T chosen "to minimize the effects of the incoherent e+ e− pair production"
+  (`CONF_DETECTOR_SOLENOID_FIELD`, `CONF_NOZZLE_OPENING_ANGLE`, `CONF_IR_LSTAR`). *Still open:* journal status; the related
+  arXiv:2511.23273.
+- **Dudko, arXiv:2607.16904v2** (`SRC_ARXIV_2607_16904`; addendum; SECONDARY_SOURCE). *Resolves* the
+  `vffa-acceleration` fetch entry for its authorship, date and scope (L. V. Dudko, SINP MSU; Natural Science Review,
+  JINR; CC BY-NC 4.0). Used for the turns-per-lifetime formula n ≃ γ cτ_μ/C with cτ_μ = 659 m — 2079 turns at 1 TeV in
+  a 3 km ring (`PHYS_MUON_TURNS_PER_LIFETIME_FORMULA_DUDKO2026`;
+  `tests/scientific/test_workshop_decks.py::test_turns_per_lifetime_dudko_formula`).
+
+### Ultra-cold μ+ source chain
+
+- **Origin of the 0.52 — Bakule et al. 2013, arXiv:1306.3810v1** (`SRC_ARXIV_1306_3810`, PTEP 2013 103C01; batch 9).
+  *Resolves* the question where the muonium formation fraction 0.52 of the J-PARC/μTRISTAN budgets comes from: a
+  MuSR measurement, "the fraction of muonium formed in the three aerogel samples was 0.52 ± 0.01" (p.3;
+  `SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013`). It is cited directly by Beare et al. 2020 (ref. [14]) and
+  Aritome et al. 2024 (ref. [21]); for Abe 2019, the Zhang deck ("from TRIUMF measurement") and μTRISTAN (numbers from
+  C. Zhang) the attribution is inferred, not cited; Sakaki et al. 2026 cite Zhang et al. 2022 [15]. Also settled: on
+  flat (non-ablated) aerogel the vacuum yield of 4.8e-3 per incident muon at 23 MeV/c scales to 9.6e-4 for the J-PARC
+  beam (eq. (1); `SOURCE_MU_VACUUM_YIELD_JPARC_SCALED_BAKULE2013`;
+  `tests/scientific/test_batch9_documents.py::test_bakule2013_vacuum_yield_scaling_to_jparc_beam`); laser ablation later
+  raised the emission by about an order of magnitude (Abe 2019 p.8; Beare 2020: 5–28 ‰ ablated vs < 5 ‰ flat).
+  *Still open:* which three of the four samples and which MuSR facility; Beare et al. 2020 measured 0.655 ± 0.018 on
+  different samples, 6.6 σ apart — kept as two measurements (`CONF_MUONIUM_FORMATION_FRACTION`); Zhang et al. 2022 is
+  not uploaded; Beer et al. 2014 (arXiv:1407.8248, the "0.01 Mu per incident muon" projection) is still unread.
+  *[Verifier note 2026-10-29: after this entry was written, commit `ad5ac43` (batch 10) uploaded and registered Beer et
+  al. 2014 (`SRC_ARXIV_1407_8248`; it gives no muonium formation fraction) and Zhang et al. 2021, JPS Conf. Proc. 33,
+  011125 (`SRC_DOI_10_7566_JPSCP_33_011125`, which cites Beer et al. 2014 for the 52 % although the value is Bakule 2013
+  p.3); neither has parameter records yet. Zhang et al. 2022 (NIM A 1042, 167443; Sakaki ref. [15]) is still not
+  uploaded.]*
+- **Beare et al. 2020, arXiv:2006.01947v2** (`SRC_ARXIV_2006_01947`; addendum). *Resolves* the `ultracold-source` item
+  "Muonium yield per incident muon at J-PARC from Beare et al. ...: the projected number did not appear": "The expected
+  rate of the muonium atoms for laser ionization is estimated to be 3.4 × 10^−3 per incident surface muon [13]" (p.32;
+  `SOURCE_G2_THERMAL_MUONIUM_PER_SURFACE_MUON_BEARE2020`), the same 3.4e-3 as Abe 2019; formation fraction 0.655 ± 0.018
+  (p.25); emission 5–28 ‰ for the ablated targets (p.19). *Still open:* the 0.52 vs 0.655 discrepancy "is not
+  understood well" (p.25); the source-registry `unresolved_questions` of this record still carry the snippet-era item
+  (for the registry owner to update).
+- **J-PARC g-2/EDM design, Abe et al. 2019, arXiv:1901.03047v2** (`SRC_ARXIV_1901_03047`, PTEP 2019 053C02; batch 7).
+  *Resolves* the `ultracold-source` fetch entry for 1901.03047; *narrows* "Rate chain (per-stage efficiencies) is
+  incomplete". Settled: thermal muonium 3.4e-3 per surface muon (p.8); laser ionisation 0.73, a **calculation** "based on
+  the transition rates given by theoretical excitation and dissociation cross sections multiplied with the expected
+  laser photon density" (p.8; `SOURCE_LASER_IONISATION_EFF_CALC_ABE2019`); the Table 4 chain, 1.3e-5 per initial muon;
+  H-line "∼ 1e8 per second" (Table 5 implies ≈ 3e8/s, an internal-consistency observation,
+  `tests/scientific/test_batch7_documents.py::test_abe2019_hline_rate_implied_by_table5_vs_quoted_1e8`); IH-DTL 4.5 MeV
+  (`CONF_JPARC_IHDTL_ENERGY`); EDM statistical precision 1.5e-21 e·cm (Table 1, `PHYS_EDM_PRECISION_STAT_TABLE1_ABE2019`),
+  which settles the PTEP 2019 side of the `ultracold-source` item on the EDM sensitivity goal. *Still open:* the
+  1.5e-19 e·cm rendering of the Mibe 2025 slides (snippet-level, unexplained); 0.52 is quoted without its own reference.
+- **Aritome et al. 2024, arXiv:2410.11367v2** (`SRC_ARXIV_2410_11367`, PRL 134, 245001; addendum). *Resolves* the
+  `ultracold-source` item 'A snippet stated "A 2025 talk reported a first RF acceleration of cooled muons, but the rate
+  was low, at about 2×10⁻³ per pulse ..."': the paper gives 2e-3 μ+/pulse at 100 keV from 9.5e4 surface μ+/pulse, i.e.
+  2.1e-8 per surface muon (`SOURCE_USM_PER_SURFACE_MUON_100KEV_ARITOME2024`;
+  `tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain`). *Narrows* "Normalised-
+  emittance chain (design → measured)" (measured εnorm,rms (0.85, 0.32) π mm·mrad, p.4) and "No measured 122 nm/355 nm
+  ionisation efficiency appeared" (the test used a 244 nm spectroscopy laser, simulated efficiency 7e-6 – 6e-5; the
+  dedicated 122 + 355 nm sources are projected at "around 10%"; `CONF_LASER_IONISATION_EFFICIENCY`). *Still open:* no
+  measured 122 + 355 nm efficiency exists anywhere; the measured chain is ≈ 2.5e6 below the μTRISTAN post-stopping
+  budget and ≈ 1.2e5 below the g-2 target; the source-registry `unresolved_questions` of this record still say "Full
+  text not read" (stale, for the registry owner).
+- **μTRISTAN hybrid target, Sakaki et al. 2026, arXiv:2605.25580v1** (`SRC_ARXIV_2605_25580`; batch 7; ref. [18] of
+  arXiv:2610.35154). *Resolves* the `ultracold-source` item on its normalisation "per p–Li nuclear collision" and its
+  fetch entry: 6e-4 ultraslow muons per p–Li collision with the muon-to-muonium conversion set to one (η_conv "has
+  not, however, been separately quantified", `SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026` = null), N_tot = η_conv ×
+  1.2e12 s^-1 per MW before extraction (`SOURCE_HYBRID_PRE_EXTRACTION_RATE_SAKAKI2026`;
+  `tests/scientific/test_batch7_documents.py::test_sakaki2026_pre_extraction_rate_upper_limit`; `CONF_SOURCE_CONCEPT`).
+  *Still open:* extraction, drift and second-stage cooling losses and the emittance are outside the paper's scope, so no
+  end-to-end μ+/s figure exists; the Matsudo 2024 "~5.5e-4 muons per proton" slide is still unattributed.
+- **Giove 2026, "RF System"** (IMCC and MuCol Annual Meeting, `SRC_IMCC2026_GIOVE_RF_SYSTEM`; batch 9). No earlier
+  backlog item; it narrows the RF question of the hybrid-source option (Rogers: "RF Breakdown (sparking) in
+  solenoids"). Settled: thin-window cavities, 704 MHz as the reference frequency of the first cells, "gradients of 30
+  MV/m"; no gradient or breakdown measurement is shown (`SOURCE_COOLING_RF_BREAKDOWN_DATA_GIOVE2026` = null). The in-field
+  breakdown data restated by Rogers favour beryllium (Cu 24.4 → 12.9 MV/m at 0 → 3 T; Be 41.1 → > 49.8 MV/m), while INFN
+  plans aluminium windows for the demonstrator because of beryllium supply and safety. *Still open:* no uploaded source
+  gives aluminium breakdown performance in a magnetic field; which hybrid-source cavities Giove's 704 MHz thin-window
+  cells would serve is not stated (Rogers' rectilinear A-stages: A1–A2 at 352 MHz, A3–A4 at 704 MHz, p.12,
+  `SOURCE_HYBRID_RECT_A*_RF_FREQUENCY_WS2026_ROGERS`; corrected by the registry-stage verifier, 2026-10-29).
+
+### Uploaded, not yet used by any record
+
+- `SRC_ARXIV_2609_37117` (U.S. Muon Collider Collaboration input to the SCAC Facilities Subcommittee) and
+  `SRC_ARXIV_2610_14303` (AI4MuC workshop report) are registered and archived as SECONDARY_SOURCE; no parameter record
+  cites them as of 2026-10-29.
+
+### Phase-0 synthetic bands overtaken by the uploads
+
+The bands below are those written on 2026-10-28, before the uploads were read. Supersession and re-basing under
+CLAUDE.md §4 are recorded in `parameters/assumptions/phase0_assumptions.yaml` and in the `_SYN` records, not here; this
+list only records what the uploads showed.
+
+- `DET_NOZZLE_OPENING_ANGLE_SYN` (`ASM_DET_NOZZLE_OPENING_ANGLE`; uniform 5–20°) excluded the reported LHμC option
+  40 mrad = 2.29° (`CONF_NOZZLE_OPENING_ANGLE`); the nozzle length and tip-distance bands (2–10 m, 2–50 cm) contained
+  the reported 587.8 cm and 6 cm, but reported values now exist for all three quantities.
+- `IR_LSTAR_SYN` (`ASM_IR_LSTAR`; 5–20 m) excluded the 23 m layout on Forthomme p.4 (`CONF_IR_LSTAR`); whether that
+  layout is relevant to LHμC is open.
+- `SOURCE_LASER_IONISATION_EFFICIENCY_SYN` (`ASM_SOURCE_LASER_IONISATION_EFFICIENCY`; log-uniform 1e-3 – 1) excluded
+  every demonstrated 244 nm value (~1e-6 – 6e-5); a band that also covers them mixes two laser schemes, so results drawn
+  from it must be reported per scheme (`CONF_LASER_IONISATION_EFFICIENCY`).
+- `SOURCE_MUONIUM_FORMATION_FRACTION_SYN` (0.3–0.7) and `DET_SOLENOID_FIELD_SYN` (2–5 T) bracketed the values now
+  measured or reported (0.52 and 0.655; 3, 3.8 and 5 T), but reported values now exist for both.
+- The treatment text of `CONF_LHEC_CROSSING_ANGLE` (2026-10-28) speaks of a 0–7 mrad scan, whereas `IR_CROSSING_ANGLE_SYN`
+  spans 0–10 mrad; the record governs (noted in the conflict on 2026-10-29). Likewise the 2026-10-28 text of
+  `CONF_LUMI_MODEL_ASSUMPTIONS` speaks of a 7.5–9 cm proton bunch length, whereas `PROTON_BUNCH_LENGTH_RMS_SYN` was 5–12 cm
+  (widened on 2026-10-29 to log-uniform 5–100 cm after the Zimmermann deck; `ASM_PROTON_BUNCH_LENGTH_RMS`).
+
+### Still open after the uploads
+
+- Unchanged from the family sections below: the HELP4CERN White Paper and help4cern.web.cern.ch (`ME_001`); the ICHEP
+  2026, ADM, AGH and SAIP listings and slides; the PTEP 2026 erratum text (`ME_016`); the HL-LHC TDR proton tables
+  (`ME_044`); the LHeC CDR and 2020 update (`ME_046`) and arXiv:2503.20475; the Topp-Mugglestone thesis; IPAC'21
+  WEPAB278; the Kraków contributions not uploaded (Otani `ME_008`, Piotrzkowski `ME_011`, Tentori `ME_012`, Holzer);
+  the μLHC AloHEP input decks (`ME_043`); the MR7 reference tables (being verified); every item of the
+  `theory-benchmarks` and `software-tools` families.
+- New, raised by the uploads: the nine conflict records listed at the top of this section, each with its own
+  `required_future_evidence`; in particular a measured 122 + 355 nm ionisation efficiency, a 3D space-charge front-end
+  design for ≥ 1e10 μ+ per bunch, an LHμC booster vFFA lattice with tracking, an LHμC IR design (L*, crossing angle,
+  separator) and a μ+p beam-induced-background simulation per nozzle option.
 
 ---
 

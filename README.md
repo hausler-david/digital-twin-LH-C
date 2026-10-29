@@ -5,11 +5,22 @@ and optimization platform for the proposed LHμC muon-proton collider at CERN.**
 
 Project owner: David Hausler, Independent Researcher, Czech Republic.
 
-> **Status (2026-10-28): Phase 0 — evidence and feasibility audit. No digital twin exists yet.**
-> This repository currently contains a sourced parameter database, provenance schemas,
-> research logs, policy documents, a validation package and the first analytical cross-checks.
-> There is no CAD, no lattice, no event generation and no user interface. Everything that is
-> unknown is recorded as unknown.
+> **Status (2026-10-29): Phase 0 — evidence and feasibility audit, with the addendum of uploaded
+> documents. No digital twin exists.**
+> This repository contains a sourced parameter database — 5601 records, 5578 of them with page-level
+> provenance from 34 uploaded documents (the DIS2026 and μLHC papers, 14 Kraków workshop decks, related-machine
+> papers such as μTRISTAN, the muon-ion collider, LHeC and MuCol reports, the J-PARC source-chain
+> measurements, the AloHEP method paper and the MuCol vFFA report) and the other 23 synthetic ranges
+> with assumption records or derived values with derivations; each sourced record was verified against
+> the page images by an independent agent but not yet reviewed line by line by a human — together with
+> provenance schemas, research logs, policy documents and a validation package of analytical (P1)
+> cross-checks only (151 tests at commit `104073c`; 177 at `000f236`, which adds the batch-10 and
+> MuCol MR7 luminosity-arithmetic checks). Since 2026-10-29 the validator rejects confidences above the
+> source-quality caps and P1 labels without a registered test. There is no CAD, no lattice, no event
+> generation, no detector simulation and no user interface. Values taken from workshop slides are
+> reported in workshop material and unverified by simulation; everything that is unknown is recorded
+> as unknown. What the uploads changed, and what they did not: `docs/reports/M1_addendum_uploaded_documents.md`
+> (draft) and `docs/limitations.md` §10.
 
 ## What LHμC is (as reported by its proponents)
 
