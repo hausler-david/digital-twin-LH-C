@@ -270,7 +270,8 @@ scenarios:
   - wall_plug_power
   - cost
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 for the scenario: four arithmetic reproductions pinned in tests/scientific/test_batch7_documents.py — Fig. 4
     caption 0.52 × 2.1e4/3.23e6 = 3.38e-3 (test_abe2019_fig4_thermal_muonium_efficiency_decomposition), the Table 4 product
     1.35e-5 vs the stated 1.3e-5 (test_abe2019_table4_overall_efficiency_product), the Table 2 decay survival 0.63 (test_abe2019_table2_decay_survival_through_linac)
@@ -409,7 +410,8 @@ scenarios:
   - eta_mu_stopped_muon_yield_separately
   - eta_vac_per_gap_values
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 for the scenario: three arithmetic reproductions pinned in tests/scientific/test_batch7_documents.py — ℓ_diff
     = sqrt(2e-3 cm^2/s × τ_μ) = 0.66 µm vs ''≈ 0.7 µm'' and (1 − e^−3)/3 ≈ 1/3 (test_sakaki2026_diffusion_length_and_emitted_fraction),
     Eq. (1) → 0.77 π mm mrad vs ''∼ 1'' (test_sakaki2026_thermal_source_emittance_estimate), and 6e-4 × 2e15/s = 1.2e12/s

@@ -131,7 +131,8 @@ scenarios:
   - proton_norm_emittance
   - crossing_angle
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: 94.69/44.57 keV = 2.12 reproduces the slide''s ''factor 2''; 1e34 x 1e7 s = 100 fb^-1 is a convention-based check; 2 sqrt(50 GeV x 7 TeV) = 1.18 TeV reproduces the 1.2
     TeV of slide 2. The ''1 ab^-1 over full exploitation'' is not reproducible (duration not stated; P0). Verifier (2026-10-29): the extractor''s note that the electron beam energy is
     on slides 2-3 was wrong (slide 2 gives only the ep √s; the 50 GeV is in the p.10 legend, now recorded here); sqrt_s and the Delphes-model solenoid field (3.8 T, p.13) are linked
@@ -207,7 +208,8 @@ scenarios:
   - wall_plug_power
   - main_ring_dipole_field
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: sqrt(s) = 6.48 TeV, L = 2.75e33 (eq. 2.1 with H = 1 and the table''s beam sizes), 237.1 fb^-1 over 10 years, σ_p = 7.09 µm and σ_μ = 2.97 µm (eq. 2.2; tests/scientific/test_workshop_decks.py::test_muic_lhmuc_column_beam_size_acosta2022)
     all reproduce the table. 1000 fb^-1 is named in section 4 as a physics target ''disfavored within 10 years''. The storage-ring field (main_ring_dipole_field) is not stated for LHmuC;
     3300 cycles are consistent with the 11 T assumed for MuIC at BNL.'
@@ -274,7 +276,8 @@ scenarios:
   - wall_plug_power
   - main_ring_dipole_field
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: sqrt(s) 0.33 TeV, L = 7.05e31 (eq. 2.1, H = 1, with the table''s 48 µm muon size) and 5.9 fb^-1 per 10 years reproduce the table. NOT reproduced: the 48 µm muon beam size
     (eq. 2.2 gives 60 µm with ε_n = 200 µm, β* = 1.7 cm) and the 1134 cycles per bunch (300B or γ-scaling give 344; verifier observation: 3300 x 0.33/0.96 = 1134.4, i.e. the γ-scaling
     with the column''s sqrt(s) in place of the muon energy). 200 µm emittance corresponds to a beam without final cooling.'
@@ -341,7 +344,8 @@ scenarios:
   - wall_plug_power
   - main_ring_dipole_field
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: sqrt(s) 0.74 TeV, L = 2.13e33 and 178 fb^-1 per 10 years reproduce the table; 1719 cycles = 3300 x 0.5/0.96 (γ-scaling in the same ring). Muon beam size 7.6 µm vs 7.3 µm
     from eq. 2.2 (-4 %).'
 - scenario_id: MUIC-ACOSTA2022-BNL-960GEV
@@ -411,7 +415,8 @@ scenarios:
   - booster_survival
   - wall_plug_power
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: sqrt(s) 1.03 TeV, L = 4.69e33 and 398 fb^-1 per 10 years reproduce the table; 0.3 x 11 T x 290 m = 957 GeV/c reproduces the 0.96 TeV maximum energy; 300 x 11 T = 3300 cycles.
     Muon beam size 4.7 µm vs 4.5 µm from eq. 2.2 (-3 %). Text: ''peak L up to ≈5e33 at the highest muon energy for MuIC''.'
 - scenario_id: MUIC-ACOSTA2022-MUIC2
@@ -464,7 +469,8 @@ scenarios:
   - integrated_luminosity_10yr
   - main_ring_dipole_field
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: P1 only for sqrt(s) = 2 sqrt(0.96 x 0.96) = 1.92 TeV.
 - scenario_id: LHC-PR627-NOMINAL
   label: LHC nominal parameters (2002), LHC Project Report 627 Table 1
@@ -495,7 +501,8 @@ scenarios:
   - integrated_luminosity_per_year
   - bunch_spacing
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
     crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
     but is not printed in the table (unknown_roles).'
@@ -528,7 +535,8 @@ scenarios:
   - integrated_luminosity_per_year
   - bunch_spacing
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
     crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
     but is not printed in the table (unknown_roles).'
@@ -561,7 +569,8 @@ scenarios:
   - integrated_luminosity_per_year
   - bunch_spacing
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
     crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
     but is not printed in the table (unknown_roles).'
@@ -644,7 +653,8 @@ scenarios:
   - proton_energy_spread
   - main_ring_circumference
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: spot sizes (11.2 µm for both beams from β* ε_n/γ), effective line densities (2.02e10 /m electrons over the 30.5 m train; 2.09e12 /m protons = N/(√(2π) σ_z)) and, after
     verification, the luminosity: L = f_coll n_b N_e λ_p 4β* arctan(l_IR/2β*)/(4π σ*²) = 1.13e31 (σ* = 11 µm) / 1.09e31 (11.2 µm) vs 1.1e31. Observation: 12.4 m rms ''(uniform)'' and
     ''30 m long'' (Figure 1) are consistent if 12.4 m is the Gaussian-equivalent σ of a flat bunch of effective length √(2π) x 12.4 = 31 m (a uniform bunch of 12.4 m rms would be 43
@@ -721,7 +731,8 @@ scenarios:
   - crossing_angle
   - proton_norm_emittance
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: the longitudinal-emittance chain of Table 2 is reproduced from its own blow-up factors (0.8 → 1.0 → 1.1 → 8 x 1.1 x 1.40 = 12.3 → 12.9 → 2 x 12.9 x 1.10 = 28.4 ≈ 28.5 eVs);
     5 x 300 kV = 1.5 MV; h = 3564 ↔ 7.5 m ↔ 40 MHz. Not reproduced: the Table 1 luminosity gains (∫λ² ratios match for n = 3-5 but not n = 2). The absolute bunch population of the merged
     bunch is not printed on the slides.'

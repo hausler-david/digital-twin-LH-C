@@ -59,7 +59,8 @@ scenarios:
       - beam_beam_tune_shift
       - nozzle_opening_angle
     geometry_fidelity: G0
-    validation_level: P1
+    # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+    validation_level: P0
     notes: "P1 because sqrt(s), the collision rate and the peak luminosity are reproduced analytically from the other Table 1 entries (tests/scientific/test_analytical_checks.py). Open audit item: 80 bunches x 250 ns = 20 us exceeds the ~10 us revolution period of the 'about 3 km' main ring (see MACHINE_MU_BUNCHES_DIS2026 notes); not resolved by the source. crossing_angle is listed both as a role (pointing to an explicit unknown record, value null) and in unknown_roles."
 
   - scenario_id: LHMUC-DIS2026-2TEV
@@ -110,5 +111,6 @@ scenarios:
       - muon_yield_fraction_of_mutristan
       - nozzle_opening_angle
     geometry_fidelity: G0
-    validation_level: P1
+    # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+    validation_level: P0
     notes: "P1 only for sqrt(s) = 2*sqrt(2 TeV x 7 TeV) = 7.48 TeV reproduced against the stated 7.5 TeV. The average_luminosity role is filled because the abstract's sentence covers both energy options ('5.3 or 7.5 TeV, respectively, at an average luminosity close to 10^34'); its order-of-magnitude uncertainty is recorded on the parameter. Everything else about the 2 TeV option is not given in the source."

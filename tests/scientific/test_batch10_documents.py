@@ -181,6 +181,18 @@ def test_beer2014_flat_sample_vs_bakule2013():
     assert 1.3 < BEER_TABLE1["flat"][0] / BEER_TABLE1["flat_bakule2013"][0] < 1.4
 
 
+def test_beer2014_vs_beare2020_reused_400um_target():
+    """The 400 µm-pitch target of Table 1 (20.9 ± 0.7 ‰) was re-measured at TRIUMF in 2017 as Beare et al. 2020 target
+    S2013-1, 'Reuse of O2013-3' (Table 1 p. 6; Table 4 p. 18: 17.2 ± 0.2 ‰): 18 % lower, 5.1 σ with statistical errors
+    only, 1.6 σ when the stated systematics are added in the direction that closes the gap (this paper ≈ 4 %, p. 5;
+    Beare −7 % / +12 %, p. 19). Recorded as CONF_ABLATED_AEROGEL_REMEASUREMENT, not averaged."""
+    a, sa, b, sb = 20.9, 0.7, 17.2, 0.2
+    assert 0.17 < 1 - b / a < 0.19
+    assert 5.0 < (a - b) / math.hypot(sa, sb) < 5.2
+    total = math.sqrt(sa ** 2 + (0.04 * a) ** 2 + sb ** 2 + (0.12 * b) ** 2)
+    assert 1.5 < (a - b) / total < 1.7
+
+
 def test_beer2014_fabrication_and_projection_arithmetic():
     """p. 3: 800 pulses at 1 kHz = 0.8 s per hole. p. 6: the projected 0.2e6 ultra-slow µ+/s is 'five times smaller
     than the design intensity' (order 1e6 s^-1, p. 2)."""

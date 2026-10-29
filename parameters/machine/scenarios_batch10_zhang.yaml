@@ -1,0 +1,162 @@
+# Scenario for Zhang et al. 2021 (SRC_DOI_10_7566_JPSCP_33_011125, JPS Conf. Proc. 33, 011125), batch 10, extraction group
+# G17_ZHANG2021 (2026-10-29). Schema: schemas/machine.schema.json. No numbers in the slots: every role references a record in
+# parameters/source/muonium_laser_ionisation_sim_zhang2021.yaml. machine JPARC_MUSE: a simulated J-PARC MLF S-line S2 demonstrator of
+# 244 nm 1S-2S muonium laser ionisation — analogous technology for the LHμC ultra-cold μ+ source, not an LHμC design. Status
+# 'partially_reported': the yield chain is printed, but laser parameters, the S2 surface-muon momentum, the ablation state of the
+# target and the normalisation of the S-line transport efficiency are not (unknown_roles). validation_level P0 by
+# docs/validation_plan.md §1 rule 3 (reason in the notes).
+# Verified 2026-10-29 by the G17 adversarial verifier (research/_fragments/verify_G17_ZHANG2021.md).
+scenarios:
+- scenario_id: JPARC-S2-MU-IONISATION-DEMO-ZHANG2021
+  label: 'J-PARC MLF S-line S2: simulated 244 nm 1S-2S muonium laser-ionisation demonstrator at 500 kW (Zhang et al., JPS Conf. Proc.
+    33, 011125, 2021)'
+  description: 'Planned demonstration of muonium laser ionisation via 1S-2S two-photon excitation (244 nm) followed by 355 nm ionisation
+    at the S2 area of the J-PARC MLF S-line (''still under construction'' at the time of writing), as simulated by Zhang et al. 2021
+    (JPS Conf. Proc. 33, 011125; 3rd J-PARC Symposium, received 10 January 2020): G4Beamline S-line model, validated by reproducing
+    the relative S1 rates with and without slits and compared with the measured S1 intensity (about 1.9e5 s^-1 per pulse at 500 kW,
+    ref. [5]); GEANT4 stopping in a silica-aerogel target behind a 100 µm Kapton window and a 435 µm Al degrader; a 3-D random-walk
+    diffusion model with T = 322 K and D = 870 cm^2 s^-1 (cited to Beer et al. 2014, which does not contain them); a 2 × 40 × 2 mm^3
+    laser region centred 3 mm downstream of the aerogel and fired about 0.8 µs after the mean arrival of the MLF double pulse; a ''preliminary''
+    optical-Bloch-equation ionisation efficiency of 3.9e-7 per vacuum muonium (8.8e-7 × about 44 %); SOA lens (20 kV), ED (5 kV), EQs
+    and BM to an MCP, simulated with muSRsim. Table I chain: 2.4e6 surface μ+/s at S2 (S-line transport 0.00717) → stopping 0.467 →
+    formation 0.52 → vacuum yield 0.082 → ionisation 3.9e-7 → slow-beamline transmission 0.651 → MCP 0.90 = 0.0109 s^-1 (''about 0.011/s''),
+    i.e. 4.55e-9 per surface muon at S2. A simulation of a demonstrator with the 244 nm spectroscopy laser, not the 122 nm + 355 nm
+    design scheme of the g−2/EDM experiment; analogous technology for the LHμC ultra-cold μ+ source, not an LHμC design.'
+  machine: JPARC_MUSE
+  design_version: Zhang et al., JPS Conf. Proc. 33, 011125 (2021), Proc. 3rd J-PARC Symposium (J-PARC2019), received 10 January 2020;
+    laser-ionisation simulation labelled 'preliminary' (p. 4)
+  status: partially_reported
+  primary_source_ids:
+  - SRC_DOI_10_7566_JPSCP_33_011125
+  parameters:
+    proton_beam_energy: SOURCE_JPARC_PROTON_BEAM_ENERGY_ZHANG2021
+    proton_beam_power: SOURCE_MLF_PROTON_POWER_PRESENT_ZHANG2021
+    proton_beam_power_expected: SOURCE_MLF_PROTON_POWER_EXPECTED_ZHANG2021
+    surface_muon_beam_time_structure: SOURCE_MLF_BEAM_TIME_STRUCTURE_ZHANG2021
+    surface_muon_pulse_separation: SOURCE_SURFACE_MU_PULSE_SEPARATION_ZHANG2021
+    sline_experimental_areas: SOURCE_SLINE_EXPERIMENTAL_AREAS_ZHANG2021
+    sline_bending_magnets_to_s2: SOURCE_SLINE_S2_BENDING_MAGNETS_ZHANG2021
+    sline_layout: SOURCE_SLINE_S2_LAYOUT_FIG2_ZHANG2021
+    sline_tuned_triplets: SOURCE_SLINE_S2_TUNED_TRIPLETS_ZHANG2021
+    sline_simulation_tool: SOURCE_SLINE_SIM_TOOL_ZHANG2021
+    s1_surface_muon_rate_measured: SOURCE_S1_SURFACE_MU_RATE_MEASURED_ZHANG2021
+    sline_transport_efficiency: SOURCE_SLINE_TRANSPORT_EFF_S2_ZHANG2021
+    s2_surface_muon_rate: SOURCE_S2_SURFACE_MU_RATE_TABLE1_ZHANG2021
+    s2_surface_muon_rate_section2: SOURCE_S2_SURFACE_MU_RATE_SECTION2_ZHANG2021
+    beam_fwhm_x_optimised: SOURCE_S2_BEAM_FWHM_X_OPTIMISED_ZHANG2021
+    beam_fwhm_y_optimised: SOURCE_S2_BEAM_FWHM_Y_OPTIMISED_ZHANG2021
+    beam_fwhm_x_gaussian: SOURCE_S2_BEAM_FWHM_X_GAUSSIAN_ZHANG2021
+    beam_fwhm_y_gaussian: SOURCE_S2_BEAM_FWHM_Y_GAUSSIAN_ZHANG2021
+    stopping_simulation_tool: SOURCE_STOPPING_SIM_TOOL_ZHANG2021
+    kapton_window_thickness: SOURCE_KAPTON_WINDOW_THICKNESS_ZHANG2021
+    kapton_window_side: SOURCE_KAPTON_WINDOW_SIDE_FIG3_ZHANG2021
+    degrader_thickness: SOURCE_AL_DEGRADER_THICKNESS_ZHANG2021
+    degrader_side_1_fig3: SOURCE_AL_DEGRADER_SIDE1_FIG3_ZHANG2021
+    degrader_side_2_fig3: SOURCE_AL_DEGRADER_SIDE2_FIG3_ZHANG2021
+    degrader_optimisation_depth: SOURCE_DEGRADER_OPTIMISATION_DEPTH_ZHANG2021
+    target_transverse_side_text: SOURCE_AEROGEL_TARGET_TRANSVERSE_SIDE_TEXT_ZHANG2021
+    target_thickness_text: SOURCE_AEROGEL_TARGET_THICKNESS_TEXT_ZHANG2021
+    target_side_1_fig3: SOURCE_AEROGEL_TARGET_SIDE1_FIG3_ZHANG2021
+    target_side_2_fig3: SOURCE_AEROGEL_TARGET_SIDE2_FIG3_ZHANG2021
+    target_thickness_fig3: SOURCE_AEROGEL_TARGET_THICKNESS_FIG3_ZHANG2021
+    muon_stopping_efficiency: SOURCE_SURFACE_MU_STOPPING_EFF_TABLE1_ZHANG2021
+    muon_stopping_efficiency_text: SOURCE_SURFACE_MU_STOPPING_EFF_TEXT_ZHANG2021
+    stopped_muon_rate: SOURCE_STOPPED_MU_RATE_TABLE1_ZHANG2021
+    mean_stopping_time: SOURCE_SURFACE_MU_MEAN_STOPPING_TIME_ZHANG2021
+    muonium_formation_fraction: SOURCE_MUONIUM_FORMATION_FRACTION_ZHANG2021
+    muonium_formation_fraction_in_simulation: SOURCE_MUONIUM_FORMATION_FRACTION_SIM_ASSUMED_ZHANG2021
+    muonium_formation_rate: SOURCE_MUONIUM_FORMATION_RATE_TABLE1_ZHANG2021
+    diffusion_model: SOURCE_MU_DIFFUSION_MODEL_ZHANG2021
+    diffusion_temperature: SOURCE_MU_DIFFUSION_TEMPERATURE_ZHANG2021
+    diffusion_constant: SOURCE_MU_DIFFUSION_CONSTANT_ZHANG2021
+    diffusion_fit_sample_density: SOURCE_AEROGEL_DENSITY_TRIUMF_FIT_SAMPLE_ZHANG2021
+    diffusion_fit_sample_thickness: SOURCE_AEROGEL_THICKNESS_TRIUMF_FIT_SAMPLE_ZHANG2021
+    aerogel_laser_ablation_pattern: SOURCE_AEROGEL_LASER_ABLATION_ZHANG2021
+    muonium_vacuum_yield: SOURCE_MU_VACUUM_YIELD_EFF_SIM_ZHANG2021
+    muonium_vacuum_rate: SOURCE_MU_VACUUM_RATE_TABLE1_ZHANG2021
+    surface_muonium_mean_x: SOURCE_MU_SURFACE_YIELD_MEAN_X_FIG5_ZHANG2021
+    surface_muonium_mean_y: SOURCE_MU_SURFACE_YIELD_MEAN_Y_FIG5_ZHANG2021
+    surface_muonium_stddev_x: SOURCE_MU_SURFACE_YIELD_STDDEV_X_FIG5_ZHANG2021
+    surface_muonium_stddev_y: SOURCE_MU_SURFACE_YIELD_STDDEV_Y_FIG5_ZHANG2021
+    surface_muonium_mean_z: SOURCE_MU_SURFACE_YIELD_MEAN_Z_FIG5_ZHANG2021
+    surface_muonium_stddev_z: SOURCE_MU_SURFACE_YIELD_STDDEV_Z_FIG5_ZHANG2021
+    laser_ionisation_scheme: SOURCE_LASER_IONISATION_SCHEME_ZHANG2021
+    laser_excitation_wavelength: SOURCE_LASER_EXCITATION_WAVELENGTH_ZHANG2021
+    laser_ionisation_wavelength: SOURCE_LASER_IONISATION_STEP_WAVELENGTH_ZHANG2021
+    laser_pulse_energy_244nm: SOURCE_LASER_PULSE_ENERGY_244NM_ZHANG2021
+    laser_pulse_energy_355nm: SOURCE_LASER_PULSE_ENERGY_355NM_ZHANG2021
+    laser_spot_size: SOURCE_LASER_SPOT_SIZE_ZHANG2021
+    laser_region_centre_distance: SOURCE_LASER_REGION_CENTRE_DISTANCE_ZHANG2021
+    laser_region_transverse_extent_a: SOURCE_LASER_REGION_TRANSVERSE_EXTENT_A_ZHANG2021
+    laser_region_transverse_extent_b: SOURCE_LASER_REGION_TRANSVERSE_EXTENT_B_ZHANG2021
+    laser_region_longitudinal_extent: SOURCE_LASER_REGION_LONGITUDINAL_EXTENT_ZHANG2021
+    laser_optimum_delay: SOURCE_LASER_OPTIMUM_DELAY_ZHANG2021
+    laser_excitation_simulation_method: SOURCE_LASER_EXCITATION_SIM_METHOD_ZHANG2021
+    laser_1s2s_excitation_probability: SOURCE_LASER_1S2S_EXCITATION_PROB_ZHANG2021
+    laser_2s_ionisation_probability: SOURCE_LASER_2S_IONISATION_PROB_ZHANG2021
+    laser_ionisation_efficiency: SOURCE_LASER_IONISATION_EFF_244NM_ZHANG2021
+    thermal_muon_rate_after_ionisation: SOURCE_THERMAL_MU_RATE_IONISATION_TABLE1_ZHANG2021
+    extraction_layout: SOURCE_SLOW_BEAMLINE_LAYOUT_ZHANG2021
+    extraction_simulation_tool: SOURCE_EXTRACTION_SIM_TOOL_ZHANG2021
+    soa_lens_mesh_electrodes: SOURCE_SOA_LENS_MESH_ELECTRODES_ZHANG2021
+    soa_lens_cylindrical_electrodes: SOURCE_SOA_LENS_CYLINDRICAL_ELECTRODES_ZHANG2021
+    soa_lens_voltage: SOURCE_SOA_LENS_VOLTAGE_ZHANG2021
+    ed_voltage: SOURCE_ED_VOLTAGE_ZHANG2021
+    ed_particle_energy: SOURCE_ED_BEND_PARTICLE_ENERGY_ZHANG2021
+    mcp_effective_diameter: SOURCE_MCP_EFFECTIVE_DIAMETER_ZHANG2021
+    extraction_events_generated: SOURCE_THERMAL_MU_EXTRACTION_EVENTS_GENERATED_ZHANG2021
+    extraction_events_detected: SOURCE_THERMAL_MU_EXTRACTION_EVENTS_DETECTED_ZHANG2021
+    extraction_transmission: SOURCE_THERMAL_MU_EXTRACTION_TRANSMISSION_ZHANG2021
+    extraction_decay_loss: SOURCE_THERMAL_MU_EXTRACTION_DECAY_LOSS_ZHANG2021
+    extraction_mesh_transmission: SOURCE_SOA_MESH_TRANSMISSION_EFF_ZHANG2021
+    mcp_aperture_ratio: SOURCE_MCP_APERTURE_RATIO_ZHANG2021
+    extraction_count_ratio: SOURCE_THERMAL_MU_EXTRACTION_COUNT_RATIO_ZHANG2021
+    extraction_named_factors_product: SOURCE_THERMAL_MU_EXTRACTION_NAMED_FACTORS_PRODUCT_ZHANG2021
+    slow_beamline_photo_length_mark: SOURCE_SLOW_BEAMLINE_PHOTO_LENGTH_MARK_FIG6_ZHANG2021
+    slow_beamline_transmission: SOURCE_SLOW_BEAMLINE_TRANSMISSION_ZHANG2021
+    thermal_muon_rate_after_slow_beamline: SOURCE_THERMAL_MU_RATE_SLOW_BEAMLINE_TABLE1_ZHANG2021
+    mcp_detection_efficiency: SOURCE_MCP_DETECTION_EFF_ZHANG2021
+    thermal_muon_rate_at_mcp: SOURCE_THERMAL_MU_RATE_MCP_ZHANG2021
+    thermal_muon_rate_final_text: SOURCE_THERMAL_MU_RATE_FINAL_TEXT_ZHANG2021
+    thermal_muons_per_s2_surface_muon: SOURCE_THERMAL_MU_PER_S2_SURFACE_MU_ZHANG2021
+  unknown_roles:
+  - laser_pulse_energy_244nm
+  - laser_pulse_energy_355nm
+  - laser_repetition_rate
+  - aerogel_laser_ablation_pattern
+  - formation_fraction_primary_source_for_this_sample
+  - laser_pulse_duration_244nm
+  - laser_pulse_duration_355nm
+  - laser_linewidth_244nm
+  - surface_muon_momentum_at_s2
+  - surface_muon_momentum_spread_at_s2
+  - proton_beam_repetition_rate
+  - aerogel_target_density_in_stopping_simulation
+  - sline_transport_efficiency_normalisation
+  - muonium_mean_free_path
+  - required_data_taking_time
+  - measured_thermal_muon_rate
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but most roles (efficiencies, geometry, categorical and explicit-unknown
+    records) point to P0 records that no registered test reproduces, so a P1 label would overclaim. P1 holds for the individual Table
+    I rate records, the 3.9e-7 ionisation efficiency, the 0.586 extraction transmission and the three audit values (tests/scientific/test_batch10_documents.py::test_zhang2021_table1_rates_follow_from_efficiencies,
+    ::test_zhang2021_laser_ionisation_factorises, ::test_zhang2021_internal_inconsistencies_recorded), which show that the printed numbers
+    are consistent bookkeeping; they do not validate any of the simulations. Internal inconsistencies are kept as separate roles, not
+    resolved: s2_surface_muon_rate (2.4e6, §5 and Table I; used by the chain) vs s2_surface_muon_rate_section2 (2.4e5, §2); muon_stopping_efficiency
+    (0.467, Table I; used) vs muon_stopping_efficiency_text (0.443, §3); target_*_text (78 × 78 × 6 mm) vs target_*_fig3 (45×35 mm^2,
+    8.8 mm); beam_fwhm_*_optimised (47 × 30 mm) vs beam_fwhm_*_gaussian (77 × 29 mm; relation not stated, consistent if read as two
+    tuning stages); extraction_transmission 0.586 vs extraction_count_ratio 0.75 vs extraction_named_factors_product 0.666 (0.75 × 0.87
+    × 0.90 = 0.587 suggests that the mesh loss is inside the simulated count, an inference only); and, outside the roles, the surface-muon
+    momentum 28 MeV/c (§1, for the H-line) vs 27 MeV/c (Fig. 1 inset). None has a conflict record in research/source_conflicts.yaml
+    as of 2026-10-29. laser_pulse_energy_244nm, laser_pulse_energy_355nm and aerogel_laser_ablation_pattern point to explicit-unknown
+    records (value null) and are also listed in unknown_roles (convention of LHMUC-SOURCE-HYBRID-IMCC). formation_fraction_primary_source_for_this_sample:
+    the 0.52 is cited to Beer et al. 2014 [8], which has no formation fraction; the value matches Bakule et al. 2013''s MuSR result
+    on the 2013 non-ablated samples (origin inferred, not cited; CONF_MUONIUM_FORMATION_FRACTION), and no formation fraction is given
+    for the 23.2 mg/cm^3, 8.8 mm TRIUMF sample. surface_muon_momentum_at_s2 is unknown: the 28 MeV/c of §1 is stated for the g−2/EDM
+    H-line beam, and the S2 momentum distribution passed to GEANT4 is not printed; proton_beam_repetition_rate (25 Hz in other sources)
+    is not stated in this paper. The laser ionisation efficiency belongs with the 244 nm values of CONF_LASER_IONISATION_EFFICIENCY
+    treatment (c). The demonstration was later carried out at S2 (2026 Kraków Zhang deck: 2022 test, 0.126 Hz signal at resonance, SOURCE_IONISATION_TEST_SIGNAL_RATE_JPARC2022_WS2026_ZHANG;
+    Aritome et al. 2024 used a 244 nm laser at S2, scenario JPARC-MUSE-S2-2024); those measurements belong to their own sources and
+    scenarios and do not validate this simulation.'

@@ -201,6 +201,17 @@ def confidence_cap(prov: dict, source: dict | None) -> tuple[str | None, str]:
     return min(caps, key=lambda c: CONFIDENCE_RANK[c[0]])
 
 
+LEVEL_ORDER = ("P0", "P1", "P2", "P3", "P4", "P5")
+
+
+def scenario_level_cap(ev: Evidence, scenario: dict) -> str:
+    """docs/validation_plan.md §1 rule 3: the label of a composite is the minimum over its inputs. A scenario's inputs
+    are the records its roles point to; a scenario without any role record is capped at P0."""
+    levels = [(ev.parameters[pid].get("validation") or {}).get("level", "P0")
+              for pid in (scenario.get("parameters") or {}).values() if pid in ev.parameters]
+    return min(levels, key=LEVEL_ORDER.index) if levels else "P0"
+
+
 def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
     """Referential integrity and the null-vs-zero / provenance rules."""
     tests = registered_test_names(root)
@@ -277,6 +288,12 @@ def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
         for role, pid in s.get("parameters", {}).items():
             if pid not in ev.parameters:
                 ev.error(f"scenario {sid}", f"role {role} references unknown parameter {pid}")
+        # a scenario is a composite of its role records (docs/validation_plan.md §1 rule 3)
+        cap = scenario_level_cap(ev, s)
+        lvl = s.get("validation_level", "P0")
+        if lvl in LEVEL_ORDER and LEVEL_ORDER.index(lvl) > LEVEL_ORDER.index(cap):
+            ev.error(f"scenario {sid}", f"validation_level {lvl} exceeds {cap}, the minimum over its role records "
+                                        "(docs/validation_plan.md §1 rule 3); lower it with tools/apply_scenario_levels.py")
         for src in s.get("primary_source_ids", []):
             if src not in ev.sources:
                 ev.error(f"scenario {sid}", f"unknown source {src}")

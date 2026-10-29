@@ -1,0 +1,1115 @@
+# Scenarios for Kaya, Ketenoglu, Sultansoy & Zimmermann (SRC_ARXIV_1905_05564, arXiv:1905.05564v2; EPL 138 (2022) 24002),
+# batch 10, extraction group G15_KAYA2022 (2026-10-29). Schema: schemas/machine.schema.json. Twelve options = {HL-LHC, HE-LHC}
+# x {nominal (Table 1), ERL60-upgraded (Table 2)} protons x E_μ = {0.75, 1.5, 3} TeV (the √s = 1.5 / 3 / 6 TeV muon colliders of
+# Table 3). No numbers in the slots: every role references a record in parameters/machine/mup_lhc_options_kaya2022.yaml.
+# machine OTHER: an earlier LHC-based μp proposal of the AloHEP group (precursor of μLHC), not LHμC. Status partially_reported:
+# the paper prints beam parameters, √s, an eq.-(6) luminosity and matched-beam tune shifts, but no source, cooling, acceleration,
+# IR, synchronisation, detector or muon-charge information (unknown_roles), and by its own statement (p. 5) ξ_p is an order of
+# magnitude too high, so the tabulated luminosities are not beam-beam compatible. validation_level P0 for all twelve: the
+# minimum over the role records (docs/validation_plan.md §1 rule 3, lhmuc.registry.scenario_level_cap); the batch-10 task
+# asked for P1, which P0 role records (bunch lengths, ring circumference, repetition rate, ...) do not allow.
+# Verified 2026-10-29 by the G15 adversarial verifier: every role of the 12 scenarios points at the record of the matching ring,
+# proton option and E_μ, and validation_level P0 is kept (research/_fragments/verify_G15_KAYA2022.md).
+scenarios:
+- scenario_id: KAYA2022-HLLHC-NOMINAL-EMU0P75TEV
+  label: 'Kaya et al. 2022: E_μ = 0.75 TeV muon-collider beam on HL-LHC nominal protons (√s 4.58 TeV, L 0.95e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 0.75 TeV beam
+    of the √s = 1.5 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 7 TeV HL-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 4.58 TeV (Table 4) and L = 0.95e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 1.25x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 7.1 µm and σ_μ = 5.9 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU0P75_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU0P75_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU0P75_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC1P5TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC1P5TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC1P5TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC1P5TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC1P5TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC1P5TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HLLHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC1P5TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC1P5TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC1P5TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HLLHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS4P58_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS4P58_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.97 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 1 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy
+    uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5). x_min_q2_* point
+    to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HLLHC-NOMINAL-EMU1P5TEV
+  label: 'Kaya et al. 2022: E_μ = 1.5 TeV muon-collider beam on HL-LHC nominal protons (√s 6.48 TeV, L 0.84e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 1.5 TeV beam
+    of the √s = 3 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 7 TeV HL-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 6.48 TeV (Table 4) and L = 0.84e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 4.4x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 7.1 µm and σ_μ = 2.95 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU1P5_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU1P5_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU1P5_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC3TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC3TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC3TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC3TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC3TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC3TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HLLHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC3TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC3TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC3TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HLLHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS6P4_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS6P4_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 0.5 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy
+    uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5). x_min_q2_* point
+    to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HLLHC-NOMINAL-EMU3TEV
+  label: 'Kaya et al. 2022: E_μ = 3 TeV muon-collider beam on HL-LHC nominal protons (√s 9.16 TeV, L 0.57e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 3 TeV beam of
+    the √s = 6 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the LHC,
+    Fig. 1) colliding with 7 TeV HL-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 9.16 TeV (Table 4) and L = 0.57e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 12x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 7.1 µm and σ_μ = 1.48 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU3_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU3_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU3_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC6TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC6TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC6TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC6TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC6TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC6TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HLLHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC6TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC6TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC6TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HLLHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS9_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS9_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 0.25 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS).
+    proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5).
+    x_min_q2_* point to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not
+    stated). integrated_luminosity stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC
+    √s=9,16 TeV'' / ''µ⊗HE-LHC √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own
+    2 IPs), not μp. Every unknown role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HLLHC-UPGRADED-EMU0P75TEV
+  label: 'Kaya et al. 2022: E_μ = 0.75 TeV muon-collider beam on HL-LHC upgraded protons (√s 4.58 TeV, L 1.4e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.12, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 0.75 TeV beam
+    of the √s = 1.5 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 7 TeV HL-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 4.58 TeV (Table 4) and L = 1.4e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 1.25x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.45 µm and σ_μ = 5.9 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.12 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU0P75_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU0P75_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU0P75_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC1P5TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC1P5TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC1P5TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC1P5TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC1P5TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC1P5TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC1P5TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC1P5TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC1P5TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS4P58_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS4P58_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.97 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 1 cm, and synchronisation of the rings is
+    not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). Here σ_μ = 5.9 µm
+    > σ_p = 4.45 µm: eq. (6) is the luminosity matched at σ_μ; this option is excluded from MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022.
+    x_min_q2_* point to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not
+    stated). integrated_luminosity stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC
+    √s=9,16 TeV'' / ''µ⊗HE-LHC √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own
+    2 IPs), not μp. Every unknown role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HLLHC-UPGRADED-EMU1P5TEV
+  label: 'Kaya et al. 2022: E_μ = 1.5 TeV muon-collider beam on HL-LHC upgraded protons (√s 6.48 TeV, L 2.1e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.12, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 1.5 TeV beam
+    of the √s = 3 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 7 TeV HL-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 6.48 TeV (Table 4) and L = 2.1e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 4.4x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.45 µm and σ_μ = 2.95 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.12 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU1P5_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU1P5_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU1P5_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC3TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC3TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC3TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC3TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC3TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC3TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC3TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC3TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC3TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS6P4_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS6P4_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 0.5 cm, and synchronisation of the rings
+    is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). x_min_q2_* point to
+    the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HLLHC-UPGRADED-EMU3TEV
+  label: 'Kaya et al. 2022: E_μ = 3 TeV muon-collider beam on HL-LHC upgraded protons (√s 9.16 TeV, L 1.5e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.12, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 3 TeV beam of
+    the √s = 6 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the LHC,
+    Fig. 1) colliding with 7 TeV HL-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 9.16 TeV (Table 4) and L = 1.5e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 12x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.45 µm and σ_μ = 1.48 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.12 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HLLHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU3_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HLLHC_EMU3_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU3_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC6TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC6TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HLLHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC6TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HLLHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC6TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HLLHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC6TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HLLHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC6TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC6TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC6TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC6TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HLLHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HLLHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HLLHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS9_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS9_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 0.25 cm, and synchronisation of the rings
+    is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). x_min_q2_* point to
+    the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-NOMINAL-EMU0P75TEV
+  label: 'Kaya et al. 2022: E_μ = 0.75 TeV muon-collider beam on HE-LHC nominal protons (√s 6.36 TeV, L 0.59e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 0.75 TeV beam
+    of the √s = 1.5 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 13.5 TeV HE-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 6.36 TeV (Table 5) and L = 0.59e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 1.25x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 9 µm and σ_μ = 5.9 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU0P75_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU0P75_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU0P75_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC1P5TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC1P5TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC1P5TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC1P5TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC1P5TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC1P5TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HELHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC1P5TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC1P5TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC1P5TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HELHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS6P4_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS6P4_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.97 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 1 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy
+    uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5). x_min_q2_* point
+    to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-NOMINAL-EMU1P5TEV
+  label: 'Kaya et al. 2022: E_μ = 1.5 TeV muon-collider beam on HE-LHC nominal protons (√s 9 TeV, L 0.52e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 1.5 TeV beam
+    of the √s = 3 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 13.5 TeV HE-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 9 TeV (Table 5) and L = 0.52e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 4.4x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 9 µm and σ_μ = 2.95 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU1P5_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU1P5_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU1P5_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC3TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC3TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC3TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC3TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC3TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC3TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HELHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC3TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC3TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC3TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HELHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS9_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS9_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 0.5 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy
+    uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5). x_min_q2_* point
+    to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-NOMINAL-EMU3TEV
+  label: 'Kaya et al. 2022: E_μ = 3 TeV muon-collider beam on HE-LHC nominal protons (√s 12.7 TeV, L 0.36e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 3 TeV beam of
+    the √s = 6 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the LHC,
+    Fig. 1) colliding with 13.5 TeV HE-LHC protons with the nominal (Table 1) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 12.7 TeV (Table 5) and L = 0.36e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 12x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 9 µm and σ_μ = 1.48 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.0096 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU3_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU3_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU3_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC6TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC6TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC6TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC6TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC6TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC6TEV_KAYA2022
+    proton_bunch_length: PROTON_BUNCH_LENGTH_RMS_HELHC_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC6TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC6TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC6TEV_KAYA2022
+    proton_number_of_bunches: PROTON_NUMBER_OF_BUNCHES_HELHC_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_NOMINAL_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_NOMINAL_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS12P7_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS12P7_KAYA2022
+  unknown_roles:
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles proton_bunch_length, proton_number_of_bunches,
+    muon_bunch_length, muon_ring_circumference, muon_repetition_rate, proton_bunch_spacing (and the categorical and Table 7 roles) point
+    to P0 records that no registered test covers, so a P1 label would overclaim. P1 holds for the individual records of √s, the luminosity,
+    Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5, ::test_kaya2022_eq6_reproduces_all_twelve_luminosities,
+    ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star), which show that
+    the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats: the one-beam
+    decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the proton bunch is long
+    (Table 1: 90 mm) compared with β*_μ = 0.25 cm, and synchronisation of the rings is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS).
+    proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table 1 √s_pp = 2 E_p; one √s column in Tables 4-5).
+    x_min_q2_* point to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not
+    stated). integrated_luminosity stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC
+    √s=9,16 TeV'' / ''µ⊗HE-LHC √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own
+    2 IPs), not μp. Every unknown role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-UPGRADED-EMU0P75TEV
+  label: 'Kaya et al. 2022: E_μ = 0.75 TeV muon-collider beam on HE-LHC upgraded protons (√s 6.36 TeV, L 1.6e33 cm^-2 s^-1 by eq. 6;
+    ξ_p 0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 0.75 TeV beam
+    of the √s = 1.5 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 13.5 TeV HE-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 6.36 TeV (Table 5) and L = 1.6e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 1.25x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.17 µm and σ_μ = 5.9 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.011 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU0P75_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU0P75_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU0P75_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC1P5TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC1P5TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC1P5TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC1P5TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC1P5TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC1P5TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC1P5TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC1P5TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC1P5TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS6P4_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS6P4_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.97 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 1 cm, and synchronisation of the rings is
+    not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). Here σ_μ = 5.9 µm
+    > σ_p = 4.17 µm: eq. (6) is the luminosity matched at σ_μ; this option is excluded from MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022.
+    x_min_q2_* point to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not
+    stated). integrated_luminosity stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC
+    √s=9,16 TeV'' / ''µ⊗HE-LHC √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own
+    2 IPs), not μp. Every unknown role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-UPGRADED-EMU1P5TEV
+  label: 'Kaya et al. 2022: E_μ = 1.5 TeV muon-collider beam on HE-LHC upgraded protons (√s 9 TeV, L 2.8e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 1.5 TeV beam
+    of the √s = 3 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the
+    LHC, Fig. 1) colliding with 13.5 TeV HE-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 9 TeV (Table 5) and L = 2.8e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 4.4x10^34 cm^-2 s^-1
+    scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.17 µm and σ_μ = 2.95 µm — no hourglass factor, the two-beam decay average of
+    L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.011 for matched beam sizes (eqs. 9-10), and the
+    paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly. A
+    related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU1P5_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU1P5_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU1P5_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC3TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC3TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC3TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC3TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC3TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC3TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC3TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC3TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC3TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS9_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS9_KAYA2022
+    xi_p_limited_luminosity_estimate: MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 0.5 cm, and synchronisation of the rings
+    is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). xi_p_limited_luminosity_estimate:
+    2.8e32 cm^-2 s^-1 is this option''s luminosity divided by 10 (analytical estimate, the largest of the ten matched options). x_min_q2_*
+    point to the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated).
+    integrated_luminosity stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC
+    √s=9,16 TeV'' / ''µ⊗HE-LHC √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own
+    2 IPs), not μp. Every unknown role is absent from the paper, not zero.'
+- scenario_id: KAYA2022-HELHC-UPGRADED-EMU3TEV
+  label: 'Kaya et al. 2022: E_μ = 3 TeV muon-collider beam on HE-LHC upgraded protons (√s 12.7 TeV, L 1.9e33 cm^-2 s^-1 by eq. 6; ξ_p
+    0.098, an order too high per the paper)'
+  description: 'Option of Kaya, Ketenoglu, Sultansoy & Zimmermann (arXiv:1905.05564v2; EPL 138 (2022) 24002): the E_μ = 3 TeV beam of
+    the √s = 6 TeV muon collider of Table 3 (MAP parameters quoted from Delahaye et al., arXiv:1901.06150; ring tangential to the LHC,
+    Fig. 1) colliding with 13.5 TeV HE-LHC protons with the ERL60-upgraded (Table 2) parameters (quoted from Bordry et al., arXiv:1810.13022).
+    The paper states √s = 12.7 TeV (Table 5) and L = 1.9e33 cm^-2 s^-1 from eq. (6), i.e. the μ+μ− average luminosity 12x10^34 cm^-2
+    s^-1 scaled by (N_p/N_μ)(σ_μ/max[σ_p, σ_μ])² with σ_p = 4.17 µm and σ_μ = 1.48 µm — no hourglass factor, the two-beam decay average
+    of L_μμ carried over, matched-beam convention. Table 6 gives ξ_p = 0.098 and ξ_μ = 0.011 for matched beam sizes (eqs. 9-10), and
+    the paper itself states (p. 5) that the ξ_p values ''should be reduced by an order'', which lowers the luminosity correspondingly.
+    A related-machine (design-variant) option of the AloHEP group, precursor of μLHC — not an LHμC design: no source, cooling, acceleration,
+    IR, synchronisation or detector parameters are given and the muon charge is not stated.'
+  machine: OTHER
+  design_version: arXiv:1905.05564v2 (PDF of 4 Nov 2021), Tables 1-6 and eqs. (1)-(10); EPL 138 (2022) 24002 not read
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_1905_05564
+  parameters:
+    machine_concept: MACHINE_CONCEPT_MC_TANGENTIAL_TO_LHC_KAYA2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_HELHC_ERL60_KAYA2022
+    muon_beam_energy: MACHINE_MUON_BEAM_ENERGY_EMU3_KAYA2022
+    sqrt_s: MACHINE_SQRT_S_HELHC_EMU3_KAYA2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU3_KAYA2022
+    mumu_average_luminosity: MACHINE_MUMU_AVERAGE_LUMINOSITY_MC6TEV_KAYA2022
+    mumu_sqrt_s: MACHINE_MUMU_SQRT_S_MC6TEV_KAYA2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_HELHC_ERL60_KAYA2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MC6TEV_KAYA2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_HELHC_ERL60_KAYA2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MC6TEV_KAYA2022
+    proton_beta_star: PROTON_BETA_STAR_HELHC_ERL60_KAYA2022
+    muon_beta_star: MACHINE_MU_BETA_STAR_MC6TEV_KAYA2022
+    proton_beam_size: PROTON_BEAM_SIZE_IP_HELHC_ERL60_KAYA2022
+    muon_beam_size: MACHINE_MU_BEAM_SIZE_IP_MC6TEV_KAYA2022
+    muon_bunch_length: MACHINE_MU_BUNCH_LENGTH_MC6TEV_KAYA2022
+    muon_ring_circumference: MACHINE_MU_RING_CIRCUMFERENCE_MC6TEV_KAYA2022
+    muon_repetition_rate: MACHINE_MU_REPETITION_RATE_MC6TEV_KAYA2022
+    proton_bunch_spacing: PROTON_BUNCH_SPACING_HELHC_ERL60_KAYA2022
+    xi_p: MACHINE_XI_P_HELHC_UPGRADED_KAYA2022
+    xi_mu: MACHINE_XI_MU_HELHC_UPGRADED_KAYA2022
+    xi_p_assessment: MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+    luminosity_formula_general: MACHINE_LUMINOSITY_FORMULA_EQ1_KAYA2022
+    collision_frequency_assumption: MACHINE_COLLISION_FREQUENCY_ORDERING_STATEMENT_KAYA2022
+    xi_p_formula: MACHINE_XI_P_FORMULA_EQ9_KAYA2022
+    xi_mu_formula: MACHINE_XI_MU_FORMULA_EQ10_KAYA2022
+    proton_classical_radius: PROTON_CLASSICAL_RADIUS_KAYA2022
+    muon_classical_radius: MACHINE_MUON_CLASSICAL_RADIUS_KAYA2022
+    luminosity_cross_check_claim: MACHINE_ALOHEP_DOUBLE_CHECK_STATEMENT_KAYA2022
+    x_min_q2_1gev2: PHYS_X_MIN_Q2_1GEV2_SQRTS12P7_KAYA2022
+    x_min_q2_25gev2: PHYS_X_MIN_Q2_25GEV2_SQRTS12P7_KAYA2022
+  unknown_roles:
+  - proton_bunch_length
+  - proton_number_of_bunches
+  - muon_source
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_beam_charge
+  - muon_bunches
+  - muon_energy_spread
+  - muon_polarisation
+  - muon_ring_dipole_field
+  - ir_layout
+  - l_star
+  - crossing_scheme
+  - ring_synchronisation
+  - collision_frequency
+  - mup_interaction_points
+  - detector
+  - hourglass_factor
+  - mup_decay_factor
+  - beam_beam_compatible_luminosity
+  - integrated_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'validation_level P0 = the minimum over the role records (docs/validation_plan.md §1 rule 3; lhmuc.registry.scenario_level_cap
+    / tools/apply_scenario_levels.py). The batch-10 task asked for P1, but the roles muon_bunch_length, muon_ring_circumference, muon_repetition_rate,
+    proton_bunch_spacing (and the categorical and Table 7 roles) point to P0 records that no registered test covers, so a P1 label would
+    overclaim. P1 holds for the individual records of √s, the luminosity, Table 6 and the beam sizes (tests/scientific/test_batch10_documents.py::test_kaya2022_centre_of_mass_energies_tables_4_5,
+    ::test_kaya2022_eq6_reproduces_all_twelve_luminosities, ::test_kaya2022_table6_tune_shifts_from_eqs_9_10, ::test_kaya2022_beam_sizes_follow_from_emittance_and_beta_star),
+    which show that the printed numbers follow from the printed equations; they do not validate eq. (6) as a μp luminosity model. Caveats:
+    the one-beam decay average for μp is 1.87 times the two-beam average inside L_μμ (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average),
+    μμ hourglass/pinch factors inherited through L_μμ do not apply, no μp hourglass factor is applied although the nominal proton bunch
+    is long (Table 1: 90 mm; Table 2 gives none for the upgraded ring) compared with β*_μ = 0.25 cm, and synchronisation of the rings
+    is not discussed (CONF_LUMI_MODEL_ASSUMPTIONS). proton_beam_energy uses the Table 2 E_p, which also holds for the nominal ring (Table
+    1 √s_pp = 2 E_p; one √s column in Tables 4-5). Table 2 prints no proton bunch length or number of bunches for the upgraded ring,
+    so proton_bunch_length and proton_number_of_bunches are unknown (the Table 1 nominal values are not assumed). x_min_q2_* point to
+    the Table 7 row whose √s matches this option (the ''~'' rows group two options; the grouping is inferred, not stated). integrated_luminosity
+    stays unknown: the Fig. 2 labels (PHYS_MU8_FIG2_BAR_LABELS_KAYA2022) give 0,15 / 0,19 ab^-1 for ''µ⊗HL-LHC √s=9,16 TeV'' / ''µ⊗HE-LHC
+    √s=12,7 TeV'' without run time or option. mumu_* roles describe the muon collider of Table 3 (its own 2 IPs), not μp. Every unknown
+    role is absent from the paper, not zero.'

@@ -330,6 +330,48 @@ list only records what the uploads showed.
   `CONF_LUMI_MODEL_ASSUMPTIONS` speaks of a 7.5–9 cm proton bunch length, whereas `PROTON_BUNCH_LENGTH_RMS_SYN` was 5–12 cm
   (widened on 2026-10-29 to log-uniform 5–100 cm after the Zimmermann deck; `ASM_PROTON_BUNCH_LENGTH_RMS`).
 
+### Batch 10 (uploads of 2026-10-29)
+
+Resolved or narrowed:
+
+- `SRC_ARXIV_1905_05564` (Kaya, Ketenoglu, Sultansoy, Zimmermann; EPL 138 (2022) 24002): full arXiv v2 text read. The
+  muon-side inputs are the MAP muon-collider options of Delahaye et al. (arXiv:1901.06150, Table 3: N_μ 2e12, ε_N 25 µm,
+  β* 1/0.5/0.25 cm, 15/12/6 Hz); the "2.2×10^12 muons per bunch" of the earlier query note is not in the paper. All 12
+  luminosities and 8 tune shifts reproduce (`tests/scientific/test_batch10_documents.py`). Recategorised
+  SECONDARY_SOURCE → RELATED_MACHINE.
+- `SRC_ARXIV_1407_8248` (Beer et al. 2014): full text read. The "0.01 Mu per incident muon" is this paper's own J-PARC
+  projection (p. 5); the "≥ 8×" enhancement is Table 1's 30.5/3.72 = 8.2. The paper gives **no** muonium formation
+  fraction.
+- `SRC_DOI_10_7566_JPSCP_33_011125` (Zhang et al. 2021, new): the 244 nm 1S-2S demonstrator chain, ionisation
+  3.9e-7 per vacuum Mu (p. 4), final 0.0109 s^-1 (Table I).
+
+Still open (new):
+
+- **Origin of the diffusion fit T = 322 K, D = 870 cm² s^-1.** Zhang et al. 2021 cite Beer et al. 2014 [8] for it, for the
+  52 % formation fraction and for the 23.2 mg cm^-3 / 8.8 mm sample; Beer et al. 2014 contains none of them (its samples
+  are 29 mg cm^-3, 7 mm), and Zhang's reference list does not include Bakule 2013 (the 0.52 matches it by value only). The sample matches Beare et al. 2020 p. 5; T and D appear only on the 2026 Zhang Kraków deck
+  p. 7. Wanted: the publication that reports the fit (candidate: a Zhang et al. muonium-diffusion paper, cited by
+  Sakaki et al. 2026 as "Zhang et al. 2022").
+- **Zhang et al. 2021 internal inconsistencies**: S2 surface-muon rate 2.4×10^5 (§2) vs 2.4×10^6 (§5, Table I);
+  stopping 44.3 % (text) vs 0.467 (Table I); extraction 1.5e3/2.0e3 = 0.75 vs the stated 58.6 %. An erratum or the
+  J-PARC S2 commissioning rate would settle the first.
+- **Definition of the MAP average luminosity** used by Kaya et al. as L_μμ (decay averaging over two beams, beam-beam
+  enhancement, hourglass factor): Delahaye et al. arXiv:1901.06150 (blocked). Needed to turn the one-beam vs two-beam
+  decay ratio (1.87–1.97, `tests/scientific/test_imcc_mr7_reference.py`) into a corrected μp number.
+- **A μp luminosity calculation for the Kaya et al. options** with the 90 mm proton bunch (hourglass), one decaying
+  beam and a beam-beam-limited ξ_p — a documented tool run (AloHEP or an own beam-beam code), not hand arithmetic.
+- Bordry et al. arXiv:1810.13022 (HL-LHC/HE-LHC/ERL60 tables quoted by Kaya et al. Tables 1-2): the HL-LHC ERL60 proton
+  size 4.45 µm is 2.7 % above √(ε_N β*/γ) with the printed ε_N = 2 µm, β* = 7 cm.
+- `SRC_ARXIV_2608_25374` (Shirotori et al. 2026, context only): the stated 85 % ↔ 90° CM emission point does not
+  reproduce (two-body kinematics give 78.7 %); the T106 proposal (KEK/J-PARC-PAC 2025-39) behind the ±5 % momentum
+  bite was not read.
+- **Re-measured ablated target** (`CONF_ABLATED_AEROGEL_REMEASUREMENT`, open): Beer et al.'s 400 µm-pitch target, 20.9 ± 0.7 ‰
+  in 2013, was re-measured by Beare et al. (target S2013-1, 'Reuse of O2013-3') at 17.2 ± 0.2 ‰ in 2017 — 5.1 σ on
+  statistics, 1.6 σ with the stated systematics; neither paper explains it. Wanted: the authors' statement or a repeat.
+- **J-PARC surface-muon momentum** (`CONF_JPARC_SURFACE_MUON_MOMENTUM`, resolved as scenarios): 28 MeV/c in Bakule 2013,
+  Beer 2014 and the Zhang 2021 text vs 27 MeV/c in Abe 2019 and the Zhang 2021 Fig. 1 inset; the commissioning value of
+  the delivered momentum would settle it.
+
 ### Still open after the uploads
 
 - Unchanged from the family sections below: the HELP4CERN White Paper and help4cern.web.cern.ch (`ME_001`); the ICHEP

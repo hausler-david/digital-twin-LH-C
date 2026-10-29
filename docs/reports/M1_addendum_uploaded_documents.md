@@ -1,10 +1,10 @@
-# Milestone 1 addendum — the uploaded documents of the Phase-0 addendum and batches 7–9
+# Milestone 1 addendum — the uploaded documents of the Phase-0 addendum and batches 7–10
 
 **Date:** 2026-10-29 · **Branch:** `claude/lhmc-virtuallab-architecture-eitkjb` · **Basis:** commit
 `104073c` plus the registry stage, committed with this report on 2026-10-29 · **Author:** Claude
 (documentation task; counts filled by the lead session) for David Hausler · **Status:** registry stage
-committed after adversarial verification. Batch 10 (registered in `ad5ac43`, extraction pending) and the
-MR7 reference tables (held, verification pending) get their own sections when their records are
+committed after adversarial verification; batch 10 extracted, verified and committed afterwards (§A.7). The
+MR7 reference tables (held, verification pending) get their own section when their records are
 committed. Counts the draft gave as working-tree values were confirmed against the committed files.
 
 *Verifier note (registry stage, 2026-10-29):* after this draft was written, HEAD moved to `000f236`.
@@ -126,6 +126,40 @@ present at `104073c`).
 inputs), `docs/software_inventory.md` (§15, AloHEP correction), `docs/architecture.md` (§15: AI4MuC
 principles, validator rules), `docs/validation_plan.md` (§2.0, §6a), `docs/uncertainty_policy.md`
 (§2.1, §8a), `README.md` (status paragraph), and this report.
+
+### A.7 After the registry stage (2026-10-29)
+
+**Batch 10.** Four uploads, read in full and registered in `ad5ac43` (arithmetic pinned in
+`tests/scientific/test_batch10_documents.py`), then extracted and adversarially verified:
+
+| # | source_id | Document | Category | Pages | Records | Verifier note |
+|---|---|---|---|---|---|---|
+| 30 | `SRC_ARXIV_1905_05564` | U. Kaya, B. Ketenoglu, S. Sultansoy, F. Zimmermann, "Luminosity and Physics Considerations on HL-LHC and HE-LHC based µp Colliders", EPL 138 (2022) 24002 (arXiv v2) | RELATED_MACHINE (was SECONDARY_SOURCE) | 8 | 136 + 12 scenarios (148 checked, 6 corrections) | `verify_G15_KAYA2022.md` |
+| 31 | `SRC_ARXIV_1407_8248` | G. A. Beer et al., "Enhancement of muonium emission rate from silica aerogel with a laser ablated surface", PTEP 2014 091C01 (arXiv v1) | PEER_REVIEWED | 8 | 78 (78 checked, 19 corrections) | `verify_G16_BEER2014.md` |
+| 32 | `SRC_DOI_10_7566_JPSCP_33_011125` | Ce Zhang et al., "Simulation Study of Laser Ionization of Muonium by 1S-2S Excitation …", JPS Conf. Proc. 33, 011125 (2021) | CONFERENCE_PROCEEDING | 6 | 104 + 1 scenario (105 checked, 34 corrections) | `verify_G17_ZHANG2021.md` |
+| 33 | `SRC_ARXIV_2608_25374` | K. Shirotori et al., "Feasibility demonstration of a high-momentum, high-purity muon beamline at the J-PARC Hadron Experimental Facility" (arXiv v1, 26 Aug 2026) | ANALOGOUS_TECHNOLOGY | 20 | 0 (context only) | — |
+
+No record carries `reported_lhmuc`; none was removed. The Zhang PDF is kept only in `references/_local/`
+because every page carries a per-download watermark. Results are in F.2 and F.3.
+
+**Follow-ups of the registry verifier** (`3ea3f63`): `lhmuc.analytical.hourglass_factor` now does the
+collision-time integral analytically (1-D in s); it had under-reported H by 10/35/49 % for proton bunches of
+0.2/0.5/1 m (round β* = 7 cm), the range opened by `PROTON_BUNCH_LENGTH_RMS_SYN`, and is now checked against
+the closed form √π u e^{u²} erfc(u) (`test_hourglass_factor_matches_closed_form_for_equal_optics`). New
+`CONF_JPARC_DLS_FREQUENCY` (1296 MHz Abe 2019 vs 2592 MHz Nakazawa), an M17 internal tension recorded in
+`CONF_VFFA_PEAK_FIELD` (8.3 T objective vs 13.59 T stage 4 "within realistic bounds"), two record fixes, and
+the 1.70 max(σ) factor and the Zimmermann bunch-length extrapolation pinned as tests.
+
+**Scenario labels.** `lhmuc validate` now applies rule 3 of `docs/validation_plan.md` §1 to scenarios: a
+scenario's `validation_level` may not exceed the lowest level among its role records. All 33 scenarios
+labelled P1 pointed to at least one P0 record and were lowered to P0 with `tools/apply_scenario_levels.py`
+(log `research/_fragments/scenario_levels_lowered_2026-10-29.csv`; a dated comment marks each in its file).
+No scenario is P1 now; individual records keep their own P1 checks.
+
+**Other.** Four software sources the inventory cited but the registry lacked were fetched and registered
+(`e0cfb0b`); the MuCol MR7 luminosity model (Table A.1, eqs. A.5–A.9) is pinned in
+`tests/scientific/test_imcc_mr7_reference.py` (`000f236`). Conflicts: 27 (24 after the stage, plus
+`CONF_JPARC_DLS_FREQUENCY`, `CONF_ABLATED_AEROGEL_REMEASUREMENT`, `CONF_JPARC_SURFACE_MUON_MOMENTUM`).
 
 ### A.6 Not done
 
@@ -389,6 +423,18 @@ These are statements of the sources and P1 consistency checks, not performance r
 - `CONF_LUMI_MODEL_ASSUMPTIONS`: its treatment is now decided (`propagated_as_uncertainty`,
   every luminosity carried with the model that reproduces it), but its cause is unresolved: the μLHC
   values remain naive × 0.632 with no visible hourglass reduction.
+- **Kaya et al. (EPL 138, 24002), an earlier LHC-based μp proposal.** All 12 luminosities of Tables 4–5
+  (0.36–2.8 × 10³³) follow from eq. (6), L_μp = (N_p/N_μ)(σ_μ/max[σ_p,σ_μ])² L_μμ, and all 8 tune shifts of
+  Table 6 from eqs. (9)–(10) (`test_kaya2022_eq6_reproduces_all_twelve_luminosities`,
+  `test_kaya2022_table6_tune_shifts_from_eqs_9_10`). The paper itself says that ξ_p 'should be reduced by an
+  order'; for matched beams L ∝ ξ_p, so the beam-beam-compatible values are about ten times lower,
+  0.04–0.28 × 10³³ (an order-of-magnitude bound, `MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022`).
+  Eq. (6) also scales a μ⁺μ⁻ luminosity that is averaged over two decaying beams (MR7 eq. A.7); with one
+  decaying beam the average is 1.87–1.97 times larger for these options
+  (`test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average`), while the μμ hourglass and pinch
+  factors it inherits do not apply to μp and no μp hourglass factor is applied (σ_z,p = 90 mm against
+  β*_μ = 0.25–1 cm). The net effect needs a μp luminosity calculation; RISK_042 and
+  `CONF_LUMI_MODEL_ASSUMPTIONS` record this.
 
 ### F.3 Source chain
 
@@ -417,6 +463,17 @@ These are statements of the sources and P1 consistency checks, not performance r
   second-stage cooling and emittance unknown (null records).
 - **Hybrid source** (Rogers): 0.04 μ⁺ per 5 GeV proton to the end of stage A (p.14); deceleration not
   designed (p.13). `CONF_SOURCE_CONCEPT` keeps the source concepts apart.
+- **Beer et al. 2014** (laser-ablated aerogel): 30.5/3.72 = 8.2 times the flat-sample vacuum yield at
+  300 µm pitch ('at least eight times'); the paper gives **no** muonium formation fraction
+  (`SOURCE_MUONIUM_FORMATION_FRACTION_BEER2014` = null). Its 400 µm target, re-measured by Beare et al. in
+  2017, came out 18 % lower (20.9 ± 0.7 vs 17.2 ± 0.2 ‰: 5.1 σ statistical, 1.6 σ with the stated
+  systematics) — `CONF_ABLATED_AEROGEL_REMEASUREMENT`, open.
+- **Zhang et al. 2021** (J-PARC S2 1S-2S demonstrator, simulation): Table I chain to 0.0109 s⁻¹ with laser
+  ionisation 3.9 × 10⁻⁷ per vacuum Mu, 1.9 × 10⁶ below the 0.73 of the 122 nm design
+  (`CONF_LASER_IONISATION_EFFICIENCY`). It cites Beer et al. 2014 for the 52 % formation fraction, the
+  diffusion fit T = 322 K / D = 870 cm² s⁻¹ and a 23.2 mg cm⁻³ sample; Beer et al. contain none of them, and
+  the 0.52 matches Bakule 2013 by value only (origin inferred). Internal inconsistencies (S2 rate 2.4 × 10⁵ vs
+  2.4 × 10⁶; stopping 44.3 % vs 0.467) are kept in the record notes.
 
 ### F.4 Front-end space charge
 
@@ -482,7 +539,10 @@ n = γcτ_μ/C with cτ_μ = 659 m (Dudko p.14, eq. (2)): 2079 at 1 TeV in 3 km
 | `CONF_TEV_MUON_RESOLUTION` | Yamazaki vs Acosta | resolved as scenarios by detector region |
 | `CONF_FRONT_END_SPACE_CHARGE` | Nakazawa vs scaled J-PARC front end | explicit unknown; scaled design not adopted |
 
-Total after the stage: 24. None is averaged.
+Total after the stage: 24. None is averaged. Added afterwards (§A.7): `CONF_JPARC_DLS_FREQUENCY` (1296 vs 2592 MHz,
+resolved as scenarios), `CONF_ABLATED_AEROGEL_REMEASUREMENT` (open) and `CONF_JPARC_SURFACE_MUON_MOMENTUM`
+(27 vs 28 MeV/c, resolved as scenarios); batch 10 also extended `CONF_PEAK_LUMINOSITY`,
+`CONF_LUMI_MODEL_ASSUMPTIONS`, `CONF_MUONIUM_FORMATION_FRACTION` and `CONF_LASER_IONISATION_EFFICIENCY`. Total: 27.
 
 ### F.10 Demonstration or interface-only results
 
@@ -500,9 +560,10 @@ None.
 2. **Network:** allow arxiv.org, cds.cern.ch, indico.cern.ch, zenodo.org and doi.org; the lead can then
    fetch the remaining public items of §3a (Kraków slides if attached, theory papers, LHeC 2020 update
    and André et al. 2025, HL-LHC TDR and LHC Project Report 627 / CERN-2005-006, Beer 2014, Kaya et al.,
-   IMCC BIB papers). *[Verifier note: Beer 2014 and Kaya et al. have since been uploaded (batch 10,
-   `ad5ac43`); what remains for them is extraction and verification, not a fetch.]*
-3. **Platform:** finish the MR7 reference-table verification, extract and verify batch 10, and
+   IMCC BIB papers). *[Beer 2014 and Kaya et al. have since been uploaded, extracted and verified
+   (batch 10, §A.7).]*
+3. **Platform:** finish the MR7 reference-table verification; compute a μp luminosity for the Kaya and
+   LHμC options with the one-beam decay average and the μp hourglass factor in a recorded run; and
    pre-register Benchmark 3.1 (AloHEP v2.0 in an isolated build, option sets of
    `docs/validation_plan.md` §3.1) for the start of M2.
 

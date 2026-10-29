@@ -63,8 +63,9 @@ contributor and every AI session must follow. Read `docs/architecture.md` next.
 - New parameter: add a record to the right `parameters/<subsystem>/` file, run
   `uv run python -m lhmuc validate`, then `uv run python tools/build_registries.py` and
   `uv run python tools/sync_parameters_extracted.py`, then `uv run pytest`. The validator rejects confidence above the
-  caps of `research/source_quality_policy.md` §4 and any P1 label whose `validation.methods`/`check_ids` name no
-  existing test (`tools/apply_confidence_caps.py`, `tools/apply_validation_levels.py` lower them).
+  caps of `research/source_quality_policy.md` §4, any P1 label whose `validation.methods`/`check_ids` name no
+  existing test, and any scenario `validation_level` above the lowest level of its role records
+  (`tools/apply_confidence_caps.py`, `tools/apply_validation_levels.py`, `tools/apply_scenario_levels.py` lower them).
 - New source: add to `research/source_registry.yaml` with `access`, licence and SHA-256 if
   archived; add the query rows to `research/search_log.csv`; record what remains unresolved in
   `research/unresolved_searches.md`.

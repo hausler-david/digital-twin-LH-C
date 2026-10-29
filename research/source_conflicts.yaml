@@ -19,6 +19,19 @@ conflicts:
   - MACHINE_INTEGRATED_LUMINOSITY_10YR_LHMUC_MUIC2022
   - MACHINE_PEAK_LUMINOSITY_ASSUMED_MUP1_CHEUNG2021
   - MACHINE_INTEGRATED_LUMINOSITY_MUP1_CHEUNG2021
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU0P75_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU1P5_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU3_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU0P75_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU1P5_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU3_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU0P75_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU1P5_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_NOMINAL_EMU3_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU0P75_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU1P5_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_HELHC_UPGRADED_EMU3_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022
   competing_values:
   - value: 2.1e34
     unit: cm^-2 s^-1
@@ -129,6 +142,57 @@ conflicts:
       should be at the order of 10^33 cm^−2 s^−1, which we assume for µp − 1'' (7 TeV p × 1 TeV μ−, √s 5.3 TeV); 1e7 s/year
       × 10 years → 0.1 ab^-1 (MACHINE_INTEGRATED_LUMINOSITY_MUP1_CHEUNG2021; tests/scientific/test_batch9_documents.py::test_cheung2021_integrated_luminosity_from_assumed_peak).
       An ASSUMPTION of a physics study, not a machine design value, and for μ−p, not the μ+p of LHμC. Parameter MACHINE_PEAK_LUMINOSITY_ASSUMED_MUP1_CHEUNG2021.'
+  - value: 9.5e+32
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-NOMINAL-EMU0P75TEV
+    context: 'Kaya et al. Table 4 (nominal HL-LHC protons, E_μ 0.75 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU0P75_KAYA2022.'
+  - value: 8.4e+32
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-NOMINAL-EMU1P5TEV
+    context: 'Kaya et al. Table 4 (nominal HL-LHC protons, E_μ 1.5 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU1P5_KAYA2022.'
+  - value: 5.7e+32
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-NOMINAL-EMU3TEV
+    context: 'Kaya et al. Table 4 (nominal HL-LHC protons, E_μ 3 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_NOMINAL_EMU3_KAYA2022.'
+  - value: 1.4e+33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-UPGRADED-EMU0P75TEV
+    context: 'Kaya et al. Table 4 (upgraded HL-LHC protons, E_μ 0.75 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU0P75_KAYA2022.'
+  - value: 2.1e+33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-UPGRADED-EMU1P5TEV
+    context: 'Kaya et al. Table 4 (upgraded HL-LHC protons, E_μ 1.5 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU1P5_KAYA2022.'
+  - value: 1.5e+33
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: KAYA2022-HLLHC-UPGRADED-EMU3TEV
+    context: 'Kaya et al. Table 4 (upgraded HL-LHC protons, E_μ 3 TeV, E_p 7 TeV): eq. (6) value — related machine (earlier
+      LHC-based μp proposal), not an LHμC value; not beam-beam compatible by the paper''s own p. 5 statement (ξ_p ten times
+      too high); HE-LHC options (Table 5, 0.36-2.8e33) are in the affected parameters. Parameter MACHINE_PEAK_LUMINOSITY_HLLHC_UPGRADED_EMU3_KAYA2022.'
+  - value: 2.8e+32
+    unit: cm^-2 s^-1
+    source_id: SRC_ARXIV_1905_05564
+    scenario: null
+    context: 'Analytical estimate (this project): the largest Table 4-5 value among the ten options with σ_μ ≤ σ_p (HE-LHC
+      upgraded, E_μ 1.5 TeV, 2.8e33) divided by ten, taking the paper''s ''should be reduced by an order'' (p. 5) as a factor
+      10 — an order-of-magnitude bound, not a computed beam-beam limit; the HL-LHC-based options of that set become 0.057-0.21e33.
+      tests/scientific/test_batch10_documents.py::test_kaya2022_luminosity_scales_with_proton_beam_beam_parameter. Parameter
+      MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022.'
   possible_cause: 'Four different quantities are being compared under one word. (1) The DIS2026 2.1e34 is a peak value for
     the in-train 4 MHz collision rate and is reproduced by the naive formula L = f N_mu N_p / (4 pi sigma^2) with no hourglass
     or decay factor (see CONF_LUMI_MODEL_ASSUMPTIONS); it also uses ten times the proton bunch population (22e11 vs 2.2e11)
@@ -201,6 +265,9 @@ conflicts:
   - MACHINE_ALOHEP_LGEO_FROM_LNOM_RELATION_DAGLI2026
   - MACHINE_ALOHEP_REPOSITORY_DAGLI2026
   - MACHINE_PEAK_LUMINOSITY_ANDRE2022
+  - MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022
+  - MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022
+  - MACHINE_PEAK_LUMINOSITY_XI_P_LIMITED_MAX_KAYA2022
   competing_values:
   - value: naive formula, geometric factor H = 1, no decay averaging
     unit: dimensionless
@@ -331,6 +398,20 @@ conflicts:
       beam, not per plane), the electron beam matched to the proton size and the Table 2 electron bunch (499 pC, 24.95 ns)
       the naive formula gives ≈ 0.80 × 8.2e33 (recorded band 0.65–0.85, tests/scientific/test_batch7_documents.py::test_andre2022_table4_luminosity_with_hl_lhc_proton_parameters_recorded_band).
       An ep comparator showing that even the LHeC reference luminosity carries an unstated model. Parameter MACHINE_PEAK_LUMINOSITY_ANDRE2022.'
+  - value: 'Kaya et al. eq. (6): L_μp = (N_p/N_μ)(σ_μ/max[σ_p,σ_μ])² L_μμ — the μp luminosity is scaled from the average μ+μ−
+      luminosity of the MAP options'
+    unit: dimensionless
+    source_id: SRC_ARXIV_1905_05564
+    scenario: null
+    context: 'EPL 138 (2022) 24002, arXiv v2 p. 4. Reproduces all 12 values of Tables 4-5 (tests/scientific/test_batch10_documents.py::test_kaya2022_eq6_reproduces_all_twelve_luminosities).
+      Built-in assumptions: (i) L_μμ is decay-averaged over two decaying beams (MR7 eqs. A.6-A.7); for μp only the muon beam
+      decays and the one-beam cycle average is 1.97/1.87/1.87 times larger for the 1.5/3/6 TeV options (tests/scientific/test_imcc_mr7_reference.py::test_mr7_decay_factor_one_decaying_beam_exceeds_two_beam_average);
+      (ii) the μμ hourglass and pinch factors inside L_μμ are inherited, while the μp hourglass with σ_z,p = 90 mm against
+      β*_μ = 0.25-1 cm is not evaluated; (iii) max-size convention, equal to the matched-beam luminosity and conservative
+      by up to 2 for unequal beams (tests/scientific/test_batch10_documents.py::test_kaya2022_max_convention_vs_gaussian_overlap);
+      (iv) collision frequency min[f_cp, f_cμ] without ring synchronisation or abort gap; (v) by the paper''s own statement
+      ξ_p is an order of magnitude too high, so the beam-beam-compatible luminosity is ten times lower (tests/scientific/test_batch10_documents.py::test_kaya2022_luminosity_scales_with_proton_beam_beam_parameter).
+      Net correction not estimable without a μp luminosity code run. Parameters MACHINE_LUMINOSITY_FORMULA_EQ6_KAYA2022, MACHINE_XI_P_REDUCTION_STATEMENT_KAYA2022.'
   possible_cause: 'The two primary documents use different luminosity models and neither states its formula: the DIS2026 example
     table is reproduced exactly by the geometric formula with H = 1 and no decay averaging, whereas the μLHC values are reproduced
     by the same formula times the authors'' 0.63 decay-average factor. If AloHEP also applied a hourglass reduction for a
@@ -1619,6 +1700,8 @@ conflicts:
   - SOURCE_AEROGEL_MUONIUM_FORMATION_SAKAKI2026
   - SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026
   - SOURCE_MUONIUM_FORMATION_FRACTION_SYN
+  - SOURCE_MUONIUM_FORMATION_FRACTION_ZHANG2021
+  - SOURCE_MUONIUM_FORMATION_FRACTION_BEER2014
   competing_values:
   - value: 0.52
     unit: dimensionless
@@ -1679,6 +1762,15 @@ conflicts:
       (not uploaded; whether it takes the value from Bakule et al. is unchecked) — for the aerogel reference scheme; for the
       hot-tungsten hybrid target the conversion factor η_conv is unknown (SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026
       = null). Parameter SOURCE_AEROGEL_MUONIUM_FORMATION_SAKAKI2026.'
+  - value: 0.52
+    unit: dimensionless
+    source_id: SRC_DOI_10_7566_JPSCP_33_011125
+    scenario: JPARC-S2-MU-IONISATION-DEMO-ZHANG2021
+    context: 'Zhang et al. 2021 (JPS Conf. Proc. 33, 011125) p. 3: ''The 52% of the stopped muon form Mu''s inside the aerogel
+      [8].'' Ref. [8] is Beer et al. 2014 (SRC_ARXIV_1407_8248), which states no formation fraction (SOURCE_MUONIUM_FORMATION_FRACTION_BEER2014,
+      value null). The value matches the Bakule 2013 MuSR 0.52 ± 0.01, but Zhang''s reference list does not include Bakule
+      2013, so that origin is inferred, not cited. It enters the Table I chain that ends at 0.0109 s^-1 (tests/scientific/test_batch10_documents.py::test_zhang2021_table1_rates_follow_from_efficiencies).
+      Parameter SOURCE_MUONIUM_FORMATION_FRACTION_ZHANG2021.'
   possible_cause: 'Two measurements on different samples, not a rounding difference: Bakule et al. 2013 (MuSR, 2013 non-ablated
     aerogels) 0.52 ± 0.01 and Beare et al. 2020 (different synthesis conditions, method and apparatus) 0.655 ± 0.018, 6.6
     σ apart with both uncertainties. Beare et al. write that ''the discrepancy of the two muonium fractions is not understood
@@ -1687,7 +1779,9 @@ conflicts:
     powder [13], 0.21 ± 0.01 for porous silica, p.3). Every published design budget uses 0.52 — Abe 2019, μTRISTAN 2022 (via
     C. Zhang), the Kraków Zhang deck, Aritome 2024 and Sakaki 2026 — i.e. the 2013 value propagates by citation (direct: Beare
     [14], Aritome [21]; inferred: Abe 2019, Zhang deck, μTRISTAN; via Zhang et al. 2022: Sakaki), and none of these documents
-    re-measured it.'
+    re-measured it. Batch 10: Zhang et al. 2021 attribute the 52 % (and T = 322 K, D = 870 cm² s^-1 and a 23.2 mg cm^-3 sample)
+    to Beer et al. 2014, which contains none of them; their reference list does not include Bakule 2013 — one more link in
+    the propagation path, with the origin inferred from the matching value.'
   selected_treatment: 'Two measurements kept separate and never averaged; resolved as scenarios by target sample, decided
     2026-10-29: 0.52 ± 0.01 belongs to the 2013 non-ablated samples and is the value inside every published J-PARC/μTRISTAN
     budget, so those budgets are reproduced with 0.52 exactly as published (e.g. 0.137, 3.4e-3); 0.655 ± 0.018 belongs to
@@ -1733,6 +1827,9 @@ conflicts:
   - SOURCE_HYBRID_REMPI_EFFICIENCY_SAKAKI2026
   - SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026
   - SOURCE_LASER_IONISATION_EFFICIENCY_SYN
+  - SOURCE_LASER_IONISATION_EFF_244NM_ZHANG2021
+  - SOURCE_LASER_1S2S_EXCITATION_PROB_ZHANG2021
+  - SOURCE_LASER_2S_IONISATION_PROB_ZHANG2021
   competing_values:
   - value: 0.73
     unit: dimensionless
@@ -1804,6 +1901,15 @@ conflicts:
       and ≈ 1.2e5 below the J-PARC g-2 target of 2.6e-3 per surface muon (SOURCE_USM_PER_SURFACE_MUON_G2_TARGET_WS2026_ZHANG;
       Abe 2019 gives 2.5e-3, consistent within 10 %). A statement about demonstrated numbers, not a feasibility verdict on
       the 122 nm scheme.'
+  - value: 3.9e-07
+    unit: dimensionless
+    source_id: SRC_DOI_10_7566_JPSCP_33_011125
+    scenario: JPARC-S2-MU-IONISATION-DEMO-ZHANG2021
+    context: 'Zhang et al. 2021 p. 4: 1S→2S probability 8.8e-7 × 2S→ionisation ''about 44%'' = ''about 3.9×10^-7 per yield
+      Mu in the vacuum region'', including the spatial and temporal laser overlap; a preliminary 2019 optical-Bloch simulation
+      of the pulsed 244 nm S2 demonstrator, laser energies not printed. 1.9e6 below the 0.73 of the 122 nm design budget (tests/scientific/test_batch10_documents.py::test_zhang2021_244nm_demonstrator_vs_122nm_design_ionisation)
+      and below the later 244 nm estimates (~1e-6 at 1.5 mJ, Zhang 2026 deck; 7e-6-6e-5 at 0.5-1.3 mJ, Aritome 2024). Without
+      the laser parameters the spread among the 244 nm estimates cannot be attributed. Parameter SOURCE_LASER_IONISATION_EFF_244NM_ZHANG2021.'
   possible_cause: 'Three different things share the name. (1) 0.73 is a 2019 CALCULATION (theoretical cross sections × expected
     photon density) for the 122 nm + 355 nm design laser covering the whole muonium cloud; it entered the μTRISTAN budget
     (via C. Zhang), the Zhang deck (now flagged by its author as ''pending updates'') and Sakaki 2026 unchanged. (2) About
@@ -2357,5 +2463,86 @@ conflicts:
     (gradient, aperture and wakefield scaling of the DLS section between 40 and 212 MeV).
   required_future_evidence: The current J-PARC g-2/EDM linac design document (TDR linac chapter or a PRAB article) stating
     the DLS frequency and the reason for the change.
+  status: resolved_as_scenarios
+  date_added: '2026-10-29'
+- conflict_id: CONF_ABLATED_AEROGEL_REMEASUREMENT
+  affected_parameters:
+  - SOURCE_MU_VACUUM_YIELD_REGIONS13_ABLATED_PITCH400UM_BEER2014
+  competing_values:
+  - value: 0.0209
+    unit: dimensionless
+    source_id: SRC_ARXIV_1407_8248
+    scenario: null
+    context: 'Beer et al. 2014 Table 1 (p. 5): laser-ablated, 400 µm pitch, ''Vacuum yield (per 10^3 muon stops)'' 20.9 ±
+      0.7 (statistical; systematic ≈ 4 % for ablated targets, p. 5); TRIUMF M15, 2013 run. Relisted by Beare et al. 2020 Table
+      4 as O2013-3 (previous study [15]). Parameter SOURCE_MU_VACUUM_YIELD_REGIONS13_ABLATED_PITCH400UM_BEER2014.'
+  - value: 0.0172
+    unit: dimensionless
+    source_id: SRC_ARXIV_2006_01947
+    scenario: null
+    context: 'Beare et al. 2020 Table 4 (p. 18): target S2013-1, 17.2 ± 0.2 ‰ (statistical), measured at TRIUMF M15 in 2017;
+      Table 1 (p. 6) remark ''Reuse of O2013-3'' with ρ = 26.0 mg/cm³ and T = 8 mm (O2013-3 itself is listed with 29 mg/cm³
+      and 7 mm); systematics −7 % to +12 % (p. 19). No parameter record yet (the Beare table rows were extracted only in part).'
+  possible_cause: 'The same physical target measured twice, four years apart, with different apparatus settings and analyses:
+    18 % lower in 2017, 5.1 σ apart on statistical errors alone but 1.6 σ once the stated systematics are included (tests/scientific/test_batch10_documents.py::test_beer2014_vs_beare2020_reused_400um_target).
+    Candidate causes, none stated by either paper: ageing or handling of the aerogel, the differing density/thickness listings,
+    target positioning (Beare''s dominant systematic), background modelling. Beare et al. do not comment on the difference.
+    Found by the batch-10 verifier (verify_G16_BEER2014.md).'
+  selected_treatment: Kept as two measurements, never averaged. A yield model that uses a laser-ablated aerogel emission rate
+    names the measurement (year, apparatus, analysis) and carries the 2013–2017 spread as a systematic until the cause is
+    known.
+  effect_on_simulations: An 18 % spread on the emission rate of a given target geometry, linear in the muonium yield and small
+    next to the laser-ionisation gap (CONF_LASER_IONISATION_EFFICIENCY).
+  required_future_evidence: A repeated measurement of one ablated target with both analyses, or the authors' statement on
+    the O2013-3 / S2013-1 difference.
+  status: open
+  date_added: '2026-10-29'
+- conflict_id: CONF_JPARC_SURFACE_MUON_MOMENTUM
+  affected_parameters:
+  - SOURCE_MU_JPARC_DESIGN_MOMENTUM_BAKULE2013
+  - SOURCE_MU_JPARC_DESIGN_MOMENTUM_BEER2014
+  - SOURCE_SURFACE_MU_MOMENTUM_ABE2019
+  - SOURCE_SURFACE_MU_MOMENTUM_ZHANG2021
+  - SOURCE_SURFACE_MU_MOMENTUM_FIG1_ZHANG2021
+  competing_values:
+  - value: 28
+    unit: MeV/c
+    source_id: SRC_ARXIV_1306_3810
+    scenario: null
+    context: 'Bakule et al. 2013 p. 10: ''The beam momentum and its spread at J-PARC is designed to be 28 MeV/c and 5% (RMS),
+      respectively.'' Parameter SOURCE_MU_JPARC_DESIGN_MOMENTUM_BAKULE2013.'
+  - value: 28
+    unit: MeV/c
+    source_id: SRC_ARXIV_1407_8248
+    scenario: null
+    context: 'Beer et al. 2014 p. 5: ''The beam momentum and its spread at J-PARC is designed to be 28 MeV/c and 5% (RMS),
+      respectively.'' (the same sentence as Bakule 2013). Parameter SOURCE_MU_JPARC_DESIGN_MOMENTUM_BEER2014.'
+  - value: 27
+    unit: MeV/c
+    source_id: SRC_ARXIV_1901_03047
+    scenario: JPARC-G2-EDM-DESIGN-2019
+    context: 'Abe et al. 2019 p. 7: ''The surface muon at the end of the beamline has a momentum centered at p = 27 MeV/c
+      with momentum spread ∆p/p =5% (RMS).'' Parameter SOURCE_SURFACE_MU_MOMENTUM_ABE2019.'
+  - value: 28
+    unit: MeV/c
+    source_id: SRC_DOI_10_7566_JPSCP_33_011125
+    scenario: JPARC-S2-MU-IONISATION-DEMO-ZHANG2021
+    context: 'Zhang et al. 2021 p. 1: ''The surface muons with the momentum of 28 MeV/c will be firstly generated by proton
+      beam (3 GeV) at J-PARC ...'', and the Fig. 1 picture label ''Surface muon beam (28 MeV/c)'' (p. 2). Parameter SOURCE_SURFACE_MU_MOMENTUM_ZHANG2021.'
+  - value: 27
+    unit: MeV/c
+    source_id: SRC_DOI_10_7566_JPSCP_33_011125
+    scenario: JPARC-S2-MU-IONISATION-DEMO-ZHANG2021
+    context: 'Zhang et al. 2021 Fig. 1 inset table (p. 2): ''surface muons: E 3.4 MeV | p 27 MeV/c | ∆p/p 0.05'' — the same
+      paper gives 27 MeV/c in its own figure inset (3.4 MeV kinetic energy goes with 27 MeV/c), as in Abe et al. 2019 Fig.
+      3. Parameter SOURCE_SURFACE_MU_MOMENTUM_FIG1_ZHANG2021.'
+  possible_cause: 'Design evolution and definition: the 2013–2014 papers state the J-PARC design value as 28 MeV/c, the 2019
+    design paper gives 27 MeV/c ''at the end of the beamline''; Zhang et al. 2021 write 28 MeV/c in the text (p. 1) and 27
+    MeV/c in their own Fig. 1 inset. Raised by the batch-10 verifiers (verify_G16_BEER2014.md, verify_G17_ZHANG2021.md).'
+  selected_treatment: 'Resolved as scenarios by design version, decided 2026-10-29: 27 MeV/c belongs to JPARC-G2-EDM-DESIGN-2019;
+    the 28 MeV/c statements stay with the documents that make them; never averaged. Any stopping-range model names the momentum
+    it uses (range ∝ p^3.5, so 27 vs 28 MeV/c changes the range by about 14 %).'
+  effect_on_simulations: Stopping depth and stopping efficiency in the aerogel (range ∝ p^3.5); none on collider-level quantities.
+  required_future_evidence: The J-PARC H-line or S-line commissioning value of the delivered surface-muon momentum.
   status: resolved_as_scenarios
   date_added: '2026-10-29'

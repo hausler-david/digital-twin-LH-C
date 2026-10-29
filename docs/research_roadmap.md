@@ -358,7 +358,10 @@ registered Beer et al. 2014 (`SRC_ARXIV_1407_8248`) and Zhang et al. 2021, JPS C
 (`SRC_DOI_10_7566_JPSCP_33_011125`) of W8 and Kaya et al., EPL 138 (2022) 24002 (`SRC_ARXIV_1905_05564`,
 W9), together with Shirotori et al. 2026 (`SRC_ARXIV_2608_25374`). They are read and their arithmetic is
 pinned in `tests/scientific/test_batch10_documents.py`, but no parameter records exist yet; W8 still
-lacks Zhang et al. 2022 (NIM A 1042, 167443).]*
+lacks Zhang et al. 2022 (NIM A 1042, 167443).]* *[Update 2026-10-29: the three papers of W8/W9 are now
+extracted and adversarially verified (Kaya 148 records checked, Beer 78, Zhang 105; notes `verify_G15_KAYA2022.md`,
+`verify_G16_BEER2014.md`, `verify_G17_ZHANG2021.md`); Shirotori et al. 2026 stays context-only. W8 still lacks
+Zhang et al. 2022 and the primary publication of the T = 322 K / D = 870 cm² s^-1 diffusion fit.]*
 
 Internal items that need no network and are not ranked here: verification of the MuCol MR7
 reference tables (held outside `parameters/` until their verifier runs); the owner's line-by-line

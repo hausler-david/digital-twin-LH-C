@@ -81,7 +81,8 @@ scenarios:
   - wall_plug_power
   - cost
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: √s and L_int reproduced by tests/scientific/test_batch9_documents.py::test_cheung2021_table1_centre_of_mass_energies and
     ::test_cheung2021_integrated_luminosity_from_assumed_peak; the physics roles carry their own levels (P1 for Δσ/σ (band), Δg_hbb/g_hbb
     and the Higgs yield; P0 for the Table IV cells, whose audit reproduction is not a registered test). integrated_luminosity_per_year
@@ -164,7 +165,8 @@ scenarios:
   - wall_plug_power
   - cost
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1: √s and L_int reproduced by tests/scientific/test_batch9_documents.py::test_cheung2021_table1_centre_of_mass_energies and
     ::test_cheung2021_integrated_luminosity_from_assumed_peak; the physics roles carry their own levels (P1 for Δσ/σ (band), Δg_hbb/g_hbb
     and the Higgs yield; P0 for the Table IV cells, whose audit reproduction is not a registered test). integrated_luminosity_per_year

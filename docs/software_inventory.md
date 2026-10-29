@@ -307,6 +307,10 @@ check and no Mathematica has been performed or is claimed.
   3.8.1 / 2026-10-09, MG5 `LICENSE` text, conda-forge HEAD 200) are **not yet in any registry fragment**. To-do
   for the research-log step: add them as `SRC_URL_PYPI_XSUITE`, `SRC_URL_PYPI_GEANT4_PYBIND`,
   `SRC_URL_PYPI_PYBDSIM`, `SRC_URL_GITHUB_MG5AMCNLO_3X_LICENSE` with `access: fetched`, or re-fetch and archive them.
+  *[Done 2026-10-29, commit `e0cfb0b`: all four registered as `access: fetched` from the PyPI JSON API and the GitHub
+  mirror (xsuite 0.67.1 Apache-2.0; geant4-pybind 0.1.3 "Public Domain" for the bindings; pybdsim 3.9.0 with no
+  licence in its PyPI metadata; MG5aMC 3.x LICENSE NCSA-style, SHA-256 of the text recorded). Not archived as
+  files.]*
 - No compatibility statement (cpymad 1.20.0 ↔ MAD-X 5.09.00, PyTao ↔ conda-forge `bmad`, pyg4ometry 1.4.6 ↔
   Geant4 11.4, BDSIM 1.7.7 ↔ Geant4 version, Delphes ↔ ROOT 6.40) has been tested; those tests belong to the
   Milestone 2 environment-setup task, not to this inventory.

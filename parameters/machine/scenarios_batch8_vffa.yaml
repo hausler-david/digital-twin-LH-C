@@ -86,7 +86,8 @@ scenarios:
   - muon_survival_fraction
   - tune_plane_assignment
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'Validation P1 only in the sense of the lead arithmetic in tests/scientific/test_mucol_m17_vffa.py: test_stage1_on_orbit_peak_field_from_closed_orbit_geometry (6.93 T reproduced to 0.1 %), test_cell_bending_angles_consistent_with_cell_count (planar θD estimate only; the eq. (2.1) value 0.006554 rad is 3.1 % higher and is the one recorded), test_dispersion_is_inverse_field_index, test_good_field_region_peak_implies_vertical_extent, test_vertical_excursion_from_scaling_law_recorded_bands (48 mm vs 50 mm band), test_kicker_example_deflection. Everything else is P0, including the D-magnet records added by the 2026-10-28 verification (γD = 0.404 rad, ρD = 171.6 m, B_D = 5.83 T < B_F = 6.94 T, hard-edge magnet lengths 2.98 m / 2.25 m; the eqs (2.1)-(2.6) geometry closes exactly and reproduces the 1.18 m drift). Comparator column records ACC_RCS1_*_MUCOLM17 are not part of this scenario. MuCol MR7 Table F.5 restates the same table (ACC_VFFA1_*_MR7, other extraction, unverified here). Stage 1 meets the stated constraints: 6.93 T < 8.3 T, excursion 0.048 m < 5 cm, drift 1.18 m > 1 m.'
 - scenario_id: MUCOL-M17-VFFA4-2025
   label: 'MuCol M17 Stage 4 vFFA: analytic vFFA FODO ring replacing RCS4 (1.5-5 TeV, 35000 m), IMCC comparator'
@@ -165,5 +166,6 @@ scenarios:
   - muon_survival_fraction
   - tune_plane_assignment
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'Validation P1 only in the sense of the lead arithmetic in tests/scientific/test_mucol_m17_vffa.py: test_stage4_on_orbit_peak_field_recorded_band (F-magnet field 13.15 T vs 13.59 T, 3.3 % low, a band, NOT a reproduction), test_cell_bending_angles_consistent_with_cell_count (planar θD estimate only; the eq. (2.1) value 0.005303 rad is 11 % higher and is the one recorded), test_dispersion_is_inverse_field_index, test_good_field_region_peak_implies_vertical_extent, test_vertical_excursion_from_scaling_law_recorded_bands (120 mm vs 99 mm band). Everything else is P0, including the D-magnet records added by the 2026-10-28 verification: γD = -0.776 rad, ρD = 1224.7 m and B_D = 13.62 T, which reproduces the tabulated 13.59 T peak to +0.2 % (the stage-4 peak field on orbit is the reverse-bend D-magnet field, not the F-magnet field); hard-edge magnet lengths 19.94 m / 12.99 m; the eqs (2.1)-(2.6) geometry closes exactly and reproduces the 1.03 m drift. Not yet in the test suite. Comparator column records ACC_RCS4_*_MUCOLM17 are not part of this scenario. MuCol MR7 Table F.5 restates the same table (ACC_VFFA4_*_MR7, other extraction, unverified here). Stage 4 on-orbit field 13.59 T exceeds the 8.3 T limit the report adopts for stage 1; the report does not comment on it.'

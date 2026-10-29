@@ -46,7 +46,8 @@ scenarios:
   - nozzle_opening_angle
   - proton_driver_power
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 only because sqrt(s) is reproduced by 2*sqrt(E_mu*E_p) from the stated beam energies (arithmetic recorded on the parameter records). The role ''integrated_luminosity'' is used instead of ''integrated_luminosity_per_year''
     because the slide writes only ''Lint'' without a period; ''integrated_luminosity_per_year'' is therefore listed as unknown. Source: HELP4CERN White Paper ''in preparation'' (not public, not seen); these
     working points are the slide''s quotation of it. The muon energy is half of the DIS2026 1 TeV example set; no DIS2026 Table-1-type parameters exist for 500 GeV.'
@@ -95,7 +96,8 @@ scenarios:
   - nozzle_opening_angle
   - proton_driver_power
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 only because sqrt(s) is reproduced by 2*sqrt(E_mu*E_p) from the stated beam energies (arithmetic recorded on the parameter records). The role ''integrated_luminosity'' is used instead of ''integrated_luminosity_per_year''
     because the slide writes only ''Lint'' without a period; ''integrated_luminosity_per_year'' is therefore listed as unknown. Source: HELP4CERN White Paper ''in preparation'' (not public, not seen); these
     working points are the slide''s quotation of it. Same beam energies and sqrt(s) as LHMUC-DIS2026-1TEV (SRC_ARXIV_2610_35154 Table 1); the beam/IR parameters of that scenario are NOT imported here because
@@ -145,7 +147,8 @@ scenarios:
   - nozzle_opening_angle
   - proton_driver_power
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 only because sqrt(s) is reproduced by 2*sqrt(E_mu*E_p) from the stated beam energies (arithmetic recorded on the parameter records). The role ''integrated_luminosity'' is used instead of ''integrated_luminosity_per_year''
     because the slide writes only ''Lint'' without a period; ''integrated_luminosity_per_year'' is therefore listed as unknown. Source: HELP4CERN White Paper ''in preparation'' (not public, not seen); these
     working points are the slide''s quotation of it. Same beam energies and sqrt(s) as LHMUC-DIS2026-2TEV.'

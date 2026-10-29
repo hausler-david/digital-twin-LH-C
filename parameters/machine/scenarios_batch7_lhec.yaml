@@ -153,7 +153,8 @@ scenarios:
   - wall_plug_power
   - cost
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: 'P1 for the scenario: the Table 2 current (499 pC / 24.95 ns = 20.0 mA), the rigidities (Bρ_p 23 350 vs 23 333 T m, Bρ_e 166.8 vs 167 T m) and the arc 5→6 synchrotron scaling (E_c ∝ E^3, P ∝ E^4
     within 1 %) are reproduced in tests/scientific/test_batch7_documents.py (test_andre2022_table2_current_from_charge_and_spacing, test_andre2022_magnetic_rigidities, test_andre2022_table3_synchrotron_scaling_between_arcs);
     this extraction adds 801.58 MHz × 24.95 ns = 20.0 RF buckets, Table 3 energies = 0.5 + 8.25 n GeV (injection = dump energy 500 MeV) and 20 mA × 50 GV = 1 GW. The Table 4 luminosity is only band-checked

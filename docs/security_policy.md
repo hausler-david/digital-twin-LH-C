@@ -32,7 +32,8 @@ they arrive, not a control that has already been exercised.
 
 Everything that did not originate in this repository is untrusted: uploaded PDFs, UFO/FeynRules
 model directories, LaTeX sources, arXiv source tarballs (`e-print` archives), external Git
-repositories (MadGraph5_aMC@NLO on Launchpad/GitHub, `yefetu/ALOHEP`, FeynRules model pages),
+repositories (MadGraph5_aMC@NLO on Launchpad/GitHub, `yefetu/ALOHEP` and the public AloHEP v2.0 at
+`tobbetuyef/AloHEP` — cloned read-only on 2026-10-28, read as text, never built or run — FeynRules model pages),
 PyPI/npm packages beyond the pinned set, search-engine snippets, and any file produced by a tool
 run on those inputs.
 

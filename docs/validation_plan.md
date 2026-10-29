@@ -40,6 +40,12 @@ Rules:
 2. The highest level a *synthetic* input (`provenance.status: synthetic`) can confer on a derived
    result is P1; results that depend on a synthetic input must display the assumption id.
 3. The label displayed for a composite result is the **minimum** over its inputs and its own check.
+   Since 2026-10-29 `uv run python -m lhmuc validate` applies this to scenarios: a scenario's
+   `validation_level` may not exceed the lowest level among the records its roles point to
+   (`lhmuc.registry.scenario_level_cap`, unit test `tests/unit/test_scenario_levels.py`).
+   `tools/apply_scenario_levels.py` lowered 33 scenario labels from P1 to P0, each annotated in its file
+   (list: `research/_fragments/scenario_levels_lowered_2026-10-29.csv`); every one of them pointed to at
+   least one P0 record.
 4. A failing check sets the level back to P0 and opens an entry in `registries/risk_register.csv`
    (authored) until resolved.
 

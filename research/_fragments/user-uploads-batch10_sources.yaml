@@ -19,12 +19,13 @@ sources:
     excitation (244 nm) plus 355 nm ionisation — the 244 nm alternative to the 122 nm Lyman-α scheme. Table I (p. 6): S-line
     transport to S2 0.00717 → 2.4e6 s^-1; surface-muon stopping 0.467 → 1.1e6; Mu formation 0.52 → 5.8e5; Mu vacuum yield
     0.082 → 4.8e4; laser ionisation 3.9e-7 → 0.0186; slow-beamline transmission 0.651 → 0.0121; MCP 0.90 → 0.0109 s^-1 (''about
-    0.011/s''). Inputs: G4Beamline S-line model validated on S1 (1.9e5, 500 kW); 100 µm Kapton window, 435 µm Al degrader,
-    78 × 78 × 6 mm aerogel, mean stopping time ~350 ns (p. 3); 3-D random-walk diffusion with T = 322 K, D = 870 cm² s^-1
-    (p. 3-4); laser region 2 × 40 × 2 mm³ centred 3 mm from the surface, optimum delay 0.8 µs (p. 4); 1S→2S probability 8.8e-7
-    × 2S→ionisation ~44 % = 3.9e-7 per vacuum Mu including spatial and temporal overlap, ''preliminary'', optical Bloch equations
-    (p. 4); SOA lens 20 kV, ED 5 kV, muSRsim extraction (p. 5-6). Earliest archived 244 nm ionisation estimate: 3.9e-7 vs
-    ~1e-6 (Zhang 2026 Kraków deck, 1.5 mJ) and 7e-6-6e-5 (Aritome et al. 2024, 0.5-1.3 mJ) — CONF_LASER_IONISATION_EFFICIENCY.'
+    0.011/s''). Inputs: G4Beamline S-line model validated on relative S1 rates (S1 measured 1.9e5 at 500 kW; the S2 estimate
+    rests on ''the comparison with the measurement at S1''); 100 µm Kapton window, 435 µm Al degrader, 78 × 78 × 6 mm aerogel,
+    mean stopping time ~350 ns (p. 3); 3-D random-walk diffusion with T = 322 K, D = 870 cm² s^-1 (p. 3-4); laser region 2
+    × 40 × 2 mm³ centred 3 mm from the surface, optimum delay 0.8 µs (p. 4); 1S→2S probability 8.8e-7 × 2S→ionisation ~44
+    % = 3.9e-7 per vacuum Mu including spatial and temporal overlap, ''preliminary'', optical Bloch equations (p. 4); SOA
+    lens 20 kV, ED 5 kV, muSRsim extraction (p. 5-6). Earliest archived 244 nm ionisation estimate: 3.9e-7 vs ~1e-6 (Zhang
+    2026 Kraków deck, 1.5 mJ) and 7e-6-6e-5 (Aritome et al. 2024, 0.5-1.3 mJ) — CONF_LASER_IONISATION_EFFICIENCY.'
   parameters_extracted: []
   unresolved_questions:
   - 'S2 surface-muon intensity: ''2.4 × 10^5/s per pulse at 500 kW'' (§2, p. 3) vs ''2.4×10^6 per pulse at 500 kW'' (§5, p.
@@ -34,11 +35,12 @@ sources:
     0.9) % ''including 13% of decay-loss, 85% of the mesh transmission efficiency and the 90% of MCP aperture ratio'' (p.
     6); the three named factors multiply to 0.666; Table I splits 0.586 as 0.651 × 0.90. How 0.75, 0.586 and 0.666 relate
     is not explained.'
-  - 'The 52 % formation fraction, T = 322 K, D = 870 cm² s^-1 and the best sample (23.2 mg cm^-3, 8.8 mm) are all cited to
-    Beer et al. 2014 [8] (SRC_ARXIV_1407_8248), which contains none of them: 0.52 ± 0.01 is Bakule et al. 2013 p. 3 (MuSR,
-    SRC_ARXIV_1306_3810); the sample matches Beare et al. 2020 p. 5 (23.2-23.6 mg cm^-3, 8.7-8.9 mm, SRC_ARXIV_2006_01947);
-    T and D appear in the Zhang 2026 Kraków deck p. 7 (''fitted against the data collected at TRIUMF'', SRC_WS1681458_ZHANG_MUONIUM).
-    The primary publication of the T/D fit is not identified.'
+  - The 52 % formation fraction, T = 322 K, D = 870 cm² s^-1 and the best sample (23.2 mg cm^-3, 8.8 mm) are all cited to
+    Beer et al. 2014 [8] (SRC_ARXIV_1407_8248), which contains none of them. The 0.52 matches Bakule et al. 2013 p. 3 (MuSR
+    0.52 ± 0.01, SRC_ARXIV_1306_3810), but Zhang's reference list does not include Bakule 2013, so that origin is inferred
+    from the value; the sample matches Beare et al. 2020 p. 5 (23.2-23.6 mg cm^-3, 8.7-8.9 mm, SRC_ARXIV_2006_01947); T and
+    D appear in the Zhang 2026 Kraków deck p. 7 ('fitted against the data collected at TRIUMF', SRC_WS1681458_ZHANG_MUONIUM).
+    The primary publication of the T/D fit is not identified.
   - Whether the simulated aerogel is laser-ablated is not stated; laser pulse energies of the 244 nm/355 nm system are not
     printed (excitation simulation from ref. [9], private communication).
   licence: 'as printed on p. 1: ''©2021 The Author(s). This article is published by the Physical Society of Japan under the

@@ -126,5 +126,6 @@ scenarios:
       - muonium_formation_fraction_measured_in_situ
       - transport_mismatch_factor
     geometry_fidelity: G0
-    validation_level: P1
+    # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+    validation_level: P0
     notes: "P1: the per-surface-muon yields (2.1e-8 at 100 keV, 4.2e-8 at 5.7 keV), the pre-ionisation product 0.0208 and the implied ionisation-plus-transport efficiency (4.2e-8 / 0.0208 = 2.0e-6, asserted inside the window 1.5e-6 - 2.5e-6) are reproduced in tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain. The muonium formation fraction (52 %) is taken by the paper from Bakule et al. 2013 (MuSR, 0.52 ± 0.01; SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013; 6.6 sigma below Beare et al.'s 0.655 ± 0.018 with both uncertainties), not measured in this run; the ionisation efficiency is simulated, not measured. No longitudinal diagnostics were implemented, so bunch length and energy spread at 100 keV are unknown. The 2026 follow-up with the full-scale RFQ at 340 keV (Nakazawa deck) is recorded as _WS2026_NAKAZAWA records without a scenario."

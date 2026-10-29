@@ -78,7 +78,8 @@ scenarios:
   - ion_emittance_growth
   - detector_acceptance
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
 - scenario_id: LHMUC-NUCL-MU-XE
   label: 'LHμC nucleus option: 1 TeV μ+ on the LHC Xe beam (129Xe54+)'
@@ -156,7 +157,8 @@ scenarios:
   - ion_emittance_growth
   - detector_acceptance
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
 - scenario_id: LHMUC-NUCL-MU-O
   label: 'LHμC nucleus option: 1 TeV μ+ on the LHC O beam (16O8+)'
@@ -234,7 +236,8 @@ scenarios:
   - ion_emittance_growth
   - detector_acceptance
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
 - scenario_id: LHMUC-NUCL-MU-NE
   label: 'LHμC nucleus option: 1 TeV μ+ on the LHC Ne beam (20Ne10+)'
@@ -312,5 +315,6 @@ scenarios:
   - ion_emittance_growth
   - detector_acceptance
   geometry_fidelity: G0
-  validation_level: P1
+  # 2026-10-29: lowered from P1 under docs/validation_plan.md §1 rule 3 (minimum over the role records); 'P1' in the notes refers to checks of single quantities (research/_fragments/scenario_levels_lowered_2026-10-29.csv)
+  validation_level: P0
   notes: P1 because sqrt(s), sqrt(s) per nucleon, sigma*, f_c, L (with the 0.64 decay factor), A x L and both tune shifts are reproduced by hand from the p.8/p.10 inputs (see the validation blocks of the records). beta_x/y_star_muon point to DERIVED records (sigma*^2/eps_mu); the deck gives only the range 7-15 cm, so the reported per-species μ+ beta* is listed in unknown_roles. sigma_x_ip and sigma_y_ip point to the same record (round, matched beams). Xe uses the 16-bunch 2017 pilot-run filling (f_c = 0.18 MHz); O and Ne the 62-bunch July 2025 filling. The μTRISTAN-booster variant mentioned in the p.12 caption ('µTRISTAN-based values are in the backup') is not in the uploaded 16 pages.
