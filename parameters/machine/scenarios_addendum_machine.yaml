@@ -1,0 +1,727 @@
+# Scenarios added by the G1_MACHINE addendum extraction (2026-10-28). Schema: schemas/machine.schema.json. No numbers here: every role references a
+# parameter record in parameters/machine/lhmuc_ws2026_forthomme_beam_set.yaml, parameters/interaction_region/lhec_ir_ws2026_forthomme.yaml,
+# parameters/proton_beam/lhc_long_bunch_options_ws2026_zimmermann.yaml or parameters/machine/muic_acosta2022_machine.yaml; unknown_roles lists what the
+# source does not give. LHMUC-WS2026-FORTHOMME is the only LHμC scenario (partially_reported, muon energy not stated); LHEC-WS2026-FORTHOMME,
+# MUIC-ACOSTA2022-* (name collision: Acosta et al.'s 'LHmuC' is not the HELP4CERN LHμC), LHC-PR627-*, QCD-EXPLORER-EPAC2004 and
+# LHC-DAMERAU-GAROBY-LONGBUNCH-EPAC2004 are related-machine comparators (machine LHEC / MUIC / OTHER). Validation levels are per scenario (P1 only where
+# the notes name the reproduced quantities); geometry fidelity G0 everywhere (no geometry exists).
+# Corrected by the G1_MACHINE adversarial verifier (2026-10-29); every change is listed in research/_fragments/verify_G1_MACHINE.md.
+scenarios:
+- scenario_id: LHMUC-WS2026-FORTHOMME
+  label: LHμC beam set presented by L. Forthomme at the HELP4CERN workshop (slide 17), μ+ on HL-LHC protons
+  description: 'LHμC beam-parameter set of the HELP4CERN workshop (in addition to the DIS2026 1 TeV / 2 TeV and μLHC sets): 300 ns muon bunch spacing (assumed), 40 bunches of 1e10 μ+
+    in the main ring, σx,y ~ 4.3 µm for ''ultimate HL-LHC optics'' with β* = 7 cm and LHeC-like stand-alone running at IP2, peak luminosity 1e34 cm^-2 s^-1, ~3e13 μ+/s injected into
+    the booster, polarisation assumed 50 %, a small crossing angle and a proton bunch population ''higher than HL-LHC''s'' (value not stated; ≈ 7e11 implied under H = 1). The slide does
+    not state the muon energy, the proton energy, sqrt(s), a repetition rate, emittances, bunch lengths or the ring circumference.'
+  machine: LHMUC
+  design_version: Kraków workshop 'Ultra-cold muons for the LHC', 24-26 Sept 2026, Forthomme backup slide 17
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_WS2026_FORTHOMME
+    bunch_spacing: MACHINE_MU_BUNCH_SPACING_WS2026_FORTHOMME
+    muon_bunches: MACHINE_MU_BUNCHES_WS2026_FORTHOMME
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_WS2026_FORTHOMME
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_WS2026_FORTHOMME
+    sigma_x_ip: IR_SIGMA_XY_IP_WS2026_FORTHOMME
+    sigma_y_ip: IR_SIGMA_XY_IP_WS2026_FORTHOMME
+    sigma_x_ip_proton: IR_SIGMA_XY_IP_WS2026_FORTHOMME
+    sigma_y_ip_proton: IR_SIGMA_XY_IP_WS2026_FORTHOMME
+    beta_star_proton: PROTON_BETA_STAR_WS2026_FORTHOMME
+    muon_rate_into_booster: SOURCE_MU_RATE_INTO_BOOSTER_WS2026_FORTHOMME
+    muon_polarisation: MACHINE_MUON_POLARISATION_WS2026_FORTHOMME
+    proton_bunch_population_implied: PROTON_BUNCH_POPULATION_IMPLIED_WS2026_FORTHOMME
+    muon_train_duration_implied: MACHINE_MU_TRAIN_DURATION_IMPLIED_WS2026_FORTHOMME
+    crossing_angle: IR_CROSSING_ANGLE_WS2026_FORTHOMME
+    crossing_angle_scheme: IR_CROSSING_ANGLE_SCHEME_WS2026_FORTHOMME
+    muon_charge_preference: MACHINE_MU_CHARGE_PREFERENCE_WS2026_FORTHOMME
+    proton_bunch_population_strategy: PROTON_BUNCH_POPULATION_STRATEGY_WS2026_FORTHOMME
+    ip_beam_size_matching: IR_BEAM_SIZE_MATCHING_WS2026_FORTHOMME
+    proton_optics_assumption: PROTON_OPTICS_ASSUMPTION_WS2026_FORTHOMME
+    ip_location: IR_IP_LOCATION_WS2026_FORTHOMME
+    nozzle_half_opening_angle: DET_NOZZLE_HALF_OPENING_ANGLE_WS2026_FORTHOMME
+    nozzle_half_opening_angle_alternative: DET_NOZZLE_HALF_OPENING_ANGLE_OPTION2_WS2026_FORTHOMME
+  unknown_roles:
+  - muon_beam_energy
+  - proton_beam_energy
+  - sqrt_s
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - collision_rate
+  - repetition_rate
+  - proton_bunch_population
+  - proton_bunches
+  - proton_bunch_spacing
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - main_ring_dipole_field
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - muon_lifetime_lab
+  - crossing_angle
+  - beam_beam_tune_shift
+  - l_star
+  - wall_plug_power
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'P0 for the scenario: no reported value of this set can be reproduced from the others (the luminosity needs the unstated proton bunch population). The two derived records are
+    P1 (implied N_p ≈ 7.0e11, tests/scientific/test_workshop_decks.py::test_forthomme_beam_set_implied_proton_bunch_population; 40 x 300 ns = 12 µs). muon_beam_energy and crossing_angle
+    point to explicit unknown records (value null) and are also listed in unknown_roles, as in LHMUC-DIS2026-1TEV. The same deck''s kinematic-plane plot (p.10) is labelled ''LHμC (1
+    TeV× 7 TeV, ...)'' (detector-group records MACHINE_MU_BEAM_ENERGY_KINEMATIC_PLANE_WS2026_FORTHOMME, PROTON_BEAM_ENERGY_KINEMATIC_PLANE_WS2026_FORTHOMME), but slide 17 does not tie
+    its beam set to that configuration, so the energy roles stay unknown. Verifier (2026-10-29): the nozzle half-opening angle of the same deck''s LHμC detector concept (p.9, 40 mrad
+    baseline / 100 mrad alternative) is now linked through the canonical detector-group ids instead of being listed as unknown.'
+- scenario_id: LHEC-WS2026-FORTHOMME
+  label: LHeC baseline and IR facts as restated on Forthomme's slides 4 and 16 (comparator, related machine)
+  description: 'LHeC (HL-LHC 7 TeV protons + 50 GeV ERL electrons (p.10 legend; 20 GeV ALICE 3 option also plotted), ep √s 1.2 TeV (p.2), one IP, e.g. IP2, three-beam IR): instantaneous
+    L ~ 1e34 → 100 fb^-1/year → 1 ab^-1, pile-up ~0.1, radiation ≪ 1e14 n_eq/cm^2, power < 150 MW, ERL with two 20 MV/m linacs and 3 passes, 1/4 LHC circumference preferred; IR with
+    head-on collision after electron bending, L* = 15 m vs 23 m with SR critical energies 94.69 vs 44.57 keV (BDSIM), Pb shielding options 0/2/10 cm, element labels Q0F/Q0D/TAS/Q1A/QX/QY/BEND_0.
+    All values imported_related; the LHμC detector and IR concept adapts this baseline.'
+  machine: LHEC
+  design_version: LHeC baseline as restated at the Kraków workshop (Forthomme slides 2, 4, 10 and 16)
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_FORTHOMME_DETECTOR
+  parameters:
+    proton_beam_energy: PROTON_BEAM_ENERGY_LHEC_WS2026_FORTHOMME
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_LHEC_WS2026_FORTHOMME
+    integrated_luminosity_per_year: MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_LHEC_WS2026_FORTHOMME
+    integrated_luminosity_total: MACHINE_INTEGRATED_LUMINOSITY_TOTAL_LHEC_WS2026_FORTHOMME
+    pileup: MACHINE_PILEUP_LHEC_WS2026_FORTHOMME
+    radiation_level_upper_bound: DET_NEQ_FLUENCE_LHEC_UPPER_BOUND_WS2026_FORTHOMME
+    wall_plug_power_limit: INFRA_POWER_CONSUMPTION_LIMIT_LHEC_WS2026_FORTHOMME
+    l_star: IR_LSTAR_LHEC_WS2026_FORTHOMME
+    l_star_long_option: IR_LSTAR_FCCEH_WS2026_FORTHOMME
+    sr_critical_energy_lstar15: IR_SR_CRITICAL_ENERGY_LSTAR15_LHEC_WS2026_FORTHOMME
+    sr_critical_energy_lstar23: IR_SR_CRITICAL_ENERGY_LSTAR23_LHEC_WS2026_FORTHOMME
+    sr_critical_energy_ratio: IR_SR_CRITICAL_ENERGY_RATIO_LSTAR15_TO_23_LHEC_WS2026_FORTHOMME
+    collision_scheme: IR_COLLISION_SCHEME_LHEC_WS2026_FORTHOMME
+    ir_simulation_tool: IR_SR_SIMULATION_TOOL_LHEC_WS2026_FORTHOMME
+    ir_layout_element_labels: IR_LAYOUT_ELEMENT_LABELS_LHEC_WS2026_FORTHOMME
+    sr_shielding_options: IR_SR_SHIELDING_PB_OPTIONS_LHEC_WS2026_FORTHOMME
+    ip_location: IR_IP_LOCATION_LHEC_WS2026_FORTHOMME
+    three_beam_solution: IR_THREE_BEAM_SOLUTION_LHEC_WS2026_FORTHOMME
+    electron_acceleration_technology: ACC_ELECTRON_ACCELERATION_TECHNOLOGY_LHEC_WS2026_FORTHOMME
+    erl_gradient: ACC_ERL_GRADIENT_LHEC_WS2026_FORTHOMME
+    erl_linacs: ACC_ERL_LINAC_COUNT_LHEC_WS2026_FORTHOMME
+    erl_passes: ACC_ERL_PASSES_LHEC_WS2026_FORTHOMME
+    erl_circumference_fraction_of_lhc: ACC_ERL_CIRCUMFERENCE_FRACTION_OF_LHC_LHEC_WS2026_FORTHOMME
+    electron_beam_energy: MACHINE_ELECTRON_BEAM_ENERGY_LHEC_WS2026_FORTHOMME
+    electron_beam_energy_alice3_option: MACHINE_ELECTRON_BEAM_ENERGY_ALICE3_OPTION_LHEC_WS2026_FORTHOMME
+    sqrt_s: MACHINE_SQRT_S_LHEC_WS2026_FORTHOMME
+    solenoid_field_delphes_model: DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME
+  unknown_roles:
+  - electron_bunch_population
+  - proton_bunch_population
+  - bunch_spacing
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_star_proton
+  - beta_x_star_electron
+  - beta_y_star_electron
+  - electron_norm_emittance
+  - proton_norm_emittance
+  - crossing_angle
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: 94.69/44.57 keV = 2.12 reproduces the slide''s ''factor 2''; 1e34 x 1e7 s = 100 fb^-1 is a convention-based check; 2 sqrt(50 GeV x 7 TeV) = 1.18 TeV reproduces the 1.2
+    TeV of slide 2. The ''1 ab^-1 over full exploitation'' is not reproducible (duration not stated; P0). Verifier (2026-10-29): the extractor''s note that the electron beam energy is
+    on slides 2-3 was wrong (slide 2 gives only the ep √s; the 50 GeV is in the p.10 legend, now recorded here); sqrt_s and the Delphes-model solenoid field (3.8 T, p.13) are linked
+    to the detector group''s records (MACHINE_SQRT_S_LHEC_WS2026_FORTHOMME, DET_SOLENOID_FIELD_LHEC_DELPHES_WS2026_FORTHOMME); the LHeD dimensions (p.3, 13 m x 9 m) are recorded by the
+    detector group (DET_LHED_LENGTH_WS2026_FORTHOMME, DET_LHED_DIAMETER_WS2026_FORTHOMME) and are no longer listed as unknown.'
+- scenario_id: MUIC-ACOSTA2022-LHMUC
+  label: 'Acosta et al. ''LHmuC'' column (Table 2): 1.5 TeV μ (IMCC 3 TeV collider beam) on 7 TeV LHC protons, sqrt(s) 6.5 TeV'
+  description: 'LHmuC column of Table 2 of arXiv:2203.06258v3: sqrt(s) 6.5 TeV, L 2.8e33 cm^-2 s^-1 (H = 1), 237 fb^-1 per 10 years (28 weeks/yr, duty 0.5), 20e11 μ and 2.2e11 p per
+    bunch, f_rep 12 Hz, 3300 cycles per bunch (= 300 x 11 T), ε_n 25 µm (μ) / 2.5 µm (p), β* 0.5 cm (μ) / 15 cm (p), σ 3 µm (μ) / 7.1 µm (p); IP e.g. at IP2 as in the LHeC proposal;
+    concurrent LHC/LHmuC/μ+μ− operation claimed. NAME COLLISION: Acosta et al.''s ''LHmuC'' (one 1.5 TeV beam of an IMCC-type 3 TeV μ+μ− collider on a 7 TeV LHC ring, proton-driver source)
+    is not the HELP4CERN LHμC (ultra-cold μ+ source); machine is recorded as MUIC and every value is imported_related.'
+  machine: MUIC
+  design_version: arXiv:2203.06258v3 (19 Sep 2023), Tables 1-2 and section 2
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2203_06258
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_LHMUC_MUIC2022
+    sqrt_s: MACHINE_SQRT_S_LHMUC_MUIC2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_LHMUC_MUIC2022
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_10YR_LHMUC_MUIC2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_LHMUC_MUIC2022
+    repetition_rate: MACHINE_MU_REPETITION_RATE_LHMUC_MUIC2022
+    muon_cycles_per_bunch: MACHINE_MU_CYCLES_PER_BUNCH_LHMUC_MUIC2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_LHMUC_MUIC2022
+    beta_x_star_muon: IR_BETA_STAR_MUON_LHMUC_MUIC2022
+    beta_y_star_muon: IR_BETA_STAR_MUON_LHMUC_MUIC2022
+    sigma_x_ip: IR_SIGMA_XY_IP_MUON_LHMUC_MUIC2022
+    sigma_y_ip: IR_SIGMA_XY_IP_MUON_LHMUC_MUIC2022
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_ASSUMED_MUIC2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_MUIC2022
+    beam_size_formula: MACHINE_BEAM_SIZE_FORMULA_MUIC2022
+    muon_cycles_per_tesla: MACHINE_MU_CYCLES_PER_TESLA_MUIC2022
+    running_weeks_per_year: MACHINE_RUNNING_WEEKS_PER_YEAR_MUIC2022
+    duty_cycle: MACHINE_DUTY_CYCLE_MUIC2022
+    integration_period: MACHINE_INTEGRATION_PERIOD_MUIC2022
+    muon_bunch_train_split_proposal: MACHINE_MU_BUNCH_TRAIN_SPLIT_MUIC2022
+    ip_beam_profile_assumption: IR_BEAM_PROFILE_ASSUMPTION_MUIC2022
+    muon_parameter_origin: MACHINE_MU_BEAM_PARAMETER_ORIGIN_MUIC2022
+    proton_parameter_origin: PROTON_PARAMETER_ORIGIN_MUIC2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_LHMUC_MUIC2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_LHMUC_MUIC2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_LHMUC_MUIC2022
+    beta_star_proton: PROTON_BETA_STAR_LHMUC_MUIC2022
+    sigma_x_ip_proton: PROTON_SIGMA_XY_IP_LHMUC_MUIC2022
+    sigma_y_ip_proton: PROTON_SIGMA_XY_IP_LHMUC_MUIC2022
+    collision_rate: MACHINE_MU_BUNCH_COLLISION_FREQUENCY_LHMUC_MUIC2022
+    muon_source_concept: MACHINE_LHMUC_MUON_SOURCE_CONCEPT_MUIC2022
+    ip_location: IR_IP_LOCATION_LHMUC_MUIC2022
+    concurrent_operation: MACHINE_LHMUC_CONCURRENT_OPERATION_MUIC2022
+    muon_polarisation_at_production: MACHINE_MU_POLARISATION_AT_PRODUCTION_MUIC2022
+    muon_polarisation_max_energy_selected: MACHINE_MU_POLARISATION_MAX_ENERGY_SELECTED_MUIC2022
+  unknown_roles:
+  - muon_bunches
+  - bunch_spacing
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - crossing_angle
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - muon_polarisation
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - proton_bunches
+  - muon_lifetime_lab
+  - beam_beam_tune_shift
+  - l_star
+  - nozzle_opening_angle
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  - main_ring_dipole_field
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: sqrt(s) = 6.48 TeV, L = 2.75e33 (eq. 2.1 with H = 1 and the table''s beam sizes), 237.1 fb^-1 over 10 years, σ_p = 7.09 µm and σ_μ = 2.97 µm (eq. 2.2; tests/scientific/test_workshop_decks.py::test_muic_lhmuc_column_beam_size_acosta2022)
+    all reproduce the table. 1000 fb^-1 is named in section 4 as a physics target ''disfavored within 10 years''. The storage-ring field (main_ring_dipole_field) is not stated for LHmuC;
+    3300 cycles are consistent with the 11 T assumed for MuIC at BNL.'
+- scenario_id: MUIC-ACOSTA2022-BNL-100GEV
+  label: MuIC at BNL, 0.1 TeV μ on 0.275 TeV p (sqrt(s) 0.33 TeV, HERA-like stage)
+  description: 'MuIC-at-BNL column of Table 2 of arXiv:2203.06258v3 with E_μ = 0.1 TeV on the EIC hadron ring (0.275 TeV protons, 3e11 p/bunch, ε_n 0.3 µm with strong hadron cooling,
+    β* 5 cm, σ_p 7.1 µm); comparator for the luminosity convention only. NAME COLLISION: Acosta et al.''s ''LHmuC'' (one 1.5 TeV beam of an IMCC-type 3 TeV μ+μ− collider on a 7 TeV LHC
+    ring, proton-driver source) is not the HELP4CERN LHμC (ultra-cold μ+ source); machine is recorded as MUIC and every value is imported_related.'
+  machine: MUIC
+  design_version: arXiv:2203.06258v3 (19 Sep 2023), Tables 1-2 and section 2
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2203_06258
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MUIC033_MUIC2022
+    sqrt_s: MACHINE_SQRT_S_MUIC033_MUIC2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_MUIC033_MUIC2022
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_10YR_MUIC033_MUIC2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MUIC033_MUIC2022
+    repetition_rate: MACHINE_MU_REPETITION_RATE_MUIC033_MUIC2022
+    muon_cycles_per_bunch: MACHINE_MU_CYCLES_PER_BUNCH_MUIC033_MUIC2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MUIC033_MUIC2022
+    beta_x_star_muon: IR_BETA_STAR_MUON_MUIC033_MUIC2022
+    beta_y_star_muon: IR_BETA_STAR_MUON_MUIC033_MUIC2022
+    sigma_x_ip: IR_SIGMA_XY_IP_MUON_MUIC033_MUIC2022
+    sigma_y_ip: IR_SIGMA_XY_IP_MUON_MUIC033_MUIC2022
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_ASSUMED_MUIC2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_MUIC2022
+    beam_size_formula: MACHINE_BEAM_SIZE_FORMULA_MUIC2022
+    muon_cycles_per_tesla: MACHINE_MU_CYCLES_PER_TESLA_MUIC2022
+    running_weeks_per_year: MACHINE_RUNNING_WEEKS_PER_YEAR_MUIC2022
+    duty_cycle: MACHINE_DUTY_CYCLE_MUIC2022
+    integration_period: MACHINE_INTEGRATION_PERIOD_MUIC2022
+    muon_bunch_train_split_proposal: MACHINE_MU_BUNCH_TRAIN_SPLIT_MUIC2022
+    ip_beam_profile_assumption: IR_BEAM_PROFILE_ASSUMPTION_MUIC2022
+    muon_parameter_origin: MACHINE_MU_BEAM_PARAMETER_ORIGIN_MUIC2022
+    proton_parameter_origin: PROTON_PARAMETER_ORIGIN_MUIC2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_MUIC_MUIC2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_MUIC_MUIC2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_MUIC_MUIC2022
+    beta_star_proton: PROTON_BETA_STAR_MUIC_MUIC2022
+    sigma_x_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+    sigma_y_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+  unknown_roles:
+  - muon_bunches
+  - bunch_spacing
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - crossing_angle
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - muon_polarisation
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - proton_bunches
+  - muon_lifetime_lab
+  - beam_beam_tune_shift
+  - l_star
+  - nozzle_opening_angle
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  - main_ring_dipole_field
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: sqrt(s) 0.33 TeV, L = 7.05e31 (eq. 2.1, H = 1, with the table''s 48 µm muon size) and 5.9 fb^-1 per 10 years reproduce the table. NOT reproduced: the 48 µm muon beam size
+    (eq. 2.2 gives 60 µm with ε_n = 200 µm, β* = 1.7 cm) and the 1134 cycles per bunch (300B or γ-scaling give 344; verifier observation: 3300 x 0.33/0.96 = 1134.4, i.e. the γ-scaling
+    with the column''s sqrt(s) in place of the muon energy). 200 µm emittance corresponds to a beam without final cooling.'
+- scenario_id: MUIC-ACOSTA2022-BNL-500GEV
+  label: MuIC at BNL, 0.5 TeV μ on 0.275 TeV p (sqrt(s) 0.74 TeV)
+  description: 'MuIC-at-BNL column of Table 2 of arXiv:2203.06258v3 with E_μ = 0.5 TeV on the EIC hadron ring (0.275 TeV protons, 3e11 p/bunch, ε_n 0.3 µm with strong hadron cooling,
+    β* 5 cm, σ_p 7.1 µm); comparator for the luminosity convention only. NAME COLLISION: Acosta et al.''s ''LHmuC'' (one 1.5 TeV beam of an IMCC-type 3 TeV μ+μ− collider on a 7 TeV LHC
+    ring, proton-driver source) is not the HELP4CERN LHμC (ultra-cold μ+ source); machine is recorded as MUIC and every value is imported_related.'
+  machine: MUIC
+  design_version: arXiv:2203.06258v3 (19 Sep 2023), Tables 1-2 and section 2
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2203_06258
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MUIC074_MUIC2022
+    sqrt_s: MACHINE_SQRT_S_MUIC074_MUIC2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_MUIC074_MUIC2022
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_10YR_MUIC074_MUIC2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MUIC074_MUIC2022
+    repetition_rate: MACHINE_MU_REPETITION_RATE_MUIC074_MUIC2022
+    muon_cycles_per_bunch: MACHINE_MU_CYCLES_PER_BUNCH_MUIC074_MUIC2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MUIC074_MUIC2022
+    beta_x_star_muon: IR_BETA_STAR_MUON_MUIC074_MUIC2022
+    beta_y_star_muon: IR_BETA_STAR_MUON_MUIC074_MUIC2022
+    sigma_x_ip: IR_SIGMA_XY_IP_MUON_MUIC074_MUIC2022
+    sigma_y_ip: IR_SIGMA_XY_IP_MUON_MUIC074_MUIC2022
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_ASSUMED_MUIC2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_MUIC2022
+    beam_size_formula: MACHINE_BEAM_SIZE_FORMULA_MUIC2022
+    muon_cycles_per_tesla: MACHINE_MU_CYCLES_PER_TESLA_MUIC2022
+    running_weeks_per_year: MACHINE_RUNNING_WEEKS_PER_YEAR_MUIC2022
+    duty_cycle: MACHINE_DUTY_CYCLE_MUIC2022
+    integration_period: MACHINE_INTEGRATION_PERIOD_MUIC2022
+    muon_bunch_train_split_proposal: MACHINE_MU_BUNCH_TRAIN_SPLIT_MUIC2022
+    ip_beam_profile_assumption: IR_BEAM_PROFILE_ASSUMPTION_MUIC2022
+    muon_parameter_origin: MACHINE_MU_BEAM_PARAMETER_ORIGIN_MUIC2022
+    proton_parameter_origin: PROTON_PARAMETER_ORIGIN_MUIC2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_MUIC_MUIC2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_MUIC_MUIC2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_MUIC_MUIC2022
+    beta_star_proton: PROTON_BETA_STAR_MUIC_MUIC2022
+    sigma_x_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+    sigma_y_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+  unknown_roles:
+  - muon_bunches
+  - bunch_spacing
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - crossing_angle
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - muon_polarisation
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - proton_bunches
+  - muon_lifetime_lab
+  - beam_beam_tune_shift
+  - l_star
+  - nozzle_opening_angle
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  - main_ring_dipole_field
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: sqrt(s) 0.74 TeV, L = 2.13e33 and 178 fb^-1 per 10 years reproduce the table; 1719 cycles = 3300 x 0.5/0.96 (γ-scaling in the same ring). Muon beam size 7.6 µm vs 7.3 µm
+    from eq. 2.2 (-4 %).'
+- scenario_id: MUIC-ACOSTA2022-BNL-960GEV
+  label: MuIC at BNL, 0.96 TeV μ on 0.275 TeV p (sqrt(s) 1.0 TeV, EIC tunnel, 11 T)
+  description: 'MuIC-at-BNL column of Table 2 of arXiv:2203.06258v3 with E_μ = 0.96 TeV on the EIC hadron ring (0.275 TeV protons, 3e11 p/bunch, ε_n 0.3 µm with strong hadron cooling,
+    β* 5 cm, σ_p 7.1 µm); comparator for the luminosity convention only. NAME COLLISION: Acosta et al.''s ''LHmuC'' (one 1.5 TeV beam of an IMCC-type 3 TeV μ+μ− collider on a 7 TeV LHC
+    ring, proton-driver source) is not the HELP4CERN LHμC (ultra-cold μ+ source); machine is recorded as MUIC and every value is imported_related.'
+  machine: MUIC
+  design_version: arXiv:2203.06258v3 (19 Sep 2023), Tables 1-2 and section 2
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2203_06258
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MUIC100_MUIC2022
+    sqrt_s: MACHINE_SQRT_S_MUIC100_MUIC2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_MUIC100_MUIC2022
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_10YR_MUIC100_MUIC2022
+    muon_bunch_population: MACHINE_MU_BUNCH_POPULATION_MUIC100_MUIC2022
+    repetition_rate: MACHINE_MU_REPETITION_RATE_MUIC100_MUIC2022
+    muon_cycles_per_bunch: MACHINE_MU_CYCLES_PER_BUNCH_MUIC100_MUIC2022
+    muon_norm_emittance: MACHINE_MU_NORM_EMITTANCE_MUIC100_MUIC2022
+    beta_x_star_muon: IR_BETA_STAR_MUON_MUIC100_MUIC2022
+    beta_y_star_muon: IR_BETA_STAR_MUON_MUIC100_MUIC2022
+    sigma_x_ip: IR_SIGMA_XY_IP_MUON_MUIC100_MUIC2022
+    sigma_y_ip: IR_SIGMA_XY_IP_MUON_MUIC100_MUIC2022
+    hourglass_factor: MACHINE_HOURGLASS_FACTOR_ASSUMED_MUIC2022
+    luminosity_formula: MACHINE_LUMINOSITY_FORMULA_MUIC2022
+    beam_size_formula: MACHINE_BEAM_SIZE_FORMULA_MUIC2022
+    muon_cycles_per_tesla: MACHINE_MU_CYCLES_PER_TESLA_MUIC2022
+    running_weeks_per_year: MACHINE_RUNNING_WEEKS_PER_YEAR_MUIC2022
+    duty_cycle: MACHINE_DUTY_CYCLE_MUIC2022
+    integration_period: MACHINE_INTEGRATION_PERIOD_MUIC2022
+    muon_bunch_train_split_proposal: MACHINE_MU_BUNCH_TRAIN_SPLIT_MUIC2022
+    ip_beam_profile_assumption: IR_BEAM_PROFILE_ASSUMPTION_MUIC2022
+    muon_parameter_origin: MACHINE_MU_BEAM_PARAMETER_ORIGIN_MUIC2022
+    proton_parameter_origin: PROTON_PARAMETER_ORIGIN_MUIC2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_MUIC_MUIC2022
+    proton_bunch_population: PROTON_BUNCH_POPULATION_MUIC_MUIC2022
+    proton_norm_emittance: PROTON_NORM_EMITTANCE_MUIC_MUIC2022
+    beta_star_proton: PROTON_BETA_STAR_MUIC_MUIC2022
+    sigma_x_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+    sigma_y_ip_proton: PROTON_SIGMA_XY_IP_MUIC_MUIC2022
+    main_ring_dipole_field: MACHINE_MUIC_STORAGE_RING_DIPOLE_FIELD_MUIC2022
+    bending_radius: MACHINE_MUIC_BENDING_RADIUS_MUIC2022
+    neutrino_ring_tilt_bound: MACHINE_MUIC_NEUTRINO_RING_TILT_MUIC2022
+    staging_options: MACHINE_MUIC_STAGING_OPTIONS_MUIC2022
+    tunnel_straight_sections: MACHINE_MUIC_TUNNEL_STRAIGHT_SECTIONS_MUIC2022
+  unknown_roles:
+  - muon_bunches
+  - bunch_spacing
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - crossing_angle
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - muon_polarisation
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - proton_bunches
+  - muon_lifetime_lab
+  - beam_beam_tune_shift
+  - l_star
+  - nozzle_opening_angle
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: sqrt(s) 1.03 TeV, L = 4.69e33 and 398 fb^-1 per 10 years reproduce the table; 0.3 x 11 T x 290 m = 957 GeV/c reproduces the 0.96 TeV maximum energy; 300 x 11 T = 3300 cycles.
+    Muon beam size 4.7 µm vs 4.5 µm from eq. 2.2 (-3 %). Text: ''peak L up to ≈5e33 at the highest muon energy for MuIC''.'
+- scenario_id: MUIC-ACOSTA2022-MUIC2
+  label: 'Acosta et al. MuIC2 option (Table 1): 0.96 TeV μ on 0.96 TeV p, sqrt(s) 1.92 TeV'
+  description: 'MuIC2 option of Table 1 of arXiv:2203.06258v3: hadron beam upgraded to ~1 TeV (EIC ring upgrade or another 1 TeV hadron ring, e.g. the Tevatron), 0.96 TeV muons, sqrt(s)
+    1.92 TeV, expected maximum luminosity 4.7e33 cm^-2 s^-1. No Table 2 beam-parameter column exists for this option. NAME COLLISION: Acosta et al.''s ''LHmuC'' (one 1.5 TeV beam of
+    an IMCC-type 3 TeV μ+μ− collider on a 7 TeV LHC ring, proton-driver source) is not the HELP4CERN LHμC (ultra-cold μ+ source); machine is recorded as MUIC and every value is imported_related.'
+  machine: MUIC
+  design_version: arXiv:2203.06258v3 (19 Sep 2023), Table 1
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2203_06258
+  parameters:
+    muon_beam_energy: MACHINE_MU_BEAM_ENERGY_MUIC2_MUIC2022
+    proton_beam_energy: PROTON_BEAM_ENERGY_MUIC2_MUIC2022
+    sqrt_s: MACHINE_SQRT_S_MUIC2_MUIC2022
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_MUIC2_MUIC2022
+    table1_summary: MACHINE_TABLE1_BENCHMARK_SUMMARY_MUIC2022
+  unknown_roles:
+  - muon_bunches
+  - bunch_spacing
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - crossing_angle
+  - main_ring_circumference
+  - main_ring_revolution_period
+  - muon_polarisation
+  - average_luminosity
+  - integrated_luminosity_per_year
+  - proton_bunches
+  - muon_lifetime_lab
+  - beam_beam_tune_shift
+  - l_star
+  - nozzle_opening_angle
+  - booster_circumference
+  - booster_turns
+  - booster_survival
+  - wall_plug_power
+  - muon_bunch_population
+  - proton_bunch_population
+  - repetition_rate
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - beta_star_proton
+  - sigma_x_ip
+  - sigma_y_ip
+  - integrated_luminosity_10yr
+  - main_ring_dipole_field
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: P1 only for sqrt(s) = 2 sqrt(0.96 x 0.96) = 1.92 TeV.
+- scenario_id: LHC-PR627-NOMINAL
+  label: LHC nominal parameters (2002), LHC Project Report 627 Table 1
+  description: 'Column ''Nominal'' of Table 1 of LHC Project Report 627 (Ruggiero, Rumolo, Zimmermann, Papaphilippou, RPIA2002) as restated on Zimmermann''s slide 9: 2808 bunches, σ_z
+    7.7 cm, σ_δ 1.1e-4, β* 0.5 m, 300 µrad, 0.56 A, 1e34, τ_IBS 134 h; ε_n 3.75 µm and 7 TeV for all columns. Shown as an answer to the LHμC request for ~1 % of today''s LHC bunches
+    at much higher population. Related-machine (LHC upgrade study) values, not LHμC values.'
+  machine: OTHER
+  design_version: LHC Project Report 627 (2002), Table 1, as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    proton_bunches: PROTON_LHC_PR627_BUNCHES_NOMINAL_WS2026_ZIMMERMANN
+    proton_bunch_length: PROTON_LHC_PR627_RMS_BUNCH_LENGTH_NOMINAL_WS2026_ZIMMERMANN
+    proton_energy_spread: PROTON_LHC_PR627_ENERGY_SPREAD_NOMINAL_WS2026_ZIMMERMANN
+    beta_star_proton: PROTON_LHC_PR627_BETA_STAR_NOMINAL_WS2026_ZIMMERMANN
+    crossing_angle: PROTON_LHC_PR627_CROSSING_ANGLE_NOMINAL_WS2026_ZIMMERMANN
+    proton_beam_current: PROTON_LHC_PR627_BEAM_CURRENT_NOMINAL_WS2026_ZIMMERMANN
+    peak_luminosity: PROTON_LHC_PR627_LUMINOSITY_NOMINAL_WS2026_ZIMMERMANN
+    ibs_growth_time_energy_spread: PROTON_LHC_PR627_IBS_GROWTH_TIME_NOMINAL_WS2026_ZIMMERMANN
+    proton_norm_emittance: PROTON_LHC_PR627_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_LHC_PR627_BEAM_ENERGY_WS2026_ZIMMERMANN
+    bunch_merging_scaling_relation: PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+  unknown_roles:
+  - proton_bunch_population
+  - revolution_frequency
+  - main_ring_circumference
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
+    crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
+    but is not printed in the table (unknown_roles).'
+- scenario_id: LHC-PR627-ULTIMATE
+  label: LHC ultimate parameters (2002), LHC Project Report 627 Table 1
+  description: 'Column ''Ultimate'' of Table 1 of LHC Project Report 627 (Ruggiero, Rumolo, Zimmermann, Papaphilippou, RPIA2002) as restated on Zimmermann''s slide 9: 2808 bunches, σ_z
+    7.7 cm, σ_δ 1.1e-4, β* 0.5 m, 300 µrad, 0.86 A, 2.3e34, τ_IBS 86 h; ε_n 3.75 µm and 7 TeV for all columns. Shown as an answer to the LHμC request for ~1 % of today''s LHC bunches
+    at much higher population. Related-machine (LHC upgrade study) values, not LHμC values.'
+  machine: OTHER
+  design_version: LHC Project Report 627 (2002), Table 1, as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    proton_bunches: PROTON_LHC_PR627_BUNCHES_ULTIMATE_WS2026_ZIMMERMANN
+    proton_bunch_length: PROTON_LHC_PR627_RMS_BUNCH_LENGTH_ULTIMATE_WS2026_ZIMMERMANN
+    proton_energy_spread: PROTON_LHC_PR627_ENERGY_SPREAD_ULTIMATE_WS2026_ZIMMERMANN
+    beta_star_proton: PROTON_LHC_PR627_BETA_STAR_ULTIMATE_WS2026_ZIMMERMANN
+    crossing_angle: PROTON_LHC_PR627_CROSSING_ANGLE_ULTIMATE_WS2026_ZIMMERMANN
+    proton_beam_current: PROTON_LHC_PR627_BEAM_CURRENT_ULTIMATE_WS2026_ZIMMERMANN
+    peak_luminosity: PROTON_LHC_PR627_LUMINOSITY_ULTIMATE_WS2026_ZIMMERMANN
+    ibs_growth_time_energy_spread: PROTON_LHC_PR627_IBS_GROWTH_TIME_ULTIMATE_WS2026_ZIMMERMANN
+    proton_norm_emittance: PROTON_LHC_PR627_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_LHC_PR627_BEAM_ENERGY_WS2026_ZIMMERMANN
+    bunch_merging_scaling_relation: PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+  unknown_roles:
+  - proton_bunch_population
+  - revolution_frequency
+  - main_ring_circumference
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
+    crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
+    but is not printed in the table (unknown_roles).'
+- scenario_id: LHC-PR627-UPGRADE-PIWINSKI
+  label: Hypothetical LHC upgrade with large Piwinski parameter (2002), LHC Project Report 627 Table 1
+  description: 'Column ''Upgrade Piwinski'' of Table 1 of LHC Project Report 627 (Ruggiero, Rumolo, Zimmermann, Papaphilippou, RPIA2002) as restated on Zimmermann''s slide 9: 2808 bunches,
+    σ_z 7.7 cm, σ_δ 1.1e-4, β* 0.25 m, 466 µrad, 1.32 A, 7.3e34, τ_IBS 56 h; ε_n 3.75 µm and 7 TeV for all columns. Shown as an answer to the LHμC request for ~1 % of today''s LHC bunches
+    at much higher population. Related-machine (LHC upgrade study) values, not LHμC values.'
+  machine: OTHER
+  design_version: LHC Project Report 627 (2002), Table 1, as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    proton_bunches: PROTON_LHC_PR627_BUNCHES_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    proton_bunch_length: PROTON_LHC_PR627_RMS_BUNCH_LENGTH_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    proton_energy_spread: PROTON_LHC_PR627_ENERGY_SPREAD_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    beta_star_proton: PROTON_LHC_PR627_BETA_STAR_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    crossing_angle: PROTON_LHC_PR627_CROSSING_ANGLE_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    proton_beam_current: PROTON_LHC_PR627_BEAM_CURRENT_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    peak_luminosity: PROTON_LHC_PR627_LUMINOSITY_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    ibs_growth_time_energy_spread: PROTON_LHC_PR627_IBS_GROWTH_TIME_UPGRADE_PIWINSKI_WS2026_ZIMMERMANN
+    proton_norm_emittance: PROTON_LHC_PR627_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_LHC_PR627_BEAM_ENERGY_WS2026_ZIMMERMANN
+    bunch_merging_scaling_relation: PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+  unknown_roles:
+  - proton_bunch_population
+  - revolution_frequency
+  - main_ring_circumference
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: the luminosity is reproduced from the column''s own entries (N_p = I/(e f_rev n_b) with f_rev = 11245 Hz from PROTON_REVOLUTION_FREQUENCY_MULHC, σ* = sqrt(β* ε_n/γ), Gaussian
+    crossing-angle factor, H = 1) to within 2 % (extraction script, recorded in the luminosity record''s validation.methods). Proton bunch population is derivable from the beam current
+    but is not printed in the table (unknown_roles).'
+- scenario_id: LHC-PR627-UPGRADE-SUPERBUNCH
+  label: 'Hypothetical LHC super-bunch upgrade (2002): one 75 m rms super-bunch, LHC Project Report 627 Table 1'
+  description: 'Column ''Upgrade Superbunch'' of Table 1 of LHC Project Report 627 (Ruggiero, Rumolo, Zimmermann, Papaphilippou, RPIA2002) as restated on Zimmermann''s slide 9: 1 bunch
+    of 75 m rms (260 m total; or 10 x 7.5 m rms), σ_δ 5.8e-4, β* 0.25 m, 1000 µrad, 1.0 A, 9.0e34, τ_IBS 1712 h; ε_n 3.75 µm and 7 TeV for all columns. Shown as an answer to the LHμC
+    request for ~1 % of today''s LHC bunches at much higher population. Related-machine (LHC upgrade study) values, not LHμC values.'
+  machine: OTHER
+  design_version: LHC Project Report 627 (2002), Table 1, as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    proton_bunches: PROTON_LHC_PR627_BUNCHES_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    proton_bunch_length: PROTON_LHC_PR627_RMS_BUNCH_LENGTH_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    proton_energy_spread: PROTON_LHC_PR627_ENERGY_SPREAD_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    beta_star_proton: PROTON_LHC_PR627_BETA_STAR_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    crossing_angle: PROTON_LHC_PR627_CROSSING_ANGLE_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    proton_beam_current: PROTON_LHC_PR627_BEAM_CURRENT_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    peak_luminosity: PROTON_LHC_PR627_LUMINOSITY_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    ibs_growth_time_energy_spread: PROTON_LHC_PR627_IBS_GROWTH_TIME_UPGRADE_SUPERBUNCH_WS2026_ZIMMERMANN
+    proton_norm_emittance: PROTON_LHC_PR627_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_LHC_PR627_BEAM_ENERGY_WS2026_ZIMMERMANN
+    bunch_merging_scaling_relation: PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+    superbunch_total_length: PROTON_LHC_PR627_SUPERBUNCH_TOTAL_LENGTH_WS2026_ZIMMERMANN
+    superbunch_alternative_count: PROTON_LHC_PR627_SUPERBUNCH_ALT_COUNT_WS2026_ZIMMERMANN
+    superbunch_alternative_rms_length: PROTON_LHC_PR627_SUPERBUNCH_ALT_RMS_LENGTH_WS2026_ZIMMERMANN
+  unknown_roles:
+  - proton_bunch_population
+  - revolution_frequency
+  - main_ring_circumference
+  - integrated_luminosity_per_year
+  - bunch_spacing
+  geometry_fidelity: G0
+  validation_level: P0
+  notes: 'P0: the super-bunch luminosity needs the report''s long-bunch formula (not reproduced; the Gaussian crossing-angle factor gives ≈ 6.6e34). The scaling relation of Zimmermann''s
+    conclusions (σ_δ σ_z ≈ 2 n_b,0 σ_δ,0 σ_z,0) reproduces this column''s σ_δ σ_z to 9 % (P1 on that record). Relevant to LHμC as the extreme case of ''fewer, more intense bunches''.'
+- scenario_id: QCD-EXPLORER-EPAC2004
+  label: 'QCD Explorer: 7 TeV LHC super-bunch x 75 GeV CLIC-1 electron trains (Schulte & Zimmermann, EPAC 2004 Table 1)'
+  description: 'Electron-proton collider concept restated on Zimmermann''s slide 10: one 6.5e13-proton super-bunch (12.4 m rms uniform in the table; ''30 m long'' in Figure 1) colliding
+    at 100 Hz with 154-bunch CLIC trains of 4e9 electrons spaced 0.66 ns; β* 0.25 m, σ 11 µm, l_IR 2 m, ε_n 73 µm (e) / 3.75 µm (p), L 1.1e31 cm^-2 s^-1, ξ_p 0.004. Related-machine (LHC-based
+    ep) precedent for long proton bunches colliding with lepton bunch trains.'
+  machine: OTHER
+  design_version: EPAC 2004 proceedings, Table 1 'Beam Parameters', as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    electron_beam_energy: MACHINE_QCDX_ELECTRON_BEAM_ENERGY_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_QCDX_BEAM_ENERGY_WS2026_ZIMMERMANN
+    electron_bunch_population: MACHINE_QCDX_ELECTRON_BUNCH_POPULATION_WS2026_ZIMMERMANN
+    proton_bunch_population: PROTON_QCDX_SUPERBUNCH_POPULATION_WS2026_ZIMMERMANN
+    electron_bunch_length: MACHINE_QCDX_ELECTRON_RMS_BUNCH_LENGTH_WS2026_ZIMMERMANN
+    proton_bunch_length: PROTON_QCDX_SUPERBUNCH_RMS_LENGTH_WS2026_ZIMMERMANN
+    superbunch_length_figure: PROTON_QCDX_SUPERBUNCH_FIGURE_LENGTH_WS2026_ZIMMERMANN
+    bunch_spacing: MACHINE_QCDX_ELECTRON_BUNCH_SPACING_WS2026_ZIMMERMANN
+    electron_bunches: MACHINE_QCDX_ELECTRON_BUNCHES_WS2026_ZIMMERMANN
+    proton_bunches: PROTON_QCDX_SUPERBUNCHES_WS2026_ZIMMERMANN
+    electron_line_density: MACHINE_QCDX_ELECTRON_LINE_DENSITY_WS2026_ZIMMERMANN
+    proton_line_density: PROTON_QCDX_SUPERBUNCH_LINE_DENSITY_WS2026_ZIMMERMANN
+    beta_x_star_electron: IR_QCDX_BETA_STAR_WS2026_ZIMMERMANN
+    beta_y_star_electron: IR_QCDX_BETA_STAR_WS2026_ZIMMERMANN
+    beta_star_proton: IR_QCDX_BETA_STAR_WS2026_ZIMMERMANN
+    sigma_x_ip: IR_QCDX_SPOT_SIZE_WS2026_ZIMMERMANN
+    sigma_y_ip: IR_QCDX_SPOT_SIZE_WS2026_ZIMMERMANN
+    sigma_x_ip_proton: IR_QCDX_SPOT_SIZE_WS2026_ZIMMERMANN
+    sigma_y_ip_proton: IR_QCDX_SPOT_SIZE_WS2026_ZIMMERMANN
+    full_interaction_length: IR_QCDX_FULL_INTERACTION_LENGTH_WS2026_ZIMMERMANN
+    electron_norm_emittance: MACHINE_QCDX_ELECTRON_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    proton_norm_emittance: PROTON_QCDX_NORM_EMITTANCE_WS2026_ZIMMERMANN
+    collision_rate: MACHINE_QCDX_COLLISION_FREQUENCY_WS2026_ZIMMERMANN
+    peak_luminosity: MACHINE_QCDX_LUMINOSITY_WS2026_ZIMMERMANN
+    beam_beam_tune_shift_proton: PROTON_QCDX_BEAM_BEAM_TUNE_SHIFT_WS2026_ZIMMERMANN
+    concept: MACHINE_QCDX_CONCEPT_WS2026_ZIMMERMANN
+  unknown_roles:
+  - sqrt_s
+  - crossing_angle
+  - integrated_luminosity_per_year
+  - proton_energy_spread
+  - main_ring_circumference
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: spot sizes (11.2 µm for both beams from β* ε_n/γ), effective line densities (2.02e10 /m electrons over the 30.5 m train; 2.09e12 /m protons = N/(√(2π) σ_z)) and, after
+    verification, the luminosity: L = f_coll n_b N_e λ_p 4β* arctan(l_IR/2β*)/(4π σ*²) = 1.13e31 (σ* = 11 µm) / 1.09e31 (11.2 µm) vs 1.1e31. Observation: 12.4 m rms ''(uniform)'' and
+    ''30 m long'' (Figure 1) are consistent if 12.4 m is the Gaussian-equivalent σ of a flat bunch of effective length √(2π) x 12.4 = 31 m (a uniform bunch of 12.4 m rms would be 43
+    m long); both values are kept as read. sqrt(s) would be 1.45 TeV (arithmetic only).'
+- scenario_id: LHC-DAMERAU-GAROBY-LONGBUNCH-EPAC2004
+  label: 'Damerau-Garoby long flat bunches in the LHC: 16 nominal bunches merged into one (EPAC 2004, CERN-2005-006)'
+  description: 'RF-gymnastics scheme restated on Zimmermann''s slides 11-13: bunch rotation in the SPS (8 MV, 200 MHz, 450 GeV, 0.8 eVs), injection into 40 MHz buckets (h = 3564, 7.5
+    m), merging 16 → 2 → 1 bunches with two new 1.5 MV frequency-variable 40-80 MHz systems (5 x 300 kV cavities each), acceleration to 7 TeV with 3 MV at 40 MHz, final long flat bunch
+    of 28.5 eVs (4-5 m total length in the CERN-2005-006 comparison), collision mode with 0.8/0.8/0.4 MV at 40/80/120 MHz; expected luminosity gain 1.44-1.72 for 2-5 RF harmonics; procedure
+    ~1 min. Related-machine (LHC upgrade) scheme; the closest documented precedent for the ''fewer, more intense LHC bunches'' that LHμC needs.'
+  machine: OTHER
+  design_version: EPAC 2004 proceedings (Tables 1-2, hardware requirements) and CERN-2005-006 Table 3, as restated at the Kraków workshop 2026
+  status: partially_reported
+  primary_source_ids:
+  - SRC_WS1681458_ZIMMERMANN_SPS_LHC
+  parameters:
+    scheme_steps: PROTON_LHC_LONGBUNCH_SCHEME_STEPS_WS2026_ZIMMERMANN
+    bunches_merged: PROTON_LHC_LONGBUNCH_MERGE_RATIO_WS2026_ZIMMERMANN
+    procedure_duration: PROTON_LHC_LONGBUNCH_PROCEDURE_DURATION_WS2026_ZIMMERMANN
+    harmonic_number_40mhz: PROTON_LHC_LONGBUNCH_HARMONIC_NUMBER_40MHZ_WS2026_ZIMMERMANN
+    rf_wavelength_40mhz: PROTON_LHC_LONGBUNCH_RF_WAVELENGTH_40MHZ_WS2026_ZIMMERMANN
+    sps_ejection_energy: PROTON_LHC_LONGBUNCH_SPS_EJECTION_ENERGY_WS2026_ZIMMERMANN
+    proton_beam_energy: PROTON_LHC_LONGBUNCH_FLAT_TOP_ENERGY_WS2026_ZIMMERMANN
+    sps_rf_voltage: PROTON_LHC_LONGBUNCH_SPS_RF_VOLTAGE_WS2026_ZIMMERMANN
+    sps_rf_frequency: PROTON_LHC_LONGBUNCH_SPS_RF_FREQUENCY_WS2026_ZIMMERMANN
+    acceleration_rf_voltage_40mhz: PROTON_LHC_LONGBUNCH_ACCELERATION_RF_VOLTAGE_WS2026_ZIMMERMANN
+    new_rf_systems: PROTON_LHC_LONGBUNCH_NEW_RF_SYSTEMS_COUNT_WS2026_ZIMMERMANN
+    new_rf_voltage_each: PROTON_LHC_LONGBUNCH_NEW_RF_VOLTAGE_EACH_WS2026_ZIMMERMANN
+    new_rf_frequency_min: PROTON_LHC_LONGBUNCH_NEW_RF_FREQUENCY_MIN_WS2026_ZIMMERMANN
+    new_rf_frequency_max: PROTON_LHC_LONGBUNCH_NEW_RF_FREQUENCY_MAX_WS2026_ZIMMERMANN
+    fixed_frequency_option: PROTON_LHC_LONGBUNCH_FIXED_FREQUENCY_OPTION_WS2026_ZIMMERMANN
+    voltage_per_cavity: PROTON_LHC_LONGBUNCH_VOLTAGE_PER_CAVITY_WS2026_ZIMMERMANN
+    cavities_per_system: PROTON_LHC_LONGBUNCH_CAVITIES_PER_SYSTEM_WS2026_ZIMMERMANN
+    conclusion: PROTON_LHC_LONGBUNCH_CONCLUSION_WS2026_ZIMMERMANN
+    lambda2_integral_n1: PROTON_LHC_LONGBUNCH_LAMBDA2_INTEGRAL_N1_WS2026_ZIMMERMANN
+    luminosity_gain_n1: PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N1_WS2026_ZIMMERMANN
+    total_rf_voltage_n1: PROTON_LHC_LONGBUNCH_TOTAL_RF_VOLTAGE_N1_WS2026_ZIMMERMANN
+    lambda2_integral_n2: PROTON_LHC_LONGBUNCH_LAMBDA2_INTEGRAL_N2_WS2026_ZIMMERMANN
+    luminosity_gain_n2: PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N2_WS2026_ZIMMERMANN
+    total_rf_voltage_n2: PROTON_LHC_LONGBUNCH_TOTAL_RF_VOLTAGE_N2_WS2026_ZIMMERMANN
+    lambda2_integral_n3: PROTON_LHC_LONGBUNCH_LAMBDA2_INTEGRAL_N3_WS2026_ZIMMERMANN
+    luminosity_gain_n3: PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N3_WS2026_ZIMMERMANN
+    total_rf_voltage_n3: PROTON_LHC_LONGBUNCH_TOTAL_RF_VOLTAGE_N3_WS2026_ZIMMERMANN
+    lambda2_integral_n4: PROTON_LHC_LONGBUNCH_LAMBDA2_INTEGRAL_N4_WS2026_ZIMMERMANN
+    luminosity_gain_n4: PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N4_WS2026_ZIMMERMANN
+    total_rf_voltage_n4: PROTON_LHC_LONGBUNCH_TOTAL_RF_VOLTAGE_N4_WS2026_ZIMMERMANN
+    lambda2_integral_n5: PROTON_LHC_LONGBUNCH_LAMBDA2_INTEGRAL_N5_WS2026_ZIMMERMANN
+    luminosity_gain_n5: PROTON_LHC_LONGBUNCH_LUMINOSITY_GAIN_N5_WS2026_ZIMMERMANN
+    total_rf_voltage_n5: PROTON_LHC_LONGBUNCH_TOTAL_RF_VOLTAGE_N5_WS2026_ZIMMERMANN
+    longitudinal_emittance_sps_ejection: PROTON_LHC_LONGBUNCH_EMITTANCE_SPS_EJECTION_WS2026_ZIMMERMANN
+    longitudinal_emittance_lhc_injection: PROTON_LHC_LONGBUNCH_EMITTANCE_LHC_INJECTION_WS2026_ZIMMERMANN
+    longitudinal_emittance_after_400mhz_blowup: PROTON_LHC_LONGBUNCH_EMITTANCE_AFTER_400MHZ_BLOWUP_WS2026_ZIMMERMANN
+    longitudinal_emittance_after_batch_compression: PROTON_LHC_LONGBUNCH_EMITTANCE_AFTER_BATCH_COMPRESSION_WS2026_ZIMMERMANN
+    longitudinal_emittance_flat_top: PROTON_LHC_LONGBUNCH_EMITTANCE_FLAT_TOP_WS2026_ZIMMERMANN
+    longitudinal_emittance_final_long_bunch: PROTON_LHC_LONGBUNCH_EMITTANCE_FINAL_LONG_BUNCH_WS2026_ZIMMERMANN
+    longitudinal_emittance_collision_mode: PROTON_LHC_LONGBUNCH_EMITTANCE_COLLISION_MODE_WS2026_ZIMMERMANN
+    blowup_lhc_injection: PROTON_LHC_LONGBUNCH_BLOWUP_LHC_INJECTION_WS2026_ZIMMERMANN
+    blowup_after_400mhz_blowup: PROTON_LHC_LONGBUNCH_BLOWUP_AFTER_400MHZ_BLOWUP_WS2026_ZIMMERMANN
+    blowup_after_batch_compression: PROTON_LHC_LONGBUNCH_BLOWUP_AFTER_BATCH_COMPRESSION_WS2026_ZIMMERMANN
+    blowup_flat_top: PROTON_LHC_LONGBUNCH_BLOWUP_FLAT_TOP_WS2026_ZIMMERMANN
+    blowup_final_long_bunch: PROTON_LHC_LONGBUNCH_BLOWUP_FINAL_LONG_BUNCH_WS2026_ZIMMERMANN
+    flat_bunch_option_total_length_min: PROTON_LHC_FLATBUNCH_LONG_FLAT_TOTAL_LENGTH_MIN_WS2026_ZIMMERMANN
+    flat_bunch_option_total_length_max: PROTON_LHC_FLATBUNCH_LONG_FLAT_TOTAL_LENGTH_MAX_WS2026_ZIMMERMANN
+    flat_bunch_option_additional_rf: PROTON_LHC_FLATBUNCH_LONG_FLAT_ADDITIONAL_RF_WS2026_ZIMMERMANN
+    flat_bunch_option_assessment: PROTON_LHC_FLATBUNCH_LONG_FLAT_ASSESSMENT_WS2026_ZIMMERMANN
+    bunch_merging_scaling_relation: PROTON_BUNCH_MERGING_SCALING_RELATION_WS2026_ZIMMERMANN
+    collision_mode_rf: PROTON_LHC_LONGBUNCH_COLLISION_MODE_RF_WS2026_ZIMMERMANN
+  unknown_roles:
+  - proton_bunch_population
+  - proton_bunch_length
+  - proton_energy_spread
+  - peak_luminosity
+  - beta_star_proton
+  - crossing_angle
+  - proton_norm_emittance
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: the longitudinal-emittance chain of Table 2 is reproduced from its own blow-up factors (0.8 → 1.0 → 1.1 → 8 x 1.1 x 1.40 = 12.3 → 12.9 → 2 x 12.9 x 1.10 = 28.4 ≈ 28.5 eVs);
+    5 x 300 kV = 1.5 MV; h = 3564 ↔ 7.5 m ↔ 40 MHz. Not reproduced: the Table 1 luminosity gains (∫λ² ratios match for n = 3-5 but not n = 2). The absolute bunch population of the merged
+    bunch is not printed on the slides.'

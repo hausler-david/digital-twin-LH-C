@@ -1,0 +1,1389 @@
+# Booster-ring and main-ring parameters of μTRISTAN from SRC_ARXIV_2201_06664 (Hamada et al., arXiv:2201.06664v2 / PTEP 2022 053B02),
+# sections 2.3-2.5, 2.7, 4 and Figure 1. Status imported_related (related machine). page = PDF page index (= printed page).
+# Unknowns left as null/absent: booster injection energy (only 'pre-accelerated'), RF frequency/voltage of the booster linacs,
+# arc filling factor, main-ring lattice, IP crossing angle. Internal inconsistencies preserved, not averaged: Figure 1 2.2 nC vs text
+# 2.3 nC bunch charge; 'about a half' decay loss vs the μLHC recomputation (82 %); 3 T x 1 km arcs vs 1 TeV.
+# Verification 2026-10-29 (research/_fragments/verify_G3_ACCELERATION.md): geometric emittance corrected from 0.42 mm mrad to 420 nm mrad as
+# printed (the old value was 1000 x too large and the two beam-size P1 checks had computed 112 µm and 54 µm against the printed 3.6/1.7 µm);
+# 3 T arc-field record P1 -> P0 (the check fails by 10 %); decay-loss audit redone (stepwise model reproduces the μLHC 82 %).
+parameters:
+  - parameter_id: ACC_BOOSTER_INJECTION_ENERGY_MUTRISTAN2022
+    name: Muon energy at injection into the μTRISTAN booster ring (not stated; muons are only said to be 'pre-accelerated')
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: null
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: unknown
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The ultra-cold muons are pre-accelerated and injected to the booster ring of the race-track shape (see Fig. 1). The length of the LINAC part is 3 km and there are arc sections with R = 1 km where the alternative gradient bending magnet of 3 T is used.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value. The paper gives no injection energy; the μLHC adaptation (Phase 0, ACC_BOOSTER_INJECTION_ENERGY_MULHC) uses 212 MeV.'}
+      confidence: none
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Unknown: value null.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_SHAPE_MUTRISTAN2022
+    name: Booster ring layout (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: racetrack
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The ultra-cold muons are pre-accelerated and injected to the booster ring of the race-track shape (see Fig. 1). The length of the LINAC part is 3 km and there are arc sections with R = 1 km where the alternative gradient bending magnet of 3 T is used.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN2022
+    name: Length of each LINAC section of the booster ring
+    symbol: L_linac
+    subsystem: acceleration
+    scenario: null
+    value: 3
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The ultra-cold muons are pre-accelerated and injected to the booster ring of the race-track shape (see Fig. 1). The length of the LINAC part is 3 km and there are arc sections with R = 1 km where the alternative gradient bending magnet of 3 T is used.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Figure 1 labels both straights '30 GeV muon LINAC ～ 3 km'. Phase 0 restated this via μLHC as ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN_MULHC.
+
+  - parameter_id: ACC_BOOSTER_ARC_RADIUS_MUTRISTAN2022
+    name: Bending radius of the booster arc sections
+    symbol: R_arc
+    subsystem: acceleration
+    scenario: null
+    value: 1
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The ultra-cold muons are pre-accelerated and injected to the booster ring of the race-track shape (see Fig. 1). The length of the LINAC part is 3 km and there are arc sections with R = 1 km where the alternative gradient bending magnet of 3 T is used.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Figure 1 label: ''R=1 km (B = 3 T max)''.'
+
+  - parameter_id: ACC_BOOSTER_ARC_DIPOLE_FIELD_MUTRISTAN2022
+    name: Field of the alternating-gradient bending magnets in the booster arcs (maximum)
+    symbol: B_arc
+    subsystem: acceleration
+    scenario: null
+    value: 3
+    unit: T
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The ultra-cold muons are pre-accelerated and injected to the booster ring of the race-track shape (see Fig. 1). The length of the LINAC part is 3 km and there are arc sections with R = 1 km where the alternative gradient bending magnet of 3 T is used.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Not reproduced (inconsistent, ~10 %): 3 T on a 1 km bending radius bends p = 0.2998 x 3 x 1000 = 899 GeV/c; 1 TeV at R = 1 km needs Brho/R = 3.34 T even with fully filled arcs. The paper gives no filling factor; inconsistency noted, not resolved (conflict candidate).'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_TOP_ENERGY_MUTRISTAN2022
+    name: Muon energy at extraction from the booster ring
+    symbol: E_ext
+    subsystem: acceleration
+    scenario: null
+    value: 1
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [16 turns x 2 linacs x 30 GeV = 960 GeV = 0.96 x 1 TeV (within 4 %; the unstated pre-acceleration energy adds to it)], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_LINAC_COUNT_MUTRISTAN2022
+    name: Number of LINAC sections in the booster racetrack
+    symbol: N_linac
+    subsystem: acceleration
+    scenario: null
+    value: 2
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_ENERGY_GAIN_PER_LINAC_MUTRISTAN2022
+    name: Energy gain per LINAC pass in the booster
+    symbol: dE_linac
+    subsystem: acceleration
+    scenario: null
+    value: 30
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_TURNS_MUTRISTAN2022
+    name: Number of booster turns to reach 1 TeV
+    symbol: N_turns
+    subsystem: acceleration
+    scenario: null
+    value: 16
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [(1000 GeV - E_inj)/(2 x 30 GeV) = 16.7 for E_inj ≈ 0; 16 full turns give 960 GeV (4 % below 1 TeV)], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_ENERGY_GAIN_PER_TURN_MUTRISTAN2022
+    name: 'Energy gain per booster turn (audit arithmetic: two linacs of 30 GeV)'
+    symbol: dE_turn
+    subsystem: acceleration
+    scenario: null
+    value: 60
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: dE_turn = ACC_BOOSTER_LINAC_COUNT_MUTRISTAN2022 x ACC_BOOSTER_ENERGY_GAIN_PER_LINAC_MUTRISTAN2022 = 2 x 30 GeV
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [2 x 30 = 60], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_LINAC_COUNT_MUTRISTAN2022, ACC_BOOSTER_ENERGY_GAIN_PER_LINAC_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_TOTAL_ENERGY_GAIN_MUTRISTAN2022
+    name: Total energy gain over the 16 booster turns (audit arithmetic)
+    symbol: dE_total
+    subsystem: acceleration
+    scenario: null
+    value: 960
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: dE_total = ACC_BOOSTER_TURNS_MUTRISTAN2022 x ACC_BOOSTER_ENERGY_GAIN_PER_TURN_MUTRISTAN2022 = 16 x 60 GeV
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['16 x 60 = 960; consistent with the μLHC adaptation (960 GeV, ACC_BOOSTER_EXTRACTION_ENERGY_MUTRISTAN_MULHC)'], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_TURNS_MUTRISTAN2022, ACC_BOOSTER_ENERGY_GAIN_PER_TURN_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN2022
+    name: Booster circumference implied by two 3 km linacs and two semicircular 1 km-radius arcs (audit arithmetic)
+    symbol: C_booster
+    subsystem: acceleration
+    scenario: null
+    value: 12.28
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 30 GeV muon LINAC ～ 3 km ... R=1 km (B = 3 T max)}
+      derivation: C = 2 x ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN2022 + 2 pi x ACC_BOOSTER_ARC_RADIUS_MUTRISTAN2022 = 6 km + 6.28 km (semicircular arcs assumed from the racetrack sketch of Figure 1)
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [2 x 3000 + 2 pi x 1000 = 1.228e+04 m], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_LINAC_LENGTH_MUTRISTAN2022, ACC_BOOSTER_ARC_RADIUS_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Estimate: the paper gives no booster circumference; semicircular arcs of radius 1 km between the two 3 km linacs are an assumption read from the racetrack sketch of Figure 1.'
+
+  - parameter_id: ACC_BOOSTER_REVOLUTION_PERIOD_MUTRISTAN2022
+    name: Booster revolution period implied by the circumference (audit arithmetic)
+    symbol: T_rev
+    subsystem: acceleration
+    scenario: null
+    value: 40.97
+    unit: us
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analytical_estimate
+      extraction_method: computed_from_registry
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 16 turns ～ 700μs}
+      derivation: T_rev = ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN2022 / c = 12.28 km / c
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['12283 m / c = 40.97 µs; 16 turns = 656 µs, consistent with the stated ''about 700 µs'''], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_CIRCUMFERENCE_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_ACCELERATION_TIME_MUTRISTAN2022
+    name: Duration of the 16-turn booster acceleration cycle
+    symbol: T_acc
+    subsystem: acceleration
+    scenario: null
+    value: 700
+    unit: us
+    uncertainty: {type: not_stated, note: source says 'about 700 µs'; Figure 1 label '16 turns ～ 700μs'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'The booster ring is used to accelerate the µ+ beam up to the energy of 1 TeV. In each of the two LINAC parts of the booster ring, the µ+ beam is accelerated by 30 GeV, with which 1 TeV beam is achieved by 16 turns. This takes about 700 µs.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [16 x (12.28 km / c) = 655 µs reproduces 'about 700 µs' to 7 % (ACC_BOOSTER_REVOLUTION_PERIOD_MUTRISTAN2022)], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_REVOLUTION_PERIOD_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_LINAC_ELECTRON_SHARING_MUTRISTAN2022
+    name: The booster LINAC is also used intermittently to accelerate the electrons for the μ+e- collider (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: LINAC_shared_with_electron_acceleration
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: The LINAC is also used for the electron acceleration intermittently for the µ+ e− collider.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_DECAY_LOSS_FRACTION_MUTRISTAN2022
+    name: Fraction of muons lost to decay during booster acceleration ('about a half')
+    symbol: f_decay
+    subsystem: acceleration
+    scenario: null
+    value: 0.5
+    unit: dimensionless
+    uncertainty: {type: not_stated, note: source says 'about a half'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'During the acceleration, about a half of the muons decays and the bunch charge is reduced to about 3.6 nC. Taking into account the beam loss, the total beam loading is about 9 MW.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Conflict preserved, not averaged: the μLHC paper recomputes the survival of the same booster as 82 % (Phase 0 ACC_BOOSTER_SURVIVAL_MUTRISTAN_MULHC). Verifier audit: 32 linac passes of 30 GeV (gain linear along each 3 km linac) with pi x 1 km arcs at constant energy, starting from the μLHC injection energy 212 MeV, give 82.2 % survival at 960 GeV (reproducing the μLHC 82 %); a linear-in-time ramp 0.212 -> 960 GeV over 16 x 40.97 µs gives 77 %. The extractor''s ''~90 %'' started the ramp at 60 GeV and omitted the first turn, where most decays occur (90 % for 60 GeV -> 1 TeV over 700 µs). All are well above ''about a half'', which is compatible only with a much slower low-energy pre-acceleration that the paper does not describe.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Figure 1 label '(7.2nC=>3.6nC)' encodes the same factor of two.
+
+  - parameter_id: ACC_BOOSTER_INPUT_BUNCH_CHARGE_MUTRISTAN2022
+    name: Muon bunch charge at booster injection (Figure 1 label '7.2nC=>3.6nC')
+    symbol: Q_in
+    subsystem: acceleration
+    scenario: null
+    value: 7.2
+    unit: nC
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 1 TeV x (7.2nC=>3.6nC)/µ x 40 bunch x 50Hz = 9 MW}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: The 7.2 nC per bunch is the ultra-cold muon yield of §2.2 (source-chain records SOURCE_*_MUTRISTAN2022 cover its derivation).
+
+  - parameter_id: ACC_BOOSTER_OUTPUT_BUNCH_CHARGE_MUTRISTAN2022
+    name: Muon bunch charge at booster extraction after decay losses
+    symbol: Q_out
+    subsystem: acceleration
+    scenario: null
+    value: 3.6
+    unit: nC
+    uncertainty: {type: not_stated, note: source says 'about 3.6 nC'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'During the acceleration, about a half of the muons decays and the bunch charge is reduced to about 3.6 nC. Taking into account the beam loss, the total beam loading is about 9 MW.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [7.2 nC x (1 - 0.5) = 3.6 nC], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_INPUT_BUNCH_CHARGE_MUTRISTAN2022, ACC_BOOSTER_DECAY_LOSS_FRACTION_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_BUNCHES_MUTRISTAN2022
+    name: Number of muon bunches per booster cycle
+    symbol: n_b
+    subsystem: acceleration
+    scenario: null
+    value: 40
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 1 TeV x (7.2nC=>3.6nC)/µ x 40 bunch x 50Hz = 9 MW}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Text p.8: ''the µ+ e− collider can use all the 40 bunches''.'
+
+  - parameter_id: ACC_BOOSTER_REPETITION_RATE_MUTRISTAN2022
+    name: Booster cycle repetition rate (set by the proton driver)
+    symbol: f_rep
+    subsystem: acceleration
+    scenario: null
+    value: 50
+    unit: Hz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'In accordance with the injection rate at 50 Hz, we keep the muon beam in the main ring for 20 ms, which is equal to the muon lifetime.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Figure 1 label: ''... x 40 bunch x 50Hz = 9 MW''.'
+
+  - parameter_id: ACC_BOOSTER_BEAM_LOADING_POWER_MUTRISTAN2022
+    name: Total beam loading power of the booster ring
+    symbol: P_beam
+    subsystem: acceleration
+    scenario: null
+    value: 9
+    unit: MW
+    uncertainty: {type: not_stated, note: source says 'about 9 MW'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.3 Muon accelerator, table_figure_or_equation: null, quotation: 'During the acceleration, about a half of the muons decays and the bunch charge is reduced to about 3.6 nC. Taking into account the beam loss, the total beam loading is about 9 MW.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Not reproduced exactly: 1 TeV x 3.6 nC x 40 x 50 Hz = 7.2 MW and with 7.2 nC 14.4 MW; the time-averaged charge under exponential decay from 7.2 to 3.6 nC gives (7.2-3.6)/ln2 = 5.19 nC, i.e. 10.4 MW. The figure label ''1 TeV x (7.2nC=>3.6nC)/µ x 40 bunch x 50Hz = 9 MW'' states 9 MW without the averaging rule.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_CIRCUMFERENCE_MUTRISTAN2022
+    name: Main (storage) ring circumference
+    symbol: C_ring
+    subsystem: machine
+    scenario: null
+    value: 3
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: The accelerated beam is transported to the main ring with the circumference of 3 km.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Reference design: the TRISTAN ring size (§2.7: ''we assumed the circumference of the storage ring as the size of the TRISTAN ring, 3 km'').'
+
+  - parameter_id: MACHINE_MAIN_RING_STORAGE_TIME_MUTRISTAN2022
+    name: Muon storage time per fill in the main ring
+    symbol: T_store
+    subsystem: machine
+    scenario: null
+    value: 20
+    unit: ms
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'In accordance with the injection rate at 50 Hz, we keep the muon beam in the main ring for 20 ms, which is equal to the muon lifetime.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [1/(50 Hz) = 20 ms], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_REPETITION_RATE_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_LIFETIME_LAB_1TEV_MUTRISTAN2022
+    name: Laboratory-frame muon lifetime at 1 TeV as used by the authors
+    symbol: gamma tau_mu
+    subsystem: machine
+    scenario: null
+    value: 20
+    unit: ms
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 6, section: 2.1 Proton accelerator and pion production ring (quotation starts on PDF p.4), table_figure_or_equation: null, quotation: 'The operation at 50 Hz is set by the lifetime of the muon at the energy of 1 TeV, γτµ = 20 ms, so that a new beam is injected after muons spend their lifetime in the storage ring.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [gamma = 1000/0.10566 = 9464; gamma x 2.1970 µs = 20.8 ms (rounded to 20 ms in the paper)], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_TURNS_PER_FILL_MUTRISTAN2022
+    name: Number of main-ring turns during the 20 ms storage time (Figure 1 label)
+    symbol: N_turns
+    subsystem: machine
+    scenario: null
+    value: 2000
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 3 km Main ring τµ = 20 ms (2000 turns)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [20 ms / (3 km / c = 10.01 µs) = 1999 turns], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_TIME_AVERAGED_BUNCH_CHARGE_MUTRISTAN2022
+    name: Time-averaged muon bunch charge in the main ring over one 20 ms fill
+    symbol: <Q>
+    subsystem: machine
+    scenario: null
+    value: 2.3
+    unit: nC
+    uncertainty: {type: not_stated, note: source says 'about 2.3 nC'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'Due to the decay of the muons during this time, the time-average number of the muons is (1 − 1/e)Ninitial with Ninitial = 3.6 nC, which reduces to about 2.3 nC.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [(1 - 1/e) x 3.6 nC = 2.28 nC], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_OUTPUT_BUNCH_CHARGE_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Figure 1 prints 2.2 nC for the same quantity (MACHINE_MAIN_RING_BUNCH_CHARGE_FIGURE_MUTRISTAN2022); both kept, not averaged.'
+
+  - parameter_id: MACHINE_MAIN_RING_BUNCH_CHARGE_FIGURE_MUTRISTAN2022
+    name: Muon bunch charge in the main ring as printed in Figure 1 (2.2 nC; the text says 2.3 nC)
+    symbol: Q_bunch
+    subsystem: machine
+    scenario: null
+    value: 2.2
+    unit: nC
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 'µ+µ+ : 1 TeV, 2.2 nC x 1 TeV,2.2 nC x 20bunch ... µ+e- : 1 TeV, 2.2 nC x 30 GeV,10 nC x 40bunch'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: Internal inconsistency of the source (2.2 nC in Figure 1 vs 2.3 nC in the text and Eq. (3)); preserved as two records.}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_INJECTION_RATE_FACTOR_MUTRISTAN2022
+    name: Injection-rate factor κ (injection at 50/κ Hz) chosen by the authors
+    symbol: kappa
+    subsystem: machine
+    scenario: null
+    value: 1
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'In general, for an injection rate at 50/κ Hz, the reduction factor of the time-average number is given by (1 − e^−κ)/κ. A large κ reduces the luminosity linearly while a small κ requires more electric power consumption at the booster ring. We take κ = 1 as the optimal choice.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_MUMU_BUNCHES_PER_BEAM_MUTRISTAN2022
+    name: Number of μ+ bunches per beam in the μ+μ+ configuration
+    symbol: n_b
+    subsystem: machine
+    scenario: null
+    value: 20
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'For the µ+ µ+ collider, the µ+ beam is split into two beams, so that each beam has 20 bunches, while the µ+ e− collider can use all the 40 bunches.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [40/2 = 20], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_BUNCHES_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_MUE_BUNCHES_MUTRISTAN2022
+    name: Number of μ+ bunches in the μ+e- configuration
+    symbol: n_b
+    subsystem: machine
+    scenario: null
+    value: 40
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'For the µ+ µ+ collider, the µ+ beam is split into two beams, so that each beam has 20 bunches, while the µ+ e− collider can use all the 40 bunches.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_REVOLUTION_FREQUENCY_MUTRISTAN2022
+    name: Main-ring revolution frequency (3 km ring)
+    symbol: f_rev
+    subsystem: machine
+    scenario: null
+    value: 100
+    unit: kHz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'The collision frequency, frep, for the 3 km ring is 100 kHz times the number of bunches'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [c / 3 km = 99.93 kHz], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_COLLISION_FREQUENCY_MUE_MUTRISTAN2022
+    name: Collision frequency of the μ+e- collider (Eq. 1)
+    symbol: f_rep(μ+e-)
+    subsystem: machine
+    scenario: null
+    value: 4
+    unit: MHz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (1), quotation: 'frep(µ+e−) = 4 MHz, frep(µ+µ+) = 2 MHz, (1)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [100 kHz x 40 bunches = 4 MHz], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MAIN_RING_REVOLUTION_FREQUENCY_MUTRISTAN2022, MACHINE_MAIN_RING_MUE_BUNCHES_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_COLLISION_FREQUENCY_MUMU_MUTRISTAN2022
+    name: Collision frequency of the μ+μ+ collider (Eq. 1)
+    symbol: f_rep(μ+μ+)
+    subsystem: machine
+    scenario: null
+    value: 2
+    unit: MHz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (1), quotation: 'frep(µ+e−) = 4 MHz, frep(µ+µ+) = 2 MHz, (1)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [100 kHz x 20 bunches = 2 MHz], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MAIN_RING_REVOLUTION_FREQUENCY_MUTRISTAN2022, MACHINE_MAIN_RING_MUMU_BUNCHES_PER_BEAM_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_GEOMETRIC_EMITTANCE_1TEV_MUTRISTAN2022
+    name: 'Geometric emittance of the 1 TeV μ+ beam (source: 420 nm mrad)'
+    symbol: eps
+    subsystem: machine
+    scenario: null
+    value: 420
+    unit: nm mrad
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'By the ultra-cold muon technology, one can obtain the normalized emittance, βγϵ, of the µ+ beam to be 4 mm mrad [14]. By the acceleration up to 1 TeV, i.e., βγ ∼ 10^4, the emittance is reduced to ϵ = 420 nm mrad. By taking the realistic values of the beta functions of the collision point as βx = 30 mm and βy = 7 mm, we obtain the beam sizes σx and σy as σx = 3.6 µm, σy = 1.7 µm. (2)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['4 mm mrad / (beta gamma = 9464 at 1 TeV) = 4e-6 m rad / 9464 = 4.226e-10 m rad = 422.6 nm mrad, reproduces 420 nm mrad (0.6 %)'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Stored as printed: 420 nm mrad = 4.2e-10 m rad. The 4 mm mrad normalised emittance is a source-chain value (SOURCE_USM_NORM_EMITTANCE_MUTRISTAN2022).'
+
+  - parameter_id: MACHINE_MU_BETA_X_STAR_MUTRISTAN2022
+    name: Horizontal beta function of the μ+ beam at the collision point
+    symbol: beta_x*
+    subsystem: interaction_region
+    scenario: null
+    value: 30
+    unit: mm
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (2), quotation: 'By the ultra-cold muon technology, one can obtain the normalized emittance, βγϵ, of the µ+ beam to be 4 mm mrad [14]. By the acceleration up to 1 TeV, i.e., βγ ∼ 10^4, the emittance is reduced to ϵ = 420 nm mrad. By taking the realistic values of the beta functions of the collision point as βx = 30 mm and βy = 7 mm, we obtain the beam sizes σx and σy as σx = 3.6 µm, σy = 1.7 µm. (2)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_BETA_Y_STAR_MUTRISTAN2022
+    name: Vertical beta function of the μ+ beam at the collision point
+    symbol: beta_y*
+    subsystem: interaction_region
+    scenario: null
+    value: 7
+    unit: mm
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (2), quotation: 'By the ultra-cold muon technology, one can obtain the normalized emittance, βγϵ, of the µ+ beam to be 4 mm mrad [14]. By the acceleration up to 1 TeV, i.e., βγ ∼ 10^4, the emittance is reduced to ϵ = 420 nm mrad. By taking the realistic values of the beta functions of the collision point as βx = 30 mm and βy = 7 mm, we obtain the beam sizes σx and σy as σx = 3.6 µm, σy = 1.7 µm. (2)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_SIGMA_X_IP_MUTRISTAN2022
+    name: Horizontal rms beam size of the μ+ beam at the collision point
+    symbol: sigma_x
+    subsystem: interaction_region
+    scenario: null
+    value: 3.6
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (2), quotation: 'By the ultra-cold muon technology, one can obtain the normalized emittance, βγϵ, of the µ+ beam to be 4 mm mrad [14]. By the acceleration up to 1 TeV, i.e., βγ ∼ 10^4, the emittance is reduced to ϵ = 420 nm mrad. By taking the realistic values of the beta functions of the collision point as βx = 30 mm and βy = 7 mm, we obtain the beam sizes σx and σy as σx = 3.6 µm, σy = 1.7 µm. (2)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['sqrt(eps beta_x*) = sqrt(4.2e-10 m x 0.030 m) = 3.55 µm, reproduces 3.6 µm'], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MU_GEOMETRIC_EMITTANCE_1TEV_MUTRISTAN2022, MACHINE_MU_BETA_X_STAR_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_SIGMA_Y_IP_MUTRISTAN2022
+    name: Vertical rms beam size of the μ+ beam at the collision point
+    symbol: sigma_y
+    subsystem: interaction_region
+    scenario: null
+    value: 1.7
+    unit: um
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 8, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (2), quotation: 'By the ultra-cold muon technology, one can obtain the normalized emittance, βγϵ, of the µ+ beam to be 4 mm mrad [14]. By the acceleration up to 1 TeV, i.e., βγ ∼ 10^4, the emittance is reduced to ϵ = 420 nm mrad. By taking the realistic values of the beta functions of the collision point as βx = 30 mm and βy = 7 mm, we obtain the beam sizes σx and σy as σx = 3.6 µm, σy = 1.7 µm. (2)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['sqrt(eps beta_y*) = sqrt(4.2e-10 m x 0.007 m) = 1.71 µm, reproduces 1.7 µm'], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MU_GEOMETRIC_EMITTANCE_1TEV_MUTRISTAN2022, MACHINE_MU_BETA_Y_STAR_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_E_FOCUSING_ASSUMPTION_MUTRISTAN2022
+    name: Electron-beam focusing assumed equal to the muon beam's (conservative) (categorical)
+    symbol: null
+    subsystem: interaction_region
+    scenario: null
+    value: same_IP_focusing_as_muon_beam
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: We conservatively assume the same focusing of the e− beam although much better focusing should be possible by comparing with the design of SuperKEKB.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MU_BUNCH_POPULATION_IP_MUTRISTAN2022
+    name: Time-averaged number of μ+ per bunch at the collision point (Eq. 3)
+    symbol: N_mu+
+    subsystem: machine
+    scenario: null
+    value: 14000000000
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (3), quotation: 'By taking 2.3 nC as the bunch charge, the number of µ+ per bunch as Nµ+ = 1.4 × 10^10. (3)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [2.3 nC / e = 1.44e+10], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MAIN_RING_TIME_AVERAGED_BUNCH_CHARGE_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_E_BUNCH_CHARGE_MUTRISTAN2022
+    name: Electron bunch charge assumed for the μ+e- collider
+    symbol: Q_e
+    subsystem: machine
+    scenario: null
+    value: 10
+    unit: nC
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (4), quotation: 'For the e− beam, we take 10 nC as a realistic bunch charge, i.e., Ne− = 6.2 × 10^10. (4)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_E_BUNCH_POPULATION_MUTRISTAN2022
+    name: Number of electrons per bunch (Eq. 4)
+    symbol: N_e-
+    subsystem: machine
+    scenario: null
+    value: 62000000000
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (4), quotation: 'For the e− beam, we take 10 nC as a realistic bunch charge, i.e., Ne− = 6.2 × 10^10. (4)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [10 nC / e = 6.24e+10], check_ids: [], notes: ''}
+    dependencies: [MACHINE_E_BUNCH_CHARGE_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LUMINOSITY_FORMULA_MUTRISTAN2022
+    name: Luminosity formula used by the authors (Eq. 5) (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: L = N1 N2 f_rep / (4 pi sigma_x sigma_y)
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (5), quotation: 'By using the formula for the instantaneous luminosity, L = Nbeam1 Nbeam2/(4πσx σy) frep , (5)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_PEAK_LUMINOSITY_MUE_MUTRISTAN2022
+    name: Instantaneous luminosity of the μ+e- collider (Eq. 6)
+    symbol: L(μ+e-)
+    subsystem: machine
+    scenario: null
+    value: 4.6e+33
+    unit: cm^-2 s^-1
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (6), quotation: we obtain the luminosity of the µ+ e− collider as Lµ+e− = 4.6 × 10^33 cm−2 s−1. (6)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [1.4e10 x 6.2e10 x 4 MHz / (4 pi x 3.6 µm x 1.7 µm) = 4.51e+33 cm^-2 s^-1 (2 % from the rounded inputs)], check_ids: [], notes: ''}
+    dependencies: [MACHINE_MU_BUNCH_POPULATION_IP_MUTRISTAN2022, MACHINE_E_BUNCH_POPULATION_MUTRISTAN2022, MACHINE_COLLISION_FREQUENCY_MUE_MUTRISTAN2022, MACHINE_MU_SIGMA_X_IP_MUTRISTAN2022, MACHINE_MU_SIGMA_Y_IP_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MUMU_DECAY_REDUCTION_FACTOR_MUTRISTAN2022
+    name: 'Time-averaged luminosity reduction factor from decay of both μ+ beams at 50 Hz, (1-1/e^2)/2'
+    symbol: f_decay
+    subsystem: machine
+    scenario: null
+    value: 0.4323
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: 'In the case of the µ+ µ+ collider, both of the beams reduce their intensities due to the muon decay. For the operation at 50 Hz, the time averaged reduction due to the decay is (1−1/e^2)/2 rather than (1 − 1/e)^2.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [(1 - e^-2)/2 = 0.4323; (1 - 1/e)^2 = 0.3996], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'The paper prints the expression (1 - 1/e^2)/2; 0.4323 is its numerical value (the alternative it rejects, (1 - 1/e)^2, is 0.3996).'
+
+  - parameter_id: MACHINE_PEAK_LUMINOSITY_MUMU_MUTRISTAN2022
+    name: Instantaneous luminosity of the μ+μ+ collider (Eq. 7)
+    symbol: L(μ+μ+)
+    subsystem: machine
+    scenario: null
+    value: 5.7e+32
+    unit: cm^-2 s^-1
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: Eq. (7), quotation: we obtain the luminosity of the µ+ µ+ collider as Lµ+µ+ = 5.7 × 10^32 cm−2 s−1. (7)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [(3.6 nC/e)^2 x (1-e^-2)/2 x 2 MHz / (4 pi x 3.6 µm x 1.7 µm) = 5.68e+32 cm^-2 s^-1], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_OUTPUT_BUNCH_CHARGE_MUTRISTAN2022, MACHINE_MUMU_DECAY_REDUCTION_FACTOR_MUTRISTAN2022, MACHINE_COLLISION_FREQUENCY_MUMU_MUTRISTAN2022, MACHINE_MU_SIGMA_X_IP_MUTRISTAN2022, MACHINE_MU_SIGMA_Y_IP_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LUMINOSITY_PER_DETECTOR_MUTRISTAN2022
+    name: The quoted luminosities apply per detector if several collision points exist (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: luminosity_per_detector_with_multiple_IPs
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.4 Main ring and the luminosity, table_figure_or_equation: null, quotation: These luminosities in Eqs. (6) and (7) are delivered for each detector if we have multiple collision points in the storage ring.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_E_BEAM_ENERGY_MUTRISTAN2022
+    name: Electron beam energy of the μ+e- collider (TRISTAN energy)
+    symbol: E_e
+    subsystem: machine
+    scenario: null
+    value: 30
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 10, section: 2.7 Magnet design, table_figure_or_equation: null, quotation: The electron energy of 30 GeV is the maximum energy reached in the TRISTAN experiments.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_CONFIGURATION_MUTRISTAN2022
+    name: Main-ring configuration sketched in Figure 1 (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: triple_ring_mu+_mu+_e-
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 5, section: Figure 1, table_figure_or_equation: null, quotation: 'Triple ring (µ+, µ+, e−)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LARGE_RING_MU_ENERGY_MUTRISTAN2022
+    name: Muon beam energy of the large-ring option
+    symbol: E_mu
+    subsystem: machine
+    scenario: null
+    value: 3
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.5 Large ring option, table_figure_or_equation: null, quotation: 'For example, one can consider a 3 TeV muon beam with the storage ring with the circumference of 9 km. In this case, due to the longer muon lifetime, the muons can travel larger distances while a larger ring reduces the collision frequency by 1/3.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LARGE_RING_CIRCUMFERENCE_MUTRISTAN2022
+    name: Storage-ring circumference of the large-ring option
+    symbol: C_ring
+    subsystem: machine
+    scenario: null
+    value: 9
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.5 Large ring option, table_figure_or_equation: null, quotation: 'For example, one can consider a 3 TeV muon beam with the storage ring with the circumference of 9 km. In this case, due to the longer muon lifetime, the muons can travel larger distances while a larger ring reduces the collision frequency by 1/3.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['3 x 3 km, i.e. the same 10 T dipoles scaled to 3 TeV'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LARGE_RING_COLLISION_FREQUENCY_FACTOR_MUTRISTAN2022
+    name: Collision-frequency factor of the 9 km ring relative to the 3 km ring
+    symbol: f_rep(9 km)/f_rep(3 km)
+    subsystem: machine
+    scenario: null
+    value: 0.3333
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 9, section: 2.5 Large ring option, table_figure_or_equation: null, quotation: 'For example, one can consider a 3 TeV muon beam with the storage ring with the circumference of 9 km. In this case, due to the longer muon lifetime, the muons can travel larger distances while a larger ring reduces the collision frequency by 1/3.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [3 km / 9 km = 1/3], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_BOOSTER_POWER_LARGE_RING_OPTION_MUTRISTAN2022
+    name: 'Booster electric power for the 3 TeV option (unchanged: lower repetition rate compensates the higher energy)'
+    symbol: P_booster
+    subsystem: acceleration
+    scenario: null
+    value: 9
+    unit: MW
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 10, section: 2.5 Large ring option, table_figure_or_equation: null, quotation: 'In addition, the acceleration to the higher energy actually requires the same electric power at the booster ring (9 MW) since the repetition rate can be reduced by the same factor due to the longer lifetime.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['3 x energy at 1/3 repetition rate: 9 MW unchanged'], check_ids: [], notes: ''}
+    dependencies: [ACC_BOOSTER_BEAM_LOADING_POWER_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_DIPOLE_FIELD_MUTRISTAN2022
+    name: Dipole field required to store the 1 TeV μ+ beam in the 3 km ring
+    symbol: B_dipole
+    subsystem: machine
+    scenario: null
+    value: 10
+    unit: T
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 10, section: 2.7 Magnet design (quotation continues on PDF p.11), table_figure_or_equation: null, quotation: 'For steering of the 1 TeV muon beam within the 3 km ring, we need a dipole magnet with the magnetic field of 10 T, which is a similar strength as the design of the high-luminosity LHC experiments of 11 T. The prototypes of utilizing the Nb3 Sn superconducting technologies have already been produced and tested [17].'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: ['bound: a 3 km ring with fully filled arcs needs at least 2 pi Brho(1 TeV)/C = 2 pi x 3335.6 T m / 3000 m = 6.99 T; 10 T corresponds to a dipole fill factor 0.70 (not stated by the source)'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_HL_LHC_DIPOLE_FIELD_REFERENCE_MUTRISTAN2022
+    name: HL-LHC 11 T dipole quoted as the technology reference
+    symbol: B_HL-LHC
+    subsystem: machine
+    scenario: null
+    value: 11
+    unit: T
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 10, section: 2.7 Magnet design (quotation continues on PDF p.11), table_figure_or_equation: null, quotation: 'For steering of the 1 TeV muon beam within the 3 km ring, we need a dipole magnet with the magnetic field of 10 T, which is a similar strength as the design of the high-luminosity LHC experiments of 11 T. The prototypes of utilizing the Nb3 Sn superconducting technologies have already been produced and tested [17].'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Fact about HL-LHC Nb3Sn dipoles as quoted by the μTRISTAN authors (their ref. [17]); reference value, not a μTRISTAN or LHμC parameter.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MAIN_RING_MAGNET_TECHNOLOGY_MUTRISTAN2022
+    name: Dipole technology assumed for the main ring (categorical)
+    symbol: null
+    subsystem: machine
+    scenario: null
+    value: Nb3Sn_HL-LHC_type
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 10, section: 2.7 Magnet design (quotation continues on PDF p.11), table_figure_or_equation: null, quotation: 'For steering of the 1 TeV muon beam within the 3 km ring, we need a dipole magnet with the magnetic field of 10 T, which is a similar strength as the design of the high-luminosity LHC experiments of 11 T. The prototypes of utilizing the Nb3 Sn superconducting technologies have already been produced and tested [17].'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_LARGE_RING_DIPOLE_FIELD_OPTION_MUTRISTAN2022
+    name: Dipole field of the reduced-circumference 3 TeV option
+    symbol: B_dipole
+    subsystem: machine
+    scenario: null
+    value: 16
+    unit: T
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 11, section: 2.7 Magnet design, table_figure_or_equation: null, quotation: 'If we assume that a larger magnetic field such as 16 T is available by then, a smaller storage ring is possible. For example, the large ring option of the 9 km circumference can be reduced to about 6 km although we still need a large booster ring for the acceleration. The reduced one can certainly fit realistic experimental sites such as at the Tevatron site (µTevatron).'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'p.3 (introduction): ''By assuming that the dipole magnets at about 16 T is available by the time of the construction, one can reach √s = 775 GeV with 50 GeV electrons and 3 TeV muons.'''
+
+  - parameter_id: MACHINE_LARGE_RING_REDUCED_CIRCUMFERENCE_MUTRISTAN2022
+    name: Circumference of the 3 TeV ring with 16 T dipoles (μTevatron option)
+    symbol: C_ring
+    subsystem: machine
+    scenario: null
+    value: 6
+    unit: km
+    uncertainty: {type: not_stated, note: source says 'about 6 km'}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 11, section: 2.7 Magnet design, table_figure_or_equation: null, quotation: 'If we assume that a larger magnetic field such as 16 T is available by then, a smaller storage ring is possible. For example, the large ring option of the 9 km circumference can be reduced to about 6 km although we still need a large booster ring for the acceleration. The reduced one can certainly fit realistic experimental sites such as at the Tevatron site (µTevatron).'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [9 km x 10 T / 16 T = 5.6 km ≈ 6 km], check_ids: [], notes: ''}
+    dependencies: [MACHINE_LARGE_RING_CIRCUMFERENCE_MUTRISTAN2022, MACHINE_LARGE_RING_DIPOLE_FIELD_OPTION_MUTRISTAN2022]
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: '§4 (p.13): ''the size of the Tevatron (the circumference of about 6 km)''.'
+
+  - parameter_id: MACHINE_LARGE_RING_BOOSTER_STILL_NEEDED_MUTRISTAN2022
+    name: A large booster ring is still needed for the reduced-circumference option (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: large_booster_ring_still_required
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 11, section: 2.7 Magnet design, table_figure_or_equation: null, quotation: 'If we assume that a larger magnetic field such as 16 T is available by then, a smaller storage ring is possible. For example, the large ring option of the 9 km circumference can be reduced to about 6 km although we still need a large booster ring for the acceleration. The reduced one can certainly fit realistic experimental sites such as at the Tevatron site (µTevatron).'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: MACHINE_MUTEVATRON_E_BEAM_ENERGY_MUTRISTAN2022
+    name: Electron beam energy of the μTevatron option
+    symbol: E_e
+    subsystem: machine
+    scenario: null
+    value: 50
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: imported_related
+      extraction_method: manual_text_read
+      source: {source_id: SRC_ARXIV_2201_06664, title: μTRISTAN, author_or_org: 'Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)', url: 'https://arxiv.org/abs/2201.06664', date: '2022-04-21', version: 'arXiv 2201.06664v2 (PTEP 2022, 053B02)', page: 13, section: 4 µTevatron option, table_figure_or_equation: null, quotation: We assume that the electron energy of 50 GeV and the muon beam energy of 3 TeV are possible by using the improved bending magnet (or having 9 km ring).}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'Related machine (μTRISTAN, KEK): the booster/main-ring concept that the μLHC and LHμC proponents cite as the origin of the muon-booster idea; not an LHμC value.'}
+      confidence: high
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+

@@ -1,0 +1,3666 @@
+# Parameter records extracted from SRC_WS1681458_HEQCD_SMALLX ('High energy QCD at LHμC', AGH University Kraków, workshop 'Ultra-cold muons
+# for the LHC', 24–26 Sept 2026; PRIMARY_LHMUC; speaker not named on the slides). Pages cited are PDF page numbers (= slide numbers).
+# Status rules: LHμC-specific statements -> reported_lhmuc; theory-model inputs restated from the literature (GBW saturation model, BFKL λ,
+# NNPDF3.1sx / Bonvini / Bertone plots, CGC kT-factorisation condition) -> analogous with the original named in applicability.explanation;
+# LHeC legend energies -> imported_related; EIC comparators -> analogous. Figure reads (manual_figure_read) carry confidence medium when a
+# number is read off an axis or a curve; curve values appear only in notes, flagged 'approximate figure read'.
+# P1 (arithmetic) checks: x_min = Q²/(y s) for the x_Bj ≲ 1e-7 bound; s ratios for the LHeC and FCC-eh comparisons; √s = 2√(E_μ E_p)
+# for the 3742 GeV (0.5 TeV × 7 TeV) and 5.3 TeV (1 TeV × 7 TeV) panel labels. The 3.3 TeV label has no stated beam energies (P0, note).
+# Resume review 2026-10-29: every record re-checked against the slide images; corrections: collider-marker positions on p.14 (one decade
+# too low in the draft), EIC rapidity windows (lab vs starred), P1 claims without an arithmetic reproduction downgraded to P0,
+# scenario fields restricted to scenario ids, one record added (p.9 kT-factorisation condition).
+# Verifier pass (G6_PHYSICS adversarial verification, 2026-10-29): every record re-checked against the slide images and text layer; marker
+# positions on pp. 14/16 re-measured in pixels (HERA, EIC were 0.2 decade off), unsupported attributions removed ('LHeC CDR', 'Kotko',
+# 'muon-going hemisphere', 'deck's own' F2 comparison), trijet explanations fixed, one p.17 record added. See research/_fragments/verify_G6_PHYSICS.md.
+parameters:
+- parameter_id: PHYS_BFKL_GROWTH_EXPONENT_LAMBDA_WS2026_HEQCD
+  name: BFKL growth exponent λ quoted for the x^(−λ) rise of the gluon density
+  symbol: lambda_BFKL
+  subsystem: physics_programme
+  scenario: null
+  value: 0.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: slide writes '≂' (approximately equal)
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: 'Theory overview (2): BFKL & kT-factorization'
+      table_figure_or_equation: null
+      quotation: The BFKL Green function provides a linear evolution in x, giving the growth ∼ x −λ with λ ≂ 0.5.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Generic BFKL/kT-factorisation statement restated on the deck (slide cites Kuraev-Lipatov-Fadin 1977, Balitsky-Lipatov 1978, Catani-Ciafaloni-Hautmann
+        1991, Collins-Ellis 1991); not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SATURATION_SCALE_FORMULA_GBW_WS2026_HEQCD
+  name: Saturation-scale parametrisation written on the slide (GBW form)
+  symbol: Q_s^2
+  subsystem: physics_programme
+  scenario: null
+  value: Q_s^2 ∼ A^(1/3) Q_0^2 (x/x_0)^(−η)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: 'Theory overview (5): TMD gluon distribution in the MV model'
+      table_figure_or_equation: typeset formula 'Saturation scale'
+      quotation: 'Saturation scale: Qs2 ∼ A 1/3 Q02 ( x / x0 )^−η  [K. Golec-Biernat, M. Wusthoff, 1998]'
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value. Transcribed from the slide image (the text layer scrambles the exponent).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Handwritten annotations on the slide: ''number of nucleons'' (A), ''Q0 ~ 1 GeV'', ''x0 ~ 10^-4'', ''η ~ 0.3''; also ''gives ordinary gluon splitting
+    leading to x^-λ'' and ''saturation'' on the MV-model plot.'
+- parameter_id: PHYS_SATURATION_Q0_GBW_WS2026_HEQCD
+  name: Saturation-scale normalisation Q_0 (handwritten annotation)
+  symbol: Q_0
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: GeV
+  uncertainty:
+    type: not_stated
+    note: handwritten annotation reads 'Q0 ~ 1 GeV'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: Theory overview (5)
+      table_figure_or_equation: handwritten annotation next to the saturation-scale formula
+      quotation: Q0 ~ 1 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SATURATION_X0_GBW_WS2026_HEQCD
+  name: Saturation-scale reference x_0 (handwritten annotation)
+  symbol: x_0
+  subsystem: physics_programme
+  scenario: null
+  value: 0.0001
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: handwritten annotation reads 'x0 ~ 10^-4'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: Theory overview (5)
+      table_figure_or_equation: handwritten annotation next to the saturation-scale formula
+      quotation: x0 ~ 10^-4
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SATURATION_ETA_GBW_WS2026_HEQCD
+  name: Saturation-scale x-exponent η (handwritten annotation)
+  symbol: eta
+  subsystem: physics_programme
+  scenario: null
+  value: 0.3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: handwritten annotation reads 'η ~ 0.3'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: Theory overview (5)
+      table_figure_or_equation: handwritten annotation next to the saturation-scale formula
+      quotation: η ~ 0.3
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SATURATION_A_EXPONENT_GBW_WS2026_HEQCD
+  name: Exponent of the mass number A in the saturation-scale formula (A^(1/3))
+  symbol: exponent of A
+  subsystem: physics_programme
+  scenario: null
+  value: 0.3333333333333333
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: Theory overview (5)
+      table_figure_or_equation: typeset formula 'Saturation scale'
+      quotation: Qs2 ∼ A 1/3 Q02
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Exact value 1/3. For 197Au this gives a factor 5.82 (Acosta et al. arXiv:2203.06258 quote 'a factor of 6', PHYS_SATURATION_SCALE_AU_ENHANCEMENT_MUIC2022).
+- parameter_id: PHYS_SATURATION_STRONGER_IN_NUCLEI_WS2026_HEQCD
+  name: Qualitative statement on nuclear saturation (slide conclusion)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Saturation is stronger in nuclei.
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 7
+      section: Theory overview (5)
+      table_figure_or_equation: null
+      quotation: Saturation is stronger in nuclei.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Golec-Biernat–Wüsthoff (GBW, 1998) saturation-model statement restated on the slide (reference printed on the slide); a generic small-x
+        QCD model input, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_XBJ_REACH_INCLUSIVE_DIS_WS2026_HEQCD
+  name: Smallest Bjorken x reachable in inclusive DIS at LHμC at Q² ∼ 1 GeV² (slide bound)
+  symbol: x_Bj,min
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: slide says '≲ 10^-7' (reach extends to about 1e-7 or below)
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: for inclusive DIS the xBj ≲ 10−7 at Q 2 ∼ 1 GeV (for 4 × 10−3 < y < 1)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHμC-specific statement of the Kraków physics-case deck. The slide does not say which of the two LHμC options drawn in the coverage plot
+        (1 TeV × 7 TeV, LHMUC-DIS2026-1TEV; 0.5 TeV × 7 TeV, LHMUC-WP-OPT1-500GEV) the bound refers to; both satisfy it (see validation).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 'x_min = Q²/(y_max s): with Q² = 1 GeV², y = 1 and s = 4 E_μ E_p: 3.6e-8 for 1 TeV × 7 TeV and 7.1e-8 for 0.5 TeV × 7 TeV, both ≲ 1e-7 (audit arithmetic
+      in this extraction)'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: The slide prints 'Q² ∼ 1 GeV' (text layer 'Q 2 ∼ 1 GeV'); the quotation keeps the printed unit. Q² has dimension GeV² and the plot axis is 'Q²
+    (GeV²)', so GeV² is meant (evident typo; interpretation, not a source statement). Same y window as the DIS2026 proceedings figure (PHYS_DIS_INELASTICITY_MIN_DIS2026
+    / _MAX_DIS2026).
+- parameter_id: PHYS_SMALLX_Q2_REFERENCE_WS2026_HEQCD
+  name: Q² at which the x_Bj ≲ 1e-7 reach statement is made
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+    note: source says '∼'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: xBj ≲ 10−7 at Q 2 ∼ 1 GeV
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Reference virtuality of the LHμC small-x reach statement.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Quotation as printed ('1 GeV'); the unit field is GeV² because Q² has dimension GeV² and the plot axis is labelled 'Q² (GeV²)' — an interpretation
+    of an evident typo, not a source statement.
+- parameter_id: PHYS_SMALLX_Y_MIN_WS2026_HEQCD
+  name: Lower inelasticity bound assumed for the LHμC coverage statement
+  symbol: y_min
+  subsystem: physics_programme
+  scenario: null
+  value: 0.004
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: (for 4 × 10−3 < y < 1)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Inelasticity window of the coverage bands (same window as DIS2026 Fig. 1, PHYS_DIS_INELASTICITY_MIN_DIS2026).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_Y_MAX_WS2026_HEQCD
+  name: Upper inelasticity bound assumed for the LHμC coverage statement
+  symbol: y_max
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: (for 4 × 10−3 < y < 1)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Inelasticity window of the coverage bands (same window as DIS2026 Fig. 1, PHYS_DIS_INELASTICITY_MAX_DIS2026).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_REACH_GAIN_VS_LHEC_WS2026_HEQCD
+  name: Small-x reach improvement of LHμC over LHeC (orders of magnitude)
+  symbol: Δlog10(x_min)
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: '''order of magnitude improvement'' — a genuine order-of-magnitude statement'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: order of magnitude improvement comparing to LHeC, even with the modest 0.5 TeV muon ring option
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHμC-specific reach statement; holds already for the 0.5 TeV option per the slide.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 'x_min ∝ 1/s at fixed Q² and y: s(0.5 TeV × 7 TeV)/s(LHeC 50 GeV × 7 TeV) = 10 (one order of magnitude); 1 TeV option: 20 (audit arithmetic in this
+      extraction)'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Cf. PHYS_KINEMATIC_REACH_GAIN_VS_LHEC_DIS2026 (same statement in the DIS2026 proceedings).
+- parameter_id: PHYS_SMALLX_REACH_VS_FCCEH_WS2026_HEQCD
+  name: Comparison of the LHμC small-x reach with FCC-eh (slide statement)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: the range comparable (or better!) with FCC-eh
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage'
+      table_figure_or_equation: null
+      quotation: the range comparable (or better!) with FCC-eh
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: LHμC-specific reach statement.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 'x_min ∝ 1/s at fixed Q² and y: s(LHμC 1 TeV × 7 TeV) = 2.8e7 GeV² vs s(FCC-eh 50 GeV × 50 TeV) = 1.0e7 GeV² → x_min 2.8× smaller at LHμC; 0.5 TeV
+      option: 1.4× smaller (audit arithmetic in this extraction; FCC-eh beam energies are not printed on the deck and are taken from Acosta et al., arXiv:2203.06258v3,
+      PDF p.6)'
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LHMUC_MU_ENERGY_WS2026_HEQCD
+  name: Muon beam energy of the upper LHμC band in the coverage plot
+  symbol: E_mu
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHμC (1 TeV × 7 TeV)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-DIS2026-1TEV
+      explanation: Legend entry of the LHμC coverage plot (the plot is the same figure as DIS2026 Fig. 1).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LHMUC_MU_ENERGY_OPTION05_WS2026_HEQCD
+  name: Muon beam energy of the lower LHμC band in the coverage plot (0.5 TeV option)
+  symbol: E_mu
+  subsystem: physics_programme
+  scenario: null
+  value: 0.5
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHμC (0.5 TeV × 7 TeV)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: LHMUC-WP-OPT1-500GEV
+      explanation: Legend entry of the LHμC coverage plot; the slide calls it 'the modest 0.5 TeV muon ring option'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LHMUC_PROTON_ENERGY_WS2026_HEQCD
+  name: Proton beam energy assumed for both LHμC bands in the coverage plot
+  symbol: E_p
+  subsystem: physics_programme
+  scenario: null
+  value: 7
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHμC (1 TeV × 7 TeV); LHμC (0.5 TeV × 7 TeV)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Legend entry of the LHμC coverage plot (LHC proton energy).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LHEC_E_ENERGY_50_WS2026_HEQCD
+  name: LHeC electron energy of the comparator band (50 GeV option)
+  symbol: E_e
+  subsystem: physics_programme
+  scenario: null
+  value: 50
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHeC (50 GeV × 7 TeV)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: LHeC comparator (related machine) as drawn in the legend of the LHμC deck; the deck does not cite a source for the LHeC beam energies.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LHEC_E_ENERGY_20_WS2026_HEQCD
+  name: LHeC electron energy of the comparator band (20 GeV option)
+  symbol: E_e
+  subsystem: physics_programme
+  scenario: null
+  value: 20
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHeC (20 GeV × 7 TeV)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: LHeC comparator (related machine) as drawn on the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_EIC_E_ENERGY_WS2026_HEQCD
+  name: EIC electron energy of the comparator band as printed in the legend
+  symbol: E_e
+  subsystem: physics_programme
+  scenario: null
+  value: 21
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: EIC (21 GeV × 250 GeV)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'EIC comparator as printed on the slide legend (note: Acosta et al. arXiv:2203.06258 Fig. 5 draw the EIC as e(18) + p(275) GeV).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_EIC_P_ENERGY_WS2026_HEQCD
+  name: EIC proton energy of the comparator band as printed in the legend
+  symbol: E_p
+  subsystem: physics_programme
+  scenario: null
+  value: 250
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: EIC (21 GeV × 250 GeV)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: EIC comparator as printed on the slide legend.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_LEGEND_DATASETS_WS2026_HEQCD
+  name: Full legend of the (x_Bj, Q²) coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: LHeC (50 GeV × 7 TeV); LHeC (20 GeV × 7 TeV); LHμC (1 TeV × 7 TeV); LHμC (0.5 TeV × 7 TeV); EIC (21 GeV × 250 GeV); LHC (NNPDF4.0 datasets); H1
+    & ZEUS; NMC, BCDMS, E665, SLAC (fixed target)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot legend
+      quotation: LHeC (50 GeV × 7 TeV) / LHeC (20 GeV × 7 TeV) / LHμC (1 TeV × 7 TeV) / LHμC (0.5 TeV × 7 TeV) / EIC (21 GeV × 250 GeV) / LHC (NNPDF4.0
+        datasets) / H1 & ZEUS / NMC / BCDMS / E665 / SLAC } Fixed target
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Legend as printed (datasets and comparator colliders).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_REGION_LABELS_WS2026_HEQCD
+  name: Physics-region labels drawn on the coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: new physics; precision QCD & EWK physics; large-x partons; nuclear structure & dynamics; high parton densities
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot annotations
+      quotation: new physics / precision QCD & EWK physics / large-x partons / nuclear structure & dynamics / high parton densities
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Qualitative physics map drawn on the LHμC coverage plot.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_COVERAGE_PLOT_XBJ_AXIS_MIN_WS2026_HEQCD
+  name: Lower edge of the x_Bj axis of the coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot, x-axis tick labels
+      quotation: 10^-7, 10^-6, 10^-5, 10^-4, 10^-3, 10^-2, 10^-1, 1 / xBj
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Axis range read from the plot image; the LHμC 1 TeV band reaches the left edge (x ≈ 1e-7) near Q² ≈ 1 GeV² (figure read).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Cf. PHYS_FIG1_XBJ_AXIS_MIN_DIS2026 for the identical DIS2026 figure.
+- parameter_id: PHYS_COVERAGE_PLOT_XBJ_AXIS_MAX_WS2026_HEQCD
+  name: Upper edge of the x_Bj axis of the coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot, x-axis tick labels
+      quotation: 10^-7, 10^-6, 10^-5, 10^-4, 10^-3, 10^-2, 10^-1, 1 / xBj
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Axis range read from the plot image; the LHμC 1 TeV band reaches the left edge (x ≈ 1e-7) near Q² ≈ 1 GeV² (figure read).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Cf. PHYS_FIG1_XBJ_AXIS_MIN_DIS2026 for the identical DIS2026 figure.
+- parameter_id: PHYS_COVERAGE_PLOT_Q2_AXIS_MIN_WS2026_HEQCD
+  name: Lower edge of the Q² axis of the coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 0.1
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot, y-axis tick labels
+      quotation: 10^-1, 1, 10, 10^2, 10^3, 10^4, 10^5, 10^6 / Q2 (GeV2)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Axis range read from the plot image; the LHμC 1 TeV band reaches the left edge (x ≈ 1e-7) near Q² ≈ 1 GeV² (figure read).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Cf. PHYS_FIG1_XBJ_AXIS_MIN_DIS2026 for the identical DIS2026 figure.
+- parameter_id: PHYS_COVERAGE_PLOT_Q2_AXIS_MAX_WS2026_HEQCD
+  name: Upper edge of the Q² axis of the coverage plot
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 1000000.0
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 13
+      section: 'Small x physics at LHμC: (xBj, Q2) coverage plot legend'
+      table_figure_or_equation: coverage plot, y-axis tick labels
+      quotation: 10^-1, 1, 10, 10^2, 10^3, 10^4, 10^5, 10^6 / Q2 (GeV2)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Axis range read from the plot image; the LHμC 1 TeV band reaches the left edge (x ≈ 1e-7) near Q² ≈ 1 GeV² (figure read).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Cf. PHYS_FIG1_XBJ_AXIS_MIN_DIS2026 for the identical DIS2026 figure.
+- parameter_id: PHYS_DIJET_KT_FACTORISATION_VALIDITY_WS2026_HEQCD
+  name: Kinematic condition for effective kT factorisation of dijets in the CGC framework (theory overview)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: P_T ≫ Q_s ≫ Λ_QCD (average transverse momentum of the quarks much larger than the saturation scale)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 9
+      section: 'Theory overview (7): inclusive DIS vs dijets within CGC'
+      table_figure_or_equation: null
+      quotation: For average transverse momenta of quarks PT ≫ Qs ≫ ΛQCD we have effective kT -factorization [Dominguez, Marquet, Xiao, Yuan, 2011]
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published theory result (Dominguez, Marquet, Xiao, Yuan 2011, cited on the slide); it defines the regime of the WW-TMD dijet/trijet predictions
+        shown for LHμC on pp. 20, 21 and 23 (Breit-frame jet pT > 5 GeV; p. 22 is the EIC comparison with 3 and 3.8 GeV cuts).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_RESUMMED_PDF_SET_WS2026_HEQCD
+  name: PDF set used to illustrate small-x resummation of the gluon
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: NNPDF31sx (NNLO vs NNLO+NLL)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 14
+      section: Impact of small x resummation on gluon collinear PDF
+      table_figure_or_equation: NNPDF31sx gluon panels
+      quotation: NNPDF31sx / NNLO / NNLO+NLL / by M. Bonvini
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by M. Bonvini (NNPDF3.1sx, Ball-Bertone-Bonvini-Marzani-Rojo-Rottoli 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_GLUON_PLOT_Q_LOW_WS2026_HEQCD
+  name: Scale of the left gluon panel (x g(x,Q))
+  symbol: Q
+  subsystem: physics_programme
+  scenario: null
+  value: 1.64
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 14
+      section: Impact of small x resummation on gluon collinear PDF
+      table_figure_or_equation: left panel label
+      quotation: Q = 1.64 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by M. Bonvini (NNPDF3.1sx, Ball-Bertone-Bonvini-Marzani-Rojo-Rottoli 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_GLUON_PLOT_Q_HIGH_WS2026_HEQCD
+  name: Scale of the right gluon panel (ratio of g(x,Q))
+  symbol: Q
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 14
+      section: Impact of small x resummation on gluon collinear PDF
+      table_figure_or_equation: right panel label
+      quotation: Q = 100 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by M. Bonvini (NNPDF3.1sx, Ball-Bertone-Bonvini-Marzani-Rojo-Rottoli 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_GLUON_PLOT_COLLIDER_MARKERS_WS2026_HEQCD
+  name: Collider x-reach markers drawn on the Q = 1.64 GeV gluon panel (from small to large x)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: LHμC, FCC-eh, LHeC, HERA, EIC
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 14
+      section: Impact of small x resummation on gluon collinear PDF
+      table_figure_or_equation: dashed vertical markers on the left panel
+      quotation: LHμC / FCC-eh / LHeC / HERA / EIC
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Marker ordering read from the slide image. Approximate marker positions (verifier pixel measurement on a 300-dpi rendering, line centres
+        against the major tick marks of the log x axis 1e-8 … 1, ±0.03 decade): LHμC ≈ 2.9e-7, FCC-eh ≈ 7.0e-7, LHeC ≈ 5.7e-6, HERA ≈ 1.9e-4, EIC ≈ 7.0e-4.
+        The deck does not state the Q² or y convention behind the markers.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_GLUON_RESUMMATION_CONCLUSION_WS2026_HEQCD
+  name: Deck conclusion on resummed vs fixed-order gluon at small x
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: huge difference between fixed order and NLLx; resummed PDF grows much faster — opportunity to test the saturation
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 14
+      section: Impact of small x resummation on gluon collinear PDF
+      table_figure_or_equation: null
+      quotation: • huge difference between fixed order and NLLx • resummed PDF grows much faster — opportunity to test the saturation
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_RESUMMATION_SCHEME_WS2026_HEQCD
+  name: Small-x resummation hierarchy stated on the slide
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: LLx, NLLx, NNLLx resummation of α_s^n ln^n(1/x) towers
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 15
+      section: Small x resummation for the gluon collinear PDF
+      table_figure_or_equation: null
+      quotation: resum the leading power of ln 1/x to all orders in αs (LLx), subleading (NLLx), etc…
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Generic resummation statement (slide cites Altarelli-Ball-Forte 2001/2008, Ciafaloni-Colferai-Salam-Stasto 2003/2007, Thorne-White 2006).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_FRAMEWORK_WS2026_HEQCD
+  name: Framework of the F2/FL small-x resummation panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: NNLO + NLLx (APFEL), FONLL-C, NNPDF3.1sx
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: panel titles
+      quotation: NNLO + NLLx (APFEL), FONLL-C, NNPDF3.1sx
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by V. Bertone (Bertone-Carrazza-Rojo 2014; Ball et al. 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_PLOT_Q2_LOW_WS2026_HEQCD
+  name: Lower Q² of the F2/FL panels
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: panel legends
+      quotation: Q2 = 5 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by V. Bertone (Bertone-Carrazza-Rojo 2014; Ball et al. 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_PLOT_Q2_HIGH_WS2026_HEQCD
+  name: Higher Q² of the F2/FL panels
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: panel legends
+      quotation: Q2 = 100 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure by V. Bertone (Bertone-Carrazza-Rojo 2014; Ball et al. 2018) reproduced on the slide; not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_UNCERTAINTY_X_THRESHOLD_WS2026_HEQCD
+  name: x below which the resummed F2/FL predictions have 'huge uncertainties'
+  symbol: x_Bj
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: slide says '≪ 10^-7'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: null
+      quotation: huge uncertainties for xBj ≪ 10−7, even with resummation
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Statement of the LHμC deck locating the prediction uncertainty in the LHμC region.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_LHMUC_DATA_REGION_WS2026_HEQCD
+  name: Deck statement that LHμC data would fall in the region of large resummation uncertainty
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: this exactly the region where LHμC would provide data….
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: null
+      quotation: this exactly the region where LHμC would provide data….
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_PLOT_COLLIDER_MARKERS_WS2026_HEQCD
+  name: Collider markers drawn on the F2 panel
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: LHμC and LHeC dashed markers on the F2 panel
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 16
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: dashed markers on the F2 panel
+      quotation: LHμC / LHeC
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Marker labels read from the image; approximate positions (verifier pixel measurement on a 300-dpi rendering against the major ticks
+        of the x axis 1e-9 … 1, ±0.03 decade): LHμC ≈ 1.0e-8, LHeC ≈ 8.5e-7.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_FIXED_ORDER_COMPARISON_WS2026_HEQCD
+  name: Statements on fixed-order vs resummed structure functions (taken from a 2020 Bonvini talk)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: fixed order structure functions grow much slower than NNLO+NLLx; longitudinal structure function differs even within (large) uncertainties
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 17
+      section: Impact of small x resummation on F2 and FL
+      table_figure_or_equation: null
+      quotation: taken from talk by M. Bonvini (2020) • fixed order structure functions grow much slower than NNLO+NLLx • longitudinal structure function
+        differs even within (large) uncertainties
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Restated from a talk by M. Bonvini (2020) as the slide says.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2FL_BONVINI_PLOT_Q2_WS2026_HEQCD
+  name: Q² of the F2^p / F_L^p pseudo-data panels (figure taken from a 2020 talk by M. Bonvini)
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 17
+      section: Impact of small x resummation on F2 and FL (figure taken from a talk by M. Bonvini, 2020)
+      table_figure_or_equation: panel titles of the F2^p and F_L^p panels (raster image, no text layer)
+      quotation: NNPDF3.1sx, Q2 = 5 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Figure taken from a talk by M. Bonvini (2020), as the slide says (NNPDF3.1sx; Bertone-Carrazza-Rojo 2014 and Ball et al. 2018 cited);
+        not an LHμC calculation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/physics_programme
+  notes: 'Approximate figure reads (not source statements): the ''FCC-eh kinematic range'' arrow spans x ≈ 5e-7 – 1e-4 and the ''LHeC kinematic range''
+    arrow x ≈ 5e-6 – 9e-4 (pixel measurement against the decade ticks); legend ''NNLO / NNLO+NLLx / Pseudo-Data''. Added by the verifier on 2026-10-29.'
+- parameter_id: PHYS_SMALLX_F2_BFKL_PLOT_Q2_LOW_WS2026_HEQCD
+  name: Q² of the upper F2 panel (BFKL vs saturation comparison)
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: upper panel title
+      quotation: Q2 = 5 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Panel settings of the F2 comparison drawn on the LHμC deck for the LHμC x range (no ''by …'' credit is printed; curves: CT18NLO, BFKL+DGLAP
+        resum citing [Stasto, Li 2022], BK NLO citing [Hänninen et al.]); the x range 1e-7–1e-2 of the panels covers the LHμC small-x region.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BFKL_PLOT_Q2_HIGH_WS2026_HEQCD
+  name: Q² of the lower F2 panel (BFKL vs saturation comparison)
+  symbol: Q^2
+  subsystem: physics_programme
+  scenario: null
+  value: 25
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: lower panel title
+      quotation: Q2 = 25 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Panel settings of the F2 comparison drawn on the LHμC deck for the LHμC x range (no ''by …'' credit is printed; curves: CT18NLO, BFKL+DGLAP
+        resum citing [Stasto, Li 2022], BK NLO citing [Hänninen et al.]); the x range 1e-7–1e-2 of the panels covers the LHμC small-x region.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BFKL_PLOT_X_MIN_WS2026_HEQCD
+  name: Lower x edge of the F2 BFKL/saturation panels
+  symbol: x
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: panel x axes
+      quotation: 10−7 10−6 10−5 10−4 10−3 10−2 x
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Panel settings of the F2 comparison drawn on the LHμC deck for the LHμC x range (no ''by …'' credit is printed; curves: CT18NLO, BFKL+DGLAP
+        resum citing [Stasto, Li 2022], BK NLO citing [Hänninen et al.]); the x range 1e-7–1e-2 of the panels covers the LHμC small-x region.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BFKL_PLOT_X_MAX_WS2026_HEQCD
+  name: Upper x edge of the F2 BFKL/saturation panels
+  symbol: x
+  subsystem: physics_programme
+  scenario: null
+  value: 0.01
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: panel x axes
+      quotation: 10−7 10−6 10−5 10−4 10−3 10−2 x
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Panel settings of the F2 comparison drawn on the LHμC deck for the LHμC x range (no ''by …'' credit is printed; curves: CT18NLO, BFKL+DGLAP
+        resum citing [Stasto, Li 2022], BK NLO citing [Hänninen et al.]); the x range 1e-7–1e-2 of the panels covers the LHμC small-x region.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BFKL_CURVES_WS2026_HEQCD
+  name: Curves compared on the F2 panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: CT18NLO; BFKL+DGLAP resum; BK NLO
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: panel legends
+      quotation: CT18NLO / BFKL+DGLAP resum / BK NLO
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Panel settings of the F2 comparison drawn on the LHμC deck for the LHμC x range (no ''by …'' credit is printed; curves: CT18NLO, BFKL+DGLAP
+        resum citing [Stasto, Li 2022], BK NLO citing [Hänninen et al.]); the x range 1e-7–1e-2 of the panels covers the LHμC small-x region.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Approximate figure reads (not source statements), re-read 2026-10-29 from a 200-dpi rendering: at x = 1e-7, Q² = 5 GeV²: BFKL+DGLAP resum ≈ 7.1,
+    CT18NLO ≈ 3.1; at Q² = 25 GeV²: ≈ 17.4 vs ≈ 8.8. BK NLO is drawn only for x ≳ 1e-6 (5 GeV², F2 ≈ 2.3 there) and x ≳ 6e-6 (25 GeV², F2 ≈ 3.6 there);
+    all three curves converge towards x = 1e-2.'
+- parameter_id: PHYS_SMALLX_F2_BFKL_FRAMEWORK_WS2026_HEQCD
+  name: BFKL-side framework of the F2 comparison
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: kT factorization with NLL BFKL and Ciafaloni-Colferai-Salam-Stasto (CCSS) DGLAP resummation; includes the soft Pomeron contribution
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: null
+      quotation: kT factorization with NLL BFKL and Ciafaloni-Colferai-Salam-Stasto (CCSS) DGLAP resummation; includes the soft Pomeron contribution
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Framework of Stasto-Li 2022 (and CCSS 2003/2004) as cited on the slide.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BK_FRAMEWORK_WS2026_HEQCD
+  name: Saturation-side framework of the F2 comparison
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: NLO computation within the dipole picture with the BK nonlinear evolution (computed within the publicly accessible range)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: null
+      quotation: NLO computation within the dipole picture with the BK nonlinear evolution (computed within the publicly accessible range)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Framework of Hänninen-Mäntysaari-Penttala 2026 and earlier works cited on the slide.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_BFKL_CONCLUSION_WS2026_HEQCD
+  name: Deck conclusion on BFKL vs fixed-order F2 at small x
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: the BFKL deviates from the FO collinear prediction towards the small x, even with the DGLAP type resummation
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: null
+      quotation: the BFKL deviates from the FO collinear prediction towards the small x, even with the DGLAP type resummation
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_F2_SATURATION_CONCLUSION_WS2026_HEQCD
+  name: Deck conclusion on saturation (BK NLO) vs fixed-order F2
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: the saturation picture is very close to FO NLO (within the accessible range)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 18
+      section: F2 within BFKL and saturation
+      table_figure_or_equation: null
+      quotation: the saturation picture is very close to FO NLO (within the accessible range)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_INCLUSIVE_SF_DISCRIMINATION_WS2026_HEQCD
+  name: Deck statement on the discriminating power of inclusive structure functions
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Unfortunately, the inclusive structure functions are not very discriminatory… We need complementary observables at small x
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 19
+      section: Searching for gluon saturation…
+      table_figure_or_equation: null
+      quotation: • Unfortunately, the inclusive structure functions are not very discriminatory… • We need complementary observables at small x
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_COMPLEMENTARY_OBSERVABLES_WS2026_HEQCD
+  name: Complementary small-x observables listed by the deck
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: dijet (tri-jet?), di-hadron and photon-jet azimuthal correlations; exclusive processes and quarkonia production; various initial states (lepton-hadron,
+    hadron-hadron, hadron-nucleus); TMD PDFs essential at small x; initial state universality loss for TMD gluon distributions; multiparton interactions
+    and higher twist
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 19
+      section: Searching for gluon saturation…
+      table_figure_or_equation: null
+      quotation: dijet (tri-jet?), di-hadron and photon-jet azimuthal correlations / exclusive processes and quarkonia production / various initial states
+        (lepton-hadron, hadron-hadron, hadron-nucleus) / Transverse Momentum Dependent (TMD) PDFs become essential at small x / high energy QCD predicts
+        initial state universality loss for TMD gluon distributions / importance of multiparton interactions and higher twist
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Observable list of the LHμC deck (design-defining for the physics programme).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_LHMUC_COMPLEMENTARITY_WS2026_HEQCD
+  name: Deck statement on LHμC complementarity with LHC and EIC
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: The LHμC collider would crucially complement the LHC and EIC to discriminate between various perturbative and nonperturbative mechanisms at high
+    energies
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 19
+      section: Searching for gluon saturation…
+      table_figure_or_equation: null
+      quotation: The LHμC collider would crucially complement the LHC and EIC to discriminate between various perturbative and nonperturbative mechanisms
+        at high energies
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Physics-case statement of the LHμC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_FRAMEWORK_WS2026_HEQCD
+  name: Framework of the dijet saturation predictions
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: TMD factorization with WW TMD gluon distribution, based on Kutak-Sapeta HERA fit
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: null
+      quotation: • TMD factorization with WW TMD gluon distribution, based on Kutak-Sapeta HERA fit • x-fraction probed for forward vs central rapidity
+        cuts • Bjorken-x vs gluon x-fraction
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_PROCESS_WS2026_HEQCD
+  name: Process of the dijet saturation predictions
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: μ+ g → μ+ j1 j2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel labels
+      quotation: µ+ g → µ+ j1 j2
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_SQRT_S_WS2026_HEQCD
+  name: Centre-of-mass energy of the dijet saturation prediction panels
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3742
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel labels
+      quotation: √s = 3742 GeV
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: LHMUC-WP-OPT1-500GEV
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide). The slide prints
+        only √s; the link to the 0.5 TeV × 7 TeV option is an interpretation supported by the exact arithmetic in validation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2√(E_μ E_p) = 2√(500 GeV × 7000 GeV) = 3741.7 GeV reproduces the panel label (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_YLAB_MIN_WS2026_HEQCD
+  name: Lower lab-rapidity cut on both jets (both panels)
+  symbol: y_lab,min
+  subsystem: physics_programme
+  scenario: null
+  value: -4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel labels (left panel / right panel)
+      quotation: -4 < y1lab, y2lab < 4 / -4 < y1lab, y2lab < 0
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_YLAB_MAX_FULL_WS2026_HEQCD
+  name: Upper lab-rapidity cut on both jets (left panel, full window)
+  symbol: y_lab,max
+  subsystem: physics_programme
+  scenario: null
+  value: 4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: left panel label
+      quotation: -4 < y1lab, y2lab < 4
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_YLAB_MAX_FORWARD_WS2026_HEQCD
+  name: Upper lab-rapidity cut on both jets (right panel, −4 < y_lab < 0 selection)
+  symbol: y_lab,max
+  subsystem: physics_programme
+  scenario: null
+  value: 0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: right panel label
+      quotation: -4 < y1lab, y2lab < 0
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Zero is the physical upper rapidity edge of the selection (y_lab < 0), not an unknown. The deck does not state its rapidity sign convention (which
+    beam defines +y) nor which panel its bullet 'x-fraction probed for forward vs central rapidity cuts' calls forward.
+- parameter_id: PHYS_DIJET_SAT_PT_BREIT_MIN_WS2026_HEQCD
+  name: Minimum Breit-frame transverse momentum of each jet
+  symbol: pT_Breit,min
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel labels
+      quotation: pT1Breit, pT2Breit > 5 GeV
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_Q2_MIN_WS2026_HEQCD
+  name: Minimum photon virtuality of the dijet selection
+  symbol: Q^2_min
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel labels
+      quotation: Q2 > 1 GeV2
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_TARGETS_AND_CURVES_WS2026_HEQCD
+  name: Targets and curves of the dijet x-distribution panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: lead - xg; lead - xBj; proton - xg; proton - xBj (dσ/dx in nb)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: panel legends
+      quotation: lead - xg / lead - xBj / proton - xg / proton - xBj; dσ/dx [nb]
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_XBJ_MIN_POPULATED_WS2026_HEQCD
+  name: Lowest populated x_Bj bin of the dijet x-distribution (figure read)
+  symbol: x_Bj
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: figure read; lowest populated bin at ≈ 1e-7 (within a factor ~1.5)
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: 'x-distribution panels: legend entries of the curves; value read off the x axis at the lowest populated bins'
+      quotation: lead - xBj / proton - xBj
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide). Approximate figure
+        read on a log axis.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_SAT_XG_MIN_POPULATED_WS2026_HEQCD
+  name: Lowest populated gluon-x bin of the dijet x-distribution (figure read)
+  symbol: x_g
+  subsystem: physics_programme
+  scenario: null
+  value: 1.5e-05
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: figure read; lowest populated bin at ≈ 1.5e-5 (within a factor ~2)
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 20
+      section: Dijet production in saturation formalism
+      table_figure_or_equation: 'x-distribution panels: legend entries of the curves; value read off the x axis at the lowest populated bins'
+      quotation: lead - xg / proton - xg
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide). Approximate figure
+        read on a log axis; illustrates the slide's point that the gluon x-fraction probed is ~2 decades above x_Bj.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_CORR_DECORRELATION_STATEMENT_WS2026_HEQCD
+  name: Deck statement on dijet de-correlations
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: de-correlations between jets and the anti-muon-dijet system
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 21
+      section: Dijet azimuthal correlations
+      table_figure_or_equation: null
+      quotation: de-correlations between jets and the anti-muon-dijet system
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_RPBP_MAX_SUPPRESSION_WS2026_HEQCD
+  name: Maximum nuclear suppression of the dijet azimuthal correlation (R_Pb-p) predicted in the back-to-back region
+  symbol: 1 - R_Pb-p
+  subsystem: physics_programme
+  scenario: null
+  value: 30
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 21
+      section: Dijet azimuthal correlations
+      table_figure_or_equation: null
+      quotation: nuclear modification ratios show strong suppression, up to 30% in the back-to-back region
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: 'Consistency with the R_Pb-p panels checked by eye (figure read, not an arithmetic reproduction): the bands end at R ≈ 0.69–0.76 (√s = 3.3 TeV)
+      and ≈ 0.65–0.71 (√s = 5.3 TeV) at ΔΦ ≈ 3.07.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Approximate figure reads (2026-10-29, 200-dpi rendering): R_Pb-p ≈ 0.85–1.06 at small ΔΦ, falling to ≈ 0.69–0.76 (3.3 TeV panel) and ≈ 0.65–0.71
+    (5.3 TeV panel) at the largest ΔΦ for ΔΦ(J1,J2) and ΔΦ(J1+J2,μ+); the 0.65 end point of ΔΦ(J1+J2,μ+) at 5.3 TeV slightly exceeds the slide''s ''up to
+    30%''.'
+- parameter_id: PHYS_DIJET_CORR_SQRT_S_PLOT_WS2026_HEQCD
+  name: Centre-of-mass energy of the dσ/dΔΦ panel and the lower R_Pb-p panel
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 5.3
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 21
+      section: Dijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: √s = 5.3 TeV
+    derivation: null
+    applicability:
+      category: direct
+      scenario: LHMUC-DIS2026-1TEV
+      explanation: Setting of the deck's own dijet correlation prediction for LHμC ([PK, G. Ziarko, in prep.]). The slide prints only √s; the link to the
+        1 TeV × 7 TeV option is an interpretation supported by the arithmetic in validation.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2√(1000 GeV × 7000 GeV) = 5291.5 GeV = 5.3 TeV (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_CORR_SQRT_S_NUCLEAR_WS2026_HEQCD
+  name: Centre-of-mass energy of the upper R_Pb-p panel (also used for the trijet panels)
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3.3
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 21
+      section: Dijet azimuthal correlations
+      table_figure_or_equation: upper R_Pb-p panel label
+      quotation: √s = 3.3 TeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Setting of the deck's own dijet correlation prediction ([PK, G. Ziarko, in prep.]). The slide does not print the beam energies behind
+        √s = 3.3 TeV.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Interpretation only (not a source statement): 2√(1000 GeV × 7000 GeV × 82/208) = 3.32 TeV, i.e. a 1 TeV muon on a Pb beam at the per-nucleon energy
+    of a 7 Z TeV LHC ring would give 3.3 TeV; no LHμC nucleus scenario with these energies is stated in the deck.'
+- parameter_id: PHYS_DIJET_CORR_OBSERVABLES_WS2026_HEQCD
+  name: Azimuthal observables of the dijet correlation panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: ΔΦ(J1,J2); ΔΦ(J1+J2,μ+)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 21
+      section: Dijet azimuthal correlations
+      table_figure_or_equation: panel legends (dσ/dΔΦ panel; R_Pb-p panels)
+      quotation: lead - ΔΦ(J1+J2,µ+) / lead - ΔΦ(J1,J2) / proton - ΔΦ(J1+J2,µ+) / proton - ΔΦ(J1,J2) / ΔΦ(J1,J2) / ΔΦ(J1+J2,µ+)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own dijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Same cuts as p.20 printed on each panel: -4 < y1lab, y2lab < 0; pT1Breit, pT2Breit > 5 GeV; Q2 > 1 GeV2. Approximate figure read: the dσ/dΔΦ panel
+    (√s = 5.3 TeV) spans ΔΦ ≈ 2.2–3.08 with values from ≈ 4.5–6 nb up to ≈ 23–36 nb.'
+- parameter_id: PHYS_DIJET_EIC_SUPPRESSION_STATEMENT_WS2026_HEQCD
+  name: Deck statement on the EIC dijet calculation
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: similar computation for EIC shows very little suppression
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: null
+      quotation: similar computation for EIC shows very little suppression, xg ≳ 10−3
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Footnote on the panel: ''* The Sudakov resummation model of Phys.Lett.B 737 (2014) 335-340''; curves: proton, lead, proton (Sudakov-model), lead
+    (Sudakov-model), proton (no Sudakov), lead (no Sudakov); ''LAB frame''.'
+- parameter_id: PHYS_DIJET_EIC_XG_MIN_WS2026_HEQCD
+  name: Gluon x probed by the EIC dijet calculation (lower bound quoted)
+  symbol: x_g
+  subsystem: physics_programme
+  scenario: null
+  value: 0.001
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: slide says '≳ 10^-3'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: null
+      quotation: xg ≳ 10−3
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_EIC_SQRT_S_WS2026_HEQCD
+  name: Centre-of-mass energy of the EIC comparison panels
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 90
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: panel labels
+      quotation: √S = 90 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_EIC_PT_MIN_WS2026_HEQCD
+  name: Jet pT threshold of the EIC comparison (dσ/dΔΦ panel and upper x_A panel)
+  symbol: pT_min
+  subsystem: physics_programme
+  scenario: null
+  value: 3
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: panel labels (dσ/dΔΦ panel; upper x_A panel)
+      quotation: pT1Breit > pT2Breit > 3 GeV / pT1 > pT2 > 3 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_EIC_PT_MIN_PANEL2_WS2026_HEQCD
+  name: Jet pT threshold of the lower EIC x_A panel
+  symbol: pT_min
+  subsystem: physics_programme
+  scenario: null
+  value: 3.8
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: lower x_A panel label
+      quotation: pT1 > pT2 > 3.8 GeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DIJET_EIC_RAPIDITY_WINDOWS_WS2026_HEQCD
+  name: Rapidity windows of the EIC comparison panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: -4.0 < y1lab, y2lab < -1.0 (dσ/dΔΦ panel); -4.0 < y1*, y2* < -1.0 (upper x_A panel); -4.0 < y1*, y2* < 0.0 (lower x_A panel)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 22
+      section: Dijet azimuthal correlations (EIC comparison)
+      table_figure_or_equation: panel labels
+      quotation: -4.0<y1lab,y2lab<-1.0; -4.0<y1*,y2*<-1.0; -4.0<y1*,y2*<0.0; Q2 > 1 GeV2
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published EIC-energy calculation ('A. van Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021' as cited on the slide) shown for comparison;
+        not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_STATEMENT_WS2026_HEQCD
+  name: Deck statements on trijet correlations as saturation tests
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: three jet observable allows to put the TMD gluon saturation models up to the most stringent test; various correlation observables allow to test
+    interplay of the low-x gluon radiation pattern and other resummation effects
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: null
+      quotation: • three jet observable allows to put the TMD gluon saturation models up to the most stringent test • various correlation observables allow
+        to test interplay of the low-x gluon radiation pattern and other resummation effects
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_PROCESS_WS2026_HEQCD
+  name: Process of the trijet prediction panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: μ+ g → μ+ j1 j2 j3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: µ+ g → µ+ j1 j2 j3
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_SQRT_S_WS2026_HEQCD
+  name: Centre-of-mass energy of the trijet panels
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3.3
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: √s = 3.3 TeV
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Setting of the deck's own trijet prediction ([PK, G. Ziarko, in prep.]); beam energies not printed (see PHYS_DIJET_CORR_SQRT_S_NUCLEAR_WS2026_HEQCD).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_YLAB_MIN_WS2026_HEQCD
+  name: Lower lab-rapidity cut on each jet (trijet panels)
+  symbol: y_lab,min
+  subsystem: physics_programme
+  scenario: null
+  value: -4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: -4 < yilab < 0
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_YLAB_MAX_WS2026_HEQCD
+  name: Upper lab-rapidity cut on each jet (trijet panels)
+  symbol: y_lab,max
+  subsystem: physics_programme
+  scenario: null
+  value: 0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: -4 < yilab < 0
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Zero is the physical upper rapidity edge of the selection (y_lab < 0), not an unknown. The deck does not state its rapidity sign convention.
+- parameter_id: PHYS_TRIJET_SAT_PT_BREIT_MIN_WS2026_HEQCD
+  name: Minimum Breit-frame pT of each jet (trijet panels)
+  symbol: pT_Breit,min
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: pTiBreit > 5 GeV
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_Q2_MIN_WS2026_HEQCD
+  name: Minimum photon virtuality (trijet panels)
+  symbol: Q^2_min
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: GeV^2
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel labels
+      quotation: Q2 > 1 GeV2
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_TRIJET_SAT_OBSERVABLES_WS2026_HEQCD
+  name: Azimuthal observables of the trijet panels
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: ΔΦ(j1,j2), ΔΦ(j1,j3), ΔΦ(j2,j3); ΔΦ(j1,μ+), ΔΦ(j2,μ+), ΔΦ(j3,μ+), ΔΦ(j1+j2+j3,μ+)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 23
+      section: Trijet azimuthal correlations
+      table_figure_or_equation: panel legends (dσ/dΔΦ panel; upper and lower R_Pb-p panels)
+      quotation: lead - ΔΦ(j1,j2) / lead - ΔΦ(j1,j3) / lead - ΔΦ(j2,j3) / proton - ΔΦ(j1,j2) / proton - ΔΦ(j1,j3) / proton - ΔΦ(j2,j3) / ΔΦ(j1,j2) / ΔΦ(j1,j3)
+        / ΔΦ(j2,j3) / ΔΦ(j1,µ+) / ΔΦ(j2,µ+) / ΔΦ(j3,µ+) / ΔΦ(j1+j2+j3,µ+)
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Setting of the deck's own trijet saturation prediction for LHμC ([PK, G. Ziarko, in prep.] as printed on the slide).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Figure read: R_Pb-p(ΔΦ(j_i,μ+)) ≈ 0.85–0.9 and nearly flat; R_Pb-p(ΔΦ(j1+j2+j3,μ+)) ≈ 1 at small ΔΦ falling to ≈ 0.78 near π; R_Pb-p(ΔΦ(j_i,j_k))
+    between ≈ 0.85 and ≈ 1.1.'
+- parameter_id: PHYS_SMALLX_SUMMARY_COVERAGE_WS2026_HEQCD
+  name: 'Summary: kinematic coverage & unexplored regime'
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Opens access to an unprecedented low-x phase space in the perturbative regime, far exceeding the reach of HERA and complementing the LHC and EIC;
+    provides a clean electromagnetic probe free from the initial-state hadronic complications of pp or pA collisions at the LHC
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 24
+      section: Summary
+      table_figure_or_equation: null
+      quotation: Opens access to an unprecedented low-x phase space in the perturbative regime, far exceeding the reach of HERA and complementing the LHC
+        and EIC. / Provides a clean electromagnetic probe free from the initial-state hadronic complications of pp or pA collisions at the LHC.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Summary slide of the LHμC small-x physics case.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_SUMMARY_RESUMMATION_WS2026_HEQCD
+  name: 'Summary: resummation dynamics & linear evolution'
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Probes the transition from standard DGLAP evolution to BFKL dynamics; enables precise extraction of small-x resummed PDF sets, looking out for
+    the rapid gluon rise and possible nonlinear effects
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 24
+      section: Summary
+      table_figure_or_equation: null
+      quotation: Probes the transition from standard DGLAP evolution to BFKL dynamics. / Enables precise extraction of small-x resummed PDF sets, looking
+        out for the rapid gluon rise and possible nonlinear effects.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Summary slide of the LHμC small-x physics case.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SMALLX_SUMMARY_SATURATION_WS2026_HEQCD
+  name: 'Summary: gluon saturation & non-linear QCD'
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Directly accesses the non-linear saturation regime where high gluon densities lead to gluon recombination, taming power-like cross-section growth
+    to preserve unitarity; provides experimental tests of non-universality aspects of the TMD gluon distributions at small x, via measurements of inclusive
+    DIS and jet production processes
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 24
+      section: Summary
+      table_figure_or_equation: null
+      quotation: Directly accesses the non-linear saturation regime where high gluon densities lead to gluon recombination, taming power-like cross-section
+        growth to preserve unitarity. / Provides experimental tests of non-universality aspects of the TMD gluon distributions at small x, via measurements
+        of inclusive DIS and jet production processes.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: Summary slide of the LHμC small-x physics case.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_WW_TMD_SUDAKOV_IMPLEMENTATION_WS2026_HEQCD
+  name: Weizsäcker-Williams TMD gluon input of the dijet/trijet predictions (backup slide)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: WW gluon distribution F_gg^(3) based on Kutak-Sapeta HERA fit; Sudakov resummation implemented as the hard-scale dependence
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_HEQCD_SMALLX
+      title: High energy QCD at LHμC
+      author_or_org: AGH University, Kraków (speaker not named on the slides)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 28 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 27
+      section: 'Backup: Weizsacker-Williams TMD'
+      table_figure_or_equation: null
+      quotation: • WW gluon distribution based on Kutak-Sapeta HERA fit ℱ(3)gg • The Sudakov resummation implemented as the hard scale dependence [A. van
+        Hameren, PK, K. Kutak, S. Sapeta, E. Zarow, 2021]
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Published TMD input (van Hameren, PK, Kutak, Sapeta, Zarow 2021 as cited on the backup slide; Kutak-Sapeta fit) restated on the backup
+        slide. p. 20 states that the LHμC dijet predictions use a WW TMD gluon distribution based on the Kutak-Sapeta HERA fit; the deck does not say explicitly
+        that the Sudakov implementation shown here is the one used for the LHμC panels of pp. 20, 21 and 23.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: The token 'ℱ(3)gg' of the quotation is in the PDF text layer but is hidden behind the plot in the rendered slide. The plot shows xG1 at x = 10^-3
+    for μ = 1.6, 6, 17, 67, 250 and 'no Sudakov' (proton and lead panels).

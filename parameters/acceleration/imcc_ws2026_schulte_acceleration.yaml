@@ -1,0 +1,1549 @@
+# Acceleration-related statements from SRC_WS1681458_SCHULTE_IMCC (D. Schulte, 'Muon Collider', IMCC overview at the HELP4CERN workshop,
+# AGH Kraków, Sept 2026, 45 slides): slides 8, 9, 17, 20, 21, 41, 42, 43. All analogous (IMCC). page = slide number.
+# Figure labels (ring schematic, magnet cross sections, field map, CERN-site plan, plot legend) are recorded with extraction_method
+# manual_figure_read and confidence medium. The slide-17 longitudinal-emittance plot is recorded only through its legend (phi_s = 135).
+# Verification 2026-10-29 (research/_fragments/verify_G3_ACCELERATION.md): '2 %' second-value loss record removed; slide-42 losses
+# reproduced by (E_iron + E_copper)/E and the 200 MJ by sum E x L (CERN NC-magnet lengths); P1 that only restated MR7 numbers -> P0;
+# figure-label quotations reduced to the printed labels; added the phi_s legend (slide 17) and eight CERN-site plan dimensions (slide 20).
+parameters:
+  - parameter_id: ACC_FAST_ACCELERATION_NEED_WS2026_SCHULTE
+    name: Fast acceleration named as a need for efficient muon transport (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: fast_acceleration_needed_for_transmission
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 8, section: Muon Beam Production and Transmission, table_figure_or_equation: null, quotation: Efficient muon transport is key to the luminosity • Need to have compact cooling system • Need fast acceleration}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_CRITICAL_TECHNOLOGY_ELEMENTS_WS2026_SCHULTE
+    name: Critical technology elements listed for 'Acceleration to collision energy' (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: pulsed_magnets_and_power_converters; RCS_RF_system
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 9, section: Muon Collider CTEs, table_figure_or_equation: null, quotation: Acceleration to collision energy - Pulsed magnets and power converters - RCS RF system}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Repeated on slide 34 ('Muon Collider Roadmap CT').
+
+  - parameter_id: ACC_RCS_MAGNET_TYPE_WS2026_SCHULTE
+    name: RCS magnet type (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: fast_pulsed_normal_conducting_magnets
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: Uses fast-pulsed normal magnets}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_REPETITION_RATE_WS2026_SCHULTE
+    name: RCS repetition rate
+    symbol: f_rep
+    subsystem: acceleration
+    scenario: null
+    value: 5
+    unit: Hz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 5 Hz pulses of O(1-10ms)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 repetition rate 5 Hz (ACC_RCS1_REPETITION_RATE_MR7).'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_PULSE_LENGTH_MIN_WS2026_SCHULTE
+    name: Lower end of the RCS magnet pulse length range
+    symbol: 'T_pulse,min'
+    subsystem: acceleration
+    scenario: null
+    value: 1
+    unit: ms
+    uncertainty: {type: order_of_magnitude, note: source says 'O(1-10ms)'}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 5 Hz pulses of O(1-10ms)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency at the order-of-magnitude level, not a reproduction: MR7 Table 5.1 acceleration times 0.34-6.37 ms.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_PULSE_LENGTH_MAX_WS2026_SCHULTE
+    name: Upper end of the RCS magnet pulse length range
+    symbol: 'T_pulse,max'
+    subsystem: acceleration
+    scenario: null
+    value: 10
+    unit: ms
+    uncertainty: {type: order_of_magnitude, note: source says 'O(1-10ms)'}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 5 Hz pulses of O(1-10ms)}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Slide 42 repeats 'Fast ramping normal magnets (1-10 ms)'.
+
+  - parameter_id: ACC_RCS_CIRCUMFERENCE_MIN_WS2026_SCHULTE
+    name: Smallest RCS circumference in the IMCC chain
+    symbol: C_min
+    subsystem: acceleration
+    scenario: null
+    value: 6
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 6-35 km circumference}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1: RCS1/RCS2 circumference 5990 m (rounded to 6 km on the slide).'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_CIRCUMFERENCE_MAX_WS2026_SCHULTE
+    name: Largest RCS circumference in the IMCC chain
+    symbol: C_max
+    subsystem: acceleration
+    scenario: null
+    value: 35
+    unit: km
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 6-35 km circumference}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1: RCS4 circumference 35000 m.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_CHALLENGES_WS2026_SCHULTE
+    name: RCS challenges listed on the slide (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: cost; energy_recovery_from_magnetic_field; high_bunch_charge; beam_quality_preservation
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 'Challenge: • Uses fast-pulsed normal magnets • 5 Hz pulses of O(1-10ms) • 6-35 km circumference • Cost • Recover energy from magnetic field • High bunch charge • Maintain beam quality'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_DESIGN_STATUS_WS2026_SCHULTE
+    name: RCS design status (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: lattices_for_all_site_independent_RCSs_with_strong_synchrotron_motion_and_hardware_specifications; beam_propagation_through_complex_works
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 41, section: RCS Designs, table_figure_or_equation: null, quotation: 'Achieved: • Lattices for all site independent RCSs • Strong synchrotron motion • Including hardware specifications • Beam propagation through complex works'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Slide 17 version: ''Lattices for all site independent RCSs • Beam propagation through complex • Conceptual design of magnets and power converters • Optimised design together with RF''.'
+
+  - parameter_id: ACC_RCS_RF_CAVITY_TYPE_WS2026_SCHULTE
+    name: RCS RF cavity type (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: TESLA_type_1.3_GHz
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 'Key conclusions: • 1.3 GHz TESLA-type cavities work'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_RF_FREQUENCY_WS2026_SCHULTE
+    name: RCS RF frequency
+    symbol: f_RF
+    subsystem: acceleration
+    scenario: null
+    value: 1.3
+    unit: GHz
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 1.3 GHz TESLA-type cavities work}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 main RF frequency 1.3 GHz.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_KEY_CONCLUSIONS_WS2026_SCHULTE
+    name: RCS key conclusions (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: emittance_transport_OK; cost_and_power_OK; connection_to_initial_linacs_needed
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 'Key conclusions: • 1.3 GHz TESLA-type cavities work • Emittance transport is OK • Cost and power is OK • Need to connect to initial linacs'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_DESIGN_TEAMS_WS2026_SCHULTE
+    name: Attribution of the RCS design work packages (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: 'lattice: A. Chance et al.; longitudinal dynamics: H. Damerell et al.; RF: A. Grudiev et al.; power converter: F. Boattini et al.; magnets: L. Bottura et al.'
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 41, section: RCS Designs, table_figure_or_equation: null, quotation: 'Lattice: A. Chance et al. Long. dynamics: H. Damerell et al. RF: Alexej Grudiev et al. Power converter: F. Boattini et al. Magnets: L. Bottura et al.'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_ACCELERATION_CHAIN_WS2026_SCHULTE
+    name: Acceleration chain of the IMCC complex as labelled in the slide figure (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: 'SC_LINAC; RLA_1,2; RCS_1,2,3_and_4'
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: null, quotation: 'Acceleration: SC LINAC RLA 1,2 RCS 1,2,3 & 4'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS1_TURNS_WS2026_SCHULTE
+    name: Number of turns in RCS1 (figure label)
+    symbol: N_turns
+    subsystem: acceleration
+    scenario: null
+    value: 17
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 17 turns | RCS 1 | 63 – 313 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 number of turns RCS1: 17.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; confidence medium.
+
+  - parameter_id: ACC_RCS1_INJECTION_ENERGY_WS2026_SCHULTE
+    name: Injection energy of RCS1 (figure label)
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: 63
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 17 turns | RCS 1 | 63 – 313 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Small figure label; MR7 Table 5.1 gives 63 GeV (313 vs 314 GeV for the RCS1/RCS2 boundary is a rounding difference between the two sources, preserved as printed).'
+
+  - parameter_id: ACC_RCS1_EXTRACTION_ENERGY_WS2026_SCHULTE
+    name: Extraction energy of RCS1 (figure label)
+    symbol: E_ext
+    subsystem: acceleration
+    scenario: null
+    value: 313
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 17 turns | RCS 1 | 63 – 313 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; MR7 Table 5.1 gives 314 GeV.
+
+  - parameter_id: ACC_RCS2_TURNS_WS2026_SCHULTE
+    name: Number of turns in RCS2 (figure label)
+    symbol: N_turns
+    subsystem: acceleration
+    scenario: null
+    value: 55
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 2 | 313 - 750 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 number of turns RCS2: 55.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; confidence medium.
+
+  - parameter_id: ACC_RCS2_INJECTION_ENERGY_WS2026_SCHULTE
+    name: Injection energy of RCS2 (figure label)
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: 313
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 2 | 313 - 750 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Small figure label; MR7 Table 5.1 gives 314 GeV (313 vs 314 GeV for the RCS1/RCS2 boundary is a rounding difference between the two sources, preserved as printed).'
+
+  - parameter_id: ACC_RCS2_EXTRACTION_ENERGY_WS2026_SCHULTE
+    name: Extraction energy of RCS2 (figure label)
+    symbol: E_ext
+    subsystem: acceleration
+    scenario: null
+    value: 750
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 2 | 313 - 750 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; MR7 Table 5.1 gives 750 GeV.
+
+  - parameter_id: ACC_RCS3_TURNS_WS2026_SCHULTE
+    name: Number of turns in RCS3 (figure label)
+    symbol: N_turns
+    subsystem: acceleration
+    scenario: null
+    value: 66
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 66 turns | RCS 3 | 750 -1500 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 number of turns RCS3: 66.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; confidence medium.
+
+  - parameter_id: ACC_RCS3_INJECTION_ENERGY_WS2026_SCHULTE
+    name: Injection energy of RCS3 (figure label)
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: 750
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 66 turns | RCS 3 | 750 -1500 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Small figure label; MR7 Table 5.1 gives 750 GeV (313 vs 314 GeV for the RCS1/RCS2 boundary is a rounding difference between the two sources, preserved as printed).'
+
+  - parameter_id: ACC_RCS3_EXTRACTION_ENERGY_WS2026_SCHULTE
+    name: Extraction energy of RCS3 (figure label)
+    symbol: E_ext
+    subsystem: acceleration
+    scenario: null
+    value: 1500
+    unit: GeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 66 turns | RCS 3 | 750 -1500 GeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; MR7 Table 5.1 gives 1500 GeV.
+
+  - parameter_id: ACC_RCS4_TURNS_WS2026_SCHULTE
+    name: Number of turns in RCS4 (figure label)
+    symbol: N_turns
+    subsystem: acceleration
+    scenario: null
+    value: 55
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 4 | 1.5 -5.0 TeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Consistency, not a reproduction: MR7 Table 5.1 number of turns RCS4: 55.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; confidence medium.
+
+  - parameter_id: ACC_RCS4_INJECTION_ENERGY_WS2026_SCHULTE
+    name: Injection energy of RCS4 (figure label)
+    symbol: E_inj
+    subsystem: acceleration
+    scenario: null
+    value: 1.5
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 4 | 1.5 -5.0 TeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Small figure label; MR7 Table 5.1 gives 1500 GeV (313 vs 314 GeV for the RCS1/RCS2 boundary is a rounding difference between the two sources, preserved as printed).'
+
+  - parameter_id: ACC_RCS4_EXTRACTION_ENERGY_WS2026_SCHULTE
+    name: Extraction energy of RCS4 (figure label)
+    symbol: E_ext
+    subsystem: acceleration
+    scenario: null
+    value: 5
+    unit: TeV
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: 55 turns | RCS 4 | 1.5 -5.0 TeV}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Small figure label; MR7 Table 5.1 gives 5000 GeV.
+
+  - parameter_id: ACC_RCS_FIGURE_LEGEND_WS2026_SCHULTE
+    name: Elements shown in the RCS schematic (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: beam_monitor; RF_station_and_impedance; transverse_damper
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: ring schematic on slide 17 (figure labels), quotation: Beam monitor | RF station and Impedance | Transverse damper}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_SYNCHRONOUS_PHASE_REFERENCE_WS2026_SCHULTE
+    name: Synchronous phase of the fixed-phase reference case in the IMCC RCS1-4 longitudinal simulation (plot legend)
+    symbol: phi_s
+    subsystem: acceleration
+    scenario: null
+    value: 135
+    unit: degree
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: legend of the plot 'Δε_L/ε_L (%)' versus 'Turn' with markers RCS1-RCS4 on slide 17 (same plot on slide 41), quotation: 'ϕs = 135, 135, 135, 135 | ϕs = optimised'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC RCS-chain longitudinal-dynamics result as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29). Unit not printed on the legend; degrees inferred (one value per ring RCS1-4). The plot compares the longitudinal-emittance growth for this fixed phase with an ''optimised'' phase choice; the curves (read off the plot, not recorded) end near 77 % and 10 % growth respectively. A 135 deg phase means an RF voltage of sqrt(2) x the energy gain per turn, the reference of Topp-Mugglestone''s ''potential sqrt(2) improvement'' (ACC_VFFA_ON_CREST_VOLTAGE_GAIN_FACTOR_WS2026_TOPPMUGGLESTONE).'
+
+  - parameter_id: ACC_RCS_STORED_MAGNETIC_ENERGY_WS2026_SCHULTE
+    name: Energy stored in the RCS magnets to be recovered by the power converters
+    symbol: E_stored
+    subsystem: acceleration
+    scenario: null
+    value: 200
+    unit: megajoule
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: null, quotation: 'Challenge: Fast ramping normal magnets (1-10 ms) with efficient energy recovery in power converter (200 MJ stored in magnets)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['sum over the CERN-site rings of E [J/m] (table on the same slide) x pulsed-magnet length (MR7 Table F.1: 4075, 18630, 12808 m) = 201.6 MJ, reproduces 200 MJ (1 %); with the MR7 Table J.1 NC-magnet lengths (4103, 18650, 12940 m) 202.7 MJ'], check_ids: [], notes: MR7 Table J.1 (CERN) lists magnetic energies of 26 + 96 + 56 = 178 MJ and Table J.2 (greenfield) 31 + 13 + 20 + 88 = 152 MJ; the 200 MJ matches the per-metre energies of the slide-42 table times the CERN NC-magnet lengths.}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_POWER_CONVERTER_STATUS_WS2026_SCHULTE
+    name: Power-converter and magnet design status (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: conceptual_designs_exist; sign_switching_without_capacitor_voltage_reversal
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: null, quotation: 'Achieved: • Conceptual design of magnets and power converters • Optimised design together with RF • Power converters can switch sign of magnets without changing direction of voltage on capacitors'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_ENERGY_RECOVERY_EFFICIENCY_MIN_WS2026_SCHULTE
+    name: Lower end of the quoted power-converter energy recovery efficiency for the RCSs
+    symbol: 'eta_rec,min'
+    subsystem: acceleration
+    scenario: null
+    value: 98
+    unit: percent
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: null, quotation: 'Key conclusions: • High recovery efficiency for RCSs (98-99%)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Partial consistency: 100 % minus the per-cycle losses of the same slide''s table gives 98.9 % (SPS 1) and 98.4 % (LHC 1), but 93.7 % for LHC 2 (6.3 %).'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_ENERGY_RECOVERY_EFFICIENCY_MAX_WS2026_SCHULTE
+    name: Upper end of the quoted power-converter energy recovery efficiency for the RCSs
+    symbol: 'eta_rec,max'
+    subsystem: acceleration
+    scenario: null
+    value: 99
+    unit: percent
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: null, quotation: 'Key conclusions: • High recovery efficiency for RCSs (98-99%)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: 'Partial consistency, not a reproduction: 100 % minus the losses per cycle of the same slide''s table gives 98.9 % (SPS 1) and 98.4 % (LHC 1), inside 98-99 %, but 93.7 % for LHC 2 (6.3 %), outside the quoted range.'}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_READINESS_STATEMENT_WS2026_SCHULTE
+    name: Readiness statement for the pulsed-magnet system (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: ready_for_experimental_optimisation_models_prototypes
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: null, quotation: Ready for experimental optimization/models/protoypes}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_SPS1_MAGNET_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Stored magnet energy per metre, SPS 1'
+    symbol: E
+    subsystem: acceleration
+    scenario: null
+    value: 5447
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''SPS 1'', column ''E [J/m]'': 5447'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''SPS 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value).
+
+  - parameter_id: ACC_RCS_SPS1_IRON_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the iron yoke, SPS 1'
+    symbol: E_iron
+    subsystem: acceleration
+    scenario: null
+    value: 10
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''SPS 1'', column ''Eiron [J/m]'': 10'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''SPS 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_SPS1_COPPER_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the copper coils, SPS 1'
+    symbol: E_copper
+    subsystem: acceleration
+    scenario: null
+    value: 52
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''SPS 1'', column ''Ecopper [J/m]'': 52'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''SPS 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_SPS1_CYCLE_LOSS_WS2026_SCHULTE
+    name: 'Energy loss per cycle, SPS 1'
+    symbol: loss
+    subsystem: acceleration
+    scenario: null
+    value: 1.1
+    unit: percent
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''SPS 1'', column ''Loss [%]'': 1.1'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''SPS 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['(E_iron + E_copper)/E from the same table row = (10 + 52)/5447 = 1.14 %, reproduces 1.1 %'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value).
+
+  - parameter_id: ACC_RCS_SPS1_POWER_WS2026_SCHULTE
+    name: 'Total power at 5 Hz including cooling, SPS 1'
+    symbol: P
+    subsystem: acceleration
+    scenario: null
+    value: 1.9
+    unit: MW
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''SPS 1'', column ''P [MW]'': 1.9'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''SPS 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value). MR7 Table J.1 gives peak converter powers of 110/87/70 GW for the same rings (different quantity).
+
+  - parameter_id: ACC_RCS_LHC1_MAGNET_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Stored magnet energy per metre, LHC 1'
+    symbol: E
+    subsystem: acceleration
+    scenario: null
+    value: 5678
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 1'', column ''E [J/m]'': 5678'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value).
+
+  - parameter_id: ACC_RCS_LHC1_IRON_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the iron yoke, LHC 1'
+    symbol: E_iron
+    subsystem: acceleration
+    scenario: null
+    value: 9.2
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 1'', column ''Eiron [J/m]'': 9.2'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_LHC1_COPPER_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the copper coils, LHC 1'
+    symbol: E_copper
+    subsystem: acceleration
+    scenario: null
+    value: 80.6
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 1'', column ''Ecopper [J/m]'': 80.6'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_LHC1_CYCLE_LOSS_WS2026_SCHULTE
+    name: 'Energy loss per cycle, LHC 1'
+    symbol: loss
+    subsystem: acceleration
+    scenario: null
+    value: 1.6
+    unit: percent
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 1'', column ''Loss [%]'': 1.6'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['(E_iron + E_copper)/E from the same table row = (9.2 + 80.6)/5678 = 1.58 %, reproduces 1.6 %'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value).
+
+  - parameter_id: ACC_RCS_LHC1_POWER_WS2026_SCHULTE
+    name: 'Total power at 5 Hz including cooling, LHC 1'
+    symbol: P
+    subsystem: acceleration
+    scenario: null
+    value: 12.8
+    unit: MW
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 1'', column ''P [MW]'': 12.8'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 1'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value). MR7 Table J.1 gives peak converter powers of 110/87/70 GW for the same rings (different quantity).
+
+  - parameter_id: ACC_RCS_LHC2_MAGNET_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Stored magnet energy per metre, LHC 2'
+    symbol: E
+    subsystem: acceleration
+    scenario: null
+    value: 5752
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 2'', column ''E [J/m]'': 5752'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 2'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value).
+
+  - parameter_id: ACC_RCS_LHC2_IRON_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the iron yoke, LHC 2'
+    symbol: E_iron
+    subsystem: acceleration
+    scenario: null
+    value: 63.4
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 2'', column ''Eiron [J/m]'': 63.4'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 2'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_LHC2_COPPER_ENERGY_PER_METRE_WS2026_SCHULTE
+    name: 'Energy per metre in the copper coils, LHC 2'
+    symbol: E_copper
+    subsystem: acceleration
+    scenario: null
+    value: 298
+    unit: joule/meter
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 2'', column ''Ecopper [J/m]'': 298'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 2'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_LHC2_CYCLE_LOSS_WS2026_SCHULTE
+    name: 'Energy loss per cycle, LHC 2 (cell printed ''6.3/2'')'
+    symbol: loss
+    subsystem: acceleration
+    scenario: null
+    value: 6.3
+    unit: percent
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 2'', column ''Loss [%]'': 6.3/2'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 2'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: ['(E_iron + E_copper)/E from the same table row = (63.4 + 298)/5752 = 6.28 %, reproduces 6.3 %'], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'The cell prints ''6.3/2''; 6.3 % is reproduced by (E_iron + E_copper)/E like the SPS 1 and LHC 1 rows. What ''/2'' means (a divisor, e.g. per half-cycle of the bipolar hybrid swing, or a second number) is not stated; MR7 Table J.1 gives a 1.4 % resistive/inductive ratio for RCS LHC2, which matches neither reading.'
+
+  - parameter_id: ACC_RCS_LHC2_POWER_WS2026_SCHULTE
+    name: 'Total power at 5 Hz including cooling, LHC 2'
+    symbol: P
+    subsystem: acceleration
+    scenario: null
+    value: 26.6
+    unit: MW
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_table_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'table on slide 42: ''Energy in magnets, losses per cycle and total power at 5 Hz including cooling''', quotation: 'Row ''LHC 2'', column ''P [MW]'': 26.6'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'CERN-site RCS ''LHC 2'' of the IMCC study (SPS tunnel, first and second LHC-tunnel rings); IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: Also on slide 17 (same value). MR7 Table J.1 gives peak converter powers of 110/87/70 GW for the same rings (different quantity).
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_GEOMETRY_OPTIONS_WS2026_SCHULTE
+    name: 'Pulsed-dipole cross-section options shown (categorical, figure labels)'
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: 'HG (hourglass); WF1, WF1M, WF3 (window-frame); HM'
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: magnet cross-section figure on slide 42 (also slide 17), quotation: 'a) HG | b) WF1 | c) WF1M | d) HM | e) WF3 | Fig. 6.1.18: Summary of the optimized geometries (the cross sections are to scale)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Figure reproduced from an IMCC report; legible caption fragments (cut at the right edge of the image): ''a) Hourglas[...] A/mm2, b) Window-frame WF#1, J = 10 A/mm2, c) Window-frame WF#1M, J = 20 A/mm2, d[...] HM, J = 20 A/mm2; e) Window-frame WF#3, J = 20 A/mm2.'' The current density of the hourglass option is not legible. The HG and HM options are circled on the slide.'
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_HM_HEIGHT_WS2026_SCHULTE
+    name: Cross-section height scale bar of the HM pulsed-dipole option (figure label)
+    symbol: h
+    subsystem: acceleration
+    scenario: null
+    value: 0.38
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 17, section: RCS Designs, table_figure_or_equation: 'magnet cross-section figure on slide 17 (IMCC ''Fig. 6.1.18: Summary of the optimized geometries (the cross sections are to scale)''): vertical arrow beside d) HM', quotation: 0.38 m}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'The same figure is on slide 42, where this label is hidden behind the red circle.'
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_HM_WIDTH_WS2026_SCHULTE
+    name: Cross-section width scale bar of the HM pulsed-dipole option (figure label)
+    symbol: w
+    subsystem: acceleration
+    scenario: null
+    value: 0.5
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'magnet cross-section figure on slide 42 (also slide 17; IMCC ''Fig. 6.1.18 ... (the cross sections are to scale)''): horizontal arrow below d) HM', quotation: 0.50 m}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_YOKE_STEEL_WS2026_SCHULTE
+    name: Yoke steel grade of the pulsed dipole field-map figure (figure label)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: M235-35A
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: field-map figure on slide 42 (label printed twice), quotation: Steel M235-35A}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_YOKE_WIDTH_WS2026_SCHULTE
+    name: Overall width of the pulsed-dipole cross-section model shown in the field-map figure (figure label; symmetry of the model not stated)
+    symbol: w_yoke
+    subsystem: acceleration
+    scenario: null
+    value: 229
+    unit: mm
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'field-map figure on slide 42 (labels ''Steel M235-35A''): top dimension arrow', quotation: 229 mm}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: 'Further labels in the same figure: 161 mm (height), 50 mm and 96 mm (bottom widths), 15 mm, 19 mm, 9 mm (pole-gap/coil region); their exact meaning is not stated on the slide, so they are listed here rather than recorded as parameters. The slide does not say which cross-section option (HG or HM) the field map belongs to.'
+
+  - parameter_id: ACC_RCS_PULSED_DIPOLE_YOKE_HEIGHT_WS2026_SCHULTE
+    name: Overall height of the pulsed-dipole cross-section model shown in the field-map figure (figure label; symmetry of the model not stated)
+    symbol: h_yoke
+    subsystem: acceleration
+    scenario: null
+    value: 161
+    unit: mm
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 42, section: Fast-ramping RCD Dipoles, table_figure_or_equation: 'field-map figure on slide 42 (labels ''Steel M235-35A''): left dimension arrow', quotation: 161 mm}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_CERN_SITE_LAYOUT_WS2026_SCHULTE
+    name: CERN site-specific RCS layout (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: one_RCS_in_SPS_tunnel_two_in_LHC_tunnel
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: null, quotation: 'CERN: One RCS in SPS and two in LHC Construct facility on CERN land • Adjusted parameters (3.2 and 7.6 TeV, 10 TeV maybe possible)'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site study; of direct interest for an LHμC booster siting in the SPS/LHC tunnels, but an IMCC statement.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_FNAL_SITE_LAYOUT_WS2026_SCHULTE
+    name: Fermilab site-specific RCS layout (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: one_RCS_in_Tevatron_tunnel_three_in_site_filler_tunnel
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: null, quotation: 'Fermilab: One RCS in Tevatron tunnel, three RCS in one site-filler tunnel'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_CERN_SITE_SC_LINAC_FOOTPRINT_LENGTH_WS2026_SCHULTE
+    name: Footprint length of the SC LINAC on the IMCC CERN-site plan (plan label 200x25 m)
+    symbol: L_SC_LINAC
+    subsystem: acceleration
+    scenario: null
+    value: 200
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: SC LINAC | 200x25 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi). Plan label gives the footprint as 200 x 25 m (length x width).'
+
+  - parameter_id: ACC_CERN_SITE_RLA1_LENGTH_WS2026_SCHULTE
+    name: Length of RLA1 on the IMCC CERN-site plan (plan label)
+    symbol: L_RLA1
+    subsystem: acceleration
+    scenario: null
+    value: 200
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: RLA1 | Length 200m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi).'
+
+  - parameter_id: ACC_CERN_SITE_RLA2_LENGTH_WS2026_SCHULTE
+    name: Length of RLA2 on the IMCC CERN-site plan (plan label)
+    symbol: L_RLA2
+    subsystem: acceleration
+    scenario: null
+    value: 1000
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: RLA2 | Length 1000m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi). Compare MR7 Table E.2: RLA2 linac length 2 x 915 m and arcs of about 8 x 438 m (ACC_RLA2_LINAC_LENGTH_MR7); the plan length is the racetrack footprint as labelled.'
+
+  - parameter_id: ACC_CERN_SITE_INJECTION_TUNNEL_RLA2_SPS_LENGTH_WS2026_SCHULTE
+    name: Length of the injection tunnel from RLA2 to the SPS on the IMCC CERN-site plan (plan label)
+    symbol: L_tunnel
+    subsystem: acceleration
+    scenario: null
+    value: 1010
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: Injection Tunnel from RLA2 to SPS | Length 1010 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi).'
+
+  - parameter_id: ACC_CERN_SITE_INJECTION_TUNNEL_1_LENGTH_WS2026_SCHULTE
+    name: Length of 'Injection Tunnel 1' on the IMCC CERN-site plan (plan label)
+    symbol: L_tunnel
+    subsystem: acceleration
+    scenario: null
+    value: 2006
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: Injection Tunnel 1 | Length 2006 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi). The plan does not say which machines the tunnel connects.'
+
+  - parameter_id: ACC_CERN_SITE_INJECTION_TUNNEL_2_LENGTH_WS2026_SCHULTE
+    name: Length of 'Injection Tunnel 2' on the IMCC CERN-site plan (plan label)
+    symbol: L_tunnel
+    subsystem: acceleration
+    scenario: null
+    value: 2006
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: Injection Tunnel 2 | Length 2006 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi). The plan does not say which machines the tunnel connects.'
+
+  - parameter_id: ACC_CERN_SITE_TI18_LENGTH_WS2026_SCHULTE
+    name: Length of tunnel 'TI18' on the IMCC CERN-site plan (plan label)
+    symbol: L_TI18
+    subsystem: acceleration
+    scenario: null
+    value: 257
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: TI18 | Length 257 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi).'
+
+  - parameter_id: ACC_CERN_SITE_TI12_LENGTH_WS2026_SCHULTE
+    name: Length of tunnel 'TI12' on the IMCC CERN-site plan (plan label)
+    symbol: L_TI12
+    subsystem: acceleration
+    scenario: null
+    value: 533
+    unit: m
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_figure_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 20, section: Site Specific Designs, table_figure_or_equation: 'CERN-site plan on slide 20 (title block ''MUON COLLIDER COMPLEX 10 KM ACCELERATOR RING PLAN VIEW'', V1)', quotation: TI12 | Length 533 m.}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC CERN-site layout drawing (site-specific study: ''One RCS in SPS and two in LHC'', ''Construct facility on CERN land''); a plan dimension of the IMCC complex, analogous for any LHμC acceleration complex at CERN, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-29'
+    responsible_module: parameters/acceleration
+    notes: 'Added by the verifier (2026-10-29): plan label missed by the extraction (legible at 400 dpi).'
+
+  - parameter_id: ACC_RCS_POWER_AND_COST_DRIVERS_WS2026_SCHULTE
+    name: RCSs as the main power driver; RF and magnets as the main cost drivers (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: main_power_driver_RCSs; main_cost_drivers_RF_and_magnets
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 21, section: Summary of Cost Scale and Power Estimate, table_figure_or_equation: null, quotation: 'Main cost drivers: RF and magnets Main power driver: RCSs'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+
+  - parameter_id: ACC_RCS_IMPEDANCE_CONCLUSION_WS2026_SCHULTE
+    name: Collective-effects conclusion for the RCSs (categorical)
+    symbol: null
+    subsystem: acceleration
+    scenario: null
+    value: RCS_impedances_manageable_by_design
+    unit: dimensionless
+    uncertainty: {type: not_stated}
+    allowed_range: null
+    provenance:
+      status: analogous
+      extraction_method: manual_text_read
+      source: {source_id: SRC_WS1681458_SCHULTE_IMCC, title: Muon Collider (IMCC overview), author_or_org: 'Daniel Schulte (CERN), for the International Muon Collider Collaboration', url: 'https://indico.cern.ch/event/1681458/', date: '2026-09-24', version: slides, page: 43, section: Collective Effects, table_figure_or_equation: null, quotation: 'Assessed impedances (beam screen and RF cavities) in RCSs and collider ring ... Key conclusions: • Impedances in RCSs and collider ring can be taken care of by design'}
+      derivation: null
+      applicability: {category: analogous, scenario: null, explanation: 'IMCC muon-collider status as presented at the Kraków workshop; analogous technology for an LHμC booster, not an LHμC value.'}
+      confidence: medium
+      assumption_id: null
+    validation: {level: P0, methods: [], check_ids: [], notes: ''}
+    dependencies: []
+    date_added: '2026-10-28'
+    responsible_module: parameters/acceleration
+    notes: null
+

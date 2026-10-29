@@ -1,0 +1,130 @@
+# Source-side scenarios added by the 2026-10-28 addendum (group G2_SOURCE). Schema: schemas/machine.schema.json.
+# No numbers here: every role references a parameter record in parameters/source/*.yaml; unknown_roles lists what the sources
+# do not give. LHMUC-SOURCE-HYBRID-IMCC describes the hybrid source CONCEPT of C. Rogers' Kraków deck (not a beam parameter set);
+# JPARC-MUSE-S2-2024 describes the measurement conditions of the first RF acceleration of ultra-slow mu+ (Aritome et al. 2024/2025).
+# Verified 2026-10-29 by the G2_SOURCE adversarial verifier (research/_fragments/verify_G2_SOURCE.md).
+scenarios:
+  - scenario_id: LHMUC-SOURCE-HYBRID-IMCC
+    label: "LHμC hybrid ultra-cold μ+ source concept: IMCC capture + rectilinear stage-A cooling + deceleration + low-energy cooling (Rogers, Kraków 2026)"
+    description: "Concept proposed for the LHμC by C. Rogers (STFC/IMCC) at the HELP4CERN workshop 'Ultra-cold muons for the LHC' (24-26 Sept 2026): MW-class protons on an IMCC-type graphite target with an all-HTS capture solenoid, solenoid chicane and proton absorber, Neuffer buncher/phase rotator, rectilinear ionisation cooling stopped at the end of stage A4 (IMCC design of Zhu et al. PRAB 28 (2025) 041003: eps_T 1.239 mm, eps_L 1.741 mm = 0.6 ns MeV, 219 MeV/c), then an undesigned deceleration/phase rotation targeting 1 MeV energy spread and 1 ns bunches at ~50 % efficiency, feeding a low-energy (laser-ionisation or frictional) cooling stage. Author's estimate: 0.04 μ+ per 5 GeV proton to the end of stage A. The IMCC numbers are analogous technology; the hybrid-specific statements are concept-level. No ultra-cold yield, repetition rate, bunch structure or final emittance is given for the LHμC."
+    machine: LHMUC
+    design_version: "Rogers, 'Hybrid Source of Ultra Cold Muons', Kraków workshop slides (SRC_WS1681458_ROGERS_HYBRID_SOURCE), 24 Sept 2026; IMCC values from Zhu et al. PRAB 28 (2025) 041003 and the IMCC performance table reproduced on p.14"
+    status: partially_reported
+    primary_source_ids: [SRC_WS1681458_ROGERS_HYBRID_SOURCE]
+    parameters:
+      source_concept: SOURCE_HYBRID_CONCEPT_WS2026_ROGERS
+      proton_driver_energy: SOURCE_HYBRID_PROTON_DRIVER_ENERGY_WS2026_ROGERS
+      target_beam_power_min: SOURCE_HYBRID_TARGET_BEAM_POWER_MIN_WS2026_ROGERS
+      target_beam_power_max: SOURCE_HYBRID_TARGET_BEAM_POWER_MAX_WS2026_ROGERS
+      target_material: SOURCE_HYBRID_TARGET_MATERIAL_WS2026_ROGERS
+      target_unspent_proton_power: SOURCE_HYBRID_TARGET_UNSPENT_PROTON_POWER_WS2026_ROGERS
+      proton_bunch_population_on_target: SOURCE_HYBRID_PERF_PROTON_DRIVER_PARTICLES_PER_BUNCH_WS2026_ROGERS
+      muons_per_bunch_front_end: SOURCE_HYBRID_PERF_FRONT_END_PARTICLES_PER_BUNCH_WS2026_ROGERS
+      muons_per_bunch_end_stage_a: SOURCE_HYBRID_PERF_RECT_A_PARTICLES_PER_BUNCH_WS2026_ROGERS
+      mu_per_proton_end_stage_a: SOURCE_HYBRID_MU_PER_PROTON_END_STAGE_A_WS2026_ROGERS
+      cooling_end_point: SOURCE_HYBRID_COOLING_END_POINT_WS2026_ROGERS
+      transverse_emittance_end_stage_a: SOURCE_HYBRID_RECT_A4_TRANSVERSE_EMITTANCE_WS2026_ROGERS
+      longitudinal_emittance_end_stage_a: SOURCE_HYBRID_RECT_A4_LONGITUDINAL_EMITTANCE_WS2026_ROGERS
+      longitudinal_emittance_end_stage_a_ns_mev: SOURCE_HYBRID_STAGE_A4_LONGITUDINAL_EMITTANCE_NSMEV_WS2026_ROGERS
+      reference_momentum_end_stage_a: SOURCE_HYBRID_RECT_A4_REFERENCE_MOMENTUM_WS2026_ROGERS
+      stage_a_cumulative_transmission: SOURCE_HYBRID_PERF_RECT_A_CUMULATIVE_TRANSMISSION_WS2026_ROGERS
+      deceleration_design_status: SOURCE_HYBRID_DECELERATION_DESIGN_STATUS_WS2026_ROGERS
+      deceleration_efficiency_target: SOURCE_HYBRID_DECELERATION_EFFICIENCY_TARGET_WS2026_ROGERS
+      deceleration_energy_spread_target: SOURCE_HYBRID_DECEL_TARGET_ENERGY_SPREAD_WS2026_ROGERS
+      deceleration_bunch_length_target: SOURCE_HYBRID_DECEL_TARGET_BUNCH_LENGTH_WS2026_ROGERS
+      mu_per_proton_after_deceleration_implied: SOURCE_HYBRID_MU_PER_PROTON_AFTER_DECEL_IMPLIED_WS2026_ROGERS
+      low_energy_cooling_efficiency: SOURCE_HYBRID_LOW_ENERGY_COOLING_EFFICIENCY_WS2026_ROGERS
+      cooling_flux_uncertainty: SOURCE_HYBRID_COOLING_FLUX_UNCERTAINTY_GUESS_WS2026_ROGERS
+      target_flux_uncertainty: SOURCE_HYBRID_TARGET_FLUX_UNCERTAINTY_GUESS_WS2026_ROGERS
+      cost: SOURCE_HYBRID_COST_SCALE_WS2026_ROGERS
+      wall_plug_power: SOURCE_HYBRID_WALL_PLUG_POWER_WS2026_ROGERS
+      hts_radiation_tolerance: SOURCE_HYBRID_HTS_RADIATION_TOLERANCE_WS2026_ROGERS
+      design_status: SOURCE_HYBRID_DESIGN_STATUS_WS2026_ROGERS
+    unknown_roles:
+      - proton_driver_power
+      - repetition_rate
+      - proton_bunches
+      - low_energy_cooling_method
+      - low_energy_cooling_efficiency
+      - low_energy_target_geometry
+      - ultra_cold_mu_per_proton
+      - muon_bunch_population
+      - muon_bunches
+      - bunch_spacing
+      - muon_norm_emittance
+      - muon_bunch_length
+      - muon_energy_spread
+      - muon_polarisation
+      - deceleration_lattice
+      - capture_solenoid_field
+      - wall_plug_power
+      - hts_radiation_tolerance
+    geometry_fidelity: G0
+    validation_level: P0
+    notes: "P0: the only arithmetic available (0.04 = 21.2e12 / 500e12; 1.741 mm = 0.6 ns MeV; 0.02 = 0.04 x 0.5) is audit arithmetic recorded in the parameter notes, not yet pinned in tests/scientific. The cooling-system and target flux uncertainties (~30 % each) are the author's own guesses, explicitly not official IMCC numbers. low_energy_cooling_efficiency, wall_plug_power and hts_radiation_tolerance are listed both as roles (pointing to explicit-unknown records with value null) and in unknown_roles; cost carries an order-of-magnitude value (~O(500) MCHF, stored as a dimensionless number of MCHF) and is therefore a role only (removed from unknown_roles by the G2_SOURCE verifier, 2026-10-29). The IMCC performance table reproduced on p.14 is written for the μ− line (column 'Estimated μ−/bunch'); the hybrid concept applies it to μ+. Everything downstream of stage A4 (deceleration, low-energy cooling, extraction) is undesigned per the deck."
+
+  - scenario_id: JPARC-MUSE-S2-2024
+    label: "J-PARC MUSE S2 area, March-April 2024: first RF acceleration of ultra-slow μ+ to 100 keV (Aritome et al.)"
+    description: "Measurement conditions of arXiv:2410.11367v2 / PRL 134, 245001 (2025): 3 GeV RCS at 25 Hz, 940 kW on the MLF target, 9.5e4 surface μ+ per pulse on a both-sides laser-ablated silica aerogel target (78 mm diameter, 8 mm, 23.6 mg/cm^3, 250 μm holes at 300 μm pitch) behind a 420 μm Al degrader; muonium ionised by a 244 nm 1S-2S spectroscopy laser (0.5-1.3 mJ, 57 ns, simulated ionisation efficiency 7e-6 - 6e-5); Soa-lens extraction at 5.7 keV ((4.0 ± 0.4)e-3 μ+ per pulse), prototype J-PARC RFQ at 324.03 MHz / 2.6 kW to 100 keV (2e-3 μ+ per pulse, acceleration efficiency ≥ 50 %); measured normalised rms emittances 0.85 (H) and 0.32 (V) π mm mrad against simulated 0.27 / 0.154. The demonstrated end-to-end yield is 2.1e-8 μ+ per surface muon. Analogous technology for the LHμC ultra-cold source; the laser was not designed for ionisation."
+    machine: JPARC_MUSE
+    design_version: "Aritome et al., arXiv:2410.11367v2 (18 Jun 2025), as published; experiment March-April 2024, user program 2011MS06"
+    status: reported
+    primary_source_ids: [SRC_ARXIV_2410_11367]
+    parameters:
+      proton_beam_energy: SOURCE_RCS_PROTON_ENERGY_ARITOME2024
+      proton_beam_power: SOURCE_PROTON_BEAM_POWER_MLF_ARITOME2024
+      repetition_rate: SOURCE_RCS_REPETITION_RATE_ARITOME2024
+      surface_muons_per_pulse: SOURCE_SURFACE_MU_PER_PULSE_ARITOME2024
+      surface_muon_momentum: SOURCE_SURFACE_MU_MOMENTUM_MEAN_ARITOME2024
+      surface_muon_momentum_rms: SOURCE_SURFACE_MU_MOMENTUM_RMS_ARITOME2024
+      surface_muon_norm_emittance_x: SOURCE_SURFACE_MU_NORM_EMITTANCE_X_ARITOME2024
+      surface_muon_norm_emittance_y: SOURCE_SURFACE_MU_NORM_EMITTANCE_Y_ARITOME2024
+      degrader_thickness: SOURCE_DEGRADER_AL_THICKNESS_ARITOME2024
+      target_diameter: SOURCE_AEROGEL_TARGET_DIAMETER_ARITOME2024
+      target_thickness: SOURCE_AEROGEL_TARGET_THICKNESS_ARITOME2024
+      target_density: SOURCE_AEROGEL_TARGET_DENSITY_ARITOME2024
+      ablation_hole_diameter: SOURCE_ABLATION_HOLE_DIAMETER_ARITOME2024
+      ablation_hole_pitch: SOURCE_ABLATION_HOLE_PITCH_ARITOME2024
+      muon_stopping_efficiency: SOURCE_MUON_STOPPING_EFF_ARITOME2024
+      muonium_formation_fraction: SOURCE_MUONIUM_CONVERSION_EFF_ARITOME2024
+      muonium_emission_efficiency: SOURCE_MUONIUM_EMISSION_EFF_ARITOME2024
+      mesh_loss_fraction: SOURCE_MESH_LOSS_FRACTION_ARITOME2024
+      pre_ionisation_chain_efficiency: SOURCE_PRE_IONISATION_CHAIN_EFF_ARITOME2024
+      laser_wavelength: SOURCE_LASER_WAVELENGTH_ARITOME2024
+      laser_pulse_energy_min: SOURCE_LASER_PULSE_ENERGY_MIN_ARITOME2024
+      laser_pulse_energy_max: SOURCE_LASER_PULSE_ENERGY_MAX_ARITOME2024
+      laser_pulse_duration: SOURCE_LASER_PULSE_DURATION_ARITOME2024
+      laser_timing: SOURCE_LASER_TIMING_ARITOME2024
+      laser_ionisation_efficiency_min: SOURCE_LASER_IONISATION_EFF_SIM_MIN_ARITOME2024
+      laser_ionisation_efficiency_max: SOURCE_LASER_IONISATION_EFF_SIM_MAX_ARITOME2024
+      extraction_energy: SOURCE_SOA_LENS_ENERGY_ARITOME2024
+      transport_decay_loss: SOURCE_TRANSPORT_DECAY_LOSS_ARITOME2024
+      usm_per_pulse_extraction: SOURCE_USM_PER_PULSE_5P7KEV_ARITOME2024
+      usm_per_surface_muon_extraction: SOURCE_USM_PER_SURFACE_MUON_5P7KEV_ARITOME2024
+      rfq_frequency: SOURCE_RFQ_FREQUENCY_ARITOME2024
+      rfq_peak_power: SOURCE_RFQ_PEAK_POWER_ARITOME2024
+      rfq_transverse_acceptance: SOURCE_RFQ_TRANSVERSE_ACCEPTANCE_ARITOME2024
+      rfq_energy_acceptance: SOURCE_RFQ_ENERGY_ACCEPTANCE_ARITOME2024
+      rfq_length_figure: SOURCE_RFQ_PROTOTYPE_LENGTH_FIG1_ARITOME2024
+      rfq_decay_loss: SOURCE_RFQ_DECAY_LOSS_ARITOME2024
+      acceleration_efficiency: SOURCE_ACCELERATION_EFFICIENCY_ARITOME2024
+      usm_per_pulse_100kev: SOURCE_USM_PER_PULSE_100KEV_ARITOME2024
+      usm_per_surface_muon_100kev: SOURCE_USM_PER_SURFACE_MUON_100KEV_ARITOME2024
+      usm_rate_100kev_implied: SOURCE_USM_RATE_100KEV_IMPLIED_ARITOME2024
+      momentum_spread_100kev: SOURCE_MOMENTUM_SPREAD_100KEV_ARITOME2024
+      muon_norm_emittance_x: SOURCE_USM_NORM_EMITTANCE_X_MEASURED_ARITOME2024
+      muon_norm_emittance_y: SOURCE_USM_NORM_EMITTANCE_Y_MEASURED_ARITOME2024
+      muon_norm_emittance_x_simulated: SOURCE_USM_NORM_EMITTANCE_X_SIM_ARITOME2024
+      muon_norm_emittance_y_simulated: SOURCE_USM_NORM_EMITTANCE_Y_SIM_ARITOME2024
+      time_of_flight_measured: SOURCE_TOF_LASER_TO_MCP_MEASURED_ARITOME2024
+      time_of_flight_simulated: SOURCE_TOF_LASER_TO_MCP_SIM_ARITOME2024
+    unknown_roles:
+      - muon_bunch_length
+      - muon_energy_spread_100kev
+      - muon_polarisation
+      - laser_ionisation_efficiency_measured
+      - muonium_formation_fraction_measured_in_situ
+      - transport_mismatch_factor
+    geometry_fidelity: G0
+    validation_level: P1
+    notes: "P1: the per-surface-muon yields (2.1e-8 at 100 keV, 4.2e-8 at 5.7 keV), the pre-ionisation product 0.0208 and the implied ionisation-plus-transport efficiency (4.2e-8 / 0.0208 = 2.0e-6, asserted inside the window 1.5e-6 - 2.5e-6) are reproduced in tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain. The muonium formation fraction (52 %) is taken by the paper from Bakule et al. 2013 (MuSR, 0.52 ± 0.01; SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013; 6.6 sigma below Beare et al.'s 0.655 ± 0.018 with both uncertainties), not measured in this run; the ionisation efficiency is simulated, not measured. No longitudinal diagnostics were implemented, so bunch length and energy spread at 100 keV are unknown. The 2026 follow-up with the full-scale RFQ at 340 keV (Nakazawa deck) is recorded as _WS2026_NAKAZAWA records without a scenario."

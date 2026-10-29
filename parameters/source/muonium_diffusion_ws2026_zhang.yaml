@@ -1,0 +1,3643 @@
+# Ultra-cold mu+ source parameters extracted from SRC_WS1681458_ZHANG_MUONIUM (C. Zhang, 'Muonium diffusion modeling and
+# multi-layer target design for muon laser ionisation cooling', HELP4CERN workshop 'Ultra-cold muons for the LHC', AGH Kraków,
+# 24-26 Sept 2026; uploaded slides, 23 pp.). Addendum of 2026-10-28 (group G2_SOURCE).
+# Status rules: J-PARC/TRIUMF measurements and models restated on the deck -> analogous; muTRISTAN design values -> imported_related;
+# audit arithmetic on quoted cells -> analytical_estimate with a derivation naming the inputs. Nothing on this deck is an LHmuC
+# design value, so no record carries reported_lhmuc. Page numbers are PDF pages (= slide numbers). Tables and plots were read from
+# the rendered PDF pages; plot readings carry confidence low and are labelled as such.
+# Generated from a scripted transcription (scratchpad gen/gen_zhang.py); this YAML file is the single source of truth.
+# Verified 2026-10-29 by the G2_SOURCE adversarial verifier against the rendered PDF pages; corrections, removals and residual doubts in
+# research/_fragments/verify_G2_SOURCE.md.
+parameters:
+- parameter_id: SOURCE_SURFACE_MUON_ENERGY_SCHEMATIC_WS2026_ZHANG
+  name: Surface-muon beam kinetic energy labelled on the J-PARC laser-ionisation-cooling schematic
+  symbol: T_mu(surface)
+  subsystem: source
+  scenario: null
+  value: 3.4
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 3
+      section: Laser ionisation cooling of muon at J-PARC
+      table_figure_or_equation: schematic (figure label)
+      quotation: Surface muon beam ( 3.4 MeV)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Label of a schematic; the slide does not say where along the beamline 3.4 MeV applies.
+        Compare 4.1 MeV (29.8 MeV/c) at production (Beare et al. p.3, SOURCE_SURFACE_MUON_ENERGY_BEARE2020), the '4 MeV'
+        label of the Nakazawa setup drawing (SOURCE_SURFACE_MUON_ENERGY_FIGURE_WS2026_NAKAZAWA) and 3.6 MeV for the 28 MeV/c
+        mean momentum of the 2024 S2 beam (SOURCE_SURFACE_MU_MOMENTUM_MEAN_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: T = sqrt(p^2 + m^2) - m gives 3.65 MeV for 28 MeV/c and 4.12 MeV for 29.8 MeV/c; 3.4 MeV corresponds
+      to p = 27.0 MeV/c.'
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: 'Added by the G2_SOURCE verifier (2026-10-29): figure label missed by the extraction.'
+- parameter_id: SOURCE_AEROGEL_SINGLE_LAYER_MEASURED_EFFICIENCY_TRIUMF_WS2026_ZHANG
+  name: Measured thermal-muonium efficiency per incident muon for single-layer laser-ablated silica aerogel at TRIUMF (laser
+    region 5 mm x 50 mm)
+  symbol: eps_Mu(laser region)
+  subsystem: source
+  scenario: null
+  value: 0.003
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 4
+      section: Muonium emission — From single-layer aerogel
+      table_figure_or_equation: reproduced TRIUMF figure (P. Bakule et al., PTEP 103C01 (2013); G. Beer et al., PTEP 091C01
+        (2014))
+      quotation: Efficiency (measured) 3 x10^-3/μ (laser region 5mm x 50mm)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Figure label of a reproduced TRIUMF result; the laser-region definition (5 mm x 50 mm)
+        is part of the label.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Figure label, not slide text (confidence medium). Aerogel density in the same figure label: 30 mg/cc.'
+- parameter_id: SOURCE_AEROGEL_DENSITY_TRIUMF_FIGURE_WS2026_ZHANG
+  name: Silica aerogel density in the reproduced TRIUMF single-layer figure
+  symbol: rho_aerogel
+  subsystem: source
+  scenario: null
+  value: 30
+  unit: mg/cm^3
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 4
+      section: Muonium emission — From single-layer aerogel
+      table_figure_or_equation: reproduced TRIUMF figure
+      quotation: Silica aerogel (SiO2, 30 mg/cc)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Older TRIUMF target; the 2017 targets of Beare et al. are 23.2-23.6 mg/cm^3 (see SOURCE_AEROGEL_DENSITY_*_BEARE2020).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Figure label ('mg/cc' = mg/cm^3).
+- parameter_id: SOURCE_LASER_ABLATION_EMISSION_GAIN_WS2026_ZHANG
+  name: Muonium-emission enhancement obtained by (double) laser ablation of the aerogel surface
+  symbol: G_ablation
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: source says 'by an order of magnitude'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 4
+      section: Muonium emission — From single-layer aerogel
+      table_figure_or_equation: null
+      quotation: (Double) laser-ablation on surface of aerogel was developed to increase the muonium emission by an order
+        of magnitude
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Beare et al. (SRC_ARXIV_2006_01947) give the measured ablated/flat ratio (about 8 x in
+        the 2014 study).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: The deck's inset plot (Region 1, 10 < z < 20 mm) is annotated 'x 10'.
+- parameter_id: SOURCE_ABLATION_HOLE_PITCH_TRIUMF_WS2026_ZHANG
+  name: Laser-ablated hole pitch on the aerogel surface (TRIUMF target shown on the deck)
+  symbol: p_hole
+  subsystem: source
+  scenario: null
+  value: 300
+  unit: um
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 4
+      section: Muonium emission — From single-layer aerogel
+      table_figure_or_equation: photo caption
+      quotation: a pattern of laser-ablated holes with a pitch of 300 μm and a diameter of 270 μm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Same pattern as the Aritome 2024 target (250 μm holes at 300 μm, SOURCE_ABLATION_HOLE_PITCH_ARITOME2024).
+- parameter_id: SOURCE_ABLATION_HOLE_DIAMETER_TRIUMF_WS2026_ZHANG
+  name: Laser-ablated hole diameter on the aerogel surface (TRIUMF target shown on the deck)
+  symbol: phi_hole
+  subsystem: source
+  scenario: null
+  value: 270
+  unit: um
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 4
+      section: Muonium emission — From single-layer aerogel
+      table_figure_or_equation: photo caption
+      quotation: a pattern of laser-ablated holes with a pitch of 300 μm and a diameter of 270 μm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_DIFFUSION_MODEL_WS2026_ZHANG
+  name: Muonium diffusion model used for the aerogel target (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 3d_random_walk_maxwell_velocity_exponential_step_length_two_fit_parameters_T_D
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 6
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: null
+      quotation: Muonium does a 3D random walk with Maxwell velocity ... Each diffusion step length l is sampled from the
+        exponential distribution of displacement ... The product of mean free path lmfp and v̄ is proportional to the diffusion
+        constant ... T, D are the two fitting paras in the model
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Model definition: v̄ = sqrt(8kT/(π m_Mu)), P(l)dl = (1/l_mfp) exp(-l/l_mfp) dl, D = π
+        l_mfp v̄ / 12 (slide formulas).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Also stated (p.5): muons are stopped first, then capture an electron; stopping distribution optimised by the ''half-stopping
+    condition''.'
+- parameter_id: SOURCE_MUONIUM_DIFFUSION_TEMPERATURE_FIT_WS2026_ZHANG
+  name: Fitted muonium diffusion temperature T in silica aerogel (fit to TRIUMF data)
+  symbol: T_Mu
+  subsystem: source
+  scenario: null
+  value: 322
+  unit: kelvin
+  uncertainty:
+    type: not_stated
+    note: no numeric uncertainty given; the chi2_min + 2.30 contour on the slide spans roughly 320-324 K
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 7
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: null
+      quotation: The diffusion model (T, D) is fitted against the data collected at TRIUMF with a good fitting quality,
+        resulting T = 322 K, D = 870 cm2/s
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Fit parameter of the model, not the physical aerogel temperature (room temperature).
+- parameter_id: SOURCE_MUONIUM_DIFFUSION_CONSTANT_FIT_WS2026_ZHANG
+  name: Fitted muonium diffusion constant D in silica aerogel (fit to TRIUMF data)
+  symbol: D_Mu
+  subsystem: source
+  scenario: null
+  value: 870
+  unit: centimeter**2/second
+  uncertainty:
+    type: not_stated
+    note: no numeric uncertainty given; the chi2_min + 2.30 contour on the slide spans roughly 850-890 cm^2/s
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 7
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: null
+      quotation: The diffusion model (T, D) is fitted against the data collected at TRIUMF with a good fitting quality,
+        resulting T = 322 K, D = 870 cm2/s
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_VACUUM_EMISSION_FRACTION_SINGLE_LAYER_WS2026_ZHANG
+  name: Fraction of muonium emitted from single-layer aerogel into vacuum (diffusion-model simulation)
+  symbol: f_vac(single)
+  subsystem: source
+  scenario: null
+  value: 0.08
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: source says 'about'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 8
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: stopping-distribution figure annotation
+      quotation: Only about 8% of muonium can emit from aerogel into vacuum!
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. The p.10 table gives the same quantity as 0.082 (SOURCE_MUONIUM_VACUUM_YIELD_DIFFUSION_MODEL_WS2026_ZHANG).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Simulation result (diffusion model), not a measurement.
+- parameter_id: SOURCE_MUONIUM_DIFFUSION_LENGTH_WS2026_ZHANG
+  name: Muonium diffusion length sqrt(D tau_mu) in aerogel (figure annotation)
+  symbol: sqrt(D*tau_mu)
+  subsystem: source
+  scenario: null
+  value: 0.43
+  unit: mm
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 8
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: stopping-distribution figure annotation
+      quotation: sqrt(D tau_mu) ~ 0.43 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic (not yet pinned in a test): sqrt(870 cm^2/s x 2.197 us) = 0.437 mm, consistent with the annotation.'
+  dependencies:
+  - SOURCE_MUONIUM_DIFFUSION_CONSTANT_FIT_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Beare et al. quote a diffusion length of about 30 μm from the earlier model (SRC_ARXIV_2006_01947 p.7); the deck
+    does not reconcile the two numbers, which come from different model fits (Zhang et al. 2022 vs the earlier model of
+    Bakule et al. 2013, Beare's ref. [14]).
+- parameter_id: SOURCE_MUONIUM_LASER_REGION_PEAK_TIME_SINGLE_LAYER_WS2026_ZHANG
+  name: Time of maximum muonium yield in the laser region after the muon pulse (single-layer simulation)
+  symbol: t_peak
+  subsystem: source
+  scenario: null
+  value: 900
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 8
+      section: Muonium diffusion model — Inside single-layer aerogel
+      table_figure_or_equation: '''Mu yield in laser region'' plot'
+      quotation: Maximum Yield in the laser region at 900 ns (Depending on the upstream beam structure)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Depends on the upstream pulse structure (p.9 remark); Beare et al. quote 'around 1 μs'
+        for the g-2 H-line geometry.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_HLINE_SIM_STOPPING_EFF_KAMIOKA_WS2026_ZHANG
+  name: Muon stopping efficiency in the aerogel target, J-PARC H-line simulation (S. Kamioka slide reproduced on p.9)
+  symbol: eps_stop(H-line sim)
+  subsystem: source
+  scenario: null
+  value: 0.4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 9
+      section: Comment on S. Kamioka's slide 'Expected performance of the target'
+      table_figure_or_equation: reproduced slide image 'Expected performance of the target' (S. Kamioka)
+      quotation: 'Simulation of H-line of J-PARC • Efficiency breakdown: • Stopping eff: 40% • Mu formation eff: 52% • Vacuum
+        emission: 6% • Overlap with laser: 27%'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC H-line simulation of the g-2/EDM muonium target, from a slide of S. Kamioka (same workshop) reproduced
+        as an image on p.9 with Zhang's remark that 'the upstream surface muon pulse structure, momentum spread etc would
+        affect the stopping distribution and the subsequent emission'. Simulation, not measurement; analogous technology
+        for the LHμC ultra-cold μ+ source, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: Added by the G2_SOURCE verifier (missed by the extraction). Compare 0.467 in the p.10 present-intensity chain,
+    0.42 implied by the p.10 g-2 target column and 0.38 in the 2024 S2 run (SOURCE_MUON_STOPPING_EFF_ARITOME2024).
+- parameter_id: SOURCE_HLINE_SIM_MUONIUM_FORMATION_EFF_KAMIOKA_WS2026_ZHANG
+  name: Muonium formation efficiency assumed in the J-PARC H-line simulation (S. Kamioka slide reproduced on p.9)
+  symbol: f_Mu(H-line sim)
+  subsystem: source
+  scenario: null
+  value: 0.52
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 9
+      section: Comment on S. Kamioka's slide 'Expected performance of the target'
+      table_figure_or_equation: reproduced slide image 'Expected performance of the target' (S. Kamioka)
+      quotation: 'Simulation of H-line of J-PARC • Efficiency breakdown: • Stopping eff: 40% • Mu formation eff: 52% • Vacuum
+        emission: 6% • Overlap with laser: 27%'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC H-line simulation of the g-2/EDM muonium target, from a slide of S. Kamioka (same workshop) reproduced
+        as an image on p.9 with Zhang's remark that 'the upstream surface muon pulse structure, momentum spread etc would
+        affect the stopping distribution and the subsequent emission'. Simulation, not measurement; analogous technology
+        for the LHμC ultra-cold μ+ source, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: Added by the G2_SOURCE verifier. Same 0.52 as pp.10 and 20, i.e. the Bakule et al. 2013 MuSR value 0.52 +- 0.01
+    (SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013); Beare et al. 2020 measured 0.655 +- 0.018 (CONF_MUONIUM_FORMATION_FRACTION).
+- parameter_id: SOURCE_HLINE_SIM_VACUUM_EMISSION_KAMIOKA_WS2026_ZHANG
+  name: Muonium vacuum-emission fraction, J-PARC H-line simulation (S. Kamioka slide reproduced on p.9)
+  symbol: eps_vac(H-line sim)
+  subsystem: source
+  scenario: null
+  value: 0.06
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 9
+      section: Comment on S. Kamioka's slide 'Expected performance of the target'
+      table_figure_or_equation: reproduced slide image 'Expected performance of the target' (S. Kamioka)
+      quotation: 'Simulation of H-line of J-PARC • Efficiency breakdown: • Stopping eff: 40% • Mu formation eff: 52% • Vacuum
+        emission: 6% • Overlap with laser: 27%'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC H-line simulation of the g-2/EDM muonium target, from a slide of S. Kamioka (same workshop) reproduced
+        as an image on p.9 with Zhang's remark that 'the upstream surface muon pulse structure, momentum spread etc would
+        affect the stopping distribution and the subsequent emission'. Simulation, not measurement; analogous technology
+        for the LHμC ultra-cold μ+ source, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: Added by the G2_SOURCE verifier. Compare 0.082 (single-layer diffusion model, p.10) and 0.13 (both-sides-ablated
+    8 mm target, SOURCE_MUONIUM_EMISSION_EFF_ARITOME2024); the target geometry behind 6 % is not given on the slide.
+- parameter_id: SOURCE_HLINE_SIM_LASER_OVERLAP_KAMIOKA_WS2026_ZHANG
+  name: Fraction of vacuum muonium overlapping the laser region at the irradiation time, J-PARC H-line simulation (S. Kamioka
+    slide reproduced on p.9)
+  symbol: eps_overlap(H-line sim)
+  subsystem: source
+  scenario: null
+  value: 0.27
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 9
+      section: Comment on S. Kamioka's slide 'Expected performance of the target'
+      table_figure_or_equation: reproduced slide image 'Expected performance of the target' (S. Kamioka)
+      quotation: 'Simulation of H-line of J-PARC • Efficiency breakdown: • Stopping eff: 40% • Mu formation eff: 52% • Vacuum
+        emission: 6% • Overlap with laser: 27%'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC H-line simulation of the g-2/EDM muonium target, from a slide of S. Kamioka (same workshop) reproduced
+        as an image on p.9 with Zhang's remark that 'the upstream surface muon pulse structure, momentum spread etc would
+        affect the stopping distribution and the subsequent emission'. Simulation, not measurement; analogous technology
+        for the LHμC ultra-cold μ+ source, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: Added by the G2_SOURCE verifier. The laser region is not specified on the slide; Beare et al. define the g-2 ionisation
+    region as +-100 mm x +-25 mm x 5 mm (SOURCE_G2_LASER_REGION_HALF_WIDTH_X_BEARE2020 etc.).
+- parameter_id: SOURCE_HLINE_SIM_MU_FOR_IONISATION_PER_SURFACE_MUON_WS2026_ZHANG
+  name: Muonium available for laser ionisation per surface muon implied by the H-line simulation breakdown (0.40 x 0.52
+    x 0.06 x 0.27)
+  symbol: N_Mu,laser / N_surface (H-line sim)
+  subsystem: source
+  scenario: null
+  value: 0.00337
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 9
+      section: Comment on S. Kamioka's slide 'Expected performance of the target'
+      table_figure_or_equation: reproduced slide image 'Expected performance of the target' (S. Kamioka)
+      quotation: 'Simulation of H-line of J-PARC • Efficiency breakdown: • Stopping eff: 40% • Mu formation eff: 52% • Vacuum
+        emission: 6% • Overlap with laser: 27%'
+    derivation: SOURCE_HLINE_SIM_STOPPING_EFF_KAMIOKA_WS2026_ZHANG x SOURCE_HLINE_SIM_MUONIUM_FORMATION_EFF_KAMIOKA_WS2026_ZHANG
+      x SOURCE_HLINE_SIM_VACUUM_EMISSION_KAMIOKA_WS2026_ZHANG x SOURCE_HLINE_SIM_LASER_OVERLAP_KAMIOKA_WS2026_ZHANG = 0.40
+      x 0.52 x 0.06 x 0.27 = 3.37e-3
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Audit product of the four simulated factors on the reproduced slide. It reproduces the '3.4 × 10^−3 per
+        incident surface muon' of muonium for laser ionisation that Beare et al. 2020 give for the H-line (p.32, citing
+        the g-2/EDM design; SOURCE_G2_THERMAL_MUONIUM_PER_SURFACE_MUON_BEARE2020), so both are the same H-line estimate.
+        Not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic (not pinned in a test): 0.40 x 0.52 x 0.06 x 0.27 = 3.37e-3 vs 3.4e-3 (Beare et al. p.32).'
+  dependencies:
+  - SOURCE_HLINE_SIM_STOPPING_EFF_KAMIOKA_WS2026_ZHANG
+  - SOURCE_HLINE_SIM_MUONIUM_FORMATION_EFF_KAMIOKA_WS2026_ZHANG
+  - SOURCE_HLINE_SIM_VACUUM_EMISSION_KAMIOKA_WS2026_ZHANG
+  - SOURCE_HLINE_SIM_LASER_OVERLAP_KAMIOKA_WS2026_ZHANG
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: Added by the G2_SOURCE verifier (2026-10-29).
+- parameter_id: SOURCE_SURFACE_MUON_RATE_PRESENT_WS2026_ZHANG
+  name: Surface muon rate after extraction (p.10 chain, present intensity column)
+  symbol: R_surf
+  subsystem: source
+  scenario: null
+  value: 1800000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Surface muon after extraction | | 1.8×10^6 | 3.2×10^8
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SURFACE_MUON_RATE_G2_TARGET_WS2026_ZHANG
+  name: Surface muon rate after extraction (g-2 target column)
+  symbol: R_surf(g-2 target)
+  subsystem: source
+  scenario: null
+  value: 320000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Surface muon after extraction | | 1.8×10^6 | 3.2×10^8
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUON_STOPPING_FRACTION_AEROGEL_WS2026_ZHANG
+  name: Muon stopping fraction in the aerogel (from stopping simulation)
+  symbol: eps_stop
+  subsystem: source
+  scenario: null
+  value: 0.467
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muon stopping in the aerogel | 0.467 (from stopping simulation) | 8.4×10^5 | 1.35×10^8
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Aritome et al. (2024 S2 run) quote 38 % for their 8 mm target (SOURCE_MUON_STOPPING_EFF_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPED_MUON_RATE_PRESENT_WS2026_ZHANG
+  name: Stopped-muon rate in the aerogel (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 840000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muon stopping in the aerogel | 0.467 (from stopping simulation) | 8.4×10^5 | 1.35×10^8
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 1.8e6 x 0.467 = 8.4e5 reproduced (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies:
+  - SOURCE_SURFACE_MUON_RATE_PRESENT_WS2026_ZHANG
+  - SOURCE_MUON_STOPPING_FRACTION_AEROGEL_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPED_MUON_RATE_G2_TARGET_WS2026_ZHANG
+  name: Stopped-muon rate in the aerogel (g-2 target column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 135000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muon stopping in the aerogel | 0.467 (from stopping simulation) | 8.4×10^5 | 1.35×10^8
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 3.2e8 x 0.467 = 1.49e8, not the printed 1.35e8 (ratio 0.42); the g-2 column evidently uses
+      a different stopping fraction, not stated on the slide. The implied 0.42 is close to the 40 % stopping efficiency
+      of the J-PARC H-line simulation reproduced on p.9 (SOURCE_HLINE_SIM_STOPPING_EFF_KAMIOKA_WS2026_ZHANG); the slide
+      does not say that the column uses it.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Column-internal inconsistency with the 0.467 efficiency noted in validation.notes; kept as printed.
+- parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_TRIUMF_WS2026_ZHANG
+  name: Muonium formation fraction in silica aerogel (from TRIUMF measurement) used in the J-PARC and μTRISTAN chains
+  symbol: f_Mu
+  subsystem: source
+  scenario: null
+  value: 0.52
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium formation | 0.52 (from TRIUMF measurement) | 4.3×10^5 | 7.01×10^7
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Restated on p.20 as ''0.52: Muonium formation in aerogel (measurement from TRIUMF)''.
+        Conflicts with the (65.5 ± 1.8) % of Beare et al. 2020 (SOURCE_MUONIUM_FORMATION_FRACTION_BEARE2020; Beare et al.
+        attribute 0.52 ± 0.01 to Bakule et al. PTEP 2013 103C01) — CONF_MUONIUM_FORMATION_FRACTION, 6.6 sigma apart with
+        both uncertainties. Origin of the 0.52 ''from TRIUMF measurement'': Bakule et al. 2013 (PTEP 2013 103C01, SRC_ARXIV_1306_3810
+        p.3), MuSR, 0.52 +- 0.01 for three 2013 aerogel samples (SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013); the
+        deck prints no uncertainty.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - (0.655 - 0.52)/sqrt(0.01^2 + 0.018^2) = 6.6 sigma between the Bakule et al. 2013 MuSR value 0.52 +- 0.01 and Beare
+      et al. 2020's 0.655 +- 0.018 (tests/scientific/test_batch9_documents.py::test_bakule2013_formation_fraction_vs_beare2020_combined_significance);
+      7.5 sigma with Beare's uncertainty alone (tests/scientific/test_workshop_decks.py::test_muonium_formation_fraction_two_values_are_incompatible).
+      Checks the size of the discrepancy; it validates neither measurement.
+    check_ids:
+    - tests/scientific/test_batch9_documents.py::test_bakule2013_formation_fraction_vs_beare2020_combined_significance
+    - tests/scientific/test_workshop_decks.py::test_muonium_formation_fraction_two_values_are_incompatible
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Supersedes the Phase 0 synthetic range SOURCE_MUONIUM_FORMATION_FRACTION_SYN only together with the Beare value;
+    the two measured values must be carried as separate scenarios.
+- parameter_id: SOURCE_MUONIUM_FORMATION_RATE_PRESENT_WS2026_ZHANG
+  name: Muonium formation rate (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 430000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium formation | 0.52 (from TRIUMF measurement) | 4.3×10^5 | 7.01×10^7
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 1.8e6 x 0.467 x 0.52 = 4.4e5 reproduces the printed 4.3e5 within 2 % (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: The quoted row's efficiency '0.52 (from TRIUMF measurement)', which this present-intensity rate uses, is the Bakule
+    et al. 2013 MuSR value 0.52 +- 0.01 for three aerogel samples (SRC_ARXIV_1306_3810 p.3; SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013),
+    6.6 sigma below Beare et al. 2020's 0.655 +- 0.018 with both uncertainties (CONF_MUONIUM_FORMATION_FRACTION).
+- parameter_id: SOURCE_MUONIUM_FORMATION_RATE_G2_TARGET_WS2026_ZHANG
+  name: Muonium formation rate (g-2 target column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 70100000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium formation | 0.52 (from TRIUMF measurement) | 4.3×10^5 | 7.01×10^7
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 1.35e8 x 0.52 = 7.02e7, consistent with the printed 7.01e7.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: The quoted row's efficiency '0.52 (from TRIUMF measurement)', which this g-2 target rate uses, is the Bakule et
+    al. 2013 MuSR value 0.52 +- 0.01 for three aerogel samples (SRC_ARXIV_1306_3810 p.3; SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013),
+    6.6 sigma below Beare et al. 2020's 0.655 +- 0.018 with both uncertainties (CONF_MUONIUM_FORMATION_FRACTION).
+- parameter_id: SOURCE_MUONIUM_VACUUM_YIELD_DIFFUSION_MODEL_WS2026_ZHANG
+  name: Muonium vacuum yield per formed muonium, single-layer aerogel (from diffusion model)
+  symbol: f_vac
+  subsystem: source
+  scenario: null
+  value: 0.082
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium vacuum yield | 0.082 (from diffusion model) | 3.5×10^4 | 7.21×10^6
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Same model result as the 'about 8 %' of p.8.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_VACUUM_RATE_PRESENT_WS2026_ZHANG
+  name: Muonium rate emitted into vacuum (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 35000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium vacuum yield | 0.082 (from diffusion model) | 3.5×10^4 | 7.21×10^6
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 1.8e6 x 0.467 x 0.52 x 0.082 = 3.6e4 reproduces 3.5e4 within 3 % (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_VACUUM_RATE_G2_TARGET_WS2026_ZHANG
+  name: Muonium rate emitted into vacuum (g-2 target column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 7210000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium vacuum yield | 0.082 (from diffusion model) | 3.5×10^4 | 7.21×10^6
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 7.01e7 x 0.082 = 5.75e6, not the printed 7.21e6 (ratio 0.103); the g-2 column evidently assumes
+      a higher vacuum yield (multi-layer target?), not stated on the slide.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_IONISATION_EFF_244NM_WS2026_ZHANG
+  name: Laser ionisation efficiency of thermal muonium with the 244 nm (1S-2S spectroscopy) laser, 1.5 mJ (laser simulation)
+  symbol: eps_ion(244 nm)
+  subsystem: source
+  scenario: null
+  value: 1.0e-06
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: source says '~10^-6'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Laser ionization | ~10^-6 (from laser simulation) | 0.19 (244 nm, 1.5 mJ) | 8.24×10^5 (Target; 122 nm,
+        100 uJ)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Spectroscopy laser not designed for ionisation; Aritome et al. simulate 7e-6 - 6e-5 for
+        0.5-1.3 mJ (SOURCE_LASER_IONISATION_EFF_SIM_MIN/MAX_ARITOME2024). Not an LHμC design value; see CONF_LASER_IONISATION_EFFICIENCY.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Pulse energy 1.5 mJ is part of the table cell.
+- parameter_id: SOURCE_LASER_PULSE_ENERGY_244NM_WS2026_ZHANG
+  name: 244 nm laser pulse energy assumed in the p.10 present-intensity chain
+  symbol: E_244
+  subsystem: source
+  scenario: null
+  value: 1.5
+  unit: mJ
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: 0.19 (244 nm, 1.5 mJ)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_PRESENT_244NM_WS2026_ZHANG
+  name: Ultra-slow muon rate after laser ionisation with the 244 nm laser (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.19
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Laser ionization | ~10^-6 (from laser simulation) | 0.19 (244 nm, 1.5 mJ) | 8.24×10^5 (Target; 122 nm,
+        100 uJ)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 3.5e4 x 1e-6 = 0.035, i.e. the printed 0.19 corresponds to an efficiency of 5.4e-6, within
+      the ''~10^-6'' order of magnitude.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_PULSE_ENERGY_122NM_G2_TARGET_WS2026_ZHANG
+  name: 122 nm (Lyman-alpha) laser pulse energy of the g-2 target column
+  symbol: E_122
+  subsystem: source
+  scenario: null
+  value: 100
+  unit: uJ
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: 8.24×10^5 (Target; 122 nm, 100 uJ)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets). Same
+        100 μJ as the μTRISTAN 0.73 budget on p.20.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_G2_TARGET_122NM_WS2026_ZHANG
+  name: Ultra-slow muon rate target with the 122 nm, 100 μJ laser (g-2 target column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 824000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Laser ionization | ~10^-6 (from laser simulation) | 0.19 (244 nm, 1.5 mJ) | 8.24×10^5 (Target; 122 nm,
+        100 uJ)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. 'g-2 targets (/s)' column of the p.10 table (J-PARC muon g-2/EDM design targets). A design
+        target ('Target'), not an achieved rate.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_IONISATION_EFF_IMPLIED_G2_TARGET_WS2026_ZHANG
+  name: Laser ionisation efficiency implied by the g-2 target column (8.24e5 ultra-slow μ+/s from 7.21e6 muonium/s; 122
+    nm, 100 μJ)
+  symbol: eps_ion(g-2 target, implied)
+  subsystem: source
+  scenario: null
+  value: 0.114
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Muonium vacuum yield | ... | 7.21×10^6 ; Laser ionization | ... | 8.24×10^5 (Target; 122 nm, 100 uJ)
+    derivation: SOURCE_USM_RATE_G2_TARGET_122NM_WS2026_ZHANG / SOURCE_MUONIUM_VACUUM_RATE_G2_TARGET_WS2026_ZHANG = 8.24e5
+      / 7.21e6 = 0.1143
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Ratio of two printed g-2 target cells; the deck does not print the efficiency itself. It is 6.4 x lower
+        than the μTRISTAN budget value 0.73 (SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG) at the same 122 nm /
+        100 μJ, and matches the 'around 10 %' of Aritome et al. (SOURCE_LASER_IONISATION_EFF_PROJECTED_122_355NM_ARITOME2024).
+        Feeds CONF_LASER_IONISATION_EFFICIENCY.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 8.24e5 / 7.21e6 = 0.114 (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies:
+  - SOURCE_USM_RATE_G2_TARGET_122NM_WS2026_ZHANG
+  - SOURCE_MUONIUM_VACUUM_RATE_G2_TARGET_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Includes whatever decay/overlap losses the g-2 target chain folds into the ionisation step; the slide does not
+    separate them.
+- parameter_id: SOURCE_USM_PER_SURFACE_MUON_G2_TARGET_WS2026_ZHANG
+  name: Ultra-slow μ+ per surface muon implied by the g-2 target column (8.24e5 / 3.2e8)
+  symbol: Y_USM/surf (g-2 target)
+  subsystem: source
+  scenario: null
+  value: 0.0026
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Surface muon after extraction | | 1.8×10^6 | 3.2×10^8 ; Laser ionization | ... | 8.24×10^5 (Target; 122
+        nm, 100 uJ)
+    derivation: SOURCE_USM_RATE_G2_TARGET_122NM_WS2026_ZHANG / SOURCE_SURFACE_MUON_RATE_G2_TARGET_WS2026_ZHANG = 8.24e5
+      / 3.2e8 = 2.575e-3
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC g-2 design-target chain efficiency; compare the demonstrated 2.1e-8 per surface muon at 100 keV
+        (SOURCE_USM_PER_SURFACE_MUON_100KEV_ARITOME2024), a factor ~1.2e5 lower, and the μTRISTAN post-stopping budget 0.137.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - ratio to the Aritome 2024 measured value is 1.0e5-1.5e5 (tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain
+    notes: ''
+  dependencies:
+  - SOURCE_USM_RATE_G2_TARGET_122NM_WS2026_ZHANG
+  - SOURCE_SURFACE_MUON_RATE_G2_TARGET_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PER_SURFACE_MUON_PRESENT_244NM_WS2026_ZHANG
+  name: Ultra-slow μ+ per surface muon implied by the present-intensity column with the 244 nm laser (0.19 / 1.8e6)
+  symbol: Y_USM/surf (244 nm)
+  subsystem: source
+  scenario: null
+  value: 1.1e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Surface muon after extraction | | 1.8×10^6 ; Laser ionization | ~10^-6 | 0.19 (244 nm, 1.5 mJ)
+    derivation: SOURCE_USM_RATE_PRESENT_244NM_WS2026_ZHANG / SOURCE_SURFACE_MUON_RATE_PRESENT_WS2026_ZHANG = 0.19 / 1.8e6
+      = 1.06e-7
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Simulated chain with a spectroscopy laser; consistent with the '1e-7 per μ+' snippet quoted in ASM_SOURCE_LASER_IONISATION_EFFICIENCY
+        and with the measured 2.1e-8 - 4.2e-8 of Aritome et al. (which include extraction and acceleration losses).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies:
+  - SOURCE_USM_RATE_PRESENT_244NM_WS2026_ZHANG
+  - SOURCE_SURFACE_MUON_RATE_PRESENT_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SLOW_MUON_BEAMLINE_EXTRACTION_EFF_WS2026_ZHANG
+  name: Slow-muon beam-line extraction efficiency (present chain)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.651
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Slow muon beam-line extraction | 0.651 | 0.12 | -
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. No g-2 target value ('-').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_AFTER_EXTRACTION_PRESENT_WS2026_ZHANG
+  name: Ultra-slow muon rate after beam-line extraction (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.12
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Slow muon beam-line extraction | 0.651 | 0.12 | -
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.19 x 0.651 = 0.124.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MCP_DETECTION_EFF_WS2026_ZHANG
+  name: MCP detector efficiency in the present chain
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.9
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Rate at MCP detector | 0.90 | 0.1 | -
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_AT_MCP_PRESENT_WS2026_ZHANG
+  name: Ultra-slow muon rate at the MCP detector (present intensity column)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.1
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 10
+      section: Efficiencies breakdown — From diffusion to ultra-cold muon production
+      table_figure_or_equation: table 'Steps | Efficiency | Intensity (/s) | g-2 targets (/s)'
+      quotation: Rate at MCP detector | 0.90 | 0.1 | -
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Column 'Intensity (/s)' of the p.10 table (present-intensity chain). The slide does not
+        name the beamline; the chain uses the 244 nm laser and ends at 0.1 /s on an MCP, matching the J-PARC MLF S2-area
+        2022 test of pp.11-12 (0.126 Hz). The H-line appears on the deck only in the p.9 simulation (40 % stopping), which
+        this column does not use (0.467).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.12 x 0.90 = 0.108.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Consistent with the 0.126 Hz signal of the 2022 ionisation test (SOURCE_IONISATION_TEST_SIGNAL_RATE_JPARC2022_WS2026_ZHANG).
+- parameter_id: SOURCE_IONISATION_TEST_DEMONSTRATION_WS2026_ZHANG
+  name: First demonstration of laser ionisation cooling of muons from silica aerogel (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: jparc_mlf_s2_area_2022_244nm_laser_first_demonstration
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 11
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: null
+      quotation: The first demonstration of laser ionisation cooling of muons from silica aerogel at the J-PARC MLF S2 area
+        2022
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Milestone statement; data labelled 'Preliminary' on the slide.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_LASER_WAVELENGTH_WS2026_ZHANG
+  name: Ionisation-test laser wavelength (1S-2S spectroscopy laser)
+  symbol: lambda_laser
+  subsystem: source
+  scenario: null
+  value: 244
+  unit: nm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 11
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: null
+      quotation: With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_FLIGHT_PATH_WS2026_ZHANG
+  name: Length annotated '~ 3 m' on the photograph of the 2022 S2-area ionisation-test setup (taken here as the aerogel-to-MCP
+    distance; the slide does not say what the arrow spans)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 3
+  unit: m
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 11
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: annotated photograph of the S2-area setup
+      quotation: ~ 3 m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_SIGNAL_RATE_JPARC2022_WS2026_ZHANG
+  name: Thermal-muon signal rate at the laser resonance frequency, J-PARC March 2022 test
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.126
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 12
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: table 'J-PARC-2022 | RAL-1999'
+      quotation: Signal intensity at resonance frequency | 0.126 Hz | 0.0027 Hz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value. Plot legend: ''J-PARC Mar. 2022 (R1167-1183)''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_SIGNAL_RATE_RAL1999_WS2026_ZHANG
+  name: Thermal-muon signal rate at resonance in the RAL 1999 reference experiment
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 0.0027
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 12
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: table 'J-PARC-2022 | RAL-1999'
+      quotation: Signal intensity at resonance frequency | 0.126 Hz | 0.0027 Hz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Historical reference (RAL 1999) restated on the deck for comparison; analogous technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_LASER_LINEWIDTH_JPARC2022_WS2026_ZHANG
+  name: Laser linewidth in the J-PARC 2022 ionisation test
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 51
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 12
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: table 'J-PARC-2022 | RAL-1999'
+      quotation: Laser linewidth | 51 MHz | 91 MHz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_TEST_LASER_LINEWIDTH_RAL1999_WS2026_ZHANG
+  name: Laser linewidth in the RAL 1999 reference experiment
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 91
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 12
+      section: Ionisation test — With 244 nm laser (as part of the Muonium 1S-2S spec. project)
+      table_figure_or_equation: table 'J-PARC-2022 | RAL-1999'
+      quotation: Laser linewidth | 51 MHz | 91 MHz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Historical reference (RAL 1999) restated on the deck for comparison.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_CONCEPT_WS2026_ZHANG
+  name: Multi-layer aerogel target concept with muonium 'reflection model' (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: multi_layer_aerogel_muonium_confined_between_layers_reflection_model_downstream_aligned_with_beam
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 13
+      section: From single-layer to Multi-layer design — Multi-layer targets concept
+      table_figure_or_equation: null
+      quotation: Multi-layer aerogel targets stop incident muon; Muonium emits from upper and lower surfaces and confined
+        between targets ('reflection model'); This design compromise to accommodate the downstream direction (which must
+        be aligned with the incident muon direction). Therefore many muons pass through the vacuum in between and are wasted.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC g-2 multi-layer target concept (C. Zhang et al., NIMA 1042, 167443 (2022)); analogous technology
+        for the LHμC source.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_TARGET_LENGTH_WS2026_ZHANG
+  name: Length of the multi-layer aerogel target stack along the beam (figure dimension)
+  symbol: L_z
+  subsystem: source
+  scenario: null
+  value: 25
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 13
+      section: From single-layer to Multi-layer design — Multi-layer targets concept
+      table_figure_or_equation: concept figure dimension; also p.18 '25 mm'
+      quotation: 25 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Figure dimension of the g-2 multi-layer concept; analogous technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_LAYER_THICKNESS_WS2026_ZHANG
+  name: Thickness of one aerogel layer in the multi-layer concept (figure dimension)
+  symbol: t_layer
+  subsystem: source
+  scenario: null
+  value: 4
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 13
+      section: From single-layer to Multi-layer design — Multi-layer targets concept
+      table_figure_or_equation: concept figure dimension
+      quotation: 4 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Figure dimension of the g-2 multi-layer concept; analogous technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_THERMAL_VELOCITY_WS2026_ZHANG
+  name: Thermal muonium velocity used in the reflection model
+  symbol: v_Mu
+  subsystem: source
+  scenario: null
+  value: 7
+  unit: mm/us
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 14
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: reflection-model figure annotation
+      quotation: (Mu thermal velocity ~7mm /μs)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC/TRIUMF measurement or model restated on a PRIMARY_LHMUC deck; the value belongs to the J-PARC
+        g-2/EDM ultra-slow-muon source (silica-aerogel target) and is analogous technology for the LHμC ultra-cold μ+ source,
+        not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: sqrt(8kT/(π m_Mu)) at the fitted T = 322 K = 7.7 mm/μs (7.5 mm/μs at 300 K), consistent with
+      ''~7''.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_LAYER_INTERVAL_SIMULATED_WS2026_ZHANG
+  name: Layer interval of the simulated multi-layer target shown on pp.14-16
+  symbol: d_layer
+  subsystem: source
+  scenario: null
+  value: 7
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 14
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: plot legend
+      quotation: Multi-layer (interval = 7 mm)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Simulation configuration of the g-2 multi-layer study (C. Zhang et al., NIMA 1042, 167443 (2022)); analogous
+        technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_OPTIMAL_INTERVAL_WS2026_ZHANG
+  name: Layer interval giving the maximum muonium yield in the laser region (scan 3-9 mm)
+  symbol: d_layer,opt
+  subsystem: source
+  scenario: null
+  value: 7
+  unit: mm
+  uncertainty:
+    type: not_stated
+    note: 'read from the plot: the 6, 7 and 8 mm points (about 3.4-3.5 a.u.) agree within their error bars; the scan covers
+      3-9 mm'
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 17
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: left plot 'Mu inside laser region [a.u.] vs Interval [mm]'
+      quotation: The maximum Mu yield in the laser region under different intervals at their optimal laser shooting time.
+    derivation: 'Read off the p.17 left plot ''Mu inside laser region [a.u.] vs Interval [mm]'' (scan points 3-9 mm): the
+      highest point is at 7 mm (about 3.45 a.u.), with 6 mm (about 3.37) and 8 mm (about 3.40) inside its error bar, so
+      the optimum is broad (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Read from a plot (not stated in text); the optimum is broad. With the laser-ionisation simulation added
+        (right plot) the optimum shifts to 3-5 mm depending on laser energy.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: plot reading.'
+- parameter_id: SOURCE_MUONIUM_VACUUM_YIELD_MULTILAYER_WS2026_ZHANG
+  name: Muonium vacuum yield with the multi-layer target (reflection-model simulation)
+  symbol: f_vac(multi)
+  subsystem: source
+  scenario: null
+  value: 0.18
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 15
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: null
+      quotation: In particular, muonium vacuum yield is enhanced from 8% to 18%
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Simulation result for the g-2 multi-layer target (7 mm interval); analogous technology. The μTRISTAN
+        budget uses 0.6 for a different (vertical, laser-from-below) multi-layer geometry (SOURCE_MUONIUM_VACUUM_YIELD_MULTILAYER_BUDGET_WS2026_ZHANG).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Peak relative Mu yield in the laser region on the p.15 plot: about 3.4 (multi-layer) vs 1.0 (single-layer).'
+- parameter_id: SOURCE_MULTILAYER_EXTRACTION_LIMITATION_WS2026_ZHANG
+  name: Extraction limitation of the multi-layer target (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: extraction_of_ultra_cold_muon_limited_by_spatial_distribution_energy_vs_time_width_balance_to_be_studied
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 16
+      section: From single-layer to Multi-layer design — The extraction and acceleration
+      table_figure_or_equation: null
+      quotation: 'Extraction of ultra-cold muon is limited by the spatial distribution ... Setup: HV elevated, E remains
+        the same as single-layer ... The balance between the energy and the time width should be studied'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: GEANT-4 electrostatic-lens study of the g-2 multi-layer target; analogous technology. The p.16 plots
+        show the multi-layer thermal-muon time spread (about 495-515 ns) and kinetic-energy spread (about 5.5-5.75 keV)
+        both wider than single-layer.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_THERMAL_MUON_YIELD_GAIN_122NM500UJ_355NM1P5J_WS2026_ZHANG
+  name: Maximum thermal-muon yield of the multi-layer target relative to the g-2 TDR, laser 122 nm 500 μJ + 355 nm 1.50
+    J (old laser simulation)
+  symbol: Y_rel(500 μJ, 1.5 J)
+  subsystem: source
+  scenario: null
+  value: 5.2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading (maximum at 5 mm interval, about 5.2); reading accuracy about ±0.2
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 17
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: right plot 'Thermal muon yield [a.u.] vs Interval [mm]' (blue triangles)
+      quotation: 122 nm of 500 μJ, 355 nm of 1.50 J ... g-2 TDR ... The maximum thermal muon yield by additional laser ionization
+        simulation (This was an old results — the laser simulation has been further developed — see talk by S. Kamioka)
+    derivation: 'Read off the p.17 right plot ''Thermal muon yield [a.u.] vs Interval [mm]'' (blue triangles, legend ''122
+      nm of 500 μJ, 355 nm of 1.50 J''; the dashed line at 1 is labelled ''g - 2 TDR''): maximum at the 5 mm point, about
+      5.2; reading accuracy about ±0.2 (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Superseded simulation per the slide's own caveat; recorded only as the relative gain the old laser model
+        gave. Analogous technology.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: plot reading of an explicitly ''old'' result.'
+- parameter_id: SOURCE_MULTILAYER_THERMAL_MUON_YIELD_GAIN_122NM100UJ_355NM1P5J_WS2026_ZHANG
+  name: Maximum thermal-muon yield of the multi-layer target relative to the g-2 TDR, laser 122 nm 100 μJ + 355 nm 1.50
+    J (old laser simulation)
+  symbol: Y_rel(100 μJ, 1.5 J)
+  subsystem: source
+  scenario: null
+  value: 3.4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading (maximum at 4 mm interval, about 3.4); reading accuracy about ±0.2
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 17
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: right plot (red squares)
+      quotation: 122 nm of 100 μJ, 355 nm of 1.50 J ... g-2 TDR
+    derivation: 'Read off the p.17 right plot ''Thermal muon yield [a.u.] vs Interval [mm]'' (red squares, legend ''122
+      nm of 100 μJ, 355 nm of 1.50 J''; ''g - 2 TDR'' line at 1): maximum at the 4 mm point, about 3.4; reading accuracy
+      about ±0.2 (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Superseded simulation per the slide's own caveat. Analogous technology.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: plot reading of an explicitly ''old'' result.'
+- parameter_id: SOURCE_MULTILAYER_THERMAL_MUON_YIELD_GAIN_122NM100UJ_355NM300MJ_WS2026_ZHANG
+  name: Maximum thermal-muon yield of the multi-layer target relative to the g-2 TDR, laser 122 nm 100 μJ + 355 nm 300 mJ
+    (old laser simulation)
+  symbol: Y_rel(100 μJ, 300 mJ)
+  subsystem: source
+  scenario: null
+  value: 2.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading (maximum at 3 mm interval, about 2.5); reading accuracy about ±0.2
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 17
+      section: From single-layer to Multi-layer design — Modelling muonium reflection in between layers
+      table_figure_or_equation: right plot (green circles)
+      quotation: 122 nm of 100 μJ, 355 nm of 300 mJ ... g-2 TDR
+    derivation: 'Read off the p.17 right plot ''Thermal muon yield [a.u.] vs Interval [mm]'' (green circles, legend ''122
+      nm of 100 μJ, 355 nm of 300 mJ''; ''g - 2 TDR'' line at 1): maximum at the 3 mm point, about 2.5; reading accuracy
+      about ±0.2 (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Superseded simulation per the slide's own caveat. Analogous technology.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: plot reading of an explicitly ''old'' result.'
+- parameter_id: SOURCE_MULTILAYER_VALIDATION_PROPOSAL_LASER_RADIUS_WS2026_ZHANG
+  name: 244 nm laser-region radius in the proposed two-layer validation experiment
+  symbol: R_laser
+  subsystem: source
+  scenario: null
+  value: 1.5
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 18
+      section: From single-layer to Multi-layer design — Proposal to experimentally validate the 'reflection model'
+      table_figure_or_equation: schematic
+      quotation: 244 nm Laser region R = 1.5 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'Proposed (not performed) validation experiment: laser-position scan over a 25 mm two-layer target; the
+        simulated optimal laser time differs between reflection (about 650-1230 ns) and no-reflection (about 530-750 ns)
+        models. Analogous technology.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_VERTICAL_VARIANT_WS2026_ZHANG
+  name: Vertical multi-layer aerogel variant adopted by μTRISTAN (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: vertical_aerogel_layers_laser_from_below_not_published_adopted_by_mutristan
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 19
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: Yet another version (not published in my paper) but could provide a higher yield; muTRISTAN took this idea
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). Hamada et al. p.7 describe the aerogel target as having 'a layer structure in the vertical direction
+        so that one can shoot lasers in the gaps'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Figure: ''Surface muon'' enters the stack along z, ''Laser'' from below, ''Thermal muon'' extracted along z.'
+- parameter_id: SOURCE_MULTILAYER_VERTICAL_VARIANT_YIELD_GAIN_4LAYERS_WS2026_ZHANG
+  name: Simulated yield gain of the vertical multi-layer variant with 4 layers (relative to single layer)
+  symbol: G_4layers
+  subsystem: source
+  scenario: null
+  value: 4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 19
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: Simulation predicted even higher yields (4 times if 4 layers → 8 times at max)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Zhang's own simulation of the vertical multi-layer aerogel variant ('Yet another version (not published
+        in my paper)') that μTRISTAN adopted ('muTRISTAN took this idea'). The 4x / 8x gains are not stated in Hamada et
+        al. 2022 (SRC_ARXIV_2201_06664), whose budget uses a vacuum yield of 0.6 instead. Analogous technology (J-PARC g-2
+        / Liverpool target simulation) for the LHμC ultra-cold source, not an LHμC or μTRISTAN design value. The '# in the
+        laser region' plot peaks at about 7.9e4 (multi-layer) vs 2.4e4 (single-layer), i.e. about 3.3 x at the peak (plot
+        reading).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MULTILAYER_VERTICAL_VARIANT_YIELD_GAIN_MAX_WS2026_ZHANG
+  name: Maximum simulated yield gain of the vertical multi-layer variant
+  symbol: G_max
+  subsystem: source
+  scenario: null
+  value: 8
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 19
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: Simulation predicted even higher yields (4 times if 4 layers → 8 times at max)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Zhang's own simulation of the vertical multi-layer aerogel variant ('Yet another version (not published
+        in my paper)') that μTRISTAN adopted ('muTRISTAN took this idea'). The 4x / 8x gains are not stated in Hamada et
+        al. 2022 (SRC_ARXIV_2201_06664), whose budget uses a vacuum yield of 0.6 instead. Analogous technology (J-PARC g-2
+        / Liverpool target simulation) for the LHμC ultra-cold source, not an LHμC or μTRISTAN design value. Number of layers
+        for the maximum not stated.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUTRISTAN_TOTAL_EFFICIENCY_QUOTED_WS2026_ZHANG
+  name: μTRISTAN total ultra-cold muon production efficiency at the first target as quoted on the deck
+  symbol: eps_tot(μTRISTAN)
+  subsystem: source
+  scenario: null
+  value: 0.14
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: quoted paragraph of arXiv:2201.06664 §2.2
+      quotation: 'The efficiency for the production of the ultra-cold muons in total is estimated to be 14 % from the following
+        estimated efficiencies: 52 % for the muonium formation, 60 % for the vacuum yield, 60 % after the loss of muoniums
+        due to the decay, and 73 % for the laser ionization'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). Same statement as SOURCE_USM_PRODUCTION_EFFICIENCY_FIRST_TARGET_MUTRISTAN2022 in the μTRISTAN
+        file.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 0.52 x 0.6 x 0.6 x 0.73 = 0.137 (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_VACUUM_YIELD_MULTILAYER_BUDGET_WS2026_ZHANG
+  name: 'μTRISTAN budget: muonium vacuum yield of the multi-layer target (diffusion + reflection model)'
+  symbol: f_vac(budget)
+  subsystem: source
+  scenario: null
+  value: 0.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: '0.6 (for the vacuum yield): multi-layer targets simulation (diffusion model + reflection model)'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). 3.3 x the 0.18 of the g-2 multi-layer simulation (p.15) and 7 x the single-layer 0.082; the geometry
+        behind 0.6 is the vertical variant of p.19.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'p.20 bullet for the formation factor of the same budget: ''0.52: Muonium formation in aerogel (measurement from
+    TRIUMF)'' - origin Bakule et al. 2013, 0.52 +- 0.01 (SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013).'
+- parameter_id: SOURCE_MUONIUM_DECAY_SURVIVAL_BUDGET_WS2026_ZHANG
+  name: 'μTRISTAN budget: fraction of muonium surviving decay until the laser shot (laser at about 1.2 μs)'
+  symbol: f_decay
+  subsystem: source
+  scenario: null
+  value: 0.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: '0.6 (after the decay loss): taking the laser shooting time at ~1.2 us'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: exp(-1.2 μs / 2.197 μs) = 0.58, consistent with 0.6.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_SHOOTING_TIME_BUDGET_WS2026_ZHANG
+  name: 'μTRISTAN budget: laser shooting time after the muon pulse'
+  symbol: t_laser
+  subsystem: source
+  scenario: null
+  value: 1.2
+  unit: us
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: '0.6 (after the decay loss): taking the laser shooting time at ~1.2 us'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). Aritome et al. fixed the laser at 1.25 μs after the surface-muon arrival (SOURCE_LASER_TIMING_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG
+  name: 'μTRISTAN budget: 122 nm laser ionisation efficiency (100 μJ covering the whole spatial muon distribution, followed
+    by 355 nm)'
+  symbol: eps_ion(122 nm, budget)
+  subsystem: source
+  scenario: null
+  value: 0.73
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: '0.73: 122 nm laser ionisation efficiency (100 uJ covering all the spatial muon distributions, followed-by
+        355 nm) — Again, this efficiency is pending updates — see the latest studies (or S. Kamioka''s slides from this
+        workshop)'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). Flagged by its author as 'pending updates'; the S. Kamioka (E34 CM30) plot reproduced on the same
+        slide shows at most about 0.15 USM per vacuum-emitted Mu at 200 μJ (SOURCE_LASER_IONISATION_EFF_KAMIOKA_CM30_MAX_WS2026_ZHANG)
+        and the g-2 target column implies 0.114 (SOURCE_LASER_IONISATION_EFF_IMPLIED_G2_TARGET_WS2026_ZHANG). Feeds CONF_LASER_IONISATION_EFFICIENCY.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Confidence medium because the deck itself marks the value as pending updates.
+- parameter_id: SOURCE_LASER_IONISATION_WAVELENGTHS_BUDGET_WS2026_ZHANG
+  name: Laser scheme assumed in the μTRISTAN ionisation budget (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 122nm_lyman_alpha_followed_by_355nm
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: '0.73: 122 nm laser ionisation efficiency (100 uJ covering all the spatial muon distributions, followed-by
+        355 nm)'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUTRISTAN_POST_STOPPING_BUDGET_WS2026_ZHANG
+  name: Product of the four μTRISTAN post-stopping budget factors (formation x vacuum yield x decay survival x ionisation)
+  symbol: eps_post-stop
+  subsystem: source
+  scenario: null
+  value: 0.137
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: null
+      quotation: 0.52 ... 0.6 ... 0.6 ... 0.73
+    derivation: SOURCE_MUONIUM_FORMATION_FRACTION_TRIUMF_WS2026_ZHANG x SOURCE_MUONIUM_VACUUM_YIELD_MULTILAYER_BUDGET_WS2026_ZHANG
+      x SOURCE_MUONIUM_DECAY_SURVIVAL_BUDGET_WS2026_ZHANG x SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG = 0.52
+      x 0.6 x 0.6 x 0.73 = 0.1367
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Reproduces the quoted ''14 %''. Per stopped muon (the μTRISTAN pion-stopping and transport factors are
+        separate: SOURCE_PION_TRANSPORT_EFFICIENCY_MUTRISTAN2022, SOURCE_SECOND_TARGET_EFFICIENCY_MUTRISTAN2022). Compare
+        the demonstrated post-stopping value 2.1e-8 / 0.38 = 5.5e-8 (Aritome 2024), a factor of order 1e6 lower — CONF_LASER_IONISATION_EFFICIENCY.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 0.52 x 0.6 x 0.6 x 0.73 = 0.137 (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    - ratio to the Aritome post-stopping measurement is 1e6-4e6 (tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    - tests/scientific/test_workshop_decks.py::test_aritome2024_measured_ultra_slow_muon_chain
+    notes: ''
+  dependencies:
+  - SOURCE_MUONIUM_FORMATION_FRACTION_TRIUMF_WS2026_ZHANG
+  - SOURCE_MUONIUM_VACUUM_YIELD_MULTILAYER_BUDGET_WS2026_ZHANG
+  - SOURCE_MUONIUM_DECAY_SURVIVAL_BUDGET_WS2026_ZHANG
+  - SOURCE_LASER_IONISATION_EFF_122NM_BUDGET_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: The 0.52 input is the Bakule et al. 2013 MuSR value (0.52 +- 0.01, SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013);
+    with Beare et al.'s 0.655 the same product would be 0.172 (audit arithmetic).
+- parameter_id: SOURCE_LASER_IONISATION_EFF_KAMIOKA_CM30_122NM100UJ_WS2026_ZHANG
+  name: Ultra-slow μ+ per vacuum-emitted muonium at 122 nm 100 μJ with 355 nm 300 mJ (S. Kamioka, E34 CM30 plot reproduced
+    on the deck)
+  symbol: eps_ion(Kamioka, 100 μJ/300 mJ)
+  subsystem: source
+  scenario: null
+  value: 0.1
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading at 100 μJ on the 300 mJ curve, about 0.10; reading accuracy about ±0.02
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: 'reproduced plot ''USM/vacuum emitted Mu vs 122nm pulse energy [μJ]'' (S. Kamioka at E34
+        CM30), blue curve ''355nm: 300mJ, t=1.35 μs, y_laser=0 mm'''
+      quotation: 'This is the really new challenge for lasers!! 2-1: O(10)μJ to 100μJ @122nm (+ more 355nm) 2-2: 10mJ (40mJ)
+        to 300mJ @355nm ... 355nm: 300mJ, t=1.35 μs, y_laser=0 mm ... ※ Beam size and position are optimized for each point
+        ... Phase2-2 Both laser are ready'
+    derivation: 'Read off the reproduced p.20 plot ''USM/vacuum emitted Mu vs 122nm pulse energy [μJ]'' (S. Kamioka at E34
+      CM30): blue curve ''355nm: 300mJ, t=1.35 μs, y_laser=0 mm'' at 100 μJ, about 0.10; reading accuracy about ±0.02 (manual
+      reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Latest J-PARC laser-ionisation simulation (S. Kamioka, E34 collaboration meeting 30) reproduced on the
+        deck; analogous technology. It is 7 x below the 0.73 budget at the same 122 nm energy and consistent with the implied
+        g-2 target 0.114. Not stated in slide text (plot reading).
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: figure read from a reproduced plot. Other curves at 100 μJ: 600 mJ about 0.12, 40 mJ about 0.04,
+    10 mJ about 0.015. The ''Phase2-1 122nm 100μJ'' arrow marks the 40 mJ curve (about 0.04).'
+- parameter_id: SOURCE_LASER_IONISATION_EFF_KAMIOKA_CM30_MAX_WS2026_ZHANG
+  name: Maximum ultra-slow μ+ per vacuum-emitted muonium on the Kamioka E34 CM30 plot (122 nm 200 μJ, 355 nm 600 mJ)
+  symbol: eps_ion(Kamioka, max)
+  subsystem: source
+  scenario: null
+  value: 0.15
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading at 200 μJ on the 600 mJ curve, about 0.15; reading accuracy about ±0.02
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: reproduced plot 'USM/vacuum emitted Mu vs 122nm pulse energy [μJ]' (S. Kamioka at E34 CM30),
+        red curve end point
+      quotation: '355nm: 600mJ, t=1.35 μs, y_laser=0 mm ... TDR reference'
+    derivation: 'Read off the same reproduced p.20 plot: end point of the red curve ''355nm: 600mJ, t=1.35 μs, y_laser=0
+      mm'' at 200 μJ, about 0.15; reading accuracy about ±0.02 (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Same plot as SOURCE_LASER_IONISATION_EFF_KAMIOKA_CM30_122NM100UJ_WS2026_ZHANG; the dashed 'TDR reference'
+        line sits at 0.20. Analogous technology.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: figure read.'
+- parameter_id: SOURCE_USM_PER_VACUUM_MUONIUM_G2_TDR_REFERENCE_WS2026_ZHANG
+  name: J-PARC g-2 TDR reference value of ultra-slow μ+ per vacuum-emitted muonium (dash-dot line on the Kamioka plot)
+  symbol: eps_ion(TDR)
+  subsystem: source
+  scenario: null
+  value: 0.2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: plot reading of a horizontal reference line at 0.20
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 20
+      section: Connection to μTRISTAN (original version)
+      table_figure_or_equation: reproduced plot (S. Kamioka at E34 CM30), dash-dot line 'TDR reference'
+      quotation: TDR reference
+    derivation: 'Read off the same reproduced p.20 plot: height of the magenta dash-dot line labelled ''TDR reference''
+      in the legend, 0.20 on the y-axis (manual reading of the slide image).'
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC g-2/EDM TDR design assumption as drawn on the reproduced plot; analogous technology.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: figure read.'
+- parameter_id: SOURCE_MUTRISTAN_NEW_TARGET_MATERIAL_WS2026_ZHANG
+  name: Muonium production target material in the new μTRISTAN version (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: multi_layer_hot_tungsten
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: Muonium production target changed from aerogel to tungsten (Phys. Rev. Lett. 74 (1995) 4811)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'New μTRISTAN version (hybrid liquid-lithium / multi-layer hot-tungsten target): the layout figure and
+        the N_tot formula on this slide are those of Sakaki, Kamioka and Yoshida 2026 (SRC_ARXIV_2605_25580, Fig. 1 and
+        Eq. (6); see the _SAKAKI2026 records), although the slide itself cites only PRL 74 (1995) 4811 and PRL 56 (1986)
+        1463. Not part of Hamada et al. 2022 (SRC_ARXIV_2201_06664). Related-machine design variant; applies to LHμC only
+        insofar as the LHμC source inherits the μTRISTAN chain. Figure label: ''Tungsten layers to stop π+ and μ+''; the
+        deck summary (p.22) says it ''needs a further modelling (and the experimental validation?)''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUTRISTAN_NEW_PROTON_TARGET_WS2026_ZHANG
+  name: Proton target of the new μTRISTAN version (figure label, categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: liquid_lithium
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: reproduced layout figure
+      quotation: Proton target (Liquid Li)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'New μTRISTAN version (hybrid liquid-lithium / multi-layer hot-tungsten target): the layout figure and
+        the N_tot formula on this slide are those of Sakaki, Kamioka and Yoshida 2026 (SRC_ARXIV_2605_25580, Fig. 1 and
+        Eq. (6); see the _SAKAKI2026 records), although the slide itself cites only PRL 74 (1995) 4811 and PRL 56 (1986)
+        1463. Not part of Hamada et al. 2022 (SRC_ARXIV_2201_06664). Related-machine design variant; applies to LHμC only
+        insofar as the LHμC source inherits the μTRISTAN chain. Figure label only.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUTRISTAN_NEW_SLOW_MUON_ENERGY_RANGE_WS2026_ZHANG
+  name: Slow-muon energy from the hot-tungsten target (categorical statement of the range)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: O(eV)_to_O(keV)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: Slow muon energy changes (potentially at O(eV) - O(keV) )
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'New μTRISTAN version (hybrid liquid-lithium / multi-layer hot-tungsten target): the layout figure and
+        the N_tot formula on this slide are those of Sakaki, Kamioka and Yoshida 2026 (SRC_ARXIV_2605_25580, Fig. 1 and
+        Eq. (6); see the _SAKAKI2026 records), although the slide itself cites only PRL 74 (1995) 4811 and PRL 56 (1986)
+        1463. Not part of Hamada et al. 2022 (SRC_ARXIV_2201_06664). Related-machine design variant; applies to LHμC only
+        insofar as the LHμC source inherits the μTRISTAN chain. Order-of-magnitude statement only; no value.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_TUNGSTEN_MUONIUM_TEMPERATURE_WS2026_ZHANG
+  name: Equivalent temperature T assumed for muonium emission from hot tungsten
+  symbol: T_W
+  subsystem: source
+  scenario: null
+  value: 2000
+  unit: kelvin
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: 'Phys. Rev. Lett. 56 (1986) 1463-1466 — T: ~2000 K (assumption in the article)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'Hot-tungsten muonium measurement (Phys. Rev. Lett. 56 (1986) 1463-1466; also PRL 74 (1995) 4811) restated
+        on the deck; analogous technology for a tungsten-based LHμC source option. Sakaki et al. 2026 p.4 likewise assume
+        T = 2000 K (SOURCE_HYBRID_TUNGSTEN_TEMPERATURE_SAKAKI2026); Beare et al. p.3: ''A tungsten foil heated to 2000 K
+        was used in Refs. [9, 10]''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_TUNGSTEN_MUONIUM_DIFFUSION_CONSTANT_WS2026_ZHANG
+  name: Muonium diffusion constant D in hot tungsten
+  symbol: D_W
+  subsystem: source
+  scenario: null
+  value: 0.002
+  unit: centimeter**2/second
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: 'D: 2x10^-3 cm2/S'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: From Phys. Rev. Lett. 56 (1986) 1463-1466 as restated on the deck; analogous technology. 4e5 x smaller
+        than the aerogel value 870 cm^2/s. Same value in Sakaki et al. 2026 p.4 (citing Mills et al., PRL 56, 1463 (1986);
+        SOURCE_HYBRID_DIFFUSION_COEFFICIENT_SAKAKI2026), giving l_diff ≈ 0.7 μm.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_TUNGSTEN_MUONIUM_EMISSION_DENSITY_RHO0_WS2026_ZHANG
+  name: Muonium emission parameter rho_0 for hot tungsten (y = rho_0 sqrt(D tau_mu))
+  symbol: rho_0
+  subsystem: source
+  scenario: null
+  value: 60
+  unit: 1/mm
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: 'Mu emission: y = ρ0 sqrt(D τμ), ρ0 ≃ 60 mm^-1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: From Phys. Rev. Lett. 56 (1986) 1463-1466 as restated on the deck; analogous technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_TUNGSTEN_MUONIUM_EMISSION_YIELD_IMPLIED_WS2026_ZHANG
+  name: Muonium emission yield y = rho_0 sqrt(D tau_mu) evaluated with the deck's tungsten inputs
+  symbol: y_W
+  subsystem: source
+  scenario: null
+  value: 0.04
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: null
+      quotation: 'Mu emission: y = ρ0 sqrt(D τμ), ρ0 ≃ 60 mm^-1 ; D: 2x10^-3 cm2/S'
+    derivation: SOURCE_TUNGSTEN_MUONIUM_EMISSION_DENSITY_RHO0_WS2026_ZHANG x sqrt(SOURCE_TUNGSTEN_MUONIUM_DIFFUSION_CONSTANT_WS2026_ZHANG
+      x tau_mu) = 60 mm^-1 x sqrt(2e-3 cm^2/s x 2.197e-6 s) = 60 mm^-1 x 6.63e-4 mm = 0.0398
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: Audit evaluation of the slide formula; the slide does not define the normalisation of y (interpreted
+        as muonium emitted per stopped muon), so the number is indicative only.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies:
+  - SOURCE_TUNGSTEN_MUONIUM_EMISSION_DENSITY_RHO0_WS2026_ZHANG
+  - SOURCE_TUNGSTEN_MUONIUM_DIFFUSION_CONSTANT_WS2026_ZHANG
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Low confidence: formula normalisation not stated on the slide. The functional form matches Sakaki et al. 2026
+    App. A (emission probability exp(-x0/sqrt(Dτμ)), so a uniform normalised stopping density ρ0 per unit depth gives an
+    emitted fraction ρ0 sqrt(Dτμ)); ρ0 ≃ 60 mm^-1 itself is not in the paper''s text, so the normalisation remains unverified.
+    sqrt(Dτμ) = 0.66 μm agrees with Sakaki''s l_diff ≈ 0.7 μm.'
+- parameter_id: SOURCE_MUTRISTAN_NEW_USM_RATE_PER_MW_WS2026_ZHANG
+  name: Ultra-slow muon rate scale of the new μTRISTAN version per MW of beam power, before the conversion efficiency eta_conv
+  symbol: N_tot/(eta_conv * P/MW)
+  subsystem: source
+  scenario: null
+  value: 1200000000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: formula
+      quotation: N_tot = η_conv × 1.2 × 10^12 × (Beam Power / 1 MW) s^-1
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'New μTRISTAN version (hybrid liquid-lithium / multi-layer hot-tungsten target): the layout figure and
+        the N_tot formula on this slide are those of Sakaki, Kamioka and Yoshida 2026 (SRC_ARXIV_2605_25580, Fig. 1 and
+        Eq. (6); see the _SAKAKI2026 records), although the slide itself cites only PRL 74 (1995) 4811 and PRL 56 (1986)
+        1463. Not part of Hamada et al. 2022 (SRC_ARXIV_2201_06664). Related-machine design variant; applies to LHμC only
+        insofar as the LHμC source inherits the μTRISTAN chain. eta_conv is not given on the deck (value unknown); the formula
+        is the only quantitative statement of the new version on the slide.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Record holds the prefactor 1.2e12 /s per MW; multiply by eta_conv (unknown) and the beam power in MW. N_tot is
+    not defined on the slide; Sakaki et al. 2026 define it as the ultraslow-muon production rate before extraction per unit
+    η_conv (Eq. (6), SOURCE_HYBRID_PRE_EXTRACTION_RATE_SAKAKI2026, same 1.2e12 /s at 1 MW).
+- parameter_id: SOURCE_MUTRISTAN_NEW_CONVERSION_EFFICIENCY_WS2026_ZHANG
+  name: Conversion efficiency eta_conv in the new μTRISTAN N_tot formula
+  symbol: eta_conv
+  subsystem: source
+  scenario: null
+  value: null
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: unknown
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 21
+      section: Connection to μTRISTAN (new version)
+      table_figure_or_equation: formula
+      quotation: N_tot = η_conv × 1.2 × 10^12 × (Beam Power / 1 MW) s^-1
+    derivation: null
+    applicability:
+      category: unresolved
+      scenario: null
+      explanation: 'Symbol appears in the formula; no value is given on the deck. The same symbol is left unquantified by
+        the original paper, Sakaki et al. 2026 (SRC_ARXIV_2605_25580 p.3: ''a material-dependent conversion factor, ηconv'';
+        SOURCE_HYBRID_MU_TO_MUONIUM_CONVERSION_SAKAKI2026, value null), so no uploaded source gives it.'
+    confidence: none
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Explicit unknown (value null).
+- parameter_id: SOURCE_MULTILAYER_TARGET_EFFICIENCY_GAIN_MUTRISTAN_WS2026_ZHANG
+  name: Target-efficiency gain of the multi-layer concept adapted to μTRISTAN relative to the single-layer design (summary
+    statement)
+  symbol: G_target
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: source says 'about an order'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_ZHANG_MUONIUM
+      title: Muonium diffusion modeling and multi-layer target design for muon laser ionisation cooling
+      author_or_org: Ce Zhang (University of Liverpool)
+      url: https://indico.cern.ch/event/1681458/contributions/7263313/
+      date: '2026-09-24'
+      version: slides (23 pp.)
+      page: 22
+      section: Summary
+      table_figure_or_equation: null
+      quotation: This concept is adapted to μTRISTAN proposal. The target efficiency is enhanced by about an order from
+        the single-layer design
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN source-chain design value (Hamada et al., PTEP 2022 053B02, SRC_ARXIV_2201_06664) restated and
+        explained by its originator on the deck; applies to LHμC only insofar as the LHμC source inherits the μTRISTAN chain
+        (design variant). Consistent with 0.6 / 0.082 = 7.3 for the vacuum yield alone.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null

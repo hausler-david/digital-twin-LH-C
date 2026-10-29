@@ -1,0 +1,2905 @@
+# Physics-section records of Hamada, Kitano, Matsudo, Takaura, Yoshida, 'μTRISTAN', arXiv:2201.06664v2 / PTEP 2022 053B02 (SRC_ARXIV_2201_06664,
+# RELATED_MACHINE -> status imported_related; external comparators restated by the paper (SuperKEKB, ILC, LHC limits, LHCb, refs. [10], [19], [24],
+# the Standard-Model BR(h -> bb̄)) -> analogous).
+# Scope: Sections 1, 3–7 (centre-of-mass energies, integrated-luminosity assumptions, Higgs cross sections and yields, coupling precision, μ+μ+ and
+# μTevatron options, asymmetric-kinematics detector requirements, superparticle reach, summary). The accelerator chain (Section 2) is recorded by the
+# source and acceleration groups (SOURCE_*/ACC_*/MACHINE_*_MUTRISTAN2022); peak luminosities 4.6e33 / 5.7e32 are referenced as dependencies, not duplicated.
+# No μTRISTAN collider scenario record exists (machine enum MUTRISTAN): the option (μ+e− 30 GeV × 1 TeV, μ+μ+ 1 × 1 TeV, μTevatron 50 GeV × 3 TeV,
+# large ring) is named at the start of applicability.explanation; applicability.scenario and scenario are null. Pages = PDF pages = printed pages.
+# P1 (arithmetic) checks: √s values, 1 ab⁻¹ = 4.6e33 × 0.7 × 10 yr, 100 and 12 fb⁻¹ per year, N(Higgs) = σ × L, eqs. (10)/(14) statistical precisions,
+# 89 HH events, 30 % WBF loss ((1 + 0.25)/(1 + 0.8)), factor 2 for μ+μ+ ((1.8/1.25)²), boosts γ = (E_e + E_μ)/√s, 0.22 = 1.3e-3/0.006, factor 8.1 ≈ 10.
+# Displayed equations (8)–(16) are transcribed in linear form (exponents and fractions written inline) because the text layer scrambles them.
+# Resume review 2026-10-29: all records re-checked against the text and page images; Fig. 4 caption quotations corrected (|p⃗|, °), the
+# 'ten to a hundred percent' range split into two records, 2 records added (μ+μ+ polarisation factor 2, sneutrino factor 4).
+# Verifier pass (G6_PHYSICS adversarial verification, 2026-10-29): all 65 records re-read against the page images and text layer and every
+# P1 arithmetic recomputed; no value, unit, page or quotation error found; one P1 label without an exact reproduction moved to P0; confidences lowered to the source_quality_policy.md §4 caps
+# (imported_related from a design_variant, status analogous -> medium). See research/_fragments/verify_G6_PHYSICS.md.
+parameters:
+- parameter_id: PHYS_SQRT_S_MUE_MUTRISTAN2022
+  name: Centre-of-mass energy of the μ+e− collider (30 GeV e− × 1 TeV μ+)
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 346
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 2
+      section: 1 Introduction
+      table_figure_or_equation: null
+      quotation: Using the storage ring with the circumference of about 3 km as a reference design, we consider a collider with the center-of-mass energy,
+        √s = 346 GeV, by accelerating the electrons and the muons to 30 GeV and 1 TeV, respectively.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2√(30 GeV × 1000 GeV) = 346.4 GeV (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MAIN_RING_E_BEAM_ENERGY_MUTRISTAN2022
+  - ACC_BOOSTER_TOP_ENERGY_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_MUMU_3KM_MUTRISTAN2022
+  name: Centre-of-mass energy of the μ+μ+ collider in the 3 km ring
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 2
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 2
+      section: 1 Introduction
+      table_figure_or_equation: null
+      quotation: Using the same tunnel, it is possible to simultaneously build a µ+ µ+ collider with √s = 2 TeV, which can directly reach TeV physics.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2 × 1 TeV = 2 TeV for two 1 TeV beams (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_MUTEVATRON_MUE_MUTRISTAN2022
+  name: Centre-of-mass energy of the μTevatron μ+e− option (50 GeV e− × 3 TeV μ+)
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 775
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 4 μTevatron option
+      table_figure_or_equation: null
+      quotation: At (Ee− , Eµ+ ) = (50 GeV, 3 TeV), which gives √s = 775 GeV, the WBF and ZBF cross sections are given by
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2√(50 GeV × 3000 GeV) = 774.6 GeV (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MUTEVATRON_E_BEAM_ENERGY_MUTRISTAN2022
+  - MACHINE_LARGE_RING_MU_ENERGY_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SQRT_S_MUMU_LARGE_RING_MUTRISTAN2022
+  name: Centre-of-mass energy of the μ+μ+ collider in the large-ring option
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 6
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 3
+      section: 1 Introduction
+      table_figure_or_equation: null
+      quotation: One can also consider a µ+ µ+ collider [15] with √s = 2 TeV at the 3 km ring or 6 TeV for the large ring option.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN large-ring μ+μ+ (3 TeV × 3 TeV). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP
+        2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators
+        for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 2 × 3 TeV = 6 TeV (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_INT_LUMI_10YR_MUE_MUTRISTAN2022
+  name: Integrated luminosity of the μ+e− collider assumed for the Higgs programme (ten years, one detector)
+  symbol: L_int
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: The integrated luminosity of 1 ab−1 can be achieved by ten years of running by assuming the duty factor of 70 % and a single detector.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 4.6e33 cm⁻²s⁻¹ × 0.7 × 3.156e7 s × 10 yr = 1.02e42 cm⁻² = 1.02 ab⁻¹ (audit arithmetic with the paper's eq. 6 luminosity)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_PEAK_LUMINOSITY_MUE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Abstract/p.3: ''the integrated luminosity can be as high as 1 ab−1''.'
+- parameter_id: PHYS_DUTY_FACTOR_MUTRISTAN2022
+  name: Duty factor assumed for the integrated-luminosity estimates
+  symbol: duty factor
+  subsystem: physics_programme
+  scenario: null
+  value: 70
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: by assuming the duty factor of 70 % and a single detector.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_RUNNING_YEARS_MUTRISTAN2022
+  name: Running period assumed for the 1 ab⁻¹ estimate
+  symbol: T_run
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: year
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: The integrated luminosity of 1 ab−1 can be achieved by ten years of running
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_DETECTORS_ASSUMED_MUTRISTAN2022
+  name: Number of detectors assumed for the 1 ab⁻¹ estimate
+  symbol: N_det
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: by assuming the duty factor of 70 % and a single detector.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'p.9: ''These luminosities in Eqs. (6) and (7) are delivered for each detector if we have multiple collision points in the storage ring.'' (MACHINE_LUMINOSITY_PER_DETECTOR_MUTRISTAN2022)'
+- parameter_id: PHYS_INT_LUMI_PER_YEAR_MUE_MUTRISTAN2022
+  name: Yearly integrated luminosity of the μ+e− collider used for the superparticle reach
+  symbol: L_int/yr
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: fb^-1/year
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 18
+      section: 6.1 e− + μ+ → ẽ− + μ̃+
+      table_figure_or_equation: null
+      quotation: By setting the maximal optimization of the polarizations, Pe− = −0.7 and Pµ+ = 0.8 and assuming the yearly luminosity of 100 fb−1 (corresponding
+        to the 70 % duty factor with Eq. (6)), we show in Fig. 6 the parameter region where the number of the production events is over one hundred per
+        year.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 4.6e33 cm⁻²s⁻¹ × 0.7 × 3.156e7 s = 1.02e41 cm⁻² = 102 fb⁻¹ per year (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_PEAK_LUMINOSITY_MUE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_INT_LUMI_PER_YEAR_MUMU_MUTRISTAN2022
+  name: Yearly integrated luminosity of the μ+μ+ collider used for the superparticle reach
+  symbol: L_int/yr
+  subsystem: physics_programme
+  scenario: null
+  value: 12
+  unit: fb^-1/year
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 19
+      section: 6.2 μ+ + μ+ → μ̃+ + μ̃+
+      table_figure_or_equation: null
+      quotation: We show in Fig. 7 the number of events per year by assuming the luminosity, L = 12 fb−1 year−1 , which corresponds to 70 % of running with
+        Eq. (7).
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 5.7e32 cm⁻²s⁻¹ × 0.7 × 3.156e7 s = 1.26e40 cm⁻² = 12.6 fb⁻¹ per year (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_PEAK_LUMINOSITY_MUMU_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_LUMI_REDUCTION_MUMU_VS_MUE_MUTRISTAN2022
+  name: Luminosity reduction factor of the μ+μ+ option relative to the μ+e− option
+  symbol: L(μe)/L(μμ)
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: source says 'about a factor of ten'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: Since the luminosity is expected to be reduced by about a factor of ten compared to µ+ e− colliders, the precision measurements of the
+        Higgs couplings are better performed at the low energy µ+ e− option.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: 'Consistency only, not reproduced: eqs. (6) and (7) give 4.6e33 / 5.7e32 = 8.1, which the text rounds to ''about a factor of ten''.'
+  dependencies:
+  - MACHINE_PEAK_LUMINOSITY_MUE_MUTRISTAN2022
+  - MACHINE_PEAK_LUMINOSITY_MUMU_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_BEAM_POL_E_ASSUMED_MUTRISTAN2022
+  name: Electron-beam longitudinal polarisation assumed for the Higgs cross sections
+  symbol: P_e-
+  subsystem: physics_programme
+  scenario: null
+  value: -0.7
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: We assume that the beam polarizations with Pe− = ±0.7 and Pµ+ = ±0.8 are possible. We set the polarizations to be (Pe− , Pµ+ ) = (−0.7,
+        0.8), which maximizes the cross section of the W boson fusion process.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: P_μ+ = 0.8 is MACHINE_MUON_POLARISATION_MUTRISTAN2022 (source group); the sign convention follows the paper.
+- parameter_id: PHYS_BEAM_POL_E_TARGET_SUPERKEKB_MUTRISTAN2022
+  name: Targeted electron polarisation of the SuperKEKB polarised-beam upgrade quoted as the basis of P_e = ±0.7
+  symbol: '|P_e-|'
+  subsystem: physics_programme
+  scenario: null
+  value: 0.7
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: The beam polarization option of the e− beam at the SuperKEKB experiment has been studied [13]. The polarized electron source and spin rotators
+        placed right before and after the interaction region(s) have been considered, with the targeted polarization of Pe− = ±0.7.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_WBF_XSEC_LOSS_LOW_POLARISATION_MUTRISTAN2022
+  name: Decrease of the WW-fusion Higgs cross section if the μ+ polarisation is 0.25 instead of 0.8
+  symbol: Δσ_WBF/σ_WBF
+  subsystem: physics_programme
+  scenario: null
+  value: 30
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: The difference between Pµ+ = 0.8 and 0.25 at µ+ e− colliders results in 30 % decrease in the cross sections of the W W fusion process for
+        the Higgs boson production.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 'σ_WBF ∝ (1 + P_μ+) for the W coupling to right-handed μ+: (1 + 0.25)/(1 + 0.8) = 0.69, i.e. a 31 % decrease (audit arithmetic in this extraction)'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  - SOURCE_MUON_POLARISATION_WORST_CASE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: The next sentence on p.10 gives the corresponding μ+μ+ statement (PHYS_SUSY_XSEC_REDUCTION_LOW_POLARISATION_MUMU_MUTRISTAN2022).
+- parameter_id: PHYS_SUSY_XSEC_REDUCTION_LOW_POLARISATION_MUMU_MUTRISTAN2022
+  name: Reduction factor of purely left-handed muon processes (e.g. slepton pair production) at the μ+μ+ collider if P_μ+ = 0.25 instead of 0.8
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02)
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: In the case of the µ+ µ+ collider, the cross sections of purely left-handed muon process, such as the productions of supersymmetric particles
+        discussed below, will be reduced by a factor of two.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+ collider, 1 TeV × 1 TeV in the 3 km ring (no scenario record). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 'eq. (20) polarisation factor (1 + P_μ1)(1 + P_μ2): (1.8 × 1.8)/(1.25 × 1.25) = 2.07 ≈ 2 (audit arithmetic in this extraction)'
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  - SOURCE_MUON_POLARISATION_WORST_CASE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_XSEC_WBF_MUE_MUTRISTAN2022
+  name: Single-Higgs W-boson-fusion cross section at the μ+e− collider (P_e = −0.7, P_μ = 0.8)
+  symbol: sigma_WBF
+  subsystem: physics_programme
+  scenario: null
+  value: 91
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says '≈'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: Eq. (8)
+      quotation: σWBF ≈ 91 fb, σZBF ≈ 4 fb. (8)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: '''These cross sections ... are all those at the parton level, and they are calculated by using the MadGraph5 [18].'' Displayed equation transcribed
+    in linear form (exponents and fractions written inline).'
+- parameter_id: PHYS_HIGGS_XSEC_ZBF_MUE_MUTRISTAN2022
+  name: Single-Higgs Z-boson-fusion cross section at the μ+e− collider (P_e = −0.7, P_μ = 0.8)
+  symbol: sigma_ZBF
+  subsystem: physics_programme
+  scenario: null
+  value: 4
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says '≈'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: Eq. (8)
+      quotation: σWBF ≈ 91 fb, σZBF ≈ 4 fb. (8)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Displayed equation transcribed in linear form (exponents and fractions written inline).
+- parameter_id: PHYS_HIGGS_XSEC_GENERATOR_MUTRISTAN2022
+  name: Generator of the μTRISTAN Higgs cross sections
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: MadGraph5, parton level
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: These cross sections and the energy and angular distributions of the Higgs boson productions discussed below are all those at the parton
+        level, and they are calculated by using the MadGraph5 [18].
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_EVENTS_PER_AB_MUE_MUTRISTAN2022
+  name: Number of Higgs events per 1 ab⁻¹ at the μ+e− collider
+  symbol: N(Higgs)
+  subsystem: physics_programme
+  scenario: null
+  value: 95000.0
+  unit: events
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 11
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: Eq. (9)
+      quotation: N (Higgs) = 9.5 × 10^4 × ( integrated luminosity / 1.0 ab−1 ). (9)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - (91 + 4) fb × 1000 fb⁻¹ = 95 000 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_XSEC_WBF_MUE_MUTRISTAN2022
+  - PHYS_HIGGS_XSEC_ZBF_MUE_MUTRISTAN2022
+  - PHYS_INT_LUMI_10YR_MUE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Abstract/p.3 rounding: ''0.1 million Higgs bosons are produced through the W boson fusion process''. Displayed equation transcribed in linear
+    form (exponents and fractions written inline).'
+- parameter_id: PHYS_HIGGS_BR_BB_USED_MUTRISTAN2022
+  name: H → bb̄ branching ratio used in the coupling-precision estimate
+  symbol: Br(h→bb)
+  subsystem: physics_programme
+  scenario: null
+  value: 0.582
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: Here the branching ratio, Br(h → bb̄) = 5.82 × 10−1 , is used
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Standard-Model input used by the paper.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_SEL_EFFICIENCY_ASSUMED_MUTRISTAN2022
+  name: Signal selection efficiency assumed in the coupling-precision estimate
+  symbol: efficiency
+  subsystem: physics_programme
+  scenario: null
+  value: 50
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: The efficiency is assumed to be 50%, which actually depends on the energy resolutions and event selections.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_KAPPA_STAT_PRECISION_MUE_MUTRISTAN2022
+  name: Statistical precision on κ_W + κ_b − κ_H from WBF H → bb̄ at the μ+e− collider (1 ab⁻¹, 50 % efficiency)
+  symbol: Δ(κ_W + κ_b − κ_H)_stat
+  subsystem: physics_programme
+  scenario: null
+  value: 0.0031
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: Eq. (10)
+      quotation: ∆(κW + κb − κH )stat = 1 / (2 √(N (WBF) × Br(h → bb̄) × efficiency)) = 3.1 × 10−3 × ( integrated luminosity / 1.0 ab−1 )^−1/2 ( efficiency
+        / 0.5 )^−1/2 . (10)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 1/(2√(91 000 × 0.582 × 0.5)) = 3.07e-3 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_XSEC_WBF_MUE_MUTRISTAN2022
+  - PHYS_HIGGS_BR_BB_USED_MUTRISTAN2022
+  - PHYS_HIGGS_SEL_EFFICIENCY_ASSUMED_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: '''it is assumed that the number of the background events gets much less than that of the signal events by appropriate selection cuts.'' Displayed
+    equation transcribed in linear form (exponents and fractions written inline).'
+- parameter_id: PHYS_HIGGS_ZBB_BACKGROUND_PER_AB_MUE_MUTRISTAN2022
+  name: Z → bb̄ background events (e−μ+ → νe ν̄μ Z) per 1 ab⁻¹ before selection
+  symbol: N_BG
+  subsystem: physics_programme
+  scenario: null
+  value: 55000.0
+  unit: events
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: Eq. (11)
+      quotation: 'The number of the events is at the same level as those of the signals: NBG = 5.5 × 10^4 × ( integrated luminosity / 1.0 ab−1 ). (11)'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: '''The main background is the Z boson production followed by the decay into bottom quark pair, e− µ+ → νe ν̄µ Z → νe ν̄µ bb̄.'' Displayed equation
+    transcribed in linear form (exponents and fractions written inline).'
+- parameter_id: PHYS_ILC_SEL_EFFICIENCY_250_MUTRISTAN2022
+  name: ILC H → bb̄ selection efficiency at √s = 250 GeV quoted as reference (ref. [19])
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 15
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: source says 'of order' / 'about'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: As a reference, in Ref. [19] the event selections at the ILC at √s = 250 GeV and 500 GeV are considered, which gives the efficiencies of
+        order 15% and 40%, respectively.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_ILC_SEL_EFFICIENCY_500_MUTRISTAN2022
+  name: ILC H → bb̄ selection efficiency at √s = 500 GeV quoted as reference (ref. [19])
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 40
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: source says 'of order' / 'about'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: which gives the efficiencies of order 15% and 40%, respectively.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_ILC_ZBB_REJECTION_250_MUTRISTAN2022
+  name: Fraction of Z → bb̄ background rejected by the bb̄-mass cut at the ILC, √s = 250 GeV (ref. [19])
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 95
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: the study in Ref. [19] have reported that 95% (90%) of the Z → bb̄ background events are rejected by the cut at √s = 250 GeV (500 GeV)
+        while about 80% of the signal events survive.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_ILC_ZBB_REJECTION_500_MUTRISTAN2022
+  name: Fraction of Z → bb̄ background rejected by the bb̄-mass cut at the ILC, √s = 500 GeV (ref. [19])
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 90
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: 95% (90%) of the Z → bb̄ background events are rejected by the cut at √s = 250 GeV (500 GeV)
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_ILC_SIGNAL_SURVIVAL_MUTRISTAN2022
+  name: Signal survival of the bb̄-mass cut at the ILC (ref. [19])
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 80
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: source says 'of order' / 'about'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: while about 80% of the signal events survive.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_PRECISION_REF10_STATEMENT_MUTRISTAN2022
+  name: Comparison with the percent-level coupling precision of ref. [10] (fast detector simulation)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: The study in Ref. [10] reported the precision of the Higgs coupling to be a percent level by performing a fast detector simulation. A better sensitivity
+    in Eq. (10) is partly due to enhanced cross sections by the beam polarization.
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 12
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: The study in Ref. [10] reported the precision of the Higgs coupling to be a percent level by performing a fast detector simulation. A better
+        sensitivity in Eq. (10) is partly due to enhanced cross sections by the beam polarization. One should, however, study the detector performance to
+        obtain a realistic estimate.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_XSEC_ZBF_MUMU_2TEV_MUTRISTAN2022
+  name: Z-boson-fusion Higgs cross section at the √s = 2 TeV μ+μ+ collider (P_μ+ = 0.8 for both beams)
+  symbol: sigma_ZBF
+  subsystem: physics_programme
+  scenario: null
+  value: 54
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says 'about 54 fb'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 3 Higgs boson production at μTRISTAN
+      table_figure_or_equation: null
+      quotation: The cross section of the Higgs production at √s = 2 TeV is estimated to be about 54 fb by assuming the polarized beam Pµ+ = 0.8 for both
+        of µ+ .
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: '''Although the vector boson fusion process is enhanced by a logarithmic factor, log s, the small coupling between the lepton and the Z boson results
+    in a smaller cross section than σWBF + σZBF in Eq. (8).'''
+- parameter_id: PHYS_HIGGS_XSEC_WBF_MUTEVATRON_MUTRISTAN2022
+  name: Single-Higgs WBF cross section at the μTevatron option (50 GeV e− × 3 TeV μ+, √s = 775 GeV)
+  symbol: sigma_WBF
+  subsystem: physics_programme
+  scenario: null
+  value: 472
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says '≈'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (12)
+      quotation: σWBF ≈ 472 fb, σZBF ≈ 20 fb. (12)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Displayed equation transcribed in linear form (exponents and fractions written inline).
+- parameter_id: PHYS_HIGGS_XSEC_ZBF_MUTEVATRON_MUTRISTAN2022
+  name: Single-Higgs ZBF cross section at the μTevatron option
+  symbol: sigma_ZBF
+  subsystem: physics_programme
+  scenario: null
+  value: 20
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says '≈'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (12)
+      quotation: σWBF ≈ 472 fb, σZBF ≈ 20 fb. (12)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Displayed equation transcribed in linear form (exponents and fractions written inline).
+- parameter_id: PHYS_HIGGS_EVENTS_PER_AB_MUTEVATRON_MUTRISTAN2022
+  name: Number of Higgs events per 1 ab⁻¹ at the μTevatron option
+  symbol: N(Higgs)
+  subsystem: physics_programme
+  scenario: null
+  value: 490000.0
+  unit: events
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (13)
+      quotation: N (higgs) = 4.9 × 10^5 × ( integrated luminosity / 1.0 ab−1 ), (13)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - (472 + 20) fb × 1000 fb⁻¹ = 492 000 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_XSEC_WBF_MUTEVATRON_MUTRISTAN2022
+  - PHYS_HIGGS_XSEC_ZBF_MUTEVATRON_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'p.3 rounding: ''0.5 million Higgs bosons can be produced with the same luminosity, 1 ab−1''. Displayed equation transcribed in linear form (exponents
+    and fractions written inline).'
+- parameter_id: PHYS_HIGGS_KAPPA_STAT_PRECISION_MUTEVATRON_MUTRISTAN2022
+  name: Statistical precision on κ_W + κ_b − κ_H at the μTevatron option (1 ab⁻¹, 50 % efficiency)
+  symbol: Δ(κ_W + κ_b − κ_H)_stat
+  subsystem: physics_programme
+  scenario: null
+  value: 0.0013
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 13
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (14)
+      quotation: ∆(κW + κb − κH )stat = 1.3 × 10−3 × ( integrated luminosity / 1.0 ab−1 )^−1/2 ( efficiency / 0.5 )^−1/2 . (14)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 1/(2√(472 000 × 0.582 × 0.5)) = 1.35e-3 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_XSEC_WBF_MUTEVATRON_MUTRISTAN2022
+  - PHYS_HIGGS_BR_BB_USED_MUTRISTAN2022
+  - PHYS_HIGGS_SEL_EFFICIENCY_ASSUMED_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Displayed equation transcribed in linear form (exponents and fractions written inline).
+- parameter_id: PHYS_HIGGS_PAIR_XSEC_MUTEVATRON_MUTRISTAN2022
+  name: Higgs pair production cross section e−μ+ → νe ν̄μ hh at the μTevatron option
+  symbol: sigma(hh)
+  subsystem: physics_programme
+  scenario: null
+  value: 0.089
+  unit: fb
+  uncertainty:
+    type: not_stated
+    note: source says '≈'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (15)
+      quotation: The cross section of the Higgs boson pair production process e− µ+ → νe ν̄µ hh is given by σ ≈ 8.9 × 10−2 fb. (15)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Displayed equation transcribed in linear form (exponents and fractions written inline).
+- parameter_id: PHYS_HIGGS_PAIR_EVENTS_PER_AB_MUTEVATRON_MUTRISTAN2022
+  name: Higgs pair events per 1 ab⁻¹ at the μTevatron option
+  symbol: N(Higgs pair)
+  subsystem: physics_programme
+  scenario: null
+  value: 89
+  unit: events
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: Eq. (16)
+      quotation: N (Higgs pair) = 89 × ( integrated luminosity / 1.0 ab−1 ). (16)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 8.9e-2 fb × 1000 fb⁻¹ = 89 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_PAIR_XSEC_MUTEVATRON_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'p.3 rounding: ''The pair production of Higgs bosons is also enhanced to be O(100) events''. Displayed equation transcribed in linear form (exponents
+    and fractions written inline).'
+- parameter_id: PHYS_HIGGS_SELF_COUPLING_PRECISION_MIN_MUTEVATRON_MUTRISTAN2022
+  name: Higgs three-point coupling precision from pair production at the μTevatron option, optimistic end of the quoted range
+  symbol: Δκ_λ
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: the source gives a range, 'at the level of ten to a hundred percent'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: null
+      quotation: With this number, one should be able to measure the three-point coupling at the level of ten to a hundred percent.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_PAIR_EVENTS_PER_AB_MUTEVATRON_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_SELF_COUPLING_PRECISION_MAX_MUTEVATRON_MUTRISTAN2022
+  name: Higgs three-point coupling precision from pair production at the μTevatron option, pessimistic end of the quoted range
+  symbol: Δκ_λ
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: the source gives a range, 'at the level of ten to a hundred percent'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: null
+      quotation: With this number, one should be able to measure the three-point coupling at the level of ten to a hundred percent.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_PAIR_EVENTS_PER_AB_MUTEVATRON_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_SELF_COUPLING_ONE_LOOP_WBF_EFFECT_MUTRISTAN2022
+  name: One-loop effect of the three-point coupling on the WBF single-Higgs process (coefficient of κ_λ)
+  symbol: dσ_WBF/σ_WBF per κ_λ
+  subsystem: physics_programme
+  scenario: null
+  value: 0.006
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: null
+      quotation: The effects of the three-point Higgs coupling to the WBF process at the one-loop level is found to be 0.006κλ [24], where κλ is the three
+        point coupling normalized by the Standard Model prediction.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_KAPPA_LAMBDA_PRECISION_SINGLE_HIGGS_MUTEVATRON_MUTRISTAN2022
+  name: Precision on κ_λ achievable from single-Higgs production at the μTevatron option (order of magnitude)
+  symbol: Δκ_λ
+  subsystem: physics_programme
+  scenario: null
+  value: 0.2
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: '''O(20%)'''
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 4 μTevatron option
+      table_figure_or_equation: null
+      quotation: This means that the measurement of ∆κλ of O(20%) is already possible with the single Higgs production measurements.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - 1.3e-3 / 0.006 = 0.22 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_HIGGS_KAPPA_STAT_PRECISION_MUTEVATRON_MUTRISTAN2022
+  - PHYS_HIGGS_SELF_COUPLING_ONE_LOOP_WBF_EFFECT_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_BOOST_GAMMA_MUE_MUTRISTAN2022
+  name: Lorentz boost of the centre-of-mass frame for Higgs production at (30 GeV, 1 TeV)
+  symbol: gamma_cm
+  subsystem: physics_programme
+  scenario: null
+  value: 3.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: The boost factors from the center-of-mass frame are γ = 3.0 and 3.9, respectively, for the Higgs boson produced at colliders with energies
+        (30 GeV, 1 TeV) and (50 GeV, 3 TeV).
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - γ = (E_e + E_μ)/√s = 1030/346.4 = 2.97 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_SQRT_S_MUE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_BOOST_GAMMA_MUTEVATRON_MUTRISTAN2022
+  name: Lorentz boost of the centre-of-mass frame for Higgs production at (50 GeV, 3 TeV)
+  symbol: gamma_cm
+  subsystem: physics_programme
+  scenario: null
+  value: 3.9
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: The boost factors from the center-of-mass frame are γ = 3.0 and 3.9, respectively, for the Higgs boson produced at colliders with energies
+        (30 GeV, 1 TeV) and (50 GeV, 3 TeV).
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - γ = (E_e + E_μ)/√s = 3050/774.6 = 3.94 (audit arithmetic in this extraction)
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_SQRT_S_MUTEVATRON_MUE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_POLAR_ANGLE_PEAK_MIN_MUTRISTAN2022
+  name: Lower edge of the polar-angle range where the WW-fusion Higgs distribution peaks (lab frame)
+  symbol: theta_H
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says 'θ ∼ 5 − 10 degrees'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: We see that the distribution is peaked at θ ∼ 5 − 10 degrees.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_HIGGS_POLAR_ANGLE_PEAK_MAX_MUTRISTAN2022
+  name: Upper edge of the polar-angle range where the WW-fusion Higgs distribution peaks (lab frame)
+  symbol: theta_H
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says 'θ ∼ 5 − 10 degrees'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: We see that the distribution is peaked at θ ∼ 5 − 10 degrees.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_FINAL_STATE_POLAR_ANGLE_STATEMENT_MUTRISTAN2022
+  name: Typical lab polar angle of the final-state particles (statement)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: a few to ten degrees
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: This makes the typical polar angle of the final state particles to be a few to ten degrees in the lab frame.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_B_QUARK_MOMENTUM_PEAK_MUE_MUTRISTAN2022
+  name: Peak momentum of b quarks from h → bb̄ at (30 GeV, 1 TeV)
+  symbol: '|p_b|'
+  subsystem: physics_programme
+  scenario: null
+  value: 316
+  unit: GeV
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 15
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 4 caption
+      quotation: '(Left): The beam energy is (Ee− , Eµ+ ) = (30 GeV, 1 TeV). The distribution peaks around |p⃗| ≃ 316 GeV and θ ≃ 10°.'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: MadGraph5 parton-level sample, N = 30000 events (Fig. 3/4 captions). Caption read from the page image (the text layer renders |p⃗| as '|~p|' and
+    splits the line).
+- parameter_id: PHYS_B_QUARK_ANGLE_PEAK_MUE_MUTRISTAN2022
+  name: Peak polar angle of b quarks from h → bb̄ at (30 GeV, 1 TeV)
+  symbol: theta_b
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 15
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 4 caption
+      quotation: The distribution peaks around |p⃗| ≃ 316 GeV and θ ≃ 10°.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Caption read from the page image (the text layer renders |p⃗| as '|~p|' and splits the line).
+- parameter_id: PHYS_B_QUARK_MOMENTUM_PEAK_MUTEVATRON_MUTRISTAN2022
+  name: Peak momentum of b quarks from h → bb̄ at (50 GeV, 3 TeV)
+  symbol: '|p_b|'
+  subsystem: physics_programme
+  scenario: null
+  value: 500
+  unit: GeV
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 15
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 4 caption
+      quotation: '(Right): The beam energy is (Ee− , Eµ+ ) = (50 GeV, 3 TeV). The distribution peaks around |p⃗| ≃ 500 GeV and θ ≃ 7.5°.'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Caption read from the page image (the text layer renders |p⃗| as '|~p|' and splits the line).
+- parameter_id: PHYS_B_QUARK_ANGLE_PEAK_MUTEVATRON_MUTRISTAN2022
+  name: Peak polar angle of b quarks from h → bb̄ at (50 GeV, 3 TeV)
+  symbol: theta_b
+  subsystem: physics_programme
+  scenario: null
+  value: 7.5
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 15
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 4 caption
+      quotation: The distribution peaks around |p⃗| ≃ 500 GeV and θ ≃ 7.5°.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring; no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Caption read from the page image (the text layer renders |p⃗| as '|~p|' and splits the line).
+- parameter_id: PHYS_HBB_ACCEPTANCE_THETA_CUT_STATEMENT_MUTRISTAN2022
+  name: Forward-coverage requirement for 90 % acceptance of h → bb̄ (statement)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: θ_cut less than a few degrees for detecting 90 % of h → bb̄ events (both beam-energy options)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 16
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 5 caption
+      quotation: In both cases, one needs θcut to be less than a few degree for detecting 90 % of h → bb̄ events.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Fig. 5 (p.16) plots the fraction of events with θ_min ≡ min{θ_b, θ_b̄} ≥ θ_cut versus θ_cut (0–50°); N = 30000.
+- parameter_id: PHYS_HBB_ACCEPTED_FRACTION_TARGET_MUTRISTAN2022
+  name: Target acceptance fraction of h → bb̄ events used to define the forward-coverage requirement
+  symbol: f_acc
+  subsystem: physics_programme
+  scenario: null
+  value: 90
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 16
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: Figure 5 caption
+      quotation: one needs θcut to be less than a few degree for detecting 90 % of h → bb̄ events.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_LHCB_FORWARD_COVERAGE_REF_MUTRISTAN2022
+  name: LHCb forward coverage quoted as a comparator for the required small-angle coverage
+  symbol: theta_min(LHCb)
+  subsystem: physics_programme
+  scenario: null
+  value: 15
+  unit: mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 14
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: This requirement may be a challenge in designing detectors, but it should not be too severe by comparing with the coverage of the forward
+        region in the LHCb detector (θ > 15 mrad) [25] or those of the designs of the electron-proton [26] and electron-ion colliders [27].
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_BEAM_BACKGROUND_SHIELDING_STATEMENT_MUTRISTAN2022
+  name: Detector-design statement on muon-decay backgrounds and shielding (μ+e− collider)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: shield the interaction region from the positrons and photons in the μ+ beam; reject unwanted tracks; a shield from the μ+ beam reduces the η coverage
+    in the e− direction without significant physics loss because events are boosted in the μ+ direction
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 16
+      section: 5 Asymmetric μ+e− colliders and detector design
+      table_figure_or_equation: null
+      quotation: One should shield the interaction region from the positrons and photons in the µ+ beam, and should also have good efficiency to reject
+        unwanted tracks. Although placing a shield from the µ+ beam reduces the η coverage in the direction of the e− beam, physics performance would not
+        be significantly affected since the asymmetry in the beam energies makes the most of the physics events boosted in the µ+ direction as we discussed
+        above.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada,
+        Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its
+        collider-physics numbers are comparators for the LHμC physics case, not LHμC values. Relevant to the LHμC single-sided nozzle concept as an analogue
+        of the boost argument.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUSY_EVENT_THRESHOLD_PER_YEAR_MUTRISTAN2022
+  name: Yearly event count used to define the superparticle reach
+  symbol: N_events/yr
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: events/year
+  uncertainty:
+    type: order_of_magnitude
+    note: '''O(100) events per year'''
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 16
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: We will demonstrate the reaches by requiring O(100) events per year.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring
+        (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUSY_MODEL_ASSUMPTIONS_MUTRISTAN2022
+  name: Simplifications of the superparticle-reach estimate
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Wino exchange only (Bino and Higgsino ignored); no slepton decays; equal scalar lepton masses m_ẽ = m_μ̃; event counting only
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 16
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: For simplicity, we ignore the Bino (the partner of U (1)Y gauge boson) and the Higgsino contributions, and we do not consider decays of
+        the scalar leptons, and just count the number of production events with luminosities estimated in Section 2.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring
+        (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Fig. 6 caption: ''The scalar lepton masses are taken to be the same, ml̃ = mẽ = mµ̃.'''
+- parameter_id: PHYS_LHC_SLEPTON_MASS_LIMIT_MUTRISTAN2022
+  name: LHC exclusion on scalar-lepton masses quoted as comparator (refs. [28, 29])
+  symbol: m_slepton
+  subsystem: physics_programme
+  scenario: null
+  value: 700
+  unit: GeV
+  uncertainty:
+    type: not_stated
+    note: source says 'about 700 GeV'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 17
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: The LHC experiments have searched for the events of the pair production of the scalar leptons, and have excluded the region of the scalar
+        lepton masses less than about 700 GeV [28, 29] when the mass difference between the scalar lepton and the lightest neutralino is larger than about
+        100 GeV.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_LHC_SLEPTON_MASS_DIFFERENCE_CONDITION_MUTRISTAN2022
+  name: Minimum slepton–neutralino mass difference for which the quoted LHC limit applies
+  symbol: Δm
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: GeV
+  uncertainty:
+    type: not_stated
+    note: source says 'about 100 GeV'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 17
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: when the mass difference between the scalar lepton and the lightest neutralino is larger than about 100 GeV.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUSY_MUE_REACH_STATEMENT_MUTRISTAN2022
+  name: Superparticle reach statement for the μ+e− options
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: √s = 346 GeV or 775 GeV would not allow to go beyond the LHC limits in slepton mass; may cover the region of smaller mass differences
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 17
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: The center of mass energy of the µ+ e− collider, √s = 346 GeV or 775 GeV, would not allow to go beyond the LHC limits in terms of the scalar
+        lepton masses. It may, however, cover the region of the smaller mass differences. The µ+ µ+ colliders, on the other hand, can reach TeV scale scalar
+        leptons directly as we discuss below.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTevatron, E_e = 50 GeV, E_μ = 3 TeV (6–9 km ring;
+        no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SNEUTRINO_XSEC_FACTOR_MUE_MUTRISTAN2022
+  name: Ratio of the scalar-neutrino to the scalar-electron + scalar-muon production cross section at the μ+e− collider
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02)
+      page: 18
+      section: 6.1 e− + µ+ → ẽ− + µ̃+
+      table_figure_or_equation: null
+      quotation: A similar (a factor of four larger) cross section is obtained for scalar neutrino productions.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e− collider (Wino-exchange-only simplification of Section 6). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_SUSY_MODEL_ASSUMPTIONS_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUSY_MUMU_GAUGINO_MASS_EXAMPLE_MUTRISTAN2022
+  name: Gaugino mass up to which the μ+μ+ collider still yields over a hundred slepton pairs per year (example quoted)
+  symbol: m_gaugino
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 19
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: Even with very heavy gauginos, such as 5 TeV, the yearly production rate can easily be over a hundred. Although the luminosity is lower
+        compared to the µ+ e− colliders, the reach is much better.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano,
+        Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics
+        numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies:
+  - PHYS_INT_LUMI_PER_YEAR_MUMU_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUSY_MUMU_REACH_STATEMENT_MUTRISTAN2022
+  name: Reach statement for the μ+μ+ collider and its √s dependence
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: μ+μ+ reaches TeV-scale sleptons directly (dimension-5 contact operator less suppressed than the dimension-6 μ+e− case); small gaugino masses not
+    fully covered; at √s = 6 TeV the reach starts to shrink for a fixed luminosity
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 19
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: This makes the µ̃+ µ̃+ productions less suppressed for large gaugino masses. On the other hand, since the amplitude vanishes when the gaugino
+        mass goes to zero, the small gaugino mass region is not fully covered. One can see that for √s = 6 TeV the reach starts to shrink for a fixed luminosity.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring (no scenario record yet); large-ring μ+μ+ (6 TeV). μTRISTAN conceptual-design
+        statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC source/booster chain is ''based on the μTRISTAN proposal''
+        (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_G2_SUPERPARTICLE_MASS_SCALE_MUTRISTAN2022
+  name: Superparticle mass scale motivated by the muon g−2 anomaly (upper bound quoted)
+  symbol: m_SUSY
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: TeV
+  uncertainty:
+    type: not_stated
+    note: source says 'less than about TeV'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 19
+      section: 6 Superparticle searches at μ+e− and μ+μ+ colliders
+      table_figure_or_equation: null
+      quotation: In order to explain the discrepancy between the Standard Model predictions and the experiments by the contributions from the superparticles,
+        their masses need to be less than about TeV.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: External comparator restated in the μTRISTAN paper (reference named in the quotation); not a μTRISTAN or LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_SUMMARY_HIGGS_FACTORY_STATEMENT_MUTRISTAN2022
+  name: Summary statement on the μ+e− and μ+μ+ physics roles
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: μ+e− colliders serve as very good Higgs boson factories; the μ+μ+ luminosity is reduced in the current technology but good enough to search for
+    new particles such as superparticles
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 20
+      section: 7 Summary
+      table_figure_or_equation: null
+      quotation: We estimated the luminosity of the µ+ e− and µ+ µ+ colliders with realistic accelerator parameters, and demonstrated that the µ+ e− colliders
+        serve as very good Higgs boson factories. For the µ+ µ+ colliders, the luminosity is reduced in the current technology. Nevertheless, it is already
+        found to be good enough to search for new particles such as superparticles.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring
+        (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_NEUTRINO_RADIATION_STATEMENT_MUTRISTAN2022
+  name: Summary statement on neutrino radiation from muon decay in the beam
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: less severe than for 10 TeV class muon colliders; deep underground siting and/or a tilt in the accelerating and interaction regions may be needed
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 20
+      section: 7 Summary
+      table_figure_or_equation: null
+      quotation: The problem of the neutrino radiations from the muon decay in the beam also needs to be seriously considered [35]. Although the problem
+        is less severe than 10 TeV class muon colliders, going into deep underground and/or a careful design of the beam transportation such as a tilt in
+        the accelerating and interaction regions may be needed.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring
+        (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values. Directly relevant to LHμC siting (1–2 TeV muon ring).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_OTHER_HIGGS_DECAY_MODES_STATEMENT_MUTRISTAN2022
+  name: Summary statement on additional Higgs decay modes usable for coupling measurements
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: h → WW*, τ+τ−, ZZ* in addition to h → bb̄; γμ+ collider option mentioned
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2 [hep-ph] (PTEP 2022, 053B02); pages cited are PDF page numbers (identical to the printed page numbers from p.2 on)
+      page: 20
+      section: 7 Summary
+      table_figure_or_equation: null
+      quotation: The measurements of the Higgs boson couplings can be done by using decay modes other than h → bb̄ such as h → W W ∗ , τ + τ − , and ZZ
+        ∗ . Various new physics models other than supersymmetry can be searched at µ+ e− and µ+ µ+ colliders. The option of γµ+ colliders may also be interesting
+        to explore since that would directly prove the microscopic physics to explain the muon g − 2 anomaly.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'Option: μTRISTAN μ+e−, E_e = 30 GeV, E_μ = 1 TeV, 3 km ring (no scenario record yet); μTRISTAN μ+μ+, 1 TeV × 1 TeV in the 3 km ring
+        (no scenario record yet). μTRISTAN conceptual-design statement (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022; RELATED_MACHINE). The LHμC
+        source/booster chain is ''based on the μTRISTAN proposal'' (DIS2026); its collider-physics numbers are comparators for the LHμC physics case, not
+        LHμC values.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null

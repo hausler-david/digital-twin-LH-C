@@ -1,0 +1,3652 @@
+# Low-velocity front-end (RFQ / IH-DTL) parameters extracted from SRC_WS1681458_NAKAZAWA_LOW_VELOCITY (Y. Nakazawa, 'Acceleration
+# in the Low-velocity Region', HELP4CERN workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24-26 Sept 2026; uploaded slides, 19 pp.).
+# Addendum of 2026-10-28 (group G2_SOURCE).
+# Status rules: J-PARC g-2/EDM front-end design values and the June 2026 measurements -> analogous (J-PARC technology); the p.16-17
+# LHmuC high-bunch-charge (1e10 mu+/bunch) space-charge scaling -> reported_lhmuc (LHmuC-specific statements on a PRIMARY_LHMUC deck).
+# 'ps' is not a registered unit alias, so picosecond values are stored in ns. Page numbers are PDF pages (= slide numbers).
+# Generated from a scripted transcription (scratchpad gen/gen_nakazawa.py); this YAML file is the single source of truth.
+# Verified 2026-10-29 by the G2_SOURCE adversarial verifier against the rendered PDF pages; corrections, removals and residual doubts in
+# research/_fragments/verify_G2_SOURCE.md.
+parameters:
+- parameter_id: SOURCE_JPARC_MUON_LINAC_CHAIN_WS2026_NAKAZAWA
+  name: J-PARC muon linac structure chain (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: rfq_324MHz_ihdtl_324MHz_dawccl_1296MHz_dls_2592MHz
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: null
+      quotation: 'RFQ (324 MHz) | IH-DTL (324 MHz) | DAW-CCL (1296 MHz) | DLS (2592 MHz) ... RFQ + 1st IH-DTL : Low-velocity
+        region (β= 0.01 →0.08 → 0.28)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. 'The RFQ and first
+        IH-DTL for the low-velocity region are already available.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Standing-wave structures: RFQ, IH-DTL, DAW-CCL; travelling-wave: DLS.'
+- parameter_id: SOURCE_JPARC_DAW_CCL_FREQUENCY_WS2026_NAKAZAWA
+  name: DAW-CCL operating frequency in the J-PARC muon linac chain
+  symbol: f_DAW
+  subsystem: source
+  scenario: null
+  value: 1296
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: chain figure label
+      quotation: DAW-CCL (1296 MHz)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_DLS_FREQUENCY_WS2026_NAKAZAWA
+  name: DLS operating frequency in the J-PARC muon linac chain
+  symbol: f_DLS
+  subsystem: source
+  scenario: null
+  value: 2592
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: chain figure label
+      quotation: DLS (2592 MHz)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_LOW_VELOCITY_BETA_IN_WS2026_NAKAZAWA
+  name: Velocity beta at the RFQ entrance (low-velocity region start)
+  symbol: beta_in
+  subsystem: source
+  scenario: null
+  value: 0.01
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: null
+      quotation: 'RFQ + 1st IH-DTL : Low-velocity region (β= 0.01 →0.08 → 0.28)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_LOW_VELOCITY_BETA_RFQ_OUT_WS2026_NAKAZAWA
+  name: Velocity beta at the RFQ exit / IH-DTL entrance
+  symbol: beta_RFQ,out
+  subsystem: source
+  scenario: null
+  value: 0.08
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: null
+      quotation: 'RFQ + 1st IH-DTL : Low-velocity region (β= 0.01 →0.08 → 0.28)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_LOW_VELOCITY_BETA_IHDTL_OUT_WS2026_NAKAZAWA
+  name: Velocity beta at the first IH-DTL exit
+  symbol: beta_IHDTL,out
+  subsystem: source
+  scenario: null
+  value: 0.28
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 2
+      section: Muon Acceleration in Low-velocity region
+      table_figure_or_equation: null
+      quotation: 'RFQ + 1st IH-DTL : Low-velocity region (β= 0.01 →0.08 → 0.28)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PULSE_FWHM_WS2026_NAKAZAWA
+  name: FWHM of the ultra-slow muon pulse entering the RFQ (present beam)
+  symbol: FWHM_in
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: ns
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 3
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: null
+      quotation: 'The input muon pulse is relatively long: FWHM ~2 ns ~ 230 degrees at 324 MHz'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Set by the laser
+        pulse; also p.9 'ultraslow muon, FWHM ~ 2ns' and p.16 'Input pulse width FWHM ~ 2 ns'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PULSE_PHASE_WIDTH_WS2026_NAKAZAWA
+  name: Ultra-slow muon pulse width expressed in RF phase at 324 MHz
+  symbol: dphi_in
+  subsystem: source
+  scenario: null
+  value: 230
+  unit: degree
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 3
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: null
+      quotation: FWHM ~2 ns ~ 230 degrees at 324 MHz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 2 ns / 3.086 ns x 360 deg = 233 deg, consistent with ''~230''.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Why bunching is necessary: ''to form a short bunch that can be efficiently captured and accelerated by the downstream
+    RF linac''.'
+- parameter_id: SOURCE_JPARC_RFQ_REUSE_WS2026_NAKAZAWA
+  name: Origin of the muon RFQ (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: reuse_of_jparc_proton_hminus_linac_rfq_kondo_2013
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 3
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: null
+      quotation: 'Why 324 MHz? : Reuse an RFQ originally developed for the J-PARC proton(H-) linac[1]. [1] Y.Kondo et al.,
+        Phys. Rev. ST Accel. Beams, 16, 040102 (2013)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_INJECTION_ENERGY_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ injection energy, original H- design
+  symbol: E_inj(H-)
+  subsystem: source
+  scenario: null
+  value: 50
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Injection energy | 50 keV | 5.6 keV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_INJECTION_ENERGY_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ injection energy, μ+ operation
+  symbol: E_inj(μ+)
+  subsystem: source
+  scenario: null
+  value: 5.6
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Injection energy | 50 keV | 5.6 keV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 50 keV x m_mu/m_p = 50 x 0.1126 = 5.63 keV; 3 MeV x 0.1126 = 0.338 MeV; 82.9 kV x 0.1126 =
+      9.33 kV (mass-ratio scaling reproduced).'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_EXTRACTION_ENERGY_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ extraction energy, original H- design
+  symbol: E_ext(H-)
+  subsystem: source
+  scenario: null
+  value: 3000
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Extraction energy | 3 MeV | 0.34 MeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 3 MeV printed as '3 MeV'; stored in keV.
+- parameter_id: SOURCE_RFQ_EXTRACTION_ENERGY_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ extraction energy, μ+ operation
+  symbol: E_ext(μ+)
+  subsystem: source
+  scenario: null
+  value: 340
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Extraction energy | 3 MeV | 0.34 MeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 50 keV x m_mu/m_p = 50 x 0.1126 = 5.63 keV; 3 MeV x 0.1126 = 0.338 MeV; 82.9 kV x 0.1126 =
+      9.33 kV (mass-ratio scaling reproduced).'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 0.34 MeV printed as '0.34 MeV'; stored in keV.
+- parameter_id: SOURCE_RFQ_INTERVANE_VOLTAGE_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ intervane voltage, original H- design
+  symbol: V_vane(H-)
+  subsystem: source
+  scenario: null
+  value: 82.9
+  unit: kV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Intervane voltage | 82.9 kV | 9.3 kV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_INTERVANE_VOLTAGE_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ intervane voltage, μ+ operation
+  symbol: V_vane(μ+)
+  subsystem: source
+  scenario: null
+  value: 9.3
+  unit: kV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Intervane voltage | 82.9 kV | 9.3 kV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 50 keV x m_mu/m_p = 50 x 0.1126 = 5.63 keV; 3 MeV x 0.1126 = 0.338 MeV; 82.9 kV x 0.1126 =
+      9.33 kV (mass-ratio scaling reproduced).'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_RF_POWER_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ RF power, original H- design
+  symbol: P_rf(H-)
+  subsystem: source
+  scenario: null
+  value: 330
+  unit: kW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: RF power | 330 kW | 4.2 kW
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_RF_POWER_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ RF power, μ+ operation
+  symbol: P_rf(μ+)
+  subsystem: source
+  scenario: null
+  value: 4.2
+  unit: kW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: RF power | 330 kW | 4.2 kW
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_FREQUENCY_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ frequency, original H- design
+  symbol: f_RFQ(H-)
+  subsystem: source
+  scenario: null
+  value: 324
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Frequency | 324 MHz | 324 MHz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_FREQUENCY_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ frequency, μ+ operation
+  symbol: f_RFQ(μ+)
+  subsystem: source
+  scenario: null
+  value: 324
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Frequency | 324 MHz | 324 MHz
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_LENGTH_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ length, original H- design
+  symbol: L_RFQ(H-)
+  subsystem: source
+  scenario: null
+  value: 3.17
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Length | 3.17 m | 3.17 m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_LENGTH_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ length, μ+ operation
+  symbol: L_RFQ(μ+)
+  subsystem: source
+  scenario: null
+  value: 3.17
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Length | 3.17 m | 3.17 m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_AVERAGE_BORE_RADIUS_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ average bore radius, original H- design
+  symbol: r_0(H-)
+  subsystem: source
+  scenario: null
+  value: 3.69
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Average bore radius | 3.69 mm | 3.69 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. H- design column
+        (Kondo et al. 2013).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_AVERAGE_BORE_RADIUS_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ average bore radius, μ+ operation
+  symbol: r_0(μ+)
+  subsystem: source
+  scenario: null
+  value: 3.69
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Average bore radius | 3.69 mm | 3.69 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. μ+ operation column:
+        ''The injection/extraction energies and intervane voltage are scaled approximately by the muon-to-proton mass ratio,
+        keeping the same velocity range β~0.01→0.08.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_BETA_RANGE_WS2026_NAKAZAWA
+  name: RFQ velocity range (same for H- and μ+)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: beta_0.01_to_0.08
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: β | 0.01 → 0.08 | 0.01 → 0.08
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Numeric values in SOURCE_JPARC_LOW_VELOCITY_BETA_IN/RFQ_OUT_WS2026_NAKAZAWA.
+- parameter_id: SOURCE_RFQ_PEAK_CURRENT_HMINUS_DESIGN_WS2026_NAKAZAWA
+  name: RFQ design peak current, original H- design
+  symbol: I_peak(H-)
+  subsystem: source
+  scenario: null
+  value: 30
+  unit: mA
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Peak current | 30 mA | -
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Reference current
+        for the p.16 perveance comparison.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_PEAK_CURRENT_MU_OPERATION_WS2026_NAKAZAWA
+  name: RFQ peak current in present μ+ operation
+  symbol: I_peak(μ+)
+  subsystem: source
+  scenario: null
+  value: null
+  unit: mA
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: unknown
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: table '| H- design | μ+ operation'
+      quotation: Peak current | 30 mA | -
+    derivation: null
+    applicability:
+      category: unresolved
+      scenario: null
+      explanation: Table cell '-' (not given); p.16 calls the present μ+ peak current 'negligible' (about 0.4 muons per
+        pulse). Value null.
+    confidence: none
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_VANE_GEOMETRY_REUSE_WS2026_NAKAZAWA
+  name: Vane geometry reuse statement (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: same_vane_geometry_aperture_and_modulation_used_for_mu_plus
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 4
+      section: 'RFQ : Radio Frequency Quadrupole linac'
+      table_figure_or_equation: null
+      quotation: The same vane geometry - including the aperture and longitudinal modulation- can be used for μ⁺ acceleration
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_FREQUENCY_WS2026_NAKAZAWA
+  name: First IH-DTL operating frequency
+  symbol: f_IHDTL
+  subsystem: source
+  scenario: null
+  value: 324
+  unit: MHz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: 'Operating frequency 324 MHz (H mode : TE11)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_ACCELERATION_MODE_WS2026_NAKAZAWA
+  name: IH-DTL acceleration mode (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: pi_mode_H_mode_TE11_alternating_phase_focusing
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Acceleration mode π mode ... The synchronous phase varies because we use Alternating Phase Focusing (APF)
+        method in this structure. 1st IH-DTL was already developed in 2022.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. p.6: APF chosen
+        over magnetic focusing (''No focusing device required; low cost; compact'' but ''Limited focusing strength; less
+        suitable for high-current beams'').'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_INPUT_ENERGY_WS2026_NAKAZAWA
+  name: First IH-DTL input energy
+  symbol: E_in(IHDTL)
+  subsystem: source
+  scenario: null
+  value: 0.34
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: IN/OUT energy 0.34 MeV > 4.26 MeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_OUTPUT_ENERGY_WS2026_NAKAZAWA
+  name: First IH-DTL output energy
+  symbol: E_out(IHDTL)
+  subsystem: source
+  scenario: null
+  value: 4.26
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: IN/OUT energy 0.34 MeV > 4.26 MeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. See CONF_JPARC_IHDTL_ENERGY
+        for the values quoted elsewhere; this uploaded deck (p.5) is the first non-snippet source for 4.26 MeV in the registry
+        (the conflict record cites it at snippet level only).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_LENGTH_WS2026_NAKAZAWA
+  name: First IH-DTL cavity length
+  symbol: L_IHDTL
+  subsystem: source
+  scenario: null
+  value: 1.45
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Cavity length 1.45 m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_BORE_RADIUS_WS2026_NAKAZAWA
+  name: First IH-DTL bore radius
+  symbol: r_bore(IHDTL)
+  subsystem: source
+  scenario: null
+  value: 11.4
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Bore radius 11.4 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_SYNCHRONOUS_PHASE_MIN_WS2026_NAKAZAWA
+  name: First IH-DTL synchronous phase, minimum (APF)
+  symbol: phi_s,min
+  subsystem: source
+  scenario: null
+  value: -44
+  unit: degree
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Synchronous phase −44 ～ ＋48 deg (APF)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_SYNCHRONOUS_PHASE_MAX_WS2026_NAKAZAWA
+  name: First IH-DTL synchronous phase, maximum (APF)
+  symbol: phi_s,max
+  subsystem: source
+  scenario: null
+  value: 48
+  unit: degree
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Synchronous phase −44 ～ ＋48 deg (APF)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_EFF_SHUNT_IMPEDANCE_WS2026_NAKAZAWA
+  name: First IH-DTL effective shunt impedance (mean)
+  symbol: Z_eff
+  subsystem: source
+  scenario: null
+  value: 68
+  unit: megaohm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Eff. shunt impedance 68 MΩ (mean)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Printed as 'MΩ' (not MΩ/m); recorded as stated.
+- parameter_id: SOURCE_IHDTL_MAX_SURFACE_FIELD_WS2026_NAKAZAWA
+  name: First IH-DTL maximum surface field
+  symbol: E_s,max
+  subsystem: source
+  scenario: null
+  value: 35.6
+  unit: megavolt/meter
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Max. surface field 35.6 MV/m (2.0 Eₖ¹)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_KILPATRICK_FACTOR_WS2026_NAKAZAWA
+  name: First IH-DTL maximum surface field in units of the Kilpatrick limit
+  symbol: E_s,max/E_k
+  subsystem: source
+  scenario: null
+  value: 2.0
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Max. surface field 35.6 MV/m (2.0 Eₖ¹)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: implied Kilpatrick field 17.8 MV/m, consistent with the Kilpatrick limit at 324 MHz (about
+      17.8 MV/m).'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_NOMINAL_POWER_WS2026_NAKAZAWA
+  name: First IH-DTL nominal RF power
+  symbol: P_IHDTL
+  subsystem: source
+  scenario: null
+  value: 310
+  unit: kW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 5
+      section: 'IH-DTL : Inter-digital H-mode Drift Tube Linac'
+      table_figure_or_equation: parameter list
+      quotation: Nominal power 310 kW
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_MULTISTAGE_TEST_SCHEDULE_WS2026_NAKAZAWA
+  name: Scheduled year of the multi-stage acceleration demonstration with the 324 MHz IH-DTL (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: '2028'
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: source says '~2028'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: '''Step 3'' box'
+      quotation: Step 3 Multistage Acceleration w/ 324-MHz IH-DTL. ④ Medium energy beam transport line ⑤ IH-DTL → Future
+        (~2028)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Planned date, not
+        a result.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: The sentence 'Multi-stage acceleration demonstration tests using the 324 MHz IH-DTL are scheduled for 2028.' is
+    in the PDF text layer of pp.5 and 7 but is not rendered on either slide, so it is not used as the quotation.
+- parameter_id: SOURCE_IHDTL_FIELD_ERROR_REQUIREMENT_WS2026_NAKAZAWA
+  name: APF accelerating-field error tolerance (peak-to-peak) for limiting emittance growth to 10 % or less
+  symbol: dE/E(req)
+  subsystem: source
+  scenario: null
+  value: 4
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 7
+      section: Advantage / Disadvantage
+      table_figure_or_equation: null
+      quotation: The requirement for limiting emittance growth (to 10% or less) was 4% peak-to-peak [1]. [1]M. Otani et
+        al., Phys. Rev. Accel. Beams 19, 040101 (2016).
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_EMITTANCE_GROWTH_LIMIT_WS2026_NAKAZAWA
+  name: Emittance-growth limit behind the APF field-error requirement
+  symbol: deps/eps(max)
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: percent
+  uncertainty:
+    type: not_stated
+    note: upper bound ('10% or less')
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 7
+      section: Advantage / Disadvantage
+      table_figure_or_equation: null
+      quotation: The requirement for limiting emittance growth (to 10% or less) was 4% peak-to-peak [1].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IHDTL_FIELD_ERROR_ACHIEVED_WS2026_NAKAZAWA
+  name: Achieved accelerating-field error of the first IH-DTL (on-axis field measurement)
+  symbol: dE/E(achieved)
+  subsystem: source
+  scenario: null
+  value: 1.4
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 7
+      section: Advantage / Disadvantage
+      table_figure_or_equation: null
+      quotation: (solution) Through careful design and fine-tuning, we were able to reduce this to 1.4% [2]. [2]Y. Nakazawa
+        et al., Phys. Rev. Accel. Beams 29, 093201 (2026)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Drift tubes 'machined as one-piece components from oxygen-free copper' (monolithic structure).
+- parameter_id: SOURCE_JPARC_STEP1_ENERGY_2024_WS2026_NAKAZAWA
+  name: 'Step 1 (2024, user area): μ+ acceleration energy with the prototype RFQ'
+  symbol: E(step 1)
+  subsystem: source
+  scenario: null
+  value: 100
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: null
+      quotation: Step 1 Demonstration of µ+ acceleration at user area in 2024 — 100 keV acc. using prototype RFQ — Measured
+        transverse emittance. Phys. Rev. Lett. 134, 245001 (2025)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Same experiment
+        as SRC_ARXIV_2410_11367 (Aritome et al.); see SOURCE_*_ARITOME2024.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_STEP1_LASER_PULSE_LENGTH_WS2026_NAKAZAWA
+  name: Step 1 (2024) ionisation-laser pulse length
+  symbol: t_laser(step 1)
+  subsystem: source
+  scenario: null
+  value: 60
+  unit: ns
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: figure label
+      quotation: laser pulse ~ 60 ns
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Aritome et al.
+        give 57 ns (SOURCE_LASER_PULSE_DURATION_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_PROTO_RFQ_LENGTH_FIGURE_WS2026_NAKAZAWA
+  name: Length of the prototype RFQ in the Step 1 (2024) schematic (figure label '~ 2 m')
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: m
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: figure label
+      quotation: ~2m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. The arrow spans
+        the 'proto RFQ' box; Aritome et al. Fig. 1 dimension it as 1973 mm (SOURCE_RFQ_PROTOTYPE_LENGTH_FIG1_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_STEP2_ENERGY_2026_WS2026_NAKAZAWA
+  name: 'Step 2 (2026, in-situ for g-2): μ+ acceleration energy with the full-scale RFQ'
+  symbol: E(step 2)
+  subsystem: source
+  scenario: null
+  value: 340
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: null
+      quotation: Step 2 in-situ implementation for muon g-2 exp. in 2026 — ➀ Laser upgrade & diagnostic-line arXiv:2608.02706
+        — ➁ 340 keV acc. using full-scale RFQ.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_STEP2_LASER_PULSE_LENGTH_WS2026_NAKAZAWA
+  name: Step 2 (2026) ionisation-laser pulse length after the laser upgrade
+  symbol: t_laser(step 2)
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: ns
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: figure label
+      quotation: laser pulse ~ 2ns
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Sets the ~2 ns
+        FWHM ultra-slow muon pulse.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_FULL_RFQ_LENGTH_FIGURE_WS2026_NAKAZAWA
+  name: Length of the full-scale RFQ in the Step 2 (2026) schematic (figure label '~ 3 m')
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 3
+  unit: m
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: figure label
+      quotation: ~3m
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. The arrow spans
+        the 'RFQ' box; consistent with 3.17 m (p.4 table) and 3255 mm (p.9 drawing).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_STEP3_PROGRAMME_WS2026_NAKAZAWA
+  name: Step 3 programme (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: mebt_and_ihdtl_multistage_acceleration_under_construction_future_2028
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 8
+      section: acceleration test (2024 ~ )
+      table_figure_or_equation: null
+      quotation: Step 3 Multistage Acceleration w/ 324-MHz IH-DTL. ➃ Medium energy beam transport line ➄ IH-DTL — Future
+        (~2028) — under construction…
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_RFQ_OVERALL_LENGTH_FIGURE_WS2026_NAKAZAWA
+  name: RFQ overall length as dimensioned in the 2026 setup drawing
+  symbol: L_RFQ(drawing)
+  subsystem: source
+  scenario: null
+  value: 3255
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing dimension
+      quotation: 3255 mm
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Drawing dimension;
+        differs from the 3.17 m of the p.4 table (vane length vs. overall length not explained on the deck).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SURFACE_MUON_ENERGY_FIGURE_WS2026_NAKAZAWA
+  name: Surface muon kinetic energy at the target (setup drawing label)
+  symbol: E_surf
+  subsystem: source
+  scenario: null
+  value: 4
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing energy axis
+      quotation: 4 MeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_THERMAL_ENERGY_WS2026_NAKAZAWA
+  name: Ultra-slow muon thermal energy at the laser (setup drawing label)
+  symbol: E_USM
+  subsystem: source
+  scenario: null
+  value: 30
+  unit: meV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing energy axis
+      quotation: 30 meV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Aritome et al.
+        and Beare et al. quote 25 meV.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SOA_LENS_ENERGY_WS2026_NAKAZAWA
+  name: Energy after the Soa lens (DC extractor) at the RFQ entrance
+  symbol: E_Soa
+  subsystem: source
+  scenario: null
+  value: 5.7
+  unit: keV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing energy axis
+      quotation: 5.7 keV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. The p.4 table rounds
+        the RFQ injection energy to 5.6 keV.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_EXPECTED_TOF_340KEV_WS2026_NAKAZAWA
+  name: Expected time of flight from the laser shot to the detector for 340 keV muons
+  symbol: TOF(340 keV)
+  subsystem: source
+  scenario: null
+  value: 1030
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing timeline
+      quotation: expected TOF = 1030 ns
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_TIMING_2026_WS2026_NAKAZAWA
+  name: Laser irradiation time after the first surface-muon arrival in the June 2026 340 keV test (TOF plot legend)
+  symbol: t_laser(2026)
+  subsystem: source
+  scenario: null
+  value: 1332
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 13
+      section: Time of Flight Measurement
+      table_figure_or_equation: TOF plot legend ('preliminary')
+      quotation: 'laser irradiation: +1332 ns ... time relative to the first surface-muon arrival [ns]'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Preliminary plot.
+        Compare 1.25 μs after the surface-muon arrival in the 2024 run (SOURCE_LASER_TIMING_ARITOME2024) and ~1.2 μs in
+        the μTRISTAN budget (SOURCE_LASER_SHOOTING_TIME_BUDGET_WS2026_ZHANG).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 1332 ns + the expected TOF of 1030 ns (p.9) = 2362 ns, where the ''accelerated μ+'' peak sits
+      on the plot.'
+  dependencies: []
+  date_added: '2026-10-29'
+  responsible_module: parameters/source
+  notes: 'Added by the G2_SOURCE verifier (2026-10-29): plot-legend value missed by the extraction.'
+- parameter_id: SOURCE_JPARC_2026_SETUP_DETECTORS_WS2026_NAKAZAWA
+  name: Detectors of the 2026 setup (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: profile_mcp_ccd_camera_bunch_mcp_5GSs_digitizer_momentum_selection_bending_magnet
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 9
+      section: Experimental setup
+      table_figure_or_equation: setup drawing
+      quotation: 'Detector — Profile: MCP+CCD camera — Bunch : MCP+5Gs/s digitizer ... Quadrupole magnets ... Bending magnet
+        ... Momentum selection'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_WIDTH_RFQ_EXIT_SIM_WS2026_NAKAZAWA
+  name: Simulated bunch width (sigma) at the RFQ exit, 2026 parameters (GPT)
+  symbol: sigma_t(RFQ exit)
+  subsystem: source
+  scenario: null
+  value: 0.05
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 11
+      section: 'Simulation Results for Parameters in the 2026 Experiment (General Particle Tracer: GPT)'
+      table_figure_or_equation: null
+      quotation: During transport from the RFQ exit to the detector, the bunch width spreads from 50 ps to 200 ps.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Also p.15 ''From
+        simulation results, the bunch width (σ) at the RFQ exit is expected to be ~ 50 ps.'' Plot annotation: main-bunch
+        core rms ''47 ps min (s = 2.85 m) → 242 ps at the MCP''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 50 ps stored as 0.05 ns ('ps' is not a registered unit alias).
+- parameter_id: SOURCE_BUNCH_WIDTH_AT_DETECTOR_SIM_WS2026_NAKAZAWA
+  name: Simulated bunch width (sigma) at the detector, 2026 parameters (GPT)
+  symbol: sigma_t(detector, sim)
+  subsystem: source
+  scenario: null
+  value: 0.2
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 11
+      section: 'Simulation Results for Parameters in the 2026 Experiment (General Particle Tracer: GPT)'
+      table_figure_or_equation: null
+      quotation: During transport from the RFQ exit to the detector, the bunch width spreads from 50 ps to 200 ps.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 200 ps stored as 0.2 ns.
+- parameter_id: SOURCE_JPARC_340KEV_BEAM_TEST_DATE_WS2026_NAKAZAWA
+  name: Date of the first full-scale-RFQ beam test (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: 2026-06_two_week_beam_test
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 12
+      section: Laser, RF power , muon beam ON!
+      table_figure_or_equation: null
+      quotation: 'Jun. 2026 : LLRF setup : First RF-ON (RFQ) : Beam test (2 weeks)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Timeline: Dec.
+        2025 RFQ installation; Feb. 2026 power line; Mar. 2026 alignment, magnet field measurement, detector and controls.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_340KEV_ACCELERATION_RESULT_WS2026_NAKAZAWA
+  name: Result of the June 2026 test (categorical, preliminary)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: muons_accelerated_to_340keV_signal_only_with_rf_and_laser_on_preliminary
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 17
+      section: Summary
+      table_figure_or_equation: null
+      quotation: The full-scale RFQ was implemented in H2 and operated at the nominal power for 340 keV acceleration. The
+        TOF showed a signal at the expected μ+ arrival only with both RF and laser on. We observed a bunch structure at
+        the RF period and phase-dependent bunch fractions. These results indicate that we have successfully accelerated
+        muons to 340 keV.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. p.13 plot labelled
+        'preliminary'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_NORM_EMITTANCE_X_MEASURED_340KEV_WS2026_NAKAZAWA
+  name: Measured horizontal normalised rms emittance after 340 keV acceleration (Q-scan; discrepancy with simulation under
+    investigation)
+  symbol: eps_x,n,rms
+  subsystem: source
+  scenario: null
+  value: 0.84
+  unit: pi mm mrad
+  uncertainty:
+    type: gaussian_sigma
+    value: 0.04
+    unit: pi mm mrad
+    note: ± as printed; stat/syst not separated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 14
+      section: Emittance measurement
+      table_figure_or_equation: null
+      quotation: 'εx,n,rms= 0.84±0.04 π mm mrad (simulation : 0.63 π mm mrad)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. 'The origin of
+        the remaining discrepancies in the emittance and Twiss parameters is under investigation (beam matching / simulation
+        model).' Measurement credited to M. Wada (Univ. of Tokyo). Compare 0.85 ± 0.25 at 100 keV in 2024 (SOURCE_USM_NORM_EMITTANCE_X_MEASURED_ARITOME2024).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_NORM_EMITTANCE_X_SIM_340KEV_WS2026_NAKAZAWA
+  name: Simulated horizontal normalised rms emittance after 340 keV acceleration
+  symbol: eps_x,n,rms(sim)
+  subsystem: source
+  scenario: null
+  value: 0.63
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 14
+      section: Emittance measurement
+      table_figure_or_equation: null
+      quotation: 'εx,n,rms= 0.84±0.04 π mm mrad (simulation : 0.63 π mm mrad)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_NORM_EMITTANCE_Y_MEASURED_340KEV_WS2026_NAKAZAWA
+  name: Measured vertical normalised rms emittance after 340 keV acceleration (Q-scan; discrepancy with simulation under
+    investigation)
+  symbol: eps_y,n,rms
+  subsystem: source
+  scenario: null
+  value: 0.38
+  unit: pi mm mrad
+  uncertainty:
+    type: gaussian_sigma
+    value: 0.01
+    unit: pi mm mrad
+    note: ± as printed
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 14
+      section: Emittance measurement
+      table_figure_or_equation: null
+      quotation: 'εy,n,rms= 0.38±0.01 π mm mrad (simulation : 0.36 π mm mrad)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_NORM_EMITTANCE_Y_SIM_340KEV_WS2026_NAKAZAWA
+  name: Simulated vertical normalised rms emittance after 340 keV acceleration
+  symbol: eps_y,n,rms(sim)
+  subsystem: source
+  scenario: null
+  value: 0.36
+  unit: pi mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 14
+      section: Emittance measurement
+      table_figure_or_equation: null
+      quotation: 'εy,n,rms= 0.38±0.01 π mm mrad (simulation : 0.36 π mm mrad)'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_MONITOR_TIME_RESOLUTION_WS2026_NAKAZAWA
+  name: Time resolution of the bunch monitor
+  symbol: sigma_t(monitor)
+  subsystem: source
+  scenario: null
+  value: 0.036
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: null
+      quotation: monitor time resolution = 36 ps
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 36 ps stored as 0.036 ns.
+- parameter_id: SOURCE_RF_BUNCH_INTERVAL_324MHZ_WS2026_NAKAZAWA
+  name: Observed bunch interval at 324 MHz
+  symbol: T_rf
+  subsystem: source
+  scenario: null
+  value: 3.09
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: null
+      quotation: We directly observed for the first time a bunch structure with a 3.09 ns interval at 324 MHz.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 1/324.03 MHz = 3.086 ns.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_WIDTH_MEASURED_AT_DETECTOR_WS2026_NAKAZAWA
+  name: Measured bunch width (sigma) at the detector, 340 keV
+  symbol: sigma_t(detector)
+  subsystem: source
+  scenario: null
+  value: 0.2
+  unit: ns
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: null
+      quotation: Measured Bunch width (σ) ~200 ps @ detector
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Plot annotation gives the precise fit: ''measurement, φ = 30°: σ68 = 195 ± 7 ps, main 82.4 %'' (SOURCE_BUNCH_WIDTH_SIGMA68_MEASURED_WS2026_NAKAZAWA).'
+- parameter_id: SOURCE_BUNCH_WIDTH_SIGMA68_MEASURED_WS2026_NAKAZAWA
+  name: Measured 68 % bunch width at the detector for RF phase 30 deg (plot annotation)
+  symbol: sigma_68(meas)
+  subsystem: source
+  scenario: null
+  value: 0.195
+  unit: ns
+  uncertainty:
+    type: gaussian_sigma
+    value: 0.007
+    unit: ns
+    note: ± 7 ps as printed
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: plot annotation
+      quotation: 'measurement, φ = 30°: σ68 = 195 ± 7 ps, main 82.4 %'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Preliminary. 'Following signal selection, timing correction between 25 Hz (trigger) and 324 MHz (RF), and the merging
+    of the 4-channel MCP anode signals'.
+- parameter_id: SOURCE_BUNCH_MAIN_FRACTION_MEASURED_WS2026_NAKAZAWA
+  name: Measured fraction of muons in the main RF bucket for RF phase 30 deg
+  symbol: f_main(meas)
+  subsystem: source
+  scenario: null
+  value: 82.4
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: plot annotation
+      quotation: 'measurement, φ = 30°: σ68 = 195 ± 7 ps, main 82.4 %'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Satellite bunches at ±3 ns visible in the plot.
+- parameter_id: SOURCE_BUNCH_WIDTH_SIGMA68_SIM_WS2026_NAKAZAWA
+  name: Simulated 68 % bunch width at the detector convolved with the 36 ps monitor resolution
+  symbol: sigma_68(sim)
+  subsystem: source
+  scenario: null
+  value: 0.197
+  unit: ns
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: plot annotation
+      quotation: 'simulation ⊗ 36 ps: σ68 = 197 ps, main 83.1 %'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_MAIN_FRACTION_SIM_WS2026_NAKAZAWA
+  name: Simulated fraction of muons in the main RF bucket
+  symbol: f_main(sim)
+  subsystem: source
+  scenario: null
+  value: 83.1
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: plot annotation
+      quotation: 'simulation ⊗ 36 ps: σ68 = 197 ps, main 83.1 %'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_MUSE_TRIGGER_RATE_WS2026_NAKAZAWA
+  name: Beam trigger (accelerator repetition) rate in the 2026 test
+  symbol: f_rep
+  subsystem: source
+  scenario: null
+  value: 25
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 15
+      section: Bunch Width Measurement
+      table_figure_or_equation: null
+      quotation: timing correction between 25 Hz (trigger) and 324 MHz (RF)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. J-PARC RCS/MLF
+        repetition rate; also p.16 '10 muon/s@25 Hz rep.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PER_PULSE_PRESENT_WS2026_NAKAZAWA
+  name: Ultra-slow muons per pulse in the present J-PARC beam
+  symbol: N_mu/pulse(present)
+  subsystem: source
+  scenario: null
+  value: 0.4
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Muons / pulse | ~0.4 (10 muon/s@25 Hz rep.) | 10^10
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value. Present-beam column.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Compare 2e-3 per pulse at 100 keV in 2024 (Aritome et al.): 0.4 / 2e-3 = 200. The deck does not break the gain
+    down: the 2026 run used the upgraded laser (~2 ns pulse), the full-scale RFQ and the H2 area (p.17: ''The full-scale
+    RFQ was implemented in H2''), whereas the 2024 run was in S2.'
+- parameter_id: SOURCE_USM_RATE_PRESENT_WS2026_NAKAZAWA
+  name: Ultra-slow muon rate in the present J-PARC beam
+  symbol: R_mu(present)
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Muons / pulse | ~0.4 (10 muon/s@25 Hz rep.) | 10^10
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.4 x 25 Hz = 10 /s.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_CHARGE_PRESENT_WS2026_NAKAZAWA
+  name: Bunch charge of the present J-PARC beam
+  symbol: Q_bunch(present)
+  subsystem: source
+  scenario: null
+  value: null
+  unit: nC
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: unknown
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Bunch charge | — | 1.6 nC
+    derivation: null
+    applicability:
+      category: unresolved
+      scenario: null
+      explanation: Table cell '—' (not stated; about 0.4 muons per pulse is 6e-20 C, i.e. negligible). Value null.
+    confidence: none
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_PEAK_CURRENT_PRESENT_WS2026_NAKAZAWA
+  name: Peak current at the RFQ entrance, present beam (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: negligible
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: I_peak at RFQ entrance | negligible | ~ 0.75 A
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC muon g-2/EDM front-end (RFQ / IH-DTL) design value or measurement restated on a PRIMARY_LHMUC
+        deck; analogous technology for the LHμC ultra-cold μ+ pre-accelerator, not an LHμC design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MU_PER_BUNCH_1E10_WS2026_NAKAZAWA
+  name: Muons per bunch in the LHμC high-bunch-charge scenario
+  symbol: N_mu/bunch
+  subsystem: source
+  scenario: null
+  value: 10000000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Muons / pulse | ~0.4 (10 muon/s@25 Hz rep.) | 10^10
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design. Matches the 1e10 μ+ per bunch of the Forthomme beam set (MACHINE_MU_BUNCH_POPULATION_WS2026_FORTHOMME)
+        and the DIS2026 0.07e11 (MACHINE_MU_BUNCH_POPULATION_DIS2026) to within a factor 1.4.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_BUNCH_CHARGE_1E10_WS2026_NAKAZAWA
+  name: Bunch charge of 1e10 μ+
+  symbol: Q_bunch
+  subsystem: source
+  scenario: null
+  value: 1.6
+  unit: nC
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Bunch charge | — | 1.6 nC
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 1e10 x e = 1.602 nC (tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling
+    notes: ''
+  dependencies:
+  - SOURCE_MU_PER_BUNCH_1E10_WS2026_NAKAZAWA
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_INPUT_PULSE_FWHM_1E10_WS2026_NAKAZAWA
+  name: Assumed input pulse FWHM in the high-bunch-charge scenario
+  symbol: FWHM_in(1e10)
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: ns
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: Input pulse width | FWHM ~ 2 ns | Assume FWHM ~ 2 ns
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design. Same ~2 ns as the present laser-set pulse; an assumption of the scaling, not a
+        design value.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_PEAK_CURRENT_1E10_WS2026_NAKAZAWA
+  name: Peak current at the RFQ entrance for 1e10 μ+ in a 2 ns FWHM pulse
+  symbol: I_peak(1e10)
+  subsystem: source
+  scenario: null
+  value: 0.75
+  unit: ampere
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: table '| Present μ⁺ beam | High-bunch-charge scenario'
+      quotation: I_peak at RFQ entrance | negligible | ~ 0.75 A
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 'Gaussian 2 ns FWHM: 1.6 nC / (0.849 ns x sqrt(2π)) = 0.75 A (tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling)'
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling
+    notes: ''
+  dependencies:
+  - SOURCE_BUNCH_CHARGE_1E10_WS2026_NAKAZAWA
+  - SOURCE_RFQ_INPUT_PULSE_FWHM_1E10_WS2026_NAKAZAWA
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Figure: ''0.75A β=0.01'' at the RFQ entrance.'
+- parameter_id: SOURCE_RFQ_SAME_PERVEANCE_MU_CURRENT_WS2026_NAKAZAWA
+  name: μ+ current with the same generalised perveance as the 30 mA H- design at the same beta
+  symbol: I_K(μ+)
+  subsystem: source
+  scenario: null
+  value: 3.4
+  unit: mA
+  uncertainty:
+    type: not_stated
+    note: source says '≃'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: null
+      quotation: 'same perveance(K) current: 30 mA H⁻ ≃ 3.4 mA μ⁺ ( same K, same β) ... Generalized perveance K : Space
+        charge defocusing strength K ∝ I_peak / (m (βγ)^3) ... m_μ/m_p'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 30 mA x m_mu/m_p = 3.4 mA (tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling
+    notes: ''
+  dependencies:
+  - SOURCE_RFQ_PEAK_CURRENT_HMINUS_DESIGN_WS2026_NAKAZAWA
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RFQ_PERVEANCE_RATIO_WS2026_NAKAZAWA
+  name: Generalised-perveance ratio of the 1e10 scenario to the original 30 mA H- RFQ design at the entrance
+  symbol: K(1e10)/K(H- design)
+  subsystem: source
+  scenario: null
+  value: 220
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: null
+      quotation: 220 larger perveance(K) scale than the original 30-mA H⁻ RFQ at the entrance
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 0.75 A / 3.4 mA = 220 (tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_nakazawa_space_charge_scaling
+    notes: ''
+  dependencies:
+  - SOURCE_RFQ_PEAK_CURRENT_1E10_WS2026_NAKAZAWA
+  - SOURCE_RFQ_SAME_PERVEANCE_MU_CURRENT_WS2026_NAKAZAWA
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Figure annotation '1/220'.
+- parameter_id: SOURCE_RFQ_EXIT_PEAK_CURRENT_1E10_WS2026_NAKAZAWA
+  name: Peak current at the RFQ exit for 1e10 μ+ bunched to sigma about 50 ps
+  symbol: I_peak(exit, 1e10)
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: ampere
+  uncertainty:
+    type: not_stated
+    note: source says '~'
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: null
+      quotation: At the RFQ exit, σ~50 ps corresponds to ~10 A.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 1.6 nC / (0.05 ns x sqrt(2π)) = 12.8 A, consistent with ''~10 A''.'
+  dependencies:
+  - SOURCE_BUNCH_CHARGE_1E10_WS2026_NAKAZAWA
+  - SOURCE_BUNCH_WIDTH_RFQ_EXIT_SIM_WS2026_NAKAZAWA
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Figure: ''10A! β=0.08''.'
+- parameter_id: SOURCE_RFQ_REDESIGN_OPTIONS_WS2026_NAKAZAWA
+  name: What needs to change in the RFQ front end for O(1 nC) bunches (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: higher_injection_energy_or_pre_acceleration_larger_aperture_co_optimised_multi_bunch_or_alternative_structure
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 16
+      section: 'Implications for LHµC, O(1 nC/bunch) : Space-charge is critical issue for RFQ'
+      table_figure_or_equation: null
+      quotation: 'What needs to change? • Higher injection energy: Suppress low-β space charge. Pre-acceleration before
+        the RFQ may be required? • Larger aperture : Provides more beam clearance. But, weaker RF focusing > aperture /
+        voltage / modulation must be co-optimized • Multi bunch? (Or Alternative structure instead of RFQ?)'
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Backup slide (p.19) points to a 1-ampere-class deuteron single-cell linac proposal (J-STAGE URL on the slide:
+    pjab/95/7, i.e. Proc. Jpn. Acad. Ser. B vol. 95 no. 7) as a high-current reference.'
+- parameter_id: SOURCE_FRONT_END_SPACE_CHARGE_CONCLUSION_WS2026_NAKAZAWA
+  name: Summary conclusion for high-bunch-charge beams (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: front_end_must_be_reoptimised_including_3d_space_charge
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: reported_lhmuc
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_NAKAZAWA_LOW_VELOCITY
+      title: Acceleration in the Low-velocity Region
+      author_or_org: Yuga Nakazawa (KEK)
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides (19 pp.)
+      page: 17
+      section: Summary
+      table_figure_or_equation: null
+      quotation: For high-bunch-charge beams, space charge becomes critical in the low-β region; the front end must be re-optimized
+        including 3D space charge.
+    derivation: null
+    applicability:
+      category: direct
+      scenario: null
+      explanation: 'LHμC-specific space-charge assessment on a PRIMARY_LHMUC deck (''Implications for LHμC, O(1 nC/bunch)''):
+        a scaling argument, not a design.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null

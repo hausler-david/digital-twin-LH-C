@@ -1,0 +1,2057 @@
+# Physics-reach records of D. Schulte, 'Muon Collider' (IMCC overview), workshop 'Ultra-cold muons for the LHC', AGH Kraków, Sept 2026
+# (SRC_WS1681458_SCHULTE_IMCC, CONFERENCE_PROCEEDING -> status analogous). Scope = headline physics-reach statements only: programme goals
+# (p.3), NAS physics-case quotations (p.5), luminosity scaling and its stated μp advantage (p.6), BIB challenge, 'can do the physics'
+# conclusions and the IP/nozzle BIB-reduction callout (pp.10–11), and the reach-defining rows of the Key Parameters table (p.28: √s, L/IP,
+# Int L, accumulation time for six site variants; 2 IPs; ramp-up 5/25/70 %). Pages = PDF pages = slide numbers.
+# NOT recorded here (outside G6 scope, reported to the lead): machine rows C, B_dipole and dipole technology (pp.7, 28, 38), N and f_r
+# (pp.7, 38), the p.11 BIB illustration energies (5 TeV μ+ decay example), programme-status items (p.3 roadmap 75 %, ESPPU back-up
+# document 406 p / 450 signatories).
+# The p.38 backup table prints 'Int L | Ab-1 | 2.2 | 1.8' where p.3/p.28 print 1 / 10 ab-1: recorded as printed with confidence low and
+# category unresolved (conflict candidate; the numbers equal the bunch-population row N = 2.2 / 1.8 × 10^12 of p.7).
+# Plus one categorical record from L. V. Dudko, arXiv:2607.16904v2 (SECONDARY_SOURCE): the n_turns = γ c τ / C relation with c τ = 659 m
+# (p.14, eq. 2), P1 via tests/scientific/test_workshop_decks.py; Table 1 of that review is deliberately NOT extracted.
+# Resume review 2026-10-29: all records re-checked against the slide images; 21 out-of-scope records removed, BIB applicability corrected,
+# 2 records added (p.6 luminosity-scaling statement, p.11 IP/nozzle callout).
+# Verifier pass (G6_PHYSICS adversarial verification, 2026-10-29): all 48 records re-read against the slide images (pp. 3, 5, 6, 10, 11,
+# 28, 38; p. 7 for the conflict note) and Dudko p. 14; no value, unit, page or quotation error found; confidences lowered to the
+# source_quality_policy.md §4 caps (unrefereed slides, status analogous -> medium). See research/_fragments/verify_G6_PHYSICS.md.
+parameters:
+- parameter_id: PHYS_IMCC_FEASIBILITY_TARGET_SQRT_S_WS2026_SCHULTE
+  name: Centre-of-mass energy of the IMCC feasibility focus
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 3
+      section: IMCC (programme slide)
+      table_figure_or_equation: null
+      quotation: Focus on feasibility of 10 TeV with 10 ab-1 (site independent)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_FEASIBILITY_TARGET_INT_LUMI_WS2026_SCHULTE
+  name: Integrated luminosity of the IMCC feasibility focus
+  symbol: L_int
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 3
+      section: IMCC (programme slide)
+      table_figure_or_equation: null
+      quotation: Focus on feasibility of 10 TeV with 10 ab-1 (site independent)
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INITIAL_STAGE_SQRT_S_WS2026_SCHULTE
+  name: Centre-of-mass energy of the possible IMCC initial stage
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3
+  unit: TeV
+  uncertainty:
+    type: not_stated
+    note: 'tentative: the slide says ''maybe with 3 TeV with 1 ab-1 or lower luminosity 10 TeV'''
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 3
+      section: IMCC (programme slide)
+      table_figure_or_equation: null
+      quotation: Explore initial stage by around 2050, maybe with 3 TeV with 1 ab-1 or lower luminosity 10 TeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. Slide says 'maybe'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INITIAL_STAGE_INT_LUMI_WS2026_SCHULTE
+  name: Integrated luminosity of the possible IMCC initial stage
+  symbol: L_int
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+    note: 'tentative: the slide says ''maybe with 3 TeV with 1 ab-1 or lower luminosity 10 TeV'''
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 3
+      section: IMCC (programme slide)
+      table_figure_or_equation: null
+      quotation: Explore initial stage by around 2050, maybe with 3 TeV with 1 ab-1 or lower luminosity 10 TeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. Slide says 'maybe'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INITIAL_STAGE_TIMING_WS2026_SCHULTE
+  name: Timing of the possible IMCC initial stage
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: by around 2050
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 3
+      section: IMCC (programme slide)
+      table_figure_or_equation: null
+      quotation: Explore initial stage by around 2050, maybe with 3 TeV with 1 ab-1 or lower luminosity 10 TeV
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.38 (backup copy of the slide) prints 'Explore initial stage by 2050'.
+- parameter_id: PHYS_NAS_10X_LHC_STATEMENT_WS2026_SCHULTE
+  name: National Academy of Sciences statement quoted on the need for a ~10 × LHC-energy collider
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: A collider with approximately 10 times the energy of the Large Hadron Collider (LHC) is crucial for addressing the big questions of particle physics
+    and making discoveries.
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: A collider with approximately 10 times the energy of the Large Hadron Collider (LHC) is crucial for addressing the big questions of particle
+        physics and making discoveries.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Quotation of a US National Academy of Sciences report (committee listed on the slide) reproduced on the IMCC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_NAS_10TEV_MUC_DISCOVERY_REACH_STATEMENT_WS2026_SCHULTE
+  name: NAS statement equating a 10 TeV muon collider with a 100 TeV proton collider in discovery reach
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: A 10-TeV muon collider on the Fermi National Accelerator Laboratory (Fermilab) site would have similar discovery reach as a 100-TeV proton collider.
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: A 10-TeV muon collider on the Fermi National Accelerator Laboratory (Fermilab) site would have similar discovery reach as a 100-TeV proton
+        collider.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Quotation of the NAS report reproduced on the IMCC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_EQUIVALENT_PP_SQRT_S_WS2026_SCHULTE
+  name: Proton-proton centre-of-mass energy with discovery reach similar to a 10 TeV muon collider (NAS statement)
+  symbol: sqrt(s_pp,equiv)
+  subsystem: physics_programme
+  scenario: null
+  value: 100
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: A 10-TeV muon collider on the Fermi National Accelerator Laboratory (Fermilab) site would have similar discovery reach as a 100-TeV proton
+        collider.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: NAS-report equivalence quoted on the IMCC deck (cf. the 5–20 × range of ref. [38] quoted by Acosta et al., PHYS_PP_EQUIVALENCE_FACTOR_MIN/MAX_MUIC2022).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_MUC_PHYSICS_ADVANTAGE_STATEMENT_WS2026_SCHULTE
+  name: NAS statement on the combined advantages of a muon collider
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: A muon collider combines the physics advantages of an electron-positron and a proton-proton collider, with a much smaller size.
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: A muon collider combines the physics advantages of an electron-positron and a proton-proton collider, with a much smaller size.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Quotation of the NAS report reproduced on the IMCC deck.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_MUC_COMPLEMENTARITY_FCC_STATEMENT_WS2026_SCHULTE
+  name: Speaker's statement on complementarity with FCC-ee + FCC-hh
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Strong physics case complementary to FCC-ee + FCC-hh exists, see for example Snowmass and NAS report
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: Strong physics case complementary to FCC-ee + FCC-hh exists, see for example Snowmass and NAS report
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_WIMP_MASS_PRIVATE_THOUGHT_WS2026_SCHULTE
+  name: Speaker's 'private thought' on the WIMP mass reach (question on the slide)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: 'Private thought: WIMPS > 200 GeV?'
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 5
+      section: Physics Case for Leptons at 10 TeV
+      table_figure_or_equation: null
+      quotation: 'Private thought: WIMPS > 200 GeV?'
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: Marked on the slide as a private thought with a question mark; not a collaboration result.
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_LUMI_SCALING_MUP_ADVANTAGE_STATEMENT_WS2026_SCHULTE
+  name: IMCC luminosity scaling and its stated advantage for muon-proton colliders
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: L ∝ γ⟨B⟩σ_δ N0/(ε ε_L) f_r N0 γ; luminosity per beam power increases with energy if the technologies exist; bunch density, not just emittance,
+    is critical; stated to be an important advantage for muon-proton colliders and others
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 6
+      section: Muon Collider Luminosity Scaling
+      table_figure_or_equation: luminosity scaling formula
+      quotation: Luminosity per power increases with energy, if technolgies exist / Constant current for required luminosity scaling with collision energy
+        / Bunch density is critical not just emittance / ⇒ Important advantage for muon-proton collider and others
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. Statement of the IMCC luminosity scaling (MAP-type scheme, 'Fundamental limitation / Requires emittance preservation and
+        advanced lattice design / Applies to MAP scheme'); the slide does not quantify the muon-proton advantage.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Formula transcribed from the slide image: ''L ∝ γ⟨B⟩σδ N0/(εεL) fr N0 γ'' with the annotations ''High energy'', ''High field in collider ring'',
+    ''Large energy acceptance'', ''Dense beam'', ''High beam power''. ''technolgies'' as printed. The slide footer reads ''D. Schulte, Muon Collider Overview,
+    GGI, June/July 2025'' (slide reused from an earlier talk).'
+- parameter_id: PHYS_IMCC_BIB_MUON_DECAYS_PER_M_PER_CROSSING_WS2026_SCHULTE
+  name: Muon decays per metre per bunch crossing quoted as the beam-induced-background challenge
+  symbol: dN_decay/dz
+  subsystem: detector
+  scenario: null
+  value: 40000
+  unit: 1/meter
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 10
+      section: Physics and Detector Concepts
+      table_figure_or_equation: null
+      quotation: Muon decay can give important background • 40 000 muons/m/bunch crossing • 1/3 of energy in electrons and positrons
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. The slide does not state the collision energy or bunch population behind the number; a beam-induced-background figure for
+        the IMCC design, to be rescaled (not reused) for an LHμC single μ+ beam.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_BIB_ENERGY_FRACTION_ELECTRONS_WS2026_SCHULTE
+  name: Fraction of the decay energy carried by electrons and positrons
+  symbol: f_e
+  subsystem: detector
+  scenario: null
+  value: 0.3333333333333333
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 10
+      section: Physics and Detector Concepts
+      table_figure_or_equation: null
+      quotation: 1/3 of energy in electrons and positrons
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: Exact value 1/3 as printed ('1/3 of energy').
+- parameter_id: PHYS_IMCC_DETECTOR_CONCEPTS_WS2026_SCHULTE
+  name: Detector concepts named on the slide
+  symbol: null
+  subsystem: detector
+  scenario: null
+  value: MUSIC (MUon Smasher for Interesting Collisions) and MAIA (Muon Accelerator Instrumented Aperatus)
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 10
+      section: Physics and Detector Concepts
+      table_figure_or_equation: null
+      quotation: MUSIC (MUon Smasher for Interesting Collisions) / MAIA (Muon Accelerator Instrumented Aperatus) / Two detector concepts are being developed
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. Detector parameters of both concepts are in the MDI group's records (DET_*_MAIA, DET_*_MUSIC).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: '''Aperatus'' as printed on the slide.'
+- parameter_id: PHYS_IMCC_PHYSICS_FEASIBILITY_CONCLUSION_WS2026_SCHULTE
+  name: IMCC conclusions on doing physics with the beam-induced background
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: Can do the physics (also thanks to HL-LHC technology); room for improvement; radiation level similar to HL-LHC
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 11
+      section: Beam-induced Background
+      table_figure_or_equation: null
+      quotation: 'Conclusions: • Can do the physics • Also thanks to HL-LHC technology • But room for improvement • Radiation level similar to HL-LHC'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Achievements listed: two conceptual detector designs; simulation studies with background also from machine; studies of different lattices; reconstruction
+    algorithms; physics studies; ''Detailed studies with FLUKA''.'
+- parameter_id: PHYS_IMCC_IP_NOZZLE_BIB_REDUCTION_STATEMENT_WS2026_SCHULTE
+  name: Stated effect of the interaction-region design and nozzles on the decay-induced background (IMCC MDI callout)
+  symbol: null
+  subsystem: physics_programme
+  scenario: null
+  value: the IP region and nozzle reduce the decay-induced background by several orders of magnitude
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 11
+      section: Beam-induced Background
+      table_figure_or_equation: MDI layout figure, callout 'Interaction point (IP) & nozzle'
+      quotation: Interaction point (IP) & nozzle / Reduce the amount of decay-induced background by several order of magnitude
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value. Qualitative statement for the IMCC interaction region (FLUKA studies); relevant to the LHμC nozzle design records but not
+        a number; the reduction factor is not quantified on the slide.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Read from the embedded MDI figure (not in the text layer). Neighbouring callouts: ''Q1 / Three focusing quadrupoles to control the beam size in
+    the IP''; ''Chicane / Three dipoles that remove the electrons coming from the line''; the upper figure illustrates a μ+ (5 TeV) decay with e+ (1.20
+    TeV), e+ (0.45 TeV) and ''0.75 TeV emitted as SR photons'' (illustration values, not recorded as parameters).'
+- parameter_id: PHYS_IMCC_SQRT_S_SI3_WS2026_SCHULTE
+  name: Centre-of-mass energy, Site independent, 3 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | Site independent, 3 TeV: 3'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_SI3_WS2026_SCHULTE
+  name: Luminosity per interaction point, Site independent, 3 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 1.8e+34
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | Site independent, 3 TeV: 1.8'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_INT_LUMI_SI3_WS2026_SCHULTE
+  name: Integrated luminosity goal, Site independent, 3 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | Site independent, 3 TeV: 1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_SI3_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, Site independent, 3 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+2.8
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | Site independent, 3 TeV: 2+2.8'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_SQRT_S_SI10_WS2026_SCHULTE
+  name: Centre-of-mass energy, Site independent, 10 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | Site independent, 10 TeV: 10'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_SI10_WS2026_SCHULTE
+  name: Luminosity per interaction point, Site independent, 10 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 1.75e+35
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | Site independent, 10 TeV: 17.5'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_INT_LUMI_SI10_WS2026_SCHULTE
+  name: Integrated luminosity goal, Site independent, 10 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | Site independent, 10 TeV: 10'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_SI10_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, Site independent, 10 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+2.9
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | Site independent, 10 TeV: 2+2.9'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: p.3 prints the same site-independent values (Sqrt(s) 3 / 10 TeV, Int L 1 / 10 ab-1, L/IP 1.8 / 17.5 × 10^34 cm-2s-1, Acc. time 2+2.8 / 2+2.9 years).
+- parameter_id: PHYS_IMCC_SQRT_S_C2T32_WS2026_SCHULTE
+  name: Centre-of-mass energy, CERN 2 tunnels, 3.2 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3.2
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | CERN 2 tunnels, 3.2 TeV: 3.2'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_C2T32_WS2026_SCHULTE
+  name: Luminosity per interaction point, CERN 2 tunnels, 3.2 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 2.0e+34
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | CERN 2 tunnels, 3.2 TeV: 2'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INT_LUMI_C2T32_WS2026_SCHULTE
+  name: Integrated luminosity goal, CERN 2 tunnels, 3.2 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | CERN 2 tunnels, 3.2 TeV: 1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_C2T32_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, CERN 2 tunnels, 3.2 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+2.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | CERN 2 tunnels, 3.2 TeV: 2+2.5'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_SQRT_S_C2T76_WS2026_SCHULTE
+  name: Centre-of-mass energy, CERN 2 tunnels, 7.6 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 7.6
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | CERN 2 tunnels, 7.6 TeV: 7.6'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_C2T76_WS2026_SCHULTE
+  name: Luminosity per interaction point, CERN 2 tunnels, 7.6 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 1.0e+35
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | CERN 2 tunnels, 7.6 TeV: 10'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INT_LUMI_C2T76_WS2026_SCHULTE
+  name: Integrated luminosity goal, CERN 2 tunnels, 7.6 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | CERN 2 tunnels, 7.6 TeV: 10'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_C2T76_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, CERN 2 tunnels, 7.6 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | CERN 2 tunnels, 7.6 TeV: 2+5'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_SQRT_S_C1T32_WS2026_SCHULTE
+  name: Centre-of-mass energy, CERN 1 tunnel, 3.2 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 3.2
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | CERN 1 tunnel, 3.2 TeV: 3.2'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_C1T32_WS2026_SCHULTE
+  name: Luminosity per interaction point, CERN 1 tunnel, 3.2 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 9.0e+33
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | CERN 1 tunnel, 3.2 TeV: 0.9'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INT_LUMI_C1T32_WS2026_SCHULTE
+  name: Integrated luminosity goal, CERN 1 tunnel, 3.2 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 1
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | CERN 1 tunnel, 3.2 TeV: 1'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_C1T32_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, CERN 1 tunnel, 3.2 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+5.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | CERN 1 tunnel, 3.2 TeV: 2+5.6'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_SQRT_S_C1T76_WS2026_SCHULTE
+  name: Centre-of-mass energy, CERN 1 tunnel, 7.6 TeV
+  symbol: sqrt(s)
+  subsystem: physics_programme
+  scenario: null
+  value: 7.6
+  unit: TeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Sqrt(s) | TeV | CERN 1 tunnel, 7.6 TeV: 7.6'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_LUMI_PER_IP_C1T76_WS2026_SCHULTE
+  name: Luminosity per interaction point, CERN 1 tunnel, 7.6 TeV
+  symbol: L/IP
+  subsystem: physics_programme
+  scenario: null
+  value: 7.9e+34
+  unit: cm^-2 s^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | L/IP | 10^34 cm-2s-1 | CERN 1 tunnel, 7.6 TeV: 7.9'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INT_LUMI_C1T76_WS2026_SCHULTE
+  name: Integrated luminosity goal, CERN 1 tunnel, 7.6 TeV
+  symbol: Int L
+  subsystem: physics_programme
+  scenario: null
+  value: 10
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Int L | ab-1 | CERN 1 tunnel, 7.6 TeV: 10'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_ACCUMULATION_TIME_C1T76_WS2026_SCHULTE
+  name: Accumulation time to reach the integrated luminosity with two IPs, CERN 1 tunnel, 7.6 TeV (as printed)
+  symbol: T_acc (years)
+  subsystem: physics_programme
+  scenario: null
+  value: 2+6.3
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: Key Parameters table
+      quotation: 'Key Parameters | Accumulation time | years | CERN 1 tunnel, 7.6 TeV: 2+6.3'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. ''Accumulation time: Time to obtain the integrated luminosity with two IPs.'' The ''2+x'' format is kept as printed;
+        the slide does not define the ''2+'' term (the ramp-up note speaks of three years at 5 %, 25 %, 70 %).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none (categorical statement)
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_IPS_FOR_ACCUMULATION_WS2026_SCHULTE
+  name: Number of interaction points assumed for the accumulation time
+  symbol: N_IP
+  subsystem: physics_programme
+  scenario: null
+  value: 2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: null
+      quotation: 'Accumulation time: Time to obtain the integrated luminosity with two IPs.'
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_RAMP_UP_YEAR1_WS2026_SCHULTE
+  name: Luminosity ramp-up in year 1 (fraction of nominal)
+  symbol: L_year1/L_nominal
+  subsystem: physics_programme
+  scenario: null
+  value: 5
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: null
+      quotation: Ramp-up over the first three years 5%, 25%, 70% of nominal.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_RAMP_UP_YEAR2_WS2026_SCHULTE
+  name: Luminosity ramp-up in year 2 (fraction of nominal)
+  symbol: L_year2/L_nominal
+  subsystem: physics_programme
+  scenario: null
+  value: 25
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: null
+      quotation: Ramp-up over the first three years 5%, 25%, 70% of nominal.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_RAMP_UP_YEAR3_WS2026_SCHULTE
+  name: Luminosity ramp-up in year 3 (fraction of nominal)
+  symbol: L_year3/L_nominal
+  subsystem: physics_programme
+  scenario: null
+  value: 70
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 28
+      section: Key Parameters
+      table_figure_or_equation: null
+      quotation: Ramp-up over the first three years 5%, 25%, 70% of nominal.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context for
+        LHμC, not an LHμC value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: null
+- parameter_id: PHYS_IMCC_INT_LUMI_3TEV_P38_WS2026_SCHULTE
+  name: '''Int L'' value printed for 3 TeV on the backup programme slide (as printed; see conflict note)'
+  symbol: Int L (as printed)
+  subsystem: physics_programme
+  scenario: null
+  value: 2.2
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 38
+      section: IMCC (backup copy of the programme slide, p.38)
+      table_figure_or_equation: parameter table (Param. / Unit / 3 TeV / 10 TeV)
+      quotation: 'Int L | Ab-1 | 3 TeV: 2.2 | 10 TeV: 1.8'
+    derivation: null
+    applicability:
+      category: unresolved
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. CONFLICT CANDIDATE (see notes): recorded as printed, confidence low, not averaged (CLAUDE.md §1.6).'
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'CONFLICT CANDIDATE: p.38 prints the row ''Int L | Ab-1 | 2.2 | 1.8'' while p.3 and p.28 of the same deck print ''Int L | ab-1 | 1 | 10'' for the
+    same 3 / 10 TeV columns. The p.38 numbers equal the bunch-population row of the p.7 target-parameter table (''N | 10^12 | 2.2 | 1.8''), so the p.38
+    row label is most likely a mislabel of N; kept as printed for the lead to log in research/source_conflicts.yaml.'
+- parameter_id: PHYS_IMCC_INT_LUMI_10TEV_P38_WS2026_SCHULTE
+  name: '''Int L'' value printed for 10 TeV on the backup programme slide (as printed; see conflict note)'
+  symbol: Int L (as printed)
+  subsystem: physics_programme
+  scenario: null
+  value: 1.8
+  unit: ab^-1
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_table_read
+    source:
+      source_id: SRC_WS1681458_SCHULTE_IMCC
+      title: Muon Collider (IMCC overview)
+      author_or_org: Daniel Schulte (CERN), for the International Muon Collider Collaboration
+      url: https://indico.cern.ch/event/1681458/
+      date: '2026-09-24'
+      version: slides, 45 pages (workshop 'Ultra-cold muons for the LHC', AGH Kraków, 24–26 Sept 2026)
+      page: 38
+      section: IMCC (backup copy of the programme slide, p.38)
+      table_figure_or_equation: parameter table (Param. / Unit / 3 TeV / 10 TeV)
+      quotation: 'Int L | Ab-1 | 3 TeV: 2.2 | 10 TeV: 1.8'
+    derivation: null
+    applicability:
+      category: unresolved
+      scenario: null
+      explanation: 'IMCC muon-collider target as presented at the Kraków workshop (CONFERENCE_PROCEEDING); analogous technology / physics-reach context
+        for LHμC, not an LHμC value. CONFLICT CANDIDATE (see notes): recorded as printed, confidence low, not averaged (CLAUDE.md §1.6).'
+    confidence: low
+    assumption_id: null
+  validation:
+    level: P0
+    methods:
+    - none yet
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'CONFLICT CANDIDATE: p.38 prints the row ''Int L | Ab-1 | 2.2 | 1.8'' while p.3 and p.28 of the same deck print ''Int L | ab-1 | 1 | 10'' for the
+    same 3 / 10 TeV columns. The p.38 numbers equal the bunch-population row of the p.7 target-parameter table (''N | 10^12 | 2.2 | 1.8''), so the p.38
+    row label is most likely a mislabel of N; kept as printed for the lead to log in research/source_conflicts.yaml.'
+- parameter_id: PHYS_MUON_TURNS_PER_LIFETIME_FORMULA_DUDKO2026
+  name: Turns-per-lifetime relation of a stored muon beam with cτ_μ = 659 m (review formula, traceability record)
+  symbol: n_turns
+  subsystem: physics_programme
+  scenario: null
+  value: n_turns ≃ γ cτ_μ / C, with γ = E_μ/(m_μ c²), cτ_μ = 659 m and C the circumference
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2607_16904
+      title: 'The muon collider: expected physics, technological challenges, and the prospects for reusing the 21 km UNK tunnel'
+      author_or_org: L. V. Dudko (SINP, Lomonosov Moscow State University)
+      url: https://arxiv.org/abs/2607.16904
+      date: '2026-10-20'
+      version: arXiv:2607.16904v2 [hep-ph]; page = PDF page = printed page
+      page: 14
+      section: '3.5 The collider ring: turns, luminosity, and neutrino flux'
+      table_figure_or_equation: Eq. (2)
+      quotation: nturns ≃ γ cτµ / C, (2) where γ = Eµ /mµ c2 is the beam Lorentz factor, cτµ = 659 m, and C is the circumference.
+    derivation: null
+    applicability:
+      category: screening_only
+      scenario: null
+      explanation: 'Secondary-source review (SECONDARY_SOURCE): formula only, recorded for traceability of the project''s own n_turns arithmetic; its Table
+        1 IMCC values are not extracted (secondary).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - c τ_μ = 2.998e8 m/s × 2.197e-6 s = 658.6 m ≈ 659 m; tests/scientific/test_workshop_decks.py::test_turns_per_lifetime_dudko_formula
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/physics_programme
+  notes: 'Eq. (3) of the same page: ''nturns ≃ 0.2998 B̄ cτµ / (2π mµ c² [GeV]) ≈ 297 B̄ [T]'' (turns depend only on the circumference-averaged bending
+    field); luminosity lifetime ''≈ 149 B̄[T] turns''. Worked example used by the lead''s test (illustrative 3 km ring, not an LHμC parameter): γ(1 TeV)
+    × 658.6 m / 3000 m ≈ 2080 turns. Table 1 of the review (IMCC values restated) is deliberately not extracted.'

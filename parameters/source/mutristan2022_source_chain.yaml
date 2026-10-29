@@ -1,0 +1,2269 @@
+# muTRISTAN ultra-cold mu+ source chain extracted from SRC_ARXIV_2201_06664 (Y. Hamada et al., 'μTRISTAN', arXiv:2201.06664v2 /
+# PTEP 2022 053B02), Sections 1 (rate estimate), 2.1-2.2 (proton driver, pion production ring, stopping target, muonium/laser chain)
+# and 2.6 (beam polarisation). Booster and main-ring parameters of the same paper are NOT here (acceleration group, G3) and the
+# physics sections are not here (G6). Addendum of 2026-10-28 (group G2_SOURCE).
+# Status rules: muTRISTAN design values -> imported_related (RELATED_MACHINE, design variant the LHmuC source scales from); the
+# J-PARC MLF comparison chain and the g-2 polarisation target quoted by the paper -> analogous; audit arithmetic ->
+# analytical_estimate. Page numbers are PDF pages of the arXiv version.
+# Generated from a scripted transcription (scratchpad gen/gen_mutristan.py); this YAML file is the single source of truth.
+# Verified 2026-10-29 by the G2_SOURCE adversarial verifier against the rendered PDF pages; corrections, removals and residual doubts in
+# research/_fragments/verify_G2_SOURCE.md.
+parameters:
+- parameter_id: SOURCE_PROTON_DRIVER_POWER_MUTRISTAN2022
+  name: Proton driver (LINAC + RCS) beam power assumed by μTRISTAN
+  symbol: P_driver
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: MW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: We assume the beam parameters of the proton LINAC (Linear Accelerator) and RCS (Rapid-Cycling Synchrotron)
+        to be similar to those in J-PARC with the beam power of 2 MW.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Fig. 1
+        label: ''RCS : 3 GeV x 6.6 μC x 2-bunch x 50 Hz = 2 MW''. The DIS2026 LHμC set assumes 4 MW (SOURCE_PROTON_DRIVER_POWER_DIS2026).'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic (not pinned in a test): 3 GeV x 6.6 μC x 2 x 50 Hz = 1.98 MW, consistent with the stated 2
+      MW.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RCS_PROTON_ENERGY_MUTRISTAN2022
+  name: RCS proton kinetic energy
+  symbol: E_p
+  subsystem: source
+  scenario: null
+  value: 3
+  unit: GeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The 2-bunch proton beam with the bunch charge 6.6 µC (= 4.1 × 10^13 protons) is accelerated to 3 GeV with
+        the repetition rate of 50 Hz.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RCS_BUNCH_CHARGE_MUTRISTAN2022
+  name: RCS proton bunch charge
+  symbol: Q_p
+  subsystem: source
+  scenario: null
+  value: 6.6
+  unit: uC
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The 2-bunch proton beam with the bunch charge 6.6 µC (= 4.1 × 10^13 protons) is accelerated to 3 GeV with
+        the repetition rate of 50 Hz.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 6.6 μC / e = 4.12e13 protons, consistent with the printed 4.1e13.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RCS_BUNCH_POPULATION_MUTRISTAN2022
+  name: RCS proton bunch population
+  symbol: N_p
+  subsystem: source
+  scenario: null
+  value: 41000000000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: the bunch charge 6.6 µC (= 4.1 × 10^13 protons)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RCS_BUNCHES_MUTRISTAN2022
+  name: Number of proton bunches per RCS cycle
+  symbol: n_b,p
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The 2-bunch proton beam with the bunch charge 6.6 µC
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_RCS_REPETITION_RATE_MUTRISTAN2022
+  name: RCS repetition rate, set by the 1 TeV muon lifetime
+  symbol: f_rep
+  subsystem: source
+  scenario: null
+  value: 50
+  unit: Hz
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 4, 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: accelerated to 3 GeV with the repetition rate of 50 Hz. The operation at 50 Hz is set by the lifetime of
+        the muon at the energy of 1 TeV, γτµ = 20 ms, so that a new beam is injected after muons spend their lifetime in
+        the storage ring.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Twice the
+        J-PARC MLF 25 Hz; the DIS2026 LHμC set uses 12.5 Hz (CONF_REPETITION_RATE).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PROTON_LINAC_ENERGY_MUTRISTAN2022
+  name: Proton LINAC energy (Fig. 1 label)
+  symbol: E_linac
+  subsystem: source
+  scenario: null
+  value: 500
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_figure_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 5
+      section: 'Figure 1: Conceptual design of the µ+e−/µ+µ+ collider'
+      table_figure_or_equation: Fig. 1 label
+      quotation: Proton LINAC (500 MeV)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Figure
+        label only.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_TARGET_MATERIAL_MUTRISTAN2022
+  name: Pion production target material (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: graphite
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The 3 GeV proton beam is transported to the pion production ring, where the graphite target with the thickness
+        of 10 mm is placed.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_TARGET_THICKNESS_MUTRISTAN2022
+  name: Pion production target thickness
+  symbol: t_target
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: the graphite target with the thickness of 10 mm is placed
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PROTON_TARGET_HITS_MUTRISTAN2022
+  name: Number of target traversals per proton bunch in the pion production ring
+  symbol: n_hits
+  subsystem: source
+  scenario: null
+  value: 40
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The proton beam is recirculated to repeatedly hit (40 times for each bunch) the target.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). ''Such
+        a configuration is possible by using the longitudinal phase rotation with suitable R56 and the RF cavity to compensate
+        the decreased energy''. Footnote: the reduction of the pion charge over the 40 turns is neglected ''for simplicity''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PROTON_ENERGY_LOSS_PER_HIT_MUTRISTAN2022
+  name: Proton energy loss per target traversal
+  symbol: dE_hit
+  subsystem: source
+  scenario: null
+  value: 75
+  unit: MeV
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The energy loss of each proton by the collision is estimated to be 75 MeV (2.5 % energy loss), which amounts
+        to 2 MW power consumption used for the recovery of the beam energy.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 75 MeV / 3 GeV = 2.5 %; 75 MeV x 40 x 2 x 4.1e13 x 50 Hz x e = 1.97 MW.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PROTON_ENERGY_LOSS_FRACTION_PER_HIT_MUTRISTAN2022
+  name: Fractional proton energy loss per target traversal
+  symbol: dE/E
+  subsystem: source
+  scenario: null
+  value: 2.5
+  unit: percent
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: 75 MeV (2.5 % energy loss)
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_RING_RF_POWER_MUTRISTAN2022
+  name: RF power for energy recovery in the pion production ring
+  symbol: P_rf,ring
+  subsystem: source
+  scenario: null
+  value: 2
+  unit: MW
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: which amounts to 2 MW power consumption used for the recovery of the beam energy
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Fig. 1:
+        ''(6.6μC x 2-bunch x 75 MeV x 40-turns x 50 Hz = 2 MW)''.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_PRODUCTION_XSEC_MUTRISTAN2022
+  name: Pion production cross section p + C → π + X at 3 GeV assumed by μTRISTAN
+  symbol: sigma_pi
+  subsystem: source
+  scenario: null
+  value: 150
+  unit: millibarn
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The cross section of the pion production process, p + C → π + X, is 150 mb at the proton energy of 3 GeV.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_YIELD_PER_PROTON_MUTRISTAN2022
+  name: Pions generated per proton per traversal of the 10 mm graphite target (150 mb at 3 GeV)
+  symbol: Y_pi
+  subsystem: source
+  scenario: null
+  value: 0.016
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: The number of generated pions is calculated as 0.016/proton for the target thickness of 10 mm.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Same number
+        as SOURCE_PION_YIELD_PER_PROTON_MULHC (μLHC copy). Per traversal: the paper turns it into ''110 nC/bunch (times
+        40 turns times 2 bunches)'', i.e. per bunch per turn (0.016 x 6.6 μC = 106 nC), and 150 mb on 10 mm of graphite
+        gives 0.0166 per pass for 2.2 g/cm^3 (audit; the density is not stated in the paper). The 40 turns re-enter only
+        in the 9.0e13 /s rate.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.016 x 4.1e13 x e = 105 nC per bunch, consistent with the printed 110 nC/bunch (and the Fig.
+      1 label ''100 nC/π'').'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_CHARGE_PER_BUNCH_MUTRISTAN2022
+  name: Pion charge per proton bunch
+  symbol: Q_pi
+  subsystem: source
+  scenario: null
+  value: 110
+  unit: nC
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: It results in the pion charge of 110 nC/bunch (times 40 turns times 2 bunches) at the rate of 50 Hz.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Fig. 1
+        label reads '100 nC/π/(ΔEp=75[MeV](10mm))' (rounded differently from the text).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_PION_TRANSPORT_EFFICIENCY_MUTRISTAN2022
+  name: Efficiency of pion transport from the production target to the stopping target (lifetime and material losses)
+  symbol: eps_transport
+  subsystem: source
+  scenario: null
+  value: 0.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.1 Proton accelerator and pion production ring
+      table_figure_or_equation: null
+      quotation: We estimate the efficiency of the transportation to the stopping target as 50 % considering the pion lifetime
+        and the pion loss by interactions with materials.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). An estimate,
+        no simulation is cited.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPING_TARGET_MATERIAL_MUTRISTAN2022
+  name: Pion stopping target material and form (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: multi_layered_tungsten_foils
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The multi-layered tungsten foil target is used to stop the generated pion beams.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPING_TARGET_FOIL_THICKNESS_MUTRISTAN2022
+  name: Tungsten foil thickness in the pion stopping target
+  symbol: t_foil
+  subsystem: source
+  scenario: null
+  value: 1
+  unit: mm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: In order to completely stop the pions, we need a thousand layers of 1 mm foils placed with the interval
+        of 1 cm [16].
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPING_TARGET_FOIL_INTERVAL_MUTRISTAN2022
+  name: Interval between tungsten foils
+  symbol: d_foil
+  subsystem: source
+  scenario: null
+  value: 1
+  unit: cm
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: a thousand layers of 1 mm foils placed with the interval of 1 cm [16]
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). 'The intervals
+        are necessary to extract surface muons from the decay of the stopped pions.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPING_TARGET_LAYERS_MUTRISTAN2022
+  name: Number of tungsten foil layers
+  symbol: n_layers
+  subsystem: source
+  scenario: null
+  value: 1000
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: we need a thousand layers of 1 mm foils placed with the interval of 1 cm [16]. This requires a large target
+        system such as 10 m length in total.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 1000 x 1 cm = 10 m.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_STOPPING_TARGET_LENGTH_MUTRISTAN2022
+  name: Total length of the pion stopping target system
+  symbol: L_stop
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: This requires a large target system such as 10 m length in total.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_AEROGEL_TARGET_LENGTH_MUTRISTAN2022
+  name: Length of the multi-layered silica aerogel muonium target placed next to the tungsten foils
+  symbol: L_aerogel
+  subsystem: source
+  scenario: null
+  value: 10
+  unit: m
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 6-7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The aerogel target needs to have a length of 10 m with a layer structure in the vertical direction so that
+        one can shoot lasers in the gaps.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). The vertical
+        layer structure is the variant shown on Zhang p.19 (SOURCE_MULTILAYER_VERTICAL_VARIANT_WS2026_ZHANG). Fig. 2: ''The
+        pion stopping target surrounded by silica aerogel for muonium production and laser ionization.'''
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_IONISATION_LASER_MUTRISTAN2022
+  name: Ionisation laser (categorical)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: lyman_alpha
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The neutral muonium atoms are thermally diffused from the aerogel and ionized by the Lyman-α laser. The
+        ionized µ+ has a very small momentum spread, which is called the ultra-cold muon.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PRODUCTION_EFFICIENCY_FIRST_TARGET_MUTRISTAN2022
+  name: Total ultra-cold muon production efficiency at the first (10 m) aerogel target
+  symbol: eps_1
+  subsystem: source
+  scenario: null
+  value: 0.14
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 'The efficiency for the production of the ultra-cold muons in total is estimated to be 14 % from the following
+        estimated efficiencies: 52 % for the muonium formation, 60 % for the vacuum yield, 60 % after the loss of muoniums
+        due to the decay, and 73 % for the laser ionization†. († We thank Cedric Zhang to provide us with those numbers.)'
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Per stopped
+        muon (stopping in the aerogel is not listed as a factor). The four factors are provided by C. Zhang and are recorded
+        with their explanations from his deck (SOURCE_*_BUDGET_WS2026_ZHANG); the 0.73 ionisation factor is 'pending updates'
+        per Zhang.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P1
+    methods:
+    - 0.52 x 0.60 x 0.60 x 0.73 = 0.137 (tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget)
+    check_ids:
+    - tests/scientific/test_workshop_decks.py::test_zhang_hline_chain_and_mutristan_budget
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_FORMATION_FRACTION_MUTRISTAN2022
+  name: Muonium formation efficiency in the μTRISTAN chain
+  symbol: f_Mu
+  subsystem: source
+  scenario: null
+  value: 0.52
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 52 % for the muonium formation
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). TRIUMF
+        measurement (Bakule et al. 2013) per Zhang; conflicts with Beare et al. 0.655 (CONF_MUONIUM_FORMATION_FRACTION).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Numbers provided by C. Zhang (footnote †, p.7); the 0.52 is the Bakule et al. 2013 MuSR value 0.52 ± 0.01 (SRC_ARXIV_1306_3810
+    p.3; SOURCE_MUONIUM_FORMATION_FRACTION_MUSR_BAKULE2013), 6.6 sigma below Beare et al.'s 0.655 ± 0.018 with both uncertainties
+    (CONF_MUONIUM_FORMATION_FRACTION).
+- parameter_id: SOURCE_MUONIUM_VACUUM_YIELD_MUTRISTAN2022
+  name: Muonium vacuum yield in the μTRISTAN chain (multi-layer target)
+  symbol: f_vac
+  subsystem: source
+  scenario: null
+  value: 0.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 60 % for the vacuum yield
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_MUONIUM_DECAY_SURVIVAL_MUTRISTAN2022
+  name: Fraction of muonium surviving decay until laser ionisation in the μTRISTAN chain
+  symbol: f_decay
+  subsystem: source
+  scenario: null
+  value: 0.6
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 60 % after the loss of muoniums due to the decay
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_LASER_IONISATION_EFF_MUTRISTAN2022
+  name: Laser ionisation efficiency in the μTRISTAN chain
+  symbol: eps_ion
+  subsystem: source
+  scenario: null
+  value: 0.73
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 73 % for the laser ionization
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Flagged
+        'pending updates' by its originator (Zhang p.20); current J-PARC projections are about 0.10-0.15 (CONF_LASER_IONISATION_EFFICIENCY).
+        Confidence medium for that reason.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SECOND_TARGET_SIZE_MUTRISTAN2022
+  name: Size of the second (re-ionisation) aerogel target (categorical statement)
+  symbol: null
+  subsystem: source
+  scenario: null
+  value: a_few_cm
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The ultra-cold muons spread over 10 m are in turn collected and transported to the second aerogel target
+        with the size of a few cm. There, the muonium is formed again and re-ionized by laser.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). No number
+        beyond 'a few cm'.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_SECOND_TARGET_EFFICIENCY_MUTRISTAN2022
+  name: Assumed ultra-cold muon production efficiency at the second target
+  symbol: eps_2
+  subsystem: source
+  scenario: null
+  value: 0.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The efficiency to produce the ultra-cold muons at the second muon target is assumed as 50 %. Such high
+        efficiency should be possible since a very thin target is used for the uniform muon energy.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). An assumption
+        ('is assumed as'), with no calculation cited. The two proton bunches are combined at this target by timing the laser.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_EFFICIENCY_FROM_STOPPED_PIONS_MUTRISTAN2022
+  name: Total efficiency to obtain ultra-cold muons from stopped pions (first x second target)
+  symbol: eps_1 x eps_2
+  subsystem: source
+  scenario: null
+  value: 0.068
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: In total, the efficiency to obtain the ultra-cold muons from the stopped pions is 6.8 %.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.137 x 0.5 = 0.068.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_PER_PROTON_MUTRISTAN2022
+  name: Ultra-cold muons per proton per pass through the production target (one turn of the pion production ring)
+  symbol: Y_USM/p
+  subsystem: source
+  scenario: null
+  value: 0.00055
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: Combining with the 50 % efficiency of the pion stopping and the pion production rate of 0.016/proton in
+        the previous subsection, we obtain the number of the ultra-cold muons as 5.5 × 10^−4 /proton.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Note the
+        text calls the 50 % 'efficiency of the pion stopping' here and 'efficiency of the transportation' on p.6 (same factor).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.016 x 0.5 x 0.068 = 5.4e-4, consistent with 5.5e-4.'
+  dependencies:
+  - SOURCE_PION_YIELD_PER_PROTON_MUTRISTAN2022
+  - SOURCE_PION_TRANSPORT_EFFICIENCY_MUTRISTAN2022
+  - SOURCE_USM_EFFICIENCY_FROM_STOPPED_PIONS_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_BUNCH_CHARGE_MUTRISTAN2022
+  name: Ultra-cold muon bunch charge per production-ring turn after combining the two proton bunches
+  symbol: Q_mu
+  subsystem: source
+  scenario: null
+  value: 7.2
+  unit: nC
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: This amounts to 7.2 nC ultra-cold muons/bunch by combining two bunches of 6.6 µC protons.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Same as
+        SOURCE_MU_BUNCH_CHARGE_MULHC (μLHC copy); Fig. 1 label '(7.2nC=>3.6nC)/μ' for the booster.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 5.5e-4 x 2 x 6.6 μC = 7.3 nC.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_BUNCH_POPULATION_MUTRISTAN2022
+  name: Ultra-cold muons per bunch implied by 7.2 nC
+  symbol: N_mu/bunch
+  subsystem: source
+  scenario: null
+  value: 45000000000.0
+  unit: particles
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analytical_estimate
+    extraction_method: computed_from_registry
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: 7.2 nC ultra-cold muons/bunch
+    derivation: SOURCE_USM_BUNCH_CHARGE_MUTRISTAN2022 / e = 7.2e-9 C / 1.602e-19 C = 4.49e10
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: Not printed in the μTRISTAN paper itself; the μLHC paper states the same conversion (SOURCE_MU_BUNCH_POPULATION_MULHC).
+    confidence: high
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies:
+  - SOURCE_USM_BUNCH_CHARGE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_MUTRISTAN2022
+  name: Ultra-cold muon production rate
+  symbol: R_USM
+  subsystem: source
+  scenario: null
+  value: 90000000000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: By taking into account 40 turns of the proton beam in the production ring at the 50 Hz operation, we have
+        9.0 × 10^13 muons/s.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). The LHμC
+        Forthomme set assumes 3e13 /s into the booster (SOURCE_MU_RATE_INTO_BOOSTER_WS2026_FORTHOMME); the DIS2026 set assumes
+        5 % of the μTRISTAN yields.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 4.5e10 x 40 x 50 Hz = 9.0e13 /s.'
+  dependencies:
+  - SOURCE_USM_BUNCH_POPULATION_MUTRISTAN2022
+  - SOURCE_PROTON_TARGET_HITS_MUTRISTAN2022
+  - SOURCE_RCS_REPETITION_RATE_MUTRISTAN2022
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_ESTIMATE_MIN_MUTRISTAN2022
+  name: Lower end of the introductory order-of-magnitude estimate of the ultra-cold μ+ production rate
+  symbol: R_USM,min
+  subsystem: source
+  scenario: null
+  value: 10000000000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 3
+      section: 1 Introduction
+      table_figure_or_equation: null
+      quotation: Considering a similar proton driver to that in J-PARC and using all of the protons for muon production,
+        the production rate of the ultracold positive muons is estimated to be at the level of 10^13−14 muons per second.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_ESTIMATE_MAX_MUTRISTAN2022
+  name: Upper end of the introductory order-of-magnitude estimate of the ultra-cold μ+ production rate
+  symbol: R_USM,max
+  subsystem: source
+  scenario: null
+  value: 100000000000000.0
+  unit: 1/s
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 3
+      section: 1 Introduction
+      table_figure_or_equation: null
+      quotation: the production rate of the ultracold positive muons is estimated to be at the level of 10^13−14 muons per
+        second
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_RATE_ENHANCEMENT_VS_JPARC_MUTRISTAN2022
+  name: Enhancement of the muon number relative to the J-PARC MLF experiments
+  symbol: G_vs,JPARC
+  subsystem: source
+  scenario: null
+  value: 100000.0
+  unit: dimensionless
+  uncertainty:
+    type: order_of_magnitude
+    note: source says 'O(10^5)'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: Compared with the J-PARC MLF experiments, the number of muons is enhanced by O(10^5). This is basically
+        due to the improvement in the efficiency to collect pions and muons.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 5.5e-4 / 1e-7 = 5.5e3 per proton, times 40 turns x 2 bunches = 4.4e5, i.e. O(1e5).'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_MLF_STOPPED_PIONS_PER_PROTON_MUTRISTAN2022
+  name: 'J-PARC MLF: stopped pions per proton in the 20 mm graphite target (comparison chain)'
+  symbol: Y_pi,stop(MLF)
+  subsystem: source
+  scenario: null
+  value: 0.0015
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: In the condition of the J-PARC MLF, the number of stopped pions in the graphite target of 20 mm length
+        is 1.5 × 10^−3 /proton.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_MLF_SURFACE_MUONS_PER_PROTON_MUTRISTAN2022
+  name: 'J-PARC MLF: usable surface muons per proton (pions stopped within 0.5 mm of the surface)'
+  symbol: Y_surf(MLF)
+  subsystem: source
+  scenario: null
+  value: 3.0e-05
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: Among them, those which stopped in the region of the thin surface of 0.5 mm can be used as the surface
+        muons, whose number is 3 × 10^−5 /proton.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Surface layer 0.5 mm.
+- parameter_id: SOURCE_JPARC_MLF_CAPTURE_SOLID_ANGLE_MUTRISTAN2022
+  name: 'J-PARC MLF: solid angle of the muon capture'
+  symbol: Omega_capture
+  subsystem: source
+  scenario: null
+  value: 108
+  unit: msr
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: The solid angle to cover the muon capture is 108 mSr, that reduces the number to 3 × 10^−7 /proton, and
+        1/3 of them can be transported to the experimental site.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_MLF_CAPTURED_MUONS_PER_PROTON_MUTRISTAN2022
+  name: 'J-PARC MLF: captured surface muons per proton'
+  symbol: Y_capt(MLF)
+  subsystem: source
+  scenario: null
+  value: 3.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: that reduces the number to 3 × 10^−7 /proton
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 3e-5 x 108 msr / (4π sr) = 2.6e-7, consistent with 3e-7.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_JPARC_MLF_TRANSPORT_FRACTION_MUTRISTAN2022
+  name: 'J-PARC MLF: fraction of captured muons transported to the experimental site'
+  symbol: f_transport(MLF)
+  subsystem: source
+  scenario: null
+  value: 0.333
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: and 1/3 of them can be transported to the experimental site
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 1/3 stored as 0.333.
+- parameter_id: SOURCE_JPARC_MLF_MUONS_PER_PROTON_MUTRISTAN2022
+  name: 'J-PARC MLF: muons usable in the experiment per proton'
+  symbol: Y_mu(MLF)
+  subsystem: source
+  scenario: null
+  value: 1.0e-07
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 7
+      section: 2.2 Surface muon production and cooling
+      table_figure_or_equation: null
+      quotation: In total, the number of muons which can be used in the experiment is 1 × 10^−7 /proton.
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC MLF present-configuration number quoted by the μTRISTAN paper for comparison (Section 2.2); analogous
+        technology reference, not a μTRISTAN design value. Surface muons delivered, before any cooling.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_USM_NORM_EMITTANCE_MUTRISTAN2022
+  name: Normalised emittance of the ultra-cold μ+ beam provided by the technology (quoted from the g-2/EDM design [14])
+  symbol: eps_n
+  subsystem: source
+  scenario: null
+  value: 4
+  unit: mm mrad
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 8
+      section: 2.4 Main ring and the luminosity
+      table_figure_or_equation: null
+      quotation: By the ultra-cold muon technology, one can obtain the normalized emittance, βγ ε, of the µ+ beam to be
+        4 mm mrad [14].
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: 'μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is ''based on the μTRISTAN proposal'' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Also p.3:
+        ''The ultra-cold technology provides the normalized emittance of the µ+ beam to be of 4 mm mrad [14]''. Ten times
+        the 0.3-0.4 π mm mrad of the g-2/EDM design and of the 2024-2026 measurements (SOURCE_USM_NORM_EMITTANCE_*); whether
+        this is a total or an rms emittance is not stated. Source-output quantity recorded here; the ring-level consequences
+        (420 nm mrad at 1 TeV, beam sizes) belong to the acceleration/machine group.'
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Confidence medium: emittance definition (rms vs. total, per plane) not stated.'
+- parameter_id: MACHINE_MUON_POLARISATION_MUTRISTAN2022
+  name: μ+ beam polarisation assumed by μTRISTAN (with a longitudinal field of order 0.3 T during muonium formation)
+  symbol: P_mu
+  subsystem: machine
+  scenario: null
+  value: 0.8
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: Under the magnetic field of order 0.3 T in the longitudinal direction, the spin of µ+ is maintained in
+        the formation of the muonium, and a highly polarized muon beam can be extracted after the laser ionization. Although
+        the understanding of the disturbance of the beam emittance by the magnetic field seems to require more study, we
+        assume in this work that Pµ+ = 0.8 can be obtained.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). An assumption
+        ('we assume'), with the emittance disturbance by the field flagged as requiring more study. The LHμC Forthomme beam
+        set assumes 0.5 (MACHINE_MUON_POLARISATION_WS2026_FORTHOMME); DIS2026 says only 'high polarisation ... might also
+        be feasible' (SOURCE_MU_POLARISATION_FEASIBILITY_DIS2026).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: 'Confidence medium: explicitly an assumption.'
+- parameter_id: SOURCE_MUON_POLARISATION_WORST_CASE_MUTRISTAN2022
+  name: Worst-case μ+ polarisation without the longitudinal field (two muonium formations, 50 % each)
+  symbol: P_mu,min
+  subsystem: source
+  scenario: null
+  value: 0.25
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: At worst, without the longitudinal magnetic field, the formation of the muonium still leaves the 50 % polarization
+        at each muonium production as the | + +⟩ muonium states maintains the muon spin while | + −⟩ states undergo the
+        spin oscillation. The muonium productions at two targets would reduce the polarization to Pµ+ = 0.5^2 = 0.25.
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: 'Audit arithmetic: 0.5^2 = 0.25.'
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: '''The difference between Pµ+ = 0.8 and 0.25 at µ+e− colliders results in 30 % decrease in the cross sections of
+    the WW fusion process'' (physics consequence, recorded by the physics group if needed).'
+- parameter_id: SOURCE_MUON_POLARISATION_PER_MUONIUM_FORMATION_MUTRISTAN2022
+  name: Polarisation retained per muonium formation without a longitudinal field
+  symbol: P_per,formation
+  subsystem: source
+  scenario: null
+  value: 0.5
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: the formation of the muonium still leaves the 50 % polarization at each muonium production
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source). Same hyperfine
+        argument as Beare et al. p.3 ('Typically 50% of the muon beam's polarization is lost').
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_POLARISATION_LONGITUDINAL_FIELD_MUTRISTAN2022
+  name: Longitudinal magnetic field assumed to preserve the muon spin during muonium formation
+  symbol: B_long
+  subsystem: source
+  scenario: null
+  value: 0.3
+  unit: T
+  uncertainty:
+    type: order_of_magnitude
+    note: source says 'of order 0.3 T'
+  allowed_range: null
+  provenance:
+    status: imported_related
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: Under the magnetic field of order 0.3 T in the longitudinal direction, the spin of µ+ is maintained in
+        the formation of the muonium
+    derivation: null
+    applicability:
+      category: design_variant
+      scenario: null
+      explanation: μTRISTAN conceptual-design value (Hamada, Kitano, Matsudo, Takaura, Yoshida, PTEP 2022 053B02; RELATED_MACHINE).
+        The LHμC source chain is 'based on the μTRISTAN proposal' (DIS2026 proceedings, Fig. 2), so this is the imported
+        design variant the LHμC scales from (SOURCE_MU_YIELD_FRACTION_OF_MUTRISTAN_DIS2026 = 5 %). Booster/main-ring values
+        of the same paper are recorded by the acceleration group (_MUTRISTAN2022 ids outside parameters/source).
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: null
+- parameter_id: SOURCE_G2_POLARISATION_TARGET_MUTRISTAN2022
+  name: J-PARC g-2/EDM design polarisation target quoted by μTRISTAN (lower bound)
+  symbol: P_mu(g-2)
+  subsystem: source
+  scenario: null
+  value: 0.9
+  unit: dimensionless
+  uncertainty:
+    type: not_stated
+    note: lower bound ('> 0.9')
+  allowed_range: null
+  provenance:
+    status: analogous
+    extraction_method: manual_text_read
+    source:
+      source_id: SRC_ARXIV_2201_06664
+      title: μTRISTAN
+      author_or_org: Y. Hamada, R. Kitano, R. Matsudo, H. Takaura, M. Yoshida (KEK)
+      url: https://arxiv.org/abs/2201.06664
+      date: '2022-04-21'
+      version: arXiv:2201.06664v2
+      page: 10
+      section: 2.6 Beam polarizations
+      table_figure_or_equation: null
+      quotation: The design of the muon g−2 experiment at J-PARC aims at the polarization of Pµ+ > 0.9 [14].
+    derivation: null
+    applicability:
+      category: analogous
+      scenario: null
+      explanation: J-PARC g-2/EDM design target (Abe et al. PTEP 2019 053C02) as quoted; analogous technology.
+    confidence: medium
+    assumption_id: null
+  validation:
+    level: P0
+    methods: []
+    check_ids: []
+    notes: ''
+  dependencies: []
+  date_added: '2026-10-28'
+  responsible_module: parameters/source
+  notes: Lower bound.
