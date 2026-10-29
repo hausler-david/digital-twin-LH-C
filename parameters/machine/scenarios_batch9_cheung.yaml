@@ -1,0 +1,173 @@
+# Scenarios for Cheung & Wang 2021 (SRC_ARXIV_2101_10476, arXiv:2101.10476v2), batch 9, extraction group G13_CHEUNG2021 (2026-10-28).
+# Schema: schemas/machine.schema.json. No numbers in the slots: every role references a record in
+# parameters/physics_programme/mup_physics_cheung2021.yaml; unknown_roles lists every machine parameter the paper does not give (it gives
+# only beam energies, sqrt(s), ASSUMED peak luminosities and a 1e7 s/year x 10 years benchmark). machine OTHER: these are mu- p phenomenology
+# set-ups, not an LHmuC (mu+ p) design and not the muLHC / MuIC designs. Status 'partially_reported' (verifier G13, 2026-10-28; the
+# extractor had 'reported'): the paper prints only beam energies, sqrt(s), assumed peak luminosities and the run-time benchmark, 35 machine
+# roles are unknown, and integrated_luminosity_per_year is an analytical_estimate of this extraction, not a printed value (same convention
+# as LHMUC-DIS2026-1TEV, MUIC-ACOSTA2022-MUIC2 and LHMUC-WS2026-FORTHOMME).
+scenarios:
+- scenario_id: CHEUNG2021-MUP1-MUMINUS-P
+  label: 'Cheung & Wang 2021 ''μp-1'': 1 TeV μ− on 7 TeV protons (√s 5.3 TeV, assumed 1e33 cm^-2 s^-1, 0.1 ab^-1), μ−p phenomenology
+    set-up'
+  description: 'Set-up ''μp-1'' of arXiv:2101.10476v2 (Table I, Sec. II): a 1 TeV μ− beam on the 7 TeV proton beam (''in agreement with
+    the HL-LHC''), √s 5.3 TeV, an ASSUMED peak luminosity of 1e33 cm^-2 s^-1 (''realistic estimates … should be at the order of 10^33''),
+    1e7 s/year for 10 years giving 0.1 ab^-1. Used for VBF h → bb̄ (LHeC Delphes card), RPV λ′_21k and muon g−2 (C_T^μc) studies. Not
+    a machine design: no beam, optics, IR, source or detector parameters are given. The beam is μ− (Table I header E_μ−); LHμC collides
+    μ+, so although the beam energies coincide with LHMUC-DIS2026-1TEV, none of the physics numbers transfers to LHμC.'
+  machine: OTHER
+  design_version: arXiv:2101.10476v2 [hep-ph] (10 May 2021), Table I and Sec. II (phenomenology set-up; journal version Phys. Rev. D
+    103, 116009 not read)
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2101_10476
+  parameters:
+    proton_beam_energy: MACHINE_PROTON_ENERGY_MUP1_CHEUNG2021
+    muon_beam_energy: MACHINE_MUON_ENERGY_MUP1_CHEUNG2021
+    muon_beam_charge: MACHINE_MUON_CHARGE_CHEUNG2021
+    sqrt_s: MACHINE_SQRT_S_MUP1_CHEUNG2021
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_ASSUMED_MUP1_CHEUNG2021
+    operation_time_per_year: MACHINE_OPERATION_TIME_PER_YEAR_CHEUNG2021
+    operation_years: MACHINE_OPERATION_YEARS_CHEUNG2021
+    integrated_luminosity_per_year: MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_MUP1_CHEUNG2021
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_MUP1_CHEUNG2021
+    beam_energy_rationale: MACHINE_BEAM_ENERGY_RATIONALE_CHEUNG2021
+    detector_simulation_proxy: PHYS_TOOL_DELPHES_CHEUNG2021
+    generator_eta_acceptance: PHYS_HBB_PARTON_ETA_MAX_CHEUNG2021
+    vbf_higgs_xsec_ww: PHYS_VBF_HIGGS_XSEC_WW_MUP1_CHEUNG2021
+    vbf_higgs_xsec_zz: PHYS_VBF_HIGGS_XSEC_ZZ_MUP1_CHEUNG2021
+    higgs_yield: PHYS_HIGGS_YIELD_MUP1_CHEUNG2021
+    hbb_xsec_precision: PHYS_HBB_XSEC_PRECISION_MUP1_CHEUNG2021
+    hbb_coupling_precision: PHYS_HBB_COUPLING_PRECISION_MUP1_CHEUNG2021
+    rpv_lambda21k_exclusion_min: PHYS_RPV_LAMBDA21K_EXCLUSION_MIN_MUP1_CHEUNG2021
+    rpv_ptsum_thresholds: PHYS_RPV_PTSUM_THRESHOLDS_MUP1_CHEUNG2021
+    g2_background_xsec: PHYS_G2_BKG_XSEC_MUP1_CHEUNG2021
+    g2_signal_xsec_normalised: PHYS_G2_SIGNAL_XSEC_NORMALISED_MUP1_CHEUNG2021
+    g2_delta_amu_exclusion_limit: PHYS_G2_DELTA_AMU_LIMIT_MUP1_CHEUNG2021
+  unknown_roles:
+  - muon_bunch_population
+  - proton_bunch_population
+  - muon_bunches
+  - proton_bunches
+  - bunch_spacing
+  - collision_rate
+  - repetition_rate
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - beta_star_proton
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - muon_polarisation
+  - crossing_angle
+  - l_star
+  - ir_layout
+  - ip_location
+  - nozzle_opening_angle
+  - beam_induced_background_level
+  - detector_design
+  - main_ring_circumference
+  - main_ring_dipole_field
+  - proton_ring_design
+  - muon_source_scheme
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_lifetime_lab
+  - average_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: √s and L_int reproduced by tests/scientific/test_batch9_documents.py::test_cheung2021_table1_centre_of_mass_energies and
+    ::test_cheung2021_integrated_luminosity_from_assumed_peak; the physics roles carry their own levels (P1 for Δσ/σ (band), Δg_hbb/g_hbb
+    and the Higgs yield; P0 for the Table IV cells, whose audit reproduction is not a registered test). integrated_luminosity_per_year
+    is an analytical_estimate computed in this extraction (P0: the cited test asserts only the 10-year product). Every unknown
+    role is absent from the paper, not zero. The detector is an LHeC Delphes card (detector_simulation_proxy); there is no μp detector
+    design (detector_design is unknown). The μp-1 energies equal those of LHMUC-DIS2026-1TEV (MACHINE_MU_BEAM_ENERGY_DIS2026,
+    PROTON_BEAM_ENERGY_DIS2026), LHMUC-WP-BASELINE-1TEV and LHMUC-DIHIGGS-1TEV, but the charge differs from all three (μ− here, μ+
+    there), and the luminosity basis differs from LHMUC-DIS2026-1TEV (an assumed order-of-magnitude value here; an example parameter
+    set with beam parameters there, itself not a final specification).'
+- scenario_id: CHEUNG2021-MUP2-MUMINUS-P
+  label: 'Cheung & Wang 2021 ''μp-2'': 3 TeV μ− on 50 TeV protons (√s 24.5 TeV, assumed 1e34 cm^-2 s^-1, 1 ab^-1), μ−p phenomenology
+    set-up'
+  description: 'Set-up ''μp-2'' of arXiv:2101.10476v2 (Table I, Sec. II), ''supposed to be an upgrade of µp − 1'': a 3 TeV μ− beam on
+    a 50 TeV proton beam (''in agreement with the … FCC''), √s 24.5 TeV, an ASSUMED ''slightly optimistic'' peak luminosity of 1e34
+    cm^-2 s^-1, 1e7 s/year for 10 years giving 1 ab^-1. Same physics studies as μp-1. Not a machine design: no beam, optics, IR, source
+    or detector parameters are given. The beam is μ−; LHμC collides μ+, and no LHμC scenario has these energies.'
+  machine: OTHER
+  design_version: arXiv:2101.10476v2 [hep-ph] (10 May 2021), Table I and Sec. II (phenomenology set-up; journal version Phys. Rev. D
+    103, 116009 not read)
+  status: partially_reported
+  primary_source_ids:
+  - SRC_ARXIV_2101_10476
+  parameters:
+    proton_beam_energy: MACHINE_PROTON_ENERGY_MUP2_CHEUNG2021
+    muon_beam_energy: MACHINE_MUON_ENERGY_MUP2_CHEUNG2021
+    muon_beam_charge: MACHINE_MUON_CHARGE_CHEUNG2021
+    sqrt_s: MACHINE_SQRT_S_MUP2_CHEUNG2021
+    peak_luminosity: MACHINE_PEAK_LUMINOSITY_ASSUMED_MUP2_CHEUNG2021
+    operation_time_per_year: MACHINE_OPERATION_TIME_PER_YEAR_CHEUNG2021
+    operation_years: MACHINE_OPERATION_YEARS_CHEUNG2021
+    integrated_luminosity_per_year: MACHINE_INTEGRATED_LUMINOSITY_PER_YEAR_MUP2_CHEUNG2021
+    integrated_luminosity_10yr: MACHINE_INTEGRATED_LUMINOSITY_MUP2_CHEUNG2021
+    beam_energy_rationale: MACHINE_BEAM_ENERGY_RATIONALE_CHEUNG2021
+    detector_simulation_proxy: PHYS_TOOL_DELPHES_CHEUNG2021
+    generator_eta_acceptance: PHYS_HBB_PARTON_ETA_MAX_CHEUNG2021
+    vbf_higgs_xsec_ww: PHYS_VBF_HIGGS_XSEC_WW_MUP2_CHEUNG2021
+    vbf_higgs_xsec_zz: PHYS_VBF_HIGGS_XSEC_ZZ_MUP2_CHEUNG2021
+    higgs_yield: PHYS_HIGGS_YIELD_MUP2_CHEUNG2021
+    hbb_xsec_precision: PHYS_HBB_XSEC_PRECISION_MUP2_CHEUNG2021
+    hbb_coupling_precision: PHYS_HBB_COUPLING_PRECISION_MUP2_CHEUNG2021
+    rpv_lambda21k_exclusion_min: PHYS_RPV_LAMBDA21K_EXCLUSION_MIN_MUP2_CHEUNG2021
+    rpv_ptsum_thresholds: PHYS_RPV_PTSUM_THRESHOLDS_MUP2_CHEUNG2021
+    g2_background_xsec: PHYS_G2_BKG_XSEC_MUP2_CHEUNG2021
+    g2_signal_xsec_normalised: PHYS_G2_SIGNAL_XSEC_NORMALISED_MUP2_CHEUNG2021
+    g2_delta_amu_exclusion_limit: PHYS_G2_DELTA_AMU_LIMIT_MUP2_CHEUNG2021
+  unknown_roles:
+  - muon_bunch_population
+  - proton_bunch_population
+  - muon_bunches
+  - proton_bunches
+  - bunch_spacing
+  - collision_rate
+  - repetition_rate
+  - muon_norm_emittance
+  - proton_norm_emittance
+  - sigma_x_ip
+  - sigma_y_ip
+  - beta_x_star_muon
+  - beta_y_star_muon
+  - beta_star_proton
+  - muon_bunch_length
+  - proton_bunch_length
+  - muon_energy_spread
+  - muon_polarisation
+  - crossing_angle
+  - l_star
+  - ir_layout
+  - ip_location
+  - nozzle_opening_angle
+  - beam_induced_background_level
+  - detector_design
+  - main_ring_circumference
+  - main_ring_dipole_field
+  - proton_ring_design
+  - muon_source_scheme
+  - muon_cooling
+  - muon_acceleration_chain
+  - muon_lifetime_lab
+  - average_luminosity
+  - wall_plug_power
+  - cost
+  geometry_fidelity: G0
+  validation_level: P1
+  notes: 'P1: √s and L_int reproduced by tests/scientific/test_batch9_documents.py::test_cheung2021_table1_centre_of_mass_energies and
+    ::test_cheung2021_integrated_luminosity_from_assumed_peak; the physics roles carry their own levels (P1 for Δσ/σ (band), Δg_hbb/g_hbb
+    and the Higgs yield; P0 for the Table IV cells, whose audit reproduction is not a registered test). integrated_luminosity_per_year
+    is an analytical_estimate computed in this extraction (P0: the cited test asserts only the 10-year product). Every unknown
+    role is absent from the paper, not zero. The detector is an LHeC Delphes card (detector_simulation_proxy); there is no μp detector
+    design (detector_design is unknown).'

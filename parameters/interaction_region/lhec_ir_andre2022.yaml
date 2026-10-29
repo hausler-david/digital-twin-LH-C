@@ -222,9 +222,9 @@ parameters:
     check_ids:
     - tests/scientific/test_batch7_documents.py::test_andre2022_table4_luminosity_with_hl_lhc_proton_parameters_recorded_band
     notes: 'Band check only, not a reproduction: with HL-LHC nominal protons (2.2e11, ε_n 2.5 µm; NOT stated in the paper),
-      the Table 2 electron beam and β* 10.0/10.9 cm the naive formula gives ≈ 0.75 × 8.2e33 (test asserts 0.65–0.85). CAUTION:
-      the test docstring reads the Fig. 19 header β* values as x/y, whereas the header subscripts are p and e (IR_BETA_STAR_PROTON_ANDRE2022
-      notes).'
+      the Table 2 electron bunch charge and spacing, and the proton β*_p = 10.0 cm of the Fig. 19 header in both planes
+      (IR_BETA_STAR_PROTON_FIG19_ANDRE2022; electron beam matched to the proton size), the naive formula gives ≈ 0.80 × 8.2e33
+      (test asserts 0.65–0.85). The test was corrected on 2026-10-29; it first read the header values β*_p and β*_e as x/y.'
   dependencies: []
   date_added: '2026-10-28'
   responsible_module: parameters/machine
