@@ -30,7 +30,14 @@
           "discovered_by_queries": {"type": "array", "items": {"type": "string"}},
           "notes": {"type": ["string", "null"]}
         },
-        "required": ["source_id", "title", "source_type", "category", "url", "access_date", "access", "relevance"]
+        "required": ["source_id", "title", "source_type", "category", "url", "access_date", "access", "relevance"],
+        "allOf": [
+          {"if": {"properties": {"access": {"const": "fetched_text"}}, "required": ["access"]},
+           "then": {"required": ["archived_file", "sha256", "version", "arxiv_id"],
+                    "properties": {"archived_file": {"type": "string", "pattern": "^references/_local/SRC_[A-Z0-9_]+/\\S+"},
+                                   "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+                                   "version": {"type": "string"}, "arxiv_id": {"type": "string"}}}}
+        ]
       }
     }
   },

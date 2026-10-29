@@ -1,6 +1,7 @@
 # LHμC-VirtualLab — Uncertainty policy
 
-**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§2.1, §8a; dated notes in §1, §6–§8) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§2.1, §8a; dated notes in §1, §6–§8;
+§7 `fetched_text` note) ·
 **Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status:** policy. It fixes how uncertainty is represented, propagated
 and reported from Milestone 2 onwards; on 2026-10-28 only the representation (§1–§2) is
@@ -270,6 +271,15 @@ class — LHeC L* = 15 m and β*_p = 10 cm (`SRC_ARXIV_2201_02436` p.16), the IM
 (`SRC_ARXIV_2510_27437` pp.65–66), the J-PARC chain (Abe 2019, Aritome 2024), the HNL and 2HDM+VLQ
 papers excepted (still blocked). They enter as read comparators with their own provenance; the
 Q1A gradient, the J-PARC design rate and the HL-LHC bunch counts and emittance remain snippet-level.
+
+*Added 2026-10-29 (owner decision, `docs/internet_research_protocol.md` §5a):* a `fetched_text` source
+(read in full through the alphaXiv connector, no page images) is not in the class of items 1–4: it
+backs the statuses its category admits, and item 3 does not apply, so its values keep the uncertainty
+the text states (a value the delivered text does not render unambiguously is `unknown`). Only the
+confidence is capped at `medium`, and results that use it list it as `fetched_text`, "not checked
+against page images" (`CLAUDE.md` §6). When a PDF of the same version is read, item 4 becomes a
+re-check against the page images: a changed value goes to `research/source_conflicts.yaml`, and the
+page-image reading replaces the connector reading.
 
 ---
 

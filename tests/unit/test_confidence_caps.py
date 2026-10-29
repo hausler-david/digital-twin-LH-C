@@ -25,3 +25,20 @@ def test_slides_and_unread_sources_are_capped_at_medium():
 def test_synthetic_is_capped_at_low_and_the_lowest_cap_wins():
     assert confidence_cap({"status": "synthetic"}, None)[0] == "low"
     assert confidence_cap({"status": "synthetic"}, UPLOADED_SLIDES)[0] == "low"
+
+
+FETCHED_TEXT_PAPER = {"access": "fetched_text", "source_type": "arxiv_preprint", "category": "PEER_REVIEWED"}
+FETCHED_TEXT_PRIMARY = {"access": "fetched_text", "source_type": "arxiv_preprint", "category": "PRIMARY_LHMUC"}
+FETCHED_PDF = {"access": "fetched", "source_type": "arxiv_preprint", "category": "PEER_REVIEWED"}
+
+
+def test_fetched_text_is_capped_at_medium_although_read_in_full():
+    for prov, src in (({"status": "reported_lhmuc"}, FETCHED_TEXT_PRIMARY), ({"status": "imported_related"}, FETCHED_TEXT_PAPER)):
+        cap, why = confidence_cap(prov, src)
+        assert cap == "medium" and "fetched_text" in why
+
+
+def test_no_cap_for_a_fetched_pdf_and_unknown_access_fails_closed():
+    assert confidence_cap({"status": "imported_related"}, FETCHED_PDF) == (None, "")
+    assert confidence_cap({"status": "imported_related"}, {**FETCHED_PDF, "access": "some_new_mode"})[0] == "medium"
+    assert confidence_cap({"status": "synthetic"}, FETCHED_TEXT_PAPER)[0] == "low"

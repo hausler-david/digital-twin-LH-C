@@ -83,6 +83,10 @@ Rules (from `docs/validation_plan.md` §1, restated because they govern labellin
 4. A failing check resets the level to P0 and opens a risk-register entry until resolved.
 5. A snippet-only source cannot support any level above P0 for the quantity it reports, because
    the number itself is not verified (`CLAUDE.md` §1.5).
+6. *[2026-10-29:]* A `fetched_text` source (connector-delivered text, no page images;
+   `docs/internet_research_protocol.md` §5a) can support P1: arithmetic on the delivered digits, in a
+   test whose docstring names the access mode. A P2 target taken from it must first be confirmed
+   against a page image of the PDF of the same version.
 
 ---
 
@@ -187,7 +191,7 @@ is automatic on failure or on a dependency change (`stale: true` in dependents).
 | Step | Required artefacts | Blocking conditions |
 |---|---|---|
 | P0 → P1 | unit parse + closed-form check under `tests/scientific/` with stated tolerance; `validation.methods` names the test; check row in `registries/validation_registry.csv` (authored; to be created) | inputs not in the registry; tolerance not justified |
-| P1 → P2 | pre-registered tolerance; published target with `source_id`, page, quotation; immutable run record; human review noted | target number seen only as snippet; required software not installed (Geant4, ROOT, LHAPDF, FLUKA are **not** installed on 2026-10-28; MadGraph reachable via launchpad/GitHub; Xsuite, cpymad, pythia8mc, pyhf, pyg4ometry available from PyPI) |
+| P1 → P2 | pre-registered tolerance; published target with `source_id`, page, quotation; immutable run record; human review noted | target number seen only as snippet; required software not installed (Geant4, ROOT, LHAPDF, FLUKA are **not** installed on 2026-10-28; MadGraph reachable via launchpad/GitHub; Xsuite, cpymad, pythia8mc, pyhf, pyg4ometry available from PyPI); *2026-10-29:* target taken only from a `fetched_text` source and not yet confirmed against a page image (§3 rule 6) |
 | P2 → P3 | second independent code; two run records; agreement within stated tolerance; disagreement analysis | only one code available for the quantity |
 | P3 → P4 | archived measured dataset with licence; calibration record under `uncertainty/calibration/` | no dataset of the same kind of device |
 | P4 → P5 | LHμC operations data | requires an operating LHμC |

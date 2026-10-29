@@ -12,7 +12,7 @@
     "geometry_fidelity": {"type": "string", "enum": ["G0", "G1", "G2", "G3", "G4", "G5"], "description": "G0 visual placeholder; G1 parameterised conceptual; G2 physics-simulation geometry; G3 preliminary engineering CAD; G4 validated engineering; G5 as-built."},
     "validation_level": {"type": "string", "enum": ["P0", "P1", "P2", "P3", "P4", "P5"], "description": "P0 unverified; P1 dimensional/analytical checks; P2 published benchmark reproduced; P3 cross-checked with another code; P4 calibrated on prototype/beam data; P5 calibrated on LHμC operations."},
     "source_category": {"type": "string", "enum": ["PRIMARY_LHMUC", "OFFICIAL_CERN", "PEER_REVIEWED", "CONFERENCE_PROCEEDING", "OFFICIAL_SOFTWARE_DOCUMENTATION", "RELATED_MACHINE", "ANALOGOUS_TECHNOLOGY", "SECONDARY_SOURCE", "UNVERIFIED"]},
-    "access_mode": {"type": "string", "enum": ["uploaded", "fetched", "snippet_only", "blocked", "pending_fetch"], "description": "uploaded: file supplied by the project owner and read in full; fetched: downloaded and read in full; snippet_only: only search-engine snippets seen; blocked: fetch attempted and refused by network policy; pending_fetch: identified but not yet attempted."},
+    "access_mode": {"type": "string", "enum": ["uploaded", "fetched", "fetched_text", "snippet_only", "blocked", "pending_fetch"], "description": "uploaded: file supplied by the project owner and read in full; fetched: downloaded and read in full; fetched_text: full text delivered by the owner-authorised alphaXiv connector (get_paper_content with fullText) and read in full, with no PDF file and no page images; archived as the delivered text with its SHA-256; every record citing it is capped at confidence medium, must say 'not checked against page images' and may not be a figure read (owner decision 2026-10-29, docs/internet_research_protocol.md §5a); snippet_only: only search-engine snippets seen; blocked: fetch attempted and refused by network policy; pending_fetch: identified but not yet attempted."},
     "confidence": {"type": "string", "enum": ["high", "medium", "low", "none"]},
     "review_state": {"type": "string", "enum": ["extracted", "reviewed", "implementation_pending", "simulation_ready", "validated", "superseded", "pending_fetch"]},
     "applicability_category": {"type": "string", "enum": ["direct", "design_variant", "analogous", "screening_only", "superseded", "unresolved"]},
@@ -49,10 +49,10 @@
         "url": {"type": ["string", "null"]},
         "date": {"type": ["string", "null"]},
         "version": {"type": ["string", "null"]},
-        "page": {"type": ["integer", "string", "null"]},
+        "page": {"type": ["integer", "string", "null"], "description": "PDF page (or slide) where the value is read. For access fetched_text: the integer PDF page of the saved page-tagged connector text (docs/internet_research_protocol.md §5a)."},
         "section": {"type": ["string", "null"]},
         "table_figure_or_equation": {"type": ["string", "null"]},
-        "quotation": {"type": ["string", "null"], "description": "Verbatim text or an exact table-cell transcription supporting the value."}
+        "quotation": {"type": ["string", "null"], "description": "Verbatim text or an exact table-cell transcription supporting the value. For access fetched_text: verbatim from the saved connector text under the closed normalisation list of docs/internet_research_protocol.md §5a (no exponent or super/subscript normalisation)."}
       },
       "required": ["source_id", "title", "page", "quotation"]
     },

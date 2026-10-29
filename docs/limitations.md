@@ -1,7 +1,7 @@
 # LHμC-VirtualLab — Limitations: what is not known and not verified
 
 **Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§10, plus dated notes in §1, §3–§5,
-§7–§9) · **Project phase:** Phase 0 (evidence and feasibility audit) ·
+§7–§9; connector notes in §3, §4, §6, §8) · **Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Companion documents:** `CLAUDE.md`, `docs/architecture.md`,
 `docs/scientific_scope.md`, `docs/reports/M1_addendum_uploaded_documents.md`.
 
@@ -166,6 +166,12 @@ pos.sissa.it, doi.org, journal and readthedocs hosts and all CERN hosts. Consequ
   The LHeC CDR, its 2020 update (`SRC_ARXIV_2007_14491`), André et al. 2025 (`SRC_ARXIV_2503_20475`),
   MuCol Report 5 (`SRC_ARXIV_2411_02966`) and the HL-LHC TDR (`SRC_URL_CERN_2020_010_HLLHC_TDR`)
   remain unread.]*
+- *[2026-10-29, owner decision: arXiv preprints can be read in full through the owner-authorised
+  alphaXiv connector. Such a source is `access: fetched_text`: not snippet-level (a `PRIMARY_LHMUC`
+  text may back `reported_lhmuc`), but not checked against page images and capped at `medium`
+  (`docs/internet_research_protocol.md` §5a). No paper had been read this way when this note was
+  written; documents not on arXiv (Indico slides not uploaded, CDS reports, the ORA thesis, CERN
+  GitLab, journals, PoS) still need an upload.]*
 
 ---
 
@@ -179,7 +185,7 @@ pos.sissa.it, doi.org, journal and readthedocs hosts and all CERN hosts. Consequ
 | LHAPDF, ROOT | not installed; PyPI routes stale or alpha | PDF convolutions and ROOT-based analyses not available |
 | AloHEP | not installed, not evaluated. **2026-10-29:** method paper read in full (`SRC_ARXIV_2610_09839`, `docs/tools/alohep_method_dagli2026.md`); public repository tag v2.0 (MIT) cloned read-only into an isolated folder, decks read as text, nothing compiled or run (`SRC_URL_GITHUB_TOBBETUYEF_ALOHEP`) | the μLHC and Nucleus-deck luminosities cannot be re-run with the original tool: the v2.0 repository contains **no μLHC or LHμC input deck** (`ME_043`), see §5.1 |
 | MAD-X / Xsuite / Bmad, CadQuery / build123d, pyg4ometry, pyhf, pymoo, botorch | installable from PyPI (versions listed in `docs/architecture.md` §11) but **not adopted, pinned or used**; the environment currently holds only `pyyaml, jsonschema, referencing, pint, numpy, scipy, pytest, ruff` | no lattice, geometry, statistics or optimisation code exists |
-| Web access | literature hosts blocked; `WebSearch` snippets only | see §3 |
+| Web access | literature hosts blocked; `WebSearch` snippets only. *[2026-10-29: unchanged in the container (repeated probe, `docs/internet_research_protocol.md` §7); arXiv full text can be read through the owner-authorised alphaXiv connector, which runs outside the container, as `fetched_text` (≤ `medium`, no page images).]* | see §3 |
 
 ---
 
@@ -320,6 +326,11 @@ model under which it was reproduced, and no LHμC luminosity is computed.
 
 Proposal records for these benchmarks (`theory/benchmarks/*/proposal.yaml`) must carry
 `access: pending_fetch` and `review_state: extracted` until the papers are read in full.
+*[2026-10-29: a reading through the owner-authorised alphaXiv connector counts as read in full; the
+proposal then carries `access: fetched_text`, as its registry entry must (validator), and then carries
+`review_state: extracted` until a human review. Correction: both proposal files currently carry
+`review_state: pending_fetch`, not `extracted`. arXiv:2610.28252 and arXiv:2610.17801 are
+candidates, to be confirmed by search.]*
 
 **Addendum 2026-10-29.** None of the five items above has changed: arXiv:2610.28252 and
 arXiv:2610.17801 are still `blocked` (`ME_049`, `ME_050`) and `effdihiggs-v2` is still not public
@@ -408,7 +419,10 @@ Added 2026-10-29:
     report says the lattices still need numerical verification), or that an LHμC booster lattice
     exists;
 17. a P1 label, or a confidence above the caps of `research/source_quality_policy.md` §4, is valid
-    without the test or the source quality behind it (the validator rejects both since 2026-10-29).
+    without the test or the source quality behind it (the validator rejects both since 2026-10-29);
+18. a value read only from connector-delivered text (`access: fetched_text`) **has been checked
+    against the page images** or carries a confidence above `medium`; or that the alphaXiv
+    connector, rather than the paper, is the source.
 
 The correct form of a result in any of these areas is: "cannot yet be evaluated because X, Y, Z
 are missing", with X, Y, Z named as parameter ids and listed in the missing-evidence register.

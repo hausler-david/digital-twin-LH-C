@@ -217,7 +217,10 @@ build simulation geometry; run transport codes only if they become available.
 - `theory/`: proposal importer, UFO handling (inspection per security policy), μ⁺p process
   builder, recasting engine; proposal records for benchmarks A (HNL, arXiv:2610.28252) and B
   (2HDM+VLQ, arXiv:2610.17801) **only after the papers are read in full**; until then they stay
-  `access: pending_fetch`, `review_state: extracted`, P0.
+  `access: pending_fetch`, `review_state: extracted`, P0. *[2026-10-29, correction: both proposal files carry
+  `review_state: pending_fetch`, not `extracted`.]* *[2026-10-29: "read in full" includes the
+  owner-authorised alphaXiv connector (`docs/internet_research_protocol.md` §5a); the records then carry
+  `access: fetched_text`, `review_state: extracted`, P0.]*
 - `cad/gdml/` simulation geometry from the M2 placeholders; `detector/geant4/`, `detector/bdsim/`
   **only if** Geant4 is installed (Benchmark 3.3: Geant4 vs BDSIM nozzle energy deposition, 10 %).
 - `analysis/`: selections and observables for the recast benchmarks; `pyhf 0.7.6` likelihoods.

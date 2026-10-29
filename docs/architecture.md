@@ -1,6 +1,7 @@
 # LHμC-VirtualLab — Repository architecture
 
-**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15; dated notes in §3, §5, §9, §11–§13) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15; dated notes in §3, §5, §9, §11–§13;
+connector notes in §3, §4, §6, §12, §15) ·
 **Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status of this document:** describes what exists on 2026-10-28 and what
 is planned; every planned item is marked *future*. Nothing here claims that a digital twin,
@@ -85,7 +86,12 @@ and by `tests/unit/test_registry_integrity.py`):
 - `dependencies`, `scenario`, `source_id`, scenario roles, conflict sources and proposal sources
   must resolve (referential integrity);
 - a source seen only as a search snippet (`access: snippet_only|blocked|pending_fetch`) caps the
-  parameter's `confidence` at `medium` (test `test_snippet_sources_capped_confidence`).
+  parameter's `confidence` at `medium` (test `test_snippet_sources_capped_confidence`);
+- *[2026-10-29:]* a source with `access: fetched_text` (text delivered by the owner-authorised
+  alphaXiv connector, no page images) caps the record's `confidence` at `medium`; the record's
+  `notes` must say "not checked against page images", its `page` must be an integer PDF page and
+  it may not be a figure read (tests in `tests/unit/test_fetched_text_rules.py`; rules in
+  `docs/internet_research_protocol.md` §5a; further rules in §15.2).
 
 CSV files are *views*: `tools/build_registries.py --check` fails the test-suite if a CSV is out of
 sync with the YAML. The YAML is the only place a number is edited.
@@ -106,10 +112,11 @@ that `"$ref": "provenance.schema.json#/$defs/..."` works across files. `tools/va
 
 | Schema file | Governs | Key content |
 |---|---|---|
-| `provenance.schema.json` | parameter records (`parameters/**/*.yaml`, top-level `parameters:`) and the **shared vocabulary** | `$defs`: `provenance_status` (8 values), `geometry_fidelity` G0–G5, `validation_level` P0–P5, `source_category` (9 values), `access_mode` (5 values), `confidence`, `review_state`, `applicability_category`, `fidelity_tier` A–E, `quantity`, `uncertainty`, `allowed_range`, `source_ref`, `provenance`, `validation`, `parameter` |
+| `provenance.schema.json` | parameter records (`parameters/**/*.yaml`, top-level `parameters:`) and the **shared vocabulary** | `$defs`: `provenance_status` (8 values), `geometry_fidelity` G0–G5, `validation_level` P0–P5, `source_category` (9 values), `access_mode` (5 values; 6 since 2026-10-29, + `fetched_text`), `confidence`, `review_state`, `applicability_category`, `fidelity_tier` A–E, `quantity`, `uncertainty`, `allowed_range`, `source_ref`, `provenance`, `validation`, `parameter` |
 | `machine.schema.json` | machine scenarios (`parameters/machine/scenarios_*.yaml`, top-level `scenarios:`) | `scenario_id`, `machine` ∈ {LHMUC, MULHC, MUTRISTAN, LHEC, HL_LHC, OTHER}, `status` ∈ {reported, partially_reported, derived, superseded, synthetic_scan}, `parameters` (role → parameter_id, **no numbers**), `unknown_roles`, `geometry_fidelity`, `validation_level` |
 | `assumption.schema.json` | synthetic/analogous assumption records (`parameters/assumptions/`) | `assumption_id`, `parameter_id`, `reason_required`, `search_summary`, `sources_inspected`, `reason_authoritative_value_missing`, `synthetic_model` (distribution, min, max, unit), `physical_basis`, `analogous_systems`, `affected_outputs`, `replacement_evidence`, `sensitivity_analysis` |
 | `source.schema.json` | `research/source_registry.yaml` | `source_id`, `category`, `access`, `publication_date`, `version`, `licence`, `archived_file`, `sha256`, `discovered_by_queries`, `unresolved_questions` |
+| `archived_metadata.schema.json` *(2026-10-29)* | `research/archived_metadata/<source_id>.json` | `source_id`, `local_file`, `committed_copy`, `licence`, `size_bytes`, `sha256`, `read_status`, `content_kind` ∈ {pdf, connector_text}; for `connector_text` also the connector calls, `delivered_version`, `version_evidence`, `page_tag_files` with their hashes, `instruction_scan` and `page_images: false` |
 | `conflict.schema.json` | `research/source_conflicts.yaml` | `conflict_id`, `affected_parameters`, `competing_values` (each with source), `possible_cause`, `selected_treatment`, `effect_on_simulations`, `required_future_evidence` |
 | `proposal.schema.json` | `theory/benchmarks/*/proposal.yaml` | `proposal_id`, `arxiv_id`, `source_id`, `access`, `review_state` (LLM-extracted content stays `extracted` until a human marks `reviewed`), `model`, `original_study`, `model_implementation`, `lhmuc_recasting`, `extraction` |
 | `material.schema.json` | `parameters/materials/*.yaml` | `material_id`, `composition`, `density`, `geant4_material_name`, `properties`, `provenance`, `used_by_components` |
@@ -190,6 +197,7 @@ not a beam-physics model.
       │  theory/importer (future): proposal.yaml, review_state=extracted            │
       ▼                                                                             │
 [Extraction]  manual page-level reads of uploaded PDFs → parameters/**/*.yaml        │
+      │       or of connector text (fetched_text, no page images; since 2026-10-29)  │
       │       every value: status, source_id, page, table, verbatim quotation        │
       │       conflicts → research/source_conflicts.yaml (kept, never averaged)      │
       ▼                                                                             │
@@ -337,8 +345,8 @@ Roles that recur in `unknown_roles` across scenarios (`beta_x_star_muon`, `muon_
 | 2026-10-28 | **pint for units** (`lhmuc/units.py`), SI internally, explicit conversion at tool boundaries; collider-specific units (`fb^-1`, `cm^-2 s^-1`, `mm mrad`, `T/m`) registered once in `UNIT_ALIASES`. | Every unit string is validated at load time; dimensional checks become part of P1 validation. |
 | 2026-10-28 | **Analytical audit arithmetic kept in `lhmuc/analytical.py` for Phase 0**, with tests in `tests/scientific/`; it moves to `physics/analytical/` in Milestone 2. | Phase 0 needs cross-checks of reported values (γ, τ_lab, √s, naive luminosity, Bρ, booster survival, hourglass) but no beam-physics model; keeping them in the core package avoids populating `physics/` prematurely. |
 | 2026-10-28 | **Fidelity (G) and validation (P) labels are independent** fields in every schema that describes an object or result. | A rendered placeholder must not look validated; an analytical check must not look like engineering. |
-| 2026-10-28 | **PDFs are git-ignored under `references/_local/` unless the licence permits redistribution.** Only arXiv:2610.35154v1 (CC BY-NC-ND 4.0 stated on its page 1) is committed, unmodified, under `references/primary/`; every archived file is described in `research/archived_metadata/*.json` with SHA-256, size, licence and read status. | Respect third-party licences while keeping provenance verifiable by hash. |
-| 2026-10-28 | **Snippet-only research mode** for web reconnaissance: arxiv.org, indico.cern.ch, cds.cern.ch, inspirehep.net, pos.sissa.it, doi.org, journals, readthedocs and all CERN hosts are blocked by the session network policy, so web evidence is `access: snippet_only` or `blocked`, may never back `reported_lhmuc`, is capped at confidence `medium`, and every unresolved item is written to the family's `_unresolved.md` under `research/_fragments/`. | Honest about what was actually read; the five uploaded documents are the only `uploaded` sources and the only basis for `reported_lhmuc`. |
+| 2026-10-28 | **PDFs are git-ignored under `references/_local/` unless the licence permits redistribution.** Only arXiv:2610.35154v1 (CC BY-NC-ND 4.0 stated on its page 1) is committed, unmodified, under `references/primary/`; every archived file is described in `research/archived_metadata/*.json` with SHA-256, size, licence and read status. | Respect third-party licences while keeping provenance verifiable by hash. *[2026-10-29: connector texts are archived the same way (git-ignored in `references/_local/<source_id>/`, SHA-256 of the delivered text) but never committed, whatever the licence.]* |
+| 2026-10-28 | **Snippet-only research mode** for web reconnaissance: arxiv.org, indico.cern.ch, cds.cern.ch, inspirehep.net, pos.sissa.it, doi.org, journals, readthedocs and all CERN hosts are blocked by the session network policy, so web evidence is `access: snippet_only` or `blocked`, may never back `reported_lhmuc`, is capped at confidence `medium`, and every unresolved item is written to the family's `_unresolved.md` under `research/_fragments/`. | Honest about what was actually read; the five uploaded documents are the only `uploaded` sources and the only basis for `reported_lhmuc`. *[2026-10-29: narrowed for arXiv preprints by the connector decision below.]* |
 | 2026-10-28 | **Reconnaissance is written per family into `research/_fragments/` and merged** by `tools/merge_research_fragments.py` into `research/search_log.csv` and `research/source_registry.yaml`; the five upload entries win on id collision. | Parallel research tasks cannot overwrite each other; the merge is reproducible. |
 | 2026-10-28 | **Parameter ids carry a document tag** (`_DIS2026`, `_MULHC`, `_NUCL`, `_WP`, `_DIHIGGS`). | The same physical quantity reported by different documents is kept as separate records (conflicts preserved, `CLAUDE.md` §1.6) and can be compared in `source_conflicts.yaml`. |
 | 2026-10-28 | **Code Apache-2.0, data/docs CC BY 4.0**, split by path (`LICENSE`, `LICENSE-DATA`). | Reuse of the evidence database with attribution; standard permissive licence for tooling. |
@@ -348,6 +356,7 @@ Roles that recur in `unknown_roles` across scenarios (`beta_x_star_muon`, `muon_
 | 2026-10-29 | **P1 requires a registered test** (commit `a8de068`): a P1 label must name an existing `test_*` function under `tests/` in `validation.methods` or `check_ids`. | 847 unbacked P1 labels lowered to P0; arithmetic in scratch scripts no longer earns a label. |
 | 2026-10-29 | **`parameters_extracted` synced from the records** (commit `68587c9`, `tools/sync_parameters_extracted.py`, test `test_source_parameters_extracted_in_sync`). | The source registry's list of records per source cannot drift from the parameter files. |
 | 2026-10-29 | **The AI4MuC "verifiable AI workflow" principles are adopted as process rules** (§15.1). | They state, for the muon-collider community, the same discipline CLAUDE.md requires; adopting them makes the mapping to repository mechanisms explicit and auditable. |
+| 2026-10-29 | **Owner-authorised alphaXiv connector; access mode `fetched_text`** (owner decision, `docs/internet_research_protocol.md` §5a). An arXiv paper can be read in full through the remote claude.ai connector; the delivered text is saved byte for byte in git-ignored `references/_local/<source_id>/` with its SHA-256 and is never committed or sent anywhere; no PDF, no page images; every citing or derived record is at most `medium` and says "not checked against page images"; `page` is the integer PDF page of the saved page-tagged text; `PRIMARY_LHMUC` texts may back `reported_lhmuc`. Network policy and allow-list unchanged. | Opens the arXiv part of the fetch backlog without circumventing the network policy, while keeping visible which values were never checked against page images. |
 
 ---
 
@@ -409,7 +418,7 @@ be checked" (pp.11–12).
 | 3. "Validate tails and failures. For Muon Collider problems, losses, rare backgrounds, high occupancies, quenches, breakdown, and unusual signal signatures may dominate the risk." | Validation of any loss, background, dose or breakdown model includes its tails; samples that symmetrise or clone events (as the IMCC BIB samples do, AI4MuC p.10) are out of domain for tail statements; missing breakdown data stay explicit unknowns. | `docs/uncertainty_policy.md` §4 (≥ 10⁴ samples for tails) and §8a; `SOURCE_COOLING_RF_BREAKDOWN_DATA_GIOVE2026` = null |
 | 4. "Track uncertainty and domain of validity. Fast models are most useful when users know where they can and cannot be trusted." | Every result carries its fidelity tier, P-label and domain of validity; a surrogate refuses queries outside its training hull; external codes are used only inside the regime their authors validated, unless refined and re-checked. | `docs/uncertainty_policy.md` §3.3; `CLAUDE.md` §1.10; `docs/tools/alohep_method_dagli2026.md` §7 (AloHEP hourglass validated for A ≲ 1.5, pinch for D_y ≤ 1.3) |
 | 5. "Preserve provenance. Geometry, lattice, software version, random seeds, detector conditions, timing conventions, and intended use are part of the data product." | Every number has a provenance record; every future run has an immutable run record with code commit, software versions, seed, assumption ids and dependencies; intended use is recorded as `applicability.category` (e.g. `screening_only`). | `schemas/provenance.schema.json`, `schemas/simulation_run.schema.json`; `uv run python -m lhmuc validate` |
-| 6. "Compare to trusted tools. AI methods should be benchmarked against established simulations, test-stand data, or expert-reviewed reduced models." | No P-label above P1 without a documented code run against a published number (P2) or a second code (P3); surrogates need a reference optics or transport run in the same record; LLM-extracted values are checked by an independent verifier against the page images and, where arithmetic allows, by P1 tests; the LLM never produces a physics number (`CLAUDE.md` §1.8). | `docs/validation_plan.md` §1, §3; `docs/software_inventory.md` §2; `research/_fragments/verify_*.md` |
+| 6. "Compare to trusted tools. AI methods should be benchmarked against established simulations, test-stand data, or expert-reviewed reduced models." | No P-label above P1 without a documented code run against a published number (P2) or a second code (P3); surrogates need a reference optics or transport run in the same record; LLM-extracted values are checked by an independent verifier against the page images (*2026-10-29:* for `fetched_text` sources, against the saved delivered text identified by its SHA-256; such records say "not checked against page images") and, where arithmetic allows, by P1 tests; the LLM never produces a physics number (`CLAUDE.md` §1.8). | `docs/validation_plan.md` §1, §3; `docs/software_inventory.md` §2; `research/_fragments/verify_*.md`; *2026-10-29:* `tools/check_fetched_text_quotes.py` |
 | 7. "Make the benchmark rerunnable. The community should be able to reproduce the validation plots without private knowledge." | Every P1 check is a pytest function that runs from the locked environment (`uv.lock`); a benchmark that depends on private inputs (`effdihiggs-v2`, the μLHC AloHEP decks) is reported as blocked, not approximated. | `tests/`; `docs/validation_plan.md` §3.1, §3.4; `ME_043`, `ME_051` |
 
 Agent-specific consequences adopted with them: every agent action leaves an artefact a human can
@@ -427,7 +436,8 @@ a tool that applies it and a unit test that pins it:
 1. **Confidence caps** (commit `03e0ab1`; `confidence_cap`). The mechanical rules of
    `research/source_quality_policy.md` §4 — `synthetic` at most `low`; `analogous`, `imported_related`
    from a `design_variant`, values read from unrefereed slides (`source_type: workshop_talk`) and
-   sources with `access` `snippet_only`, `blocked` or `pending_fetch` at most `medium`; the lowest
+   sources with `access` `snippet_only`, `blocked` or `pending_fetch` at most `medium` (*2026-10-29:* also
+   `fetched_text`, and any access other than `uploaded`/`fetched`, fail-closed); the lowest
    cap applies — and a record above its cap is an **error**. The conflict rule (every competitor of a
    conflict without a decided treatment at most `low`) is applied by hand, so every conflict record
    must name a treatment. Tool `tools/apply_confidence_caps.py`; test `tests/unit/test_confidence_caps.py`.
@@ -450,6 +460,14 @@ labels to P0 (327 in `a8de068`, 520 in `1252bf2`); logs in
 synthetic value) date from 2026-10-28 (commit `1f929d1`). Not covered by these rules, and noted
 here without a change: scenario-level `validation_level` labels (P1 on 33 of the 36 scenarios at
 `104073c`).
+
+*[2026-10-29, access mode `fetched_text` (owner decision; `docs/internet_research_protocol.md`
+§5a): the validator also requires `reported_lhmuc` to cite a source read in full (`uploaded`,
+`fetched` or `fetched_text`), rejects a `reported_lhmuc`, `imported_related` or `analogous` record
+that cites an `UNVERIFIED` source, checks material records like parameter records, passes the
+`medium` cap and the page-image note from inputs to derived records (`capped_inputs`), and checks
+connector-text archives, proposal access and conflict context against the registry; tests in
+`tests/unit/test_fetched_text_rules.py`, `test_confidence_caps.py` and `test_registry_integrity.py`.]*
 
 ### 15.3 Repository state after the uploads (commit `104073c`)
 

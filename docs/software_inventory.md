@@ -1,6 +1,6 @@
 # LHμC-VirtualLab — Software inventory
 
-**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15, dated notes in §8–§10) ·
+**Document date:** 2026-10-28 · **Addendum:** 2026-10-29 (§15, §16, dated notes in §1, §8–§10, §12) ·
 **Project phase:** Phase 0 (evidence and feasibility audit) ·
 **Owner:** David Hausler · **Status of this document:** inventory of the tools the master project
 prompt (§3) names for later milestones, with the version, licence and install route *seen on
@@ -28,6 +28,7 @@ explicit *must-not* column.
 | **P** | Probed in *this* session on 2026-10-28 by an HTTP request to a reachable host (PyPI JSON, raw.githubusercontent.com, conda-forge repodata HEAD). Not in the journal; not archived; no SHA-256 recorded; must be re-fetched and archived before it is pinned. | nowhere in the repository yet — listed in §8 as a to-do |
 | **L** | Environment fact stated by the lead for this session (e.g. "PyPI has xsuite 0.67"). Not independently verified here unless a **P** mark follows it. | this document only |
 | **E** | Read from the installed environment (`uv pip list`, `importlib.metadata`) in this session. | `uv.lock`, `pyproject.toml` |
+| **C** *(2026-10-29)* | Read from text delivered by the owner-authorised alphaXiv connector (§16) and saved byte for byte: `access: fetched_text`, text only, no file of the original, no page images, capped at confidence *medium* (`docs/internet_research_protocol.md` §5a). | `references/_local/<source_id>/` (git-ignored, never committed) and `research/archived_metadata/<source_id>.json` |
 | **not verified** | Not in the journal, not probed, not installed. The cell states only that the fact is unknown; it is never filled by recollection. | — |
 
 Software versions and licences are **not collider parameters** and never enter `parameters/**/*.yaml`;
@@ -45,6 +46,7 @@ they back only this inventory and future run metadata (`research/source_quality_
 | `conda.anaconda.org/conda-forge` (HEAD on `noarch/repodata.json.bz2`) | HTTP 200 (**P**) | channel answers, but **no conda/mamba binary is installed and no package was resolved**; conda-forge install routes below remain *unverified* |
 | `geant4.org`, `arxiv.org`, `herwig.hepforge.org` | proxy refused the CONNECT tunnel (HTTP 403) (**P**) | all CERN hosts, hepforge hosts, arXiv, INSPIRE, Indico, CDS, DOI resolvers and journal sites are blocked (lead's host list confirmed for the three probed) |
 | `fluka.cern` | not probed; blocked per lead and per journal (**J**) | FLUKA additionally requires registration "subject to approval" (**J**) |
+| *2026-10-29:* `arxiv.org`, `export.arxiv.org`, `doi.org`, `cds.cern.ch`, `indico.cern.ch`, `zenodo.org`, `inspirehep.net`, `api.semanticscholar.org`, `api.crossref.org` | refused on the repeated probe (**L**; `docs/internet_research_protocol.md` §7) | unchanged in the container; arXiv full text can be read only through the alphaXiv connector, which runs outside it (§16) |
 
 ---
 
@@ -330,6 +332,9 @@ LHAPDF upstream version and GPL-2 vs GPL-3 · hepdata.net terms · ROOT `pip` st
 OCCT official release page · opencascade.js maintenance · FreeCAD licence file and conda-forge · Cheetah LICENSE
 file · **BLonD, Bmad-X and Xopt: no evidence gathered at all** · arXiv abstract pages for all seven cited software papers
 (fetch-blocked; details are snippet-level).
+*[2026-10-29: the seven papers (arXiv:2310.00317, 2401.05815, 1808.10745, 1405.0301, 2312.05175, 1310.1921,
+1309.7223) can be read through the alphaXiv connector as `fetched_text` (§16), to be confirmed by search. Licence
+statements still need the tools' own licence files.]*
 
 ---
 
@@ -369,6 +374,7 @@ available), `research/source_quality_policy.md` §2 (category `OFFICIAL_SOFTWARE
 |---|---|
 | 2026-10-28 | First version: 40 table rows covering the 33 tools and tool groups named in master prompt §3 (including AloHEP, BLonD, Bmad-X, Xopt) plus geant4-pybind, pybdsim and the installed core stack; versions/licences quoted from the software-tools journal; session reachability probes; licence decisions list; drift/pinning policy. |
 | 2026-10-29 | §15 added: tools named in the uploaded documents of the Phase-0 addendum and batches 7–9, each with source id, page and record id. AloHEP corrected (§8, §10 item 5): the repository named in its paper is MIT-licensed (tag v2.0) and holds no μLHC deck. §9 re-checked. |
+| 2026-10-29 | §16 added: the owner-authorised alphaXiv connector, a remote research-access service (not installed, not executed in the container); mark **C** in §1.1, the repeated host probe in §1.2, a reachability note in §12. |
 
 ---
 
@@ -423,3 +429,15 @@ recalled). Mark **U** = read in an uploaded document (page cited), **F** = fetch
 None of these codes changes a value in `parameters/`; they back provenance and future run metadata
 only (`research/source_quality_policy.md` §2, category `OFFICIAL_SOFTWARE_DOCUMENTATION` where a
 software source is registered). Adoption of any of them requires the steps of §11.
+
+---
+
+## 16. Addendum 2026-10-29 — research-access services (remote, not installed, not executed in the container)
+
+Listed because CLAUDE.md §5 puts third-party terms here and every `fetched_text` source depends on the
+service. Nothing of it is installed or runs in the container. The binding usage rules are
+`docs/internet_research_protocol.md` §5a; this section only records the service.
+
+| Service | Tools seen in the session (23) | Version | Terms | Route | Status | Must not |
+|---|---|---|---|---|---|---|
+| **alphaXiv connector** (remote claude.ai connector, MCP) | allowed: `discover_papers` (leads only), `get_paper_content` with `fullText: true` (the only route to `fetched_text`), `answer_pdf_queries` (page-tagged PDF text, versioned arXiv ids `<id>v<n>` only: page attribution and version evidence only); not called: `get_paper_content` without `fullText` (AI-written report); banned: the other 20 (library, notes, feed, folder, follow and researcher tools, `read_files_from_github_repository`), and any tool not present on 2026-10-29 (e.g. `full_text_papers_search`, `embedding_similarity_search`, `agentic_paper_retrieval`) until the owner classifies it; calls audited with `tools/scan_connector_text.py transcripts` | not stated in the session; tool list as seen on 2026-10-29 | alphaXiv's terms on storing delivered text **not verified** (`www.alphaxiv.org` was blocked for WebFetch on 2026-10-28, `research/unresolved_searches.md`); a paper's licence only as stated in its delivered text | connected by the owner to their claude.ai account; runs outside the container; called only by the lead session; queries carry public bibliographic terms only | owner-authorised 2026-10-29; delivered texts stored privately in git-ignored `references/_local/<source_id>/`, never committed and not sent anywhere ("store only"); no connector credential in the repository | never cited as a source (the arXiv paper is, as `SRC_ARXIV_<id>` with `access: fetched_text`); a tool paper's delivered text is not a licence statement for the tool (§12) |

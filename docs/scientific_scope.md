@@ -471,6 +471,10 @@ confidence of those inputs.
 - **FCC-hh / HE-LHC-based 30 (15) TeV muon-hadron options and FCC-μe** mentioned in the DIS2026
   outlook (p.5–6): recorded as statements, not modelled.
 - **Web reconnaissance values** (`access: snippet_only`) as inputs to any computation.
+  *[2026-10-29: this covers `snippet_only`, `blocked` and `pending_fetch` sources. Connector-delivered text
+  (`access: fetched_text`: read in full, not checked against page images; `docs/internet_research_protocol.md`
+  §5a) is not reconnaissance: it may be an input at confidence ≤ `medium`, named as `fetched_text` wherever
+  the result is reported.]*
 
 ---
 
@@ -498,6 +502,8 @@ synthetic inputs will be visible as ranges with assumption records wherever they
 
 Full records with SHA-256, licence and unresolved questions: `research/source_registry.yaml`
 and `research/archived_metadata/`.
+*[2026-10-29: a source read through the owner-authorised alphaXiv connector gets the Access entry
+"fetched_text (alphaXiv connector; no page images)".]*
 
 **Added 2026-10-29** (all `access: uploaded`, read in full; git-ignored local copies unless the
 licence permits redistribution):

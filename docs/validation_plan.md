@@ -238,6 +238,11 @@ reproduced is a result to report (`CLAUDE.md` §1.10), not a parameter to tune.
   no collider simulation; validation would consist of reproducing the published partial widths at
   the benchmark points, which requires the full text (blocked).
 
+*[2026-10-29: both papers can be read in full through the owner-authorised alphaXiv connector
+(`access: fetched_text`, `docs/internet_research_protocol.md` §5a), to be confirmed by search. Such a
+reading can define the benchmarks, with values at confidence ≤ `medium`; the rule to reproduce the
+μ⁺μ⁻ limits before any μ⁺p recast is unchanged.]*
+
 ### 3.5 Statistics and optimisation (M4–M5)
 
 - pyhf 0.7.6 likelihoods: closure test against the asymptotic limits quoted in the di-Higgs deck
@@ -266,6 +271,11 @@ reproduced is a result to report (`CLAUDE.md` §1.10), not a parameter to tune.
 `tests/scientific/` holds `test_analytical_checks.py` and the five files of §2.0 (since `000f236` also
 `test_batch10_documents.py` and `test_imcc_mr7_reference.py`). `tests/geometry/`, `integration/`, `regression/`
 and `end_to_end/` are still empty.
+*[2026-10-29, connector route:]* `tests/unit/test_fetched_text_rules.py` (validator rules for `access: fetched_text`:
+cap `medium`, page-image note, integer page, no figure reads, cap inherited by derived records) and
+`test_fetched_text_tools.py` (saving and quotation tools), with the additions to `test_confidence_caps.py`,
+`test_schemas.py` and `test_registry_integrity.py`, are registered as `CHK_UNIT_FETCHED_TEXT_*` and related rows of
+`registries/validation_registry.csv`; they confer no P-level.
 
 **Tolerance rule.** A scientific or regression tolerance is set *before* the first run, with its
 justification written in the test docstring (as in §2). It may be tightened at any time. It is
@@ -345,6 +355,8 @@ this plan and are met as follows; none changes the P-ladder or rule 1 of §1.
   P3 a second independent code; surrogate or ML models are validated against such runs, never the
   reverse. Values extracted by LLM agents are checked by independent verifiers against the page
   images (`research/_fragments/verify_*.md`) and, where arithmetic allows, by P1 tests.
+  *[2026-10-29: for `fetched_text` sources the check is against the saved delivered text, identified by its
+  SHA-256, and the records say "not checked against page images" (`docs/internet_research_protocol.md` §5a).]*
 - *"Make the benchmark rerunnable."* — every check is a pytest function that reruns from the locked
   environment; a benchmark whose inputs are private (§3.1 decks, §3.4 `effdihiggs-v2`) is reported as
   blocked rather than approximated.

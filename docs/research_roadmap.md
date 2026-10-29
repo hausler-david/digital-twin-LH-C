@@ -1,7 +1,7 @@
 # LHμC-VirtualLab — Research roadmap (evidence-gathering tasks ranked by value of information)
 
 **Document date:** 2026-10-28 · **Revised:** 2026-10-29 (status lines on R1–R10, new ranking §3a,
-sequencing §4a) · **Project phase:** Phase 0 (M1) · **Owner:** David Hausler.
+sequencing §4a; connector reachability §3b) · **Project phase:** Phase 0 (M1) · **Owner:** David Hausler.
 
 **Purpose.** List the evidence that the platform still lacks, rank the tasks that would obtain it,
 and name the next action type for each. Companion to `docs/roadmap.md` (milestones),
@@ -16,6 +16,9 @@ Launchpad, GitHub and raw.githubusercontent are reachable. Every non-uploaded so
 capped at confidence `medium` (`CLAUDE.md` §1.5). The realistic routes to new evidence are
 (a) the owner uploading documents, (b) direct author contact, (c) a network allow-list change
 (`docs/internet_research_protocol.md` §8), (d) computation with tools that are installable here.
+*[2026-10-29, owner decision: a route (e) is added, the owner-authorised alphaXiv connector. It can
+deliver arXiv full texts as `fetched_text` (read in full, no page images, confidence ≤ `medium`;
+`docs/internet_research_protocol.md` §5a). Route (c) is not pursued.]*
 
 **Update 2026-10-29.** Route (a) delivered: the owner uploaded 29 documents (21 in the Phase-0
 addendum, 4 + 1 + 3 in batches 7–9), all read in full and verified record by record. The network
@@ -23,6 +26,8 @@ policy is unchanged — the literature hosts were still blocked on 2026-10-29 �
 evidence is the public AloHEP repository on GitHub. Allowing **arxiv.org, cds.cern.ch,
 indico.cern.ch, zenodo.org and doi.org** would let the lead fetch most of the remaining public items
 of §3a; the White Paper, the μLHC AloHEP input decks and the `effdihiggs-v2` model need the authors.
+*[2026-10-29: the five-host allow-list is not requested (owner decision). For arXiv-hosted items the
+connector stands in for it (§3b); items that are not on arXiv still need the owner or the authors.]*
 
 ---
 
@@ -125,7 +130,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   the Fig. 19 separation scheme, a 3 T solenoid, and a Table 4 luminosity that cannot be reproduced
   from the paper (`docs/limitations.md` §5.1). No Q1 gradient is given. Still unread: the CDR
   (`SRC_ARXIV_1206_2913`), the 2020 update (`SRC_ARXIV_2007_14491`), the ERL paper
-  (`SRC_ARXIV_2206_07678`) and André et al. 2025 (`SRC_ARXIV_2503_20475`) — §3a W5.
+  (`SRC_ARXIV_2206_07678`) and André et al. 2025 (`SRC_ARXIV_2503_20475`) — §3a W5. *[2026-10-29: see §3b.]*
 
 ### R4 — IMCC MuCol Milestone Reports No. 5 and No. 7: nozzle geometry and beam-induced background
 - **What.** `SRC_ARXIV_2411_02966` (Report No. 5, Preliminary Parameters) and
@@ -155,7 +160,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   committed; `docs/reports/M1_addendum_uploaded_documents.md` §A.8.]* Still unread:
   MuCol Report No. 5 (`SRC_ARXIV_2411_02966`), arXiv:2303.08533 and the IMCC BIB papers (§3a W10).
   The LHμC nozzle itself is now reported in workshop material (Kilic, Forthomme), so the IMCC values
-  are comparators rather than the basis of a synthetic band.
+  are comparators rather than the basis of a synthetic band. *[2026-10-29: see §3b.]*
 
 ### R5 — J-PARC ultra-slow muon source: ionisation efficiency and yield chain
 - **What.** J-PARC USM / μTRISTAN source papers: `SRC_ARXIV_2201_06664` (μTRISTAN),
@@ -213,7 +218,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   closed-orbit arithmetic pinned in `tests/scientific/test_mucol_m17_vffa.py`. No LHμC booster lattice
   exists in either document. Still unread: the thesis (`SRC_URL_ORA_OXFORD_TOPP_MUGGLESTONE_THESIS`),
   the acc-models-mc optics notebooks (CERN GitLab; `ACC_VFFA_OPTICS_NOTEBOOK_LOCATION_MUCOLM17`) and
-  the IPAC'21 paper — §3a W7.
+  the IPAC'21 paper — §3a W7. *[2026-10-29: see §3b.]*
 
 ### R7 — HL-LHC TDR proton tables (and LHC Design Report)
 - **What.** `SRC_URL_CERN_2020_010_HLLHC_TDR` (CERN-2020-010, Appendix A / Chapter 2 tables),
@@ -254,7 +259,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   UFO inspection records per `docs/security_policy.md` §3.
 - **Status 2026-10-29 — unchanged.** Both papers are still `blocked` and the UFO is still private
   (`ME_049`–`ME_051`). Cheung & Wang 2021 (`SRC_ARXIV_2101_10476`) is now read, but it is a μ⁻p
-  comparator, not one of these benchmarks. §3a W4.
+  comparator, not one of these benchmarks. §3a W4. *[2026-10-29: see §3b.]*
 
 ### R9 — AloHEP source code: reproduce 7.2×10³³ and 8.8×10³³
 - **What.** `SRC_URL_GITHUB_YEFETU_ALOHEP` (repository page fetched; README read; no licence,
@@ -305,7 +310,7 @@ Rank = U/E, ties broken by accessibility. Scores are in the table of §3; the de
   read in full; its "Verifiable AI workflows" principles (§11, pp.12–13) are adopted as process rules
   in `docs/architecture.md` §15, and its software section (p.11) names the MuonColliderSoft stack
   (Key4hep, EDM4hep, ACTS, Spack, CVMFS) now listed in `docs/software_inventory.md` §15. The
-  differentiable-tracking and surrogate literature is still not surveyed.
+  differentiable-tracking and surrogate literature is still not surveyed. *[2026-10-29: see §3b.]*
 
 ---
 
@@ -376,6 +381,35 @@ M17, Report No. 5). The PTEP erratum (W2) and the PoS paper (W10) additionally n
 hosts (academic.oup.com, pos.sissa.it), which doi.org only redirects to. The White Paper (W1),
 the μLHC AloHEP input decks (W2), the `effdihiggs-v2` model (W4) and the thesis and notebooks
 (W7, on ora.ox.ac.uk and gitlab.cern.ch) would still need the owner or the authors.
+*[2026-10-29: not requested (owner decision); see §3b.]*
+
+---
+
+## 3b. Reachability through the alphaXiv connector (2026-10-29)
+
+*[2026-10-29, owner decision:]* the owner-authorised alphaXiv connector can deliver arXiv full texts,
+which are registered as `access: fetched_text` (read in full, no PDF and no page images, confidence
+≤ `medium`; `docs/internet_research_protocol.md` §5a). The table states only what the connector could
+reach for each item of §3a; it records no reading. Each "yes", "partial" or "possible" is a candidate
+to be confirmed by search.
+
+| Rank | Missing-evidence rows | Connector | What it could deliver |
+|---|---|---|---|
+| W1 | `ME_001` | no | The White Paper is not public. A connector search can only confirm that it has not appeared on arXiv (a negative search-log row); `ME_001` stays with the owner and the authors. |
+| W2 | `ME_016`, `ME_043` (related: `ME_066`, `ME_054`) | partial, to be confirmed by search | Only a version of arXiv:2506.15445 later than the uploaded v2, if one exists: read as `fetched_text` under its own id `SRC_ARXIV_2506_15445_V<n>` and compared with v2, with a `CONF_` record for any difference. It may narrow `ME_016`, and `ME_054` only if the delivered text states licence or version; the uploaded v2 reading is not replaced. No for the erratum (journal host) and the AloHEP decks (authors): `ME_043` and `ME_066` are unchanged. |
+| W3 | `ME_008`, `ME_011`, `ME_012`, `ME_013` (related: `ME_014`, `ME_068`, `ME_069`) | no for the slides; possible for the cited texts, to be confirmed by search | The slides are on Indico, so Otani (`ME_008`) and Kamioka (`ME_069`) stay with the owner and the authors. Possible only if posted on arXiv: the texts the DIS2026 paper cites as "in preparation" or "in These Proceedings" (Piotrzkowski `ME_011`, `ME_013`; Tentori `ME_012`; Kotko and Khanpour `ME_014`, `ME_068`). Written by the proponents, they would be `PRIMARY_LHMUC` candidates and could back `reported_lhmuc` at ≤ `medium`. `SRC_URL_APS_PRAB_29_093201_NAKAZAWA` (an `ME_008` candidate) only if an arXiv version exists. |
+| W4 | `ME_049`, `ME_050`, `ME_051` | yes for the papers, to be confirmed by search; no for the UFO | arXiv:2610.28252 and arXiv:2610.17801 as `fetched_text`: identity and category from the delivered front matter (the step that lifts `UNVERIFIED`) and the definitions of benchmarks A and B; the proposals would then carry `access: fetched_text`, `review_state: extracted`, P0. Further arXiv candidates named in `ME_049`/`ME_050`: `SRC_ARXIV_2609_08808`, `SRC_ARXIV_2301_07117`, `SRC_ARXIV_2510_18390`, `SRC_ARXIV_2403_13021`. No for `effdihiggs-v2` (`ME_051`) and the UFO halves of `ME_049`/`ME_050`: the FeynRules hosts are blocked, and GitHub-hosted models are reached by git, not through the connector. |
+| W5 | `ME_046` (related: `ME_064`; comparators for `ME_018`, `ME_019`, `ME_020`) | yes, to be confirmed by search | arXiv:2007.14491 and arXiv:2503.20475, plus the other `ME_046` candidates arXiv:1206.2913 (CDR) and arXiv:2206.07678 (ERL). They could narrow `ME_046`, `ME_064` (the proton inputs behind the LHeC Table 4) and the Q1, crossing-angle and separator comparators of `ME_018`–`ME_020`, as `imported_related`/`analogous` at ≤ `medium`. |
+| W6 | `ME_044` | no | The HL-LHC TDR, LHC Project Report 627 and CERN-2005-006 are on CDS / e-publishing. At most comparators from arXiv compilations (`SRC_ARXIV_2206_00037`, an `ME_044` candidate; Bordry et al. arXiv:1810.13022, see W9), which never substitute for the TDR; `ME_044` stays open. |
+| W7 | `ME_027` (related: `ME_067`) | no | Neither the thesis (ORA) nor the acc-models-mc notebooks (gitlab.cern.ch), so `ME_067` stays open. Side literature only: `SRC_ARXIV_2011_10783` (vFFA optics design, an `ME_027` candidate) could narrow `ME_027` as `analogous`; IPAC'21 THPAB124 (`SRC_JACOW_IPAC2021_THPAB124`) only if an arXiv version exists. |
+| W8 | `ME_031` | possible, to be confirmed by search | Only if arXiv versions exist of Zhang et al. 2022 (NIM A 1042, 167443), the candidate source of the T = 322 K / D = 870 cm² s^-1 diffusion fit, or of another publication of that fit; never assumed. They could narrow `ME_031` and `CONF_MUONIUM_FORMATION_FRACTION`. |
+| W9 | — (candidates: `ME_042`, `ME_037`, or a new row) | residuals yes, to be confirmed by search | Kaya et al. was uploaded and read in batch 10; its tabulated inputs come from two unread arXiv papers: Delahaye et al. arXiv:1901.06150 (Table 3; the MAP average-luminosity definition, needed for the one- versus two-beam decay correction, `research/unresolved_searches.md`, batch 10) and Bordry et al. arXiv:1810.13022 (Tables 1–2). Neither has a source id yet (new `SRC_ARXIV_1901_06150`, `SRC_ARXIV_1810_13022`). |
+| W10 | `ME_026`, `ME_048` | yes for the arXiv papers, to be confirmed by search; no for PoS | arXiv:2105.09116 (Collamati et al.) and arXiv:2411.02966 (MuCol Report No. 5), plus the `ME_048` candidates arXiv:2303.08533 and arXiv:2407.12450 (IMCC Interim Report). They could narrow `ME_026` and `ME_048` as `analogous`. No for `SRC_URL_POS_ICHEP2024_819` and `SRC_URL_POS_ICHEP2022_063` unless arXiv versions exist. |
+
+Outside W1–W10, also candidates to be confirmed by search: the `ME_015` precursor arXiv:1509.04016
+(`SRC_ARXIV_1509_04016`); the seven software papers listed under the `software-tools` family of
+`research/unresolved_searches.md`; the R10 literature once surveyed; Bowring et al. 2020 (PRAB 23
+072001, `ME_059`) and Zhu et al. PRAB 28 (2025) 041003 only if arXiv versions exist.
 
 ---
 
@@ -415,7 +449,13 @@ parameter records added or corrected with verbatim quotations, conflicts recorde
    authors; W4's `effdihiggs-v2` terms; the Kraków slides of W3 if they are not on Indico.
 2. **Network allow-list:** arxiv.org, cds.cern.ch, indico.cern.ch, zenodo.org, doi.org; then fetch
    W3–W6 and W8–W10 in the order of §3a and run the fetch backlog of
-   `research/unresolved_searches.md`.
+   `research/unresolved_searches.md`. *[2026-10-29: not pursued (owner decision); for arXiv items the
+   connector route 2a replaces it.]*
+   - **2a. Connector route** *(2026-10-29, owner decision; the alphaXiv connector is loaded in the lead session
+     of that date)*: once the Step-0 gates G1–G7 of `docs/internet_research_protocol.md` §5a have passed, the
+     lead search-confirms each "yes", "partial" or "possible" item of §3b in the rank order of §3a (W2 version
+     check, W3 texts in preparation, W4, W5, W8, W9 residuals, W10), reads it with `get_paper_content`,
+     registers it as `fetched_text`, extracts, has it verified against the saved delivered text and folds it in.
 3. **Platform, no network:** finish the registry stage and the MR7 reference-table verification (both done on
    2026-10-29);
    prepare Benchmark 3.1 as a pre-registered test that runs AloHEP v2.0 (pinned commit, isolated
@@ -435,6 +475,8 @@ parameter records added or corrected with verbatim quotations, conflicts recorde
   policy change.
 - Obtaining the evidence does not by itself make the LHμC feasible or infeasible; it makes the
   question *evaluable* (`CLAUDE.md` §1.1, §1.10).
+- *[2026-10-29:]* Values from `fetched_text` sources (§3b) are read in full but not checked against page
+  images; they stay at confidence ≤ `medium` and their records say so (`docs/internet_research_protocol.md` §5a).
 
 ## 6. Change log
 
@@ -442,6 +484,7 @@ parameter records added or corrected with verbatim quotations, conflicts recorde
 |---|---|
 | 2026-10-28 | First version: ten tasks, scoring method, ranking table, sequencing. |
 | 2026-10-29 | Status lines on R1–R10 after the uploads of the Phase-0 addendum and batches 7–9; new ranking W1–W10 (§3a) headed by the White Paper and the μLHC erratum with the AloHEP input decks; host list for the allow-list request; sequencing §4a. The 2026-10-28 table of §3 and the list of §4 are kept as the record of the first ranking, each with a dated superseded note; the hosts needed beyond the five (academic.oup.com, pos.sissa.it, ora.ox.ac.uk, gitlab.cern.ch) are named in §3a. |
+| 2026-10-29 | Connector addendum (owner decision; `docs/internet_research_protocol.md` §5a): new §3b, the reachability of W1–W10 through the alphaXiv connector, each item to be confirmed by search (reachability only, no reading recorded); route (e) in the boundary conditions; the five-host allow-list not requested (§4a item 2) and the connector route as item 2a; dated notes in the header, the update paragraph, R3, R4, R6, R8, R10, §3a, §5 and §7. |
 
 ## 7. Sources cited
 
@@ -475,3 +518,5 @@ Added 2026-10-29 — uploaded and read in full: the Kraków decks `SRC_WS1681458
 `SRC_ARXIV_2411_02966`, `SRC_INDICO_1600007_6742086`, `SRC_ARXIV_2610_28252`, `SRC_ARXIV_2610_17801`.
 *[Verifier note 2026-10-29: `SRC_ARXIV_1407_8248` and `SRC_ARXIV_1905_05564` were uploaded and read in
 batch 10 (commit `ad5ac43`) after this list was written; no parameter record cites them yet.]*
+*[2026-10-29: sources read through the alphaXiv connector (`access: fetched_text`) will be listed here separately,
+with their version and "not checked against page images".]*

@@ -52,7 +52,10 @@ A synthetic value may be introduced **only** when all of the following hold:
    `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`, `SRC_WS_LEBOHO_KUMAR_DIHIGGS`) have been checked for the
    quantity, the result is written into `search_summary`, and the fetch attempts (including
    blocked hosts) are recorded. A value that *is* reported somewhere but has not yet been fetched is
-   `pending_fetch`/`unknown`, not synthetic.
+   `pending_fetch`/`unknown`, not synthetic. *[2026-10-29: for an arXiv paper, reading it in full through
+   the owner-authorised alphaXiv connector (`access: fetched_text`, `docs/internet_research_protocol.md`
+   §5a) counts as a fetch; where the connector is available, the lead searches it before a value is
+   declared synthetic.]*
 3. **No derivation exists.** The quantity cannot be computed from reported LHμC values by a
    documented formula (that would be `derived_lhmuc` or `analytical_estimate` with a `derivation`).
 4. **A physical basis for a band exists.** Bounds can be argued from physics, engineering practice
@@ -91,7 +94,9 @@ parameter must carry an allowed_range (no bare point values)").
    `access` outcome (`fetched`, `snippet_only`, `blocked`, `pending_fetch`) in the research logs
    (`research/_fragments/*_search_log.csv` on 2026-10-28; `research/search_log.csv` once merged).
    A `snippet_only` hit may inform the band but may never be the value itself and is capped at
-   confidence `medium` (`CLAUDE.md` §1.5).
+   confidence `medium` (`CLAUDE.md` §1.5). *[2026-10-29: the outcome may also be `fetched_text`. A
+   `fetched_text` value is a read value (confidence ≤ `medium`), not only a band input: it enters with the
+   status its category admits, like any value read in full.]*
 4. **Rule out derivation.** Write down why no formula from registry parameters gives the quantity
    (or, if one does, record an `analytical_estimate` instead and stop).
 5. **Establish the physical basis of the bounds.** Each bound must have a reason (kinematics,

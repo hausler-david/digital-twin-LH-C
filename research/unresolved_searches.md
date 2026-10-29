@@ -13,6 +13,9 @@ status and is capped at confidence `medium` (CLAUDE.md §1.5, `research/source_q
 parameter record that carries the provenance of each value. Competing values that were found are registered in
 `research/source_conflicts.yaml`; this file lists what could *not* be determined and what must be fetched once the
 network allows it.
+*[2026-10-29: when the first document is read in full through the owner-authorised alphaXiv connector
+(`access: fetched_text`, not checked against page images), a section "Resolved or narrowed by connector text" is
+added. It quotes those documents and names the record ids that carry each value, as the uploads section does.]*
 
 ## Network access blocked on 2026-10-28
 
@@ -60,6 +63,12 @@ them, so they appear here only so the allow-list request is complete.
 
 Status per source is kept in `research/source_registry.yaml` (`access: blocked | snippet_only | pending_fetch`);
 the per-family "Fetch backlog" sections below say what to extract from each page once it is reachable.
+
+*[2026-10-29: the probe was repeated (arxiv.org, export.arxiv.org, doi.org, cds.cern.ch, indico.cern.ch, zenodo.org,
+inspirehep.net, api.semanticscholar.org and api.crossref.org refused). The owner kept the allow-list unchanged and
+authorised instead the alphaXiv connector, which runs outside the container, for arXiv preprints: a paper read in full
+through it gets `access: fetched_text` (`docs/internet_research_protocol.md` §5a, §7). It is the only exception:
+`www.alphaxiv.org` above is not a WebFetch route, and documents that are not on arXiv still need an upload.]*
 
 ---
 
@@ -351,17 +360,20 @@ Still open (new):
   52 % formation fraction and for the 23.2 mg cm^-3 / 8.8 mm sample; Beer et al. 2014 contains none of them (its samples
   are 29 mg cm^-3, 7 mm), and Zhang's reference list does not include Bakule 2013 (the 0.52 matches it by value only). The sample matches Beare et al. 2020 p. 5; T and D appear only on the 2026 Zhang Kraków deck
   p. 7. Wanted: the publication that reports the fit (candidate: a Zhang et al. muonium-diffusion paper, cited by
-  Sakaki et al. 2026 as "Zhang et al. 2022").
+  Sakaki et al. 2026 as "Zhang et al. 2022"). *[2026-10-29: candidate for the alphaXiv connector if an arXiv version
+  exists (search first).]*
 - **Zhang et al. 2021 internal inconsistencies**: S2 surface-muon rate 2.4×10^5 (§2) vs 2.4×10^6 (§5, Table I);
   stopping 44.3 % (text) vs 0.467 (Table I); extraction 1.5e3/2.0e3 = 0.75 vs the stated 58.6 %. An erratum or the
   J-PARC S2 commissioning rate would settle the first.
 - **Definition of the MAP average luminosity** used by Kaya et al. as L_μμ (decay averaging over two beams, beam-beam
   enhancement, hourglass factor): Delahaye et al. arXiv:1901.06150 (blocked). Needed to turn the one-beam vs two-beam
   decay ratio (1.87–1.97, `tests/scientific/test_imcc_mr7_reference.py`) into a corrected μp number.
+  *[2026-10-29: candidate for the alphaXiv connector (search first).]*
 - **A μp luminosity calculation for the Kaya et al. options** with the 90 mm proton bunch (hourglass), one decaying
   beam and a beam-beam-limited ξ_p — a documented tool run (AloHEP or an own beam-beam code), not hand arithmetic.
 - Bordry et al. arXiv:1810.13022 (HL-LHC/HE-LHC/ERL60 tables quoted by Kaya et al. Tables 1-2): the HL-LHC ERL60 proton
   size 4.45 µm is 2.7 % above √(ε_N β*/γ) with the printed ε_N = 2 µm, β* = 7 cm.
+  *[2026-10-29: candidate for the alphaXiv connector (search first).]*
 - `SRC_ARXIV_2608_25374` (Shirotori et al. 2026, context only): the stated 85 % ↔ 90° CM emission point does not
   reproduce (two-body kinematics give 78.7 %); the T106 proposal (KEK/J-PARC-PAC 2025-39) behind the ±5 % momentum
   bite was not read.

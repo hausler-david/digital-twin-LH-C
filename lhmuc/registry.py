@@ -66,6 +66,7 @@ class Evidence:
     sources: dict[str, dict] = field(default_factory=dict)
     conflicts: dict[str, dict] = field(default_factory=dict)
     proposals: dict[str, dict] = field(default_factory=dict)
+    archives: dict[str, dict] = field(default_factory=dict)  # research/archived_metadata/<source_id>.json
     issues: list[Issue] = field(default_factory=list)
 
     # ------------------------------------------------------------------ helpers
@@ -103,6 +104,18 @@ def load_all(root: Path = REPO_ROOT) -> Evidence:
             ev.sources[sid] = s
     else:
         ev.warn("research/source_registry.yaml", "missing")
+    # ---- archived-file metadata (docs/internet_research_protocol.md §5a, §6)
+    arch_dir = root / "research" / "archived_metadata"
+    for path in sorted(arch_dir.glob("*.json")) if arch_dir.is_dir() else []:
+        rel = str(path.relative_to(root))
+        try:
+            doc = json.loads(path.read_text())
+        except json.JSONDecodeError as exc:
+            ev.error(rel, f"invalid JSON: {exc}")
+            continue
+        if _validate_doc(ev, "archived_metadata", doc, rel) and doc.get("source_id") != path.stem:
+            ev.error(rel, f"file name does not match its source_id {doc.get('source_id')}")
+        ev.archives[path.stem] = doc
     # ---- parameters (every yaml under parameters/ except assumptions, materials, scenarios)
     for path in sorted((root / "parameters").rglob("*.yaml")):
         rel = str(path.relative_to(root))
@@ -174,13 +187,25 @@ def p1_test_references(validation: dict) -> set[str]:
 
 CONFIDENCE_RANK = {"none": 0, "low": 1, "medium": 2, "high": 3}
 
+# Access modes (schemas/provenance.schema.json $defs/access_mode). Only a document read in full from its own file (a PDF
+# or slides with page images) is uncapped; fetched_text is read in full but only as connector-delivered text
+# (owner decision 2026-10-29, docs/internet_research_protocol.md §5a).
+FULL_PAGE_READ = ("uploaded", "fetched")
+TEXT_ONLY = ("fetched_text",)
+READ_IN_FULL = FULL_PAGE_READ + TEXT_ONLY
+NOT_READ_IN_FULL = ("snippet_only", "blocked", "pending_fetch")
+FETCHED_TEXT_NOTE = "not checked against page images"
+SOURCE_BACKED = ("reported_lhmuc", "imported_related", "analogous")
+
 
 def confidence_cap(prov: dict, source: dict | None) -> tuple[str | None, str]:
     """Lowest applicable confidence cap of research/source_quality_policy.md §4.
 
     Only the mechanical rules are applied here: synthetic values, status analogous, imported_related from a
-    design_variant, sources not read in full, and unrefereed slides. The conflict rule (low while a conflict has
-    no decided treatment) is applied by hand when a conflict record is written.
+    design_variant, sources not read in full with page images (fail closed: any access other than uploaded or fetched,
+    including fetched_text), and unrefereed slides. The conflict rule (low while a conflict has no decided treatment)
+    is applied by hand when a conflict record is written; the cap a derived record inherits from its inputs is applied
+    by cross_check (capped_inputs).
     Returns (cap, reason) or (None, "") when no cap applies.
     """
     caps: list[tuple[str, str]] = []
@@ -192,8 +217,11 @@ def confidence_cap(prov: dict, source: dict | None) -> tuple[str | None, str]:
     if status == "imported_related" and (prov.get("applicability") or {}).get("category") == "design_variant":
         caps.append(("medium", "imported_related from a design_variant"))
     if source:
-        if source.get("access") in ("snippet_only", "blocked", "pending_fetch"):
-            caps.append(("medium", f"source access {source.get('access')}"))
+        access = source.get("access")
+        if access in TEXT_ONLY:
+            caps.append(("medium", f"source access {access} (connector-delivered text, {FETCHED_TEXT_NOTE})"))
+        elif access not in FULL_PAGE_READ:
+            caps.append(("medium", f"source access {access}"))
         if source.get("source_type") == "workshop_talk":
             caps.append(("medium", "unrefereed slides"))
     if not caps:
@@ -210,6 +238,79 @@ def scenario_level_cap(ev: Evidence, scenario: dict) -> str:
     levels = [(ev.parameters[pid].get("validation") or {}).get("level", "P0")
               for pid in (scenario.get("parameters") or {}).values() if pid in ev.parameters]
     return min(levels, key=LEVEL_ORDER.index) if levels else "P0"
+
+
+PARAM_ID_RE = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
+
+
+def capped_inputs(ev: Evidence, pid: str) -> list[tuple[str, str]]:
+    """Inputs of a record (its dependencies, transitively, and the parameter or material ids named in its derivation)
+    whose cited source was not read in full with page images. A derived_lhmuc or analytical_estimate record inherits
+    their 'medium' cap (research/source_quality_policy.md §4), so a number read from connector text or a snippet cannot
+    gain confidence by passing through a formula. An id that a derivation merely mentions counts as an input too: this
+    over-caps, which is the safe direction."""
+    out: list[tuple[str, str]] = []
+    seen, todo = {pid}, [pid]
+    while todo:
+        rec = ev.parameters.get(todo.pop())
+        if rec is None:
+            continue
+        nxt = list(rec.get("dependencies") or [])
+        nxt += [t for t in PARAM_ID_RE.findall((rec.get("provenance") or {}).get("derivation") or "")
+                if t in ev.parameters or t in ev.materials]
+        for q in nxt:
+            if q in seen:
+                continue
+            seen.add(q)
+            todo.append(q)
+            inp = ev.parameters.get(q) or ev.materials.get(q) or {}
+            sid = ((inp.get("provenance") or {}).get("source") or {}).get("source_id")
+            access = (ev.sources.get(sid) or {}).get("access") if sid else None
+            if access is not None and access not in FULL_PAGE_READ:
+                out.append((q, access))
+    return out
+
+
+def _check_provenance(ev: Evidence, where: str, prov: dict, notes: str | None, cap_hint: str) -> None:
+    """Provenance rules shared by parameter and material records (research/source_quality_policy.md §3-§4,
+    docs/internet_research_protocol.md §5-§5a)."""
+    status = prov.get("status")
+    src = prov.get("source") or {}
+    sid = src.get("source_id")
+    source = ev.sources.get(sid) if sid else None
+    if sid and source is None:
+        ev.error(where, f"unknown source_id {sid}")
+    if status in SOURCE_BACKED and not src.get("quotation"):
+        ev.error(where, f"status {status} requires a source quotation")
+    if source is not None:
+        access = source.get("access")
+        if status == "reported_lhmuc":
+            if source.get("category") != "PRIMARY_LHMUC":
+                ev.error(where, "reported_lhmuc requires a PRIMARY_LHMUC source")
+            if access not in READ_IN_FULL:
+                ev.error(where, f"reported_lhmuc requires a source read in full (access {', '.join(READ_IN_FULL)}); "
+                                f"{sid} is {access}")
+        if status in SOURCE_BACKED and source.get("category") == "UNVERIFIED":
+            ev.error(where, f"status {status} cites UNVERIFIED source {sid}, which backs no status "
+                            "(research/source_quality_policy.md §3)")
+        has_note = FETCHED_TEXT_NOTE in (notes or "").lower()
+        if access in TEXT_ONLY:
+            if prov.get("extraction_method") == "manual_figure_read":
+                ev.error(where, f"{sid} is fetched_text (connector-delivered text, no page images): no figure reads")
+            if not has_note:
+                ev.error(where, f"a record citing the fetched_text source {sid} must say '{FETCHED_TEXT_NOTE}' in its notes")
+            page = src.get("page")
+            if not isinstance(page, int) or isinstance(page, bool) or page < 1:
+                ev.error(where, f"page must be the integer PDF page of the saved page-tagged text of {sid} "
+                                "(docs/internet_research_protocol.md §5a)")
+        elif has_note:
+            ev.warn(where, f"notes say '{FETCHED_TEXT_NOTE}' but {sid} now has access {access}: re-verify the record "
+                           "against page images, then update the note")
+    # confidence caps (research/source_quality_policy.md §4)
+    cap, why = confidence_cap(prov, source)
+    conf = prov.get("confidence")
+    if cap is not None and CONFIDENCE_RANK.get(conf, 0) > CONFIDENCE_RANK[cap]:
+        ev.error(where, f"confidence {conf!r} exceeds the {cap!r} cap of research/source_quality_policy.md §4 ({why}); {cap_hint}")
 
 
 def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
@@ -232,29 +333,25 @@ def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
             ev.error(where, f"value null but status is {status!r} (use 'unknown' or give a value)")
         if value == 0 and not p.get("notes"):
             ev.warn(where, "value 0 without a note explaining that zero is a physical value, not 'unknown'")
-        # sources
-        src = prov.get("source")
-        if src and src.get("source_id") and src["source_id"] not in ev.sources:
-            ev.error(where, f"unknown source_id {src['source_id']}")
-        if status in ("reported_lhmuc", "imported_related", "analogous") and not (src and src.get("quotation")):
-            ev.error(where, f"status {status} requires a source quotation")
-        if status == "reported_lhmuc" and src and src.get("source_id") in ev.sources:
-            if ev.sources[src["source_id"]].get("category") != "PRIMARY_LHMUC":
-                ev.error(where, "reported_lhmuc requires a PRIMARY_LHMUC source")
-        if status in ("derived_lhmuc", "analytical_estimate") and not prov.get("derivation"):
-            ev.error(where, f"status {status} requires a derivation")
+        # sources, status admissibility and confidence caps
+        _check_provenance(ev, where, prov, p.get("notes"), "lower it, e.g. with tools/apply_confidence_caps.py")
+        if status in ("derived_lhmuc", "analytical_estimate"):
+            if not prov.get("derivation"):
+                ev.error(where, f"status {status} requires a derivation")
+            inputs = capped_inputs(ev, pid)
+            if inputs and CONFIDENCE_RANK.get(prov.get("confidence"), 0) > CONFIDENCE_RANK["medium"]:
+                ev.error(where, f"confidence {prov.get('confidence')!r} exceeds the 'medium' cap inherited from input "
+                                f"{inputs[0][0]} (source access {inputs[0][1]}; research/source_quality_policy.md §4); lower it "
+                                "by hand (tools/apply_confidence_caps.py does not compute inherited caps)")
+            text_inputs = [q for q, acc in inputs if acc in TEXT_ONLY]
+            if text_inputs and FETCHED_TEXT_NOTE not in (p.get("notes") or "").lower():
+                ev.error(where, f"derived from fetched_text input(s) {', '.join(text_inputs)}: notes must say '{FETCHED_TEXT_NOTE}'")
         # P1 needs a registered test (docs/validation_plan.md, P1 entry criterion)
         val = p.get("validation") or {}
         if val.get("level") == "P1" and not (p1_test_references(val) & tests):
             ev.error(where, "validation level P1 requires validation.methods or check_ids to name an existing test function "
                             "under tests/ (docs/validation_plan.md); add the test or lower the level with "
                             "tools/apply_validation_levels.py")
-        # confidence caps (research/source_quality_policy.md §4)
-        cap, why = confidence_cap(prov, ev.sources.get(src.get("source_id")) if src else None)
-        conf = prov.get("confidence")
-        if cap is not None and CONFIDENCE_RANK.get(conf, 0) > CONFIDENCE_RANK[cap]:
-            ev.error(where, f"confidence {conf!r} exceeds the {cap!r} cap of research/source_quality_policy.md §4 ({why}); "
-                            "lower it, e.g. with tools/apply_confidence_caps.py")
         # assumptions
         if status == "synthetic":
             aid = prov.get("assumption_id")
@@ -270,6 +367,9 @@ def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
         sc = p.get("scenario")
         if sc and sc not in ev.scenarios:
             ev.error(where, f"unknown scenario {sc}")
+    for mid, m in ev.materials.items():
+        _check_provenance(ev, f"material {mid}", m.get("provenance") or {}, m.get("notes"),
+                          "lower it by hand (tools/apply_confidence_caps.py processes parameter files only)")
     for aid, a in ev.assumptions.items():
         if a.get("parameter_id") not in ev.parameters:
             ev.warn(f"assumption {aid}", f"parameter_id {a.get('parameter_id')} has no parameter record")
@@ -308,11 +408,61 @@ def cross_check(ev: Evidence, root: Path = REPO_ROOT) -> None:
             if pid not in ev.parameters:
                 ev.warn(f"conflict {cid}", f"affected parameter {pid} has no record")
         for v in c.get("competing_values", []):
-            if v.get("source_id") not in ev.sources:
+            src = ev.sources.get(v.get("source_id"))
+            if src is None:
                 ev.error(f"conflict {cid}", f"unknown source {v.get('source_id')}")
+            elif src.get("access") in TEXT_ONLY and "fetched_text" not in (v.get("context") or ""):
+                ev.error(f"conflict {cid}", f"competing value from {v.get('source_id')} must say 'fetched_text' in its context")
     for prid, pr in ev.proposals.items():
-        if pr.get("source_id") not in ev.sources:
+        src = ev.sources.get(pr.get("source_id"))
+        if src is None:
             ev.error(f"proposal {prid}", f"unknown source {pr.get('source_id')}")
+        elif (pr.get("access") in READ_IN_FULL or src.get("access") in READ_IN_FULL) and pr.get("access") != src.get("access"):
+            ev.error(f"proposal {prid}", f"access {pr.get('access')} differs from the registry access {src.get('access')} "
+                                         f"of {pr.get('source_id')}")
+    # archived-file metadata and connector texts (docs/internet_research_protocol.md §5a, §6)
+    for sid, a in ev.archives.items():
+        s = ev.sources.get(sid)
+        if s is None:
+            ev.error(f"research/archived_metadata/{sid}.json", f"no source {sid} in research/source_registry.yaml")
+            continue
+        if a.get("sha256") != s.get("sha256"):
+            ev.error(f"source {sid}", f"registry sha256 {s.get('sha256')} differs from research/archived_metadata/{sid}.json "
+                                      f"({a.get('sha256')})")
+        if a.get("content_kind") == "connector_text" and s.get("access") not in TEXT_ONLY:
+            ev.error(f"source {sid}", f"connector_text archive on a source with access {s.get('access')}")
+    for sid, s in ev.sources.items():
+        if s.get("access") not in TEXT_ONLY:
+            continue
+        a = ev.archives.get(sid)
+        if a is None or a.get("content_kind") != "connector_text":
+            ev.error(f"source {sid}", "access fetched_text requires research/archived_metadata/<source_id>.json with "
+                                      "content_kind connector_text")
+            continue
+        local = a.get("local_file") or ""
+        if not local.startswith(f"references/_local/{sid}/"):
+            ev.error(f"source {sid}", f"connector text must be saved under references/_local/{sid}/ (is {local})")
+        if (s.get("archived_file") or "").split(" ")[0] != local:
+            ev.error(f"source {sid}", "archived_file must begin with the local_file of its archived metadata")
+        # what was requested and what came back (docs/internet_research_protocol.md §5a)
+        arxiv_id, v = s.get("arxiv_id") or "", a.get("delivered_version") or ""
+        if not re.search(rf"(?<![0-9A-Za-z]){re.escape(v)}(?!\d)", s.get("version") or "") or not v:
+            ev.error(f"source {sid}", f"registry version must name the delivered version {v or None}")
+        if not sid.startswith("SRC_ARXIV_" + arxiv_id.replace(".", "_")):
+            ev.error(f"source {sid}", f"a fetched_text source id must be SRC_ARXIV_<id> of its arxiv_id {arxiv_id}")
+        calls = a.get("connector_calls") or []
+        url = f"https://arxiv.org/abs/{arxiv_id}{v}"
+        if not any(c.get("tool") == "get_paper_content" and (c.get("arguments") or {}).get("fullText") is True
+                   and (c.get("arguments") or {}).get("url") == url for c in calls):
+            ev.error(f"source {sid}", f"archived metadata needs a get_paper_content call with fullText true on {url}")
+        for c in calls:
+            if c.get("tool") not in ("get_paper_content", "answer_pdf_queries"):
+                ev.error(f"source {sid}", f"connector call {c.get('tool')} cannot back a fetched_text source")
+            elif c.get("tool") == "answer_pdf_queries" and (c.get("arguments") or {}).get("paper") != f"{arxiv_id}{v}":
+                ev.error(f"source {sid}", f"answer_pdf_queries must name the delivered version {arxiv_id}{v}")
+        for pt in a.get("page_tag_files") or []:
+            if not str(pt.get("file", "")).startswith(f"references/_local/{sid}/"):
+                ev.error(f"source {sid}", f"page-tagged file {pt.get('file')} must be saved under references/_local/{sid}/")
 
 
 def status_counts(ev: Evidence) -> dict[str, int]:

@@ -3,7 +3,8 @@
 **Document date:** 2026-10-28 · **Status:** binding (referenced by `CLAUDE.md` §1.5 and by
 `tests/unit/test_registry_integrity.py`) · **Companion:** `docs/internet_research_protocol.md` (how sources are found
 and logged), `docs/uncertainty_policy.md`, `schemas/provenance.schema.json` (`$defs/source_category`,
-`$defs/access_mode`, `$defs/provenance_status`, `$defs/confidence`).
+`$defs/access_mode`, `$defs/provenance_status`, `$defs/confidence`) · **Addendum 2026-10-29:** access mode `fetched_text`
+(§1, §2, §3, §4, §6, §8, §9).
 
 "Sources are not equal." This policy says what each of the nine source categories is, which provenance status a
 value taken from it may carry, how confidence is capped, how unrefereed slides are treated and where conflicts go.
@@ -22,6 +23,9 @@ Every source in `research/source_registry.yaml` carries a **category** (who wrot
 Access modes (`uploaded | fetched | snippet_only | blocked | pending_fetch`) are defined in
 `docs/internet_research_protocol.md` §5. On the document date the only sources read in full are the five uploads
 plus the PyPI/npm/GitHub/Launchpad pages of the `software-tools` family; everything else is snippet-level.
+*[2026-10-29, owner decision: there is a sixth mode, `fetched_text`. It means read in full through the owner-authorised
+alphaXiv connector, but as delivered text only, with no PDF and no page images. It is therefore capped at `medium`
+(§4); details in `docs/internet_research_protocol.md` §5a.]*
 
 ---
 
@@ -29,7 +33,7 @@ plus the PyPI/npm/GitHub/Launchpad pages of the `software-tools` family; everyth
 
 | Category | Definition | Examples in this project | Highest provenance status it may back | Typical `applicability.category` |
 |---|---|---|---|---|
-| `PRIMARY_LHMUC` | Written by the LHμC proponents (HELP4CERN Study Group and the groups presenting at its workshops) *about the LHμC*: proceedings, preprints, workshop slides, the future White Paper. | `SRC_ARXIV_2610_35154` (Piotrzkowski, PoS DIS2026, arXiv:2610.35154); `SRC_WS1681458_DAGLI_NUCLEUS`; `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`; `SRC_WS_LEBOHO_KUMAR_DIHIGGS`; snippet-level: `SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS` | `reported_lhmuc` (only if `access` is `uploaded`/`fetched`) | `direct` |
+| `PRIMARY_LHMUC` | Written by the LHμC proponents (HELP4CERN Study Group and the groups presenting at its workshops) *about the LHμC*: proceedings, preprints, workshop slides, the future White Paper. | `SRC_ARXIV_2610_35154` (Piotrzkowski, PoS DIS2026, arXiv:2610.35154); `SRC_WS1681458_DAGLI_NUCLEUS`; `SRC_WS1681458_KHANPOUR_GAMMAGAMMA`; `SRC_WS_LEBOHO_KUMAR_DIHIGGS`; snippet-level: `SRC_URL_SAIP2026_653_NKADIMENG_DIHIGGS` | `reported_lhmuc` (only if `access` is `uploaded`/`fetched`; *2026-10-29:* or `fetched_text`, then confidence ≤ `medium`) | `direct` |
 | `OFFICIAL_CERN` | CERN design reports, TDRs, Yellow Reports, official accelerator web pages and CERN-maintained software repositories. | `SRC_URL_CERN_2020_010_HLLHC_TDR`; `SRC_DOI_10_5170_CERN_2004_003_V_1` (LHC Design Report Vol. 1); `SRC_URL_GITHUB_MADX` | `imported_related` (HL-LHC/LHC beam parameters the LHμC reuses) | `design_variant` or `analogous`, with the explanation naming the machine |
 | `PEER_REVIEWED` | Journal articles that passed peer review, on related machines, enabling technology or theory. | `SRC_ARXIV_2506_15445` is both peer-reviewed (PTEP 2026 033C04) and `RELATED_MACHINE`; `SRC_ARXIV_2007_14491` (LHeC 2020 update); `SRC_ARXIV_2101_10476` (physics potential of a μp collider) | `imported_related` or `analogous`; for theory benchmarks the original study in `theory/benchmarks/*/proposal.yaml` | `design_variant`, `analogous` |
 | `CONFERENCE_PROCEEDING` | Refereed or editor-reviewed proceedings (JACoW, PoS, EPJ WoC) **and** the slide decks of conferences and workshops outside the HELP4CERN study. | `SRC_JACOW_IPAC2021_MOPAB005` (LHC oxygen pilot run); `SRC_JACOW_IPAC2026_MOP1054`; `SRC_INDICO_1522800_6986580` (ICHEP 2026 LHμC listing — proponents' talk, but recorded by the scout as a conference listing; see §5) | `imported_related` / `analogous` | as `PEER_REVIEWED` |
@@ -49,7 +53,7 @@ and the other property is recorded in `version`/`notes` ("PTEP 2026 033C04").
 
 | Provenance status (`CLAUDE.md` §1.3) | Admissible source categories | Additional requirements |
 |---|---|---|
-| `reported_lhmuc` | `PRIMARY_LHMUC` only | `access` ∈ {`uploaded`, `fetched`}; page, table/figure/equation and **verbatim** quotation; `applicability.category: direct` |
+| `reported_lhmuc` | `PRIMARY_LHMUC` only | `access` ∈ {`uploaded`, `fetched`} (*2026-10-29:* or `fetched_text`, owner decision; then confidence ≤ `medium` and the note "not checked against page images"); page, table/figure/equation and **verbatim** quotation; `applicability.category: direct` |
 | `derived_lhmuc` | computed from `reported_lhmuc` inputs | `derivation` naming every input `parameter_id`; reproduced in `tests/scientific` |
 | `imported_related` | `RELATED_MACHINE`, `OFFICIAL_CERN`, `PEER_REVIEWED`, `CONFERENCE_PROCEEDING` | source, page, quotation; `applicability.explanation` names the machine the value belongs to. A value the μLHC paper *itself* imports (μTRISTAN source yield, LHeC ERL, HL-LHC protons) stays `imported_related` and the explanation says "as quoted by arXiv:2506.15445 from …" |
 | `analogous` | `ANALOGOUS_TECHNOLOGY` (and `PEER_REVIEWED`/`CONFERENCE_PROCEEDING` about such technology) | as above; `applicability.category: analogous`; an assumption record when the value is used as an LHμC input |
@@ -72,6 +76,8 @@ of what the source says and means for the LHμC*. Caps combine (the lowest appli
 | Condition | Cap |
 |---|---|
 | source `access` is `snippet_only`, `blocked` or `pending_fetch` | `medium` (`CLAUDE.md` §1.5; test `test_snippet_sources_capped_confidence`) |
+| *2026-10-29:* source `access` is `fetched_text` (connector-delivered text read in full; no PDF, no page images) | `medium`; `notes` say "not checked against page images"; no figure reads; integer PDF page from the saved page-tagged text (validator; `tests/unit/test_fetched_text_rules.py`) |
+| *2026-10-29:* `derived_lhmuc` or `analytical_estimate` with an input (dependency or id in `derivation`) whose source is not `uploaded`/`fetched` | `medium`, inherited (validator, `lhmuc.registry.capped_inputs`) |
 | source is unrefereed slides (§5), value read in full | `medium`, unless the same value also appears in a refereed `PRIMARY_LHMUC` text, in which case the refereed text is cited and `high` is allowed |
 | status `imported_related` from a `design_variant` (e.g. μLHC β*, emittance used for LHμC optics) | `medium` |
 | status `analogous` | `medium`; `low` when the analogy requires rescaling (energy, aperture, material) |
@@ -80,8 +86,8 @@ of what the source says and means for the LHμC*. Caps combine (the lowest appli
 | competing values exist in `research/source_conflicts.yaml` and no treatment has been decided | `low` for every competitor until the conflict record names a treatment |
 | `synthetic` | `low` or `none`; the range, not the confidence, carries the information |
 
-`high` therefore requires: category admissible for the status, `access` `uploaded`/`fetched`, verbatim quotation
-with page, no unresolved conflict, and — for `reported_lhmuc` — a `PRIMARY_LHMUC` text.
+`high` therefore requires: category admissible for the status, `access` `uploaded`/`fetched` (never `fetched_text`),
+verbatim quotation with page, no unresolved conflict, and — for `reported_lhmuc` — a `PRIMARY_LHMUC` text.
 
 ---
 
@@ -121,6 +127,9 @@ Three of the four `PRIMARY_LHMUC` uploads are slide decks from the Kraków works
 - `UNVERIFIED` records are promoted only after their abstract page or full text has been read; until then they
   carry no category decision beyond the snippet title. Example: arXiv:2610.28252 and arXiv:2610.17801 were
   identified by title only on 2026-10-28 and are `pending_fetch` candidates for theory benchmarks A and B.
+  *[2026-10-29: a full read through the connector (`fetched_text`) is enough to decide the category, taken from the
+  delivered text's own front matter. Since 2026-10-29 the validator rejects any `reported_lhmuc`, `imported_related`
+  or `analogous` record that cites an `UNVERIFIED` source.]*
 - Name collisions are flagged in `notes`: "LHmuC" in arXiv:2203.06258 and the Snowmass 2021 muon-ion-collider
   slides denotes a different concept (3 TeV muon-collider beam on LHC protons), not the HELP4CERN LHμC.
 
@@ -151,13 +160,16 @@ Conflicts are recorded, not resolved by averaging (`CLAUDE.md` §1.6). Pointers:
 ## 8. Checklist before a source backs a value
 
 1. Category assigned from the document's own metadata, not from a search summary.
-2. `access` is `uploaded` or `fetched`, and the whole document was read.
+2. `access` is `uploaded` or `fetched`, and the whole document was read (*2026-10-29:* or `fetched_text`: the whole
+   delivered text was read and passed the checks of `docs/internet_research_protocol.md` §5a; then item 5 caps it at
+   `medium`).
 3. The status requested is admissible for the category (§3); `reported_lhmuc` ⇒ `PRIMARY_LHMUC`.
 4. Page, table/figure/equation and verbatim quotation copied; units pint-parseable (`lhmuc/units.py`).
 5. Confidence set to the lowest applicable cap (§4); slide-deck values ≤ `medium`. Since 2026-10-29 `uv run python -m lhmuc validate` reports every record above a mechanical cap (synthetic, analogous, imported_related from a design_variant, source not read in full, unrefereed slides) as an error; `tools/apply_confidence_caps.py` lowers them. The conflict cap is still applied by hand.
 6. Any competing value found in the registry or fragments → conflict record, not a choice.
-7. `research/source_registry.yaml` entry complete (licence, SHA-256 if archived, `discovered_by_queries`), fragments
-   merged, `uv run python -m lhmuc validate` and `uv run pytest` pass.
+7. `research/source_registry.yaml` entry complete (licence, SHA-256 if archived — for `fetched_text` the SHA-256 of
+   the saved delivered text —, `discovered_by_queries`), fragments merged, `uv run python -m lhmuc validate`,
+   `uv run python tools/check_fetched_text_quotes.py` and `uv run pytest` pass.
 
 ---
 
@@ -167,3 +179,4 @@ Conflicts are recorded, not resolved by averaging (`CLAUDE.md` §1.6). Pointers:
 |---|---|
 | 2026-10-28 | First version: nine categories with project examples, category→status mapping, confidence caps, slide rule, secondary/unverified rule, conflict pointers, checklist. |
 | 2026-10-29 | §4 caps enforced by the validator (`lhmuc/registry.py::confidence_cap`). 1088 committed records were above a cap (594 analogous, 367 slide values, 127 imported_related from a design_variant) because extraction briefs had allowed `high` for any value read directly from a page; all were lowered from `high` to `medium` without other changes. List: `research/_fragments/confidence_caps_applied_2026-10-29.csv`. |
+| 2026-10-29 | Access mode `fetched_text` (owner decision; `docs/internet_research_protocol.md` §5a): cap `medium`, mandatory note "not checked against page images", no figure reads, integer PDF page; may back `reported_lhmuc` for `PRIMARY_LHMUC` texts. The validator now also enforces the read-in-full rule for `reported_lhmuc`, the UNVERIFIED half of the §3 rule, the caps on material records and the cap a derived record inherits from its inputs (0 records affected on that date). The SECONDARY_SOURCE half of §3 is not enforced yet: one record, `PHYS_MUON_TURNS_PER_LIFETIME_FORMULA_DUDKO2026` (status `analogous`), cites the SECONDARY_SOURCE `SRC_ARXIV_2607_16904`; re-categorise the source or re-label the record before extending the rule. |
