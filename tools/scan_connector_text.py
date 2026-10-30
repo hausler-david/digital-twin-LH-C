@@ -222,7 +222,8 @@ def scan_transcripts(paths: list[Path], since: str | None) -> list[dict]:
                         if role == "subagent":
                             reason = "called from a subagent transcript" + (f"; {reason}" if reason else "")
                         calls.append({"file": str(f), "role": role, "timestamp": d.get("timestamp"), "tool": tool,
-                                      "arguments": b.get("input") or {}, "tool_use_id": b.get("id"), "flag": reason})
+                                      "arguments": b.get("input") or {}, "tool_use_id": b.get("id"),
+                                      "message_id": (d.get("message") or {}).get("id"), "flag": reason})
     return calls
 
 

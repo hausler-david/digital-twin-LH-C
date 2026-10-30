@@ -167,7 +167,10 @@ current working directory, so a planted `json.py` in an upload directory runs on
    - *Batch agents run with a restricted tool set where the harness allows it. In every case the transcript audit
      flags any MCP call, any ToolSearch for an MCP tool, and any `git push`, `gh`, `curl` or `wget` command from a
      subagent. It classifies Bash commands by command word only: a network call made from inside a Python or
-     other script is not detected. For such calls the container's network policy (§9) remains the control.]*
+     other script is not detected. For such calls the container's network policy (§9) remains the control.
+   - *Every connector result is saved, refusals and errors included (`--raw`), and the Step-0b record holds the call
+     and message ids, so the audit can match every call to the plan. The strict reading of answers
+     (`lhmuc/connector_text.py`) treats a malformed answer as a generic error, never as evidence.]*
 
 ---
 
@@ -282,7 +285,7 @@ current working directory, so a planted `json.py` in an upload directory runs on
 |---|---|
 | 2026-10-28 | First version: threat model, input classes, inspection, isolation, `-I` upload rule, pinning and checksums, secrets, licences, network policy. Reflects a repository with no third-party code and five archived PDFs. |
 | 2026-10-29 | Review for a new input class (§10): text delivered by the owner-authorised alphaXiv remote connector (§1 row and untrusted list, §2 item 6, §5 item 7, notes in §6–§8, §9 exception). §5 item 6 corrected: no loader re-hashes; the integrity test and the quote checker do. Container network policy and the no-mirror rule otherwise unchanged. |
-| 2026-10-30 | §5 item 7: the connector saver treats the result text as untrusted (pointer confinement, refusals not saved, `--probe`); no lead copies of connector text outside `references/_local/<source_id>/` (scratch copies of 2026-10-29 deleted) and the harness-held copies named; transcript audit extended to subagent MCP, ToolSearch and network commands, with its scope stated (command words only). |
+| 2026-10-30 | §5 item 7: the connector saver treats the result text as untrusted (pointer confinement, refusals not saved, `--probe`); no lead copies of connector text outside `references/_local/<source_id>/` (scratch copies of 2026-10-29 deleted) and the harness-held copies named; transcript audit extended to subagent MCP, ToolSearch and network commands, with its scope stated (command words only).; every connector result saved (`--raw`) and recorded with message ids; strict answer reading shared by the saver, the quote checker and the Step-0b evaluation. |
 
 ## 12. Sources cited
 

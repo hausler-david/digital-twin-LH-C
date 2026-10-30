@@ -222,4 +222,40 @@ Nothing proceeds until the owner decides. The options:
   - Bash commands are classified by command word (shlex, through wrappers such as `timeout`, `env` and `bash -c`, and
     into `$(…)`), after a regex version flagged "curl" inside a grep pattern, a Python string and a document's prose.
     The audit sees command words only: a network call made from inside a Python or other script is not detected.
+- **First pre-registration and its review.** The first Step-0b pre-registration was committed as `6c3d41b`
+  (2026-10-30 12:06:26Z), before any Step-0b call. One reviewer and four lens-specific finders (conformance, outcome
+  space, calibration soundness, operations and security) then reviewed it, again before any call. They reported 24 and
+  66 findings, 3 and 13 of them blocking, with much overlap. The main defects:
+  - read literally, every delivered full text was a "generic error";
+  - page-less answers to P4, P5 and the G4′ v1 calls could not be saved under their fixed names, so their stops could
+    never be evaluated;
+  - empty, cut-off, duplicated or foreign pages counted as version evidence;
+  - the stamp rule was not applied to page-tagged answers;
+  - `calibrate.py` exits 0 when a gate fails, and G2's explanation half was not run;
+  - G1's reference heading would fail a correct 2101.10476v2;
+  - the oversize size check would refuse a complete 2203.06258v3 if the harness counts UTF-16 code units (that text
+    has 1,074 astral characters);
+  - the likely outcome "one full-text version per paper" left G4′ testing nothing;
+  - many decisions were left to the lead.
+
+  The lead checked the decisive facts against the local data (the G1 heading, the astral characters, the stamp forms,
+  the overlap minimum 0.862 rather than 0.857, the Step-0 refusal form). The transcript audit since the review began
+  shows no connector call and no violation by any agent.
+- **Revision 2026-10-30.2** replaces the first version before any call (§5a):
+  - one deciding command, `step0b_eval.py evaluate`;
+  - strict answer classes shared with the saver and the quote checker (`lhmuc/connector_text.py`);
+  - page comparisons recalibrated by `pre_0b.py` (`calibration_0b_pre.json`: 45/45 same pages, 46/46 contained,
+    medians 0.945 against 0.402, whole-text scores 0.913 against 0.498);
+  - a v1 control P6 whose answer Step 0 predicts, and a second far-out negative P7 on another paper;
+  - G4′ page halves for every paper;
+  - every result saved with `--raw` and recorded with message ids;
+  - safeguards (a) and (b) specified now, with the residual risks stated.
+
+  `tests/unit/test_step0b_eval.py` drives every rule on synthetic answers. All 11 Step-0 saves replay byte for byte
+  through the hardened saver, including the persisted MR7 result.
+- **Query rule.** The Step-0 queries (captions and short phrases from the papers) did not fit the letter of the rule
+  then committed ("ids, titles, authors"), though they held no project data. This is recorded as a Step-0 deviation.
+  The amendment that admits such queries is the lead's, under the delegation, and awaits the owner's confirmation. That
+  covers the line in `CLAUDE.md` §5 changed in `6c3d41b`; the lead does not edit `CLAUDE.md` further, and the owner
+  may confirm or revert it.
 - **Results:** recorded in §10 after the calls.

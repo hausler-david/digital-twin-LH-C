@@ -14,11 +14,18 @@ harness's own notice, and only to a file directly inside <transcript dir>/<trans
 an oversize file must be named mcp-alphaXiv-<tool>-*). A notice anywhere else is delivered text and is saved as such.
 A one-line "not found" refusal is never saved as a delivered text; --probe saves the answer of a later-version probe
 (answer_pdf_queries on <id>v<n+1>, docs/internet_research_protocol.md §5a) as probe_*.txt, error results included, and
-prints the later_version_probe object.
+prints the later_version_probe object. --raw saves any result of an admissible call as delivered, refusals and errors
+included, as raw_<label>_<id>v<n>.txt (calibration answers and refusals, which are never registered as texts).
+*[2026-10-30]* The source id must be SRC_ARXIV_<id> (or SRC_ARXIV_<id>_V<n>) of the requested paper, and a name ending
+in _v<n>.txt or _v<n>.xml must carry the requested version. --record appends the printed record (hashes, flags, call
+and message ids, no delivered text) as one JSON line to a file; --no-result records a call that has no result in the
+transcript; --check does everything except writing.
 
 Run: python -I tools/save_connector_text.py --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... --name <file>
      python -I tools/save_connector_text.py --probe --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... \
          --name probe_<id>v<k>.txt
+     python -I tools/save_connector_text.py --raw --label P1a --record <saves.jsonl> --transcript <session.jsonl> \
+         --tool-use-id <id> --source-id SRC_... --name raw_P1a_<id>v<n>.txt
 """
 from __future__ import annotations
 
@@ -40,7 +47,7 @@ OVERSIZE_RE = re.compile(r"Error: result \(([\d,]+) characters across ([\d,]+) l
 NOT_FOUND_RE = re.compile(r"\s*[^\n<]{0,120}\bnot found\b[^\n<]{0,120}\s*", re.I)
 PAGE_RE = re.compile(r'<page num="(\d+)">')
 PAPER_RE = re.compile(r'<paper id="([^"]+)">')
-VERSIONED_URL = re.compile(r"https://arxiv\.org/abs/\d{4}\.\d{4,5}v\d+")
+VERSIONED_URL = re.compile(r"https://arxiv\.org/abs/(\d{4}\.\d{4,5}v\d+)")
 VERSIONED_ID = re.compile(r"\d{4}\.\d{4,5}v\d+")
 
 
@@ -53,9 +60,10 @@ def _one_text_block(content) -> str:
     return blocks[0].get("text", "")
 
 
-def find_call(transcript: Path, tool_use_id: str) -> tuple[dict, dict, str | None]:
-    """Return (tool_use block, tool_result block, timestamp of the tool_use line) from a session transcript."""
-    use = result = stamp = None
+def find_call_info(transcript: Path, tool_use_id: str) -> dict:
+    """The tool_use block, its tool_result block (None if the transcript holds none), the timestamps of both lines and
+    the id of the assistant message that made the call."""
+    info = {"use": None, "result": None, "called_on": None, "result_on": None, "message_id": None}
     with transcript.open() as fh:
         for line in fh:
             try:
@@ -66,19 +74,75 @@ def find_call(transcript: Path, tool_use_id: str) -> tuple[dict, dict, str | Non
             if not isinstance(content, list):
                 continue
             for b in content:
+                if not isinstance(b, dict):
+                    continue
                 if b.get("type") == "tool_use" and b.get("id") == tool_use_id:
-                    use, stamp = b, d.get("timestamp")
+                    info.update(use=b, called_on=d.get("timestamp"), message_id=(d.get("message") or {}).get("id"))
                 elif b.get("type") == "tool_result" and b.get("tool_use_id") == tool_use_id:
-                    result = b
-    if use is None or result is None:
+                    info.update(result=b, result_on=d.get("timestamp"))
+    if info["use"] is None:
+        raise SystemExit(f"tool_use_id {tool_use_id} not found in {transcript}")
+    return info
+
+
+def find_call(transcript: Path, tool_use_id: str) -> tuple[dict, dict, str | None]:
+    """Return (tool_use block, tool_result block, timestamp of the tool_use line) from a session transcript."""
+    info = find_call_info(transcript, tool_use_id)
+    if info["result"] is None:
         raise SystemExit(f"tool_use_id {tool_use_id} or its result not found in {transcript}")
-    return use, result, stamp
+    return info["use"], info["result"], info["called_on"]
 
 
-def check_call(use: dict, name: str, probe: bool = False) -> str:
+def requested_id(tool: str, args: dict) -> str:
+    """The versioned arXiv id <id>v<n> a call asks for ('' if none)."""
+    if tool == "get_paper_content":
+        m = VERSIONED_URL.fullmatch(str(args.get("url", "")))
+        return m.group(1) if m else ""
+    return str(args.get("paper", "")) if VERSIONED_ID.fullmatch(str(args.get("paper", ""))) else ""
+
+
+def check_target(tool: str, args: dict, source_id: str, name: str) -> None:
+    """*[2026-10-30]* The file goes to the directory of the requested paper and a versioned name names its version."""
+    vid = requested_id(tool, args)
+    if not vid:
+        return
+    base, version = re.fullmatch(r"(\d{4}\.\d{4,5})(v[1-9]\d*)", vid).groups()
+    stem = "SRC_ARXIV_" + base.replace(".", "_")
+    if source_id not in (stem, f"{stem}_V{version[1:]}"):
+        raise SystemExit(f"--source-id {source_id} is not the source of {vid} ({stem} or {stem}_V{version[1:]})")
+    m = re.search(r"_(v[1-9]\d*)\.(?:txt|xml)$", name)
+    if m and m.group(1) != version:
+        raise SystemExit(f"--name {name} names {m.group(1)}, but the call requested {vid}")
+
+
+def admissible_tool(use: dict) -> str:
+    """The tool name, if the call is get_paper_content (fullText true, versioned arXiv URL) or answer_pdf_queries on a
+    versioned arXiv id."""
+    tool = str(use.get("name", "")).removeprefix("mcp__alphaXiv__")
+    args = use.get("input") or {}
+    if tool == "get_paper_content":
+        if args.get("fullText") is not True or not VERSIONED_URL.fullmatch(str(args.get("url", ""))):
+            raise SystemExit("get_paper_content must have fullText true and a versioned https://arxiv.org/abs/<id>v<n> url")
+    elif tool == "answer_pdf_queries":
+        if not VERSIONED_ID.fullmatch(str(args.get("paper", ""))):
+            raise SystemExit("answer_pdf_queries must name a versioned arXiv id <id>v<n>")
+    else:
+        raise SystemExit(f"{use.get('name')} is not an admissible connector call (docs/internet_research_protocol.md §5a)")
+    return tool
+
+
+def check_call(use: dict, name: str, probe: bool = False, raw: bool = False) -> str:
     """The tool name without the server prefix, if the call is one of the two admissible calls."""
     tool = str(use.get("name", "")).removeprefix("mcp__alphaXiv__")
     args = use.get("input") or {}
+    if raw:
+        admissible_tool(use)
+        vid = requested_id(tool, args)
+        if not re.fullmatch(rf"raw_[A-Za-z0-9]+(?:_r|_late)?_{re.escape(vid)}\.txt", name):
+            raise SystemExit(f"a raw result is saved as raw_<label>[_r|_late]_{vid}.txt")
+        return tool
+    if name.startswith("raw_"):
+        raise SystemExit("raw_* names are reserved for --raw")
     if probe:
         if tool != "answer_pdf_queries" or not VERSIONED_ID.fullmatch(str(args.get("paper", ""))):
             raise SystemExit("--probe saves only answer_pdf_queries on a versioned arXiv id <id>v<n>")
@@ -132,7 +196,8 @@ def check_structure(data: bytes, name: str) -> None:
 
 
 def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False) -> tuple[bytes, bool]:
-    """The result as bytes; follows the harness pointer when the result starts with the harness's own notice."""
+    """The result as bytes; follows the harness pointer when the result starts with the harness's own notice.
+    With probe true (--probe and --raw), error results and refusals are saved as delivered."""
     if result.get("is_error") and not probe:
         raise SystemExit("the tool returned an error: refusing to save")
     text = _one_text_block(result.get("content"))
@@ -141,8 +206,12 @@ def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool 
         raw = _confined(big.group(3), tool_results, f"mcp-alphaXiv-{tool}-").read_bytes()
         n_chars, n_lines = int(big.group(1).replace(",", "")), int(big.group(2).replace(",", ""))
         decoded = raw.decode("utf-8")
-        if len(decoded) != n_chars or len(decoded.splitlines()) != n_lines:
-            raise SystemExit(f"saved result has {len(decoded)} characters and {len(decoded.splitlines())} lines; the harness "
+        # *[2026-10-30]* the harness may count UTF-16 code units (astral characters such as U+1D707 count twice) and
+        # lines split at "\n"; either convention shows a complete file, a truncated file matches neither
+        chars = {len(decoded), len(decoded.encode("utf-16-le")) // 2}
+        lines = {len(decoded.split("\n")), len(decoded.splitlines())}
+        if n_chars not in chars or n_lines not in lines:
+            raise SystemExit(f"saved result has {sorted(chars)} characters and {sorted(lines)} lines; the harness "
                              f"reported {n_chars} and {n_lines}: refusing to save an incomplete file")
         return raw, True
     if not text.startswith(PREVIEW_MARK):
@@ -174,41 +243,91 @@ def save(data: bytes, target: Path) -> dict:
     return {"sha256": hashlib.sha256(data).hexdigest(), "size_bytes": len(data)}
 
 
+def append_record(path: Path, rec: dict) -> None:
+    """Append one JSON line; existing lines are never rewritten."""
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as fh:
+        fh.write(json.dumps(rec, ensure_ascii=False, sort_keys=True) + "\n")
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--transcript", type=Path, required=True)
     ap.add_argument("--tool-use-id", required=True)
     ap.add_argument("--source-id", required=True)
-    ap.add_argument("--name", required=True, help="file name inside references/_local/<source_id>/")
+    ap.add_argument("--name", help="file name inside references/_local/<source_id>/ (not with --no-result)")
     ap.add_argument("--root", type=Path, default=ROOT)
-    ap.add_argument("--probe", action="store_true", help="save the answer of a later-version probe (probe_*.txt)")
+    mode = ap.add_mutually_exclusive_group()
+    mode.add_argument("--probe", action="store_true", help="save the answer of a later-version probe (probe_*.txt)")
+    mode.add_argument("--raw", action="store_true", help="save any result of an admissible call as raw_<label>_<id>.txt")
+    mode.add_argument("--no-result", action="store_true", help="record a call that has no result in the transcript")
+    ap.add_argument("--label", help="the call's label in a pre-registered call plan (with --record)")
+    ap.add_argument("--record", type=Path, help="append the record (no delivered text) as one JSON line to this file")
+    ap.add_argument("--check", action="store_true", help="do everything except writing the file and the record")
     a = ap.parse_args(argv)
-    if not re.fullmatch(r"SRC_[A-Z0-9_]+", a.source_id) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", a.name):
-        raise SystemExit("invalid --source-id or --name")
-    use, result, stamp = find_call(a.transcript, a.tool_use_id)
-    tool = check_call(use, a.name, a.probe)
+    if not re.fullmatch(r"SRC_[A-Z0-9_]+", a.source_id):
+        raise SystemExit("invalid --source-id")
+    if (a.record is None) != (a.label is None) or (a.label and not re.fullmatch(r"[A-Za-z0-9]+(?:_r|_late)?", a.label)):
+        raise SystemExit("--record and --label go together; a label is letters and digits, optionally _r or _late")
+    if a.no_result:
+        if a.record is None or a.name:
+            raise SystemExit("--no-result needs --record and --label and takes no --name")
+        info = find_call_info(a.transcript, a.tool_use_id)
+        if info["result"] is not None:
+            raise SystemExit(f"tool_use_id {a.tool_use_id} has a result: save it instead")
+        tool = admissible_tool(info["use"])
+        check_target(tool, info["use"].get("input") or {}, a.source_id, "")
+        rec = {"label": a.label, "status": "no_result", "tool": tool, "arguments": info["use"].get("input") or {},
+               "tool_use_id": a.tool_use_id, "message_id": info["message_id"], "called_on": info["called_on"] or "",
+               "source_id": a.source_id}
+        if not a.check:
+            append_record(a.record, rec)
+        print(json.dumps(rec, ensure_ascii=False, indent=1))
+        return 0
+    if not a.name or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", a.name):
+        raise SystemExit("invalid --name")
+    info = find_call_info(a.transcript, a.tool_use_id)
+    if info["result"] is None:
+        raise SystemExit(f"tool_use_id {a.tool_use_id} or its result not found in {a.transcript}")
+    use, result, stamp = info["use"], info["result"], info["called_on"]
+    tool = check_call(use, a.name, a.probe, a.raw)
+    check_target(tool, use.get("input") or {}, a.source_id, a.name)
     tool_results = a.transcript.parent / a.transcript.stem / "tool-results"
-    data, persisted = resolve_bytes(result, tool_results, tool, a.probe)
-    if not a.probe:
+    data, persisted = resolve_bytes(result, tool_results, tool, a.probe or a.raw)
+    if not (a.probe or a.raw):
         check_structure(data, a.name)
     rel = str(Path("references") / "_local" / a.source_id / a.name)
-    saved = save(data, a.root / rel)
+    if a.check:
+        if (a.root / rel).exists():
+            raise SystemExit(f"{a.root / rel} exists: archived files are never overwritten (docs/internet_research_protocol.md §6)")
+        saved = {"sha256": hashlib.sha256(data).hexdigest(), "size_bytes": len(data)}
+    else:
+        saved = save(data, a.root / rel)
     call = {"tool": tool, "arguments": use.get("input") or {}, "tool_use_id": a.tool_use_id, "called_on": stamp or ""}
-    out = {"file": rel, **saved, "persisted_by_harness": persisted, "connector_call": call}
+    out = {"file": rel, **saved, "persisted_by_harness": persisted, "connector_call": call,
+           "message_id": info["message_id"], "result_on": info["result_on"] or "", "is_error": bool(result.get("is_error"))}
     if a.probe:
         text = data.decode("utf-8", errors="replace")
-        out["is_error"] = bool(result.get("is_error"))
         out["has_pages"] = bool(PAGE_RE.search(text))
         if not out["has_pages"] and len(text) <= 500:
             out["text"] = text
         out["later_version_probe"] = {**call, "file": rel, "sha256": saved["sha256"], "is_error": out["is_error"],
                                       "has_pages": out["has_pages"], "paper_id": (PAPER_RE.findall(text) or [None])[0],
                                       "pages": [int(n) for n in PAGE_RE.findall(text)]}
-    elif tool == "answer_pdf_queries":
+    elif tool == "answer_pdf_queries" and not a.raw:
         text = data.decode("utf-8")
         out["paper_id"] = (PAPER_RE.findall(text) or [None])[0]
         out["page_tag_file"] = {"file": rel, "sha256": saved["sha256"], "size_bytes": saved["size_bytes"],
                                 "pages": [int(n) for n in PAGE_RE.findall(text)], "tool_use_id": a.tool_use_id}
+    if a.record is not None:
+        rec = {"label": a.label, "status": "saved", "mode": "raw" if a.raw else "probe" if a.probe else "normal",
+               "tool": tool, "arguments": call["arguments"], "tool_use_id": a.tool_use_id,
+               "message_id": info["message_id"], "called_on": call["called_on"], "result_on": out["result_on"],
+               "is_error": out["is_error"], "file": rel, "sha256": saved["sha256"], "size_bytes": saved["size_bytes"],
+               "persisted_by_harness": persisted, "source_id": a.source_id}
+        if not a.check:
+            append_record(a.record, rec)
+        out["record"] = rec
     print(json.dumps(out, ensure_ascii=False, indent=1))
     return 0
 

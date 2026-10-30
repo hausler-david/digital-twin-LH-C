@@ -320,3 +320,68 @@ def test_audit_flags_subagent_mcp_network_calls_and_excess_discovery(tmp_path):
     got = sorted(x["tool_use_id"] for x in v if x["role"] == "subagent")
     assert got == ["toolu_0", "toolu_1", "toolu_2", "toolu_3", "toolu_5", "toolu_6", "toolu_7"]
     assert [x["violation"].split(" ")[0] for x in v if x["role"] == "lead"] == ["3"]
+
+
+def test_save_tool_raw_mode_records_every_result_and_checks_its_target(tmp_path, capsys):
+    """--raw saves any result of an admissible call (refusals and errors included) as raw_<label>_<id>.txt; --record
+    appends a JSON line with the call and message ids and no delivered text; the source id and a versioned name must
+    name the requested paper and version; --check writes nothing (docs/internet_research_protocol.md §5a, Step 0b)."""
+    refusal = "Paper version not found for ID: 1234.56789v2"
+    t = _transcript(tmp_path, *FULL, refusal)
+    rec = tmp_path / "saves.jsonl"
+    base = ["--raw", "--transcript", str(t), "--tool-use-id", "toolu_1", "--source-id", "SRC_ARXIV_1234_56789",
+            "--root", str(tmp_path), "--label", "G1", "--record", str(rec)]
+    assert saver.main(base + ["--name", "raw_G1_1234.56789v2.txt", "--check"]) == 0
+    capsys.readouterr()
+    assert not rec.exists() and not (tmp_path / "references").exists()
+    assert saver.main(base + ["--name", "raw_G1_1234.56789v2.txt"]) == 0
+    out = json.loads(capsys.readouterr().out)
+    f = tmp_path / "references" / "_local" / "SRC_ARXIV_1234_56789" / "raw_G1_1234.56789v2.txt"
+    assert f.read_text() == refusal
+    line = json.loads(rec.read_text())
+    assert line == out["record"] and line["label"] == "G1" and line["status"] == "saved" and line["mode"] == "raw"
+    assert line["sha256"] == hashlib.sha256(refusal.encode()).hexdigest() and "text" not in line
+    for bad in (["--name", "raw_G1_1234.56789v3.txt"],          # names another version
+                ["--name", "calibration_G1_1234.56789v2.txt"],  # not a raw_ name
+                ["--name", "raw_G1_1234.56789v2.txt", "--source-id", "SRC_ARXIV_9999_99999"]):
+        with pytest.raises(SystemExit):
+            saver.main(base + bad)
+    with pytest.raises(SystemExit):  # raw_* names are reserved for --raw
+        _save(tmp_path, _transcript(tmp_path, *FULL, [{"type": "text", "text": BODY}]), "raw_G1_1234.56789v2.txt")
+    with pytest.raises(SystemExit):  # a versioned name in normal mode must carry the requested version
+        _save(tmp_path, _transcript(tmp_path, *FULL, [{"type": "text", "text": BODY}]), "calibration_text_v3.txt")
+    assert _save(tmp_path, _transcript(tmp_path, *FULL, [{"type": "text", "text": BODY}]), "calibration_text_v2.txt") == 0
+
+
+def test_save_tool_records_a_call_without_result(tmp_path, capsys):
+    t = tmp_path / "session.jsonl"
+    use = {"type": "assistant", "timestamp": "2026-10-30T13:00:00Z",
+           "message": {"id": "msg_7", "content": [{"type": "tool_use", "id": "toolu_9", "name": FULL[0], "input": FULL[1]}]}}
+    t.write_text(json.dumps(use) + "\n")
+    rec = tmp_path / "saves.jsonl"
+    args = ["--no-result", "--transcript", str(t), "--tool-use-id", "toolu_9", "--source-id", "SRC_ARXIV_1234_56789",
+            "--label", "G1", "--record", str(rec), "--root", str(tmp_path)]
+    assert saver.main(args) == 0
+    line = json.loads(rec.read_text())
+    assert line["status"] == "no_result" and line["message_id"] == "msg_7" and line["tool"] == "get_paper_content"
+    res = {"type": "user", "message": {"content": [{"type": "tool_result", "tool_use_id": "toolu_9", "content": "x"}]}}
+    t.write_text(json.dumps(use) + "\n" + json.dumps(res) + "\n")
+    with pytest.raises(SystemExit):  # it has a result now: save it instead
+        saver.main(args)
+
+
+def test_save_tool_accepts_utf16_counts_in_the_oversize_notice(tmp_path, capsys):
+    """The harness may count UTF-16 code units: an astral character such as U+1D707 counts twice. Either count shows
+    a complete file; a truncated file matches neither."""
+    text = BODY + "\U0001d707 p collider\n" * 3
+    raw = _tool_results(tmp_path) / "mcp-alphaXiv-get_paper_content-2.txt"
+    raw.write_text(text, encoding="utf-8")
+    utf16 = len(text.encode("utf-16-le")) // 2
+    assert utf16 == len(text) + 3
+    notice = (f"Error: result ({utf16:,} characters across {len(text.split(chr(10)))} lines) exceeds maximum allowed "
+              f"tokens. Output has been saved to {raw}.\nFormat: Plain text")
+    assert _save(tmp_path, _transcript(tmp_path, *FULL, notice)) == 0
+    capsys.readouterr()
+    (tmp_path / "references" / "_local" / "SRC_ARXIV_1234_56789" / "full.txt").unlink()
+    with pytest.raises(SystemExit):
+        _save(tmp_path, _transcript(tmp_path, *FULL, notice.replace(f"{utf16:,} characters", f"{utf16 + 5:,} characters")))

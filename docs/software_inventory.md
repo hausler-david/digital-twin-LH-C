@@ -449,4 +449,8 @@ service. Nothing of it is installed or runs in the container. The binding usage 
   (2506.15445v2, 1905.05564v1). For 2506.15445 the version it holds, v1, is not the latest.
 - `answer_pdf_queries` returned version-specific pages for both 2506.15445v1 and v2.
 - A result too large for the context is saved by the harness to a file, together with its character and line counts.
-  `tools/save_connector_text.py` copies that file only when both counts match.
+  `tools/save_connector_text.py` copies that file only when both counts match. *[2026-10-30: either character count, Unicode code points
+  or UTF-16 code units, is accepted, since the harness may count an astral character such as U+1D707 twice. The saver
+  now also has `--raw` (every other result, refusals and errors included), `--record`, `--no-result` and `--check`.
+  The shared strict reading of answers is `lhmuc/connector_text.py`, and the Step-0b decision is
+  `research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate` (§5a). No third-party code.]*

@@ -26,12 +26,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from lhmuc import REPO_ROOT  # noqa: E402
+from lhmuc import connector_text as ct  # noqa: E402
 
 LIGATURES = {"ﬁ": "fi", "ﬂ": "fl", "ﬀ": "ff", "ﬃ": "ffi", "ﬄ": "ffl", "ﬅ": "st", "ﬆ": "st"}
 ELISION_RE = re.compile(r"\s*\[(?:\.\.\.|…)\]\s*")
-PAGE_RE = re.compile(r'<page num="(\d+)">(.*?)</page>', re.S)
-PAPER_RE = re.compile(r'<paper id="([^"]+)">')
-XML_ENTITIES = {"&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'"}
 BREAK = ""  # private-use sentinel for a droppable line-end hyphen between two letters
 LETTER_BREAK_RE = re.compile(r"(?<=[^\W\d_])-[ \t]*\n\s*(?=[^\W\d_])")
 OTHER_BREAK_RE = re.compile(r"([-−])[ \t]*\n\s*")
@@ -76,17 +74,15 @@ def segments(quotation: str) -> list[str]:
 
 def xml_unescape(text: str) -> str:
     """XML entities only (&lt; &gt; &quot; &apos; &amp; and numeric references), never HTML named entities."""
-    text = re.sub(r"&#x([0-9A-Fa-f]+);", lambda m: chr(int(m.group(1), 16)), text)
-    text = re.sub(r"&#(\d+);", lambda m: chr(int(m.group(1))), text)
-    for a, b in XML_ENTITIES.items():
-        text = text.replace(a, b)
-    return text.replace("&amp;", "&")
+    return ct.xml_unescape(text)
 
 
 def parse_pages(tagged: str) -> tuple[str | None, dict[int, str]]:
-    """(paper id, page texts) of an answer_pdf_queries response (<paper id=...><page num="N">...</page>...)."""
-    ids = PAPER_RE.findall(tagged)
-    return (ids[0] if ids else None), {int(n): xml_unescape(body) for n, body in PAGE_RE.findall(tagged)}
+    """(paper id, page texts) of an answer_pdf_queries response (<paper id=...><page num="N">...</page>...), read
+    strictly (lhmuc/connector_text.py, 2026-10-30): an answer with two paper blocks, a repeated or unclosed page, or
+    text outside the pages gives (None, {}), which fails the registered-version check."""
+    ans = ct.parse_answer(tagged)
+    return (ans.paper_id, ans.pages) if ans.kind == "pages" else (None, {})
 
 
 def _locate(full: str, segs: list[str], start_limit: int | None = None) -> tuple[list[tuple[int, int]], str | None]:

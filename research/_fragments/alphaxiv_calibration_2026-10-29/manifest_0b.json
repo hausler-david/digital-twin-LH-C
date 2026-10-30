@@ -1,66 +1,300 @@
 {
- "note": "Step 0b (docs/internet_research_protocol.md §5a, pre-registered 2026-10-30): G4' inputs for calibrate.py (G1, G2, G6 of each delivered later-version full text against its uploaded PDF; records_source_id gives a supplementary coverage count). Paths are relative to the repository root and fixed before the calls; the saved answers are git-ignored. Probe answers (P1-P3) are saved as probe_*.txt with tools/save_connector_text.py --probe, page-tagged answers (P4, P5, the G4' v1 halves) as calibration_0b_pages_*.xml.",
- "probes": {
-  "P1a": "references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_a.txt",
-  "P1b": "references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_b.txt",
-  "P2": "references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt",
-  "P3": "references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt",
-  "P4": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v2.xml",
-  "P5": "references/_local/SRC_ARXIV_2506_15445/calibration_0b_pages_v2.xml"
+ "revision": "2026-10-30.2",
+ "note": "Step 0b (docs/internet_research_protocol.md §5a), revision 2026-10-30.2, fixed before any Step-0b call. Every call is made, in this order, whatever the earlier answers; P1b in a later message than every other call; a generic error is retried once after P1b, in a later message, as <label>_r. Every result is saved with tools/save_connector_text.py --raw --label <label> --record saves_0b.jsonl under the file named here (retries raw_<label>_r_<id>.txt, late results raw_<label>_late_<id>.txt); a call without a result is recorded with --no-result. Queries are copied verbatim from the Step-0 calls (Q_DIS, Q_KAYA, Q_MULHC) or from the committed pre-registration of 2026-10-30 (Q_2203, Q_2201, Q_2101). The saved files are git-ignored; saves_0b.jsonl, audit_0b.json and result_0b.json hold no delivered text except one-line refusals.",
+ "queries": {
+  "Q_DIS": [
+   "Table 1: Example of the LHμC parameters",
+   "booster of about 9 km circumference and main ring of about 3(6) km",
+   "reference [24] Zimmermann, Potential possibilities of modifying SPS/LHC"
+  ],
+  "Q_KAYA": [
+   "Table 4: Center of mass energies and luminosities of HL-LHC based mu p colliders",
+   "Table 6: Beam-beam tune shifts",
+   "Table 7: Achievable x Bjorken values"
+  ],
+  "Q_MULHC": [
+   "Table 1: Main parameters of the mu+ beam",
+   "Table 3: Main parameters of the muTRISTAN- and ERL-based mu+ p collider",
+   "Table 6: Number of Higgs bosons produced per working year"
+  ],
+  "Q_2203": [
+   "Table 1. Benchmark beam energies for several μp collider configurations",
+   "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
+   "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+  ],
+  "Q_2201": [
+   "Figure 1: Conceptual design of the µ+e−/µ+µ+ collider",
+   "Figure 2: The pion stopping target surrounded by silica aerogel for muonium production",
+   "Figure 3: Density histogram plots of Higgs boson produced by the W-fusion"
+  ],
+  "Q_2101": [
+   "TABLE I. Basic parameters of the two µp experiments considered in this work",
+   "TABLE II. The inclusive cross sections of VBF production",
+   "FIG. 2. 95% C.L. exclusion limits"
+  ]
  },
- "g4prime_v1": {
-  "2203.06258": {
-   "full": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt",
-   "pages": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v1.xml"
-  },
-  "2201.06664": {
-   "full": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt",
-   "pages": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_pages_v1.xml"
-  },
-  "2101.10476": {
-   "full": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt",
-   "pages": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_pages_v1.xml"
-  }
- },
- "documents": [
+ "calls": [
   {
-   "key": "G4p_2203.06258v3",
-   "pdf": "references/_local/arXiv-2203.06258v3.pdf",
-   "full": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt",
-   "records_source_id": "SRC_ARXIV_2203_06258"
+   "label": "P1a",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2610.35154v9",
+    "queries": [
+     "Table 1: Example of the LHμC parameters",
+     "booster of about 9 km circumference and main ring of about 3(6) km",
+     "reference [24] Zimmermann, Potential possibilities of modifying SPS/LHC"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2610_35154",
+   "queries_from": "Q_DIS",
+   "file": "references/_local/SRC_ARXIV_2610_35154/raw_P1a_2610.35154v9.txt"
   },
   {
-   "key": "G4p_2201.06664v2",
-   "pdf": "references/_local/arXiv-2201.06664v2.pdf",
-   "full": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt",
-   "records_source_id": "SRC_ARXIV_2201_06664"
+   "label": "P2",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "1905.05564v3",
+    "queries": [
+     "Table 4: Center of mass energies and luminosities of HL-LHC based mu p colliders",
+     "Table 6: Beam-beam tune shifts",
+     "Table 7: Achievable x Bjorken values"
+    ]
+   },
+   "source_id": "SRC_ARXIV_1905_05564",
+   "queries_from": "Q_KAYA",
+   "file": "references/_local/SRC_ARXIV_1905_05564/raw_P2_1905.05564v3.txt"
   },
   {
-   "key": "G4p_2101.10476v2",
-   "pdf": "references/_local/arXiv-2101.10476v2.pdf",
-   "full": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt",
-   "records_source_id": "SRC_ARXIV_2101_10476"
+   "label": "P3",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2506.15445v3",
+    "queries": [
+     "Table 1: Main parameters of the mu+ beam",
+     "Table 3: Main parameters of the muTRISTAN- and ERL-based mu+ p collider",
+     "Table 6: Number of Higgs bosons produced per working year"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2506_15445",
+   "queries_from": "Q_MULHC",
+   "file": "references/_local/SRC_ARXIV_2506_15445/raw_P3_2506.15445v3.txt"
+  },
+  {
+   "label": "P7",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2101.10476v9",
+    "queries": [
+     "TABLE I. Basic parameters of the two µp experiments considered in this work",
+     "TABLE II. The inclusive cross sections of VBF production",
+     "FIG. 2. 95% C.L. exclusion limits"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2101_10476",
+   "queries_from": "Q_2101",
+   "file": "references/_local/SRC_ARXIV_2101_10476/raw_P7_2101.10476v9.txt"
+  },
+  {
+   "label": "P4",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2203.06258v2",
+    "queries": [
+     "Table 1. Benchmark beam energies for several μp collider configurations",
+     "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
+     "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2203_06258",
+   "queries_from": "Q_2203",
+   "file": "references/_local/SRC_ARXIV_2203_06258/raw_P4_2203.06258v2.txt"
+  },
+  {
+   "label": "P5",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2506.15445v2",
+    "queries": [
+     "Table 1: Main parameters of the mu+ beam",
+     "Table 3: Main parameters of the muTRISTAN- and ERL-based mu+ p collider",
+     "Table 6: Number of Higgs bosons produced per working year"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2506_15445",
+   "queries_from": "Q_MULHC",
+   "file": "references/_local/SRC_ARXIV_2506_15445/raw_P5_2506.15445v2.txt"
+  },
+  {
+   "label": "P6",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2506.15445v1",
+    "queries": [
+     "Table 1: Main parameters of the mu+ beam",
+     "Table 3: Main parameters of the muTRISTAN- and ERL-based mu+ p collider",
+     "Table 6: Number of Higgs bosons produced per working year"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2506_15445",
+   "queries_from": "Q_MULHC",
+   "file": "references/_local/SRC_ARXIV_2506_15445/raw_P6_2506.15445v1.txt"
+  },
+  {
+   "label": "G2203v1",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2203.06258v1",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2203_06258",
+   "file": "references/_local/SRC_ARXIV_2203_06258/raw_G2203v1_2203.06258v1.txt"
+  },
+  {
+   "label": "G2203v3",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2203.06258v3",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2203_06258",
+   "file": "references/_local/SRC_ARXIV_2203_06258/raw_G2203v3_2203.06258v3.txt"
+  },
+  {
+   "label": "Q2203v1",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2203.06258v1",
+    "queries": [
+     "Table 1. Benchmark beam energies for several μp collider configurations",
+     "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
+     "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2203_06258",
+   "queries_from": "Q_2203",
+   "file": "references/_local/SRC_ARXIV_2203_06258/raw_Q2203v1_2203.06258v1.txt"
+  },
+  {
+   "label": "G2201v1",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2201.06664v1",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2201_06664",
+   "file": "references/_local/SRC_ARXIV_2201_06664/raw_G2201v1_2201.06664v1.txt"
+  },
+  {
+   "label": "G2201v2",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2201.06664v2",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2201_06664",
+   "file": "references/_local/SRC_ARXIV_2201_06664/raw_G2201v2_2201.06664v2.txt"
+  },
+  {
+   "label": "Q2201v1",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2201.06664v1",
+    "queries": [
+     "Figure 1: Conceptual design of the µ+e−/µ+µ+ collider",
+     "Figure 2: The pion stopping target surrounded by silica aerogel for muonium production",
+     "Figure 3: Density histogram plots of Higgs boson produced by the W-fusion"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2201_06664",
+   "queries_from": "Q_2201",
+   "file": "references/_local/SRC_ARXIV_2201_06664/raw_Q2201v1_2201.06664v1.txt"
+  },
+  {
+   "label": "G2101v1",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2101.10476v1",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2101_10476",
+   "file": "references/_local/SRC_ARXIV_2101_10476/raw_G2101v1_2101.10476v1.txt"
+  },
+  {
+   "label": "G2101v2",
+   "tool": "get_paper_content",
+   "arguments": {
+    "url": "https://arxiv.org/abs/2101.10476v2",
+    "fullText": true
+   },
+   "source_id": "SRC_ARXIV_2101_10476",
+   "file": "references/_local/SRC_ARXIV_2101_10476/raw_G2101v2_2101.10476v2.txt"
+  },
+  {
+   "label": "Q2101v1",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2101.10476v1",
+    "queries": [
+     "TABLE I. Basic parameters of the two µp experiments considered in this work",
+     "TABLE II. The inclusive cross sections of VBF production",
+     "FIG. 2. 95% C.L. exclusion limits"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2101_10476",
+   "queries_from": "Q_2101",
+   "file": "references/_local/SRC_ARXIV_2101_10476/raw_Q2101v1_2101.10476v1.txt"
+  },
+  {
+   "label": "P1b",
+   "tool": "answer_pdf_queries",
+   "arguments": {
+    "paper": "2610.35154v9",
+    "queries": [
+     "Table 1: Example of the LHμC parameters",
+     "booster of about 9 km circumference and main ring of about 3(6) km",
+     "reference [24] Zimmermann, Potential possibilities of modifying SPS/LHC"
+    ]
+   },
+   "source_id": "SRC_ARXIV_2610_35154",
+   "queries_from": "Q_DIS",
+   "file": "references/_local/SRC_ARXIV_2610_35154/raw_P1b_2610.35154v9.txt"
   }
  ],
- "evaluation": {
-  "note": "Run from the repository root after the calls; each command exits 0 on pass. A command whose input was not delivered is not run, and that is recorded. Verdicts map to the §5a stop list and findings.",
-  "P1_P3_template": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py template --ids 2610.35154v9 2610.35154v9 [1905.05564v3] [2506.15445v3] --answers references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_a.txt references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_b.txt [references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt] [references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt] --is-error <flags from the saver's later_version_probe objects, in the same order>  (P2 and P3 in brackets are included exactly when their answer has no page)",
-  "P2_if_pages": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-1905.05564v2.pdf --pages references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt --id 1905.05564v3 --role probe-negative",
-  "P3_if_pages": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2506.15445v2.pdf --pages references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt --id 2506.15445v3 --role probe-negative",
-  "P4": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2203.06258v3.pdf --pages references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v2.xml --id 2203.06258v2 --role known-positive",
-  "P5": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-same --pdf references/_local/arXiv-2506.15445v2.pdf --pages references/_local/SRC_ARXIV_2506_15445/calibration_0b_pages_v2.xml --id 2506.15445v2 --expect-pages 1 2 3 4 6 10 11 12 14 15 16 17 20 21 23",
-  "G4p_gates_vN": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/calibrate.py . research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json  (G1, G2, G6 per delivered vN; G7 fields are a supplementary count)",
-  "G4p_2203.06258_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt --id 2203.06258v1",
-  "G4p_2203.06258_stamps_v3": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt --id 2203.06258v3",
-  "G4p_2203.06258_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt --id-v1 2203.06258v1 --id-vn 2203.06258v3",
-  "G4p_2203.06258_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2203.06258v3.pdf --pages references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v1.xml --id 2203.06258v1 --role g4-v1 --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt",
-  "G4p_2201.06664_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt --id 2201.06664v1",
-  "G4p_2201.06664_stamps_v2": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt --id 2201.06664v2",
-  "G4p_2201.06664_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt --id-v1 2201.06664v1 --id-vn 2201.06664v2",
-  "G4p_2201.06664_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2201.06664v2.pdf --pages references/_local/SRC_ARXIV_2201_06664/calibration_0b_pages_v1.xml --id 2201.06664v1 --role g4-v1 --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt",
-  "G4p_2101.10476_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt --id 2101.10476v1",
-  "G4p_2101.10476_stamps_v2": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt --id 2101.10476v2",
-  "G4p_2101.10476_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt --id-v1 2101.10476v1 --id-vn 2101.10476v2",
-  "G4p_2101.10476_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2101.10476v2.pdf --pages references/_local/SRC_ARXIV_2101_10476/calibration_0b_pages_v1.xml --id 2101.10476v1 --role g4-v1 --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt"
- }
+ "local": {
+  "1905.05564v2": "references/_local/arXiv-1905.05564v2.pdf",
+  "2506.15445v2": "references/_local/arXiv-2506.15445v2.pdf",
+  "2203.06258v3": "references/_local/arXiv-2203.06258v3.pdf",
+  "2201.06664v2": "references/_local/arXiv-2201.06664v2.pdf",
+  "2101.10476v2": "references/_local/arXiv-2101.10476v2.pdf"
+ },
+ "step0": {
+  "2506.15445v1_full": "references/_local/SRC_ARXIV_2506_15445/calibration_get_paper_content_v1.txt",
+  "2506.15445v1_pages": "references/_local/SRC_ARXIV_2506_15445/calibration_pages_v1.xml",
+  "2506.15445v2_pages": "references/_local/SRC_ARXIV_2506_15445/calibration_pages_v2.xml"
+ },
+ "g4prime": [
+  {
+   "tag": "2203",
+   "paper": "2203.06258",
+   "vN": "v3",
+   "local_pdf": "references/_local/arXiv-2203.06258v3.pdf"
+  },
+  {
+   "tag": "2201",
+   "paper": "2201.06664",
+   "vN": "v2",
+   "local_pdf": "references/_local/arXiv-2201.06664v2.pdf"
+  },
+  {
+   "tag": "2101",
+   "paper": "2101.10476",
+   "vN": "v2",
+   "local_pdf": "references/_local/arXiv-2101.10476v2.pdf"
+  }
+ ],
+ "commands": {
+  "audit": "python -I tools/scan_connector_text.py transcripts --since <start> <lead transcript> <subagents dir> > research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json",
+  "evaluate": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate --manifest research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl --calls research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json --out research/_fragments/alphaxiv_calibration_2026-10-29/result_0b.json"
+ },
+ "start": "the UTC commit time of this revision, recorded in research/_fragments/alphaxiv_calibration_2026-10-29.md §9"
 }
