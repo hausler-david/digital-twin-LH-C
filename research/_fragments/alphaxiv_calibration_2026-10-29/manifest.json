@@ -1,0 +1,17 @@
+{"note": "Step-0 calibration of the alphaXiv connector, 2026-10-29 (docs/internet_research_protocol.md §5a). Paths are relative to the repository root; the PDFs and the saved connector texts are git-ignored (references/_local/, references/primary/ holds the committed DIS2026 PDF). The muLHC entry compares the delivered v1 with the local v2: it is version-difference evidence, not a gate run.",
+ "documents": [
+ {"key": "DIS2026_2610.35154v1", "pdf": "references/primary/arXiv-2610.35154v1_Piotrzkowski_LHmuC_DIS2026.pdf",
+  "full": "references/_local/SRC_ARXIV_2610_35154/calibration_get_paper_content_v1.txt",
+  "page_tags": ["references/_local/SRC_ARXIV_2610_35154/calibration_pages_v1.xml"], "records_source_id": "SRC_ARXIV_2610_35154"},
+ {"key": "Kaya_1905.05564v2", "pdf": "references/_local/arXiv-1905.05564v2.pdf",
+  "full": "references/_local/SRC_ARXIV_1905_05564/calibration_get_paper_content_v2.txt",
+  "repeat": "references/_local/SRC_ARXIV_1905_05564/calibration_repeat_get_paper_content_v2.txt",
+  "spot_check": "references/_local/SRC_ARXIV_1905_05564/calibration_spotcheck_get_paper_content_v2.txt",
+  "page_tags": ["references/_local/SRC_ARXIV_1905_05564/calibration_pages_v2.xml"], "records_source_id": "SRC_ARXIV_1905_05564"},
+ {"key": "MR7_2510.27437v1", "pdf": "references/_local/arXiv-2510.27437v1.pdf",
+  "full": "references/_local/SRC_ARXIV_2510_27437/calibration_get_paper_content_v1.txt",
+  "page_tags": ["references/_local/SRC_ARXIV_2510_27437/calibration_pages_v1.xml"], "records_source_id": "SRC_ARXIV_2510_27437"},
+ {"key": "muLHC_delivered_v1_vs_local_v2", "pdf": "references/_local/arXiv-2506.15445v2.pdf",
+  "full": "references/_local/SRC_ARXIV_2506_15445/calibration_get_paper_content_v1.txt",
+  "page_tags": ["references/_local/SRC_ARXIV_2506_15445/calibration_pages_v1.xml"]}
+]}

@@ -121,6 +121,21 @@ def test_save_tool_copies_a_persisted_result_as_bytes_and_refuses_previews(tmp_p
         _save(tmp_path, _transcript(tmp_path, *FULL, [{"type": "text", "text": "x"}], is_error=True))
 
 
+def test_save_tool_follows_an_oversize_notice_and_checks_its_size(tmp_path, capsys):
+    raw = tmp_path / "big.txt"
+    raw.write_text("first line\nsecond line\nthird")
+    notice = (f"Error: result (28 characters across 3 lines) exceeds maximum allowed tokens. Output has been saved to {raw}.\n"
+              "Format: Plain text")
+    assert _save(tmp_path, _transcript(tmp_path, *FULL, notice)) == 0
+    assert json.loads(capsys.readouterr().out)["persisted_by_harness"] is True
+    saved = tmp_path / "references" / "_local" / "SRC_ARXIV_1234_56789" / "full.txt"
+    assert saved.read_bytes() == raw.read_bytes()
+    saved.unlink()
+    wrong = notice.replace("28 characters", "29 characters")
+    with pytest.raises(SystemExit):
+        _save(tmp_path, _transcript(tmp_path, *FULL, wrong))
+
+
 def test_save_tool_accepts_only_the_two_admissible_calls(tmp_path, capsys):
     bad = [("mcp__alphaXiv__get_paper_content", {"url": "https://arxiv.org/abs/1234.56789v2"}, "f.txt"),
            ("mcp__alphaXiv__get_paper_content", {"url": "https://arxiv.org/abs/1234.56789", "fullText": True}, "f.txt"),

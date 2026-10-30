@@ -441,3 +441,12 @@ service. Nothing of it is installed or runs in the container. The binding usage 
 | Service | Tools seen in the session (23) | Version | Terms | Route | Status | Must not |
 |---|---|---|---|---|---|---|
 | **alphaXiv connector** (remote claude.ai connector, MCP) | allowed: `discover_papers` (leads only), `get_paper_content` with `fullText: true` (the only route to `fetched_text`), `answer_pdf_queries` (page-tagged PDF text, versioned arXiv ids `<id>v<n>` only: page attribution and version evidence only); not called: `get_paper_content` without `fullText` (AI-written report); banned: the other 20 (library, notes, feed, folder, follow and researcher tools, `read_files_from_github_repository`), and any tool not present on 2026-10-29 (e.g. `full_text_papers_search`, `embedding_similarity_search`, `agentic_paper_retrieval`) until the owner classifies it; calls audited with `tools/scan_connector_text.py transcripts` | not stated in the session; tool list as seen on 2026-10-29 | alphaXiv's terms on storing delivered text **not verified** (`www.alphaxiv.org` was blocked for WebFetch on 2026-10-28, `research/unresolved_searches.md`); a paper's licence only as stated in its delivered text | connected by the owner to their claude.ai account; runs outside the container; called only by the lead session; queries carry public bibliographic terms only | owner-authorised 2026-10-29; delivered texts stored privately in git-ignored `references/_local/<source_id>/`, never committed and not sent anywhere ("store only"); no connector credential in the repository | never cited as a source (the arXiv paper is, as `SRC_ARXIV_<id>` with `access: fetched_text`); a tool paper's delivered text is not a licence statement for the tool (§12) |
+
+*[2026-10-29, Step 0, `research/_fragments/alphaxiv_calibration_2026-10-29.md`]*: behaviour observed.
+- `get_paper_content` with `fullText` returned the PDF text layer. Its digit multisets equal local `pdftotext` 24.02.0 on
+  three documents, and superscript exponents come as separate tokens.
+- It held one version per paper and refused other versions with "Paper version not found for ID: <id>v<n>"
+  (2506.15445v2, 1905.05564v1). For 2506.15445 the version it holds, v1, is not the latest.
+- `answer_pdf_queries` returned version-specific pages for both 2506.15445v1 and v2.
+- A result too large for the context is saved by the harness to a file, together with its character and line counts.
+  `tools/save_connector_text.py` copies that file only when both counts match.

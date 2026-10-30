@@ -309,6 +309,11 @@ The gates run on PDFs held locally (arXiv:2506.15445v2, 2610.35154v1, 1905.05564
 
 Results go to `research/_fragments/alphaxiv_calibration_<date>.md`.
 
+*[2026-10-29: Step 0 run (`research/_fragments/alphaxiv_calibration_2026-10-29.md`). G1–G3, G5 and G6 passed on every
+document they could be run on. G4 and G7 could not be run as written: `get_paper_content` holds no full text of
+2506.15445v2 ("Paper version not found"). The route is stopped and nothing is registered until the owner decides on
+the substitute evidence.]*
+
 **Verification without page images.** An independent verifier per paper:
 - re-hashes the saved files;
 - runs `tools/check_fetched_text_quotes.py --require-local`;
@@ -455,3 +460,4 @@ Measured from `research/_fragments/` on the document date:
 |---|---|
 | 2026-10-28 | First version: procedure, schemas, access modes, archiving, blocked-host handling, allow-list, record of the 2026-10-28 reconnaissance. |
 | 2026-10-29 | Owner decision: alphaXiv connector authorised; access mode `fetched_text` (§5a: tool classification, closed normalisation list, value, version and page rules, saving, pre-registered Step-0 gates, verification without page images); search-log tool values; blocked-host probe repeated; allow-list not requested; backlog reachability. |
+| 2026-10-29 | Step-0 calibration run: G1–G3, G5, G6 passed; G4 and G7 not runnable as written (no v2 full text of 2506.15445); route stopped pending the owner's decision (`research/_fragments/alphaxiv_calibration_2026-10-29.md`). |

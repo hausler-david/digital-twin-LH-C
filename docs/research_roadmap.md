@@ -456,6 +456,8 @@ parameter records added or corrected with verbatim quotations, conflicts recorde
      lead search-confirms each "yes", "partial" or "possible" item of §3b in the rank order of §3a (W2 version
      check, W3 texts in preparation, W4, W5, W8, W9 residuals, W10), reads it with `get_paper_content`,
      registers it as `fetched_text`, extracts, has it verified against the saved delivered text and folds it in.
+     *[2026-10-29, Step 0 run: G4 and G7 could not be run as written, so the route is stopped until the owner decides
+     on the substitute evidence (`research/_fragments/alphaxiv_calibration_2026-10-29.md`).]*
 3. **Platform, no network:** finish the registry stage and the MR7 reference-table verification (both done on
    2026-10-29);
    prepare Benchmark 3.1 as a pre-registered test that runs AloHEP v2.0 (pinned commit, isolated

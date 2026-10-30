@@ -24,6 +24,9 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PREVIEW_MARK = "<persisted-output>"
 PERSISTED_RE = re.compile(r"Full output saved to: (\S+)")
+# the harness notice for a result larger than the context allows (plain text saved to a file, with its size)
+OVERSIZE_RE = re.compile(r"result \(([\d,]+) characters across ([\d,]+) lines\) exceeds maximum allowed tokens\. "
+                         r"Output has been saved to (\S+?)\.?(?:\s|$)")
 PAGE_RE = re.compile(r'<page num="(\d+)">')
 PAPER_RE = re.compile(r'<paper id="([^"]+)">')
 VERSIONED_URL = re.compile(r"https://arxiv\.org/abs/\d{4}\.\d{4,5}v\d+")
@@ -85,6 +88,15 @@ def resolve_bytes(result: dict) -> tuple[bytes, bool]:
     if result.get("is_error"):
         raise SystemExit("the tool returned an error: refusing to save")
     text = _one_text_block(result.get("content"))
+    big = OVERSIZE_RE.search(text) if len(text) < 4000 else None
+    if big:
+        raw = Path(big.group(3)).read_bytes()
+        n_chars, n_lines = int(big.group(1).replace(",", "")), int(big.group(2).replace(",", ""))
+        decoded = raw.decode("utf-8")
+        if len(decoded) != n_chars or len(decoded.splitlines()) != n_lines:
+            raise SystemExit(f"saved result has {len(decoded)} characters and {len(decoded.splitlines())} lines; the harness "
+                             f"reported {n_chars} and {n_lines}: refusing to save an incomplete file")
+        return raw, True
     if PREVIEW_MARK not in text:
         return text.encode("utf-8"), False
     m = PERSISTED_RE.search(text)

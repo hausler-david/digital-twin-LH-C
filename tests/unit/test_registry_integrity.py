@@ -144,13 +144,17 @@ def test_nothing_under_references_local_is_tracked():
 
 def test_search_log_connector_rows():
     """Search-log rows follow §5a: one tool per row, get_paper_content always with fullText on a versioned arXiv URL,
-    discovery and page-attribution rows never claim fetched_text, and every fetched_text source has its full-text row."""
+    discovery and page-attribution rows never claim fetched_text, calibration rows claim no access, and every
+    fetched_text source has its full-text row with access fetched_text."""
     import csv
     import re
     import json
     modes = {"uploaded", "fetched", "fetched_text", "snippet_only", "blocked", "pending_fetch", ""}
     tools = {"alphaXiv:discover_papers", "alphaXiv:get_paper_content", "alphaXiv:answer_pdf_queries"}
     rows = list(csv.DictReader((REPO_ROOT / "research" / "search_log.csv").open()))
+    # the read-only spot check of 2026-10-29 was made before the §5a rules ("Step-0 gates"): its unversioned
+    # answer_pdf_queries call is logged as made, marked not admissible, never saved, and backs nothing
+    spot_check = ("alphaxiv-spotcheck", "1905.05564")
     full_text_urls = set()
     for r in rows:
         assert r["access_mode"] in modes, r
@@ -159,13 +163,19 @@ def test_search_log_connector_rows():
             continue
         assert r["tool"] in tools, r
         args = json.loads(r["query"])
+        if r["family"] in ("alphaxiv-calibration", "alphaxiv-spotcheck"):
+            assert r["access_mode"] == "", r
         if r["tool"] == "alphaXiv:get_paper_content":
             assert args.get("fullText") is True and args.get("url") == r["url"], r
             assert re.fullmatch(r"https://arxiv\.org/abs/\d{4}\.\d{4,5}v\d+", r["url"]), r
-            full_text_urls.add(r["url"])
+            if r["access_mode"] == "fetched_text":
+                full_text_urls.add(r["url"])
         else:
             assert r["access_mode"] != "fetched_text", r
             if r["tool"] == "alphaXiv:answer_pdf_queries":
+                if (r["family"], str(args.get("paper"))) == spot_check:
+                    assert "NOT ADMISSIBLE" in r["relevance"] and not r["local_archived_filename"], r
+                    continue
                 assert re.fullmatch(r"\d{4}\.\d{4,5}v\d+", str(args.get("paper"))), r
     for sid, src in ev.sources.items():
         if src["access"] in TEXT_ONLY:
