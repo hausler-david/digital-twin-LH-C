@@ -79,6 +79,19 @@ def test_registry_csv_exists_and_has_rows(name):
     assert len(lines) >= 3, f"{name} has fewer than 2 data rows"
 
 
+def test_csv_files_have_header_field_count():
+    """Every row of the CSV registries, the search log and its fragments has as many fields as its header: an
+    unquoted comma in an authored field shifts every later column (edit authored CSVs through the csv module)."""
+    import csv
+    files = sorted((REPO_ROOT / "registries").glob("*.csv")) + [REPO_ROOT / "research" / "search_log.csv"] + \
+        sorted((REPO_ROOT / "research" / "_fragments").glob("*.csv"))
+    for f in files:
+        with f.open(newline="") as fh:
+            rows = list(csv.reader(fh))
+        bad = [n for n, r in enumerate(rows[1:], 2) if r and len(r) != len(rows[0])]
+        assert not bad, f"{f.relative_to(REPO_ROOT)}: rows {bad[:5]} do not have {len(rows[0])} fields"
+
+
 def test_search_log_and_unresolved_exist():
     assert (REPO_ROOT / "research" / "search_log.csv").exists()
     assert (REPO_ROOT / "research" / "unresolved_searches.md").exists()
@@ -153,7 +166,8 @@ def test_search_log_connector_rows():
     tools = {"alphaXiv:discover_papers", "alphaXiv:get_paper_content", "alphaXiv:answer_pdf_queries"}
     rows = list(csv.DictReader((REPO_ROOT / "research" / "search_log.csv").open()))
     # the read-only spot check of 2026-10-29 was made before the §5a rules ("Step-0 gates"): its unversioned
-    # answer_pdf_queries call is logged as made, marked not admissible, never saved, and backs nothing
+    # answer_pdf_queries call is logged as made, marked not admissible, never archived (a scratch copy existed until
+    # 2026-10-30), and backs nothing
     spot_check = ("alphaxiv-spotcheck", "1905.05564")
     full_text_urls = set()
     for r in rows:

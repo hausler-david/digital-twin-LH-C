@@ -42,7 +42,8 @@
     "instruction_scan": {"type": "object", "additionalProperties": false,
                          "properties": {"patterns_version": {"type": "string"},
                                         "hits": {"type": "array", "items": {"type": "object", "additionalProperties": false,
-                                                 "properties": {"line": {"type": "integer"}, "text": {"type": "string"}},
+                                                 "properties": {"line": {"type": "integer"}, "text": {"type": "string"},
+                                                                "kind": {"type": "string", "enum": ["line", "collapsed"]}},
                                                  "required": ["line", "text"]}}},
                          "required": ["patterns_version", "hits"]},
     "storage": {"type": "string"}

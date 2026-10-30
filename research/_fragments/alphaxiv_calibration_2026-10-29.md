@@ -54,6 +54,16 @@ Two calls on arXiv:1905.05564v2, made in plan mode at 20:42Z, before the rules e
 The exponent-token rule and G2's "split superscripts" allowance come from this check. Its bytes equal both fresh calls
 (G3), but it counts toward no gate.
 
+*[Correction 2026-10-30: "not saved" was inaccurate.*
+- *Scratch copies of both spot-check results existed in the session scratchpad, mode 644, for the read-only dry run of
+  2026-10-29: `kaya_full.txt` (SHA-256 `b37431396ddd70f6…ffe7de6f`) and `kaya_pages.xml` (`ffb690808d1aa735…0b1a2b08`,
+  equal to the later versioned 1905.05564v2 response).*
+- *They were never in `references/_local/`, never committed and never sent anywhere. Both were deleted on 2026-10-30.*
+- *A hash search of `/tmp` and the session directory found no other whole-file copy outside
+  `references/_local/<source_id>/`, apart from the harness's own file for the oversize MR7 result (§8). The search
+  detects whole-file copies only. The lead and subagent session transcripts, which the harness keeps, also contain
+  the delivered texts.]*
+
 ## 3. Deliveries
 
 | File in `references/_local/` | Call | Bytes | SHA-256 | Version evidence |
@@ -177,3 +187,39 @@ Nothing proceeds until the owner decides. The options:
 - G5 checks that pages are identified correctly, not where a quotation sits; `tools/check_fetched_text_quotes.py` does
   that per record.
 - The figure values of μLHC v2 (Figures 1 and 10) cannot be reached through text at all.
+- *[2026-10-30]* The harness keeps its own copy of the oversize MR7 result:
+  `<session>/tool-results/mcp-alphaXiv-get_paper_content-1793316636953.txt`, 211,414 bytes, identical to the saved text.
+  It is outside the repository, not committed and not sent anywhere; it was set to mode 600 on 2026-10-30.
+
+## 9. Step 0b and the decision (2026-10-30)
+
+- **The decision.** The owner chose none of options 1–3. They re-uploaded a byte-identical copy of the registered
+  2506.15445v2 PDF (SHA-256 `f6f8f02d…27059966`, so nothing was archived) and wrote "I will let you decide next steps".
+  On that delegation the lead chose a conditional reopening (option 1′). The decision record and the Step-0b protocol
+  are in `docs/internet_research_protocol.md` §5a, committed before any Step-0b call.
+- **What option 2 needs, corrected.** §7 said option 2 "needs an upload of two versions". That overstated its cost: G4
+  as written needs only the later version held locally. The registry already holds uploaded later versions of several
+  arXiv papers, and Step 0b runs G4 on three of them (G4′).
+- **What changed before Step 0b, prompted by the critics' review:**
+  - Two malformed CSV rows were repaired: RISK_045 and `CHK_UNIT_SEARCH_LOG_CONNECTOR_ROWS` had unquoted commas that
+    shifted their columns. A field-count test now covers every CSV. The content was kept as committed; RISK_045's
+    over-general "holds one version per paper" gets a dated update instead of a silent rewording (two cases only,
+    §5), and the spot-check row's "nothing saved" becomes "nothing archived" (§2).
+  - The store-only correction of §2 was made.
+  - `tools/save_connector_text.py` now confines harness pointers and has a `--probe` mode.
+  - The instruction scan now also runs on the collapsed text.
+- **Re-scan.** With patterns `2026-10-30.1`, the 11 saved Step-0 files give 0 hits. Before, the scan ran line by line
+  only.
+- **Extended transcript audit** (`tools/scan_connector_text.py transcripts` over the lead and all subagent
+  transcripts).
+  - All 16 connector calls of the session are the lead's; only the logged spot check is flagged.
+  - It lists 8 historical subagent events, all before the §5a rules were committed (2026-10-29 23:10:38Z):
+    - five planning agents of 2026-10-29 loaded the alphaXiv tool schemas through ToolSearch, but made no call;
+    - one of them called the remote-documentation tool;
+    - one documentation agent (software inventory, workflow phase Docs) ran two `curl` reachability probes of
+      software sites on 2026-10-28.
+  - Since the rules were committed there are 14 connector calls, 0 flagged, 0 other violations and 0 events for review.
+  - Bash commands are classified by command word (shlex, through wrappers such as `timeout`, `env` and `bash -c`, and
+    into `$(…)`), after a regex version flagged "curl" inside a grep pattern, a Python string and a document's prose.
+    The audit sees command words only: a network call made from inside a Python or other script is not detected.
+- **Results:** recorded in §10 after the calls.

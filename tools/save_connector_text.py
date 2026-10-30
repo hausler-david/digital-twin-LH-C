@@ -9,7 +9,16 @@ text block. The file goes to references/_local/<source_id>/<name> (git-ignored, 
 archived files are never edited (§6). The tool prints the connector_call object and, for page-tagged text, the
 page_tag_file object of schemas/archived_metadata.schema.json, plus the SHA-256 and size of the saved file.
 
+The result text is untrusted (CLAUDE.md §5): a harness pointer is followed only when the result *starts* with the
+harness's own notice, and only to a file directly inside <transcript dir>/<transcript stem>/tool-results/ (no symlinks;
+an oversize file must be named mcp-alphaXiv-<tool>-*). A notice anywhere else is delivered text and is saved as such.
+A one-line "not found" refusal is never saved as a delivered text; --probe saves the answer of a later-version probe
+(answer_pdf_queries on <id>v<n+1>, docs/internet_research_protocol.md §5a) as probe_*.txt, error results included, and
+prints the later_version_probe object.
+
 Run: python -I tools/save_connector_text.py --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... --name <file>
+     python -I tools/save_connector_text.py --probe --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... \
+         --name probe_<id>v<k>.txt
 """
 from __future__ import annotations
 
@@ -23,10 +32,12 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PREVIEW_MARK = "<persisted-output>"
-PERSISTED_RE = re.compile(r"Full output saved to: (\S+)")
-# the harness notice for a result larger than the context allows (plain text saved to a file, with its size)
-OVERSIZE_RE = re.compile(r"result \(([\d,]+) characters across ([\d,]+) lines\) exceeds maximum allowed tokens\. "
-                         r"Output has been saved to (\S+?)\.?(?:\s|$)")
+# the harness's own notices, matched only at the start of a result (anywhere else they are delivered text)
+PERSISTED_RE = re.compile(r"<persisted-output>\nOutput too large \([^)\n]*\)\. Full output saved to: (\S+)\n")
+OVERSIZE_RE = re.compile(r"Error: result \(([\d,]+) characters across ([\d,]+) lines\) exceeds maximum allowed tokens\. "
+                         r"Output has been saved to (\S+?)\.?(?:\n|$)")
+# a one-line refusal ("Paper version not found for ID: 2506.15445v2"): never a delivered text
+NOT_FOUND_RE = re.compile(r"\s*[^\n<]{0,120}\bnot found\b[^\n<]{0,120}\s*", re.I)
 PAGE_RE = re.compile(r'<page num="(\d+)">')
 PAPER_RE = re.compile(r'<paper id="([^"]+)">')
 VERSIONED_URL = re.compile(r"https://arxiv\.org/abs/\d{4}\.\d{4,5}v\d+")
@@ -64,10 +75,18 @@ def find_call(transcript: Path, tool_use_id: str) -> tuple[dict, dict, str | Non
     return use, result, stamp
 
 
-def check_call(use: dict, name: str) -> str:
+def check_call(use: dict, name: str, probe: bool = False) -> str:
     """The tool name without the server prefix, if the call is one of the two admissible calls."""
     tool = str(use.get("name", "")).removeprefix("mcp__alphaXiv__")
     args = use.get("input") or {}
+    if probe:
+        if tool != "answer_pdf_queries" or not VERSIONED_ID.fullmatch(str(args.get("paper", ""))):
+            raise SystemExit("--probe saves only answer_pdf_queries on a versioned arXiv id <id>v<n>")
+        if not (name.startswith(f"probe_{args['paper']}") and name.endswith(".txt")):
+            raise SystemExit(f"a probe answer is saved as probe_{args['paper']}[_suffix].txt")
+        return tool
+    if name.startswith("probe_"):
+        raise SystemExit("probe_* names are reserved for --probe")
     if tool == "get_paper_content":
         if args.get("fullText") is not True or not VERSIONED_URL.fullmatch(str(args.get("url", ""))):
             raise SystemExit("get_paper_content must have fullText true and a versioned https://arxiv.org/abs/<id>v<n> url")
@@ -83,26 +102,58 @@ def check_call(use: dict, name: str) -> str:
     return tool
 
 
-def resolve_bytes(result: dict) -> tuple[bytes, bool]:
-    """The result as bytes; follows the harness pointer when the transcript holds only a persisted-output preview."""
-    if result.get("is_error"):
+def _confined(path: str, tool_results: Path, prefix: str | None = None) -> Path:
+    """A harness file named by a pointer: an absolute path, not itself a symlink, whose real location is directly
+    inside the real tool_results directory (symlinked ancestor directories are allowed; the target is what counts)."""
+    p = Path(path)
+    if not p.is_absolute() or os.path.islink(p):
+        raise SystemExit(f"pointer {path} is not an absolute path to a regular file: refusing to follow it")
+    real = Path(os.path.realpath(p))
+    if real.parent != Path(os.path.realpath(tool_results)):
+        raise SystemExit(f"pointer {path} is outside {tool_results}: refusing to follow it")
+    if prefix and not real.name.startswith(prefix):
+        raise SystemExit(f"pointer {path} does not name a harness file {prefix}*: refusing to follow it")
+    return p
+
+
+MIN_TEXT_BYTES, MIN_TEXT_LINES = 2048, 50  # smallest calibration full text: 16,610 bytes, 913 lines
+
+
+def check_structure(data: bytes, name: str) -> None:
+    """A delivered text must look like one: page-tagged XML with a paper id and at least one page, or a multi-line
+    full text above a floor. Anything else (an empty answer, a refusal in other words, an error page) is refused."""
+    text = data.decode("utf-8", errors="replace")
+    if name.endswith(".xml"):
+        if not PAPER_RE.search(text) or not PAGE_RE.search(text):
+            raise SystemExit("the answer has no <paper id> and <page num> blocks: not page-tagged text (refusing)")
+    elif len(data) < MIN_TEXT_BYTES or len(text.splitlines()) < MIN_TEXT_LINES:
+        raise SystemExit(f"the answer has {len(data)} bytes and {len(text.splitlines())} lines: too small for a full text "
+                         f"(at least {MIN_TEXT_BYTES} bytes and {MIN_TEXT_LINES} lines); refusals are saved with --probe")
+
+
+def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False) -> tuple[bytes, bool]:
+    """The result as bytes; follows the harness pointer when the result starts with the harness's own notice."""
+    if result.get("is_error") and not probe:
         raise SystemExit("the tool returned an error: refusing to save")
     text = _one_text_block(result.get("content"))
-    big = OVERSIZE_RE.search(text) if len(text) < 4000 else None
+    big = OVERSIZE_RE.match(text)
     if big:
-        raw = Path(big.group(3)).read_bytes()
+        raw = _confined(big.group(3), tool_results, f"mcp-alphaXiv-{tool}-").read_bytes()
         n_chars, n_lines = int(big.group(1).replace(",", "")), int(big.group(2).replace(",", ""))
         decoded = raw.decode("utf-8")
         if len(decoded) != n_chars or len(decoded.splitlines()) != n_lines:
             raise SystemExit(f"saved result has {len(decoded)} characters and {len(decoded.splitlines())} lines; the harness "
                              f"reported {n_chars} and {n_lines}: refusing to save an incomplete file")
         return raw, True
-    if PREVIEW_MARK not in text:
+    if not text.startswith(PREVIEW_MARK):
+        if not probe and NOT_FOUND_RE.fullmatch(text):
+            raise SystemExit(f"the result is a refusal, not a delivered text ({text.strip()[:80]!r}); a probe answer is "
+                             "saved with --probe")
         return text.encode("utf-8"), False
-    m = PERSISTED_RE.search(text)
+    m = PERSISTED_RE.match(text)
     if not m:
         raise SystemExit("transcript holds a persisted-output preview without a file path: refusing to save a preview")
-    raw = Path(m.group(1)).read_bytes()
+    raw = _confined(m.group(1), tool_results).read_bytes()
     try:
         doc = json.loads(raw)
     except (json.JSONDecodeError, UnicodeDecodeError):
@@ -130,17 +181,30 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--source-id", required=True)
     ap.add_argument("--name", required=True, help="file name inside references/_local/<source_id>/")
     ap.add_argument("--root", type=Path, default=ROOT)
+    ap.add_argument("--probe", action="store_true", help="save the answer of a later-version probe (probe_*.txt)")
     a = ap.parse_args(argv)
     if not re.fullmatch(r"SRC_[A-Z0-9_]+", a.source_id) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_.-]*", a.name):
         raise SystemExit("invalid --source-id or --name")
     use, result, stamp = find_call(a.transcript, a.tool_use_id)
-    tool = check_call(use, a.name)
-    data, persisted = resolve_bytes(result)
+    tool = check_call(use, a.name, a.probe)
+    tool_results = a.transcript.parent / a.transcript.stem / "tool-results"
+    data, persisted = resolve_bytes(result, tool_results, tool, a.probe)
+    if not a.probe:
+        check_structure(data, a.name)
     rel = str(Path("references") / "_local" / a.source_id / a.name)
     saved = save(data, a.root / rel)
     call = {"tool": tool, "arguments": use.get("input") or {}, "tool_use_id": a.tool_use_id, "called_on": stamp or ""}
     out = {"file": rel, **saved, "persisted_by_harness": persisted, "connector_call": call}
-    if tool == "answer_pdf_queries":
+    if a.probe:
+        text = data.decode("utf-8", errors="replace")
+        out["is_error"] = bool(result.get("is_error"))
+        out["has_pages"] = bool(PAGE_RE.search(text))
+        if not out["has_pages"] and len(text) <= 500:
+            out["text"] = text
+        out["later_version_probe"] = {**call, "file": rel, "sha256": saved["sha256"], "is_error": out["is_error"],
+                                      "has_pages": out["has_pages"], "paper_id": (PAPER_RE.findall(text) or [None])[0],
+                                      "pages": [int(n) for n in PAGE_RE.findall(text)]}
+    elif tool == "answer_pdf_queries":
         text = data.decode("utf-8")
         out["paper_id"] = (PAPER_RE.findall(text) or [None])[0]
         out["page_tag_file"] = {"file": rel, "sha256": saved["sha256"], "size_bytes": saved["size_bytes"],

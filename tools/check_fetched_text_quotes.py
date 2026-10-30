@@ -9,8 +9,9 @@ paper id. Every parameter or material record citing the source must then have a 
 the closed normalisation list only: ligatures, µ/μ, U+2212/'-', whitespace, and line-end hyphens between two letters
 (kept or dropped). A line-end hyphen next to a digit or a minus sign is always kept. Exponents, super- and subscripts
 and every other character must appear as delivered. A segment must hold at least two tokens or eight characters, and
-no segment may come from a passage flagged by the instruction scan. Records of status unknown with a null quotation
-are counted, not failed. For proposals with access fetched_text every provenance_quote must be verbatim (no page).
+no segment may overlap a passage flagged by the instruction scan (a flagged line, or a flagged phrase located as a span
+in the collapsed text). Records of status unknown with a null quotation are counted, not failed. For proposals with
+access fetched_text every provenance_quote must be verbatim (no page) and obey the same segment rules.
 
     uv run python tools/check_fetched_text_quotes.py                   # skips sources whose saved text is absent
     uv run python tools/check_fetched_text_quotes.py --require-local   # absent text is a failure (batch verification)
@@ -88,34 +89,75 @@ def parse_pages(tagged: str) -> tuple[str | None, dict[int, str]]:
     return (ids[0] if ids else None), {int(n): xml_unescape(body) for n, body in PAGE_RE.findall(tagged)}
 
 
-def _in_order(full: str, segs: list[str], start_limit: int | None = None) -> list[str]:
-    """Segments must occur in order; with start_limit the first one must start before it (on the cited page)."""
-    problems, pos = [], 0
+def _locate(full: str, segs: list[str], start_limit: int | None = None) -> tuple[list[tuple[int, int]], str | None]:
+    """Spans of the segments found in order (with start_limit the first one must start before it), and the first
+    segment not found (None if all were found)."""
+    spans, pos = [], 0
     for k, seg in enumerate(segs):
         pat = segment_pattern(seg)
         m = next((m for m in pat.finditer(full, pos)
                   if not (k == 0 and start_limit is not None and m.start() >= start_limit)), None)
         if m is None:
-            return [f"not found in order: {seg[:100]!r}"]
+            return spans, seg
+        spans.append(m.span())
         pos = m.end()
+    return spans, None
+
+
+def _in_order(full: str, segs: list[str], start_limit: int | None = None) -> list[str]:
+    """Segments must occur in order; with start_limit the first one must start before it (on the cited page)."""
+    missing = _locate(full, segs, start_limit)[1]
+    return [f"not found in order: {missing[:100]!r}"] if missing is not None else []
+
+
+def _segment_rules(full: str, segs: list[str], flagged: list[str]) -> list[str]:
+    """Rules every quotation segment obeys: a minimum length, and no overlap with a passage flagged by the instruction
+    scan, whether the flagged text is a whole line or a phrase found across short lines. Flagged texts are located in
+    `full` as spans under the same normalisation as the segment, and every occurrence of the segment is tested; a
+    flagged text that cannot be located fails closed."""
+    problems = []
+    flagged_spans = []
+    for f in flagged:
+        nf = normalise(f)
+        if not nf:
+            continue
+        spans = [m.span() for m in segment_pattern(nf).finditer(full)]
+        if not spans:
+            problems.append(f"a passage flagged by the instruction scan cannot be located in the saved text, so no "
+                            f"quotation of this source can be cleared: {f[:80]!r}")
+        flagged_spans += [(s, f) for s in spans]
+    for seg in segs:
+        if len(seg) < MIN_CHARS and len(seg.split()) < 2:
+            problems.append(f"segment too short to locate: {seg!r}")
+        hit = next((f for f in flagged if normalise(f) and (seg in normalise(f) or normalise(f) in seg)), None)
+        if hit is None:
+            hit = next((f for m in segment_pattern(seg).finditer(full)
+                        for (fa, fb), f in flagged_spans if fa < m.end() and m.start() < fb), None)
+        if hit is not None:
+            problems.append(f"segment overlaps a passage flagged by the instruction scan: {hit[:80]!r}")
     return problems
+
+
+def proposal_problems(full: str, proposal: dict, flagged: list[str]) -> list[str]:
+    """Problems of the provenance_quote fields of a proposal with access fetched_text: each verbatim (elisions only)
+    in the saved full text and obeying the segment rules (no page is cited by a proposal quote)."""
+    out = []
+    for key, q in _quotes(proposal):
+        segs = segments(q)
+        if not segs or _in_order(full, segs):
+            out.append(f"{key}: not verbatim in the saved full text: {q[:100]!r}")
+        out += [f"{key}: {p}" for p in _segment_rules(full, segs, flagged)]
+    return out
 
 
 def check_quotation(full: str, pages: dict[int, str], quotation: str, page, flagged: list[str] = ()) -> list[str]:
     """Problems of one quotation: every segment must occur, in order, in the full text and from the cited page on
     (running on into the next page is allowed). `full` is the saved full text in searchable form; `flagged` are the
-    lines the instruction scan flagged."""
-    problems = []
+    texts the instruction scan flagged (lines, or phrases found in the collapsed text)."""
     segs = segments(quotation)
     if not segs:
         return ["empty quotation"]
-    for seg in segs:
-        if len(seg) < MIN_CHARS and len(seg.split()) < 2:
-            problems.append(f"segment too short to locate: {seg!r}")
-        for f in flagged:
-            nf = normalise(f)
-            if nf and (seg in nf or nf in seg):
-                problems.append(f"segment overlaps a passage flagged by the instruction scan: {f[:80]!r}")
+    problems = _segment_rules(full, segs, list(flagged))
     if _in_order(full, segs):
         problems.append(f"not in the saved full text (in order): {segs[0][:100]!r}")
     if not isinstance(page, int) or isinstance(page, bool) or page < 1:
@@ -210,10 +252,9 @@ def main(argv: list[str] | None = None) -> int:
         for prid, pr in ev.proposals.items():
             if pr.get("source_id") != sid or pr.get("access") not in TEXT_ONLY:
                 continue
-            for key, q in _quotes(pr):
-                checked += 1
-                if _in_order(full, segments(q)) or not segments(q):
-                    fail(f"proposal {prid} {key}: not verbatim in the saved full text: {q[:100]!r}")
+            checked += sum(1 for _ in _quotes(pr))
+            for problem in proposal_problems(full, pr, flagged):
+                fail(f"proposal {prid} {problem}")
     print(f"{len(sources)} fetched_text source(s), {checked} quotation(s) checked, {unknown} unknown record(s) without "
           f"quotation, {skipped} skipped, {failures} failure(s)")
     return 1 if failures else 0

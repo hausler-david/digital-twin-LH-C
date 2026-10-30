@@ -1,0 +1,66 @@
+{
+ "note": "Step 0b (docs/internet_research_protocol.md §5a, pre-registered 2026-10-30): G4' inputs for calibrate.py (G1, G2, G6 of each delivered later-version full text against its uploaded PDF; records_source_id gives a supplementary coverage count). Paths are relative to the repository root and fixed before the calls; the saved answers are git-ignored. Probe answers (P1-P3) are saved as probe_*.txt with tools/save_connector_text.py --probe, page-tagged answers (P4, P5, the G4' v1 halves) as calibration_0b_pages_*.xml.",
+ "probes": {
+  "P1a": "references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_a.txt",
+  "P1b": "references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_b.txt",
+  "P2": "references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt",
+  "P3": "references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt",
+  "P4": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v2.xml",
+  "P5": "references/_local/SRC_ARXIV_2506_15445/calibration_0b_pages_v2.xml"
+ },
+ "g4prime_v1": {
+  "2203.06258": {
+   "full": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt",
+   "pages": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v1.xml"
+  },
+  "2201.06664": {
+   "full": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt",
+   "pages": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_pages_v1.xml"
+  },
+  "2101.10476": {
+   "full": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt",
+   "pages": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_pages_v1.xml"
+  }
+ },
+ "documents": [
+  {
+   "key": "G4p_2203.06258v3",
+   "pdf": "references/_local/arXiv-2203.06258v3.pdf",
+   "full": "references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt",
+   "records_source_id": "SRC_ARXIV_2203_06258"
+  },
+  {
+   "key": "G4p_2201.06664v2",
+   "pdf": "references/_local/arXiv-2201.06664v2.pdf",
+   "full": "references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt",
+   "records_source_id": "SRC_ARXIV_2201_06664"
+  },
+  {
+   "key": "G4p_2101.10476v2",
+   "pdf": "references/_local/arXiv-2101.10476v2.pdf",
+   "full": "references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt",
+   "records_source_id": "SRC_ARXIV_2101_10476"
+  }
+ ],
+ "evaluation": {
+  "note": "Run from the repository root after the calls; each command exits 0 on pass. A command whose input was not delivered is not run, and that is recorded. Verdicts map to the §5a stop list and findings.",
+  "P1_P3_template": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py template --ids 2610.35154v9 2610.35154v9 [1905.05564v3] [2506.15445v3] --answers references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_a.txt references/_local/SRC_ARXIV_2610_35154/probe_2610.35154v9_b.txt [references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt] [references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt] --is-error <flags from the saver's later_version_probe objects, in the same order>  (P2 and P3 in brackets are included exactly when their answer has no page)",
+  "P2_if_pages": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-1905.05564v2.pdf --pages references/_local/SRC_ARXIV_1905_05564/probe_1905.05564v3.txt --id 1905.05564v3 --role probe-negative",
+  "P3_if_pages": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2506.15445v2.pdf --pages references/_local/SRC_ARXIV_2506_15445/probe_2506.15445v3.txt --id 2506.15445v3 --role probe-negative",
+  "P4": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2203.06258v3.pdf --pages references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v2.xml --id 2203.06258v2 --role known-positive",
+  "P5": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-same --pdf references/_local/arXiv-2506.15445v2.pdf --pages references/_local/SRC_ARXIV_2506_15445/calibration_0b_pages_v2.xml --id 2506.15445v2 --expect-pages 1 2 3 4 6 10 11 12 14 15 16 17 20 21 23",
+  "G4p_gates_vN": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/calibrate.py . research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json  (G1, G2, G6 per delivered vN; G7 fields are a supplementary count)",
+  "G4p_2203.06258_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt --id 2203.06258v1",
+  "G4p_2203.06258_stamps_v3": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt --id 2203.06258v3",
+  "G4p_2203.06258_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v3.txt --id-v1 2203.06258v1 --id-vn 2203.06258v3",
+  "G4p_2203.06258_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2203.06258v3.pdf --pages references/_local/SRC_ARXIV_2203_06258/calibration_0b_pages_v1.xml --id 2203.06258v1 --role g4-v1 --full references/_local/SRC_ARXIV_2203_06258/calibration_0b_get_paper_content_v1.txt",
+  "G4p_2201.06664_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt --id 2201.06664v1",
+  "G4p_2201.06664_stamps_v2": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt --id 2201.06664v2",
+  "G4p_2201.06664_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v2.txt --id-v1 2201.06664v1 --id-vn 2201.06664v2",
+  "G4p_2201.06664_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2201.06664v2.pdf --pages references/_local/SRC_ARXIV_2201_06664/calibration_0b_pages_v1.xml --id 2201.06664v1 --role g4-v1 --full references/_local/SRC_ARXIV_2201_06664/calibration_0b_get_paper_content_v1.txt",
+  "G4p_2101.10476_stamps_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt --id 2101.10476v1",
+  "G4p_2101.10476_stamps_v2": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py stamps --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt --id 2101.10476v2",
+  "G4p_2101.10476_full_pair": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py full-pair --v1 references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt --vn references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v2.txt --id-v1 2101.10476v1 --id-vn 2101.10476v2",
+  "G4p_2101.10476_pages_v1": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pages-differ --pdf references/_local/arXiv-2101.10476v2.pdf --pages references/_local/SRC_ARXIV_2101_10476/calibration_0b_pages_v1.xml --id 2101.10476v1 --role g4-v1 --full references/_local/SRC_ARXIV_2101_10476/calibration_0b_get_paper_content_v1.txt"
+ }
+}
