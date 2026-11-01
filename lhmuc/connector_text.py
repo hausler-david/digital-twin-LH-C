@@ -21,17 +21,24 @@ VERSIONED_ID = re.compile(r"(\d{4}\.\d{4,5})(v[1-9][0-9]*)")
 STAMP = re.compile(r"arXiv:\s*(\d{4}\.\d{4,5})(v[1-9][0-9]*)\s*\[[^\]\n]{2,40}\]\s*\d{1,2}\s+[A-Z][a-z]{2}\s+\d{4}")
 ONE_LINE_MAX = 300
 
-# Thresholds calibrated on the Step-0 files before the Step-0b calls
-# (research/_fragments/alphaxiv_calibration_2026-10-29/calibration_0b_pre.json).
+# Thresholds calibrated on the Step-0 files and the uploaded PDFs before the Step-0b calls; the values they rest on
+# are in research/_fragments/alphaxiv_calibration_2026-10-29/calibration_0b_pre.json.
 SAME_PAGE_OVERLAP = 0.85    # same-version pages: minimum 0.862 (MR7 p. 22) over 45 pages
-SAME_PAPER_MEDIAN = 0.60    # other version of the same paper: median 0.93; unrelated papers: median 0.40 at most
-MIN_PAGE_WORDS = 40         # smallest Step-0 page: 91 words
+SAME_PAPER_MEDIAN = 0.80    # median page window share: same paper 0.991 at least, unrelated papers 0.683 at most
+SAME_PAPER_CHUNKS = 0.80    # whole-text chunk score: same paper 1.000, unrelated papers 0.714 at most (both maxima:
+                            # Kaya against the muLHC upload, two papers on the same subject)
+MIN_PAGE_WORDS = 40         # a page below this is "short": no evidence either way (Step-0 pages: 91 words at least)
+CHUNK_WORDS = 150
+
+
+def _char(n: int, ref: str) -> str:
+    return chr(n) if n <= 0x10FFFF else ref  # an out-of-range reference stays as written
 
 
 def xml_unescape(text: str) -> str:
     """XML entities only (&lt; &gt; &quot; &apos; &amp; and numeric references), never HTML named entities."""
-    text = re.sub(r"&#x([0-9A-Fa-f]+);", lambda m: chr(int(m.group(1), 16)), text)
-    text = re.sub(r"&#(\d+);", lambda m: chr(int(m.group(1))), text)
+    text = re.sub(r"&#x([0-9A-Fa-f]+);", lambda m: _char(int(m.group(1), 16), m.group(0)), text)
+    text = re.sub(r"&#(\d+);", lambda m: _char(int(m.group(1)), m.group(0)), text)
     for a, b in XML_ENTITIES.items():
         text = text.replace(a, b)
     return text.replace("&amp;", "&")
@@ -126,10 +133,25 @@ def stamps(text: str, base: str) -> list[str]:
     return [v for b, v in STAMP.findall(collapse(text)) if b == base]
 
 
+def other_paper_stamps(text: str, base: str) -> list[str]:
+    """Full-format arXiv stamps of other papers (a page carrying one is a page of another paper)."""
+    return [b + v for b, v in STAMP.findall(collapse(text)) if b != base]
+
+
+def strip_stamps(text: str) -> str:
+    """The text without its full-format arXiv stamps (whitespace collapsed)."""
+    return STAMP.sub(" ", collapse(text))
+
+
 def stamp_verdict(text: str, vid: str) -> str:
     base, version = VERSIONED_ID.fullmatch(vid).groups()
     found = stamps(text, base)
     return "absent" if not found else "matches" if all(v == version for v in found) else "other_version"
+
+
+def short(body: str) -> bool:
+    """A page below MIN_PAGE_WORDS words: no evidence either way (listed, never compared)."""
+    return len(body.split()) < MIN_PAGE_WORDS
 
 
 def same_page(body: str, local_page: str) -> bool:
@@ -137,18 +159,50 @@ def same_page(body: str, local_page: str) -> bool:
     return digits(body) == digits(local_page) and overlap(words(body), words(local_page)) >= SAME_PAGE_OVERLAP
 
 
-def differs_page(body: str, local_page: str) -> bool:
-    """Positive evidence of other content: a whole page (>= MIN_PAGE_WORDS words) holding digits that the local page
-    of that number lacks. A cut-off page or a fragment holds a sub-multiset of the digits and never differs."""
-    return (len(body.split()) >= MIN_PAGE_WORDS and not same_page(body, local_page)
-            and bool(digits(body) - digits(local_page)))
+def windows(local: list[str] | tuple[str, ...], n: int | None = None) -> list[str]:
+    """Single pages and pairs of consecutive local pages; with n, only those around page n (n-1 to n+1)."""
+    idx = range(len(local)) if n is None else [i for i in (n - 2, n - 1, n) if 0 <= i < len(local)]
+    out = [local[i] for i in idx]
+    out += [local[i] + "\n" + local[i + 1] for i in idx if i + 1 < len(local) and (n is None or i + 1 <= n)]
+    return out
 
 
-def same_paper(pages: dict[int, str], local: list[str]) -> float:
-    """Median over the returned pages of the best word overlap with any local page."""
-    if not pages or not local:
+def same_as_any(body: str, local: list[str] | tuple[str, ...]) -> bool:
+    return any(same_page(body, p) for p in local)
+
+
+def differs_page(body: str, local: list[str] | tuple[str, ...], n: int) -> bool:
+    """Positive evidence of other content at page n: a page of at least MIN_PAGE_WORDS words that is the same as no
+    local page and holds digits that no local window around page n (pages n-1 to n+1, singly or as consecutive pairs)
+    contains. A cut-off page, a fragment or a page shifted by one is never counted as differing."""
+    if short(body) or same_as_any(body, local):
+        return False
+    d = digits(body)
+    return all(d - digits(w) for w in windows(local, n)) if windows(local, n) else bool(d)
+
+
+def window_share(unit: str, local: list[str] | tuple[str, ...]) -> float:
+    """Share of the unit's words found in the best window of one or two consecutive local pages."""
+    u = words(unit)
+    total = sum(u.values())
+    if not total or not local:
         return 0.0
-    return statistics.median(max(overlap(words(b), words(p)) for p in local) for b in pages.values())
+    return max(sum((u & words(w)).values()) for w in windows(local)) / total
+
+
+def same_paper(pages: dict[int, str], local: list[str] | tuple[str, ...]) -> float | None:
+    """Median over the returned pages of at least MIN_PAGE_WORDS words of window_share; None when no page qualifies."""
+    scores = [window_share(b, local) for b in pages.values() if not short(b)]
+    return statistics.median(scores) if scores else None
+
+
+def chunk_score(text: str, local: list[str] | tuple[str, ...]) -> float:
+    """Whole-text same-paper score: median window_share of consecutive CHUNK_WORDS-word chunks of the text. Unlike a
+    whole-text recall it does not depend on the lengths of the two versions."""
+    ws = text.split()
+    chunks = [" ".join(ws[i:i + CHUNK_WORDS]) for i in range(0, len(ws), CHUNK_WORDS)]
+    chunks = [c for c in chunks if len(c.split()) >= MIN_PAGE_WORDS] or chunks
+    return statistics.median(window_share(c, local) for c in chunks) if chunks else 0.0
 
 
 def contained(body: str, full_text: str) -> bool:

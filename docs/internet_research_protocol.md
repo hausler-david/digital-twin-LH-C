@@ -279,7 +279,11 @@ connector result is saved. The source id must be `SRC_ARXIV_<id>` (or `_V<n>`) o
 ending in `_v<n>` must carry the requested version. `--record` appends the call's record (hashes, flags, call and
 message ids, no delivered text) to a JSON-lines file; `--no-result` records a call without a result; `--check`
 writes nothing. The harness may count an oversize result in UTF-16 code units, so either count shows a complete
-file. The lead makes no copies of connector text
+file. *[2026-10-30, revision 2026-10-30.3:]* `--raw` keeps every result shape: a result that is not one text
+block is saved as its block list, and a harness notice whose file cannot be followed or verified is saved as the
+notice, with `raw_shape` in the record. With `--plan` and `--label`, a label not in the plan, a source id or name other
+than the plan's, and a label or call already in the record are refused before anything is written; arguments that
+differ from the plan are saved and recorded as `plan_mismatch`. The lead makes no copies of connector text
 outside `references/_local/<source_id>/`; scripts read it only from there. The harness holds copies the lead does
 not control: the lead and subagent session transcripts, and its own file for a persisted result. A hash search
 before each commit looks for stray copies; it detects whole-file copies only, not excerpts.]* `research/archived_metadata/<source_id>.json` (`content_kind: connector_text`) records:
@@ -299,7 +303,8 @@ content stops that paper (`docs/security_policy.md` §10).]* Delivered text is d
 authors). *[2026-10-30, lead amendment under the owner's delegation, pending the owner's confirmation: or captions,
 reference entries and short phrases taken from a version of the requested arXiv paper (the registered or uploaded
 one); never project data. The Step-0 queries of 2026-10-29 were of this kind, so they deviated from the rule as then
-written; the deviation is recorded in the calibration note §9.]* For a proposal record with `access: fetched_text`, every `provenance_quote` is verbatim (elisions only);
+written; the deviation is recorded in the calibration note §9.]* *[2026-11-01: the owner confirmed the amended rule,
+as committed in `CLAUDE.md` §5.]* For a proposal record with `access: fetched_text`, every `provenance_quote` is verbatim (elisions only);
 commentary goes into other fields.
 
 **Step-0 gates.** The calibration registers nothing. If any gate fails, the route stops and the owner is told.
@@ -348,26 +353,33 @@ the substitute evidence.]*
     implemented and tested before any reading. Option 1′ widens option 1's rule (a) from stamp-less full texts
     (calibration note §7) to every reading.
 - **What stays.** G4 and G7 stay recorded as not passed as written.
-- **Review and approval.** Three adversarial critics reviewed the plan. The first version of this pre-registration
-  (commit `6c3d41b`) was reviewed by one reviewer and four lens-specific finders before any Step-0b call; they found
-  16 blocking defects between them, and revision 2026-10-30.2 below replaces it, again before any call. Plan mode
-  ended with a worker restart before an approval dialog was shown, so no separate approval of the plan by the owner is
-  recorded.
+- **Review and approval.**
+  - Three adversarial critics reviewed the plan.
+  - Every version of the Step-0b pre-registration was reviewed before any Step-0b call:
+    - the first (`6c3d41b`) by one reviewer and four lens-specific finders, who found 16 blocking defects between
+      them;
+    - revision 2026-10-30.2 (`6183c43`) by three finders and three skeptics, who confirmed 40 of 43 findings, one of
+      them blocking.
+  - Revision 2026-10-30.3 below replaces both.
+  - Plan mode ended with a worker restart before an approval dialog was shown, so no separate approval of the plan by
+    the owner is recorded.
 - **Reversibility.** The owner is told in the next status report and can reverse the decision. Nothing from the
   connector is registered before batch C1.
 
-**Step 0b (pre-registered; revision 2026-10-30.2 replaces the version of commit `6c3d41b`; both were committed before
-any Step-0b call).** It registers nothing. One command decides, without judgement:
-`research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate`. Its inputs are the call plan in
-`manifest_0b.json`, the saver's record `saves_0b.jsonl`, the transcript audit `audit_0b.json`, the saved files, the
-local PDFs and the Step-0 files. It exits 0 when Step 0b passes, 1 on a stop and 2 on an input error. `pre_0b.py`
-recomputes every threshold from the Step-0 files (`calibration_0b_pre.json`, committed with this revision), and
-`tests/unit/test_step0b_eval.py` drives each rule below on synthetic answers.
+**Step 0b (pre-registered; revision 2026-10-30.3 replaces the versions of `6c3d41b` and `6183c43`; all three were
+committed before any Step-0b call).** It registers nothing. One command decides, without judgement:
+`research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate`. It runs once, after the last retry and
+late result, and only that run decides.
+- **Inputs:** the call plan in `manifest_0b.json`, the saver's record `saves_0b.jsonl`, the transcript audit
+  `audit_0b.json`, the saved files, and the local PDFs and Step-0 files, whose SHA-256 the manifest pins.
+- **Exit status:** 0 when Step 0b passes, 1 on a stop, 2 on an input error (no decision).
+- **Calibration and tests.** `pre_0b.py` recomputes every threshold from the Step-0 files and the uploaded PDFs, and
+  writes `calibration_0b_pre.json`, committed with this revision. `tests/unit/test_step0b_eval.py` drives the rules
+  below on synthetic answers.
 
-*Calls.* The lead makes 17 calls in the plan order, whatever the earlier answers. Each is logged as an
-`alphaxiv-calibration` row with `access_mode` empty.
-- **P1a, P1b:** `answer_pdf_queries` on 2610.35154v9, a version that does not exist. P1a comes first; P1b comes last,
-  in a later message than every other call.
+*Calls.* The lead makes 17 calls, one per assistant message, in the plan order, whatever the earlier answers. Each is
+logged as an `alphaxiv-calibration` row with `access_mode` empty.
+- **P1a, P1b:** `answer_pdf_queries` on 2610.35154v9, a version that does not exist. P1a comes first; P1b comes last.
 - **P2, P3:** 1905.05564v3 and 2506.15445v3, the adjacent later versions of two registered papers (P3 is the W2
   version check).
 - **P7:** 2101.10476v9, a second far-out version, of another paper.
@@ -376,32 +388,50 @@ recomputes every threshold from the Step-0 files (`calibration_0b_pre.json`, com
 - **P6:** 2506.15445v1, a same-session control whose answer Step 0 predicts: version-specific pages.
 - **G4′:** for 2203.06258 (v1, v3), 2201.06664 (v1, v2) and 2101.10476 (v1, v2), `get_paper_content` with `fullText`
   on v1 and on the uploaded vN, and `answer_pdf_queries` on v1, for every paper whatever the full-text answers.
-- **Queries:** verbatim the Step-0 queries of the same paper (P1, P2, P3, P5, P6) or the captions fixed on 2026-10-30
-  (P4, P7, G4′), as listed in `manifest_0b.json`.
-- **Retries:** a generic error is retried once, after P1b, in a later message (label suffix `_r`). A result that
-  arrives late for a call without a result is saved with the suffix `_late`.
+- **Queries:** verbatim the Step-0 queries of the same paper (P1, P2, P3, P5, P6), or the captions fixed for P4, P7
+  and G4′, now written in ASCII ("mu p", "mu+mu-"). The arguments are copied exactly from `manifest_0b.json`; the only
+  non-ASCII character is the Step-0 "LHμC" (U+03BC) of P1.
+- **Retries:** after P1b, `step0b_eval.py pending` lists the generic errors. Each is retried once, after P1b, one per
+  message, with the label suffix `_r`. A result that arrives late for a call without a result is saved under that
+  call's ids with the suffix `_late`.
+- **Audit:** `tools/scan_connector_text.py transcripts --since 2026-10-30T13:37:08.000Z` over the lead and subagent
+  transcripts. That is the commit time of `6183c43`; no connector call has been made since.
 
-*Saving.* Every result is saved with `tools/save_connector_text.py --raw --label <label> --record saves_0b.jsonl`
-under the file name the plan gives (`raw_<label>_<id>v<n>.txt`). A call without a result is recorded with
-`--no-result`. The record holds tools, arguments, call and message ids, times, `is_error` flags and hashes, and no
-delivered text. The saved files stay git-ignored.
+*Saving.* Every result is saved at once with `tools/save_connector_text.py --raw --plan <manifest> --label <label>
+--record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl`, under the plan's file name
+`raw_<label>_<id>v<n>.txt`.
+- **Any shape is kept.** A result that is not one text block is kept as its block list, and a harness notice whose
+  file cannot be followed or verified is kept as the notice; `raw_shape` records which.
+- **Slips are refused before writing:** a label not in the plan, a source id or name other than the plan's, and a
+  label or call already in the record.
+- **Arguments that differ from the plan** are saved and recorded with `plan_mismatch`.
+- **A call without a result** is recorded with `--no-result`.
+- **The record** holds tools, arguments, call and message ids, times, `is_error`, `raw_shape` and hashes, and no
+  delivered text. The saved files stay git-ignored.
 
 *Classes* (code: `lhmuc/connector_text.py` and `step0b_eval.classify`):
-- `pages`: exactly one `<paper id>…</paper>` block of `<page num="N">` blocks with unique N and nothing else. Two paper
-  blocks, a repeated, unclosed or attributed page tag, or text outside the pages makes the answer malformed.
-- `refusal`: one line of at most 300 characters, without tags, that says "not found" and names the requested versioned
+- `pages`: exactly one `<paper id>…</paper>` block of `<page num="N">` blocks with unique N and nothing else, with
+  `is_error` false. Two paper blocks, a repeated, unclosed or attributed page tag, or text outside the pages makes the
+  answer malformed.
+- `refusal`: one line of at most 300 characters, with no `<`, that says "not found" and names the requested versioned
   id as a token. The Step-0 form "Paper version not found for ID: <id>v<n>" is one.
 - `text` (`get_paper_content` only): no page tags, at least 2048 bytes and 50 lines, `is_error` false.
-- `generic_error`: anything else, including no result. Only the retry of a generic error counts; a second generic
-  error is a stop.
+- `generic_error`: anything else, including no result, a page-tagged `get_paper_content` answer, and any `raw_shape`
+  other than the text. Only the retry of a generic error counts, and a second generic error is a stop. A late generic
+  error is recorded and not compared.
 
 *Page comparisons* (calibrated in `calibration_0b_pre.json`):
+- **Short page:** fewer than 40 words. It is listed and is no evidence either way (Step-0 pages: 91 words at least).
 - **The same page:** equal digit multiset and word overlap with the local page of that number ≥ 0.85, with no argmax.
   All 45 same-version Step-0 pages meet it; the minimum is 0.862 (MR7 p. 22).
-- **Differs:** a page of at least 40 words that is not the same and holds digits the local page lacks. A cut-off page
-  or a fragment never differs. Against the local v2, 14 of the 16 μLHC v1 pages differ and 1 is the same.
-- **Same paper:** the median over the pages of the best word overlap with any local page is ≥ 0.6. Another version of
-  the same paper gives 0.945; unrelated papers give 0.402 at most.
+- **Differs:** a page that is not short, is the same as no local page, and holds digits that no local window around
+  it contains (pages n−1 to n+1, singly or as consecutive pairs). A cut-off page, a fragment or a page shifted by one
+  never differs. Against the local v2, 6 of the 16 μLHC v1 pages differ and 1 is the same.
+- **Same paper:** the median, over the pages that are not short, of the share of each page's words found in the best
+  window of one or two consecutive local pages is ≥ 0.80. The same paper gives 0.991 at least. Unrelated papers give
+  0.683 at most, against every local PDF including the three uploads; that maximum is Kaya against the μLHC upload,
+  two papers on the same subject. The test is not applied when the requested version's full text was delivered,
+  because containment then decides. A page carrying the full-form stamp of another paper is a stop.
 - **Contained (S2):** the page occurs in a delivered full text after whitespace collapse. All 46 same-version Step-0
   pages do; none of the 15 μLHC v2 pages occurs in the v1 text.
 - **Stamp:** only the full arXiv stamp form (`arXiv:<id>v<n> [archive] <day> <Mon> <year>`) counts. A citation of the
@@ -410,26 +440,27 @@ delivered text. The saved files stay git-ignored.
 *Rules.* Each outcome is expected, a finding or a stop. A stop keeps the route closed, and the owner is told.
 - **Template.** P1a and P1b must both be refusals, byte-identical, with the same `is_error`. Their text with the
   requested id replaced by `{id}`, and any other mention of the same paper by `{base}`, is `NO_SUCH_VERSION`. P7 must
-  give the same template. Otherwise: stop.
+  give the same template. Otherwise: stop. Without a template, the other refusals are reported as not evaluated.
 - **P2, P3.**
   - A refusal with the template is expected: "no later version known to the connector on <date>", never "the latest
     version". A refusal in another form is a stop.
-  - Pages go through the page checks against the registered local version. For P3, no page may be version-1 content
-    (contained in the Step-0 v1 text and not the same as v2); otherwise stop.
+  - Pages go through the page checks against the registered local version. For P3, no page that is not short may be
+    version-1 content (contained in the Step-0 v1 text and not the same as v2); otherwise stop.
   - If at least one page differs: finding, a later version may exist. For P3 this starts a W2 follow-up through the
     full reading procedure, under `SRC_ARXIV_2506_15445_V3`, with a v4 probe; for P2, a note on Kaya v2.
   - If no page differs: stop, because a later version cannot be told from the registered one relabelled.
 - **P4.** Pages go through the page checks against the uploaded v3: expected if a page differs, a finding
   (uninformative) if none does. A refusal with the template is a finding: a template answer then means "not known to
   the connector", not "does not exist". Another refusal is a stop.
-- **P5.** Expected: pages under 2506.15445v2, at least three, each the same as the local v2. Otherwise stop.
-  Differences from the Step-0 answer (page set, page text) are findings.
+- **P5.** Expected: pages under 2506.15445v2, at least three that are not short, and each of those the same as the
+  local v2. Otherwise stop. Differences from the Step-0 answer (page set, page text) are findings.
 - **P6.** Expected: pages under 2506.15445v1 that pass the page checks against the local v2, with the Step-0 v1 text,
   and are version-specific. Uninformative, substitution, inconsistent or no pages: stop.
 - **Page checks** (P2–P4, P6, the G4′ v1 answers).
-  - Stop on pages under another id, a page stamp of another version, or pages of another paper (median < 0.6).
-  - With the requested version's delivered text, stop on a page that is the same as the later version's page but not
-    contained in the text (substitution), and on any page not contained (inconsistent).
+  - Stop on pages under another id, on a page stamp of another version or of another paper, and on pages of another
+    paper (same-paper median < 0.80, when the requested version's text was not delivered).
+  - With the requested version's delivered text, stop on a page that is not short and is the same as the later
+    version's page but not contained in the text (substitution), and on any such page not contained (inconsistent).
   - Otherwise the answer is version-specific (a page differs) or uninformative.
 - **G4′, per paper.**
   - vN text: its stamp must match, since the three uploaded vN texts carry their stamp (`calibration_0b_pre.json`).
@@ -437,37 +468,52 @@ delivered text. The saved files stay git-ignored.
     2101.10476v2). G2: equal digit multisets, and `g2_decompose.py` finds no decimal seam and no unexplained numeric
     token. G6: the last 30 words, with line-end hyphens joined, occur in the last two local pages. Any failure is a
     stop.
-  - v1 text: stop on a stamp of another version, on a same-paper score below 0.6 against the uploaded vN, or, when the
-    text has no stamp, on the digit multiset of the uploaded vN. The score is the smaller of word recall and precision;
-    another version of the same paper gives 0.913, unrelated papers 0.498 at most.
+  - v1 text: a stamp of another version is a stop. When it carries no matching v1 stamp, two more rules apply:
+    - a chunk score below 0.80 against the uploaded vN is a stop. The score is the median, over 150-word chunks, of
+      the window share; the same paper gives 1.000, unrelated papers 0.714 at most.
+    - a digit multiset equal to the uploaded vN's, with or without the stamps, is a stop.
   - Both texts identical, in bytes or after whitespace collapse: stop.
   - v1 page answer: the page checks, with the v1 text when it was delivered. A template refusal is a finding.
-  - Outcome, reported per paper: passed (both texts, and a version-specific page half), uninformative, one full-text
-    version held (which one, with the page-half verdict), none held, or stopped.
+  - Outcome, reported per paper:
+    - stopped, when any stop names one of the paper's calls;
+    - passed, when both texts were delivered and the page half is version-specific;
+    - uninformative;
+    - one full-text version held (which one, with the page-half verdict);
+    - none held.
 - **Integrity.** Stop on any of these:
   - a planned call missing from the record;
-  - a recorded call whose tool, arguments or source differ from the plan;
+  - a recorded call whose tool, arguments or source differ from the plan, or that carries `plan_mismatch`;
+  - a call recorded under two labels;
   - a connector call in the audit that is not in the record, is flagged, or comes from a subagent;
   - any other audit violation;
   - a file saved under another name or mode;
-  - P1b not in a later message than P1a, or not the last original call;
+  - calls not made one after another in the plan order;
+  - P1a not the first call, or P1b not in a message of its own after every other call;
   - a retry before P1b, not in a later message, or of an answer that was not a generic error;
-  - a late result for a call that had a result, or one that disagrees with the counted answer.
+  - a late result not under its call's ids, or one for a call that had a result;
+  - a late result that disagrees with the counted answer (bytes, or page by page for pages);
+  - a call recorded without a result whose result the transcript holds, but which was not saved as `_late`.
 
-  A file whose hash differs from its record is an input error: no decision is made.
-- **Instruction scan.** Every saved file is scanned (patterns `2026-10-30.1`). Any hit is a stop, with no
-  classification.
+  A saved file whose hash differs from its record, a pinned input whose hash differs from the manifest, and scan
+  patterns other than `2026-10-30.1` are input errors.
+- **Instruction scan.** Every saved file is scanned, and any hit is a stop, with no classification. The local text
+  layers of the five uploads and the Step-0 μLHC v1 text give 0 hits.
 - **Passing.** Step 0b passes when no stop holds. The number of G4′ papers passed (0–3) sets no threshold. The version
-  argument rests on P6, which must be version-specific, and on safeguard (a) for every reading; P4 and the G4′ halves
-  add evidence where they are informative.
+  argument rests on P5 and P6 together and on safeguard (a) for every reading. P5 and P6 show, for 2506.15445 only,
+  that the page labels are right against an uploaded copy and differ between versions. P4 and the G4′ halves add
+  evidence where they are informative.
 
 *What Step 0b cannot show* (residual risks, reported with the result):
 - **Page numbers.** Safeguard (a) checks that pages occur in the full text in page order, not that each label is the
   right page number. Page numbering rests on Step-0 G5 (45 of 45 pages).
 - **Consistent substitution.** A connector that serves another version's pages and full text consistently, with no
-  stamp in the text layer, is not detectable by (a). P6 and the G4′ halves test the page tool only on these papers, on
-  this day.
+  stamp in the text layer, is not detectable by (a). P5, P6 and the G4′ halves test the page tool only on these papers,
+  on this day.
 - **Absence.** A template answer says "not known to the connector", not "does not exist".
+- **P4 against version 1.** P4 pages are not checked against a delivered 2203.06258v1 text: v1 and v2 may agree on a
+  page, so containment in v1 would prove nothing.
+- **Heavily revised versions.** A heavily revised later version can fail the same-paper or chunk test. That is a false
+  stop, which fails closed. The other-version calibration rests on one pair, μLHC v1 and v2.
 
 **Safeguard (a), page consistency.** It is specified here before Step 0b, and implemented and tested in A1 before any
 reading. A later change may only tighten it, with a date.
@@ -476,19 +522,24 @@ reading. A later change may only tighten it, with a date.
 - Every page of at least 200 characters (after whitespace collapse) occurs in the delivered full text (S2). Shorter
   pages are listed and count as no evidence; at least one page must count.
 - The occurrence offsets increase with the page number.
-- The full text's last 30 words occur in the highest delivered page, and a page-tag query aimed at the last section or
-  the reference list returned that page.
+- The full text's last 30 words occur in the highest delivered page of at least 200 characters, joined with the
+  delivered page before it when that is the preceding page number. A page-tag query aimed at the last section or the
+  reference list returned that page.
 - A full-format stamp in the full text names the registered version.
 - The archived metadata records, per file, `pages_in_full_text: true`, the offsets and the coverage (pages, and the
   share of the full text's characters).
+- A call with a generic error or without a result is retried once, in a later message, and only the retry counts.
 - A reading that fails (a) is not registered. A second failure in a batch stops the route.
 
 **Safeguard (b), later-version probe.** Same status as (a).
 - For a reading of `<id>v<n>`, `answer_pdf_queries` runs on `<id>v<n+1>` with the queries of a page-returning call on
-  `v<n>`, and the answer is saved with `--probe`.
+  `v<n>`, and the answer is saved with `--probe`. A generic error or no result is retried once, as in (a).
 - The Step-0b template with its id: the reading is registered with "no later version known to the connector on
   <date>".
-- Pages: the reading is not registered as the latest, and v<n+1> is read instead through the full procedure.
+- Pages go through the Step-0b page checks against the vN reading:
+  - another id, another stamp or another paper: stop;
+  - no differing page: that paper stops, since a later version cannot be told from a relabelled one;
+  - a differing page: vN is not registered as the latest, and v<n+1> is read instead through the full procedure.
 - Anything else: that paper stops (an uncalibrated answer).
 - The archived metadata records the `later_version_probe` object (tool, arguments, tool_use_id, called_on, file,
   sha256, is_error). The validator checks n and n+1, the queries, a non-empty `page_tag_files`, and that the probe is
@@ -641,4 +692,5 @@ Measured from `research/_fragments/` on the document date:
 | 2026-10-28 | First version: procedure, schemas, access modes, archiving, blocked-host handling, allow-list, record of the 2026-10-28 reconnaissance. |
 | 2026-10-29 | Owner decision: alphaXiv connector authorised; access mode `fetched_text` (§5a: tool classification, closed normalisation list, value, version and page rules, saving, pre-registered Step-0 gates, verification without page images); search-log tool values; blocked-host probe repeated; allow-list not requested; backlog reachability. |
 | 2026-10-29 | Step-0 calibration run: G1–G3, G5, G6 passed; G4 and G7 not runnable as written (no v2 full text of 2506.15445); route stopped pending the owner's decision (`research/_fragments/alphaxiv_calibration_2026-10-29.md`). |
-| 2026-10-30 | The owner delegated the decision; the lead chose a conditional reopening (§5a). Also: Step 0b pre-registered before its calls; saver pointer confinement and `--probe`; instruction scan on collapsed text with span overlap (patterns `2026-10-30.1`); two malformed CSV rows repaired; store-only correction (scratch copies deleted; harness-held copies named); query rule amended by the lead under the delegation, pending the owner's confirmation (captions, reference entries and short phrases taken from a version of the requested paper; never project data); the Step-0 queries deviated from the rule as then written. Revision 2026-10-30.2 of the Step-0b pre-registration, before any Step-0b call, after one reviewer and four finders found 16 blocking defects in the first version: one deciding command (`step0b_eval.py evaluate`), strict answer classes (`lhmuc/connector_text.py`), calibrated page comparisons (`pre_0b.py`, `calibration_0b_pre.json`), controls P6 and P7, every result saved with `--raw` and recorded, safeguards (a) and (b) specified, residual risks stated. |
+| 2026-10-30 | The owner delegated the decision; the lead chose a conditional reopening (§5a). Also: Step 0b pre-registered before its calls; saver pointer confinement and `--probe`; instruction scan on collapsed text with span overlap (patterns `2026-10-30.1`); two malformed CSV rows repaired; store-only correction (scratch copies deleted; harness-held copies named); query rule amended by the lead under the delegation, pending the owner's confirmation (captions, reference entries and short phrases taken from a version of the requested paper; never project data); the Step-0 queries deviated from the rule as then written. Revision 2026-10-30.2 of the Step-0b pre-registration, before any Step-0b call, after one reviewer and four finders found 16 blocking defects in the first version: one deciding command (`step0b_eval.py evaluate`), strict answer classes (`lhmuc/connector_text.py`), calibrated page comparisons (`pre_0b.py`, `calibration_0b_pre.json`), controls P6 and P7, every result saved with `--raw` and recorded, safeguards (a) and (b) specified, residual risks stated. Revision 2026-10-30.3, again before any call, after three finders and three skeptics confirmed 40 of 43 findings on revision 2 (one blocking: a result of another shape could be neither saved nor recorded): every result shape kept by `--raw`, plan checks in the saver, calls one per message in plan order with `pending` for retries, length-insensitive same-paper scores recalibrated against the uploads (0.80), windowed differs, short pages no evidence, ASCII captions, pinned input hashes, safeguards' retries and tail rule. |
+| 2026-11-01 | The owner confirmed the query-rule amendment of 2026-10-30 as committed (`CLAUDE.md` §5 unchanged since `6c3d41b`). |

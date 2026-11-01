@@ -1,6 +1,6 @@
 {
- "revision": "2026-10-30.2",
- "note": "Step 0b (docs/internet_research_protocol.md §5a), revision 2026-10-30.2, fixed before any Step-0b call. Every call is made, in this order, whatever the earlier answers; P1b in a later message than every other call; a generic error is retried once after P1b, in a later message, as <label>_r. Every result is saved with tools/save_connector_text.py --raw --label <label> --record saves_0b.jsonl under the file named here (retries raw_<label>_r_<id>.txt, late results raw_<label>_late_<id>.txt); a call without a result is recorded with --no-result. Queries are copied verbatim from the Step-0 calls (Q_DIS, Q_KAYA, Q_MULHC) or from the committed pre-registration of 2026-10-30 (Q_2203, Q_2201, Q_2101). The saved files are git-ignored; saves_0b.jsonl, audit_0b.json and result_0b.json hold no delivered text except one-line refusals.",
+ "revision": "2026-10-30.3",
+ "note": "Step 0b (docs/internet_research_protocol.md §5a), revision 2026-10-30.3, fixed before any Step-0b call. The lead makes every call, one per assistant message, in this order, whatever the earlier answers; P1b last. Each result is saved at once with tools/save_connector_text.py --raw --plan research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --label <label> --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl --source-id <source_id> --name <file name> (a call without a result: --no-result instead of --raw and --name). After P1b, step0b_eval.py pending lists the generic errors; each is retried once, after P1b, one per message, as <label>_r (file raw_<label>_r_<id>.txt); a result that arrives late for a call without a result is saved as <label>_late. Then the audit and evaluate run once (commands below); only that run decides. Arguments are copied from this file exactly: the captions of Q_2203, Q_2201 and Q_2101 are ASCII; Q_DIS keeps the Step-0 'LHμC' with U+03BC GREEK SMALL LETTER MU. The saved files are git-ignored; the record, the audit and the result hold no delivered text except one-line refusals.",
  "queries": {
   "Q_DIS": [
    "Table 1: Example of the LHμC parameters",
@@ -18,17 +18,17 @@
    "Table 6: Number of Higgs bosons produced per working year"
   ],
   "Q_2203": [
-   "Table 1. Benchmark beam energies for several μp collider configurations",
+   "Table 1. Benchmark beam energies for several mu p collider configurations",
    "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
-   "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+   "Figure 6. The center-of-mass energy of mu p colliders versus that of mu+mu- colliders"
   ],
   "Q_2201": [
-   "Figure 1: Conceptual design of the µ+e−/µ+µ+ collider",
+   "Figure 1: Conceptual design of the mu+e-/mu+mu+ collider",
    "Figure 2: The pion stopping target surrounded by silica aerogel for muonium production",
    "Figure 3: Density histogram plots of Higgs boson produced by the W-fusion"
   ],
   "Q_2101": [
-   "TABLE I. Basic parameters of the two µp experiments considered in this work",
+   "TABLE I. Basic parameters of the two mu p experiments considered in this work",
    "TABLE II. The inclusive cross sections of VBF production",
    "FIG. 2. 95% C.L. exclusion limits"
   ]
@@ -85,7 +85,7 @@
    "arguments": {
     "paper": "2101.10476v9",
     "queries": [
-     "TABLE I. Basic parameters of the two µp experiments considered in this work",
+     "TABLE I. Basic parameters of the two mu p experiments considered in this work",
      "TABLE II. The inclusive cross sections of VBF production",
      "FIG. 2. 95% C.L. exclusion limits"
     ]
@@ -100,9 +100,9 @@
    "arguments": {
     "paper": "2203.06258v2",
     "queries": [
-     "Table 1. Benchmark beam energies for several μp collider configurations",
+     "Table 1. Benchmark beam energies for several mu p collider configurations",
      "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
-     "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+     "Figure 6. The center-of-mass energy of mu p colliders versus that of mu+mu- colliders"
     ]
    },
    "source_id": "SRC_ARXIV_2203_06258",
@@ -165,9 +165,9 @@
    "arguments": {
     "paper": "2203.06258v1",
     "queries": [
-     "Table 1. Benchmark beam energies for several μp collider configurations",
+     "Table 1. Benchmark beam energies for several mu p collider configurations",
      "Figure 2. Design sketches for Muon-Ion Collider at BNL and Large Hadron-Muon Collider (LHmuC)",
-     "Figure 6. The center-of-mass energy of μp colliders versus that of μ+μ− colliders"
+     "Figure 6. The center-of-mass energy of mu p colliders versus that of mu+mu- colliders"
     ]
    },
    "source_id": "SRC_ARXIV_2203_06258",
@@ -200,7 +200,7 @@
    "arguments": {
     "paper": "2201.06664v1",
     "queries": [
-     "Figure 1: Conceptual design of the µ+e−/µ+µ+ collider",
+     "Figure 1: Conceptual design of the mu+e-/mu+mu+ collider",
      "Figure 2: The pion stopping target surrounded by silica aerogel for muonium production",
      "Figure 3: Density histogram plots of Higgs boson produced by the W-fusion"
     ]
@@ -235,7 +235,7 @@
    "arguments": {
     "paper": "2101.10476v1",
     "queries": [
-     "TABLE I. Basic parameters of the two µp experiments considered in this work",
+     "TABLE I. Basic parameters of the two mu p experiments considered in this work",
      "TABLE II. The inclusive cross sections of VBF production",
      "FIG. 2. 95% C.L. exclusion limits"
     ]
@@ -293,8 +293,24 @@
   }
  ],
  "commands": {
-  "audit": "python -I tools/scan_connector_text.py transcripts --since <start> <lead transcript> <subagents dir> > research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json",
+  "save": "python -I tools/save_connector_text.py --raw --plan research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --label <label> --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl --transcript <lead transcript> --tool-use-id <id> --source-id <source_id> --name <file name>",
+  "no_result": "python -I tools/save_connector_text.py --no-result --plan research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --label <label> --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl --transcript <lead transcript> --tool-use-id <id> --source-id <source_id>",
+  "pending": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py pending --manifest research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl",
+  "audit": "python -I tools/scan_connector_text.py transcripts --since 2026-10-30T13:37:08.000Z <lead transcript> <session subagents directory> > research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json",
   "evaluate": "python -I research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate --manifest research/_fragments/alphaxiv_calibration_2026-10-29/manifest_0b.json --record research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl --calls research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json --out research/_fragments/alphaxiv_calibration_2026-10-29/result_0b.json"
  },
- "start": "the UTC commit time of this revision, recorded in research/_fragments/alphaxiv_calibration_2026-10-29.md §9"
+ "record": "research/_fragments/alphaxiv_calibration_2026-10-29/saves_0b.jsonl",
+ "audit": "research/_fragments/alphaxiv_calibration_2026-10-29/audit_0b.json",
+ "result": "research/_fragments/alphaxiv_calibration_2026-10-29/result_0b.json",
+ "audit_since": "2026-10-30T13:37:08.000Z",
+ "input_sha256": {
+  "references/_local/arXiv-1905.05564v2.pdf": "f071d25d92f2bd2c550588811d9cbeaca6f4930face2f654170fe5f593060132",
+  "references/_local/arXiv-2506.15445v2.pdf": "f6f8f02dd05e2bdf3ddde2a48ba00f8a899e197be344e61e6a55b0cb27059966",
+  "references/_local/arXiv-2203.06258v3.pdf": "abbf755c551b019bfa1598cb8426eec4b28008dfe14f9ecf6e25759dd68f4e6b",
+  "references/_local/arXiv-2201.06664v2.pdf": "eaa1628f1e8958a58e74bf4b0c9df94c12457b04ef22eddcf20be9a380fb1229",
+  "references/_local/arXiv-2101.10476v2.pdf": "bcb8c811dbbd50cb6e8e0b0753850f89b185718fa846081c8728bfd0f1e13bd2",
+  "references/_local/SRC_ARXIV_2506_15445/calibration_get_paper_content_v1.txt": "62a23cdc6b5f5feafeec2dbb914cbf947eb50d5fbc147e00bc44c5d6ba82b934",
+  "references/_local/SRC_ARXIV_2506_15445/calibration_pages_v1.xml": "f69cf23b652552fa2c21cb855e65d08e976835d68682b2ae757226fc682322e2",
+  "references/_local/SRC_ARXIV_2506_15445/calibration_pages_v2.xml": "0a6d83f833d6516c6e13fd8b9d247f8f4587a05e98f92cfc02f96de1dd7057c1"
+ }
 }

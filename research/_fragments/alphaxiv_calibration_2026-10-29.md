@@ -258,4 +258,34 @@ Nothing proceeds until the owner decides. The options:
   The amendment that admits such queries is the lead's, under the delegation, and awaits the owner's confirmation. That
   covers the line in `CLAUDE.md` §5 changed in `6c3d41b`; the lead does not edit `CLAUDE.md` further, and the owner
   may confirm or revert it.
+  *[2026-11-01: the owner confirmed the amended rule as committed; `CLAUDE.md` is unchanged since `6c3d41b`.]*
+- **Second review and revision 2026-10-30.3.**
+  - Revision 2 (`6183c43`, 2026-10-30 13:37:08Z) was reviewed before any call by three lens-specific finders, and a
+    skeptic per lens tried to refute each finding. They confirmed 40 of 43 findings.
+  - One was blocking: a result of another shape (not one text block, or a harness notice whose file cannot be followed)
+    could be neither saved nor recorded.
+  - Among the rest:
+    - same-paper scores bounded by length ratios, which a short local page can lift and a longer later version can sink;
+    - a stamp-less copy of vN that the digit rule could not catch;
+    - plan and message order checked only in part;
+    - late page answers compared by page number only;
+    - G4′ outcomes that missed stops raised elsewhere;
+    - confusable characters in the planned captions;
+    - saver slips that could not be undone;
+    - unpinned inputs.
+  - Revision 3 fixes them all before any call:
+    - `--raw` keeps every shape, and `--plan` refuses slips before writing;
+    - calls go one per message in plan order, with `pending` choosing the single retries;
+    - the same-paper and chunk scores are length-insensitive and recalibrated against all five local PDFs. Same paper
+      0.991 at least; unrelated 0.683 (pages) and 0.714 (chunks) at most, both Kaya against the μLHC upload; thresholds
+      0.80;
+    - the windowed differs rule never counts a cut-off, fragment or shifted page. Against the local v2, 6 of the 16 μLHC
+      v1 pages still differ, so P6 still predicts version-specific pages;
+    - short pages are no evidence;
+    - the stamp-stripped digit rule;
+    - stops tagged by call;
+    - the captions are ASCII;
+    - input hashes and the scan pattern version are pinned. The scan gives 0 hits on the five local text layers;
+    - the safeguards get retries and the corrected tail rule.
+  - The audit runs from 2026-10-30T13:37:08.000Z. No connector call has been made since, and none by any review agent.
 - **Results:** recorded in §10 after the calls.

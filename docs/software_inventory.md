@@ -453,4 +453,4 @@ service. Nothing of it is installed or runs in the container. The binding usage 
   or UTF-16 code units, is accepted, since the harness may count an astral character such as U+1D707 twice. The saver
   now also has `--raw` (every other result, refusals and errors included), `--record`, `--no-result` and `--check`.
   The shared strict reading of answers is `lhmuc/connector_text.py`, and the Step-0b decision is
-  `research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate` (§5a). No third-party code.]*
+  `research/_fragments/alphaxiv_calibration_2026-10-29/step0b_eval.py evaluate` (§5a). No third-party code.]* *[2026-10-30, revision 2026-10-30.3: `--raw` keeps every result shape and `--plan` checks each save against the Step-0b call plan; `step0b_eval.py pending` lists the single retries.]*

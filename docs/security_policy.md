@@ -170,7 +170,8 @@ current working directory, so a planted `json.py` in an upload directory runs on
      other script is not detected. For such calls the container's network policy (§9) remains the control.
    - *Every connector result is saved, refusals and errors included (`--raw`), and the Step-0b record holds the call
      and message ids, so the audit can match every call to the plan. The strict reading of answers
-     (`lhmuc/connector_text.py`) treats a malformed answer as a generic error, never as evidence.]*
+     (`lhmuc/connector_text.py`) treats a malformed answer as a generic error, never as evidence. A delivered paper
+     id is printed only when it is a versioned arXiv id, so untrusted text in it never reaches a committed result.]*
 
 ---
 

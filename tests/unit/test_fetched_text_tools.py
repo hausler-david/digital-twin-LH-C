@@ -385,3 +385,42 @@ def test_save_tool_accepts_utf16_counts_in_the_oversize_notice(tmp_path, capsys)
     (tmp_path / "references" / "_local" / "SRC_ARXIV_1234_56789" / "full.txt").unlink()
     with pytest.raises(SystemExit):
         _save(tmp_path, _transcript(tmp_path, *FULL, notice.replace(f"{utf16:,} characters", f"{utf16 + 5:,} characters")))
+
+
+def test_save_tool_raw_keeps_every_shape_and_checks_the_plan(tmp_path, capsys):
+    """--raw never refuses a result for its shape: a result that is not one text block is kept as its block list, and
+    a harness notice whose file cannot be followed or verified is kept as the notice, each with its raw_shape. With
+    --plan, the label, source id and name must be the plan's, a label or call already recorded is refused, and
+    arguments that differ from the plan are recorded as a plan mismatch (docs/internet_research_protocol.md §5a)."""
+    plan = tmp_path / "manifest.json"
+    call = {"label": "G1", "tool": "get_paper_content", "arguments": FULL[1], "source_id": "SRC_ARXIV_1234_56789",
+            "file": "references/_local/SRC_ARXIV_1234_56789/raw_G1_1234.56789v2.txt"}
+    plan.write_text(json.dumps({"calls": [call]}))
+    rec = tmp_path / "saves.jsonl"
+
+    def save(t, label="G1", name="raw_G1_1234.56789v2.txt", sid="SRC_ARXIV_1234_56789", record=rec):
+        return saver.main(["--raw", "--plan", str(plan), "--label", label, "--record", str(record), "--transcript",
+                           str(t), "--tool-use-id", "toolu_1", "--source-id", sid, "--name", name, "--root", str(tmp_path)])
+
+    assert save(_transcript(tmp_path, *FULL, [])) == 0
+    line = json.loads(rec.read_text().splitlines()[-1])
+    assert line["raw_shape"] == "blocks" and line["plan_mismatch"] is False
+    assert (tmp_path / call["file"]).read_text() == "[]"
+    with pytest.raises(SystemExit):  # label already recorded
+        save(_transcript(tmp_path, *FULL, "x"))
+    rec2 = tmp_path / "saves2.jsonl"
+    missing = (f"Error: result (5,000 characters across 9 lines) exceeds maximum allowed tokens. Output has been saved "
+               f"to {_tool_results(tmp_path) / 'mcp-alphaXiv-get_paper_content-404.txt'}.")
+    (tmp_path / call["file"]).unlink()
+    assert save(_transcript(tmp_path, *FULL, missing), record=rec2) == 0
+    line = json.loads(rec2.read_text())
+    assert line["raw_shape"] == "notice" and (tmp_path / call["file"]).read_text() == missing
+    capsys.readouterr()
+    rec3 = tmp_path / "saves3.jsonl"
+    for bad in ({"label": "G2"}, {"name": "raw_G1_r_1234.56789v2.txt"}, {"sid": "SRC_ARXIV_1234_56789_V2"}):
+        with pytest.raises(SystemExit):
+            save(_transcript(tmp_path, *FULL, "y"), record=rec3, **bad)
+    other = ("mcp__alphaXiv__get_paper_content", {"url": "https://arxiv.org/abs/1234.56789v2", "fullText": True, "x": 1})
+    (tmp_path / call["file"]).unlink()
+    assert save(_transcript(tmp_path, *other, "z"), record=rec3) == 0
+    assert json.loads(rec3.read_text())["plan_mismatch"] is True

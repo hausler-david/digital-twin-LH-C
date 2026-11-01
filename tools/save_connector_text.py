@@ -195,6 +195,24 @@ def check_structure(data: bytes, name: str) -> None:
                          f"(at least {MIN_TEXT_BYTES} bytes and {MIN_TEXT_LINES} lines); refusals are saved with --probe")
 
 
+def resolve_raw(result: dict, tool_results: Path, tool: str) -> tuple[bytes, bool, str, str]:
+    """--raw: every result is kept. (bytes, persisted, raw_shape, reason): raw_shape "text" for the delivered text
+    (followed through a confined harness pointer as in normal mode), "blocks" for a result that is not exactly one text
+    block (its block list as JSON), "notice" for a harness notice whose file cannot be followed or verified (the
+    notice itself). The Step-0b evaluation counts every shape other than "text" as a generic error."""
+    content = result.get("content")
+    if not isinstance(content, str):
+        blocks = list(content or [])
+        if len(blocks) != 1 or not isinstance(blocks[0], dict) or blocks[0].get("type") != "text":
+            return json.dumps(content, ensure_ascii=False, sort_keys=True).encode("utf-8"), False, "blocks", \
+                f"{len(blocks)} block(s), not one text block"
+    try:
+        data, persisted = resolve_bytes(result, tool_results, tool, probe=True)
+        return data, persisted, "text", ""
+    except (SystemExit, OSError, UnicodeDecodeError) as exc:
+        return _one_text_block(content).encode("utf-8"), False, "notice", str(exc)[:300]
+
+
 def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False) -> tuple[bytes, bool]:
     """The result as bytes; follows the harness pointer when the result starts with the harness's own notice.
     With probe true (--probe and --raw), error results and refusals are saved as delivered."""
@@ -243,6 +261,34 @@ def save(data: bytes, target: Path) -> dict:
     return {"sha256": hashlib.sha256(data).hexdigest(), "size_bytes": len(data)}
 
 
+def check_plan(a) -> dict | None:
+    """With --plan and --label: the label's call in the plan; the source id and the file name must be the plan's, and
+    the record must not hold this label or this call yet (a slip is refused before anything is written)."""
+    if a.record is not None and a.record.exists():
+        for line in a.record.read_text(encoding="utf-8").splitlines():
+            old = json.loads(line) if line.strip() else {}
+            if old.get("label") == a.label:
+                raise SystemExit(f"{a.record} already holds label {a.label}")
+            if old.get("tool_use_id") == a.tool_use_id and not (a.label or "").endswith("_late"):
+                raise SystemExit(f"{a.record} already holds call {a.tool_use_id} (label {old.get('label')})")
+    if a.plan is None:
+        return None
+    if a.label is None:
+        raise SystemExit("--plan needs --label")
+    base = a.label.removesuffix("_r").removesuffix("_late")
+    plan = {c["label"]: c for c in json.loads(a.plan.read_text(encoding="utf-8"))["calls"]}
+    if base not in plan:
+        raise SystemExit(f"label {a.label} is not in the plan")
+    c = plan[base]
+    if a.source_id != c["source_id"]:
+        raise SystemExit(f"--source-id {a.source_id} is not the plan's {c['source_id']} for {base}")
+    if not a.no_result:
+        want = Path(c["file"]).name.replace(f"raw_{base}_", f"raw_{a.label}_", 1)
+        if a.name != want:
+            raise SystemExit(f"--name {a.name} is not the plan's {want} for {a.label}")
+    return c
+
+
 def append_record(path: Path, rec: dict) -> None:
     """Append one JSON line; existing lines are never rewritten."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -264,11 +310,14 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--label", help="the call's label in a pre-registered call plan (with --record)")
     ap.add_argument("--record", type=Path, help="append the record (no delivered text) as one JSON line to this file")
     ap.add_argument("--check", action="store_true", help="do everything except writing the file and the record")
+    ap.add_argument("--plan", type=Path, help="a call plan (Step-0b manifest): with --label, the source id and the name "
+                                               "must be the plan's, and arguments that differ are recorded as a mismatch")
     a = ap.parse_args(argv)
     if not re.fullmatch(r"SRC_[A-Z0-9_]+", a.source_id):
         raise SystemExit("invalid --source-id")
     if (a.record is None) != (a.label is None) or (a.label and not re.fullmatch(r"[A-Za-z0-9]+(?:_r|_late)?", a.label)):
         raise SystemExit("--record and --label go together; a label is letters and digits, optionally _r or _late")
+    planned = check_plan(a)
     if a.no_result:
         if a.record is None or a.name:
             raise SystemExit("--no-result needs --record and --label and takes no --name")
@@ -280,6 +329,8 @@ def main(argv: list[str] | None = None) -> int:
         rec = {"label": a.label, "status": "no_result", "tool": tool, "arguments": info["use"].get("input") or {},
                "tool_use_id": a.tool_use_id, "message_id": info["message_id"], "called_on": info["called_on"] or "",
                "source_id": a.source_id}
+        if planned is not None:
+            rec["plan_mismatch"] = (tool, rec["arguments"]) != (planned["tool"], planned["arguments"])
         if not a.check:
             append_record(a.record, rec)
         print(json.dumps(rec, ensure_ascii=False, indent=1))
@@ -293,7 +344,11 @@ def main(argv: list[str] | None = None) -> int:
     tool = check_call(use, a.name, a.probe, a.raw)
     check_target(tool, use.get("input") or {}, a.source_id, a.name)
     tool_results = a.transcript.parent / a.transcript.stem / "tool-results"
-    data, persisted = resolve_bytes(result, tool_results, tool, a.probe or a.raw)
+    raw_shape, raw_reason = "text", ""
+    if a.raw:
+        data, persisted, raw_shape, raw_reason = resolve_raw(result, tool_results, tool)
+    else:
+        data, persisted = resolve_bytes(result, tool_results, tool, a.probe)
     if not (a.probe or a.raw):
         check_structure(data, a.name)
     rel = str(Path("references") / "_local" / a.source_id / a.name)
@@ -325,6 +380,10 @@ def main(argv: list[str] | None = None) -> int:
                "message_id": info["message_id"], "called_on": call["called_on"], "result_on": out["result_on"],
                "is_error": out["is_error"], "file": rel, "sha256": saved["sha256"], "size_bytes": saved["size_bytes"],
                "persisted_by_harness": persisted, "source_id": a.source_id}
+        if a.raw:
+            rec.update(raw_shape=raw_shape, raw_reason=raw_reason)
+        if planned is not None:
+            rec["plan_mismatch"] = (tool, call["arguments"]) != (planned["tool"], planned["arguments"])
         if not a.check:
             append_record(a.record, rec)
         out["record"] = rec

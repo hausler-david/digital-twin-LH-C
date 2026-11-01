@@ -224,6 +224,20 @@ def scan_transcripts(paths: list[Path], since: str | None) -> list[dict]:
                         calls.append({"file": str(f), "role": role, "timestamp": d.get("timestamp"), "tool": tool,
                                       "arguments": b.get("input") or {}, "tool_use_id": b.get("id"),
                                       "message_id": (d.get("message") or {}).get("id"), "flag": reason})
+    results = {}  # tool_use_id -> timestamp of its tool_result line (a result may come after a restart)
+    for f in files:
+        with f.open() as fh:
+            for line in fh:
+                try:
+                    d = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                for b in (d.get("message") or {}).get("content") or []:
+                    if isinstance(b, dict) and b.get("type") == "tool_result":
+                        results.setdefault(b.get("tool_use_id"), d.get("timestamp"))
+    for c in calls:
+        c["has_result"] = c["tool_use_id"] in results
+        c["result_on"] = results.get(c["tool_use_id"])
     return calls
 
 
