@@ -14,7 +14,8 @@ from dataclasses import dataclass, field
 XML_ENTITIES = {"&lt;": "<", "&gt;": ">", "&quot;": '"', "&apos;": "'"}
 WORD = re.compile(r"[A-Za-z]{3,}")
 PAPER_OPEN = re.compile(r'<paper id="([^"<>\n]+)">')
-PAGE_BLOCK = re.compile(r'<page num="([1-9][0-9]*)">(.*?)</page>', re.S)
+PAGE_BLOCK = re.compile(r'<page num="([1-9][0-9]{0,5})">(.*?)</page>', re.S)  # longer page numbers are malformed
+CHAR_REF = re.compile(r"&#(x[0-9A-Fa-f]+|[0-9]+);")
 ANY_TAG = re.compile(r"</?(?:paper|page)\b")
 VERSIONED_ID = re.compile(r"(\d{4}\.\d{4,5})(v[1-9][0-9]*)")
 # the arXiv stamp as the PDF text layer carries it: id, version, [archive] and date (citations rarely carry a date)
@@ -37,8 +38,8 @@ def _char(n: int, ref: str) -> str:
 
 def xml_unescape(text: str) -> str:
     """XML entities only (&lt; &gt; &quot; &apos; &amp; and numeric references), never HTML named entities."""
-    text = re.sub(r"&#x([0-9A-Fa-f]+);", lambda m: _char(int(m.group(1), 16), m.group(0)), text)
-    text = re.sub(r"&#(\d+);", lambda m: _char(int(m.group(1)), m.group(0)), text)
+    text = re.sub(r"&#x([0-9A-Fa-f]{1,7});", lambda m: _char(int(m.group(1), 16), m.group(0)), text)
+    text = re.sub(r"&#(\d{1,7});", lambda m: _char(int(m.group(1)), m.group(0)), text)  # longer: kept as written
     for a, b in XML_ENTITIES.items():
         text = text.replace(a, b)
     return text.replace("&amp;", "&")
@@ -101,12 +102,22 @@ def parse_answer(text: str) -> Answer:
             return Answer("malformed", why=f"page {n} repeated")
         if ANY_TAG.search(b.group(2)):
             return Answer("malformed", why=f"a tag inside page {n}")
+        if any(not _valid_ref(r) for r in CHAR_REF.findall(b.group(2))):
+            return Answer("malformed", why=f"an out-of-range character reference in page {n}")
         pages[n] = xml_unescape(b.group(2))
         order.append(n)
         pos = b.end()
     if inner[pos:].strip() or not pages:
         return Answer("malformed", why="unclosed or missing page blocks")
     return Answer("pages", paper_id=m.group(1), pages=pages, order=order)
+
+
+def _valid_ref(ref: str) -> bool:
+    """A numeric character reference that names a Unicode code point (at most 7 digits, at most U+10FFFF)."""
+    digits_ = ref[1:] if ref.startswith("x") else ref
+    if len(digits_) > 7:
+        return False
+    return int(digits_, 16 if ref.startswith("x") else 10) <= 0x10FFFF
 
 
 def names_id(text: str, vid: str) -> bool:

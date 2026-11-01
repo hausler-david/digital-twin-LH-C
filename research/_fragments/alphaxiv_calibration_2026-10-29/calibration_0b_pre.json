@@ -111,6 +111,12 @@
   "P6_predicted_verdict": "version_specific"
  },
  "muLHC_v2_pages_in_v1_full_text": 0,
+ "evaluator_on_step0_answers": {
+  "P5_verdict": "same",
+  "P6_verdict": "version_specific",
+  "stops": [],
+  "findings": []
+ },
  "S2_total": {
   "same_version_pages": 46,
   "of": 46

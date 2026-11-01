@@ -288,4 +288,30 @@ Nothing proceeds until the owner decides. The options:
     - input hashes and the scan pattern version are pinned. The scan gives 0 hits on the five local text layers;
     - the safeguards get retries and the corrected tail rule.
   - The audit runs from 2026-10-30T13:37:08.000Z. No connector call has been made since, and none by any review agent.
+- **Verification of revision 3 and revision 2026-11-01.4.**
+  - Revision 3 (`b65e18a`, 2026-11-01 14:00:24Z) was checked before any call. Three verifiers re-ran each confirmed
+    revision-2 finding on synthetic inputs: 27 of 40 fixed, and 13 left open (one should-fix: safeguard (a)'s tail
+    rule; twelve minor, mostly text that promised more than the code checked, and rules no test drove).
+  - A blind regression finder reported 8 items, five should-fix and none blocking:
+    - parallel calls in one message passed the order rule;
+    - a block-list result hid a line-split instruction from the scan;
+    - a call made on another id could not be saved under `--plan`;
+    - a lone surrogate crashed the saver, which is the revision-2 blocking class again;
+    - the committed P5 and P6 predictions skipped some of the evaluator's own checks.
+  - Revision 4 fixes all of them before any call:
+    - one call per message is checked for every call and retry;
+    - block lists are scanned through their decoded strings;
+    - `--plan` is required, and a deviating call is saved under the plan's name;
+    - lone surrogates are kept escaped, and reasons are recorded as fixed codes;
+    - out-of-range references and page numbers of more than six digits are malformed;
+    - the P3 relabel test is shift-tolerant;
+    - audit and order stops name their call;
+    - a stamp-less v1 is marked in its outcome;
+    - safeguard (a) has a corrected tail window, and (b) decides an unreadable later version: the paper is not
+      registered and an upload is requested;
+    - each stop rule is driven by a test.
+  - The evaluator's own code on the Step-0 answers gives P5 "same" and P6 "version_specific" with no stop
+    (`calibration_0b_pre.json`).
+  - Declined, with the reason stated in §5a: comparing arguments under NFKC normalisation. The arguments are copied from
+    the manifest, and a look-alike character stays a deviation.
 - **Results:** recorded in §10 after the calls.

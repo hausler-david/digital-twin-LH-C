@@ -19,7 +19,9 @@ included, as raw_<label>_<id>v<n>.txt (calibration answers and refusals, which a
 *[2026-10-30]* The source id must be SRC_ARXIV_<id> (or SRC_ARXIV_<id>_V<n>) of the requested paper, and a name ending
 in _v<n>.txt or _v<n>.xml must carry the requested version. --record appends the printed record (hashes, flags, call
 and message ids, no delivered text) as one JSON line to a file; --no-result records a call that has no result in the
-transcript; --check does everything except writing.
+transcript; --check does everything except writing. *[2026-11-01]* --raw and --no-result with --label need --plan
+(the Step-0b call plan), whose name and source id hold even for a call that deviated (plan_mismatch); a lone surrogate
+is kept escaped (raw_shape text_escaped), and raw_reason is a fixed code, never the exception's message.
 
 Run: python -I tools/save_connector_text.py --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... --name <file>
      python -I tools/save_connector_text.py --probe --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... \
@@ -131,14 +133,14 @@ def admissible_tool(use: dict) -> str:
     return tool
 
 
-def check_call(use: dict, name: str, probe: bool = False, raw: bool = False) -> str:
+def check_call(use: dict, name: str, probe: bool = False, raw: bool = False, planned: bool = False) -> str:
     """The tool name without the server prefix, if the call is one of the two admissible calls."""
     tool = str(use.get("name", "")).removeprefix("mcp__alphaXiv__")
     args = use.get("input") or {}
     if raw:
         admissible_tool(use)
         vid = requested_id(tool, args)
-        if not re.fullmatch(rf"raw_[A-Za-z0-9]+(?:_r|_late)?_{re.escape(vid)}\.txt", name):
+        if not planned and not re.fullmatch(rf"raw_[A-Za-z0-9]+(?:_r|_late)?_{re.escape(vid)}\.txt", name):
             raise SystemExit(f"a raw result is saved as raw_<label>[_r|_late]_{vid}.txt")
         return tool
     if name.startswith("raw_"):
@@ -204,13 +206,31 @@ def resolve_raw(result: dict, tool_results: Path, tool: str) -> tuple[bytes, boo
     if not isinstance(content, str):
         blocks = list(content or [])
         if len(blocks) != 1 or not isinstance(blocks[0], dict) or blocks[0].get("type") != "text":
-            return json.dumps(content, ensure_ascii=False, sort_keys=True).encode("utf-8"), False, "blocks", \
-                f"{len(blocks)} block(s), not one text block"
+            # ASCII-escaped JSON: lone surrogates survive, and the evaluation scans the decoded strings
+            return json.dumps(content, ensure_ascii=True, sort_keys=True).encode("ascii"), False, "blocks", \
+                "not_one_text_block"
     try:
         data, persisted = resolve_bytes(result, tool_results, tool, probe=True)
         return data, persisted, "text", ""
+    except UnicodeEncodeError:  # a lone surrogate (an astral character cut in two): kept escaped
+        return _one_text_block(content).encode("utf-8", "backslashreplace"), False, "text_escaped", "lone_surrogate"
     except (SystemExit, OSError, UnicodeDecodeError) as exc:
-        return _one_text_block(content).encode("utf-8"), False, "notice", str(exc)[:300]
+        # a fixed reason code, never the message: the message may quote delivered text (a forged pointer)
+        return _one_text_block(content).encode("utf-8", "backslashreplace"), False, "notice", _reason_code(exc)
+
+
+def _reason_code(exc: BaseException) -> str:
+    msg = str(exc)
+    for code, needle in (("pointer_outside", "outside"), ("pointer_not_regular", "not an absolute path"),
+                         ("pointer_prefix", "does not name a harness file"), ("size_mismatch", "incomplete file"),
+                         ("preview_without_path", "preview"), ("unknown_json", "unknown JSON shape")):
+        if needle in msg:
+            return code
+    if isinstance(exc, FileNotFoundError):
+        return "pointer_missing"
+    if isinstance(exc, UnicodeDecodeError):
+        return "not_utf8"
+    return "unreadable"
 
 
 def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False) -> tuple[bytes, bool]:
@@ -317,6 +337,8 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("invalid --source-id")
     if (a.record is None) != (a.label is None) or (a.label and not re.fullmatch(r"[A-Za-z0-9]+(?:_r|_late)?", a.label)):
         raise SystemExit("--record and --label go together; a label is letters and digits, optionally _r or _late")
+    if (a.raw or a.no_result) and a.label and a.plan is None:
+        raise SystemExit("--raw and --no-result with --label need --plan (the Step-0b call plan)")
     planned = check_plan(a)
     if a.no_result:
         if a.record is None or a.name:
@@ -325,7 +347,8 @@ def main(argv: list[str] | None = None) -> int:
         if info["result"] is not None:
             raise SystemExit(f"tool_use_id {a.tool_use_id} has a result: save it instead")
         tool = admissible_tool(info["use"])
-        check_target(tool, info["use"].get("input") or {}, a.source_id, "")
+        if planned is None:
+            check_target(tool, info["use"].get("input") or {}, a.source_id, "")
         rec = {"label": a.label, "status": "no_result", "tool": tool, "arguments": info["use"].get("input") or {},
                "tool_use_id": a.tool_use_id, "message_id": info["message_id"], "called_on": info["called_on"] or "",
                "source_id": a.source_id}
@@ -341,8 +364,9 @@ def main(argv: list[str] | None = None) -> int:
     if info["result"] is None:
         raise SystemExit(f"tool_use_id {a.tool_use_id} or its result not found in {a.transcript}")
     use, result, stamp = info["use"], info["result"], info["called_on"]
-    tool = check_call(use, a.name, a.probe, a.raw)
-    check_target(tool, use.get("input") or {}, a.source_id, a.name)
+    tool = check_call(use, a.name, a.probe, a.raw, planned is not None)
+    if planned is None:  # with --plan, the plan's source id and name hold even for a call that deviated
+        check_target(tool, use.get("input") or {}, a.source_id, a.name)
     tool_results = a.transcript.parent / a.transcript.stem / "tool-results"
     raw_shape, raw_reason = "text", ""
     if a.raw:

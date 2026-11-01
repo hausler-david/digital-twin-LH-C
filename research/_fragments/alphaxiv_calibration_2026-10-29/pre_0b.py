@@ -1,4 +1,4 @@
-"""Step-0b pre-calibration (docs/internet_research_protocol.md §5a, revision 2026-10-30.3): every threshold and claim the
+"""Step-0b pre-calibration (docs/internet_research_protocol.md §5a, revision 2026-11-01.4): every threshold and claim the
 Step-0b rules rest on, recomputed from the saved Step-0 files and the local PDFs before any Step-0b call. No connector
 call. Output: counts, overlaps and verdicts only (research/_fragments/alphaxiv_calibration_2026-10-29/calibration_0b_pre.json).
 
@@ -112,6 +112,16 @@ def main() -> int:
         "P6_predicted_verdict": ("version_specific" if all(x["in_full_text"] for x in r1) and any(x["differs"] for x in r1)
                                  and not any(x["same"] and not x["in_full_text"] for x in r1) else "not version_specific")}
     out["muLHC_v2_pages_in_v1_full_text"] = sum(ct.contained(b, f1) for b in mu2.pages.values())
+    # P5 and P6 predicted by the evaluator's own code on the Step-0 answers (the same queries are asked again)
+    manifest = json.loads((HERE / "manifest_0b.json").read_text(encoding="utf-8"))
+    run = ev.Run(manifest, [], {"calls": [], "violations": []}, ROOT)
+    run.texts = {"P5": read(MU_V2_PAGES), "P6": read(MU_V1_PAGES)}
+    run.cls = {"P5": "pages", "P6": "pages"}
+    eff = {"P5": "P5", "P6": "P6"}
+    p5 = run.p5(eff)
+    p6 = run.page_checks("P6", run.texts["P6"], ev.pdf_pages(manifest["local"]["2506.15445v2"]), f1)
+    out["evaluator_on_step0_answers"] = {"P5_verdict": p5["verdict"], "P6_verdict": p6["verdict"],
+                                         "stops": run.stops, "findings": run.findings}
     out["S2_total"] = {"same_version_pages": out["totals"]["S2_pages"] + out["muLHC_v1_pages_vs_local_v2"]["in_v1_full_text"],
                        "of": sum(v["pages"] for k, v in same_version.items() if "pages only" not in k) + len(r1)}
     # 6: same paper or not: the median page window share and the whole-text chunk score, against every local PDF of

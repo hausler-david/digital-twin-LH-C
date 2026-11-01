@@ -1,4 +1,4 @@
-"""Step-0b evaluation (docs/internet_research_protocol.md §5a), revision 2026-10-30.3, committed before any Step-0b call.
+"""Step-0b evaluation (docs/internet_research_protocol.md §5a), revision 2026-11-01.4, committed before any Step-0b call.
 
   pending  --manifest M --record R
       After P1b: which planned calls are generic errors without a retry, and which are missing. The lead retries exactly
@@ -96,7 +96,7 @@ def shown_id(paper_id: str | None) -> str | None:
 
 def classify(tool: str, text: str, vid: str, is_error: bool, raw_shape: str = "text") -> tuple[str, str]:
     if raw_shape != "text":
-        return "generic_error", f"the saver kept the result as its {raw_shape}"
+        return "generic_error", f"the saver kept the result as {raw_shape}"
     ans = ct.parse_answer(text)
     if ans.kind == "one_line":
         return ("refusal", "") if ct.is_refusal(text, vid) else ("generic_error", "one line without a refusal of " + vid)
@@ -109,6 +109,18 @@ def classify(tool: str, text: str, vid: str, is_error: bool, raw_shape: str = "t
     if is_error or len(text.encode("utf-8")) < MIN_TEXT_BYTES or len(text.split("\n")) < MIN_TEXT_LINES:
         return "generic_error", "not a full text (error flag, or below 2048 bytes or 50 lines)"
     return "text", ""
+
+
+def json_strings(obj):
+    """Every string value in a JSON document (the texts of a saved block list)."""
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, list):
+        for x in obj:
+            yield from json_strings(x)
+    elif isinstance(obj, dict):
+        for x in obj.values():
+            yield from json_strings(x)
 
 
 def text_digits(text: str) -> tuple:
@@ -151,12 +163,15 @@ class Run:
             raise InputError(f"scan patterns {PATTERNS_VERSION}, pre-registered {SCAN_PATTERNS}")
         by_label: dict[str, dict] = {}
         audit_calls = {c.get("tool_use_id"): c for c in self.audit.get("calls", [])}
+        label_of = {r.get("tool_use_id"): r.get("label", "") for r in self.records}
         for v in self.audit.get("violations", []):
             if v.get("severity") == "violation":
-                self.stop("audit", f"transcript audit violation: {v.get('violation')}")
+                self.stop("audit", f"transcript audit violation: {v.get('violation')}",
+                          *[label_of[v["tool_use_id"]]] if v.get("tool_use_id") in label_of else [])
         for c in audit_calls.values():
             if c.get("flag") or c.get("role") != "lead":
-                self.stop("audit", f"inadmissible or subagent connector call {c.get('tool_use_id')}: {c.get('flag')}")
+                self.stop("audit", f"inadmissible or subagent connector call {c.get('tool_use_id')}: {c.get('flag')}",
+                          *[label_of[c["tool_use_id"]]] if c.get("tool_use_id") in label_of else [])
         recorded = set()
         for r in self.records:
             label = r.get("label", "")
@@ -291,9 +306,18 @@ class Run:
     # ---- rules --------------------------------------------------------------------------------------------------
     def order_rules(self, by_label: dict[str, dict]) -> None:
         originals = [(label, by_label[label]) for label in self.plan if label in by_label]
-        times = [r.get("called_on", "") for _, r in originals]
-        if times != sorted(times) or len(set(times)) != len(times):
-            self.stop("plan", "the planned calls were not made one after another in the plan order")
+        for (l1, r1), (l2, r2) in zip(originals, originals[1:]):
+            if not r2.get("called_on", "") > r1.get("called_on", ""):
+                self.stop("plan", f"{l2} was not called after {l1}: the calls are made in the plan order", l1, l2)
+        seen: dict[str, str] = {}
+        for label, r in by_label.items():
+            if label.endswith("_late"):  # a late result belongs to its own call's message
+                continue
+            mid = r.get("message_id")
+            if mid in seen:
+                self.stop("plan", f"{label} shares a message with {seen[mid]}: one call per message", label, seen[mid])
+            else:
+                seen[mid] = label
         a, b = by_label.get("P1a"), by_label.get("P1b")
         if a and b and not (b.get("called_on", "") > a.get("called_on", "") and b.get("message_id") != a.get("message_id")):
             self.stop("plan", "P1b is not in a later message than P1a", "P1a", "P1b")
@@ -312,11 +336,17 @@ class Run:
                 if label != "P1a" and r.get("called_on", "") <= a.get("called_on", ""):
                     self.stop("plan", f"{label} was called before or with P1a; P1a is the first planned call", label)
 
-    def scan_rule(self) -> None:
+    def scan_rule(self, by_label: dict[str, dict]) -> None:
         for label, t in sorted(self.texts.items()):
-            hits = scan_text(t)["hits"]
+            texts = [t]
+            if by_label.get(label, {}).get("raw_shape") == "blocks":  # scan the decoded strings, not the JSON escapes
+                try:
+                    texts += list(json_strings(json.loads(t)))
+                except json.JSONDecodeError:
+                    pass
+            hits = sum(len(scan_text(x)["hits"]) for x in texts)
             if hits:
-                self.stop("scan", f"{label}: {len(hits)} instruction-scan hit(s) (patterns {PATTERNS_VERSION})", label)
+                self.stop("scan", f"{label}: {hits} instruction-scan hit(s) (patterns {PATTERNS_VERSION})", label)
 
     def template_rule(self, eff, by_label) -> None:
         if "P1a" not in eff or "P1b" not in eff:
@@ -391,7 +421,9 @@ class Run:
             return out
         if v1_full is not None:
             ans = ct.parse_answer(self.text(label, eff))
-            if any(not r["short"] and not r["same"] and ct.contained(ans.pages[r["page"]], v1_full) for r in out["rows"]):
+            local = pdf_pages(local_pdf)
+            if any(not r["short"] and not ct.same_as_any(ans.pages[r["page"]], local)
+                   and ct.contained(ans.pages[r["page"]], v1_full) for r in out["rows"]):
                 self.stop("relabelled", f"{label}: version-1 content under the {self.vid(label)} label", label)
                 return {**out, "verdict": "relabelled_v1"}
         if out["verdict"] == "uninformative":
@@ -465,14 +497,17 @@ class Run:
                 self.finding("page_tool", f"{lq}: the page tool answers {paper}v1 with the NO_SUCH_VERSION template")
             out["v1_pages"] = {"verdict": v}
         page_verdict = (out.get("v1_pages") or {}).get("verdict")
+        mark = " (v1 text without a stamp: its label rests on the page half and the digit rule)" \
+            if t1 is not None and out.get("v1_stamp") == "absent" else ""
         if any({l1, ln, lq} & set(s["labels"]) for s in self.stops):
             out["outcome"] = "stopped"
         elif t1 is not None and tn is not None:
-            out["outcome"] = "passed" if page_verdict == "version_specific" else "uninformative"
+            out["outcome"] = ("passed" if page_verdict == "version_specific" else "uninformative") + mark
         elif tn is not None:
             out["outcome"] = f"one full-text version held ({vn}); page half {page_verdict}"
         elif t1 is not None:
-            out["outcome"] = f"one full-text version held (v1, checked against the uploaded {vn}); page half {page_verdict}"
+            out["outcome"] = (f"one full-text version held (v1, checked against the uploaded {vn}); page half "
+                              f"{page_verdict}{mark}")
         else:
             out["outcome"] = f"no full-text version held; page half {page_verdict}"
         return out
@@ -506,7 +541,7 @@ class Run:
         by_label = self.check_inputs()
         self.order_rules(by_label)
         eff = self.effective(by_label)
-        self.scan_rule()
+        self.scan_rule(by_label)
         self.template_rule(eff, by_label)
         s0 = self.m["step0"]
         v1_full = (self.root / s0["2506.15445v1_full"]).read_text(encoding="utf-8")
@@ -556,7 +591,7 @@ def pending(manifest: dict, records: list[dict], root: Path = ROOT) -> dict:
             f = root / r["file"]
             if not f.is_file() or hashlib.sha256(f.read_bytes()).hexdigest() != r.get("sha256"):
                 raise InputError(f"{r.get('label')}: {r.get('file')} is missing or does not match its SHA-256")
-            run.texts[r["label"]] = f.read_text(encoding="utf-8", errors="replace")
+            run.texts[r["label"]] = f.read_bytes().decode("utf-8", errors="replace")
     classes, retry, missing = {}, [], []
     for label in run.plan:
         r = by_label.get(label)
@@ -594,7 +629,7 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     try:
         if a.cmd == "classify":
-            klass, why = classify(a.tool, a.file.read_text(encoding="utf-8"), a.id, a.is_error)
+            klass, why = classify(a.tool, a.file.read_bytes().decode("utf-8", errors="replace"), a.id, a.is_error)
             print(json.dumps({"class": klass, "why": why}))
             return 0
         manifest = json.loads(a.manifest.read_text(encoding="utf-8"))
