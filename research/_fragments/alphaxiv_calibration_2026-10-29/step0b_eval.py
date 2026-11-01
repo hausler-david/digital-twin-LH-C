@@ -1,4 +1,4 @@
-"""Step-0b evaluation (docs/internet_research_protocol.md §5a), revision 2026-11-01.4, committed before any Step-0b call.
+"""Step-0b evaluation (docs/internet_research_protocol.md §5a), revision 2026-11-01.5, committed before any Step-0b call.
 
   pending  --manifest M --record R
       After P1b: which planned calls are generic errors without a retry, and which are missing. The lead retries exactly
@@ -111,16 +111,36 @@ def classify(tool: str, text: str, vid: str, is_error: bool, raw_shape: str = "t
     return "text", ""
 
 
-def json_strings(obj):
-    """Every string value in a JSON document (the texts of a saved block list)."""
-    if isinstance(obj, str):
-        yield obj
-    elif isinstance(obj, list):
-        for x in obj:
-            yield from json_strings(x)
-    elif isinstance(obj, dict):
-        for x in obj.values():
-            yield from json_strings(x)
+def json_strings(obj) -> list[str]:
+    """Every string value in a JSON document (the texts of a saved block list), walked without recursion."""
+    out, stack = [], [obj]
+    while stack:
+        x = stack.pop()
+        if isinstance(x, str):
+            out.append(x)
+        elif isinstance(x, list):
+            stack.extend(x)
+        elif isinstance(x, dict):
+            stack.extend(x.values())
+    return out
+
+
+ESCAPE = re.compile(r"\\[uU][0-9a-fA-F]{4}|\\x[0-9a-fA-F]{2}")
+SURROGATE = re.compile("[\ud800-\udfff]")
+
+
+def scan_variants(text: str, raw_shape: str) -> list[str] | None:
+    """The texts the instruction scan reads for one saved file: the file, the file with escape sequences blanked (an
+    escaped lone surrogate must not glue two words together), and for a block list its decoded strings. None when a
+    block list cannot be decoded or walked: that is a scan stop, never a pass."""
+    out = [text, ESCAPE.sub(" ", text)]
+    if raw_shape == "blocks":
+        try:
+            strings = json_strings(json.loads(text))
+        except (ValueError, RecursionError):
+            return None
+        out += strings + [SURROGATE.sub(" ", ESCAPE.sub(" ", s)) for s in strings]
+    return out
 
 
 def text_digits(text: str) -> tuple:
@@ -338,12 +358,10 @@ class Run:
 
     def scan_rule(self, by_label: dict[str, dict]) -> None:
         for label, t in sorted(self.texts.items()):
-            texts = [t]
-            if by_label.get(label, {}).get("raw_shape") == "blocks":  # scan the decoded strings, not the JSON escapes
-                try:
-                    texts += list(json_strings(json.loads(t)))
-                except json.JSONDecodeError:
-                    pass
+            texts = scan_variants(t, by_label.get(label, {}).get("raw_shape", "text"))
+            if texts is None:
+                self.stop("scan", f"{label}: a saved block list that cannot be decoded is not scanned, so it stops", label)
+                continue
             hits = sum(len(scan_text(x)["hits"]) for x in texts)
             if hits:
                 self.stop("scan", f"{label}: {hits} instruction-scan hit(s) (patterns {PATTERNS_VERSION})", label)
@@ -497,17 +515,16 @@ class Run:
                 self.finding("page_tool", f"{lq}: the page tool answers {paper}v1 with the NO_SUCH_VERSION template")
             out["v1_pages"] = {"verdict": v}
         page_verdict = (out.get("v1_pages") or {}).get("verdict")
-        mark = " (v1 text without a stamp: its label rests on the page half and the digit rule)" \
-            if t1 is not None and out.get("v1_stamp") == "absent" else ""
+        if t1 is not None and out.get("v1_stamp") == "absent":
+            out["v1_stamp_note"] = "v1 text without a stamp: its label rests on the page half and the digit rule"
         if any({l1, ln, lq} & set(s["labels"]) for s in self.stops):
             out["outcome"] = "stopped"
         elif t1 is not None and tn is not None:
-            out["outcome"] = ("passed" if page_verdict == "version_specific" else "uninformative") + mark
+            out["outcome"] = "passed" if page_verdict == "version_specific" else "uninformative"
         elif tn is not None:
             out["outcome"] = f"one full-text version held ({vn}); page half {page_verdict}"
         elif t1 is not None:
-            out["outcome"] = (f"one full-text version held (v1, checked against the uploaded {vn}); page half "
-                              f"{page_verdict}{mark}")
+            out["outcome"] = f"one full-text version held (v1, checked against the uploaded {vn}); page half {page_verdict}"
         else:
             out["outcome"] = f"no full-text version held; page half {page_verdict}"
         return out

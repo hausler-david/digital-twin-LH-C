@@ -469,3 +469,47 @@ def test_save_tool_raw_saves_a_deviating_call_and_escapes_lone_surrogates(tmp_pa
     with pytest.raises(SystemExit):  # the same call under a new label
         saver.main(args[:4] + ["G1_r"] + args[5:-4] + ["--name", "raw_G1_r_1234.56789v2.txt", "--root", str(tmp_path),
                                                        "--transcript", str(_transcript(tmp_path, *FULL, "x"))])
+
+
+def test_save_tool_refuses_a_mistyped_call_id_and_an_orphan_late_result(tmp_path, capsys):
+    """With --plan, a call that the plan lists under another label is refused before writing, and so is a _late save
+    whose base label has no no-result line for this call; --raw always records; reason codes are fixed at the raise
+    site, so a delivered pointer cannot choose them; an escaped persisted text is kept, not its preview."""
+    plan = tmp_path / "plan.json"
+    calls = [{"label": "G1", "tool": "get_paper_content", "arguments": FULL[1], "source_id": "SRC_ARXIV_1234_56789",
+              "file": "references/_local/SRC_ARXIV_1234_56789/raw_G1_1234.56789v2.txt"},
+             {"label": "G2", "tool": "get_paper_content",
+              "arguments": {"url": "https://arxiv.org/abs/1234.56789v3", "fullText": True},
+              "source_id": "SRC_ARXIV_1234_56789", "file": "references/_local/SRC_ARXIV_1234_56789/raw_G2_1234.56789v3.txt"}]
+    plan.write_text(json.dumps({"calls": calls}))
+    rec = tmp_path / "saves.jsonl"
+    g2_call = ("mcp__alphaXiv__get_paper_content", calls[1]["arguments"])
+    base = ["--raw", "--plan", str(plan), "--record", str(rec), "--tool-use-id", "toolu_1",
+            "--source-id", "SRC_ARXIV_1234_56789", "--root", str(tmp_path)]
+    with pytest.raises(SystemExit, match="the plan's G2"):  # G2's call saved as G1
+        saver.main(base + ["--label", "G1", "--name", "raw_G1_1234.56789v2.txt",
+                           "--transcript", str(_transcript(tmp_path, *g2_call, "x"))])
+    with pytest.raises(SystemExit, match="no no-result line"):
+        saver.main(base + ["--label", "G1_late", "--name", "raw_G1_late_1234.56789v2.txt",
+                           "--transcript", str(_transcript(tmp_path, *FULL, "x"))])
+    with pytest.raises(SystemExit, match="needs --label, --record"):
+        saver.main(["--raw", "--plan", str(plan), "--tool-use-id", "toolu_1", "--source-id", "SRC_ARXIV_1234_56789",
+                    "--name", "raw_G1_1234.56789v2.txt", "--root", str(tmp_path),
+                    "--transcript", str(_transcript(tmp_path, *FULL, "x"))])
+    assert not rec.exists()
+    forged = ("Error: result (9 characters across 1 lines) exceeds maximum allowed tokens. Output has been saved to "
+              "outside.txt.")  # a relative pointer whose words mimic another refusal
+    assert saver.main(base + ["--label", "G1", "--name", "raw_G1_1234.56789v2.txt",
+                              "--transcript", str(_transcript(tmp_path, *FULL, forged))]) == 0
+    assert json.loads(rec.read_text())["raw_reason"] == "pointer_not_regular"
+    raw = _tool_results(tmp_path) / "big.txt"
+    raw.write_text(json.dumps([{"type": "text", "text": "delivered \ud835 text " * 300}]))
+    preview = f"<persisted-output>\nOutput too large (9KB). Full output saved to: {raw}\n\nPreview (first 2KB):\nhi"
+    rec2 = tmp_path / "saves2.jsonl"
+    assert saver.main(["--raw", "--plan", str(plan), "--record", str(rec2), "--tool-use-id", "toolu_1",
+                       "--source-id", "SRC_ARXIV_1234_56789", "--root", str(tmp_path), "--label", "G2",
+                       "--name", "raw_G2_1234.56789v3.txt",
+                       "--transcript", str(_transcript(tmp_path, *g2_call, [{"type": "text", "text": preview}]))]) == 0
+    line = json.loads(rec2.read_text())
+    saved = (tmp_path / calls[1]["file"]).read_text()
+    assert line["raw_shape"] == "text_escaped" and line["persisted_by_harness"] is True and "Preview" not in saved

@@ -26,8 +26,8 @@ is kept escaped (raw_shape text_escaped), and raw_reason is a fixed code, never 
 Run: python -I tools/save_connector_text.py --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... --name <file>
      python -I tools/save_connector_text.py --probe --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... \
          --name probe_<id>v<k>.txt
-     python -I tools/save_connector_text.py --raw --label P1a --record <saves.jsonl> --transcript <session.jsonl> \
-         --tool-use-id <id> --source-id SRC_... --name raw_P1a_<id>v<n>.txt
+     python -I tools/save_connector_text.py --raw --plan <manifest_0b.json> --label P1a --record <saves.jsonl> \
+         --transcript <session.jsonl> --tool-use-id <id> --source-id SRC_... --name raw_P1a_<id>v<n>.txt
 """
 from __future__ import annotations
 
@@ -168,17 +168,26 @@ def check_call(use: dict, name: str, probe: bool = False, raw: bool = False, pla
     return tool
 
 
+class Refusal(SystemExit):
+    """A refusal that carries a fixed reason code, set where it is raised (the message may quote delivered text)."""
+
+    def __init__(self, message: str, reason: str):
+        super().__init__(message)
+        self.reason = reason
+
+
 def _confined(path: str, tool_results: Path, prefix: str | None = None) -> Path:
     """A harness file named by a pointer: an absolute path, not itself a symlink, whose real location is directly
     inside the real tool_results directory (symlinked ancestor directories are allowed; the target is what counts)."""
     p = Path(path)
     if not p.is_absolute() or os.path.islink(p):
-        raise SystemExit(f"pointer {path} is not an absolute path to a regular file: refusing to follow it")
+        raise Refusal(f"pointer {path} is not an absolute path to a regular file: refusing to follow it",
+                      "pointer_not_regular")
     real = Path(os.path.realpath(p))
     if real.parent != Path(os.path.realpath(tool_results)):
-        raise SystemExit(f"pointer {path} is outside {tool_results}: refusing to follow it")
+        raise Refusal(f"pointer {path} is outside {tool_results}: refusing to follow it", "pointer_outside")
     if prefix and not real.name.startswith(prefix):
-        raise SystemExit(f"pointer {path} does not name a harness file {prefix}*: refusing to follow it")
+        raise Refusal(f"pointer {path} does not name a harness file {prefix}*: refusing to follow it", "pointer_prefix")
     return p
 
 
@@ -212,20 +221,18 @@ def resolve_raw(result: dict, tool_results: Path, tool: str) -> tuple[bytes, boo
     try:
         data, persisted = resolve_bytes(result, tool_results, tool, probe=True)
         return data, persisted, "text", ""
-    except UnicodeEncodeError:  # a lone surrogate (an astral character cut in two): kept escaped
-        return _one_text_block(content).encode("utf-8", "backslashreplace"), False, "text_escaped", "lone_surrogate"
+    except UnicodeEncodeError:  # a lone surrogate (an astral character cut in two): the same source, kept escaped
+        data, persisted = resolve_bytes(result, tool_results, tool, probe=True, errors="backslashreplace")
+        return data, persisted, "text_escaped", "lone_surrogate"
     except (SystemExit, OSError, UnicodeDecodeError) as exc:
         # a fixed reason code, never the message: the message may quote delivered text (a forged pointer)
         return _one_text_block(content).encode("utf-8", "backslashreplace"), False, "notice", _reason_code(exc)
 
 
 def _reason_code(exc: BaseException) -> str:
-    msg = str(exc)
-    for code, needle in (("pointer_outside", "outside"), ("pointer_not_regular", "not an absolute path"),
-                         ("pointer_prefix", "does not name a harness file"), ("size_mismatch", "incomplete file"),
-                         ("preview_without_path", "preview"), ("unknown_json", "unknown JSON shape")):
-        if needle in msg:
-            return code
+    """The fixed code of a refusal; never read from the message, which may quote a delivered pointer."""
+    if isinstance(exc, Refusal):
+        return exc.reason
     if isinstance(exc, FileNotFoundError):
         return "pointer_missing"
     if isinstance(exc, UnicodeDecodeError):
@@ -233,7 +240,8 @@ def _reason_code(exc: BaseException) -> str:
     return "unreadable"
 
 
-def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False) -> tuple[bytes, bool]:
+def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool = False,
+                  errors: str = "strict") -> tuple[bytes, bool]:
     """The result as bytes; follows the harness pointer when the result starts with the harness's own notice.
     With probe true (--probe and --raw), error results and refusals are saved as delivered."""
     if result.get("is_error") and not probe:
@@ -249,17 +257,18 @@ def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool 
         chars = {len(decoded), len(decoded.encode("utf-16-le")) // 2}
         lines = {len(decoded.split("\n")), len(decoded.splitlines())}
         if n_chars not in chars or n_lines not in lines:
-            raise SystemExit(f"saved result has {sorted(chars)} characters and {sorted(lines)} lines; the harness "
-                             f"reported {n_chars} and {n_lines}: refusing to save an incomplete file")
+            raise Refusal(f"saved result has {sorted(chars)} characters and {sorted(lines)} lines; the harness "
+                          f"reported {n_chars} and {n_lines}: refusing to save an incomplete file", "size_mismatch")
         return raw, True
     if not text.startswith(PREVIEW_MARK):
         if not probe and NOT_FOUND_RE.fullmatch(text):
             raise SystemExit(f"the result is a refusal, not a delivered text ({text.strip()[:80]!r}); a probe answer is "
                              "saved with --probe")
-        return text.encode("utf-8"), False
+        return text.encode("utf-8", errors), False
     m = PERSISTED_RE.match(text)
     if not m:
-        raise SystemExit("transcript holds a persisted-output preview without a file path: refusing to save a preview")
+        raise Refusal("transcript holds a persisted-output preview without a file path: refusing to save a preview",
+                      "preview_without_path")
     raw = _confined(m.group(1), tool_results).read_bytes()
     try:
         doc = json.loads(raw)
@@ -267,8 +276,8 @@ def resolve_bytes(result: dict, tool_results: Path, tool: str = "", probe: bool 
         raw.decode("utf-8")  # must be text
         return raw, True
     if isinstance(doc, list):
-        return _one_text_block(doc).encode("utf-8"), True
-    raise SystemExit("persisted result has an unknown JSON shape: refusing to save")
+        return _one_text_block(doc).encode("utf-8", errors), True
+    raise Refusal("persisted result has an unknown JSON shape: refusing to save", "unknown_json")
 
 
 def save(data: bytes, target: Path) -> dict:
@@ -309,6 +318,24 @@ def check_plan(a) -> dict | None:
     return c
 
 
+def check_plan_call(a, planned: dict | None, tool: str, args: dict) -> None:
+    """With --plan: refuse before writing a call that the plan lists under another label (a mistyped tool-use id),
+    and a _late save whose base label has no no-result line for this call in the record."""
+    if planned is None:
+        return
+    base = a.label.removesuffix("_r").removesuffix("_late")
+    others = [c["label"] for c in json.loads(a.plan.read_text(encoding="utf-8"))["calls"]
+              if c["label"] != base and c["tool"] == tool and c["arguments"] == args]
+    if others and (planned["tool"], planned["arguments"]) != (tool, args):
+        raise SystemExit(f"call {a.tool_use_id} is the plan's {others[0]}, not {base}: check --tool-use-id")
+    if a.label.endswith("_late"):
+        lines = [json.loads(x) for x in a.record.read_text(encoding="utf-8").splitlines() if x.strip()] \
+            if a.record.exists() else []
+        if not any(x.get("label") == base and x.get("status") == "no_result" and x.get("tool_use_id") == a.tool_use_id
+                   for x in lines):
+            raise SystemExit(f"{a.label}: the record has no no-result line for {base} with call {a.tool_use_id}")
+
+
 def append_record(path: Path, rec: dict) -> None:
     """Append one JSON line; existing lines are never rewritten."""
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -339,6 +366,8 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit("--record and --label go together; a label is letters and digits, optionally _r or _late")
     if (a.raw or a.no_result) and a.label and a.plan is None:
         raise SystemExit("--raw and --no-result with --label need --plan (the Step-0b call plan)")
+    if a.raw and (a.label is None or a.record is None):
+        raise SystemExit("--raw needs --label, --record and --plan, so that every saved result is recorded")
     planned = check_plan(a)
     if a.no_result:
         if a.record is None or a.name:
@@ -347,6 +376,7 @@ def main(argv: list[str] | None = None) -> int:
         if info["result"] is not None:
             raise SystemExit(f"tool_use_id {a.tool_use_id} has a result: save it instead")
         tool = admissible_tool(info["use"])
+        check_plan_call(a, planned, tool, info["use"].get("input") or {})
         if planned is None:
             check_target(tool, info["use"].get("input") or {}, a.source_id, "")
         rec = {"label": a.label, "status": "no_result", "tool": tool, "arguments": info["use"].get("input") or {},
@@ -365,6 +395,7 @@ def main(argv: list[str] | None = None) -> int:
         raise SystemExit(f"tool_use_id {a.tool_use_id} or its result not found in {a.transcript}")
     use, result, stamp = info["use"], info["result"], info["called_on"]
     tool = check_call(use, a.name, a.probe, a.raw, planned is not None)
+    check_plan_call(a, planned, tool, use.get("input") or {})
     if planned is None:  # with --plan, the plan's source id and name hold even for a call that deviated
         check_target(tool, use.get("input") or {}, a.source_id, a.name)
     tool_results = a.transcript.parent / a.transcript.stem / "tool-results"

@@ -1,4 +1,4 @@
-"""Step-0b pre-calibration (docs/internet_research_protocol.md §5a, revision 2026-11-01.4): every threshold and claim the
+"""Step-0b pre-calibration (docs/internet_research_protocol.md §5a, revision 2026-11-01.5): every threshold and claim the
 Step-0b rules rest on, recomputed from the saved Step-0 files and the local PDFs before any Step-0b call. No connector
 call. Output: counts, overlaps and verdicts only (research/_fragments/alphaxiv_calibration_2026-10-29/calibration_0b_pre.json).
 

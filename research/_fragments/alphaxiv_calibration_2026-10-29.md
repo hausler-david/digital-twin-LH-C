@@ -314,4 +314,22 @@ Nothing proceeds until the owner decides. The options:
     (`calibration_0b_pre.json`).
   - Declined, with the reason stated in §5a: comparing arguments under NFKC normalisation. The arguments are copied from
     the manifest, and a look-alike character stays a deviation.
+- **Check of revision 4 and revision 2026-11-01.5.**
+  - Revision 4 (`c5031da`, 2026-11-01 15:10:52Z) was checked before any call. A verifier found 17 of the 21 open and
+    regression items fixed; 4 minor items were left open.
+  - A blind regression finder reported 9 new items, three should-fix and none blocking:
+    - an escaped lone surrogate glued to a keyword hid an instruction from the scan;
+    - a mistyped tool-use id under `--plan` could file another planned call's result under the wrong label;
+    - the stamp-less mark undercounted the G4′ papers passed.
+  - Revision 5 fixes these and the minor items before any call:
+    - escape sequences are blanked for the scan, and an undecodable block list stops;
+    - the saver refuses a call planned under another label and an orphan late save, and `--raw` always records;
+    - reason codes are fixed where the refusal is raised;
+    - an escaped persisted text is kept instead of its preview;
+    - the stamp-less note sits in its own field;
+    - tests cover each rule a mutation check found undriven.
+  - Still left as they are, all fail closed:
+    - a slip that the plan cannot recognise (a label typed for the wrong call when both carry valid ids) still forces a
+      stop;
+    - only P1, P5 and P6 compare whole answers with Step 0.
 - **Results:** recorded in §10 after the calls.
